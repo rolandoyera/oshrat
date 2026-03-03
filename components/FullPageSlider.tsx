@@ -65,6 +65,7 @@ export default function FullPageSlider() {
             fill
             priority
             className="object-cover"
+            sizes="100vw"
           />
 
           {/* Overlay for better text readability if needed */}
