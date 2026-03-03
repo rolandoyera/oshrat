@@ -44,10 +44,19 @@ export default function FullPageSlider() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 8000); // Change slide every 5 seconds
+    }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(timer);
   }, []);
+
+  const handleDragEnd = (event: any, info: any) => {
+    const swipeThreshold = 50;
+    if (info.offset.x < -swipeThreshold) {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    } else if (info.offset.x > swipeThreshold) {
+      setCurrentIndex((prev) => (prev + slides.length - 1) % slides.length);
+    }
+  };
 
   return (
     <div className="relative w-full h-[calc(100vh-172px)] overflow-hidden bg-zinc-100">
@@ -58,7 +67,10 @@ export default function FullPageSlider() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className="absolute inset-0">
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={handleDragEnd}
+          className="absolute inset-0 cursor-grab active:cursor-grabbing">
           <Image
             src={slides[currentIndex].image}
             alt={slides[currentIndex].title}
@@ -72,7 +84,7 @@ export default function FullPageSlider() {
           <div className="absolute inset-0 bg-black/10" />
 
           {/* Centered Content */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-6 pointer-events-none">
             <motion.h2
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -84,7 +96,8 @@ export default function FullPageSlider() {
             <motion.div
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.8, duration: 0.8 }}>
+              transition={{ delay: 0.8, duration: 0.8 }}
+              className="pointer-events-auto">
               <Link
                 href={slides[currentIndex].href}
                 className="inline-block bg-black border border-white px-10 py-4 text-sm font-medium tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-200">
@@ -95,8 +108,8 @@ export default function FullPageSlider() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Slide Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-10">
+      {/* Slide Indicators - Hidden on mobile */}
+      <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 space-x-3 z-10">
         {slides.map((_, index) => (
           <button
             key={index}

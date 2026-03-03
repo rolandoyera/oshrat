@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   title: "Sarvian Design Group",
   description:
     "Sarvian Design Group is a design and architecture firm based in Fort Lauderdale, Florida.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
