@@ -3,7 +3,7 @@ import ProjectPage from "@/components/ProjectPage";
 
 export default function BrickellProject() {
   const images = [
-    { src: "/brickell/Brickell-bedroom.jpg", alt: "Brickell Bedroom" },
+    { src: "/brickell/brickell-bedroom.jpg", alt: "Brickell Bedroom" },
     {
       src: "/brickell/brickell-living-square.jpg",
       alt: "Brickell Living Room",
