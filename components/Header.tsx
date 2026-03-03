@@ -54,7 +54,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="tracking-[0.15em] text-zinc-600 hover:text-black transition-colors">
+                  className="tracking-[0.15em] hover:text-black transition-colors">
                   {item.label}
                 </Link>
               ))}
@@ -73,7 +73,7 @@ export default function Header() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="tracking-[0.15em] text-zinc-600 hover:text-black transition-colors">
+                  className="tracking-[0.15em] hover:text-black transition-colors">
                   {item.label}
                 </Link>
               ))}
@@ -81,7 +81,7 @@ export default function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden text-zinc-600 z-70 p-2 -mr-2"
+              className="md:hidden z-70 p-2 -mr-2"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle menu">
               <AnimatePresence mode="wait">
@@ -128,7 +128,7 @@ export default function Header() {
                   transition={{ delay: 0.1 * (index + 1) }}>
                   <Link
                     href={item.href}
-                    className="text-2xl font-light tracking-[0.25em] text-zinc-800 hover:text-black transition-colors"
+                    className="text-2xl font-light tracking-[0.25em] hover:text-black transition-colors"
                     onClick={() => setIsOpen(false)}>
                     {item.label}
                   </Link>
@@ -140,7 +140,7 @@ export default function Header() {
               <div className="text-[12px] font-bold tracking-[0.3em] uppercase mb-2">
                 SARVIAN DESIGN GROUP
               </div>
-              <div className="text-[10px] tracking-[0.15em] text-zinc-400 italic">
+              <div className="text-[10px] tracking-[0.15em] italic">
                 design & architecture
               </div>
             </div>

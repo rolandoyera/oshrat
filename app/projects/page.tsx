@@ -39,7 +39,7 @@ export default function Projects() {
       <main className="w-full">
         {/* Page Header */}
         <div className="py-10 md:py-20 px-6 text-center border-b border-zinc-100">
-          <h1 className="text-2xl tracking-[0.3em] text-zinc-800 uppercase">
+          <h1 className="text-2xl tracking-[0.3em] uppercase">
             Our Latest Projects
           </h1>
         </div>

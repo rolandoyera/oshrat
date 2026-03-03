@@ -15,3 +15,11 @@ body {
   --foreground: #171717;
   color-scheme: light;
 }
+
+button {
+  cursor: pointer !important;
+}
+
+h1 {
+  font-size: 2rem;
+}

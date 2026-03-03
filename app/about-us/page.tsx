@@ -2,11 +2,11 @@ import Image from "next/image";
 
 export default function AboutUs() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col">
       <main className="w-full max-w-7xl mx-auto py-20 px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left Side: Image */}
-          <div className="relative w-full h-auto bg-zinc-100 group">
+          <div className="relative w-full h-auto group">
             <Image
               src="/about-us/oshrat-rothschild-sarvian-design-group.jpeg"
               alt="Oshrat Rothschild - Sarvian Design Group"

@@ -21,7 +21,7 @@ export default function MasonryGrid({ images }: MasonryGridProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: index * 0.1 }}
-          className="break-inside-avoid relative group overflow-hidden bg-zinc-100">
+          className="break-inside-avoid relative group overflow-hidden">
           <div className="relative w-full">
             <img
               src={image.src}
