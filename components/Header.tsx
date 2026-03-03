@@ -8,7 +8,7 @@ import { X, Menu } from "lucide-react";
 
 const Logo = () => (
   <div className="flex flex-col items-center">
-    <div className="relative w-40 h-[128px]">
+    <div className="relative w-28 h-24 md:w-40 md:h-32">
       <Image
         src="/logo/logo_sdg-black.png"
         alt="Sarvian Design Group Logo"
