@@ -12,7 +12,7 @@ const projects = [
     href: "/projects/north-miami",
   },
   {
-    title: "Oak Park House",
+    title: "Oak Park Estate",
     image: "/slider/Oak-Park-main.jpg",
     href: "/projects/oak-park",
   },
