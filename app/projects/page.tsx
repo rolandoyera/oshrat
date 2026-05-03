@@ -3,7 +3,7 @@ import ProjectCard from "../../components/ProjectCard";
 const projects = [
   {
     title: "The Shul",
-    image: "/slider/the-shul-bal-harbour-01.jpg",
+    image: "/slider/the-shul-bal-harbour-front.jpg",
     href: "/projects/the-shul",
   },
   {
