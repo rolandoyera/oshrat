@@ -43,7 +43,8 @@ export default function FullPageSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentIndex((prev) => (prev + slides.length - 1) % slides.length);
+  const prevSlide = () =>
+    setCurrentIndex((prev) => (prev + slides.length - 1) % slides.length);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -93,7 +94,7 @@ export default function FullPageSlider() {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.8 }}
-              className="text-4xl md:text-6xl font-light tracking-[0.2em] uppercase mb-8 drop-shadow-lg">
+              className="text-2xl md:text-5xl font-light tracking-[0.2em] uppercase mb-8 drop-shadow-lg">
               {slides[currentIndex].title}
             </motion.h2>
 
@@ -131,8 +132,7 @@ export default function FullPageSlider() {
         <button
           onClick={prevSlide}
           className="group w-10 h-10 md:w-12 md:h-12 rounded-full border border-white flex items-center justify-center text-white transition-all duration-300 pointer-events-auto hover:bg-white hover:text-black"
-          aria-label="Previous slide"
-        >
+          aria-label="Previous slide">
           <MoveLeft className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:-translate-x-1" />
         </button>
       </div>
@@ -141,8 +141,7 @@ export default function FullPageSlider() {
         <button
           onClick={nextSlide}
           className="group w-10 h-10 md:w-12 md:h-12 rounded-full border border-white flex items-center justify-center text-white transition-all duration-300 pointer-events-auto hover:bg-white hover:text-black"
-          aria-label="Next slide"
-        >
+          aria-label="Next slide">
           <MoveRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1" />
         </button>
       </div>
