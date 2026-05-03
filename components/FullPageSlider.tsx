@@ -4,12 +4,18 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import { MoveLeft, MoveRight } from "lucide-react";
 
 const slides = [
   {
     image: "/slider/the-shul-bal-harbour-front.jpg",
     title: "The Shul - Bal Harbour",
     href: "/projects/the-shul",
+  },
+  {
+    image: "/slider/old-river-back.jpg",
+    title: "Old River Estate",
+    href: "/projects/old-river",
   },
   {
     image: "/slider/Brickell-main-new.jpg",
@@ -20,11 +26,6 @@ const slides = [
     image: "/slider/North-Miami-main.jpg",
     title: "North Miami Villa",
     href: "/projects/north-miami",
-  },
-  {
-    image: "/slider/Oak-Park-main.jpg",
-    title: "Oak Park House",
-    href: "/projects/oak-park",
   },
   {
     image: "/slider/Sarvian-Design-Djamal-Residence_04.jpg",
@@ -41,25 +42,28 @@ const slides = [
 export default function FullPageSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentIndex((prev) => (prev + slides.length - 1) % slides.length);
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
     }, 5000); // Change slide every 5 seconds
 
     return () => clearInterval(timer);
-  }, []);
+  }, [currentIndex]);
 
   const handleDragEnd = (event: any, info: any) => {
     const swipeThreshold = 50;
     if (info.offset.x < -swipeThreshold) {
-      setCurrentIndex((prev) => (prev + 1) % slides.length);
+      nextSlide();
     } else if (info.offset.x > swipeThreshold) {
-      setCurrentIndex((prev) => (prev + slides.length - 1) % slides.length);
+      prevSlide();
     }
   };
 
   return (
-    <div className="relative w-full h-[calc(100vh-172px)] overflow-hidden bg-zinc-100">
+    <div className="relative w-full h-[calc(100vh-172px)] overflow-hidden bg-zinc-100 mb-20">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -120,6 +124,27 @@ export default function FullPageSlider() {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <div className="absolute inset-y-0 left-4 md:left-8 flex items-center z-20 pointer-events-none">
+        <button
+          onClick={prevSlide}
+          className="group w-10 h-10 md:w-12 md:h-12 rounded-full border border-white flex items-center justify-center text-white transition-all duration-300 pointer-events-auto hover:bg-white hover:text-black"
+          aria-label="Previous slide"
+        >
+          <MoveLeft className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:-translate-x-1" />
+        </button>
+      </div>
+
+      <div className="absolute inset-y-0 right-4 md:right-8 flex items-center z-20 pointer-events-none">
+        <button
+          onClick={nextSlide}
+          className="group w-10 h-10 md:w-12 md:h-12 rounded-full border border-white flex items-center justify-center text-white transition-all duration-300 pointer-events-auto hover:bg-white hover:text-black"
+          aria-label="Next slide"
+        >
+          <MoveRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1" />
+        </button>
       </div>
     </div>
   );
