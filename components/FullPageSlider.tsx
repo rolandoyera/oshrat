@@ -7,9 +7,9 @@ import Link from "next/link";
 
 const slides = [
   {
-    image: "/slider/old-river-back.jpg",
-    title: "Old River Estate",
-    href: "/projects/old-river",
+    image: "/slider/the-shul-bal-harbour-front.jpg",
+    title: "The Shul - Bal Harbour",
+    href: "/projects/the-shul",
   },
   {
     image: "/slider/Brickell-main-new.jpg",
