@@ -46,7 +46,7 @@ export default function Publications() {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center max-w-5xl mx-auto">
+    <div className="flex min-h-screen flex-col items-center max-w-6xl mx-auto">
       <main className="flex w-full flex-col items-center justify-center px-6">
         <h1 className="text-4xl font-light tracking-widest uppercase py-20">
           Publications

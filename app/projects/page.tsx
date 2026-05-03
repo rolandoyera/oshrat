@@ -2,19 +2,9 @@ import ProjectCard from "../../components/ProjectCard";
 
 const projects = [
   {
-    title: "Brickell Residence",
-    image: "/slider/Brickell-main-new.jpg",
-    href: "/projects/brickell",
-  },
-  {
-    title: "North Miami Villa",
-    image: "/slider/North-Miami-main.jpg",
-    href: "/projects/north-miami",
-  },
-  {
-    title: "Oak Park Estate",
-    image: "/slider/Oak-Park-main.jpg",
-    href: "/projects/oak-park",
+    title: "The Shul",
+    image: "/slider/the-shul-bal-harbour-01.jpg",
+    href: "/projects/the-shul",
   },
   {
     title: "Aventura Townhome",
@@ -27,6 +17,16 @@ const projects = [
     href: "/projects/south-beach",
   },
   {
+    title: "Brickell Residence",
+    image: "/slider/Brickell-main-new.jpg",
+    href: "/projects/brickell",
+  },
+  {
+    title: "North Miami Villa",
+    image: "/slider/North-Miami-main.jpg",
+    href: "/projects/north-miami",
+  },
+  {
     title: "Old River Estate",
     image: "/slider/old-river-back.jpg",
     href: "/projects/old-river",
@@ -35,7 +35,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <div className="flex flex-col bg-white">
+    <div className="flex flex-col bg-white px-10">
       <main className="w-full">
         {/* Page Header */}
         <div className="py-10 md:py-20 px-6 text-center border-b border-zinc-100">

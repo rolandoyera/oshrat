@@ -7,13 +7,15 @@ interface MasonryGridProps {
   images: {
     src: string;
     alt: string;
+    width?: number;
+    height?: number;
     aspectRatio?: string; // e.g., "4/5", "16/9"
   }[];
 }
 
 export default function MasonryGrid({ images }: MasonryGridProps) {
   return (
-    <div className="columns-1 sm:columns-2 gap-8 space-y-8 p-6 md:p-12">
+    <div className="columns-1 lg:columns-2 gap-8 space-y-8 p-6 md:p-12">
       {images.map((image, index) => (
         <motion.div
           key={image.src + index}
@@ -23,11 +25,13 @@ export default function MasonryGrid({ images }: MasonryGridProps) {
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className="break-inside-avoid relative group overflow-hidden">
           <div className="relative w-full">
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
               className="w-full h-auto"
               loading="lazy"
+              width={image.width || 2000}
+              height={image.height || 1250}
             />
           </div>
         </motion.div>
