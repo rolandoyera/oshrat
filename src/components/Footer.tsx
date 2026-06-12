@@ -7,6 +7,7 @@ import InstagramIcon from "./icons/InstagramIcon";
 import MailIcon from "./icons/MailIcon";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 import WatermarkLogo from "./WatermarkLogo";
+import { trackEvent } from "@/lib/gtag";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -46,6 +47,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Send email to osh@sarviandg.com (opens in a new tab)"
+              onClick={() =>
+                trackEvent("email_click", { link_location: "footer" })
+              }
               className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]">
               <MailIcon size={32} color="currentColor" />
             </a>
@@ -54,6 +58,9 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp with +1 (646) 639-4147 (opens in a new tab)"
+              onClick={() =>
+                trackEvent("whatsapp_click", { link_location: "footer" })
+              }
               className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
               <WhatsAppIcon size={26} color="currentColor" />
             </a>

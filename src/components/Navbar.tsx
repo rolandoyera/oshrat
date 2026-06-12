@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useLenis } from "lenis/react";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { trackEvent } from "@/lib/gtag";
 import ProjectButton from "./ui/ProjectButton";
 import ContactDrawerContent from "./ContactDrawerContent";
 
@@ -77,7 +78,10 @@ export default function Navbar() {
       direction="right"
       duration={1000}
       open={isDrawerOpen}
-      onOpenChange={setIsDrawerOpen}>
+      onOpenChange={(open) => {
+        setIsDrawerOpen(open);
+        if (open) trackEvent("contact_drawer_open");
+      }}>
       <nav
         aria-label="Primary"
         data-fixed=""

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   DrawerHeader,
   DrawerTitle,
@@ -16,6 +16,7 @@ import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { trackEvent } from "@/lib/gtag";
 
 const DrawerContactSchema = z.object({
   name: z.string().min(2, "Please enter your name"),
@@ -40,6 +41,15 @@ export default function ContactDrawerContent() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const hasStartedFormRef = useRef(false);
+
+  // Fires once per drawer open (component remounts each time) so GA4 can
+  // separate "opened but never touched the form" from "started, then abandoned".
+  const handleFormStart = () => {
+    if (hasStartedFormRef.current) return;
+    hasStartedFormRef.current = true;
+    trackEvent("form_start", { form_type: "navbar_drawer" });
+  };
 
   const {
     register,
@@ -89,11 +99,7 @@ export default function ContactDrawerContent() {
       setIsSent(true);
 
       // Track successful contact drawer submission in GA4
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "contact_form_submit", {
-          form_type: "navbar_drawer",
-        });
-      }
+      trackEvent("contact_form_submit", { form_type: "navbar_drawer" });
 
       setTimeout(() => {
         setIsSent(false);
@@ -152,6 +158,11 @@ export default function ContactDrawerContent() {
                   </p>
                   <a
                     href="mailto:osh@sarviandg.com"
+                    onClick={() =>
+                      trackEvent("email_click", {
+                        link_location: "contact_drawer",
+                      })
+                    }
                     className="text-sm font-sans font-medium text-accent hover:underline">
                     osh@sarviandg.com
                   </a>
@@ -162,6 +173,11 @@ export default function ContactDrawerContent() {
                   </p>
                   <a
                     href="tel:+19544444803"
+                    onClick={() =>
+                      trackEvent("phone_click", {
+                        link_location: "contact_drawer",
+                      })
+                    }
                     className="text-sm font-sans font-medium text-accent hover:underline">
                     954-444-4803
                   </a>
@@ -173,6 +189,7 @@ export default function ContactDrawerContent() {
             <div className="lg:col-span-7 space-y-8">
               <form
                 onSubmit={handleSubmit(handleFormSubmit)}
+                onFocusCapture={handleFormStart}
                 className="space-y-6">
                 <input
                   type="text"
@@ -280,6 +297,11 @@ export default function ContactDrawerContent() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Send email to osh@sarviandg.com (opens in a new tab)"
+              onClick={() =>
+                trackEvent("email_click", {
+                  link_location: "contact_drawer_social",
+                })
+              }
               className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[32px] h-[32px]">
               <MailIcon size={32} color="currentColor" />
             </a>
@@ -288,6 +310,11 @@ export default function ContactDrawerContent() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat on WhatsApp with +1 (646) 639-4147 (opens in a new tab)"
+              onClick={() =>
+                trackEvent("whatsapp_click", {
+                  link_location: "contact_drawer_social",
+                })
+              }
               className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[30px] h-[30px]">
               <WhatsAppIcon size={26} color="currentColor" />
             </a>

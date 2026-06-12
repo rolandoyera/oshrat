@@ -23,6 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import { trackEvent } from "@/lib/gtag";
 
 type Ctx = {
   open: () => void;
@@ -125,6 +126,15 @@ function ContactModal({ onClose }: { onClose: () => void }) {
   const [sent, setSent] = useState(false);
   const [isSelectFocused, setIsSelectFocused] = useState(false);
   const closeTimer = React.useRef<number | null>(null);
+  const hasStartedFormRef = React.useRef(false);
+
+  // Fires once per modal open (modal mounts fresh each time) so GA4 can
+  // separate "opened but never touched the form" from "started, then abandoned".
+  const handleFormStart = () => {
+    if (hasStartedFormRef.current) return;
+    hasStartedFormRef.current = true;
+    trackEvent("form_start", { form_type: "modal" });
+  };
 
   // clean up timer if modal unmounts/closes early
   useEffect(() => {
@@ -149,11 +159,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
       setSent(true);
 
       // Track successful project modal form submission in GA4
-      if (typeof window !== "undefined" && (window as any).gtag) {
-        (window as any).gtag("event", "project_form_submit", {
-          form_type: "modal",
-        });
-      }
+      trackEvent("project_form_submit", { form_type: "modal" });
 
       closeTimer.current = window.setTimeout(() => {
         setSent(false);
@@ -222,6 +228,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
           ) : (
             <form
               onSubmit={handleSubmit(onSubmit)}
+              onFocusCapture={handleFormStart}
               noValidate
               className="space-y-8 max-w-[500px] mx-auto">
               <input
@@ -388,6 +395,9 @@ function ContactModal({ onClose }: { onClose: () => void }) {
           <p>
             <a
               href="tel:+19544444803"
+              onClick={() =>
+                trackEvent("phone_click", { link_location: "project_modal" })
+              }
               className="underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-sm font-mono text-[16px] text-accent"
               aria-label="Call Sarvian Design Group at 954-444-4803">
               954-444-4803
