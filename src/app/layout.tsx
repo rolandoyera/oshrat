@@ -13,7 +13,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.sarviandesign.com"),
+  metadataBase: new URL("https://sarviandg.com"),
   title: "Sarvian Design Group",
   description:
     "South Florida architecture and interior luxury design studio in Fort Lauderdale and Miami.",
@@ -29,19 +29,23 @@ export default function RootLayout({
       <body
         className={`${manrope.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
-          <Script
-            src="https://www.googletagmanager.com/gtag/js?id=G-K0ZYTV5JSM"
-            strategy="afterInteractive"
-          />
-          <Script id="google-analytics" strategy="afterInteractive">
-            {`
+          {process.env.VERCEL_ENV === "production" && (
+            <>
+              <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-K0ZYTV5JSM"
+                strategy="afterInteractive"
+              />
+              <Script id="google-analytics" strategy="afterInteractive">
+                {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
               gtag('config', 'G-K0ZYTV5JSM');
             `}
-          </Script>
+              </Script>
+            </>
+          )}
           <Navbar />
           {children}
           <Footer />

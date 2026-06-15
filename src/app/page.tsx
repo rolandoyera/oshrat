@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "Fort Lauderdale & Miami Interior Design | Sarvian Design Group",
     description:
       "Sarvian Design delivers Fort Lauderdale interior design, Miami interior design, and South Florida architecture.",
-    url: "https://www.sarviandesign.com/",
+    url: "https://sarviandg.com/",
     siteName: "Sarvian Design Group",
     locale: "en_US",
     type: "website",
