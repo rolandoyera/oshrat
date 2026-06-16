@@ -8,12 +8,12 @@ import { client } from "@/sanity/lib/client";
 export const metadata: Metadata = {
   title: "Fort Lauderdale & Miami Interior Design",
   description:
-    "Sarvian Design delivers Fort Lauderdale interior design, Miami interior design, and South Florida architecture.",
+    "Sarvian Design Group is a premier interior design and architecture firm based in Palm Beach, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "Fort Lauderdale & Miami Interior Design | Sarvian Design Group",
     description:
-      "Sarvian Design delivers Fort Lauderdale interior design, Miami interior design, and South Florida architecture.",
+      "Sarvian Design Group is a premier interior design and architecture firm based in Palm Beach, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
     url: "https://sarviandg.com/",
     siteName: "Sarvian Design Group",
     locale: "en_US",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Fort Lauderdale & Miami Interior Design",
     description:
-      "Sarvian Design delivers Fort Lauderdale interior design, Miami interior design, and South Florida architecture.",
+      "Sarvian Design Group is a premier interior design and architecture firm based in Palm Beach, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
   },
 };
 

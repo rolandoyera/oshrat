@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Sarvian Design Group",
   },
   description:
-    "Sarvian Design Group is a premier interior design and architecture firm based in Palm Beach, serving South Florida's tri-state area since 2014. Founded and led by owner, creative director, and lead designer Oshrat Rothschild, we specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
+    "Sarvian Design Group is a premier interior design and architecture firm based in Palm Beach, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     title: "Sarvian Design Group",
     description:
-      "Sarvian Design Group is a premier interior design and architecture firm base d in Palm Beach, serving South Florida's tri-state area since 2014. Founded and led by owner, creative director, and lead designer Oshrat Rothschild, we specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
+      "Sarvian Design Group is a premier interior design and architecture firm based in Palm Beach, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
   },
   twitter: {
     card: "summary_large_image",
