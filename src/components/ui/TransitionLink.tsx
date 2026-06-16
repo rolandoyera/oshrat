@@ -9,6 +9,10 @@ interface TransitionLinkProps extends LinkProps {
   className?: string;
   "aria-label"?: string;
   style?: React.CSSProperties;
+  /** next/image srcset of the destination hero, warmed on hover/focus. */
+  preloadSrcSet?: string;
+  /** sizes attribute matching the destination hero (default: 100vw). */
+  preloadSizes?: string;
 }
 
 export default function TransitionLink({
@@ -17,9 +21,29 @@ export default function TransitionLink({
   className,
   "aria-label": ariaLabel,
   style,
+  preloadSrcSet,
+  preloadSizes = "100vw",
   ...props
 }: TransitionLinkProps) {
   const router = useRouter();
+  const preloaded = React.useRef(false);
+
+  // Warm the destination hero (the large image that otherwise loads late) and
+  // its RSC payload the moment the user signals intent — before they click.
+  const preload = () => {
+    if (preloaded.current || !preloadSrcSet) return;
+    preloaded.current = true;
+
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.setAttribute("imagesrcset", preloadSrcSet);
+    link.setAttribute("imagesizes", preloadSizes);
+    document.head.appendChild(link);
+
+    const hrefStr = typeof href === "string" ? href : href.pathname || "";
+    router.prefetch(hrefStr);
+  };
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
@@ -31,23 +55,59 @@ export default function TransitionLink({
       return;
     }
 
+    // The shared element we morph into is the destination hero, tagged with
+    // view-transition-name: hero-<slug>. Hold the transition until that image
+    // has actually decoded so the morph lands on a painted image, not a blank.
+    const slug = hrefStr.match(/\/projects\/([^/?#]+)/)?.[1];
+    const heroName = slug ? `hero-${slug}` : null;
+    // The origin card shares the same view-transition-name; wait for it to
+    // leave the DOM so we don't match it instead of the destination hero.
+    const originImg = e.currentTarget.querySelector("img");
+
     document.startViewTransition(() => {
       return new Promise<void>((resolve) => {
+        let settled = false;
+        const done = () => {
+          if (settled) return;
+          settled = true;
+          observer.disconnect();
+          resolve();
+        };
+
         router.push(hrefStr);
 
-        // Deterministically wait for Next.js to update the DOM
-        const observer = new MutationObserver(() => {
-          observer.disconnect();
-          resolve();
-        });
+        const tryResolve = async () => {
+          // No hero to wait for: resolve as soon as the DOM updates.
+          if (!heroName) return done();
 
+          // Old page still mounted — its card would be a false match.
+          if (originImg?.isConnected) return;
+
+          const img = document.querySelector<HTMLImageElement>(
+            `img[style*="${heroName}"]`,
+          );
+          if (!img) return; // hero not in the DOM yet — keep observing
+
+          observer.disconnect();
+          try {
+            if (!img.complete) {
+              await new Promise<void>((res) => {
+                img.addEventListener("load", () => res(), { once: true });
+                img.addEventListener("error", () => res(), { once: true });
+              });
+            }
+            await img.decode().catch(() => {});
+          } finally {
+            done();
+          }
+        };
+
+        // Wait for Next.js to render the new page, then for the hero image.
+        const observer = new MutationObserver(tryResolve);
         observer.observe(document.body, { childList: true, subtree: true });
 
-        // Safety fallback timeout to prevent UI freezes
-        setTimeout(() => {
-          observer.disconnect();
-          resolve();
-        }, 1500);
+        // Safety cap so the old page never stays frozen indefinitely.
+        setTimeout(done, 2500);
       });
     });
   };
@@ -57,6 +117,9 @@ export default function TransitionLink({
       href={href}
       className={className}
       onClick={handleClick}
+      onPointerEnter={preload}
+      onFocus={preload}
+      onTouchStart={preload}
       aria-label={ariaLabel}
       style={style}
       {...props}

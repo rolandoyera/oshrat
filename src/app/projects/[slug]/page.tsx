@@ -3,7 +3,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
-import { urlFor, type SanityImageWithAlt } from "@/sanity/lib/image";
+import {
+  urlFor,
+  heroImageUrl,
+  type SanityImageWithAlt,
+} from "@/sanity/lib/image";
 import { notFound } from "next/navigation";
 import type { PortableTextBlock } from "@portabletext/types";
 import ProjectButton from "@/components/ui/ProjectButton";
@@ -185,7 +189,7 @@ export default async function ProjectPage({
         {hero && (
           <section className="relative h-dvh overflow-hidden">
             <Image
-              src={urlFor(hero).width(2880).height(1620).auto("format").url()}
+              src={heroImageUrl(hero)}
               alt={hero.alt || data.title}
               fill
               priority

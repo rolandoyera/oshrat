@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import {
+  heroPreloadSrcSet,
+  type SanityImageWithAlt,
+} from "@/sanity/lib/image";
 import H1 from "@/components/ui/H1";
 import H2 from "@/components/ui/H2";
 
@@ -29,7 +33,9 @@ const QUERY = groq`
     location,
     year,
     "slug": slug.current,
-    "imageUrl": mainImage.asset->url
+    "imageUrl": mainImage.asset->url,
+    heroImage,
+    mainImage
   } | order(coalesce(year, 0) desc, _createdAt desc)
 `;
 
@@ -43,6 +49,8 @@ export default async function ProjectsPage() {
     location: string;
     slug: string;
     imageUrl: string;
+    heroImage?: SanityImageWithAlt;
+    mainImage?: SanityImageWithAlt;
   }[] = [];
 
   try {
@@ -66,10 +74,15 @@ export default async function ProjectsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((p, index) => (
+          {projects.map((p, index) => {
+            const heroSource = p.heroImage ?? p.mainImage;
+            return (
             <TransitionLink
               key={p._id}
               href={`/projects/${p.slug}`}
+              preloadSrcSet={
+                heroSource ? heroPreloadSrcSet(heroSource) : undefined
+              }
               className="group relative overflow-hidden block project-card-animate rounded shadow"
               style={
                 { animationDelay: `${index * 0.12}s` } as React.CSSProperties
@@ -101,7 +114,8 @@ export default async function ProjectsPage() {
                 </div>
               </div>
             </TransitionLink>
-          ))}
+            );
+          })}
         </div>
       </main>
     </div>
