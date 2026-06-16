@@ -1,4 +1,5 @@
 // app/projects/page.tsx
+import type { Metadata } from "next";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
@@ -6,6 +7,20 @@ import H1 from "@/components/ui/H1";
 import H2 from "@/components/ui/H2";
 
 export const revalidate = 60; // Revalidate the page every 60 seconds
+
+const DESCRIPTION =
+  "Explore our latest architecture and interior design projects across South Florida — Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: DESCRIPTION,
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Projects",
+    description: DESCRIPTION,
+    url: "/projects",
+  },
+};
 
 const QUERY = groq`
   *[_type == "project" && defined(mainImage)]{

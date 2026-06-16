@@ -1,4 +1,5 @@
 // app/projects/[slug]/page.tsx
+import type { Metadata } from "next";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
@@ -10,6 +11,7 @@ import NextProject from "@/components/NextProject";
 import PanoramaViewer from "@/components/ui/PanoramaViewer";
 import P from "@/components/ui/P";
 import ProjectDescription from "./project-description";
+import { JsonLd, projectJsonLd } from "@/lib/structured-data";
 
 /* -------------------- Types -------------------- */
 
@@ -30,6 +32,9 @@ type Project = {
   intro?: string;
   description?: PortableTextBlock[];
   body?: PortableTextBlock[];
+
+  seoDescription?: string;
+  keywords?: string[];
 };
 
 /* -------------------- GROQ -------------------- */
@@ -48,7 +53,9 @@ const PROJECT_BY_SLUG = groq`*[_type=="project" && slug.current == $slug][0]{
   panorama360{ ..., alt, asset->{ url, metadata{ dimensions } } },
   intro,
   description,
-  body
+  body,
+  seoDescription,
+  keywords
 }`;
 
 const ALL_SLUGS = groq`*[_type=="project" && defined(slug.current)]{ "slug": slug.current }`;
@@ -65,6 +72,55 @@ export const revalidate = 60;
 export async function generateStaticParams() {
   const slugs: { slug: string }[] = await client.fetch(ALL_SLUGS);
   return slugs.map((s) => ({ slug: s.slug }));
+}
+
+/* -------------------- Metadata -------------------- */
+
+const PROJECT_META = groq`*[_type=="project" && slug.current == $slug][0]{
+  title,
+  location,
+  seoDescription,
+  intro,
+  "ogImage": coalesce(heroImage.asset->url, mainImage.asset->url)
+}`;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const data = await client.fetch<{
+    title?: string;
+    location?: string;
+    seoDescription?: string;
+    intro?: string;
+    ogImage?: string;
+  } | null>(PROJECT_META, { slug });
+
+  if (!data?.title) return { title: "Project" };
+
+  const title = data.location ? `${data.title} — ${data.location}` : data.title;
+  const description =
+    data.seoDescription?.trim() ||
+    data.intro?.trim() ||
+    `${data.title}${data.location ? ` in ${data.location}` : ""} — a project by Sarvian Design Group.`;
+  const url = `/projects/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+      images: data.ogImage
+        ? [`${data.ogImage}?w=1200&h=630&fit=crop&auto=format`]
+        : undefined,
+    },
+  };
 }
 
 /* -------------------- Page -------------------- */
@@ -115,6 +171,15 @@ export default async function ProjectPage({
 
   return (
     <main>
+      <JsonLd
+        data={projectJsonLd({
+          slug,
+          title: data.title,
+          location: data.location,
+          description: data.seoDescription,
+          keywords: data.keywords,
+        })}
+      />
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}
         {hero && (

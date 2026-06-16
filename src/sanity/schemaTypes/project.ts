@@ -69,6 +69,28 @@ export default defineType({
       of: [{ type: "block" }],
     }),
 
+    // SEO: short description for search engines & structured data
+    defineField({
+      name: "seoDescription",
+      title: "SEO Description",
+      type: "text",
+      rows: 2,
+      description:
+        "Short summary for search results & structured data (~160 chars). Falls back to an auto-generated line if empty.",
+      validation: (Rule) => Rule.max(300),
+    }),
+
+    // SEO: topic keywords (schema.org `about`)
+    defineField({
+      name: "keywords",
+      title: "Keywords",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+      description:
+        'Topics for structured data, e.g. "Luxury interior design", "Residential remodel".',
+    }),
+
     // 7) Images (kept last, as requested)
 
     // Optional banner image (shown full‑bleed on the page)

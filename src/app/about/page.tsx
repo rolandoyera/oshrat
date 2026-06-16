@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import AboutContent from "./about-content";
 
 export const metadata: Metadata = {
-  title: "About Sarvian Design Group",
+  title: "About Oshrat Rothschild | Luxury Interior Designer in South Florida",
   description: "Learn more about SDG and our mission.",
   openGraph: {
     title: "About Sarvian Design Group",
