@@ -48,7 +48,7 @@ export function projectJsonLd(p: {
   const url = `${SITE_URL}/projects/${p.slug}`;
   const description =
     p.description?.trim() ||
-    `A luxury ${p.location ? `${p.location}, Florida` : "South Florida"} property by Sarvian Design Group.`;
+    `A luxury ${p.location || "South Florida"} property by Sarvian Design Group.`;
 
   return {
     "@context": "https://schema.org",
@@ -61,7 +61,7 @@ export function projectJsonLd(p: {
     ...(p.location && {
       locationCreated: {
         "@type": "Place",
-        name: `${p.location}, Florida`,
+        name: p.location,
       },
     }),
     ...(p.keywords?.length && { about: p.keywords }),
