@@ -5,11 +5,10 @@ export const SITE_URL = "https://www.sarviandg.com";
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 
 /**
- * Sitewide business node, rendered once in the root layout.
- * Per-page nodes reference it by @id (BUSINESS_ID) instead of redefining it.
+ * Sitewide business node. Always the first node in every page's @graph
+ * (see `siteGraph`); page-specific nodes reference it by @id (BUSINESS_ID).
  */
-export const businessJsonLd = {
-  "@context": "https://schema.org",
+const businessNode = {
   "@type": "InteriorDesigner",
   "@id": BUSINESS_ID,
   name: "Sarvian Design Group",
@@ -40,6 +39,17 @@ export const businessJsonLd = {
     "Miami-Dade County, FL",
   ],
 };
+
+/**
+ * Wraps page-specific nodes into a single @graph that always leads with the
+ * sitewide business node. Every page renders exactly one of these.
+ */
+export function siteGraph(nodes: object[] = []) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [businessNode, ...nodes],
+  };
+}
 
 /** Per-project CreativeWork node, linked to the business as its creator. */
 function projectNode(p: {
@@ -108,10 +118,7 @@ export function projectPageGraph(p: {
   year?: number;
   images?: string[];
 }) {
-  return {
-    "@context": "https://schema.org",
-    "@graph": [breadcrumbNode(p.slug, p.title), projectNode(p)],
-  };
+  return siteGraph([breadcrumbNode(p.slug, p.title), projectNode(p)]);
 }
 
 /** Renders a JSON-LD <script>. Escapes `<` so CMS content can't break out of the tag. */

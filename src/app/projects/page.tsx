@@ -4,6 +4,7 @@ import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
+import { JsonLd, siteGraph } from "@/lib/structured-data";
 import H2 from "@/components/ui/H2";
 
 export const revalidate = 60; // Revalidate the page every 60 seconds
@@ -59,6 +60,7 @@ export default async function ProjectsPage() {
 
   return (
     <div>
+      <JsonLd data={siteGraph()} />
       <div className="h-24 bg-linear-to-b from-taupe-900 to-taupe-800"></div>
       <main className="px-4 lg:px-8 mb-20">
         <div className="w-full flex flex-col items-center justify-center py-10 lg:py-30">

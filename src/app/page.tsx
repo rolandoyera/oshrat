@@ -4,6 +4,7 @@ import TopSection from "@/components/TopSection";
 import type { Metadata } from "next";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
+import { JsonLd, siteGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "Fort Lauderdale & Miami Interior Design",
@@ -96,6 +97,7 @@ export default async function Home() {
 
   return (
     <>
+      <JsonLd data={siteGraph()} />
       <Carousel items={sliderItems} autoPlayInterval={5000} showArrows={true} />
 
       <section className="min-h-dvh p-6 xl:p-0">

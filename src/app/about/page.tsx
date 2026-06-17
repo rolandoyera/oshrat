@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AboutContent from "./about-content";
+import { JsonLd, siteGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   title: "About Oshrat Rothschild | Luxury Interior Designer in South Florida",
@@ -20,5 +21,10 @@ export const metadata: Metadata = {
 };
 
 export default function AboutPage() {
-  return <AboutContent />;
+  return (
+    <>
+      <JsonLd data={siteGraph()} />
+      <AboutContent />
+    </>
+  );
 }

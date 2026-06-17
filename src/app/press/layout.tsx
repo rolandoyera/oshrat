@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { JsonLd, siteGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/press" },
@@ -7,5 +8,10 @@ export const metadata: Metadata = {
 export default function PressLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
-  return children;
+  return (
+    <>
+      <JsonLd data={siteGraph()} />
+      {children}
+    </>
+  );
 }

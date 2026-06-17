@@ -5,7 +5,6 @@ import { Manrope } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
-import { JsonLd, businessJsonLd } from "@/lib/structured-data";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -43,7 +42,6 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${manrope.variable} font-sans antialiased bg-background text-foreground`}>
-        <JsonLd data={businessJsonLd} />
         <Providers>
           {process.env.VERCEL_ENV === "production" && (
             <>
