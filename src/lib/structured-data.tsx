@@ -14,6 +14,7 @@ const businessNode = {
   name: "Sarvian Design Group",
   url: SITE_URL,
   logo: `${SITE_URL}/assets/logo_sdg-horizontal.svg`,
+  sameAs: ["https://www.instagram.com/sarviandesigngroup/"],
   telephone: "+1-954-444-4803",
   address: {
     "@type": "PostalAddress",
@@ -85,12 +86,12 @@ function projectNode(p: {
   };
 }
 
-/** BreadcrumbList node. Last item omits `item` to mark the current page. */
+/** BreadcrumbList node. Every crumb (including the current page) carries its `item` URL. */
 function breadcrumbNode(slug: string, title: string) {
   const items = [
     { name: "Home", url: `${SITE_URL}/` },
     { name: "Projects", url: `${SITE_URL}/projects` },
-    { name: title },
+    { name: title, url: `${SITE_URL}/projects/${slug}` },
   ];
   return {
     "@type": "BreadcrumbList",
