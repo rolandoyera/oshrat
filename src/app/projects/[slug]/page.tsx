@@ -16,12 +16,7 @@ import NextProject from "@/components/NextProject";
 import PanoramaViewer from "@/components/ui/PanoramaViewer";
 import P from "@/components/ui/P";
 import ProjectDescription from "./project-description";
-import {
-  JsonLd,
-  projectJsonLd,
-  breadcrumbJsonLd,
-  SITE_URL,
-} from "@/lib/structured-data";
+import { JsonLd, projectPageGraph } from "@/lib/structured-data";
 
 /* -------------------- Types -------------------- */
 
@@ -45,6 +40,7 @@ type Project = {
 
   seoDescription?: string;
   keywords?: string[];
+  materials?: string[];
 };
 
 /* -------------------- GROQ -------------------- */
@@ -65,7 +61,8 @@ const PROJECT_BY_SLUG = groq`*[_type=="project" && slug.current == $slug][0]{
   description,
   body,
   seoDescription,
-  keywords
+  keywords,
+  materials
 }`;
 
 const ALL_SLUGS = groq`*[_type=="project" && defined(slug.current)]{ "slug": slug.current }`;
@@ -179,23 +176,28 @@ export default async function ProjectPage({
     .sort((a, b) => (a.group === b.group ? a.idx - b.idx : a.group - b.group))
     .map((x) => x.img);
 
+  // Absolute image URLs for structured data: hero first, then gallery (deduped).
+  const imageUrls = [
+    ...new Set(
+      [hero, ...sortedGallery]
+        .map((img) => img?.asset?.url)
+        .filter((url): url is string => Boolean(url)),
+    ),
+  ];
+
   return (
     <main>
       <JsonLd
-        data={projectJsonLd({
+        data={projectPageGraph({
           slug,
           title: data.title,
           location: data.location,
           description: data.seoDescription,
           keywords: data.keywords,
+          materials: data.materials,
+          year: data.year,
+          images: imageUrls,
         })}
-      />
-      <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Home", url: `${SITE_URL}/` },
-          { name: "Projects", url: `${SITE_URL}/projects` },
-          { name: data.title },
-        ])}
       />
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}

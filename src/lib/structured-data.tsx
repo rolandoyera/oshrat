@@ -4,13 +4,17 @@
 export const SITE_URL = "https://www.sarviandg.com";
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 
-/** Sitewide business node. Referenced by @id from per-project nodes. */
+/**
+ * Sitewide business node, rendered once in the root layout.
+ * Per-page nodes reference it by @id (BUSINESS_ID) instead of redefining it.
+ */
 export const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "InteriorDesigner",
   "@id": BUSINESS_ID,
   name: "Sarvian Design Group",
   url: SITE_URL,
+  logo: `${SITE_URL}/assets/logo_sdg-horizontal.svg`,
   telephone: "+1-954-444-4803",
   address: {
     "@type": "PostalAddress",
@@ -38,12 +42,15 @@ export const businessJsonLd = {
 };
 
 /** Per-project CreativeWork node, linked to the business as its creator. */
-export function projectJsonLd(p: {
+function projectNode(p: {
   slug: string;
   title: string;
   location?: string;
   description?: string;
   keywords?: string[];
+  materials?: string[];
+  year?: number;
+  images?: string[];
 }) {
   const url = `${SITE_URL}/projects/${p.slug}`;
   const description =
@@ -51,36 +58,59 @@ export function projectJsonLd(p: {
     `A luxury ${p.location || "South Florida"} property by Sarvian Design Group.`;
 
   return {
-    "@context": "https://schema.org",
     "@type": "CreativeWork",
     "@id": `${url}#project`,
     name: p.title,
     description,
     url,
+    mainEntityOfPage: url,
     creator: { "@id": BUSINESS_ID },
     ...(p.location && {
-      locationCreated: {
-        "@type": "Place",
-        name: p.location,
-      },
+      locationCreated: { "@type": "Place", name: p.location },
     }),
+    ...(p.year && { dateCreated: String(p.year) }),
+    ...(p.materials?.length && { material: p.materials.join(", ") }),
     ...(p.keywords?.length && { about: p.keywords }),
+    ...(p.images?.length && { image: p.images }),
   };
 }
 
 /** BreadcrumbList node. Last item omits `item` to mark the current page. */
-export function breadcrumbJsonLd(
-  items: { name: string; url?: string }[],
-) {
+function breadcrumbNode(slug: string, title: string) {
+  const items = [
+    { name: "Home", url: `${SITE_URL}/` },
+    { name: "Projects", url: `${SITE_URL}/projects` },
+    { name: title },
+  ];
   return {
-    "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": `${SITE_URL}/projects/${slug}#breadcrumb`,
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
       ...(item.url && { item: item.url }),
     })),
+  };
+}
+
+/**
+ * Full JSON-LD @graph for a project detail page: breadcrumb + project node.
+ * The business node is defined once in the root layout and referenced by @id.
+ */
+export function projectPageGraph(p: {
+  slug: string;
+  title: string;
+  location?: string;
+  description?: string;
+  keywords?: string[];
+  materials?: string[];
+  year?: number;
+  images?: string[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [breadcrumbNode(p.slug, p.title), projectNode(p)],
   };
 }
 

@@ -88,7 +88,18 @@ export default defineType({
       of: [{ type: "string" }],
       options: { layout: "tags" },
       description:
-        'Topics for structured data, e.g. "Luxury interior design", "Residential remodel".',
+        'Topics for structured data, e.g. "Luxury interior design", "Residential remodel". Press Enter after each one.',
+    }),
+
+    // SEO: materials used (schema.org `material`)
+    defineField({
+      name: "materials",
+      title: "Materials",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+      description:
+        'Key materials for structured data, e.g. "Wood paneling", "Marble", "Herringbone flooring". Press Enter after each one.',
     }),
 
     // 7) Images (kept last, as requested)
