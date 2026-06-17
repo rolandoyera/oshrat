@@ -110,7 +110,7 @@ export async function generateMetadata({
 
   if (!data?.title) return { title: "Project" };
 
-  const title = data.location ? `${data.title} — ${data.location}` : data.title;
+  const title = data.location ? `${data.title} | ${data.location}` : data.title;
   const description =
     data.seoDescription?.trim() ||
     data.intro?.trim() ||
@@ -222,7 +222,9 @@ export default async function ProjectPage({
             <li>
               <Link href="/projects">Projects</Link>
             </li>
-            <li aria-current="page" className="before:content-['>'] before:mr-2">
+            <li
+              aria-current="page"
+              className="before:content-['>'] before:mr-2">
               {data.title}
             </li>
           </ol>
