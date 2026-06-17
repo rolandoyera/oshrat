@@ -3,11 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
-import {
-  heroPreloadSrcSet,
-  type SanityImageWithAlt,
-} from "@/sanity/lib/image";
-import H1 from "@/components/ui/H1";
+import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
 import H2 from "@/components/ui/H2";
 
 export const revalidate = 60; // Revalidate the page every 60 seconds
@@ -41,6 +37,7 @@ const QUERY = groq`
 
 import TransitionLink from "@/components/ui/TransitionLink";
 import P from "@/components/ui/P";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 export default async function ProjectsPage() {
   let projects: {
@@ -65,55 +62,68 @@ export default async function ProjectsPage() {
       <div className="h-24 bg-linear-to-b from-taupe-900 to-taupe-800"></div>
       <main className="px-4 lg:px-8 mb-20">
         <div className="w-full flex flex-col items-center justify-center py-10 lg:py-30">
-          <H1>Latest Projects</H1>
-          <P className="mt-4 max-w-4xl text-center">
-            We had the privilege of collaborating with clients across South
-            Florida, including Miami, Fort Lauderdale, Coral Gables, Weston,
-            Boca Raton, and Palm Beach.
-          </P>
+          <TextEffect
+            preset="fade-in-blur"
+            className="text-4xl lg:text-7xl font-normal text-balance tracking-tight uppercase"
+            speedReveal={5}
+            speedSegment={0.3}
+            as="h1">
+            Latest Projects
+          </TextEffect>
+          <div className="max-w-[900px]">
+            <TextEffect
+              preset="fade-in-blur"
+              speedReveal={5}
+              speedSegment={0.3}
+              className="text-base lg:text-[22px] font-light text-balance leading-[1.55] text-center">
+              We've had the privilege of collaborating with clients across South
+              Florida, including Miami, Fort Lauderdale, Coral Gables, Weston,
+              Boca Raton, and Palm Beach.
+            </TextEffect>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((p, index) => {
             const heroSource = p.heroImage ?? p.mainImage;
             return (
-            <TransitionLink
-              key={p._id}
-              href={`/projects/${p.slug}`}
-              preloadSrcSet={
-                heroSource ? heroPreloadSrcSet(heroSource) : undefined
-              }
-              className="group relative overflow-hidden block project-card-animate rounded shadow"
-              style={
-                { animationDelay: `${index * 0.12}s` } as React.CSSProperties
-              }
-              aria-label={`${p.title} — ${p.location}`}>
-              <div className="relative w-full aspect-4/3">
-                <Image
-                  src={p.imageUrl}
-                  alt={p.title}
-                  priority={index < 3}
-                  fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                  quality={90}
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  style={
-                    {
-                      viewTransitionName: `hero-${p.slug}`,
-                    } as React.CSSProperties
-                  }
-                />
-                {/* Hover overlay */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[hsl(35,15,10)]/55 text-white backdrop-blur-xs">
-                  <H2 className="text-white transition-all duration-300 ease-out translate-y-[-16px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
-                    {p.title}
-                  </H2>
-                  <P className="text-lg mt-1 transition-all duration-300 ease-out translate-y-[16px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-75">
-                    {p.location}
-                  </P>
+              <TransitionLink
+                key={p._id}
+                href={`/projects/${p.slug}`}
+                preloadSrcSet={
+                  heroSource ? heroPreloadSrcSet(heroSource) : undefined
+                }
+                className="group relative overflow-hidden block project-card-animate rounded shadow"
+                style={
+                  { animationDelay: `${index * 0.12}s` } as React.CSSProperties
+                }
+                aria-label={`${p.title} — ${p.location}`}>
+                <div className="relative w-full aspect-4/3">
+                  <Image
+                    src={p.imageUrl}
+                    alt={p.title}
+                    priority={index < 3}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    quality={90}
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    style={
+                      {
+                        viewTransitionName: `hero-${p.slug}`,
+                      } as React.CSSProperties
+                    }
+                  />
+                  {/* Hover overlay */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[hsl(35,15,10)]/55 text-white backdrop-blur-xs">
+                    <H2 className="text-white transition-all duration-300 ease-out translate-y-[-16px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                      {p.title}
+                    </H2>
+                    <P className="text-lg mt-1 transition-all duration-300 ease-out translate-y-[16px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-75">
+                      {p.location}
+                    </P>
+                  </div>
                 </div>
-              </div>
-            </TransitionLink>
+              </TransitionLink>
             );
           })}
         </div>

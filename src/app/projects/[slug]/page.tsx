@@ -1,6 +1,7 @@
 // app/projects/[slug]/page.tsx
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import {
@@ -15,7 +16,12 @@ import NextProject from "@/components/NextProject";
 import PanoramaViewer from "@/components/ui/PanoramaViewer";
 import P from "@/components/ui/P";
 import ProjectDescription from "./project-description";
-import { JsonLd, projectJsonLd } from "@/lib/structured-data";
+import {
+  JsonLd,
+  projectJsonLd,
+  breadcrumbJsonLd,
+  SITE_URL,
+} from "@/lib/structured-data";
 
 /* -------------------- Types -------------------- */
 
@@ -184,6 +190,13 @@ export default async function ProjectPage({
           keywords: data.keywords,
         })}
       />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", url: `${SITE_URL}/` },
+          { name: "Projects", url: `${SITE_URL}/projects` },
+          { name: data.title },
+        ])}
+      />
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}
         {hero && (
@@ -204,9 +217,19 @@ export default async function ProjectPage({
             />
           </section>
         )}
+        <nav aria-label="Breadcrumb" className="px-4 xl:px-6 mt-2">
+          <ol className="flex items-center gap-2">
+            <li>
+              <Link href="/projects">Projects</Link>
+            </li>
+            <li aria-current="page" className="before:content-['>'] before:mr-2">
+              {data.title}
+            </li>
+          </ol>
+        </nav>
 
         {/* 2) Content row: left = info (sticky), right = gallery */}
-        <section className="mt-6 grid grid-cols-1 xl:grid-cols-12 gap-8 px-4 xl:p-6">
+        <section className="grid grid-cols-1 xl:grid-cols-12 gap-8 px-4 xl:p-6">
           {/* LEFT: Project info */}
           <aside className="xl:col-span-4">
             <div className="xl:sticky xl:top-22">

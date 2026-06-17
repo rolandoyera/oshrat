@@ -68,6 +68,22 @@ export function projectJsonLd(p: {
   };
 }
 
+/** BreadcrumbList node. Last item omits `item` to mark the current page. */
+export function breadcrumbJsonLd(
+  items: { name: string; url?: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      ...(item.url && { item: item.url }),
+    })),
+  };
+}
+
 /** Renders a JSON-LD <script>. Escapes `<` so CMS content can't break out of the tag. */
 export function JsonLd({ data }: { data: object }) {
   return (
