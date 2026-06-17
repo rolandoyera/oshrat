@@ -23,7 +23,7 @@ export default function ArrowButton({
   ...props
 }: ArrowButtonProps) {
   const classes = cn(
-    "group inline-flex h-12 items-center gap-2.5 rounded text-cream-100",
+    "group inline-flex h-12 items-center gap-2.5 rounded text-white",
     variant === "primary"
       ? "bg-accent hover:bg-taupe-800"
       : "bg-taupe-800 hover:bg-accent",

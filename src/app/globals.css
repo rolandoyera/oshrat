@@ -13,7 +13,7 @@
   --card-foreground: var(--color-red-700);
   --color-border: var(--sand-400);
   --color-muted: hsl(32 20% 82%);
-  --color-accent: hsl(34, 34%, 48%);
+  --color-accent: hsl(34, 34%, 40%);
   --color-link: hsl(34, 34%, 48%);
 
   --background: var(--cream-100);
