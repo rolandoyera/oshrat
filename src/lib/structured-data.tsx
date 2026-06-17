@@ -14,7 +14,11 @@ const businessNode = {
   name: "Sarvian Design Group",
   url: SITE_URL,
   logo: `${SITE_URL}/assets/logo_sdg-horizontal.svg`,
-  sameAs: ["https://www.instagram.com/sarviandesigngroup/"],
+  sameAs: [
+    "https://www.instagram.com/sarviandesigngroup/",
+    "https://www.houzz.com/hznb/professionals/interior-designers-and-decorators/sarvian-design-group-pfvwus-pf~1582672692",
+    "https://www.linkedin.com/company/sarviandg/",
+  ],
   telephone: "+1-954-444-4803",
   address: {
     "@type": "PostalAddress",
