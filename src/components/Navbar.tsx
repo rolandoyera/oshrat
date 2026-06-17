@@ -77,6 +77,7 @@ export default function Navbar() {
     <Drawer
       direction="right"
       duration={1000}
+      autoFocus
       open={isDrawerOpen}
       onOpenChange={(open) => {
         setIsDrawerOpen(open);
