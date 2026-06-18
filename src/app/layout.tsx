@@ -5,6 +5,7 @@ import { Manrope } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/Navbar";
 import Script from "next/script";
+import { cookies } from "next/headers";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -33,11 +34,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const isInternal =
+    (await cookies()).get("internal_user")?.value === "true";
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -55,7 +59,9 @@ export default function RootLayout({
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
-              gtag('config', 'G-K0ZYTV5JSM');
+              gtag('config', 'G-K0ZYTV5JSM'${
+                isInternal ? ", { 'traffic_type': 'internal' }" : ""
+              });
             `}
               </Script>
             </>
