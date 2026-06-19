@@ -9,7 +9,7 @@ export const BUSINESS_ID = `${SITE_URL}/#business`;
  * (see `siteGraph`); page-specific nodes reference it by @id (BUSINESS_ID).
  */
 const businessNode = {
-  "@type": "InteriorDesigner",
+  "@type": "HomeAndConstructionBusiness",
   "@id": BUSINESS_ID,
   name: "Sarvian Design Group",
   url: SITE_URL,
