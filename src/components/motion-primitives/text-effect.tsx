@@ -30,6 +30,10 @@ export type TextEffectProps = {
   speedReveal?: number;
   speedSegment?: number;
   trigger?: boolean;
+  inView?: boolean;
+  inViewOnce?: boolean;
+  inViewMargin?: string;
+  inViewAmount?: 'some' | 'all' | number;
   onAnimationComplete?: () => void;
   onAnimationStart?: () => void;
   segmentWrapperClassName?: string;
@@ -217,6 +221,10 @@ export function TextEffect({
   speedReveal = 1,
   speedSegment = 1,
   trigger = true,
+  inView = false,
+  inViewOnce = true,
+  inViewMargin = '0px',
+  inViewAmount = 'some',
   onAnimationComplete,
   onAnimationStart,
   segmentWrapperClassName,
@@ -269,7 +277,16 @@ export function TextEffect({
       {trigger && (
         <MotionTag
           initial='hidden'
-          animate='visible'
+          {...(inView
+            ? {
+                whileInView: 'visible',
+                viewport: {
+                  once: inViewOnce,
+                  margin: inViewMargin as never,
+                  amount: inViewAmount,
+                },
+              }
+            : { animate: 'visible' })}
           exit='exit'
           variants={computedVariants.container}
           className={className}

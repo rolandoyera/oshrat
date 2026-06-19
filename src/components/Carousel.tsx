@@ -2,9 +2,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import TransitionLink from "@/components/ui/TransitionLink";
 import Image from "next/image";
-import H2 from "./ui/H2";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import ArrowButton from "./ui/ArrowButton";
+import { TextEffect } from "./motion-primitives/text-effect";
 
 interface CarouselItem {
   id: string | number;
@@ -128,9 +128,15 @@ const Carousel: React.FC<CarouselProps> = ({
                         willChange: "transform",
                       }}>
                       {item.title && (
-                        <H2 className="text-white text-4xl lg:text-6xl mb-2">
+                        <TextEffect
+                          preset="fade-in-blur"
+                          speedReveal={5}
+                          speedSegment={0.3}
+                          as="h2"
+                          inView
+                          className="text-white text-[clamp(2.25rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight mb-2">
                           {item.title}
-                        </H2>
+                        </TextEffect>
                       )}
                       {item.description && (
                         <p className="text-white/90 text-base lg:text-xl mb-8">

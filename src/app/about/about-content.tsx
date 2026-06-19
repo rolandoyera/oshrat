@@ -1,55 +1,14 @@
 "use client";
 
-import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Connect from "@/components/Connect";
 import Container from "@/components/ui/Container";
 import H2 from "@/components/ui/H2";
 import Main from "@/components/ui/Main";
 import P from "@/components/ui/P";
-import { cn } from "@/lib/utils";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
-
-// ScrollReveal utility to wrap blocks with buttery-smooth entrance transitions
-function ScrollReveal({
-  children,
-  className = "",
-  delay = 0,
-}: {
-  children: React.ReactNode;
-  className?: string;
-  delay?: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-        }
-      },
-      { threshold: 0.15 },
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={cn(
-        "transition-all duration-1000 ease-[cubic-bezier(.215,.61,.355,1)]",
-        visible ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0",
-        className,
-      )}>
-      {children}
-    </div>
-  );
-}
 
 export default function AboutContent() {
   const [scrollY, setScrollY] = useState(0);
