@@ -103,16 +103,18 @@ export default function AboutContent() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center pt-32 border-t border-border/20">
           {/* Left Column: Portrait */}
           <div className="lg:col-span-5">
-            <ScrollReveal className="relative w-full aspect-3/4 overflow-hidden rounded shadow-2xl group border border-border/10">
-              <Image
-                src="/about/sarvian-design-group-oshrat-rothschild.jpg"
-                alt="Oshrat Rothschild - Principal Designer of Sarvian Design Group"
-                fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
-                quality={90}
-                className="object-cover object-top transition-transform duration-1000 ease-[cubic-bezier(.215,.61,.355,1)] group-hover:scale-[1.025]"
-              />
-              <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent pointer-events-none" />
+            <ScrollReveal className="rounded shadow-2xl group border border-border/10">
+              <div className="relative w-full aspect-3/4 overflow-hidden">
+                <Image
+                  src="/about/sarvian-design-group-oshrat-rothschild.jpg"
+                  alt="Oshrat Rothschild - Principal Designer of Sarvian Design Group"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  quality={90}
+                  className="object-cover object-top transition-transform duration-1000 ease-[cubic-bezier(.215,.61,.355,1)] group-hover:scale-[1.025]"
+                />
+                <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent pointer-events-none" />
+              </div>
             </ScrollReveal>
           </div>
 
@@ -124,12 +126,12 @@ export default function AboutContent() {
               </span>
             </ScrollReveal>
             <ScrollReveal delay={100}>
-              <H2 className="font-normal uppercase tracking-tight">
+              <H2 className="font-normal uppercase tracking-tight leading-none">
                 Oshrat Rothschild
               </H2>
             </ScrollReveal>
-            <ScrollReveal delay={150}>
-              <p className="text-sm md:text-base font-mono uppercase text-taupe-500 -mt-2">
+            <ScrollReveal delay={150} className="-mt-4">
+              <p className="text-sm md:text-base font-mono uppercase text-taupe-500">
                 Principal & Lead Designer
               </p>
             </ScrollReveal>

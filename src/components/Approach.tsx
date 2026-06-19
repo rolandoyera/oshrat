@@ -55,7 +55,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
       title: "Discovery and Vision",
       content:
         "We begin with a collaboration to understand goals, lifestyle, and budget, then walk the site to assess opportunities. We discuss aesthetic direction, indoor–outdoor flow, and functional needs for every space. You'll receive a concise project brief outlining scope, priorities, mood references, timelines, and options for phasing.",
-      image: "/assets/swatch-2.jpg",
+      image: "/assets/swatch.jpg",
       alt: "Samples of marble, wood and fabrics for a home design project.",
     },
     {
