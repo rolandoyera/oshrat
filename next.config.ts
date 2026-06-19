@@ -11,6 +11,30 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: "/about-us",
+        destination: "/about",
+        permanent: true,
+      },
+      {
+        source: "/publications",
+        destination: "/press",
+        permanent: true,
+      },
+      {
+        source: "/aventura-townhome",
+        destination: "/projects/aventura-townhome",
+        permanent: true,
+      },
+      {
+        source: "/south-beach",
+        destination: "/projects/south-beach",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
