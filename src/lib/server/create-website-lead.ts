@@ -84,6 +84,8 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     id: activityRef.id,
     organizationId,
     type: "lead_created",
+    channel: "website",
+    importance: "high",
     actor: WEBSITE_ACTOR,
     source: { type: "lead", id: leadRef.id, label },
     entity: { type: "lead", id: leadRef.id, label },
