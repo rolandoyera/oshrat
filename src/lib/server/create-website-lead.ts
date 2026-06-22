@@ -2,10 +2,13 @@ import "server-only";
 
 import { getFirebaseAdminDb } from "@/lib/server/firebase-admin";
 
+// This site's identity, stamped onto every lead it originates. The CRM dashboard
+// is multi-tenant and displays whatever name travels with the record, so the
+// origin must be declared here (by the originating site), never inferred there.
 const WEBSITE_ACTOR = {
   type: "system" as const,
   id: "website",
-  name: "Website",
+  name: "sarviandg.com",
 };
 
 const CRM_PROPERTY_TYPES = new Set([
@@ -70,8 +73,8 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
         : "Website project form",
     ...(propertyType ? { propertyType } : {}),
     ...(input.message ? { notes: input.message } : {}),
-    createdBy: WEBSITE_ACTOR.id,
-    updatedBy: WEBSITE_ACTOR.id,
+    createdBy: WEBSITE_ACTOR,
+    updatedBy: WEBSITE_ACTOR,
     createdAt: now,
     updatedAt: now,
     lastActivityAt: now,
