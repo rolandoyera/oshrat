@@ -85,7 +85,8 @@ export default function ContactModalProvider({
 /* -------------------- Modal -------------------- */
 
 const ContactSchema = z.object({
-  name: z.string().min(2, "Please enter your full name"),
+  firstName: z.string().trim().min(1, "Please enter your first name"),
+  lastName: z.string().trim().optional(),
   phone: z
     .string()
     .trim()
@@ -113,7 +114,8 @@ function ContactModal({ onClose }: { onClose: () => void }) {
   } = useForm<ContactValues>({
     resolver: zodResolver(ContactSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       company: "",
@@ -247,24 +249,42 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                 {...register("ts", { valueAsNumber: true })}
               />
 
-              <div>
-                <label htmlFor="name" className="sr-only">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  autoComplete="name"
-                  placeholder="Your Name *"
-                  aria-invalid={!!errors.name || undefined}
-                  aria-describedby={errors.name ? "name-error" : undefined}
-                  className="w-full"
-                  {...register("name")}
-                />
-                {errors.name && (
-                  <p id="name-error" className="mt-1 text-sm text-destructive">
-                    {errors.name.message}
-                  </p>
-                )}
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div>
+                  <label htmlFor="firstName" className="sr-only">
+                    First name
+                  </label>
+                  <Input
+                    id="firstName"
+                    autoComplete="given-name"
+                    placeholder="First Name *"
+                    aria-invalid={!!errors.firstName || undefined}
+                    aria-describedby={
+                      errors.firstName ? "first-name-error" : undefined
+                    }
+                    className="w-full"
+                    {...register("firstName")}
+                  />
+                  {errors.firstName && (
+                    <p
+                      id="first-name-error"
+                      className="mt-1 text-sm text-destructive">
+                      {errors.firstName.message}
+                    </p>
+                  )}
+                </div>
+                <div>
+                  <label htmlFor="lastName" className="sr-only">
+                    Last name
+                  </label>
+                  <Input
+                    id="lastName"
+                    autoComplete="family-name"
+                    placeholder="Last Name"
+                    className="w-full"
+                    {...register("lastName")}
+                  />
+                </div>
               </div>
 
               <div>

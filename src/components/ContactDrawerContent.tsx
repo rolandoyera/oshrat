@@ -19,7 +19,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { trackEvent } from "@/lib/gtag";
 
 const DrawerContactSchema = z.object({
-  name: z.string().min(2, "Please enter your name"),
+  firstName: z.string().trim().min(1, "Please enter your first name"),
+  lastName: z.string().trim().optional(),
   email: z.string().email("Enter a valid email address"),
   phone: z
     .string()
@@ -59,7 +60,8 @@ export default function ContactDrawerContent() {
   } = useForm<DrawerContactValues>({
     resolver: zodResolver(DrawerContactSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       message: "",
@@ -73,7 +75,8 @@ export default function ContactDrawerContent() {
   // We initialize the ts parameter to Date.now() on mount.
   useEffect(() => {
     reset({
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
       phone: "",
       message: "",
@@ -206,17 +209,25 @@ export default function ContactDrawerContent() {
                   {...register("ts", { valueAsNumber: true })}
                 />
 
-                <div>
+                <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div>
+                    <Input
+                      placeholder="First Name *"
+                      autoComplete="given-name"
+                      aria-invalid={!!errors.firstName || undefined}
+                      {...register("firstName")}
+                    />
+                    {errors.firstName && (
+                      <p className="mt-1 text-xs text-red-600 font-semibold pl-2">
+                        {errors.firstName.message}
+                      </p>
+                    )}
+                  </div>
                   <Input
-                    placeholder="Your Name *"
-                    aria-invalid={!!errors.name || undefined}
-                    {...register("name")}
+                    placeholder="Last Name"
+                    autoComplete="family-name"
+                    {...register("lastName")}
                   />
-                  {errors.name && (
-                    <p className="mt-1 text-xs text-red-600 font-semibold pl-2">
-                      {errors.name.message}
-                    </p>
-                  )}
                 </div>
 
                 <div>

@@ -1,0 +1,87 @@
+import "server-only";
+
+import { getFirebaseAdminDb } from "@/lib/server/firebase-admin";
+
+const WEBSITE_ACTOR = {
+  type: "system" as const,
+  id: "website",
+  name: "Website",
+};
+
+type WebsiteLeadInput = {
+  firstName: string;
+  lastName?: string;
+  email: string;
+  phone?: string;
+  message?: string;
+  projectType?: string;
+  source?: string;
+};
+
+function requireOrganizationId() {
+  const organizationId = process.env.WEBSITE_LEAD_ORGANIZATION_ID;
+  if (!organizationId) {
+    throw new Error(
+      "Missing required environment variable: WEBSITE_LEAD_ORGANIZATION_ID",
+    );
+  }
+  return organizationId;
+}
+
+export async function createWebsiteLead(input: WebsiteLeadInput) {
+  const db = getFirebaseAdminDb();
+  const organizationId = requireOrganizationId();
+  const leadRef = db.collection("leads").doc();
+  const activityRef = db.collection("activities").doc();
+  const now = Date.now();
+  const label = [input.firstName, input.lastName]
+    .filter(Boolean)
+    .join(" ")
+    .trim();
+  const propertyType =
+    input.projectType === "Residential" || input.projectType === "Commercial"
+      ? input.projectType.toLowerCase()
+      : undefined;
+
+  const lead = {
+    uid: leadRef.id,
+    organizationId,
+    isCompany: false,
+    stage: "new",
+    firstName: input.firstName,
+    ...(input.lastName ? { lastName: input.lastName } : {}),
+    email: input.email,
+    ...(input.phone ? { phone: input.phone } : {}),
+    source: "website",
+    sourceDetail:
+      input.source === "contact"
+        ? "Website contact form"
+        : "Website project form",
+    ...(propertyType ? { propertyType } : {}),
+    ...(input.message ? { notes: input.message } : {}),
+    createdBy: WEBSITE_ACTOR.id,
+    updatedBy: WEBSITE_ACTOR.id,
+    createdAt: now,
+    updatedAt: now,
+    lastActivityAt: now,
+  };
+
+  const activity = {
+    id: activityRef.id,
+    organizationId,
+    type: "lead_created",
+    actor: WEBSITE_ACTOR,
+    source: { type: "lead", id: leadRef.id, label },
+    entity: { type: "lead", id: leadRef.id, label },
+    visibility: "internal",
+    metadata: { channel: "website" },
+    createdAt: now,
+  };
+
+  const batch = db.batch();
+  batch.set(leadRef, lead);
+  batch.set(activityRef, activity);
+  await batch.commit();
+
+  return { leadId: leadRef.id, activityId: activityRef.id };
+}
