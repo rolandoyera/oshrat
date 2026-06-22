@@ -8,6 +8,16 @@ const WEBSITE_ACTOR = {
   name: "Website",
 };
 
+const CRM_PROPERTY_TYPES = new Set([
+  "residential",
+  "commercial",
+  "hospitality",
+  "multifamily",
+  "retail",
+  "office",
+  "other",
+]);
+
 type WebsiteLeadInput = {
   firstName: string;
   lastName?: string;
@@ -38,9 +48,10 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     .filter(Boolean)
     .join(" ")
     .trim();
+  const normalizedProjectType = input.projectType?.toLowerCase();
   const propertyType =
-    input.projectType === "Residential" || input.projectType === "Commercial"
-      ? input.projectType.toLowerCase()
+    normalizedProjectType && CRM_PROPERTY_TYPES.has(normalizedProjectType)
+      ? normalizedProjectType
       : undefined;
 
   const lead = {

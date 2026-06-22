@@ -97,9 +97,20 @@ const ContactSchema = z.object({
     ),
   email: z.string().email("Enter a valid email"),
   company: z.string().optional(),
-  projectType: z.enum(["Residential", "Commercial", "Other"], {
-    message: "Please select a project type",
-  }),
+  projectType: z.enum(
+    [
+      "Residential",
+      "Commercial",
+      "Hospitality",
+      "Multifamily",
+      "Retail",
+      "Office",
+      "Other",
+    ],
+    {
+      message: "Please select a project type",
+    },
+  ),
   ts: z.number().optional(),
 });
 type ContactValues = z.infer<typeof ContactSchema>;
@@ -366,6 +377,22 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                             value="Commercial"
                             className="cursor-pointer">
                             Commercial
+                          </SelectItem>
+                          <SelectItem
+                            value="Hospitality"
+                            className="cursor-pointer">
+                            Hospitality
+                          </SelectItem>
+                          <SelectItem
+                            value="Multifamily"
+                            className="cursor-pointer">
+                            Multifamily
+                          </SelectItem>
+                          <SelectItem value="Retail" className="cursor-pointer">
+                            Retail
+                          </SelectItem>
+                          <SelectItem value="Office" className="cursor-pointer">
+                            Office
                           </SelectItem>
                           <SelectItem value="Other" className="cursor-pointer">
                             Other
