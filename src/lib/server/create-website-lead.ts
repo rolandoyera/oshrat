@@ -56,6 +56,10 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     normalizedProjectType && CRM_PROPERTY_TYPES.has(normalizedProjectType)
       ? normalizedProjectType
       : undefined;
+  const sourceDetail =
+    input.source === "contact"
+      ? "Website contact form"
+      : "Website project form";
 
   const lead = {
     uid: leadRef.id,
@@ -67,10 +71,7 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     email: input.email,
     ...(input.phone ? { phone: input.phone } : {}),
     source: "website",
-    sourceDetail:
-      input.source === "contact"
-        ? "Website contact form"
-        : "Website project form",
+    sourceDetail,
     ...(propertyType ? { propertyType } : {}),
     ...(input.message ? { notes: input.message } : {}),
     createdBy: WEBSITE_ACTOR,
@@ -90,7 +91,7 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     source: { type: "lead", id: leadRef.id, label },
     entity: { type: "lead", id: leadRef.id, label },
     visibility: "internal",
-    metadata: { channel: "website" },
+    metadata: { channel: "website", sourceDetail },
     createdAt: now,
   };
 
