@@ -7,7 +7,7 @@ const Schema = z.object({
   lastName: z.string().trim().optional(),
   email: z.string().email(),
   phone: z.string().optional(),
-  company: z.string().optional(),
+  nickname_confirm: z.string().optional(),
   message: z.string().optional(),
   projectType: z.string().optional(),
   source: z.string().optional(),
@@ -68,7 +68,7 @@ export async function POST(req: Request) {
       lastName,
       email,
       phone,
-      company,
+      nickname_confirm,
       message,
       projectType,
       source,
@@ -82,17 +82,18 @@ export async function POST(req: Request) {
       phonePresent: Boolean(phone),
       projectType: projectType ?? null,
       source: source ?? null,
-      honeypotPresent: company !== undefined,
-      honeypotLength: company?.length ?? 0,
+      honeypotPresent: nickname_confirm !== undefined,
+      honeypotLength: nickname_confirm?.length ?? 0,
       tsType: typeof ts,
       elapsedFromTs: typeof ts === "number" ? now - ts : null,
     });
 
-    if (company?.trim()) {
-      log("honeypot filled — silently returning ok (behavior unchanged)");
-      return NextResponse.json({ ok: true });
+    if (nickname_confirm) {
+      console.warn(`[contact:${requestId}] honeypot filled but allowed`, {
+        honeypot: "nickname_confirm",
+        honeypotLength: nickname_confirm.length,
+      });
     }
-    log("honeypot skipped");
 
     const elapsedFromTs = typeof ts === "number" ? Date.now() - ts : null;
 

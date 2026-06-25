@@ -96,7 +96,7 @@ const ContactSchema = z.object({
       "Enter a valid phone number",
     ),
   email: z.string().email("Enter a valid email"),
-  company: z.string().optional(),
+  nickname_confirm: z.string().optional(),
   projectType: z.enum(
     [
       "Residential",
@@ -129,7 +129,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
       lastName: "",
       email: "",
       phone: "",
-      company: "",
+      nickname_confirm: "",
       projectType: "" as any,
       ts: Date.now(),
     },
@@ -247,11 +247,10 @@ function ContactModal({ onClose }: { onClose: () => void }) {
               <input
                 type="text"
                 tabIndex={-1}
-                autoComplete="off"
+                autoComplete="new-password"
                 aria-hidden="true"
-                className="hidden"
-                placeholder="Company"
-                {...register("company")}
+                className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+                {...register("nickname_confirm")}
               />
 
               <input

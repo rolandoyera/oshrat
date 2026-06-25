@@ -31,7 +31,7 @@ const DrawerContactSchema = z.object({
       "Enter a valid 10-digit phone number",
     ),
   message: z.string().optional(),
-  company: z.string().optional(),
+  nickname_confirm: z.string().optional(),
   ts: z.number().optional(),
 });
 
@@ -65,7 +65,7 @@ export default function ContactDrawerContent() {
       email: "",
       phone: "",
       message: "",
-      company: "",
+      nickname_confirm: "",
       ts: Date.now(),
     },
   });
@@ -80,7 +80,7 @@ export default function ContactDrawerContent() {
       email: "",
       phone: "",
       message: "",
-      company: "",
+      nickname_confirm: "",
       ts: Date.now(),
     });
   }, [reset]);
@@ -197,11 +197,10 @@ export default function ContactDrawerContent() {
                 <input
                   type="text"
                   tabIndex={-1}
-                  autoComplete="off"
+                  autoComplete="new-password"
                   aria-hidden="true"
-                  className="hidden"
-                  placeholder="Company"
-                  {...register("company")}
+                  className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+                  {...register("nickname_confirm")}
                 />
 
                 <input
