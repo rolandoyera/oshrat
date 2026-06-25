@@ -94,15 +94,34 @@ export async function POST(req: Request) {
     }
     log("honeypot skipped");
 
-    if (!ts || now - ts < 1200) {
-      log("time-trap tripped — silently returning ok (behavior unchanged)", {
-        tsMissing: !ts,
-        elapsedFromTs: typeof ts === "number" ? now - ts : null,
-        thresholdMs: 1200,
+    const elapsedFromTs = typeof ts === "number" ? Date.now() - ts : null;
+
+    if (elapsedFromTs === null) {
+      console.warn(`[contact:${requestId}] timestamp missing or invalid`, {
+        tsType: typeof ts,
       });
-      return NextResponse.json({ ok: true });
     }
-    log("time-trap passed", { elapsedFromTs: now - ts });
+
+    if (elapsedFromTs !== null && elapsedFromTs < 0) {
+      console.warn(`[contact:${requestId}] client timestamp is in the future`, {
+        elapsedFromTs,
+      });
+    }
+
+    const suspiciouslyFast =
+      elapsedFromTs !== null &&
+      elapsedFromTs >= 0 &&
+      elapsedFromTs < 1200;
+
+    if (suspiciouslyFast) {
+      console.warn(
+        `[contact:${requestId}] suspiciously fast submission allowed`,
+        {
+          elapsedFromTs,
+          thresholdMs: 1200,
+        },
+      );
+    }
 
     log("before CRM lead creation");
     let leadId: string;
