@@ -45,12 +45,7 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
   const db = getFirebaseAdminDb();
   const organizationId = requireOrganizationId();
   const leadRef = db.collection("leads").doc();
-  const activityRef = db.collection("activities").doc();
   const now = Date.now();
-  const label = [input.firstName, input.lastName]
-    .filter(Boolean)
-    .join(" ")
-    .trim();
   const normalizedProjectType = input.projectType?.toLowerCase();
   const propertyType =
     normalizedProjectType && CRM_PROPERTY_TYPES.has(normalizedProjectType)
@@ -81,24 +76,7 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     lastActivityAt: now,
   };
 
-  const activity = {
-    id: activityRef.id,
-    organizationId,
-    type: "lead_created",
-    channel: "website",
-    importance: "high",
-    actor: WEBSITE_ACTOR,
-    source: { type: "lead", id: leadRef.id, label },
-    entity: { type: "lead", id: leadRef.id, label },
-    visibility: "internal",
-    metadata: { channel: "website", sourceDetail },
-    createdAt: now,
-  };
+  await leadRef.set(lead);
 
-  const batch = db.batch();
-  batch.set(leadRef, lead);
-  batch.set(activityRef, activity);
-  await batch.commit();
-
-  return { leadId: leadRef.id, activityId: activityRef.id };
+  return { leadId: leadRef.id };
 }

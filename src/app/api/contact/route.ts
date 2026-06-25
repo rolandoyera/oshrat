@@ -31,9 +31,35 @@ function escapeHtml(value: string) {
 export const runtime = "nodejs";
 
 export async function POST(req: Request) {
+  const requestId = crypto.randomUUID();
+  const log = (...args: unknown[]) =>
+    console.log(`[contact:${requestId}]`, ...args);
+
   try {
-    const parsed = Schema.safeParse(await req.json());
+    log("request received");
+
+    let body: unknown;
+    try {
+      body = await req.json();
+      log("JSON body parsed");
+    } catch (error) {
+      log(
+        "JSON parse failed",
+        error instanceof Error
+          ? { message: error.message, stack: error.stack }
+          : { error },
+      );
+      return NextResponse.json({ ok: false }, { status: 400 });
+    }
+
+    const parsed = Schema.safeParse(body);
     if (!parsed.success) {
+      log("Zod validation failed", {
+        issues: parsed.error.issues.map((issue) => ({
+          path: issue.path.join("."),
+          code: issue.code,
+        })),
+      });
       return NextResponse.json({ ok: false }, { status: 422 });
     }
 
@@ -49,23 +75,57 @@ export async function POST(req: Request) {
       ts,
     } = parsed.data;
 
-    if (company?.trim()) {
-      return NextResponse.json({ ok: true });
-    }
-
-    if (!ts || Date.now() - ts < 1200) {
-      return NextResponse.json({ ok: true });
-    }
-
-    const { leadId } = await createWebsiteLead({
-      firstName,
-      lastName,
-      email,
-      phone,
-      message,
-      projectType,
-      source,
+    const now = Date.now();
+    log("validation ok", {
+      namePresent: Boolean(firstName),
+      emailDomain: email.includes("@") ? email.split("@")[1] : null,
+      phonePresent: Boolean(phone),
+      projectType: projectType ?? null,
+      source: source ?? null,
+      honeypotPresent: company !== undefined,
+      honeypotLength: company?.length ?? 0,
+      tsType: typeof ts,
+      elapsedFromTs: typeof ts === "number" ? now - ts : null,
     });
+
+    if (company?.trim()) {
+      log("honeypot filled — silently returning ok (behavior unchanged)");
+      return NextResponse.json({ ok: true });
+    }
+    log("honeypot skipped");
+
+    if (!ts || now - ts < 1200) {
+      log("time-trap tripped — silently returning ok (behavior unchanged)", {
+        tsMissing: !ts,
+        elapsedFromTs: typeof ts === "number" ? now - ts : null,
+        thresholdMs: 1200,
+      });
+      return NextResponse.json({ ok: true });
+    }
+    log("time-trap passed", { elapsedFromTs: now - ts });
+
+    log("before CRM lead creation");
+    let leadId: string;
+    try {
+      ({ leadId } = await createWebsiteLead({
+        firstName,
+        lastName,
+        email,
+        phone,
+        message,
+        projectType,
+        source,
+      }));
+      log("CRM lead creation success", { leadId });
+    } catch (error) {
+      log(
+        "CRM lead creation failed",
+        error instanceof Error
+          ? { message: error.message, stack: error.stack }
+          : { error },
+      );
+      throw error;
+    }
 
     const isContact = source === "contact";
     const senderName = isContact
@@ -77,6 +137,7 @@ export async function POST(req: Request) {
     const leadLabel = isContact ? "contact lead" : "project lead";
 
     try {
+      log("before Brevo send");
       const response = await fetch("https://api.brevo.com/v3/smtp/email", {
         method: "POST",
         headers: {
@@ -113,21 +174,39 @@ export async function POST(req: Request) {
       });
 
       if (!response.ok) {
+        log("Brevo failure", { leadId, status: response.status });
         console.error("Brevo API error after lead creation:", {
+          requestId,
           leadId,
           status: response.status,
           error: await response.text(),
         });
+      } else {
+        log("Brevo success", { leadId, status: response.status });
       }
     } catch (error) {
+      log(
+        "Brevo request failed",
+        error instanceof Error
+          ? { leadId, message: error.message, stack: error.stack }
+          : { leadId, error },
+      );
       console.error("Brevo request failed after lead creation:", {
+        requestId,
         leadId,
         error,
       });
     }
 
+    log("final response returned", { ok: true, leadId });
     return NextResponse.json({ ok: true, leadId });
   } catch (error) {
+    log(
+      "fatal error — final response returned",
+      error instanceof Error
+        ? { message: error.message, stack: error.stack }
+        : { error },
+    );
     console.error("Contact submission error:", error);
     return NextResponse.json({ ok: false }, { status: 500 });
   }
