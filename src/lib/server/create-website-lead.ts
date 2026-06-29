@@ -55,6 +55,9 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     input.source === "contact"
       ? "Website contact form"
       : "Website project form";
+  // Customer's verbatim message → customerComments (read-only on the CRM,
+  // kept separate from the team's internal `notes`). Capped to guard against spam.
+  const customerComments = input.message?.trim().slice(0, 200) || undefined;
 
   const lead = {
     uid: leadRef.id,
@@ -68,7 +71,7 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     source: "website",
     sourceDetail,
     ...(propertyType ? { propertyType } : {}),
-    ...(input.message ? { notes: input.message } : {}),
+    ...(customerComments ? { customerComments } : {}),
     createdBy: WEBSITE_ACTOR,
     updatedBy: WEBSITE_ACTOR,
     createdAt: now,

@@ -111,6 +111,11 @@ const ContactSchema = z.object({
       message: "Please select a project type",
     },
   ),
+  message: z
+    .string()
+    .trim()
+    .max(200, "Please keep it under 200 characters")
+    .optional(),
   ts: z.number().optional(),
 });
 type ContactValues = z.infer<typeof ContactSchema>;
@@ -131,6 +136,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
       phone: "",
       nickname_confirm: "",
       projectType: "" as any,
+      message: "",
       ts: Date.now(),
     },
   });
@@ -138,6 +144,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
   const [isSelectFocused, setIsSelectFocused] = useState(false);
+  const [isMsgFocused, setIsMsgFocused] = useState(false);
   const closeTimer = React.useRef<number | null>(null);
   const hasStartedFormRef = React.useRef(false);
 
@@ -413,6 +420,39 @@ function ContactModal({ onClose }: { onClose: () => void }) {
                     id="project-type-error"
                     className="mt-1 text-sm text-destructive">
                     {errors.projectType.message}
+                  </p>
+                )}
+              </div>
+
+              <div>
+                <label htmlFor="message" className="sr-only">
+                  Message
+                </label>
+                <div className="relative w-full">
+                  <textarea
+                    id="message"
+                    rows={4}
+                    maxLength={200}
+                    placeholder="Tell us about your project (optional)"
+                    aria-invalid={!!errors.message || undefined}
+                    aria-describedby={
+                      errors.message ? "message-error" : undefined
+                    }
+                    className="flex w-full bg-transparent border-none px-2 py-2 text-base placeholder:text-taupe-400 placeholder:font-light focus-visible:outline-none transition-colors disabled:cursor-not-allowed disabled:opacity-50 text-taupe-800 resize-none animate-none"
+                    onFocus={() => setIsMsgFocused(true)}
+                    {...register("message", {
+                      onBlur: () => setIsMsgFocused(false),
+                    })}
+                  />
+                  <DoubleBorder
+                    left="left-0"
+                    borderColor={isMsgFocused ? "bg-accent" : "bg-border/30"}
+                    className="transition-all duration-300"
+                  />
+                </div>
+                {errors.message && (
+                  <p id="message-error" className="mt-1 text-sm text-destructive">
+                    {errors.message.message}
                   </p>
                 )}
               </div>

@@ -30,7 +30,11 @@ const DrawerContactSchema = z.object({
       (v) => v.replace(/\D/g, "").length >= 10,
       "Enter a valid 10-digit phone number",
     ),
-  message: z.string().optional(),
+  message: z
+    .string()
+    .trim()
+    .max(200, "Please keep it under 200 characters")
+    .optional(),
   nickname_confirm: z.string().optional(),
   ts: z.number().optional(),
 });
@@ -261,6 +265,8 @@ export default function ContactDrawerContent() {
                   <textarea
                     placeholder="Tell us about your project"
                     rows={4}
+                    maxLength={200}
+                    aria-invalid={!!errors.message || undefined}
                     className="flex w-full bg-transparent border-none px-2 py-2 text-base placeholder:text-taupe-400 placeholder:font-light focus-visible:outline-none transition-colors disabled:cursor-not-allowed disabled:opacity-50 text-taupe-800 resize-none animate-none"
                     onFocus={() => setIsMsgFocused(true)}
                     {...register("message", {
@@ -274,6 +280,11 @@ export default function ContactDrawerContent() {
                     }
                     className="transition-all duration-300"
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-xs text-red-600 font-semibold pl-2">
+                      {errors.message.message}
+                    </p>
+                  )}
                 </div>
 
                 {submitError && (
