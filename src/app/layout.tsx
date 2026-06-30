@@ -4,8 +4,8 @@ import "./globals.css";
 import { Manrope } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/Navbar";
-import Script from "next/script";
 import { cookies } from "next/headers";
+import { Analytics } from "./Analytics";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -48,23 +48,7 @@ export default async function RootLayout({
         className={`${manrope.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
           {process.env.VERCEL_ENV === "production" && (
-            <>
-              <Script
-                src="https://www.googletagmanager.com/gtag/js?id=G-K0ZYTV5JSM"
-                strategy="afterInteractive"
-              />
-              <Script id="google-analytics" strategy="afterInteractive">
-                {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'G-K0ZYTV5JSM'${
-                isInternal ? ", { 'traffic_type': 'internal' }" : ""
-              });
-            `}
-              </Script>
-            </>
+            <Analytics isInternal={isInternal} />
           )}
           <Navbar />
           {children}
