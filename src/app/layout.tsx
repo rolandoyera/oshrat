@@ -20,14 +20,14 @@ export const metadata: Metadata = {
     template: "%s | Sarvian Design Group",
   },
   description:
-    "Sarvian Design Group is a premier interior design and architecture firm based in Fort Lauderdale, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
+    "Sarvian Design Group is a Fort Lauderdale-based interior design studio serving Broward, Palm Beach, Miami-Dade, and South Florida with residential interiors, renovations, and new construction design.",
   openGraph: {
     type: "website",
     siteName: "Sarvian Design Group",
     locale: "en_US",
     title: "Sarvian Design Group",
     description:
-      "Sarvian Design Group is a premier interior design and architecture firm based in Fort Lauderdale, serving South Florida's tri-state area since 2014. We specialize in transforming spaces into timeless, elegant, and sophisticated interiors.",
+      "Sarvian Design Group is a Fort Lauderdale-based interior design studio serving Broward, Palm Beach, Miami-Dade, and South Florida with residential interiors, renovations, and new construction design.",
   },
   twitter: {
     card: "summary_large_image",
