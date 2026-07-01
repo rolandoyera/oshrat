@@ -42,8 +42,6 @@
   --taupe-800: hsl(36 18% 15%);
   --taupe-900: hsl(36 15% 10%);
   --black: #0e0c0a;
-
-  /* Color utilities (text-*, bg-*, border-*) */
   --color-cream-100: var(--cream-100);
   --color-cream-200: var(--cream-200);
   --color-cream-300: var(--cream-300);
