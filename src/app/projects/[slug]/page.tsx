@@ -87,9 +87,18 @@ const PROJECT_META = groq`*[_type=="project" && slug.current == $slug][0]{
   title,
   location,
   seoDescription,
-  intro,
+  "descriptionText": pt::text(description),
   "ogImage": coalesce(heroImage.asset->url, mainImage.asset->url)
 }`;
+
+/** Trim plain text to a meta-description-length excerpt at a word boundary. */
+function excerpt(text: string, max = 160): string {
+  const clean = text.replace(/\s+/g, " ").trim();
+  if (clean.length <= max) return clean;
+  const cut = clean.slice(0, max - 1);
+  const lastSpace = cut.lastIndexOf(" ");
+  return `${(lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trimEnd()}…`;
+}
 
 export async function generateMetadata({
   params,
@@ -101,16 +110,17 @@ export async function generateMetadata({
     title?: string;
     location?: string;
     seoDescription?: string;
-    intro?: string;
+    descriptionText?: string;
     ogImage?: string;
   } | null>(PROJECT_META, { slug });
 
   if (!data?.title) return { title: "Project" };
 
   const title = data.location ? `${data.title} | ${data.location}` : data.title;
+  const descriptionText = data.descriptionText?.trim();
   const description =
     data.seoDescription?.trim() ||
-    data.intro?.trim() ||
+    (descriptionText ? excerpt(descriptionText) : "") ||
     `${data.title}${data.location ? ` in ${data.location}` : ""} — a project by Sarvian Design Group.`;
   const url = `/projects/${slug}`;
 

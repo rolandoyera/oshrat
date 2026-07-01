@@ -3,6 +3,7 @@
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import Container from "@/components/ui/Container";
 import H1 from "@/components/ui/H1";
+import { HERO_BLUR } from "@/lib/hero-blur";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -27,6 +28,8 @@ export default function PressPage() {
           priority
           sizes="100vw"
           quality={90}
+          placeholder="blur"
+          blurDataURL={HERO_BLUR["/projects/sdg-bedroom-remodel-armoire-7.jpg"]}
           style={{
             transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(1.1)`,
           }}
@@ -65,7 +68,7 @@ export default function PressPage() {
       <main className="px-4 lg:px-8 mb-20">
         <Container>
           <div className="w-full flex flex-col items-center justify-center py-10 lg:py-30">
-            <H1>Featured In</H1>
+            <H1 as="h2">Featured In</H1>
           </div>
           <div className="flex flex-col items-center justify-center gap-4">
             <Image

@@ -9,6 +9,7 @@ import Main from "@/components/ui/Main";
 import P from "@/components/ui/P";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
+import { HERO_BLUR } from "@/lib/hero-blur";
 
 export default function AboutContent() {
   const [scrollY, setScrollY] = useState(0);
@@ -32,6 +33,8 @@ export default function AboutContent() {
           priority
           sizes="100vw"
           quality={90}
+          placeholder="blur"
+          blurDataURL={HERO_BLUR["/about/Sarvian-Design-Group.jpg"]}
           style={{
             transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(1.1)`,
           }}

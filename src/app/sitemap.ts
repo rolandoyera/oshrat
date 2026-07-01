@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 
-const BASE_URL = "https://sarviandg.com";
+const BASE_URL = "https://www.sarviandg.com";
 
 const PROJECT_SITEMAP = groq`*[_type=="project" && defined(slug.current)]{
   "slug": slug.current,
@@ -16,6 +16,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${BASE_URL}/`, changeFrequency: "weekly", priority: 1 },
     { url: `${BASE_URL}/about`, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${BASE_URL}/services`, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE_URL}/projects`, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE_URL}/press`, changeFrequency: "monthly", priority: 0.6 },
   ];

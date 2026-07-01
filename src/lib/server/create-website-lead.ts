@@ -51,10 +51,15 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
     normalizedProjectType && CRM_PROPERTY_TYPES.has(normalizedProjectType)
       ? normalizedProjectType
       : undefined;
+  // Human-readable lead origin shown in the CRM. Known sources get a distinct
+  // label; anything unmapped falls back to the generic project-form label.
+  const SOURCE_DETAIL: Record<string, string> = {
+    contact: "Website contact form",
+    project: "Website project form",
+    services_email_studio: "Website — Services page (Email the studio)",
+  };
   const sourceDetail =
-    input.source === "contact"
-      ? "Website contact form"
-      : "Website project form";
+    (input.source && SOURCE_DETAIL[input.source]) || "Website project form";
   // Customer's verbatim message → customerComments (read-only on the CRM,
   // kept separate from the team's internal `notes`). Capped to guard against spam.
   const customerComments = input.message?.trim().slice(0, 200) || undefined;

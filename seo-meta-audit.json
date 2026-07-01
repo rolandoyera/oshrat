@@ -1,0 +1,369 @@
+{
+  "_note": "Snapshot of SEO/meta across all routes for misalignment review. Generated from source; not read at runtime. 'resolvedTitle' shows what renders after the layout title template is applied. 'inherited' = value comes from site defaults, not set on the page.",
+  "generatedFrom": {
+    "siteDefaults": "src/app/layout.tsx",
+    "structuredData": "src/lib/structured-data.tsx",
+    "sitemap": "src/app/sitemap.ts",
+    "robots": "src/app/robots.ts"
+  },
+
+  "siteDefaults": {
+    "file": "src/app/layout.tsx",
+    "metadataBase": "https://www.sarviandg.com",
+    "titleDefault": "Sarvian Design Group",
+    "titleTemplate": "%s | Sarvian Design Group",
+    "description": "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
+    "openGraph": {
+      "type": "website",
+      "siteName": "Sarvian Design Group",
+      "locale": "en_US",
+      "title": "Sarvian Design Group",
+      "description": "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
+      "images": "/assets/sarvian-design-group-og-image.jpg (1200x600, purpose-built) — default, inherited by any page without its own"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "images": "(auto-falls back to openGraph.images)"
+    }
+  },
+
+  "structuredData": {
+    "file": "src/lib/structured-data.tsx",
+    "SITE_URL": "https://www.sarviandg.com",
+    "businessName": "Sarvian Design Group",
+    "type": "HomeAndConstructionBusiness",
+    "telephone": "+1-954-444-4803",
+    "logo": "https://www.sarviandg.com/assets/logo_sdg-horizontal.svg",
+    "sameAs": [
+      "https://www.instagram.com/sarviandesigngroup/",
+      "https://www.houzz.com/hznb/professionals/interior-designers-and-decorators/sarvian-design-group-pfvwus-pf~1582672692",
+      "https://www.linkedin.com/company/sarviandg/"
+    ],
+    "howItWorks": "Every JSON-LD block is a single schema.org @graph led by the shared businessNode (@id .../#business). Pages add their own nodes via siteGraph(nodes). See each page's 'structuredData' field.",
+    "graphShapes": {
+      "siteGraph()": ["HomeAndConstructionBusiness"],
+      "servicesPageGraph()": ["HomeAndConstructionBusiness + hasOfferCatalog (OfferCatalog of 7 Service offers)"],
+      "projectPageGraph()": ["HomeAndConstructionBusiness", "BreadcrumbList", "CreativeWork"]
+    },
+    "emittedOn": {
+      "siteGraph()": ["/", "/about", "/projects", "/press"],
+      "servicesPageGraph()": ["/services"],
+      "projectPageGraph()": ["/projects/{slug}"],
+      "none": ["/external", "/internal", "/theme", "/theme/guidelines", "/studio"]
+    }
+  },
+
+  "sitemap": {
+    "file": "src/app/sitemap.ts",
+    "baseUrl": "https://www.sarviandg.com",
+    "staticRoutes": ["/", "/about", "/services", "/projects", "/press"],
+    "dynamicRoutes": "/projects/{slug} (from Sanity)"
+  },
+
+  "robots": {
+    "file": "src/app/robots.ts",
+    "baseUrl": "https://www.sarviandg.com",
+    "allow": "/",
+    "disallow": ["/studio", "/internal", "/external"]
+  },
+
+  "pages": [
+    {
+      "route": "/",
+      "file": "src/app/page.tsx",
+      "indexable": true,
+      "inSitemap": true,
+      "title": "Fort Lauderdale-based interior design studio serving South Florida",
+      "resolvedTitle": "Fort Lauderdale-based interior design studio serving South Florida | Sarvian Design Group",
+      "description": "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
+      "canonical": "/",
+      "canonicalResolved": "https://www.sarviandg.com/",
+      "openGraph": {
+        "title": "Fort Lauderdale-based interior design studio serving South Florida | Sarvian Design Group",
+        "description": "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
+        "url": "/  (resolves to https://www.sarviandg.com/ via metadataBase)",
+        "siteName": "Sarvian Design Group",
+        "locale": "en_US",
+        "type": "website",
+        "images": "/assets/sarvian-design-group-og-image.jpg (inherited default — home hero is a carousel)"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "Fort Lauderdale-based interior design studio serving South Florida",
+        "description": "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction."
+      },
+      "structuredData": {
+        "component": "<JsonLd data={siteGraph()} />",
+        "graph": ["HomeAndConstructionBusiness (@id .../#business)"]
+      }
+    },
+    {
+      "route": "/about",
+      "file": "src/app/about/page.tsx",
+      "indexable": true,
+      "inSitemap": true,
+      "title": "About Oshrat Rothschild | Luxury Interior Designer in South Florida",
+      "resolvedTitle": "About Oshrat Rothschild | Luxury Interior Designer in South Florida | Sarvian Design Group",
+      "description": "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities.",
+      "canonical": "/about",
+      "canonicalResolved": "https://www.sarviandg.com/about",
+      "openGraph": {
+        "title": "About Sarvian Design Group",
+        "description": "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities.",
+        "url": "/about  (resolves to https://www.sarviandg.com/about via metadataBase)",
+        "siteName": "Sarvian Design Group",
+        "type": "website",
+        "images": "/assets/sarvian-design-group-og-image.jpg (inherited default)"
+      },
+      "twitter": {
+        "card": "summary_large_image",
+        "title": "About Sarvian Design Group",
+        "description": "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities."
+      },
+      "structuredData": {
+        "component": "<JsonLd data={siteGraph()} />",
+        "graph": ["HomeAndConstructionBusiness (@id .../#business)"]
+      }
+    },
+    {
+      "route": "/projects",
+      "file": "src/app/projects/page.tsx",
+      "indexable": true,
+      "inSitemap": true,
+      "title": "Projects",
+      "resolvedTitle": "Projects | Sarvian Design Group",
+      "description": "Explore our latest architecture and interior design projects across South Florida — Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.",
+      "canonical": "/projects",
+      "canonicalResolved": "https://www.sarviandg.com/projects",
+      "openGraph": {
+        "title": "Projects",
+        "description": "Explore our latest architecture and interior design projects across South Florida — Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.",
+        "url": "/projects",
+        "siteName": "Sarvian Design Group (inherited)",
+        "type": "website (inherited)",
+        "images": "/assets/sarvian-design-group-og-image.jpg (inherited default — projects list has no hero image)"
+      },
+      "twitter": {
+        "card": "summary_large_image (inherited)",
+        "title": "(inherited default)",
+        "description": "(inherited default)"
+      },
+      "structuredData": {
+        "component": "<JsonLd data={siteGraph()} />",
+        "graph": ["HomeAndConstructionBusiness (@id .../#business)"]
+      }
+    },
+    {
+      "route": "/press",
+      "file": "src/app/press/page.tsx",
+      "metadataFile": "src/app/press/layout.tsx",
+      "indexable": true,
+      "inSitemap": true,
+      "title": "Press & Media",
+      "resolvedTitle": "Press & Media | Sarvian Design Group",
+      "description": "Publications and press features highlighting Sarvian Design Group's architecture and interior design work across South Florida, including Florida Design Magazine.",
+      "canonical": "/press",
+      "canonicalResolved": "https://www.sarviandg.com/press",
+      "openGraph": {
+        "title": "Press & Media (from title)",
+        "description": "(from description)",
+        "url": "(inherited metadataBase)",
+        "siteName": "Sarvian Design Group (inherited)",
+        "type": "website (inherited)",
+        "images": "/assets/sarvian-design-group-og-image.jpg (inherited default)"
+      },
+      "twitter": {
+        "card": "summary_large_image (inherited)"
+      },
+      "structuredData": {
+        "component": "<JsonLd data={siteGraph()} /> (in press/layout.tsx)",
+        "graph": ["HomeAndConstructionBusiness (@id .../#business)"]
+      },
+      "notes": "Metadata set in press/layout.tsx because page.tsx is a Client Component ('use client') and cannot export metadata."
+    },
+    {
+      "route": "/services",
+      "file": "src/app/services/page.tsx",
+      "indexable": true,
+      "inSitemap": true,
+      "title": "Interior Design Services in Fort Lauderdale & South Florida",
+      "resolvedTitle": "Interior Design Services in Fort Lauderdale & South Florida | Sarvian Design Group",
+      "description": "Full-service interior design studio serving Fort Lauderdale, Miami, Palm Beach, Broward, and South Florida — renovations, new construction, custom furnishings, kitchens, and bathrooms.",
+      "canonical": "/services",
+      "canonicalResolved": "https://www.sarviandg.com/services",
+      "openGraph": {
+        "title": "Interior Design Services in Fort Lauderdale & South Florida (from title)",
+        "description": "(from description)",
+        "url": "/services  (resolves to https://www.sarviandg.com/services via metadataBase)",
+        "siteName": "Sarvian Design Group (inherited)",
+        "type": "website (inherited)",
+        "images": "/assets/sarvian-design-group-og-image.jpg (inherited default)"
+      },
+      "twitter": {
+        "card": "summary_large_image (inherited)"
+      },
+      "structuredData": {
+        "component": "<JsonLd data={servicesPageGraph(SERVICES)} />",
+        "graph": [
+          "HomeAndConstructionBusiness (@id .../#business) — enriched here with hasOfferCatalog → OfferCatalog (@id .../services#catalog) of 7 Service offers, each provider → #business: Residential Interior Design, Full Home Renovations, New Construction, Kitchen Design, Bathroom Design, Custom Furnishings, Single-Room Transformations"
+        ]
+      },
+      "notes": "Title, description, and og:url set. In the sitemap. Only page that adds a services hasOfferCatalog; names/descriptions sourced from the exported SERVICES array so schema tracks the visible copy."
+    },
+    {
+      "route": "/projects/{slug}",
+      "file": "src/app/projects/[slug]/page.tsx",
+      "indexable": true,
+      "inSitemap": true,
+      "dynamic": true,
+      "title": "{project.location ? `${title} | ${location}` : title}  (fallback: 'Project')",
+      "resolvedTitle": "…| Sarvian Design Group",
+      "description": "data.seoDescription || data.intro || `${title}${location ? ` in ${location}` : ''} — a project by Sarvian Design Group.`",
+      "canonical": "/projects/{slug}",
+      "canonicalResolved": "https://www.sarviandg.com/projects/{slug}",
+      "openGraph": {
+        "title": "(same as title)",
+        "description": "(same as description)",
+        "url": "/projects/{slug}",
+        "type": "article",
+        "images": "data.ogImage ? [`${ogImage}?w=1200&h=630&fit=crop&auto=format`] : (inherits site default OG image)",
+        "siteName": "Sarvian Design Group (inherited)"
+      },
+      "structuredData": {
+        "component": "<JsonLd data={projectPageGraph(...)} />",
+        "graph": [
+          "HomeAndConstructionBusiness (@id .../#business)",
+          "BreadcrumbList (@id .../projects/{slug}#breadcrumb — Home > Projects > {title})",
+          "CreativeWork (@id .../projects/{slug}#project — creator references #business; per-project name/description/location/year/materials/keywords/images)"
+        ]
+      },
+      "notes": "Only route that sets an OG image. Richest JSON-LD graph on the site."
+    },
+    {
+      "route": "/external",
+      "file": "src/app/external/page.tsx",
+      "indexable": false,
+      "robots": { "index": false, "follow": false },
+      "inSitemap": false,
+      "alsoDisallowedInRobotsTxt": true,
+      "title": "(none — default)",
+      "description": "(none — default)",
+      "structuredData": null
+    },
+    {
+      "route": "/internal",
+      "file": "src/app/internal/page.tsx",
+      "indexable": false,
+      "robots": { "index": false, "follow": false },
+      "inSitemap": false,
+      "alsoDisallowedInRobotsTxt": true,
+      "title": "(none — default)",
+      "description": "(none — default)",
+      "structuredData": null
+    },
+    {
+      "route": "/theme",
+      "file": "src/app/theme/page.tsx",
+      "metadataFile": "src/app/theme/layout.tsx",
+      "indexable": false,
+      "robots": { "index": false, "follow": false },
+      "inSitemap": false,
+      "title": "(none — default)",
+      "description": "(none — default)",
+      "structuredData": null,
+      "notes": "Internal design-system reference. robots noindex/nofollow set in theme/layout.tsx (inherited by this page)."
+    },
+    {
+      "route": "/theme/guidelines",
+      "file": "src/app/theme/guidelines/page.tsx",
+      "metadataFile": "src/app/theme/layout.tsx",
+      "indexable": false,
+      "robots": { "index": false, "follow": false },
+      "inSitemap": false,
+      "structuredData": null,
+      "notes": "Inherits robots noindex/nofollow from theme/layout.tsx (page is a Client Component and can't export metadata itself)."
+    },
+    {
+      "route": "/studio",
+      "file": "src/app/studio/[[...tool]]/page.tsx",
+      "indexable": false,
+      "inSitemap": false,
+      "alsoDisallowedInRobotsTxt": true,
+      "structuredData": null,
+      "notes": "Sanity Studio CMS."
+    }
+  ],
+
+  "detectedMisalignments": [
+    {
+      "id": "host-www-split",
+      "severity": "high",
+      "status": "FIXED",
+      "summary": "www vs non-www host is inconsistent across the site.",
+      "detail": "Now standardized on https://www.sarviandg.com everywhere: sitemap.ts, robots.ts, and the home page's openGraph.url were switched to www to match metadataBase and structured-data SITE_URL.",
+      "locations": [
+        "src/app/layout.tsx (www)",
+        "src/lib/structured-data.tsx SITE_URL (www)",
+        "src/app/sitemap.ts BASE_URL (www)",
+        "src/app/robots.ts BASE_URL (www)",
+        "src/app/page.tsx openGraph.url (www)"
+      ]
+    },
+    {
+      "id": "services-missing-sitemap",
+      "severity": "high",
+      "status": "FIXED",
+      "summary": "/services is now in the sitemap.",
+      "detail": "Added /services to sitemap.ts staticRoutes (changeFrequency monthly, priority 0.8)."
+    },
+    {
+      "id": "services-no-title-description",
+      "severity": "high",
+      "status": "FIXED",
+      "summary": "/services now has a title and description.",
+      "detail": "Title 'Interior Design Services in Fort Lauderdale & South Florida' and a page-specific description set in services/page.tsx; og:title/og:description fall back from them."
+    },
+    {
+      "id": "press-no-title-description",
+      "severity": "medium",
+      "status": "FIXED",
+      "summary": "/press has no title or description.",
+      "detail": "Added title 'Press & Media' and a description to press/layout.tsx (page.tsx is a Client Component and cannot export metadata). og:title/og:description fall back from these."
+    },
+    {
+      "id": "sitename-inconsistent",
+      "severity": "medium",
+      "status": "FIXED",
+      "summary": "siteName / brand string is inconsistent.",
+      "detail": "/about now uses 'Sarvian Design Group' for openGraph.siteName and the Twitter title, matching the rest of the site."
+    },
+    {
+      "id": "about-weak-metadata",
+      "severity": "medium",
+      "status": "FIXED",
+      "summary": "/about title, OG title, and Twitter title differed; description was a placeholder.",
+      "detail": "Brand strings unified to 'Sarvian Design Group' (twitter:title now 'About Sarvian Design Group'). Description replaced with a keyword-relevant line naming the studio and its South Florida service areas (Fort Lauderdale, Miami, Palm Beach)."
+    },
+    {
+      "id": "og-url-style-inconsistent",
+      "severity": "low",
+      "status": "FIXED",
+      "summary": "openGraph.url style is now consistent (relative paths).",
+      "detail": "home and about switched from absolute URLs to relative paths ('/' and '/about'), matching projects and project detail. metadataBase (https://www.sarviandg.com) now controls the host for every og:url."
+    },
+    {
+      "id": "no-default-og-image",
+      "severity": "medium",
+      "status": "FIXED",
+      "summary": "Default and per-page Open Graph / Twitter images added.",
+      "detail": "layout.tsx sets a purpose-built default og:image (/assets/sarvian-design-group-og-image.jpg, 1200x600) used site-wide. Every static page inherits it; project detail keeps its per-project Sanity ogImage and falls back to the branded default. Twitter auto-inherits from og:image."
+    },
+    {
+      "id": "theme-indexable",
+      "severity": "low",
+      "status": "FIXED",
+      "summary": "/theme and /theme/guidelines are no longer indexable.",
+      "detail": "theme/layout.tsx exports robots { index: false, follow: false }, inherited by both /theme and /theme/guidelines, so they carry a noindex/nofollow meta tag."
+    }
+  ]
+}

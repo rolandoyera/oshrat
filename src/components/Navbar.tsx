@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,13 +10,25 @@ import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import { trackEvent } from "@/lib/gtag";
 import ProjectButton from "./ui/ProjectButton";
 import ContactDrawerContent from "./ContactDrawerContent";
+import { heroPreloadSrcSet } from "@/lib/image-preload";
 
 const LINKS = [
   { name: "Projects", href: "/projects" },
+  { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
   { name: "Press", href: "/press" },
   { name: "Contact", href: "/contact" },
 ];
+
+// Full-bleed hero image each route paints first paint — warmed on hover so the
+// destination's `sizes="100vw"` q=90 next/image request is already cached on
+// arrival. Routes without a single full-screen hero (Projects list, Contact
+// drawer) are intentionally absent.
+const ROUTE_HERO: Record<string, string> = {
+  "/services": "/assets/aventura-interior-design-5.jpg",
+  "/about": "/about/Sarvian-Design-Group.jpg",
+  "/press": "/projects/sdg-bedroom-remodel-armoire-7.jpg",
+};
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -25,6 +37,22 @@ export default function Navbar() {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const preloadedRoutes = useRef(new Set<string>());
+
+  // Inject a `<link rel="preload" as="image">` for the destination hero the
+  // moment the user hovers/focuses the link — once per route.
+  const preloadHero = (href: string) => {
+    const src = ROUTE_HERO[href];
+    if (!src || preloadedRoutes.current.has(href)) return;
+    preloadedRoutes.current.add(href);
+
+    const link = document.createElement("link");
+    link.rel = "preload";
+    link.as = "image";
+    link.setAttribute("imagesrcset", heroPreloadSrcSet(src));
+    link.setAttribute("imagesizes", "100vw");
+    document.head.appendChild(link);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -143,6 +171,9 @@ export default function Navbar() {
                 ) : (
                   <Link
                     href={link.href}
+                    onPointerEnter={() => preloadHero(link.href)}
+                    onFocus={() => preloadHero(link.href)}
+                    onTouchStart={() => preloadHero(link.href)}
                     className="relative text-lg uppercase group py-1 tracking-wide">
                     {link.name}
                     <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-white transition-all duration-300 -translate-x-1/2 group-hover:w-full" />
@@ -211,6 +242,9 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
+                      onPointerEnter={() => preloadHero(link.href)}
+                      onFocus={() => preloadHero(link.href)}
+                      onTouchStart={() => preloadHero(link.href)}
                       className="flex items-center justify-between border-b border-white/15 py-5 text-2xl uppercase tracking-wide text-white transition-colors hover:text-white/80">
                       {link.name}
                     </Link>

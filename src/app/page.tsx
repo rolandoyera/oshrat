@@ -11,22 +11,23 @@ import ProjectButton from "@/components/ui/ProjectButton";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 export const metadata: Metadata = {
-  title: "Fort Lauderdale & Miami Interior Design",
+  title: "Fort Lauderdale-based interior design studio serving South Florida",
   description:
     "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Fort Lauderdale & Miami Interior Design | Sarvian Design Group",
+    title:
+      "Fort Lauderdale-based interior design studio serving South Florida | Sarvian Design Group",
     description:
       "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
-    url: "https://sarviandg.com/",
+    url: "/",
     siteName: "Sarvian Design Group",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Fort Lauderdale & Miami Interior Design",
+    title: "Fort Lauderdale-based interior design studio serving South Florida",
     description:
       "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
   },

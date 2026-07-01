@@ -126,6 +126,35 @@ export function projectPageGraph(p: {
   return siteGraph([breadcrumbNode(p.slug, p.title), projectNode(p)]);
 }
 
+/**
+ * Services page @graph: the business node enriched with a hasOfferCatalog of the
+ * studio's services. Same business @id as everywhere else — only this page adds
+ * the catalog. Pass the same list the page renders so schema tracks the copy.
+ */
+export function servicesPageGraph(
+  services: { name: string; description: string }[],
+) {
+  const hasOfferCatalog = {
+    "@type": "OfferCatalog",
+    "@id": `${SITE_URL}/services#catalog`,
+    name: "Interior Design Services",
+    itemListElement: services.map((s) => ({
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: s.name,
+        description: s.description,
+        provider: { "@id": BUSINESS_ID },
+      },
+    })),
+  };
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [{ ...businessNode, hasOfferCatalog }],
+  };
+}
+
 /** Renders a JSON-LD <script>. Escapes `<` so CMS content can't break out of the tag. */
 export function JsonLd({ data }: { data: object }) {
   return (

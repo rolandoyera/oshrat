@@ -26,7 +26,8 @@ import {
 import { trackEvent } from "@/lib/gtag";
 
 type Ctx = {
-  open: () => void;
+  /** `source` labels the lead in GA4 and the CRM (defaults to "project"). */
+  open: (source?: string) => void;
   close: () => void;
   toggle: () => void;
 };
@@ -46,9 +47,13 @@ export default function ContactModalProvider({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = useState(false);
+  const [source, setSource] = useState("project");
   const close = useCallback(() => setOpen(false), []);
   const toggle = useCallback(() => setOpen((v) => !v), []);
-  const openFn = useCallback(() => setOpen(true), []);
+  const openFn = useCallback((nextSource = "project") => {
+    setSource(nextSource);
+    setOpen(true);
+  }, []);
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -77,7 +82,7 @@ export default function ContactModalProvider({
   return (
     <ContactModalContext.Provider value={value}>
       {children}
-      {open && <ContactModal onClose={close} />}
+      {open && <ContactModal onClose={close} source={source} />}
     </ContactModalContext.Provider>
   );
 }
@@ -120,7 +125,13 @@ const ContactSchema = z.object({
 });
 type ContactValues = z.infer<typeof ContactSchema>;
 
-function ContactModal({ onClose }: { onClose: () => void }) {
+function ContactModal({
+  onClose,
+  source,
+}: {
+  onClose: () => void;
+  source: string;
+}) {
   const {
     register,
     handleSubmit,
@@ -153,7 +164,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
   const handleFormStart = () => {
     if (hasStartedFormRef.current) return;
     hasStartedFormRef.current = true;
-    trackEvent("form_start", { form_type: "modal" });
+    trackEvent("form_start", { form_type: "modal", source });
   };
 
   // clean up timer if modal unmounts/closes early
@@ -171,7 +182,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...data,
-          source: "project",
+          source,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -179,7 +190,7 @@ function ContactModal({ onClose }: { onClose: () => void }) {
       setSent(true);
 
       // Track successful project modal form submission in GA4
-      trackEvent("project_form_submit", { form_type: "modal" });
+      trackEvent("project_form_submit", { form_type: "modal", source });
 
       closeTimer.current = window.setTimeout(() => {
         setSent(false);

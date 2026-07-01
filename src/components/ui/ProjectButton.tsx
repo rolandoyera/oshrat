@@ -8,15 +8,18 @@ export default function ProjectButton({
   children = "Contact",
   className = "",
   location = "general",
+  formSource,
 }: {
   children?: React.ReactNode;
   className?: string;
   location?: string;
+  /** Labels the resulting lead in GA4 + the CRM. Defaults to "project". */
+  formSource?: string;
 }) {
   const { open } = useProjectModal();
 
   const handleClick = () => {
-    open();
+    open(formSource);
 
     trackEvent("project_button_click", {
       button_location: location,

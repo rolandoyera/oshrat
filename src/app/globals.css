@@ -75,6 +75,7 @@
 
   --font-sans: var(--font-manrope), system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: var(--font-serif), serif;
 
   /* Optional line-height tokens */
   --leading-h1: 1.1;

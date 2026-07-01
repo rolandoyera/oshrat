@@ -16,16 +16,19 @@ export default function TopSection() {
               Architectural & Interior Design Firm
             </H1>
             <p>
-              Sarvian Design is an award-winning architecture and interior
-              design firm in Fort Lauderdale, serving clients throughout South
-              Florida. By blending striking architectural forms with
+              Sarvian Design Group is an award-winning architecture and
+              interior design firm in Fort Lauderdale, serving clients
+              throughout South Florida. By blending striking architectural forms with
               thoughtfully curated interiors, we create homes that flow
               effortlessly between indoor and outdoor spaces, uniting nature and
               design into one harmonious living experience.
             </p>
-            <div className="flex gap-4 pl-4 mt-12">
+            <div className="flex flex-wrap gap-4 pl-4 mt-12">
               <ArrowButton href="/projects" variant="secondary">
                 View Our Projects
+              </ArrowButton>
+              <ArrowButton href="/services" variant="secondary">
+                View Our Services
               </ArrowButton>
             </div>
           </div>

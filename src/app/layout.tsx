@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { Manrope } from "next/font/google";
+import { Manrope, Parisienne } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/Navbar";
 import { cookies } from "next/headers";
@@ -11,6 +11,12 @@ const manrope = Manrope({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800"],
   variable: "--font-manrope",
+});
+
+const parisienne = Parisienne({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-serif",
 });
 
 export const metadata: Metadata = {
@@ -28,6 +34,14 @@ export const metadata: Metadata = {
     title: "Sarvian Design Group",
     description:
       "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
+    images: [
+      {
+        url: "/assets/sarvian-design-group-og-image.jpg",
+        width: 1200,
+        height: 600,
+        alt: "Sarvian Design Group — interior design studio in South Florida",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -45,7 +59,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} font-sans antialiased bg-background text-foreground`}>
+        className={`${manrope.variable} ${parisienne.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
           {process.env.VERCEL_ENV === "production" && (
             <Analytics isInternal={isInternal} />

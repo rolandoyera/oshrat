@@ -2,6 +2,7 @@
 import { createImageUrlBuilder } from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url";
 import { dataset, projectId } from "../env";
+import { heroPreloadSrcSet as srcSetForHero } from "@/lib/image-preload";
 
 if (!projectId || !dataset) {
   throw new Error(
@@ -45,9 +46,6 @@ export const urlFor = (source: SanityImageSource | SanityImageWithAlt) =>
 export const heroImageUrl = (source: SanityImageSource | SanityImageWithAlt) =>
   urlFor(source).width(2880).height(1620).url();
 
-// next/image default deviceSizes — the candidate widths in a full-width srcset.
-const NEXT_DEVICE_SIZES = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
-
 /**
  * Builds the next/image srcset for the hero so a `<link rel="preload">` warms
  * the exact width the detail page will request (hero is `sizes="100vw"`, q=90).
@@ -55,13 +53,7 @@ const NEXT_DEVICE_SIZES = [640, 750, 828, 1080, 1200, 1920, 2048, 3840];
 export const heroPreloadSrcSet = (
   source: SanityImageSource | SanityImageWithAlt,
   quality = 90,
-) => {
-  const src = heroImageUrl(source);
-  return NEXT_DEVICE_SIZES.map(
-    (w) =>
-      `/_next/image?url=${encodeURIComponent(src)}&w=${w}&q=${quality} ${w}w`,
-  ).join(", ");
-};
+) => srcSetForHero(heroImageUrl(source), quality);
 
 /** Helper for next/image */
 export const imageProps = (
