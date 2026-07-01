@@ -107,7 +107,7 @@ export default async function ProjectExamplesSection() {
             inView
             delay={0.15}
             className="mt-5 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
-            Project Examples
+            Latest Projects
           </TextEffect>
         </div>
 

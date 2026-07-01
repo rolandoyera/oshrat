@@ -193,16 +193,10 @@
         },
         {
           "level": "h2",
-          "text": "Project Examples",
+          "text": "Latest Projects",
           "eyebrow": "Selected work",
           "component": "ProjectExamplesSection.tsx",
-          "items": [
-            { "title": "Golden Dreams", "content": "Golden Beach · Whole home" },
-            { "title": "Palmetto Residence", "content": "Boca Raton · New build" },
-            { "title": "Harbour Kitchen", "content": "Las Olas · Kitchen" },
-            { "title": "Alhambra House", "content": "Coral Gables · Renovation" },
-            { "title": "Bay Suite", "content": "Miami Beach · Bespoke" }
-          ],
+          "items": "Latest 5 projects (dynamic — Sanity, newest first). Each card: image + location + title (h3), links to /projects/{slug} via TransitionLink.",
           "itemHeadingLevel": "h3"
         },
         {
@@ -216,7 +210,7 @@
           ]
         }
       ],
-      "notes": "Sample project names/locations in 'Project Examples' are placeholder data in the component, not live CMS content."
+      "notes": "The 'Latest Projects' section pulls the newest 5 projects live from Sanity (revalidate 60), not placeholder data."
     },
 
     {
