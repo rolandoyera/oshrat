@@ -160,28 +160,39 @@ export default function Navbar() {
 
           {/* Center: Centered Navigation Links */}
           <ul className="hidden lg:flex items-center gap-10">
-            {LINKS.map((link) => (
-              <li key={link.href}>
-                {link.name === "Contact" ? (
-                  <DrawerTrigger asChild>
-                    <button className="relative text-lg uppercase group py-1 tracking-wide cursor-pointer text-white font-medium hover:text-white/80 transition-colors bg-transparent border-none outline-none">
+            {LINKS.map((link) => {
+              const isActive =
+                pathname === link.href ||
+                pathname?.startsWith(`${link.href}/`);
+              return (
+                <li key={link.href}>
+                  {link.name === "Contact" ? (
+                    <DrawerTrigger asChild>
+                      <button className="relative text-lg uppercase group py-1 tracking-wide cursor-pointer text-white font-medium hover:text-white/80 transition-colors bg-transparent border-none outline-none">
+                        {link.name}
+                        <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-white transition-all duration-300 -translate-x-1/2 group-hover:w-full" />
+                      </button>
+                    </DrawerTrigger>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      aria-current={isActive ? "page" : undefined}
+                      onPointerEnter={() => preloadHero(link.href)}
+                      onFocus={() => preloadHero(link.href)}
+                      onTouchStart={() => preloadHero(link.href)}
+                      className="relative text-lg uppercase group py-1 tracking-wide">
                       {link.name}
-                      <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-white transition-all duration-300 -translate-x-1/2 group-hover:w-full" />
-                    </button>
-                  </DrawerTrigger>
-                ) : (
-                  <Link
-                    href={link.href}
-                    onPointerEnter={() => preloadHero(link.href)}
-                    onFocus={() => preloadHero(link.href)}
-                    onTouchStart={() => preloadHero(link.href)}
-                    className="relative text-lg uppercase group py-1 tracking-wide">
-                    {link.name}
-                    <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-white transition-all duration-300 -translate-x-1/2 group-hover:w-full" />
-                  </Link>
-                )}
-              </li>
-            ))}
+                      <span
+                        className={cn(
+                          "absolute bottom-0 left-1/2 h-[1.5px] bg-white transition-all duration-300 -translate-x-1/2",
+                          isActive ? "w-full" : "w-0 group-hover:w-full",
+                        )}
+                      />
+                    </Link>
+                  )}
+                </li>
+              );
+            })}
           </ul>
 
           {/* Right: CTA Button (matching width of logo container for perfect centering) */}
