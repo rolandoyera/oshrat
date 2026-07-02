@@ -6,6 +6,7 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import OurApproachSection from "@/components/Approach";
+import ServicesBridge from "@/components/ServicesBridge";
 import Image from "next/image";
 import ProjectButton from "@/components/ui/ProjectButton";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
@@ -108,9 +109,10 @@ export default async function Home() {
       <section className="min-h-dvh p-6 xl:p-0">
         <TopSection />
       </section>
-      <section>
+      <section className="bg-cream-100">
         <OurApproachSection />
       </section>
+      <ServicesBridge />
 
       {/* <Connect /> */}
       <section className="h-[180px] md:h-[340px] lg:h-[420px] 2xl:h-[500px] min-[1920px]:h-[600px] overflow-hidden relative">

@@ -97,7 +97,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
           direction="left"
           threshold={0.3}
           className="w-full flex items-center justify-center">
-          <h2 className="text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight uppercase text-center leading-tight">
+          <h2 className="text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight text-center leading-tight">
             Our Methodology
           </h2>
         </ScrollReveal>
