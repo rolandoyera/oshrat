@@ -9,6 +9,7 @@ import Main from "@/components/ui/Main";
 import P from "@/components/ui/P";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
+import SignatureDraw from "./SignatureDraw";
 import { HERO_BLUR } from "@/lib/hero-blur";
 
 export default function AboutContent() {
@@ -28,7 +29,7 @@ export default function AboutContent() {
       <section className="relative h-dvh w-full overflow-hidden bg-black">
         <Image
           src="/about/Sarvian-Design-Group.jpg"
-          alt="Sarvian Design Group architecture and interior showcase"
+          alt="Sarvian Design Group interior showcase"
           fill
           priority
           sizes="100vw"
@@ -75,8 +76,9 @@ export default function AboutContent() {
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 pt-20">
           <div className="lg:col-span-5">
             <ScrollReveal>
-              <H2 className="tracking-[-0.015em] font-normal uppercase text-accent">
-                A Legacy of Architecture & Interiors
+              <H2 className="py-2 lg:text-6xl">
+                A Legacy <br />
+                of Interior <span className="text-accent">Design</span>
               </H2>
             </ScrollReveal>
           </div>
@@ -99,18 +101,26 @@ export default function AboutContent() {
                 precision.
               </P>
             </ScrollReveal>
+            <ScrollReveal delay={300}>
+              <P>
+                Using the latest in photorealistic 3D visualization, we bring
+                each space to life long before construction begins — allowing
+                you to walk through your interiors, refine every material and
+                finish, and make decisions with complete confidence.
+              </P>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Section 3: Meet the Principal */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center pt-32 border-t border-border/20">
+        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center pt-32 lg:py-50 border-t border-border/20">
           {/* Left Column: Portrait */}
           <div className="lg:col-span-5">
             <ScrollReveal className="rounded shadow-2xl group border border-border/10">
               <div className="relative w-full aspect-3/4 overflow-hidden">
                 <Image
                   src="/about/sarvian-design-group-oshrat-rothschild.jpg"
-                  alt="Oshrat Rothschild - Principal Designer of Sarvian Design Group"
+                  alt="Oshrat Rothschild - Principal Designer and owner of Sarvian Design Group"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   quality={90}
@@ -155,6 +165,18 @@ export default function AboutContent() {
                 aspirations of South Floridians.
               </P>
             </ScrollReveal>
+
+            <div className="ml-auto w-fit pt-8 text-right">
+              <ScrollReveal delay={350}>
+                <P className="italic text-muted-foreground font-light">
+                  "Let’s make something beautiful together."
+                </P>
+              </ScrollReveal>
+              <SignatureDraw
+                speed={1.2}
+                className="w-[260px] h-auto mx-auto mt-8 text-accent"
+              />
+            </div>
           </div>
         </section>
       </Container>

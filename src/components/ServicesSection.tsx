@@ -64,7 +64,8 @@ export const SERVICES: Service[] = [
     ],
     fig: "Fig. 03 — Build",
     image: "/services/new-construction.jpg",
-    imageAlt: "",
+    imageAlt:
+      "Interior view of a luxury double-height living room featuring an open-concept layout with floor-to-ceiling glass walls looking out onto a landscaped garden. The modern space showcases a massive textured accent wall with a mounted television, a large neutral sectional sofa accented with deep teal pillows, lush indoor plants, and three large, sculptural spherical pendant lights suspended from the high ceiling.",
   },
   {
     index: "S·04",
