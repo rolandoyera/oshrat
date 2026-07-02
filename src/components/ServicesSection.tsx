@@ -63,7 +63,7 @@ export const SERVICES: Service[] = [
       "Spatial flow",
     ],
     fig: "Fig. 03 — Build",
-    image: "/services/bathroom-design.jpg",
+    image: "/services/new-construction.jpg",
     imageAlt: "",
   },
   {
