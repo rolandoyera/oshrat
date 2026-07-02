@@ -55,6 +55,22 @@ export default function ContactModalProvider({
     setOpen(true);
   }, []);
 
+  // Deep link: ?project=true auto-opens the modal (e.g. landing page for ads).
+  // Read from window instead of useSearchParams so the provider doesn't need a
+  // Suspense boundary; the param is stripped so reloads don't re-trigger it.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("project") !== "true") return;
+    openFn();
+    params.delete("project");
+    const qs = params.toString();
+    window.history.replaceState(
+      null,
+      "",
+      window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash,
+    );
+  }, [openFn]);
+
   // Lock body scroll when modal is open
   useEffect(() => {
     if (open) {
