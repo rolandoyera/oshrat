@@ -34,12 +34,13 @@ export default function TransitionLink({
     if (preloaded.current || !preloadSrcSet) return;
     preloaded.current = true;
 
-    const link = document.createElement("link");
-    link.rel = "preload";
-    link.as = "image";
-    link.setAttribute("imagesrcset", preloadSrcSet);
-    link.setAttribute("imagesizes", preloadSizes);
-    document.head.appendChild(link);
+    // Warm the HTTP cache with a detached <img> rather than <link rel="preload">:
+    // same bytes, same cache key, but exempt from Chrome's "preload unused
+    // within a few seconds" console warning when the hover doesn't convert.
+    // sizes must be set before srcset so the first fetch picks the right candidate.
+    const img = new Image();
+    img.sizes = preloadSizes;
+    img.srcset = preloadSrcSet;
 
     const hrefStr = typeof href === "string" ? href : href.pathname || "";
     router.prefetch(hrefStr);
@@ -119,7 +120,6 @@ export default function TransitionLink({
       onClick={handleClick}
       onPointerEnter={preload}
       onFocus={preload}
-      onTouchStart={preload}
       aria-label={ariaLabel}
       style={style}
       {...props}
