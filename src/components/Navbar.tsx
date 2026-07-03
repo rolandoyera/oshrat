@@ -223,8 +223,11 @@ export default function Navbar() {
             <ProjectButton
               location="navbar"
               className={cn(
-                "hover:bg-accent hover:text-white",
-                onLight ? "bg-taupe-900 text-cream-100" : "bg-white text-foreground",
+                isScrolled
+                  ? "bg-accent text-white hover:bg-accent/90"
+                  : onLight
+                    ? "bg-taupe-900 text-cream-100 hover:bg-accent hover:text-white"
+                    : "bg-white text-foreground hover:bg-accent hover:text-white",
               )}>
               Let's Talk
             </ProjectButton>
