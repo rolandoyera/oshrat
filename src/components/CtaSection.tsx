@@ -24,8 +24,7 @@ export default function CtaSection({
           speedReveal={5}
           speedSegment={0.3}
           inView
-          className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4"
-        >
+          className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">
           Ready to start?
         </TextEffect>
         <h2 className="mt-6 text-xl font-normal tracking-tight text-balance lg:text-7xl">
@@ -37,8 +36,7 @@ export default function CtaSection({
                 speedReveal={5}
                 speedSegment={0.3}
                 inView
-                className="inline"
-              >
+                className="inline">
                 {heading.plain}
               </TextEffect>{" "}
               <TextEffect
@@ -48,8 +46,7 @@ export default function CtaSection({
                 speedSegment={0.3}
                 inView
                 delay={0.35}
-                className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block"
-              >
+                className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block">
                 {heading.accent}
               </TextEffect>
               .
@@ -62,8 +59,7 @@ export default function CtaSection({
                 speedReveal={5}
                 speedSegment={0.3}
                 inView
-                className="block"
-              >
+                className="block">
                 Let&apos;s design
               </TextEffect>
               <span className="block">
@@ -74,8 +70,7 @@ export default function CtaSection({
                   speedSegment={0.3}
                   inView
                   delay={0.2}
-                  className="inline"
-                >
+                  className="inline">
                   something
                 </TextEffect>{" "}
                 <TextEffect
@@ -85,8 +80,7 @@ export default function CtaSection({
                   speedSegment={0.3}
                   inView
                   delay={0.35}
-                  className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block"
-                >
+                  className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block">
                   beautiful
                 </TextEffect>
                 .
@@ -101,8 +95,7 @@ export default function CtaSection({
           speedSegment={0.3}
           inView
           delay={0.2}
-          className="mt-6 max-w-xl text-foreground"
-        >
+          className="mt-6 max-w-xl text-foreground">
           Tell us about your home and how you want to live in it. We&apos;ll
           walk you through scope, timeline, and the right way to begin.
         </TextEffect>
@@ -116,7 +109,7 @@ export default function CtaSection({
           </ArrowButton>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-foreground/60">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-foreground">
           <a href={`mailto:${SITE.email}`} className="hover:text-accent">
             {SITE.email}
           </a>
@@ -127,8 +120,7 @@ export default function CtaSection({
             href={SITE.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-accent"
-          >
+            className="hover:text-accent">
             {SITE.instagramHandle}
           </a>
         </div>
