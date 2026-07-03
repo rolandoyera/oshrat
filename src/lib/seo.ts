@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const OG_IMAGE = {
   url: "/assets/sarvian-design-group-og-image.jpg",
   width: 1200,
-  height: 600,
+  height: 630,
   alt: "Sarvian Design Group — interior design studio in South Florida",
 };
 
