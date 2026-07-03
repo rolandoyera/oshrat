@@ -60,7 +60,9 @@ function ProjectCard({
         quality={90}
         sizes={sizes}
         className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-        style={{ viewTransitionName: `hero-${project.slug}` } as React.CSSProperties}
+        style={
+          { viewTransitionName: `hero-${project.slug}` } as React.CSSProperties
+        }
       />
       <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
       <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
@@ -87,7 +89,7 @@ export default async function ProjectExamplesSection() {
 
   return (
     <section className="bg-cream-100 py-24 lg:py-32">
-      <Container>
+      <Container size="lg">
         <div className="mb-12">
           <TextEffect
             as="p"

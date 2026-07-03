@@ -43,7 +43,7 @@ const REGIONS: { region: string; places: string[] }[] = [
 export default function WhereWeWorkSection() {
   return (
     <section className="bg-radial from-taupe-800 to-taupe-900 py-24 text-cream-100 lg:py-44">
-      <Container>
+      <Container size="lg">
         <div className="max-w-2xl">
           <TextEffect
             as="p"

@@ -132,9 +132,9 @@ const eyebrow = "text-xs uppercase tracking-[0.2em] text-accent font-bold";
 export default function ServicesSection() {
   return (
     <section id="services" className="bg-cream-200 py-24 lg:py-32">
-      <Container>
+      <Container size="lg">
         {/* Intro */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lgmt-38">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:mt-38">
           <div className="lg:col-span-12">
             <TextEffect
               as="p"
@@ -147,7 +147,7 @@ export default function ServicesSection() {
               The studio
             </TextEffect>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-6">
             <H2 className="flex flex-col gap-2 lg:text-6xl">
               <TextEffect
                 as="span"
@@ -192,7 +192,7 @@ export default function ServicesSection() {
               </span>
             </H2>
           </div>
-          <div className="space-y-6 lg:col-span-6 lg:col-start-7">
+          <div className="space-y-6 lg:col-span-6">
             <TextEffect
               as="p"
               preset="fade-in-blur"
@@ -280,7 +280,7 @@ export default function ServicesSection() {
                   </p>
                 </div>
 
-                <div className="lg:col-span-4">
+                <div className="lg:col-span-3">
                   <p className="text-foreground/85">{service.description}</p>
                   <ul className="mt-6 flex flex-wrap gap-2">
                     {service.tags.map((tag) => (
@@ -293,7 +293,7 @@ export default function ServicesSection() {
                   </ul>
                 </div>
 
-                <div className="lg:col-span-4">
+                <div className="lg:col-span-5">
                   <div className="relative aspect-5/4 w-full overflow-hidden rounded">
                     <Image
                       src={service.image}
