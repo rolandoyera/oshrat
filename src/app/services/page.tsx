@@ -9,7 +9,7 @@ import CtaSection from "@/components/CtaSection";
 export const metadata: Metadata = {
   title: "Interior Design Services in Fort Lauderdale & South Florida",
   description:
-    "Full-service interior design studio serving Fort Lauderdale, Miami, Palm Beach, Broward, and South Florida — renovations, new construction, custom furnishings, kitchens, and bathrooms.",
+    "Full-service interior design firm serving Fort Lauderdale, Miami, Palm Beach, Broward, and South Florida — renovations, new construction, custom furnishings, kitchens, and bathrooms.",
   alternates: { canonical: "/services" },
   openGraph: { url: "/services" },
 };

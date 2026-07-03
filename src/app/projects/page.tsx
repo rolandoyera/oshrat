@@ -13,11 +13,12 @@ const DESCRIPTION =
   "Explore our latest architecture and interior design projects across South Florida — Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.";
 
 export const metadata: Metadata = {
-  title: "Projects",
+  title: "Projects | Fort Lauderdale Interior Designer | Sarvian Design Group",
   description: DESCRIPTION,
   alternates: { canonical: "/projects" },
   openGraph: {
-    title: "Projects",
+    title:
+      "Projects | Fort Lauderdale Interior Designer | Sarvian Design Group",
     description: DESCRIPTION,
     url: "/projects",
   },

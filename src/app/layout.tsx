@@ -21,17 +21,18 @@ const parisienne = Parisienne({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.sarviandg.com"),
-  title: {
-    default: "Sarvian Design Group",
-    template: "%s | Sarvian Design Group",
-  },
+  // No title template — pages append "| Sarvian Design Group" themselves only
+  // where it fits within ~60 chars; keyword-heavy titles skip it.
+  title:
+    "Sarvian Design Group | Interior Designer in Fort Lauderdale | South Florida",
   description:
     "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
   openGraph: {
     type: "website",
     siteName: "Sarvian Design Group",
     locale: "en_US",
-    title: "Sarvian Design Group",
+    title:
+      "Sarvian Design Group | Interior Designer in Fort Lauderdale | South Florida",
     description:
       "Fort Lauderdale interior design studio serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
     images: [
@@ -53,8 +54,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isInternal =
-    (await cookies()).get("internal_user")?.value === "true";
+  const isInternal = (await cookies()).get("internal_user")?.value === "true";
 
   return (
     <html lang="en" suppressHydrationWarning>

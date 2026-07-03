@@ -114,9 +114,12 @@ export async function generateMetadata({
     ogImage?: string;
   } | null>(PROJECT_META, { slug });
 
-  if (!data?.title) return { title: "Project" };
+  if (!data?.title) return { title: "Project | Sarvian Design Group" };
 
-  const title = data.location ? `${data.title} | ${data.location}` : data.title;
+  const baseTitle = data.location
+    ? `${data.title} | ${data.location}`
+    : data.title;
+  const title = `${baseTitle} | Sarvian Design Group`;
   const descriptionText = data.descriptionText?.trim();
   const description =
     data.seoDescription?.trim() ||
@@ -129,7 +132,8 @@ export async function generateMetadata({
     description,
     alternates: { canonical: url },
     openGraph: {
-      title,
+      // No brand in og:title — og:site_name already carries it.
+      title: baseTitle,
       description,
       url,
       type: "article",

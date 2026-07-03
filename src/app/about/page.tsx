@@ -3,12 +3,14 @@ import AboutContent from "./about-content";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "About Oshrat Rothschild | Luxury Interior Designer in South Florida",
+  title:
+    "About Sarvian Design Group | Fort Lauderdale Interior Designer | South Florida",
   description:
     "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Sarvian Design Group",
+    title:
+      "About Sarvian Design Group | Fort Lauderdale Interior Designer | South Florida",
     description:
       "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities.",
     url: "/about",
@@ -17,7 +19,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Sarvian Design Group",
+    title:
+      "About Sarvian Design Group | Fort Lauderdale Interior Designer | South Florida",
     description:
       "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities.",
   },

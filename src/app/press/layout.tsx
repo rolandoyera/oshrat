@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Press & Media",
+  title:
+    "Press & Media | South Florida Interior Designer | Sarvian Design Group",
   description:
     "Publications and press highlighting Sarvian Design Group's architecture and interior design work across South Florida.",
   alternates: { canonical: "/press" },
