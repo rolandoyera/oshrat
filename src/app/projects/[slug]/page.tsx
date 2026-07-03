@@ -17,6 +17,7 @@ import PanoramaViewer from "@/components/ui/PanoramaViewer";
 import P from "@/components/ui/P";
 import ProjectDescription from "./project-description";
 import { JsonLd, projectPageGraph } from "@/lib/structured-data";
+import { socialMeta } from "@/lib/seo";
 
 /* -------------------- Types -------------------- */
 
@@ -131,8 +132,8 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical: url },
-    openGraph: {
-      // No brand in og:title — og:site_name already carries it.
+    // No brand in og:title — og:site_name already carries it.
+    ...socialMeta({
       title: baseTitle,
       description,
       url,
@@ -140,7 +141,7 @@ export async function generateMetadata({
       images: data.ogImage
         ? [`${data.ogImage}?w=1200&h=630&fit=crop&auto=format`]
         : undefined,
-    },
+    }),
   };
 }
 
@@ -240,7 +241,8 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2">
+              className="before:content-['>'] before:mr-2"
+            >
               {data.title}
             </li>
           </ol>

@@ -5,6 +5,7 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
+import { socialMeta } from "@/lib/seo";
 import H2 from "@/components/ui/H2";
 
 export const revalidate = 60; // Revalidate the page every 60 seconds
@@ -12,16 +13,14 @@ export const revalidate = 60; // Revalidate the page every 60 seconds
 const DESCRIPTION =
   "Explore our latest architecture and interior design projects across South Florida — Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.";
 
+const TITLE =
+  "Projects | Fort Lauderdale Interior Designer | Sarvian Design Group";
+
 export const metadata: Metadata = {
-  title: "Projects | Fort Lauderdale Interior Designer | Sarvian Design Group",
+  title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/projects" },
-  openGraph: {
-    title:
-      "Projects | Fort Lauderdale Interior Designer | Sarvian Design Group",
-    description: DESCRIPTION,
-    url: "/projects",
-  },
+  ...socialMeta({ title: TITLE, description: DESCRIPTION, url: "/projects" }),
 };
 
 const QUERY = groq`
@@ -80,7 +79,8 @@ export default async function ProjectsPage() {
                 style={
                   { animationDelay: `${index * 0.12}s` } as React.CSSProperties
                 }
-                aria-label={`${p.title} — ${p.location}`}>
+                aria-label={`${p.title} — ${p.location}`}
+              >
                 <div className="relative w-full aspect-4/3">
                   <Image
                     src={p.imageUrl}

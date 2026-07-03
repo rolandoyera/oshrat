@@ -5,32 +5,22 @@ import type { Metadata } from "next";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
+import { socialMeta } from "@/lib/seo";
 import OurApproachSection from "@/components/Approach";
 import ServicesBridge from "@/components/ServicesBridge";
 import Image from "next/image";
 import ProjectButton from "@/components/ui/ProjectButton";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 
+const TITLE = "Fort Lauderdale Interior Design Firm | Sarvian Design Group";
+const DESCRIPTION =
+  "Fort Lauderdale interior design firm serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.";
+
 export const metadata: Metadata = {
-  title: "Fort Lauderdale Interior Design Firm | Sarvian Design Group",
-  description:
-    "Fort Lauderdale interior design firm serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: "/" },
-  openGraph: {
-    title: "Fort Lauderdale Interior Design Firm | Sarvian Design Group",
-    description:
-      "Fort Lauderdale interior design firm serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
-    url: "/",
-    siteName: "Sarvian Design Group",
-    locale: "en_US",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Fort Lauderdale Interior Design Firm | Sarvian Design Group",
-    description:
-      "Fort Lauderdale interior design firm serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.",
-  },
+  ...socialMeta({ title: TITLE, description: DESCRIPTION, url: "/" }),
 };
 
 interface CarouselItem {
@@ -123,7 +113,8 @@ export default async function Home() {
             speedSegment={0.3}
             as="h2"
             inView
-            className="text-4xl lg:text-6xl font-normal text-balance uppercase text-white">
+            className="text-4xl lg:text-6xl font-normal text-balance uppercase text-white"
+          >
             Ready To Start?
           </TextEffect>
           <ProjectButton location="ready_to_start">Let's Talk</ProjectButton>
