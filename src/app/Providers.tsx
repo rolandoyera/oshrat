@@ -14,7 +14,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <ReactLenis root options={{ lerp: 0.1, duration: 1.2, syncTouch: true }}>
+    // Touch scrolling stays native (no syncTouch) — Lenis only smooths wheel input.
+    <ReactLenis root options={{ lerp: 0.1 }}>
       {content}
     </ReactLenis>
   );

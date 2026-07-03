@@ -8,6 +8,7 @@ import MailIcon from "./icons/MailIcon";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
 import WatermarkLogo from "./WatermarkLogo";
 import { trackEvent } from "@/lib/gtag";
+import { SITE } from "@/lib/site";
 
 export default function Footer() {
   const pathname = usePathname();
@@ -35,33 +36,36 @@ export default function Footer() {
           </p>
           <div className="flex justify-center items-center gap-10 mt-4">
             <a
-              href="https://www.instagram.com/sarviandesigngroup/"
+              href={SITE.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram (opens in a new tab)"
-              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
+              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
+            >
               <InstagramIcon size={30} color="currentColor" />
             </a>
             <a
-              href="mailto:osh@sarviandg.com"
+              href={`mailto:${SITE.email}`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Send email to osh@sarviandg.com (opens in a new tab)"
+              aria-label={`Send email to ${SITE.email} (opens in a new tab)`}
               onClick={() =>
                 trackEvent("email_click", { link_location: "footer" })
               }
-              className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]">
+              className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]"
+            >
               <MailIcon size={32} color="currentColor" />
             </a>
             <a
-              href="https://wa.me/16466394147"
+              href={SITE.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp with +1 (646) 639-4147 (opens in a new tab)"
+              aria-label={`Chat on WhatsApp with ${SITE.whatsappDisplay} (opens in a new tab)`}
               onClick={() =>
                 trackEvent("whatsapp_click", { link_location: "footer" })
               }
-              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
+              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
+            >
               <WhatsAppIcon size={26} color="currentColor" />
             </a>
           </div>
@@ -83,7 +87,8 @@ export default function Footer() {
               href="https://www.lenisvisuals.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LENIS VISUALS website (opens in a new tab)">
+              aria-label="LENIS VISUALS website (opens in a new tab)"
+            >
               LENIS VISUALS
             </a>
           </p>

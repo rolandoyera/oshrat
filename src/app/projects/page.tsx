@@ -36,10 +36,11 @@ const QUERY = groq`
   } | order(coalesce(year, 0) desc, _createdAt desc)
 `;
 
+import CtaSection from "@/components/CtaSection";
+import ProjectsHero from "@/components/ProjectsHero";
+import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import TransitionLink from "@/components/ui/TransitionLink";
 import P from "@/components/ui/P";
-import { TextEffect } from "@/components/motion-primitives/text-effect";
-import ProjectButton from "@/components/ui/ProjectButton";
 
 export default async function ProjectsPage() {
   let projects: {
@@ -62,31 +63,9 @@ export default async function ProjectsPage() {
   return (
     <div>
       <JsonLd data={siteGraph()} />
-      <div className="h-24 bg-linear-to-b from-taupe-900 to-taupe-800"></div>
-      <main className="px-4 lg:px-8 mb-20">
-        <div className="w-full flex flex-col items-center justify-center py-10 lg:py-30">
-          <TextEffect
-            preset="fade-in-blur"
-            className="text-4xl lg:text-7xl font-normal text-balance tracking-tight uppercase"
-            speedReveal={5}
-            speedSegment={0.3}
-            as="h1">
-            Latest Projects
-          </TextEffect>
-          <div className="max-w-[900px]">
-            <TextEffect
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              className="text-base lg:text-[22px] font-light text-balance leading-[1.55] text-center">
-              We've had the privilege of collaborating with clients across South
-              Florida, including Miami, Fort Lauderdale, Coral Gables, Weston,
-              Boca Raton, and Palm Beach.
-            </TextEffect>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <ProjectsHero />
+      <main className="px-4 lg:px-8 my-20 lg:my-30">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
           {projects.map((p, index) => {
             const heroSource = p.heroImage ?? p.mainImage;
             return (
@@ -107,7 +86,7 @@ export default async function ProjectsPage() {
                     alt={p.title}
                     priority={index < 3}
                     fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    sizes="(min-width: 1280px) 33vw, (min-width: 768px) 50vw, 100vw"
                     quality={90}
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                     style={
@@ -131,30 +110,12 @@ export default async function ProjectsPage() {
           })}
         </div>
       </main>
-      <section className="h-[180px] md:h-[340px] lg:h-[420px] 2xl:h-[500px] min-[1920px]:h-[600px] overflow-hidden relative">
-        <div className="absolute inset-0 z-10 bg-black/50 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 z-20 flex flex-col gap-8 items-center justify-center ">
-          <TextEffect
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            as="h2"
-            inView
-            className="text-4xl lg:text-6xl font-normal text-balance uppercase text-white">
-            Ready To Start?
-          </TextEffect>
-          <ProjectButton location="ready_to_start">Let's Talk</ProjectButton>
-        </div>
-        <Image
-          src="/assets/kitchen-counter.jpg"
-          alt="Completed image"
-          width={3500}
-          height={1200}
-          quality={90}
-          sizes="50vw"
-          className="w-full h-auto object-cover xl:-translate-y-90 lg:-translate-y-40 md:-translate-y-20 translate-0"
-        />
-      </section>
+      <WhereWeWorkSection />
+      <CtaSection
+        heading={{ plain: "Yours could be", accent: "next" }}
+        location="ready_to_start"
+        formSource="project"
+      />
     </div>
   );
 }

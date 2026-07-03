@@ -13,7 +13,7 @@ export default function InternalPage() {
   return (
     <>
       <InternalTrafficCookie enabled />
-      <div className="h-24 bg-linear-to-b from-taupe-900 to-taupe-800"></div>
+      <div className="h-24"></div>
       <Main className="flex flex-col items-center justify-center min-h-screen gap-4 relative">
         <span className="text-2xl lg:text-5xl font-normal text-balance uppercase">
           Nobody here but us chickens

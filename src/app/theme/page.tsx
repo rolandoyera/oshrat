@@ -10,6 +10,7 @@ import H4 from "@/components/ui/H4";
 import Main from "@/components/ui/Main";
 import P from "@/components/ui/P";
 import Image from "next/image";
+import { SITE } from "@/lib/site";
 
 const COLOR_GROUPS = [
   {
@@ -38,7 +39,7 @@ const COLOR_GROUPS = [
 export default function ThemePage() {
   return (
     <Main className="bg-white pb-60">
-      <div className="h-24 bg-linear-to-b from-taupe-900 to-taupe-800"></div>
+      <div className="h-24"></div>
 
       {/* Typography */}
       <Container className="pt-30 flex flex-col gap-6 max-w-[1800px]">
@@ -128,7 +129,8 @@ export default function ThemePage() {
             {group.swatches.map((swatch) => (
               <div key={swatch.label} className="w-[200px] h-[200px]">
                 <div
-                  className={`${swatch.bgClass} w-full h-full rounded shadow`}></div>
+                  className={`${swatch.bgClass} w-full h-full rounded shadow`}
+                ></div>
                 <p className="text-sm font-mono">{swatch.label}</p>
               </div>
             ))}
@@ -245,27 +247,30 @@ export default function ThemePage() {
 
                 <div className="flex justify-center items-center gap-10 mt-4">
                   <a
-                    href="https://www.instagram.com/sarviandesigngroup/"
+                    href={SITE.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram (opens in a new tab)"
-                    className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
+                    className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
+                  >
                     <InstagramIcon size={30} color="currentColor" />
                   </a>
                   <a
-                    href="mailto:osh@sarviandg.com"
+                    href={`mailto:${SITE.email}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Send email to osh@sarviandg.com (opens in a new tab)"
-                    className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]">
+                    aria-label={`Send email to ${SITE.email} (opens in a new tab)`}
+                    className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]"
+                  >
                     <MailIcon size={32} color="currentColor" />
                   </a>
                   <a
-                    href="https://wa.me/16466394147"
+                    href={SITE.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Chat on WhatsApp with +1 (646) 639-4147 (opens in a new tab)"
-                    className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
+                    aria-label={`Chat on WhatsApp with ${SITE.whatsappDisplay} (opens in a new tab)`}
+                    className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
+                  >
                     <WhatsAppIcon size={26} color="currentColor" />
                   </a>
                 </div>
@@ -291,7 +296,8 @@ export default function ThemePage() {
             <ArrowButton
               direction="right"
               variant="secondary"
-              className="px-12">
+              className="px-12"
+            >
               Next
             </ArrowButton>
             <p className="text-sm font-mono">Secondary Button • Taupe 800</p>
@@ -309,7 +315,8 @@ export default function ThemePage() {
           <ArrowButton
             href="/theme/guidelines"
             variant="primary"
-            className="px-12 mt-4">
+            className="px-12 mt-4"
+          >
             View Interactive Guidelines
           </ArrowButton>
         </div>

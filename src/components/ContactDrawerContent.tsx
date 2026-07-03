@@ -17,6 +17,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trackEvent } from "@/lib/gtag";
+import { SITE } from "@/lib/site";
 
 const DrawerContactSchema = z.object({
   firstName: z.string().trim().min(1, "Please enter your first name"),
@@ -136,12 +137,10 @@ export default function ContactDrawerContent() {
           <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center text-accent mb-2">
             <Check className="w-8 h-8 text-accent" />
           </div>
-          <p className="text-3xl font-light text-taupe-800">
-            Message Sent
-          </p>
+          <p className="text-3xl font-light text-taupe-800">Message Sent</p>
           <p className="text-base text-taupe-600 max-w-sm leading-relaxed">
-            Thank you for reaching out. We will contact you soon
-            to discuss your vision.
+            Thank you for reaching out. We will contact you soon to discuss your
+            vision.
           </p>
         </div>
       ) : (
@@ -151,10 +150,9 @@ export default function ContactDrawerContent() {
             <div className="lg:col-span-5 space-y-8">
               <div className="space-y-4">
                 <p className="text-base text-taupe-600 leading-relaxed">
-                  From grand architectural concepts to the finest
-                  custom interior details, we craft spaces with
-                  precision and purpose. Let's start a
-                  conversation about your vision.
+                  From grand architectural concepts to the finest custom
+                  interior details, we craft spaces with precision and purpose.
+                  Let's start a conversation about your vision.
                 </p>
               </div>
 
@@ -164,14 +162,15 @@ export default function ContactDrawerContent() {
                     General Inquiries
                   </p>
                   <a
-                    href="mailto:osh@sarviandg.com"
+                    href={`mailto:${SITE.email}`}
                     onClick={() =>
                       trackEvent("email_click", {
                         link_location: "contact_drawer",
                       })
                     }
-                    className="text-sm font-sans font-medium text-accent hover:underline">
-                    osh@sarviandg.com
+                    className="text-sm font-sans font-medium text-accent hover:underline"
+                  >
+                    {SITE.email}
                   </a>
                 </div>
                 <div>
@@ -179,14 +178,15 @@ export default function ContactDrawerContent() {
                     Call Us
                   </p>
                   <a
-                    href="tel:+19544444803"
+                    href={`tel:${SITE.phone}`}
                     onClick={() =>
                       trackEvent("phone_click", {
                         link_location: "contact_drawer",
                       })
                     }
-                    className="text-sm font-sans font-medium text-accent hover:underline">
-                    954-444-4803
+                    className="text-sm font-sans font-medium text-accent hover:underline"
+                  >
+                    {SITE.phoneDisplay}
                   </a>
                 </div>
               </div>
@@ -197,7 +197,8 @@ export default function ContactDrawerContent() {
               <form
                 onSubmit={handleSubmit(handleFormSubmit)}
                 onFocusCapture={handleFormStart}
-                className="space-y-6">
+                className="space-y-6"
+              >
                 <input
                   type="text"
                   tabIndex={-1}
@@ -275,9 +276,7 @@ export default function ContactDrawerContent() {
                   />
                   <DoubleBorder
                     left="left-0"
-                    borderColor={
-                      isMsgFocused ? "bg-accent" : "bg-border/30"
-                    }
+                    borderColor={isMsgFocused ? "bg-accent" : "bg-border/30"}
                     className="transition-all duration-300"
                   />
                   {errors.message && (
@@ -296,7 +295,8 @@ export default function ContactDrawerContent() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="group inline-flex h-12 w-full items-center justify-center gap-2.5 rounded text-cream-100 bg-accent hover:bg-taupe-800 text-lg font-medium uppercase focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent hover:cursor-pointer hover:shadow hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-275 ease-[cubic-bezier(.6,.2,.1,1)] disabled:opacity-55">
+                  className="group inline-flex h-12 w-full items-center justify-center gap-2.5 rounded text-cream-100 bg-accent hover:bg-taupe-800 text-lg font-medium uppercase focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent hover:cursor-pointer hover:shadow hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-275 ease-[cubic-bezier(.6,.2,.1,1)] disabled:opacity-55"
+                >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
@@ -306,37 +306,40 @@ export default function ContactDrawerContent() {
           {/* Social Icons - positioned at the bottom of the panel, centered globally */}
           <div className="flex items-center gap-8 mt-42 justify-center w-full">
             <a
-              href="https://www.instagram.com/sarviandesigngroup/"
+              href={SITE.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram (opens in a new tab)"
-              className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[30px] h-[30px]">
+              className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[30px] h-[30px]"
+            >
               <InstagramIcon size={30} color="currentColor" />
             </a>
             <a
-              href="mailto:osh@sarviandg.com"
+              href={`mailto:${SITE.email}`}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Send email to osh@sarviandg.com (opens in a new tab)"
+              aria-label={`Send email to ${SITE.email} (opens in a new tab)`}
               onClick={() =>
                 trackEvent("email_click", {
                   link_location: "contact_drawer_social",
                 })
               }
-              className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[32px] h-[32px]">
+              className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[32px] h-[32px]"
+            >
               <MailIcon size={32} color="currentColor" />
             </a>
             <a
-              href="https://wa.me/16466394147"
+              href={SITE.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Chat on WhatsApp with +1 (646) 639-4147 (opens in a new tab)"
+              aria-label={`Chat on WhatsApp with ${SITE.whatsappDisplay} (opens in a new tab)`}
               onClick={() =>
                 trackEvent("whatsapp_click", {
                   link_location: "contact_drawer_social",
                 })
               }
-              className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[30px] h-[30px]">
+              className="text-taupe-800 hover:text-accent transition-colors duration-200 flex items-center justify-center w-[30px] h-[30px]"
+            >
               <WhatsAppIcon size={26} color="currentColor" />
             </a>
           </div>

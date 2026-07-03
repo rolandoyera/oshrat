@@ -1,6 +1,8 @@
 // lib/structured-data.tsx
 // Centralized JSON-LD (schema.org) for the site.
 
+import { SITE } from "@/lib/site";
+
 export const SITE_URL = "https://www.sarviandg.com";
 export const BUSINESS_ID = `${SITE_URL}/#business`;
 
@@ -15,11 +17,11 @@ const businessNode = {
   url: SITE_URL,
   logo: `${SITE_URL}/assets/logo_sdg-horizontal.svg`,
   sameAs: [
-    "https://www.instagram.com/sarviandesigngroup/",
+    SITE.instagramUrl,
     "https://www.houzz.com/hznb/professionals/interior-designers-and-decorators/sarvian-design-group-pfvwus-pf~1582672692",
     "https://www.linkedin.com/company/sarviandg/",
   ],
-  telephone: "+1-954-444-4803",
+  telephone: SITE.phone,
   address: {
     "@type": "PostalAddress",
     addressLocality: "Fort Lauderdale",

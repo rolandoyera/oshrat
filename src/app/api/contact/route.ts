@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { createWebsiteLead } from "@/lib/server/create-website-lead";
+import { SITE } from "@/lib/site";
 
 const Schema = z.object({
   firstName: z.string().trim().min(1),
@@ -190,9 +191,7 @@ export async function POST(req: Request) {
     }
 
     const suspiciouslyFast =
-      elapsedFromTs !== null &&
-      elapsedFromTs >= 0 &&
-      elapsedFromTs < 1200;
+      elapsedFromTs !== null && elapsedFromTs >= 0 && elapsedFromTs < 1200;
 
     if (suspiciouslyFast) {
       console.warn(
@@ -248,12 +247,9 @@ export async function POST(req: Request) {
         },
         body: JSON.stringify({
           sender: { email: "hello@sarviandg.com", name: senderName },
-          to: [
-            { email: "rolysemail@gmail.com" },
-            { email: "osh@sarviandg.com" },
-          ],
+          to: [{ email: "rolysemail@gmail.com" }, { email: SITE.email }],
           replyTo: {
-            email: "osh@sarviandg.com",
+            email: SITE.email,
             name: "Oshrat Rothschild",
           },
           subject: subjectLine,

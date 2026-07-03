@@ -111,8 +111,7 @@ export default function GuidelinesPage() {
 
   return (
     <Main className="bg-white pb-40">
-      {/* Dynamic dark header background to frame the navigation */}
-      <div className="h-24 bg-linear-to-b from-taupe-900 to-taupe-800"></div>
+      <div className="h-24"></div>
 
       <Container className="max-w-[1400px] mt-16 px-4 md:px-8">
         {/* Back Link */}
