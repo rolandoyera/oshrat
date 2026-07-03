@@ -14,12 +14,19 @@ interface PanoramaViewerProps {
   imageUrl: string;
   alt?: string;
   className?: string;
+  /**
+   * Fills the parent instead of the standalone aspect-video card, hides the
+   * built-in fullscreen control (the host owns fullscreen), and enables wheel
+   * zoom without requiring fullscreen. Used inside the project lightbox.
+   */
+  embedded?: boolean;
 }
 
 export default function PanoramaViewer({
   imageUrl,
   alt = "360° View",
   className = "",
+  embedded = false,
 }: PanoramaViewerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -85,8 +92,9 @@ export default function PanoramaViewer({
     if (!container || !isInViewport) return;
 
     const handleWheel = (e: WheelEvent) => {
-      // ONLY zoom and block page scrolling if the viewer is actively in full-screen mode!
-      if (!isFullscreen) return;
+      // ONLY zoom and block page scrolling if the viewer is actively in
+      // full-screen mode (or embedded in the lightbox, which locks page scroll)!
+      if (!isFullscreen && !embedded) return;
 
       // Prevent parent page scrolling while actively zooming the room
       e.preventDefault();
@@ -103,7 +111,7 @@ export default function PanoramaViewer({
 
     container.addEventListener("wheel", handleWheel, { passive: false });
     return () => container.removeEventListener("wheel", handleWheel);
-  }, [isInViewport, isFullscreen]);
+  }, [isInViewport, isFullscreen, embedded]);
 
   const toggleFullscreen = () => {
     if (!containerRef.current) return;
@@ -453,7 +461,9 @@ export default function PanoramaViewer({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full aspect-video bg-[#0b0a09] rounded-md overflow-hidden select-none shadow group/pano ${className}`}
+      className={`relative w-full bg-[#0b0a09] overflow-hidden select-none group/pano ${
+        embedded ? "h-full" : "aspect-video rounded-md shadow"
+      } ${className}`}
       onMouseDown={handlePointerDown}
       onMouseMove={handlePointerMove}
       onMouseUp={handlePointerUp}
@@ -539,17 +549,21 @@ export default function PanoramaViewer({
             <RotateCcw size={17} />
           </button>
 
-          <div className="w-px h-6 bg-white/10 mx-0.5" />
+          {!embedded && (
+            <>
+              <div className="w-px h-6 bg-white/10 mx-0.5" />
 
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              toggleFullscreen();
-            }}
-            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-md transition cursor-pointer"
-            title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}>
-            {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
-          </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleFullscreen();
+                }}
+                className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-md transition cursor-pointer"
+                title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}>
+                {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
+              </button>
+            </>
+          )}
         </div>
       )}
     </div>

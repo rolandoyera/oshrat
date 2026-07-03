@@ -16,6 +16,7 @@ import NextProject from "@/components/NextProject";
 import PanoramaViewer from "@/components/ui/PanoramaViewer";
 import P from "@/components/ui/P";
 import ProjectDescription from "./project-description";
+import ProjectGallery, { type GalleryImage } from "./project-gallery";
 import { JsonLd, projectPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 
@@ -191,6 +192,22 @@ export default async function ProjectPage({
     .sort((a, b) => (a.group === b.group ? a.idx - b.idx : a.group - b.group))
     .map((x) => x.img);
 
+  // Serializable image props for the client gallery + lightbox. `src` matches
+  // the stack's previous next/image URL so cached entries stay warm.
+  const galleryImages: GalleryImage[] = sortedGallery.map((img, i) => {
+    const dims = img.asset.metadata?.dimensions;
+    const ar = dims?.aspectRatio ?? 4 / 3;
+    const width = Math.min(dims?.width ?? 1600, 1800);
+    const height = Math.round(width / ar);
+    return {
+      src: urlFor(img).width(width).auto("format").url(),
+      thumbSrc: urlFor(img).width(112).height(160).fit("crop").url(),
+      alt: img.alt || `Project image ${i + 1}`,
+      width,
+      height,
+    };
+  });
+
   // Absolute image URLs for structured data: hero first, then gallery (deduped).
   const imageUrls = [
     ...new Set(
@@ -331,30 +348,23 @@ export default async function ProjectPage({
           <div className="xl:col-span-8">
             {(sortedGallery.length > 0 || panorama) && (
               <div className="flex flex-col gap-8">
-                {sortedGallery.length > 0 && (
-                  <div className="flex flex-col gap-6">
-                    {sortedGallery.map((img, i) => {
-                      const dims = img.asset.metadata?.dimensions;
-                      const ar = dims?.aspectRatio ?? 4 / 3;
-                      const width = Math.min(dims?.width ?? 1600, 1800);
-                      const height = Math.round(width / ar);
-
-                      return (
-                        <Image
-                          key={i}
-                          src={urlFor(img).width(width).auto("format").url()}
-                          alt={img.alt || `Project image ${i + 1}`}
-                          width={width}
-                          height={height}
-                          quality={90}
-                          loading="lazy"
-                          decoding="async"
-                          sizes="(min-width:1280px) 66vw, 100vw"
-                          className="w-full h-auto rounded shadow"
-                        />
-                      );
-                    })}
-                  </div>
+                {galleryImages.length > 0 && (
+                  <ProjectGallery
+                    images={galleryImages}
+                    panorama={
+                      panorama
+                        ? {
+                            imageUrl: panorama.asset.url,
+                            thumbSrc: urlFor(panorama)
+                              .width(112)
+                              .height(160)
+                              .fit("crop")
+                              .url(),
+                            alt: panorama.alt || "360 degree room view",
+                          }
+                        : undefined
+                    }
+                  />
                 )}
 
                 {panorama && (
