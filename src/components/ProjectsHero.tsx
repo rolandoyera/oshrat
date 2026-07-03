@@ -21,7 +21,7 @@ export default function ProjectsHero() {
         <div className="grid grid-cols-1 items-center gap-10 pt-32 pb-16 xl:py-24 xl:grid-cols-12 xl:gap-12">
           <div className="space-y-6 xl:space-y-10 xl:col-span-8">
             <TextEffect
-              as="p"
+              as="h1"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -29,7 +29,7 @@ export default function ProjectsHero() {
               Our Featured Interior Design Projects — South Florida
             </TextEffect>
 
-            <Display as="h1">
+            <Display as="h2">
               <span className="relative inline-flex flex-wrap items-baseline gap-x-6 tracking-tight">
                 <TextEffect
                   as="span"
