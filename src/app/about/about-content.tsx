@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Connect from "@/components/Connect";
+import CtaSection from "@/components/CtaSection";
 import Container from "@/components/ui/Container";
 import H2 from "@/components/ui/H2";
 import Main from "@/components/ui/Main";
@@ -53,14 +53,16 @@ export default function AboutContent() {
                 className="text-4xl lg:text-7xl font-normal text-balance tracking-tight text-white uppercase"
                 speedReveal={5}
                 speedSegment={0.3}
-                as="h1">
+                as="h1"
+              >
                 The Art of Refined Living
               </TextEffect>
               <TextEffect
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
-                className="text-taupe-100 text-base lg:text-[22px] font-light text-balance leading-[1.55]">
+                className="text-taupe-100 text-base lg:text-[22px] font-light text-balance leading-[1.55]"
+              >
                 Blending striking architectural forms with thoughtfully curated
                 interiors, we create homes that unite nature and design into one
                 harmonious experience.
@@ -181,8 +183,12 @@ export default function AboutContent() {
         </section>
       </Container>
 
-      {/* Section 4: Global Connect CTA */}
-      <Connect />
+      {/* Section 4: CTA */}
+      <CtaSection
+        heading={{ plain: "Your space is", accent: "waiting" }}
+        location="ready_to_start"
+        formSource="project"
+      />
     </Main>
   );
 }

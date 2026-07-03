@@ -113,7 +113,7 @@ export const SERVICES: Service[] = [
     title: "Single-Room Transformations",
     category: "Single space",
     description:
-      "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigour as a whole-home engagement.",
+      "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement.",
     tags: [
       "Focused scope",
       "Faster timeline",

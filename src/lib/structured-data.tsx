@@ -31,7 +31,13 @@ const businessNode = {
   areaServed: [
     "Miami, FL",
     "Miami Beach, FL",
+    "Coral Gables, FL",
+    "Coconut Grove, FL",
+    "Bal Harbour, FL",
+    "Fisher Island, FL",
+    "Golden Beach, FL",
     "Fort Lauderdale, FL",
+    "Las Olas, Fort Lauderdale, FL",
     "Aventura, FL",
     "Hollywood, FL",
     "Davie, FL",
@@ -39,11 +45,17 @@ const businessNode = {
     "Cooper City, FL",
     "Dania Beach, FL",
     "Sunny Isles Beach, FL",
+    "Weston, FL",
+    "Parkland, FL",
     "Palm Beach, FL",
     "West Palm Beach, FL",
+    "Boca Raton, FL",
+    "Delray Beach, FL",
+    "Jupiter, FL",
     "Key Largo, FL",
     "Broward County, FL",
     "Miami-Dade County, FL",
+    "Palm Beach County, FL",
   ],
 };
 
@@ -128,6 +140,14 @@ export function projectPageGraph(p: {
   return siteGraph([breadcrumbNode(p.slug, p.title), projectNode(p)]);
 }
 
+/** "Single-Room Transformations" → "single-room-transformations" (for stable @id fragments). */
+function slugify(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 /**
  * Services page @graph: the business node enriched with a hasOfferCatalog of the
  * studio's services. Same business @id as everywhere else — only this page adds
@@ -144,6 +164,7 @@ export function servicesPageGraph(
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
+        "@id": `${SITE_URL}/services#${slugify(s.name)}`,
         name: s.name,
         description: s.description,
         provider: { "@id": BUSINESS_ID },
