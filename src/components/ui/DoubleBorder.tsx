@@ -26,19 +26,23 @@ export default function DoubleBorder({
           "absolute h-px",
           left,
           right,
-          isBottom ? "bottom-0" : "top-0",
+          isBottom ? "bottom-px" : "top-0",
           borderColor,
-          className
+          className,
         )}
       />
+      {/* Highlight sits BELOW the dark line in both positions so every edge
+          reads as the same light-from-above groove. Both lines are drawn
+          inside the container — a highlight hanging 1px outside gets clipped
+          by any overflow-hidden ancestor (e.g. ScrollReveal). */}
       <div
         className={cn(
           "absolute h-px",
           left,
           right,
-          isBottom ? "-bottom-px" : "-top-px",
+          isBottom ? "bottom-0" : "top-px",
           highlightColor,
-          className
+          className,
         )}
       />
     </>

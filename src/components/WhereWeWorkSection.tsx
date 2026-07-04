@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "./ui/Container";
+import DoubleBorder from "./ui/DoubleBorder";
 import { TextEffect } from "./motion-primitives/text-effect";
 
 const REGIONS: { region: string; places: string[] }[] = [
@@ -100,7 +101,12 @@ export default function WhereWeWorkSection() {
           </TextEffect>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-8 gap-y-12 border-t border-white/15 pt-12 md:grid-cols-4 lg:mt-20">
+        <div className="relative mt-16 grid grid-cols-2 gap-x-8 gap-y-12 pt-12 md:grid-cols-4 lg:mt-20">
+          <DoubleBorder
+            position="top"
+            borderColor="bg-black/40"
+            highlightColor="bg-white/15"
+          />
           {REGIONS.map(({ region, places }, col) => (
             <div key={region}>
               <TextEffect

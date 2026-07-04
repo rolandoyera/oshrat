@@ -10,6 +10,9 @@ import OurApproachSection from "@/components/Approach";
 import ServicesBridge from "@/components/ServicesBridge";
 import Image from "next/image";
 import ProjectButton from "@/components/ui/ProjectButton";
+import ArrowButton from "@/components/ui/ArrowButton";
+import Container from "@/components/ui/Container";
+import { SITE } from "@/lib/site";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 const TITLE = "Fort Lauderdale Interior Design Firm | Sarvian Design Group";
@@ -104,30 +107,104 @@ export default async function Home() {
       <ServicesBridge />
 
       {/* <Connect /> */}
-      <section className="h-[180px] md:h-[340px] lg:h-[420px] 2xl:h-[500px] min-[1920px]:h-[600px] overflow-hidden relative">
-        <div className="absolute inset-0 z-10 bg-black/50 backdrop-blur-[2px]" />
-        <div className="absolute inset-0 z-20 flex flex-col gap-8 items-center justify-center ">
-          <TextEffect
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            as="h2"
-            inView
-            className="text-4xl lg:text-6xl font-normal text-balance uppercase text-white"
-          >
-            Ready To Start?
-          </TextEffect>
-          <ProjectButton location="ready_to_start">Let's Talk</ProjectButton>
-        </div>
+      <section className="relative overflow-hidden py-24 lg:py-50">
         <Image
           src="/projects/sdg-bedroom-remodel-armoire-7.jpg"
           alt="Completed image"
-          width={3500}
-          height={1200}
+          fill
           quality={90}
-          sizes="50vw"
-          className="w-full h-auto object-cover xl:-translate-y-60 lg:-translate-y-40 md:-translate-y-20 translate-0"
+          sizes="100vw"
+          className="object-cover"
         />
+        <div className="absolute inset-0 z-10 bg-black/50 backdrop-blur-[2px]" />
+        <Container className="relative z-20 flex flex-col items-center text-center">
+          <TextEffect
+            as="p"
+            per="char"
+            preset="fade-in-blur"
+            speedReveal={5}
+            speedSegment={0.3}
+            inView
+            className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4"
+          >
+            Ready to start?
+          </TextEffect>
+          <h2 className="mt-6 text-xl font-normal tracking-tight text-balance text-white lg:text-7xl">
+            <TextEffect
+              as="span"
+              preset="fade-in-blur"
+              speedReveal={5}
+              speedSegment={0.3}
+              inView
+              className="block"
+            >
+              Let&apos;s design
+            </TextEffect>
+            <span className="block">
+              <TextEffect
+                as="span"
+                preset="fade-in-blur"
+                speedReveal={5}
+                speedSegment={0.3}
+                inView
+                delay={0.2}
+                className="inline"
+              >
+                something
+              </TextEffect>{" "}
+              <TextEffect
+                as="span"
+                preset="fade-in-blur"
+                speedReveal={5}
+                speedSegment={0.3}
+                inView
+                delay={0.35}
+                className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block"
+              >
+                beautiful
+              </TextEffect>
+              .
+            </span>
+          </h2>
+          <TextEffect
+            as="p"
+            preset="fade-in-blur"
+            speedReveal={5}
+            speedSegment={0.3}
+            inView
+            delay={0.2}
+            className="mt-6 max-w-xl text-white"
+          >
+            Tell us about your home and how you want to live in it. We&apos;ll
+            walk you through scope, timeline, and the right way to begin.
+          </TextEffect>
+
+          <div className="mt-16 flex flex-wrap justify-center gap-4">
+            <ProjectButton location="ready_to_start">
+              Contact the studio
+            </ProjectButton>
+            <ArrowButton href={SITE.whatsappUrl} variant="secondary">
+              Message on WhatsApp
+            </ArrowButton>
+          </div>
+
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white">
+            <a href={`mailto:${SITE.email}`} className="hover:text-accent">
+              {SITE.email}
+            </a>
+            <a href={`tel:${SITE.phone}`} className="hover:text-accent">
+              {SITE.phoneDisplay}
+            </a>
+            <a
+              href={SITE.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent"
+            >
+              {SITE.instagramHandle}
+            </a>
+          </div>
+        </Container>
       </section>
     </>
   );

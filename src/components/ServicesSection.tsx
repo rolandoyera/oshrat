@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Container from "./ui/Container";
 import H2 from "./ui/H2";
@@ -143,7 +144,8 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className={eyebrow}>
+              className={eyebrow}
+            >
               The studio
             </TextEffect>
           </div>
@@ -154,7 +156,8 @@ export default function ServicesSection() {
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
-                inView>
+                inView
+              >
                 One team,
               </TextEffect>
               <TextEffect
@@ -164,7 +167,8 @@ export default function ServicesSection() {
                 speedSegment={0.3}
                 inView
                 delay={0.15}
-                className="lg:relative lg:top-2 lg:ml-8">
+                className="lg:relative lg:top-2 lg:ml-8"
+              >
                 first sketch
               </TextEffect>
               <span className="lg:relative lg:ml-16">
@@ -175,7 +179,8 @@ export default function ServicesSection() {
                   speedSegment={0.3}
                   inView
                   delay={0.3}
-                  className="inline relative md:top-3 xl:top-0">
+                  className="inline relative md:top-3 xl:top-0"
+                >
                   to final
                 </TextEffect>
                 <TextEffect
@@ -185,7 +190,8 @@ export default function ServicesSection() {
                   speedSegment={0.3}
                   inView
                   delay={0.45}
-                  className="font-serif text-accent text-[1.6em] leading-none ml-4 inline-block">
+                  className="font-serif text-accent text-[1.6em] leading-none ml-4 inline-block"
+                >
                   styling
                 </TextEffect>
                 .
@@ -199,7 +205,8 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              delay={0.2}>
+              delay={0.2}
+            >
               We design homes that move effortlessly between indoors and out —
               pairing striking architectural forms with interiors that feel
               collected rather than decorated.
@@ -210,7 +217,8 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              delay={0.35}>
+              delay={0.35}
+            >
               Whether you&apos;re building from the ground up, taking a
               residence down to the studs, or transforming a single room, the
               work is handled end to end: layout, finishes, lighting,
@@ -221,7 +229,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services index header */}
-        <div className="flex items-end justify-between border-b border-border pb-6 mt-60">
+        <div className="flex items-end justify-between pb-6 mt-60">
           <div>
             <TextEffect
               as="p"
@@ -230,7 +238,8 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className={eyebrow}>
+              className={eyebrow}
+            >
               What we do
             </TextEffect>
             <TextEffect
@@ -240,7 +249,8 @@ export default function ServicesSection() {
               speedSegment={0.3}
               inView
               delay={0.15}
-              className="mt-4 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
+              className="mt-4 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground"
+            >
               Services
             </TextEffect>
           </div>
@@ -251,66 +261,72 @@ export default function ServicesSection() {
             speedSegment={0.3}
             inView
             delay={0.2}
-            className="text-xs uppercase tracking-[0.2em] text-foreground">
+            className="text-xs uppercase tracking-[0.2em] text-foreground"
+          >
             Schedule — 07 Engagements
           </TextEffect>
         </div>
+        <hr className="etched-line" />
 
         {/* Rows */}
         <div>
           {SERVICES.map((service, index) => (
-            <ScrollReveal
-              key={service.index}
-              direction={index % 2 === 0 ? "left" : "right"}
-              threshold={0.6}>
-              <article className="grid grid-cols-1 gap-6 border-b border-border py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
-                <div className="lg:col-span-1">
-                  <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-                    {service.index}
-                  </span>
-                </div>
-
-                <div className="lg:col-span-3">
-                  <h3 className="max-w-[14ch] text-2xl font-normal leading-tight tracking-tight lg:text-3xl">
-                    {service.title}
-                  </h3>
-                  <p className="mt-4 text-xs uppercase tracking-[0.2em] text-foreground">
-                    <span className="mr-1.5 text-accent font-bold">•</span>
-                    {service.category}
-                  </p>
-                </div>
-
-                <div className="lg:col-span-3">
-                  <p className="text-foreground/85">{service.description}</p>
-                  <ul className="mt-6 flex flex-wrap gap-2">
-                    {service.tags.map((tag) => (
-                      <li
-                        key={tag}
-                        className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70">
-                        {tag}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="lg:col-span-5">
-                  <div className="relative aspect-5/4 w-full overflow-hidden rounded">
-                    <Image
-                      src={service.image}
-                      alt={service.imageAlt}
-                      fill
-                      quality={90}
-                      sizes="(min-width: 1024px) 25vw, 100vw"
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/60 to-transparent" />
-                    <span className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.2em] text-cream-100/90">
-                      {service.fig}
+            <Fragment key={service.index}>
+              <ScrollReveal
+                direction={index % 2 === 0 ? "left" : "right"}
+                threshold={0.6}
+              >
+                <article className="grid grid-cols-1 gap-6 py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
+                  <div className="lg:col-span-1">
+                    <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
+                      {service.index}
                     </span>
                   </div>
-                </div>
-              </article>
-            </ScrollReveal>
+
+                  <div className="lg:col-span-3">
+                    <h3 className="max-w-[14ch] text-2xl font-normal leading-tight tracking-tight lg:text-3xl">
+                      {service.title}
+                    </h3>
+                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-foreground">
+                      <span className="mr-1.5 text-accent font-bold">•</span>
+                      {service.category}
+                    </p>
+                  </div>
+
+                  <div className="lg:col-span-3">
+                    <p className="text-foreground/85">{service.description}</p>
+                    <ul className="mt-6 flex flex-wrap gap-2">
+                      {service.tags.map((tag) => (
+                        <li
+                          key={tag}
+                          className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70"
+                        >
+                          {tag}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="lg:col-span-5">
+                    <div className="relative aspect-5/4 w-full overflow-hidden rounded">
+                      <Image
+                        src={service.image}
+                        alt={service.imageAlt}
+                        fill
+                        quality={90}
+                        sizes="(min-width: 1024px) 25vw, 100vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-black/60 to-transparent" />
+                      <span className="absolute bottom-3 left-3 text-[10px] uppercase tracking-[0.2em] text-cream-100/90">
+                        {service.fig}
+                      </span>
+                    </div>
+                  </div>
+                </article>
+              </ScrollReveal>
+              <hr className="etched-line" />
+            </Fragment>
           ))}
         </div>
       </Container>

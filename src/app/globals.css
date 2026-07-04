@@ -224,6 +224,15 @@ html.lenis body {
   pointer-events: none;
 }
 
+hr.etched-line {
+  border: none;
+  height: 1px;
+  background: var(--color-cream-200); /* Base line color */
+  box-shadow:
+    inset 0 0.5px 0px hsla(36, 15%, 10%, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
 .emboss {
   background: #e0e0e0;
   border-radius: 20px;

@@ -12,7 +12,7 @@ export default function TopSection() {
           threshold={0.3}
           className="lg:col-span-2">
           <div className="space-y-6 pl-4">
-            <H1 className="leading-none">
+            <H1 className="text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight leading-tight text-left">
               Interior Design Firm in Fort Lauderdale
             </H1>
             <p>
