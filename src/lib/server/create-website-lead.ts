@@ -1,5 +1,7 @@
 import "server-only";
 
+import { Timestamp } from "firebase-admin/firestore";
+
 import { getFirebaseAdminDb } from "@/lib/server/firebase-admin";
 
 // This site's identity, stamped onto every lead it originates. The CRM dashboard
@@ -85,6 +87,30 @@ export async function createWebsiteLead(input: WebsiteLeadInput) {
   };
 
   await leadRef.set(lead);
+
+  // CRM bell notification. Shape mirrors AppNotification in the dashboard repo
+  // (apps/dashboard/src/lib/types.ts) — no shared package, synced MANUALLY.
+  // Best-effort: a notification failure never fails the lead intake.
+  try {
+    const notificationRef = db.collection("notifications").doc();
+    await notificationRef.set({
+      notificationId: notificationRef.id,
+      organizationId,
+      type: "lead_created",
+      audience: "org",
+      title: "New website lead",
+      body: `${[input.firstName, input.lastName].filter(Boolean).join(" ")} — ${sourceDetail}`,
+      href: `/dashboard/leads/${leadRef.id}`,
+      actor: WEBSITE_ACTOR,
+      readBy: [],
+      dismissedBy: [],
+      createdAt: now,
+      // Firestore TTL field (~60 days) — must be a real Timestamp.
+      expireAt: Timestamp.fromMillis(now + 60 * 86_400_000),
+    });
+  } catch (error) {
+    console.error("Failed to write lead notification:", error);
+  }
 
   return { leadId: leadRef.id };
 }
