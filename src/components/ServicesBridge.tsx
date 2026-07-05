@@ -16,10 +16,13 @@ export default function ServicesBridge() {
           <h2 className="mt-4 text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal tracking-tight leading-tight">
             Our Services
           </h2>
-          <p className="mx-auto mt-6 max-w-[52ch] text-balance text-foreground/85">
+          <p className="mx-auto mt-6 max-w-[75ch] text-balance text-foreground/85">
             Seven ways we take a home from{" "}
             <em className="text-accent">first sketch to final styling</em> —
-            explore the full scope of the studio&apos;s work.
+            explore the full scope of the studio's work. Whether you need a
+            single room reimagined or a full home built from the ground up, each
+            service is designed to work independently or as part of a larger
+            vision. Below, find the right starting point for your project.
           </p>
         </ScrollReveal>
 
@@ -30,8 +33,7 @@ export default function ServicesBridge() {
               <Fragment key={service.index}>
                 <Link
                   href="/services"
-                  className="group grid grid-cols-[2.5rem_1fr_1.25rem] items-center gap-4 px-3 py-5 transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 md:grid-cols-[3.5rem_1fr_auto_1.5rem] md:gap-8 md:px-4 md:py-7"
-                >
+                  className="group grid grid-cols-[2.5rem_1fr_1.25rem] items-center gap-4 px-3 py-5 transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 md:grid-cols-[3.5rem_1fr_auto_1.5rem] md:gap-8 md:px-4 md:py-7">
                   <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
                     {service.index}
                   </span>
@@ -59,8 +61,7 @@ export default function ServicesBridge() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="h-5 w-5 justify-self-end text-foreground/60 transition-all duration-250 ease-[cubic-bezier(.6,.2,.1,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
-                    aria-hidden="true"
-                  >
+                    aria-hidden="true">
                     <path d="M5 19L19 5M19 5H8M19 5V16" />
                   </svg>
                 </Link>
