@@ -13,17 +13,17 @@ export default function TopSection() {
           className="lg:col-span-2">
           <div className="space-y-6 pl-4">
             <H1 className="text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight leading-tight text-left">
-              Interior Design Firm in Fort Lauderdale
+              Interior Designers in Fort Lauderdale
             </H1>
             <p>
               Based in Fort Lauderdale, Florida, Sarvian Design Group is a
               premier full-service interior design studio specializing in
               holistic home transformations. We merge the precision of
               architectural design with the artistry of interior styling to
-              craft luxurious, cohesive living environments. From custom
-              furniture to turnkey renovations and new construction interiors,
-              our work focuses on functionality, materiality, and spaces that
-              enhance daily life.
+              craft luxurious living environments. From custom furnishings to
+              turnkey renovations and new construction interiors, our work
+              focuses on functionality, materials, and spaces that enhance daily
+              life.
             </p>
             <div className="flex flex-wrap gap-4 pl-4 mt-12">
               <ArrowButton href="/projects" variant="secondary">

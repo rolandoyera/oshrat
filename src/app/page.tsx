@@ -15,9 +15,9 @@ import Container from "@/components/ui/Container";
 import { SITE } from "@/lib/site";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 
-const TITLE = "Fort Lauderdale Interior Design Firm | Sarvian Design Group";
+const TITLE = "Interior Designers in Fort Lauderdale | Sarvian Design Group";
 const DESCRIPTION =
-  "Fort Lauderdale interior design firm serving Broward, Palm Beach, Miami-Dade & South Florida — residential interiors, renovations & new construction.";
+  "Interior Designers in Fort Lauderdale serving Broward, Palm Beach, Miami-Dade & South Florida — interiors, renovations & new construction.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -125,8 +125,7 @@ export default async function Home() {
             speedReveal={5}
             speedSegment={0.3}
             inView
-            className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4"
-          >
+            className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">
             Ready to start?
           </TextEffect>
           <h2 className="mt-6 text-xl font-normal tracking-tight text-balance text-white lg:text-7xl">
@@ -136,8 +135,7 @@ export default async function Home() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className="block"
-            >
+              className="block">
               Let&apos;s design
             </TextEffect>
             <span className="block">
@@ -148,8 +146,7 @@ export default async function Home() {
                 speedSegment={0.3}
                 inView
                 delay={0.2}
-                className="inline"
-              >
+                className="inline">
                 something
               </TextEffect>{" "}
               <TextEffect
@@ -159,8 +156,7 @@ export default async function Home() {
                 speedSegment={0.3}
                 inView
                 delay={0.35}
-                className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block"
-              >
+                className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block">
                 beautiful
               </TextEffect>
               .
@@ -173,8 +169,7 @@ export default async function Home() {
             speedSegment={0.3}
             inView
             delay={0.2}
-            className="mt-6 max-w-xl text-white"
-          >
+            className="mt-6 max-w-xl text-white">
             Tell us about your home and how you want to live in it. We&apos;ll
             walk you through scope, timeline, and the right way to begin.
           </TextEffect>
@@ -199,8 +194,7 @@ export default async function Home() {
               href={SITE.instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-accent"
-            >
+              className="hover:text-accent">
               {SITE.instagramHandle}
             </a>
           </div>
