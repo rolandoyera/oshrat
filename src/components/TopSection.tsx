@@ -30,9 +30,8 @@ export default function TopSection() {
               across South Florida's most sought-after communities — Las Olas,
               Rio Vista, and Coral Ridge locally, with projects reaching Boca
               Raton, Delray Beach, Palm Beach, Golden Beach, and Miami. Each
-              region brings its own architectural language and light; our
-              approach adapts to it, whether that's a waterfront estate on the
-              Intracoastal or a modern build in the heart of the city.
+              region brings its own architectural language and light, whether
+              that means Intracoastal grandeur or contemporary restraint.
             </p>
             <div className="flex flex-wrap gap-4 pl-4 mt-12">
               <ArrowButton href="/projects" variant="secondary">
