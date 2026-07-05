@@ -54,21 +54,21 @@ const OurApproachSection: React.FC<AccordionProps> = ({
     {
       title: "Discovery and Vision",
       content:
-        "We begin with a collaboration to understand goals, lifestyle, and budget, then walk the site to assess opportunities. We discuss aesthetic direction, indoor–outdoor flow, and functional needs for every space. You'll receive a concise project brief outlining scope, priorities, mood references, timelines, and options for phasing.",
+        "We start by understanding your goals, lifestyle, and budget, then walk the site to assess its opportunities. Together we shape the aesthetic direction, indoor–outdoor flow, and functional needs for every space. You'll leave with a concise project brief — scope, priorities, mood references, timeline, and phasing options.",
       image: "/assets/swatch.jpg",
       alt: "Samples of marble, wood and fabrics for a home design project.",
     },
     {
       title: "Concept Design Presentation",
       content:
-        "We translate the brief into preliminary floor plans, furniture layouts, and massing/elevation studies, supported by mood boards, materials, and early renderings. You'll see how architecture and interiors work together—spatial flow, focal moments, and a draft finishes palette. We review alternatives and align on a preferred concept and palette direction.",
+        "We translate the brief into floor plans, furniture layouts, and elevation studies, brought to life with mood boards, materials, and early renderings. You'll see how architecture and interiors work as one — spatial flow, focal moments, a draft finishes palette. From there, we align on a preferred concept and direction.",
       image: "/assets/drawing.jpg",
       alt: "Image of a sketch transitioning into a realistic architectural rendering.",
     },
     {
       title: "Refinement and Approval",
       content:
-        "Using your feedback as our guide, we refine the design and bring every detail into focus. From custom millwork and lighting plans to furnishings, materials, fixtures, and finishes, each element is thoughtfully considered and coordinated. We work closely with consultants and contractors, align decisions with your budget and timeline, and ensure everything comes together as a cohesive vision. The result is a fully developed design ready to move into implementation.",
+        "Your feedback guides every refinement, bringing each detail into focus — millwork, lighting, furnishings, materials, and finishes. We coordinate with consultants and contractors to keep decisions on budget and on schedule. The result: a fully developed design, ready for implementation.",
       image: "/assets/fabric-review-snapshot.jpg",
       alt: "Designer reviewing fabric samples with a client during a consultation.",
     },
@@ -82,7 +82,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
     {
       title: "Staging and Delivery",
       content:
-        "We oversee the final installation, styling, and finishing touches to ensure the home feels cohesive, comfortable, and ready to be enjoyed from day one. Before project completion, we carefully review the space, address any remaining details, and ensure the finished result reflects the design we set out to achieve.",
+        "We oversee final installation and styling, down to the last detail, so your home feels complete from day one. Before we call it finished, we walk the space together to confirm it reflects exactly what we set out to achieve.",
       image: "/assets/bedroom-reno-install.jpg",
       alt: "Two workers carefully adding finishing touches to a bedroom design project.",
     },
