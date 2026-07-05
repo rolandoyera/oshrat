@@ -22,7 +22,7 @@ export const SERVICES: Service[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time — not staged.",
+      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time — not staged. Every choice is made in relation to the next, so a home reads as one continuous idea rather than a series of decorated rooms.",
     tags: [
       "Furniture plans",
       "Finishes & palette",
@@ -39,7 +39,7 @@ export const SERVICES: Service[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Down-to-the-studs remodels handled from layout to last detail. We reshape the plan, design the millwork, and coordinate closely with your contractor and trades to protect the design intent on site.",
+      "Down-to-the-studs remodels handled from layout to last detail. We reshape the plan, design the millwork, and coordinate closely with your contractor and trades to protect the design intent on site. It's a demanding process — our job is to keep it moving, keep it coordinated, and keep the outcome true to the original vision.",
     tags: [
       "Space planning",
       "Custom millwork",
@@ -56,7 +56,7 @@ export const SERVICES: Service[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed — and the finished home reads as a single, coherent idea.",
+      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed — and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later — the architecture and the interior are never fighting each other.",
     tags: [
       "Architect collaboration",
       "Early finishes",
@@ -73,7 +73,7 @@ export const SERVICES: Service[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Cabinetry, stone, and appliance planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party.",
+      "Cabinetry, stone, and appliance planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow — is made with that in mind.",
     tags: [
       "Cabinetry",
       "Stone & surfaces",
@@ -90,7 +90,7 @@ export const SERVICES: Service[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room.",
+      "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience — the goal is a room that feels as good to be in as it looks.",
     tags: ["Stone & tile", "Fixtures", "Vanities", "Layered lighting"],
     fig: "Fig. 05 — Bath",
     image: "/services/bathroom-design.jpg",
@@ -102,8 +102,14 @@ export const SERVICES: Service[] = [
     title: "Custom Furnishings",
     category: "Made to order",
     description:
-      "Bespoke case goods, upholstery, and built-ins fabricated to fit the room and the way you live in it. Designed in-house, made by trusted workrooms, and detailed to the millimeter.",
-    tags: ["Case goods", "Upholstery", "Built-ins", "Workroom liaison"],
+      "Bespoke case goods and built-ins fabricated to fit the room and the way you live in it. Designed in-house, made by trusted artisans, and detailed to the millimeter. Every piece is drawn, refined, and specified before fabrication begins, so what arrives on site matches the vision exactly — no substitutions, no compromises.",
+    tags: [
+      "Case goods",
+      "Built-ins",
+      "Woodworking",
+      "Finishes & hardware",
+      "Artisan-crafted",
+    ],
     fig: "Fig. 06 — Bespoke",
     image: "/services/custom-furnishings.jpg",
     imageAlt:
@@ -114,7 +120,7 @@ export const SERVICES: Service[] = [
     title: "Single-Room Transformations",
     category: "Single space",
     description:
-      "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement.",
+      "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement. A focused scope means faster decisions and a shorter path from concept to finished room, without cutting a single corner.",
     tags: [
       "Focused scope",
       "Faster timeline",
@@ -144,8 +150,7 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className={eyebrow}
-            >
+              className={eyebrow}>
               The studio
             </TextEffect>
           </div>
@@ -156,8 +161,7 @@ export default function ServicesSection() {
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
-                inView
-              >
+                inView>
                 One team,
               </TextEffect>
               <TextEffect
@@ -167,8 +171,7 @@ export default function ServicesSection() {
                 speedSegment={0.3}
                 inView
                 delay={0.15}
-                className="lg:relative lg:top-2 lg:ml-8"
-              >
+                className="lg:relative lg:top-2 lg:ml-8">
                 first sketch
               </TextEffect>
               <span className="lg:relative lg:ml-16">
@@ -179,8 +182,7 @@ export default function ServicesSection() {
                   speedSegment={0.3}
                   inView
                   delay={0.3}
-                  className="inline relative md:top-3 xl:top-0"
-                >
+                  className="inline relative md:top-3 xl:top-0">
                   to final
                 </TextEffect>
                 <TextEffect
@@ -190,8 +192,7 @@ export default function ServicesSection() {
                   speedSegment={0.3}
                   inView
                   delay={0.45}
-                  className="font-serif text-accent text-[1.6em] leading-none ml-4 inline-block"
-                >
+                  className="font-serif text-accent text-[1.6em] leading-none ml-4 inline-block">
                   styling
                 </TextEffect>
                 .
@@ -205,8 +206,7 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              delay={0.2}
-            >
+              delay={0.2}>
               We design homes that move effortlessly between indoors and out —
               pairing striking architectural forms with interiors that feel
               collected rather than decorated.
@@ -217,8 +217,7 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              delay={0.35}
-            >
+              delay={0.35}>
               Whether you&apos;re building from the ground up, taking a
               residence down to the studs, or transforming a single room, the
               work is handled end to end: layout, finishes, lighting,
@@ -238,8 +237,7 @@ export default function ServicesSection() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className={eyebrow}
-            >
+              className={eyebrow}>
               What we do
             </TextEffect>
             <TextEffect
@@ -249,8 +247,7 @@ export default function ServicesSection() {
               speedSegment={0.3}
               inView
               delay={0.15}
-              className="mt-4 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground"
-            >
+              className="mt-4 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
               Services
             </TextEffect>
           </div>
@@ -261,8 +258,7 @@ export default function ServicesSection() {
             speedSegment={0.3}
             inView
             delay={0.2}
-            className="text-xs uppercase tracking-[0.2em] text-foreground"
-          >
+            className="text-xs uppercase tracking-[0.2em] text-foreground">
             Schedule — 07 Engagements
           </TextEffect>
         </div>
@@ -274,8 +270,7 @@ export default function ServicesSection() {
             <Fragment key={service.index}>
               <ScrollReveal
                 direction={index % 2 === 0 ? "left" : "right"}
-                threshold={0.6}
-              >
+                threshold={0.6}>
                 <article className="grid grid-cols-1 gap-6 py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
                   <div className="lg:col-span-1">
                     <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
@@ -299,8 +294,7 @@ export default function ServicesSection() {
                       {service.tags.map((tag) => (
                         <li
                           key={tag}
-                          className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70"
-                        >
+                          className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70">
                           {tag}
                         </li>
                       ))}
