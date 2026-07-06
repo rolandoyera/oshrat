@@ -262,13 +262,16 @@ export default async function ProjectPage({
         <nav aria-label="Breadcrumb" className="px-4 xl:px-6 mt-2">
           <ol className="flex items-center gap-2">
             <li>
+              <Link href="/">Home</Link>
+            </li>
+            <li className="before:content-['>'] before:mr-2">
               <Link href="/projects">Projects</Link>
             </li>
             <li
               aria-current="page"
               className="before:content-['>'] before:mr-2"
             >
-              {data.title}
+              {data.location ? `${data.title} | ${data.location}` : data.title}
             </li>
           </ol>
         </nav>

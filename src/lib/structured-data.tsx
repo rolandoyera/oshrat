@@ -105,11 +105,14 @@ function projectNode(p: {
 }
 
 /** BreadcrumbList node. Every crumb (including the current page) carries its `item` URL. */
-function breadcrumbNode(slug: string, title: string) {
+function breadcrumbNode(slug: string, title: string, location?: string) {
   const items = [
     { name: "Home", url: `${SITE_URL}/` },
     { name: "Projects", url: `${SITE_URL}/projects` },
-    { name: title, url: `${SITE_URL}/projects/${slug}` },
+    {
+      name: location ? `${title} | ${location}` : title,
+      url: `${SITE_URL}/projects/${slug}`,
+    },
   ];
   return {
     "@type": "BreadcrumbList",
@@ -137,7 +140,10 @@ export function projectPageGraph(p: {
   year?: number;
   images?: string[];
 }) {
-  return siteGraph([breadcrumbNode(p.slug, p.title), projectNode(p)]);
+  return siteGraph([
+    breadcrumbNode(p.slug, p.title, p.location),
+    projectNode(p),
+  ]);
 }
 
 /** "Single-Room Transformations" → "single-room-transformations" (for stable @id fragments). */
