@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/aventura-townhome",
-        destination: "/projects/aventura-townhome",
+        destination: "/projects/aventura-modern-living-aventura-fl",
         permanent: true,
       },
       {
@@ -45,6 +45,11 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/projects/aventura-modern-living",
+        destination: "/projects/aventura-modern-living-aventura-fl",
+        permanent: true,
+      },
+      {
+        source: "/projects/aventura-townhome",
         destination: "/projects/aventura-modern-living-aventura-fl",
         permanent: true,
       },
