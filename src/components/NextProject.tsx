@@ -1,14 +1,15 @@
-import Container from "./ui/Container";
 import ArrowButton from "./ui/ArrowButton";
 
 interface NextProjectProps {
   prevProject?: {
     title: string;
     slug: string;
+    location?: string;
   } | null;
   nextProject?: {
     title: string;
     slug: string;
+    location?: string;
   } | null;
 }
 
@@ -18,11 +19,16 @@ export default function NextProject({
 }: NextProjectProps) {
   return (
     <div className="bg-card mt-20">
-      <Container className="flex flex-row items-stretch justify-center gap-6 py-12 text-center">
+      <div className="flex flex-row items-stretch justify-center gap-6 py-22 text-center">
         {prevProject && (
           <div className="flex-1 md:flex flex-col items-center justify-between hidden">
-            <h2 className="text-foreground text-2xl lg:text-4xl mb-4 text-center flex-1 flex items-center justify-center">
+            <h2 className="text-foreground text-2xl lg:text-4xl text-center flex-1 flex flex-col items-center justify-center">
               {prevProject.title}
+              {prevProject.location && (
+                <span className="block text-sm lg:text-base font-light">
+                  {prevProject.location}
+                </span>
+              )}
             </h2>
             <ArrowButton
               href={`/projects/${prevProject.slug}`}
@@ -38,8 +44,13 @@ export default function NextProject({
         </div>
         {nextProject && (
           <div className="flex-1 flex flex-col items-center justify-between">
-            <h2 className="text-foreground text-2xl lg:text-4xl mb-4 text-center flex-1 flex items-center justify-center">
+            <h2 className="text-foreground text-2xl lg:text-4xl mb-4 text-center flex-1 flex flex-col items-center justify-center">
               {nextProject.title}
+              {nextProject.location && (
+                <span className="block text-sm lg:text-base font-light mt-1">
+                  {nextProject.location}
+                </span>
+              )}
             </h2>
 
             <ArrowButton
@@ -49,7 +60,7 @@ export default function NextProject({
             </ArrowButton>
           </div>
         )}
-      </Container>
+      </div>
     </div>
   );
 }

@@ -79,7 +79,8 @@ const ALL_SLUGS = groq`*[_type=="project" && defined(slug.current)]{ "slug": slu
 
 const ALL_PROJECTS_SORTED = groq`*[_type=="project" && defined(slug.current)]{
   title,
-  "slug": slug.current
+  "slug": slug.current,
+  location
 } | order(coalesce(year, 0) desc, _createdAt desc)`;
 
 /* -------------------- ISR -------------------- */
@@ -165,7 +166,9 @@ export default async function ProjectPage({
 
   const [data, allProjects] = await Promise.all([
     client.fetch<Project | null>(PROJECT_BY_SLUG, { slug }),
-    client.fetch<{ title: string; slug: string }[]>(ALL_PROJECTS_SORTED),
+    client.fetch<{ title: string; slug: string; location?: string }[]>(
+      ALL_PROJECTS_SORTED,
+    ),
   ]);
 
   if (!data) return notFound();
