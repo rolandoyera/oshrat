@@ -20,6 +20,8 @@ const businessNode = {
     SITE.instagramUrl,
     "https://www.houzz.com/hznb/professionals/interior-designers-and-decorators/sarvian-design-group-pfvwus-pf~1582672692",
     "https://www.linkedin.com/company/sarviandg/",
+    // Google Business Profile
+    "https://g.page/r/CakN1wWIrjEXEBM",
   ],
   telephone: SITE.phone,
   address: {
