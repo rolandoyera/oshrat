@@ -239,9 +239,17 @@ function Lightbox({
         </>
       )}
 
-      {/* Thumbnail strip */}
-      {showThumbs && total > 1 && (
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex max-w-[92vw] gap-2 overflow-x-auto p-1">
+      {/* Thumbnail strip — stays mounted so the show/hide toggle can animate */}
+      {total > 1 && (
+        <div
+          inert={!showThumbs}
+          aria-hidden={!showThumbs}
+          className={`absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex max-w-[92vw] gap-2 overflow-x-auto p-1 transition-all duration-300 ease-out ${
+            showThumbs
+              ? "translate-y-0 opacity-100"
+              : "pointer-events-none translate-y-4 opacity-0"
+          }`}
+        >
           {images.map((img, i) => (
             <button
               key={i}
