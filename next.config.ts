@@ -58,6 +58,11 @@ const nextConfig: NextConfig = {
         destination: "/projects/the-shul-bal-harbour-bal-harbour-fl",
         permanent: true,
       },
+      {
+        source: "/projects/golden-beach",
+        destination: "/projects/golden-dreams-golden-beach-fl",
+        permanent: true,
+      },
     ];
   },
 };
