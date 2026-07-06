@@ -44,6 +44,15 @@ type Project = {
   materials?: string[];
 };
 
+/** Display labels for the `type` field's stored values (see sanity project schema). */
+const PROJECT_TYPE_LABELS: Record<string, string> = {
+  residential: "Residential",
+  commercial: "Commercial",
+  hospitality: "Hospitality",
+  nonprofit: "Non-Profit",
+  other: "Other",
+};
+
 /* -------------------- GROQ -------------------- */
 
 const PROJECT_BY_SLUG = groq`*[_type=="project" && slug.current == $slug][0]{
@@ -297,7 +306,9 @@ export default async function ProjectPage({
                       <span className="text-[16px] font-medium font-mono">
                         Type
                       </span>
-                      <span className="text-[16px] font-mono">{data.type}</span>
+                      <span className="text-[16px] font-mono">
+                        {PROJECT_TYPE_LABELS[data.type] ?? data.type}
+                      </span>
                     </div>
                   )}
 
