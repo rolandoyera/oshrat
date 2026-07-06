@@ -9,7 +9,7 @@ export default function H3({ children, className, ...props }: H3Props) {
     <h3
       {...props}
       className={cn(
-        "text-2xl lg:text-4xl font-normal text-balance tracking-tighter text-foreground",
+        "text-2xl lg:text-4xl font-normal text-balance tracking-tight text-foreground",
         className,
       )}>
       {children}

@@ -36,6 +36,8 @@ const ROUTE_HERO: Record<string, { src: string; quality?: number }> = {
 // fades in its dark gradient backdrop.
 const LIGHT_ROUTES = new Set([
   "/projects",
+  "/privacy",
+  "/terms",
   "/internal",
   "/external",
   "/theme",

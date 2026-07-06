@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Container from "./ui/Container";
 import { usePathname } from "next/navigation";
 import InstagramIcon from "./icons/InstagramIcon";
@@ -19,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full relative bg-linear-to-b from-taupe-800 to-taupe-900 h-100 overflow-hidden">
-      <Container className="relative flex flex-col h-full items-center justify-center max-w-[900px] z-10">
+      <Container className="relative flex flex-col h-full items-center justify-center max-w-[1200px] z-10">
         <div className="flex-1 flex flex-col items-center justify-center">
           <Image
             className="mx-auto brightness-0 invert"
@@ -40,8 +41,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram (opens in a new tab)"
-              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
-            >
+              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
               <InstagramIcon size={30} color="currentColor" />
             </a>
             <a
@@ -52,8 +52,7 @@ export default function Footer() {
               onClick={() =>
                 trackEvent("email_click", { link_location: "footer" })
               }
-              className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]"
-            >
+              className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]">
               <MailIcon size={32} color="currentColor" />
             </a>
             <a
@@ -64,8 +63,7 @@ export default function Footer() {
               onClick={() =>
                 trackEvent("whatsapp_click", { link_location: "footer" })
               }
-              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
-            >
+              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
               <WhatsAppIcon size={26} color="currentColor" />
             </a>
           </div>
@@ -75,20 +73,29 @@ export default function Footer() {
           <div className="absolute left-0 right-0 top-0 h-px bg-black/80" />
           <div className="absolute left-0 right-0 top-px h-px bg-white/15" />
         </div>
-        <div className="py-4 text-[0.9rem] mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
-          <p className="text-cream-300 text-sm">
-            © {new Date().getFullYear()} Sarvian Design Group. All rights
-            reserved.
+        <div className="py-4 text-[0.9rem] mx-auto w-full flex flex-col items-center gap-2 md:grid md:grid-cols-3">
+          <p className="text-cream-300 text-sm md:justify-self-start">
+            © {new Date().getFullYear()} Sarvian Design Group.
           </p>
-          <p className="text-cream-300 text-sm">
+          <p className="text-cream-300 text-sm md:justify-self-center">
+            <Link href="/privacy" className="hover:text-accent hover:underline">
+              Privacy Policy
+            </Link>{" "}
+            <span aria-hidden="true" className="mx-1">
+              ·
+            </span>
+            <Link href="/terms" className="hover:text-accent hover:underline">
+              Terms of Use
+            </Link>
+          </p>
+          <p className="text-cream-300 text-sm md:justify-self-end">
             Made with ❤️ by{" "}
             <a
               className="text-cream-300 hover:text-accent hover:underline"
               href="https://www.lenisvisuals.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LENIS VISUALS website (opens in a new tab)"
-            >
+              aria-label="LENIS VISUALS website (opens in a new tab)">
               LENIS VISUALS
             </a>
           </p>
