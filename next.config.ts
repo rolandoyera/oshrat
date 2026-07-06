@@ -38,6 +38,16 @@ const nextConfig: NextConfig = {
         destination: "/projects/modern-marble-haven-fort-lauderdale-fl",
         permanent: true,
       },
+      {
+        source: "/projects/elevated-primary-suite",
+        destination: "/projects/elevated-primary-suite-fort-lauderdale-fl",
+        permanent: true,
+      },
+      {
+        source: "/projects/aventura-modern-living",
+        destination: "/projects/aventura-modern-living-aventura-fl",
+        permanent: true,
+      },
     ];
   },
 };
