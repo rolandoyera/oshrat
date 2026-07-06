@@ -53,6 +53,11 @@ const nextConfig: NextConfig = {
         destination: "/projects/aventura-modern-living-aventura-fl",
         permanent: true,
       },
+      {
+        source: "/projects/the-shul-bal-harbour",
+        destination: "/projects/the-shul-bal-harbour-bal-harbour-fl",
+        permanent: true,
+      },
     ];
   },
 };
