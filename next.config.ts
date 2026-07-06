@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
         destination: "/projects/south-beach",
         permanent: true,
       },
+      {
+        source: "/projects/modern-marble-haven",
+        destination: "/projects/modern-marble-haven-fort-lauderdale-fl",
+        permanent: true,
+      },
     ];
   },
 };

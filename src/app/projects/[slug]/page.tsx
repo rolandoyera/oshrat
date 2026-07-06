@@ -14,7 +14,6 @@ import type { PortableTextBlock } from "@portabletext/types";
 import ProjectButton from "@/components/ui/ProjectButton";
 import NextProject from "@/components/NextProject";
 import PanoramaViewer from "@/components/ui/PanoramaViewer";
-import P from "@/components/ui/P";
 import ProjectDescription from "./project-description";
 import ProjectGallery, { type GalleryImage } from "./project-gallery";
 import { JsonLd, projectPageGraph } from "@/lib/structured-data";
@@ -273,10 +272,12 @@ export default async function ProjectPage({
               <div className="bg-card p-2 sm:p-4 md:p-8 lg:p-12 rounded shadow">
                 <h1 className="text-[38px]/[1.1] tracking-[-0.012em]">
                   {data.title}
+                  {data.location && (
+                    <span className="block text-[16px] lg:text-[22px] font-light tracking-normal text-balance leading-[1.55] -mb-4">
+                      {data.location}
+                    </span>
+                  )}
                 </h1>
-                {data.location && (
-                  <P className="text-[16px]">{data.location}</P>
-                )}
                 <div className="my-10 lg:my-16 space-y-2">
                   <div className="flex justify-between pb-2 relative">
                     <div className="absolute left-0 right-0 bottom-0 h-px bg-border/30" />
