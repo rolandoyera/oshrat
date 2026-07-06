@@ -38,9 +38,9 @@ export default function TermsPage() {
         <div className="space-y-6">
           <P className={body}>
             Welcome to <strong>sarviandg.com</strong>, the website of Sarvian
-            Design Group (&ldquo;Sarvian Design Group,&rdquo; &ldquo;we,&rdquo;
-            &ldquo;our,&rdquo; or &ldquo;us&rdquo;). By visiting or using this
-            website, you agree to the following Terms of Use.
+            Design Group ( &ldquo;we,&rdquo; &ldquo;our,&rdquo; or
+            &ldquo;us&rdquo;). By visiting or using this website, you agree to
+            the following Terms of Use.
           </P>
           <P className={body}>
             These Terms apply only to the public Sarvian Design Group website.
@@ -76,8 +76,8 @@ export default function TermsPage() {
           <H2 className={`${h2} pt-8`}>3. Website Content</H2>
           <P className={body}>
             The content on this website, including text, images, project
-            descriptions, design concepts, branding, layout, graphics, and
-            other materials, is provided for general information only.
+            descriptions, design concepts, branding, layout, graphics, and other
+            materials, is provided for general information only.
           </P>
           <P className={body}>
             We make reasonable efforts to keep website content accurate and
@@ -99,8 +99,8 @@ export default function TermsPage() {
           </P>
           <P className={body}>
             You may not copy, reproduce, modify, distribute, display, publish,
-            or use website content for commercial purposes without prior
-            written permission from Sarvian Design Group.
+            or use website content for commercial purposes without prior written
+            permission from Sarvian Design Group.
           </P>
           <P className={body}>
             You may share links to pages on this website for personal or
@@ -112,8 +112,8 @@ export default function TermsPage() {
             5. Portfolio Images and Project Materials
           </H2>
           <P className={body}>
-            Portfolio images, renderings, photography, project descriptions,
-            and related materials are shown to represent Sarvian Design
+            Portfolio images, renderings, photography, project descriptions, and
+            related materials are shown to represent Sarvian Design
             Group&rsquo;s work, design style, capabilities, or completed
             projects.
           </P>
@@ -131,15 +131,15 @@ export default function TermsPage() {
 
           <H2 className={`${h2} pt-8`}>6. Third-Party Links</H2>
           <P className={body}>
-            This website may include links to third-party websites or
-            platforms, such as Instagram, Houzz, LinkedIn, vendor websites, or
-            other external resources.
+            This website may include links to third-party websites or platforms,
+            such as Instagram, Houzz, LinkedIn, vendor websites, or other
+            external resources.
           </P>
           <P className={body}>
             These links are provided for convenience only. Sarvian Design Group
             does not control and is not responsible for the content, privacy
-            practices, terms, security, accuracy, or availability of
-            third-party websites.
+            practices, terms, security, accuracy, or availability of third-party
+            websites.
           </P>
           <P className={body}>
             Visiting any third-party website is at your own risk and subject to
@@ -182,8 +182,8 @@ export default function TermsPage() {
           <H2 className={`${h2} pt-8`}>9. Limitation of Liability</H2>
           <P className={body}>
             To the fullest extent permitted by law, Sarvian Design Group shall
-            not be liable for any damages arising from your use of, or
-            inability to use, this website.
+            not be liable for any damages arising from your use of, or inability
+            to use, this website.
           </P>
           <P className={body}>
             This includes, but is not limited to, damages related to website
@@ -194,9 +194,9 @@ export default function TermsPage() {
           <H2 className={`${h2} pt-8`}>10. Indemnification</H2>
           <P className={body}>
             You agree to indemnify and hold harmless Sarvian Design Group from
-            any claims, damages, losses, liabilities, costs, or expenses
-            arising from your misuse of the website, violation of these Terms,
-            or infringement of any rights of another person or entity.
+            any claims, damages, losses, liabilities, costs, or expenses arising
+            from your misuse of the website, violation of these Terms, or
+            infringement of any rights of another person or entity.
           </P>
 
           <H2 className={`${h2} pt-8`}>11. Privacy</H2>
@@ -226,8 +226,8 @@ export default function TermsPage() {
             will update the effective date above.
           </P>
           <P className={body}>
-            Your continued use of the website after changes are posted means
-            you accept the updated Terms.
+            Your continued use of the website after changes are posted means you
+            accept the updated Terms.
           </P>
 
           <H2 className={`${h2} pt-8`}>14. Contact Us</H2>
@@ -242,16 +242,14 @@ export default function TermsPage() {
             Email:{" "}
             <a
               className="underline hover:text-accent"
-              href={`mailto:${SITE.email}`}
-            >
+              href={`mailto:${SITE.email}`}>
               {SITE.email}
             </a>
             <br />
             Phone:{" "}
             <a
               className="underline hover:text-accent"
-              href={`tel:${SITE.phone}`}
-            >
+              href={`tel:${SITE.phone}`}>
               {SITE.phoneDisplay}
             </a>
           </P>

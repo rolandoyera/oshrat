@@ -6,7 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useLenis } from "lenis/react";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import { Drawer, DrawerContent } from "@/components/ui/drawer";
 import { trackEvent } from "@/lib/gtag";
 import ProjectButton from "./ui/ProjectButton";
 import ContactDrawerContent from "./ContactDrawerContent";
@@ -36,6 +36,7 @@ const ROUTE_HERO: Record<string, { src: string; quality?: number }> = {
 // fades in its dark gradient backdrop.
 const LIGHT_ROUTES = new Set([
   "/projects",
+  "/contact",
   "/privacy",
   "/terms",
   "/internal",
@@ -192,29 +193,20 @@ export default function Navbar() {
                 pathname?.startsWith(`${link.href}/`);
               return (
                 <li key={link.href}>
-                  {link.name === "Contact" ? (
-                    <DrawerTrigger asChild>
-                      <button className="relative text-lg uppercase group py-1 tracking-wide cursor-pointer text-current font-medium hover:opacity-80 transition-colors bg-transparent border-none outline-none">
-                        {link.name}
-                        <span className="absolute bottom-0 left-1/2 w-0 h-[1.5px] bg-current transition-all duration-300 -translate-x-1/2 group-hover:w-full" />
-                      </button>
-                    </DrawerTrigger>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      aria-current={isActive ? "page" : undefined}
-                      onPointerEnter={() => preloadHero(link.href)}
-                      onFocus={() => preloadHero(link.href)}
-                      className="relative text-lg uppercase group py-1 tracking-wide">
-                      {link.name}
-                      <span
-                        className={cn(
-                          "absolute bottom-0 left-1/2 h-[1.5px] bg-current transition-all duration-300 -translate-x-1/2",
-                          isActive ? "w-full" : "w-0 group-hover:w-full",
-                        )}
-                      />
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    aria-current={isActive ? "page" : undefined}
+                    onPointerEnter={() => preloadHero(link.href)}
+                    onFocus={() => preloadHero(link.href)}
+                    className="relative text-lg uppercase group py-1 tracking-wide">
+                    {link.name}
+                    <span
+                      className={cn(
+                        "absolute bottom-0 left-1/2 h-[1.5px] bg-current transition-all duration-300 -translate-x-1/2",
+                        isActive ? "w-full" : "w-0 group-hover:w-full",
+                      )}
+                    />
+                  </Link>
                 </li>
               );
             })}
@@ -272,25 +264,14 @@ export default function Navbar() {
             <ul className="flex flex-col gap-2">
               {LINKS.map((link) => (
                 <li key={link.href}>
-                  {link.name === "Contact" ? (
-                    <DrawerTrigger asChild>
-                      <button
-                        type="button"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex w-full items-center justify-between border-b border-white/15 py-5 text-left text-2xl uppercase tracking-wide text-white transition-colors hover:text-white/80">
-                        {link.name}
-                      </button>
-                    </DrawerTrigger>
-                  ) : (
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      onPointerEnter={() => preloadHero(link.href)}
-                      onFocus={() => preloadHero(link.href)}
-                      className="flex items-center justify-between border-b border-white/15 py-5 text-2xl uppercase tracking-wide text-white transition-colors hover:text-white/80">
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    onPointerEnter={() => preloadHero(link.href)}
+                    onFocus={() => preloadHero(link.href)}
+                    className="flex items-center justify-between border-b border-white/15 py-5 text-2xl uppercase tracking-wide text-white transition-colors hover:text-white/80">
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>

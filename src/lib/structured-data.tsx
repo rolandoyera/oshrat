@@ -148,6 +148,27 @@ export function projectPageGraph(p: {
   ]);
 }
 
+/**
+ * FAQPage @graph for a page with visible Q&A content. Pass the same list the
+ * page renders so the schema always matches the copy.
+ */
+export function faqPageGraph(
+  path: string,
+  faqs: { question: string; answer: string }[],
+) {
+  return siteGraph([
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}${path}#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    },
+  ]);
+}
+
 /** "Single-Room Transformations" → "single-room-transformations" (for stable @id fragments). */
 function slugify(name: string) {
   return name
