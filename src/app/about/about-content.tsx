@@ -50,22 +50,20 @@ export default function AboutContent() {
             <div className="max-w-[900px] space-y-6">
               <TextEffect
                 preset="fade-in-blur"
-                className="text-4xl lg:text-7xl font-normal text-balance tracking-tight text-white uppercase"
+                className="text-4xl lg:text-7xl font-normal text-balance text-white"
                 speedReveal={5}
                 speedSegment={0.3}
-                as="h1"
-              >
-                The Art of Refined Living
+                as="h1">
+                Fort Lauderdale Interior Design, Rooted in Refined Living
               </TextEffect>
               <TextEffect
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
-                className="text-taupe-100 text-base lg:text-[22px] font-light text-balance leading-[1.55]"
-              >
+                className="text-taupe-100 text-base lg:text-[22px] font-light text-balance leading-[1.55]">
                 Blending striking architectural forms with thoughtfully curated
-                interiors, we create homes that unite nature and design into one
-                harmonious experience.
+                interiors, Sarvian Design Group creates South Florida homes that
+                unite nature and design into one harmonious experience.
               </TextEffect>
             </div>
           </div>
@@ -87,28 +85,29 @@ export default function AboutContent() {
           <div className="lg:col-span-7 space-y-8">
             <ScrollReveal delay={150}>
               <P>
-                At Sarvian Design Group, we believe that high-end spaces should
-                not only capture visual excellence but should flow effortlessly,
-                enhancing the way you live. We design for individuals who
-                appreciate scale, harmony, and timeless sophistication.
+                As a Fort Lauderdale interior design studio, we believe high-end
+                spaces should do more than look extraordinary - they should move
+                with you, quietly elevating the way you live. We design for
+                clients who value scale, harmony, and timeless sophistication
+                over passing trends.
               </P>
             </ScrollReveal>
             <ScrollReveal delay={300}>
               <P>
-                From our design studio in South Florida, our team brings decades
-                of combined expertise in drafting, custom craftsmanship, and
-                interior curation. We orchestrate every stage of the process -
-                from early spatial planning to the final selection of art and
-                textures - ensuring your vision is executed with extreme
-                precision.
+                Since 2014, Sarvian Design Group has helped homeowners
+                throughout Broward, Palm Beach, and Miami-Dade counties create
+                sophisticated, highly personalized spaces - from full home
+                renovations and new construction to kitchen and bath design,
+                custom furnishings, and single-room transformations.
               </P>
             </ScrollReveal>
             <ScrollReveal delay={300}>
               <P>
-                Using the latest in photorealistic 3D visualization, we bring
-                each space to life long before construction begins — allowing
-                you to walk through your interiors, refine every material and
-                finish, and make decisions with complete confidence.
+                Every project follows a complete design process, from initial
+                concept through final installation. Using photorealistic 3D
+                visualization along the way, we let you walk through your
+                interiors, refine every material and finish, and move forward
+                with total confidence.
               </P>
             </ScrollReveal>
           </div>
@@ -122,7 +121,7 @@ export default function AboutContent() {
               <div className="relative w-full aspect-3/4 overflow-hidden">
                 <Image
                   src="/about/sarvian-design-group-oshrat-rothschild.jpg"
-                  alt="Oshrat Rothschild - Principal Designer and owner of Sarvian Design Group"
+                  alt="Oshrat Rothschild - Principal Interior Designer and owner of Sarvian Design Group"
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"
                   quality={90}
@@ -147,24 +146,24 @@ export default function AboutContent() {
             </ScrollReveal>
             <ScrollReveal delay={150} className="-mt-4">
               <p className="text-sm md:text-base font-mono uppercase text-taupe-500">
-                Principal & Lead Designer
+                Principal Interior Designer, Fort Lauderdale
               </p>
             </ScrollReveal>
             <ScrollReveal delay={250}>
               <P>
                 Oshrat's vision is rooted in clean lines, natural textures, and
                 harmonious flow. By pairing organic, noble materials with
-                curated, modern details, she crafts spaces that feel expansive
-                yet deeply intimate and sophisticated.
+                curated modern details, she designs spaces that feel expansive
+                yet deeply intimate.
               </P>
             </ScrollReveal>
             <ScrollReveal delay={350}>
               <P>
                 Her philosophy balances scale, comfort, and architectural
-                honesty. By treating lighting, materials, and custom cabinetry
-                as structural elements of design, she tailors every project in
-                Fort Lauderdale and Miami to reflect the distinct lifestyle and
-                aspirations of South Floridians.
+                honesty. Treating lighting, materials, and custom cabinetry as
+                structural elements of design, she tailors every project in Fort
+                Lauderdale, Miami, and the surrounding South Florida communities
+                to the lifestyle and aspirations of the client.
               </P>
             </ScrollReveal>
 

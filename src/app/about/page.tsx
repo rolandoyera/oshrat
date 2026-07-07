@@ -4,9 +4,9 @@ import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 
 const TITLE =
-  "About Sarvian Design Group | Fort Lauderdale Interior Designer | South Florida";
+  "About Sarvian Design Group | Fort Lauderdale Interior Designer";
 const DESCRIPTION =
-  "Learn about Sarvian Design Group, a South Florida interior design studio serving Fort Lauderdale, Miami, Palm Beach, and surrounding communities.";
+  "Meet Oshrat Rothschild and the Sarvian Design Group studio — Fort Lauderdale interior designers crafting refined, livable homes across South Florida.";
 
 export const metadata: Metadata = {
   title: TITLE,
