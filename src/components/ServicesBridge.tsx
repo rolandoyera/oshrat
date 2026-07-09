@@ -8,21 +8,30 @@ import { SERVICES } from "./ServicesSection";
 export default function ServicesBridge() {
   return (
     <section className="bg-cream-200 py-24 lg:py-32">
-      <Container size="lg">
-        <ScrollReveal direction="up" threshold={0.3} className="text-center">
+      <Container size="lg" className="grid grid-cols-1 xl:grid-cols-2">
+        <ScrollReveal direction="up" threshold={0.3}>
           <p className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
             What We Do
           </p>
           <h2 className="mt-4 text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal tracking-tight leading-tight">
             Our Services
           </h2>
-          <p className="mx-auto mt-6 max-w-[75ch] text-balance text-foreground/85">
-            Seven ways we take a home from{" "}
-            <em className="text-accent">first sketch to final styling</em> —
-            explore the full scope of the studio's work. Whether you need a
-            single room reimagined or a full home built from the ground up, each
-            service is designed to work independently or as part of a larger
-            vision. Below, find the right starting point for your project.
+          <p className="mt-6 text-balance text-foreground/85 leading-relaxed">
+            Sarvian Design Group stands out for its wide range of services
+            tailored to meet the diverse needs of clients. Our approach is
+            rooted in customization, ensuring each project reflects the client’s
+            vision.
+          </p>
+          <p className="mt-4 text-balance text-foreground/85 leading-relaxed">
+            A standout offering is our space planning expertise. This involves
+            optimizing layouts to improve functionality and flow within homes
+            and businesses. Clients benefit from our meticulous attention to
+            detail in each aspect of design.
+          </p>
+          <p className="mt-4 text-balance text-foreground/85 leading-relaxed">
+            We also provide color consultations, which are pivotal in setting
+            the mood and style of a space. Whether aiming for a calming ambiance
+            or vibrant energy, our expert advice ensures the perfect palette.
           </p>
         </ScrollReveal>
 
