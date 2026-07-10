@@ -23,7 +23,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { trackEvent } from "@/lib/gtag";
+import { trackAdsConversion, trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
 
 type Ctx = {
@@ -208,6 +208,7 @@ function ContactModal({
 
       // Track successful project modal form submission in GA4
       trackEvent("project_form_submit", { form_type: "modal", source });
+      trackAdsConversion();
 
       closeTimer.current = window.setTimeout(() => {
         setSent(false);

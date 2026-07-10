@@ -17,3 +17,13 @@ export function trackEvent(
     window.gtag("event", eventName, eventParams);
   }
 }
+
+// Google Ads conversion for a confirmed form submission. Call only after the
+// server has acknowledged the submission succeeded.
+export function trackAdsConversion() {
+  trackEvent("conversion", {
+    send_to: "AW-18311450958/a9TgCNWY2M0cEM6iyptE",
+    value: 1.0,
+    currency: "USD",
+  });
+}

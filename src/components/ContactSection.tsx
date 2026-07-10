@@ -7,7 +7,7 @@ import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { trackEvent } from "@/lib/gtag";
+import { trackAdsConversion, trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
 
 const ContactSchema = z.object({
@@ -109,6 +109,7 @@ export default function ContactSection({
       setIsSent(true);
 
       trackEvent("contact_form_submit", { form_type: formType });
+      trackAdsConversion();
 
       setTimeout(() => {
         setIsSent(false);
