@@ -55,7 +55,6 @@ export default function ContactModalProvider({
     setSource(nextSource);
     setOpen(true);
   }, []);
-
   // Deep link: ?project=true auto-opens the modal (e.g. landing page for ads).
   // Read from window instead of useSearchParams so the provider doesn't need a
   // Suspense boundary; the param is stripped so reloads don't re-trigger it.
@@ -224,8 +223,7 @@ function ContactModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-title"
-      className="fixed inset-0 z-100 flex items-center justify-center"
-    >
+      className="fixed inset-0 z-100 flex items-center justify-center">
       {/* Backdrop with dark + blur */}
       <button
         aria-label="Close contact form"
@@ -236,14 +234,12 @@ function ContactModal({
       {/* Panel */}
       <div
         className="relative mx-4 w-full md:max-w-[700px] rounded bg-transparent shadow-2xl transition-all duration-200 animate-in fade-in zoom-in-95 flex flex-col overflow-hidden p-0"
-        onClick={(e) => e.stopPropagation()}
-      >
+        onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute right-4 top-4 rounded-full px-2 py-1 text-sm text-gray-500 hover:bg-accent hover:text-white cursor-pointer z-10 transition-colors duration-200"
-          aria-label="Close"
-        >
+          aria-label="Close">
           ✕
         </button>
 
@@ -251,8 +247,7 @@ function ContactModal({
         <div className="border-b border-border/20 px-8 pt-8 pb-5 bg-card rounded-t">
           <h3
             id="contact-title"
-            className="text-[28px] font-semibold tracking-[-0.012em] text-foreground"
-          >
+            className="text-[28px] font-semibold tracking-[-0.012em] text-foreground">
             {sent ? "Message Sent" : "Let’s talk about your project"}
           </h3>
           <p className="text-[18px] text-foreground/75 mt-1 font-light">
@@ -283,8 +278,7 @@ function ContactModal({
               onSubmit={handleSubmit(onSubmit)}
               onFocusCapture={handleFormStart}
               noValidate
-              className="space-y-8 max-w-[500px] mx-auto"
-            >
+              className="space-y-8 max-w-[500px] mx-auto">
               <input
                 type="text"
                 tabIndex={-1}
@@ -319,8 +313,7 @@ function ContactModal({
                   {errors.firstName && (
                     <p
                       id="first-name-error"
-                      className="mt-1 text-sm text-destructive"
-                    >
+                      className="mt-1 text-sm text-destructive">
                       {errors.firstName.message}
                     </p>
                   )}
@@ -394,8 +387,7 @@ function ContactModal({
                       <Select
                         onValueChange={field.onChange}
                         value={field.value}
-                        onOpenChange={setIsSelectFocused}
-                      >
+                        onOpenChange={setIsSelectFocused}>
                         <SelectTrigger
                           id="projectType"
                           aria-invalid={!!errors.projectType || undefined}
@@ -404,36 +396,30 @@ function ContactModal({
                               ? "project-type-error"
                               : undefined
                           }
-                          className="w-full flex h-11 items-center justify-between bg-transparent! border-none px-2 py-2 text-base text-taupe-800 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 outline-none shadow-none cursor-pointer"
-                        >
+                          className="w-full flex h-11 items-center justify-between bg-transparent! border-none px-2 py-2 text-base text-taupe-800 focus-visible:ring-0 focus-visible:ring-offset-0 focus:ring-0 outline-none shadow-none cursor-pointer">
                           <SelectValue placeholder="Select a Project Type *" />
                         </SelectTrigger>
                         <SelectContent
                           position="popper"
-                          className="z-200 bg-card border border-border/30 text-taupe-800"
-                        >
+                          className="z-200 bg-card border border-border/30 text-taupe-800">
                           <SelectItem
                             value="Residential"
-                            className="cursor-pointer"
-                          >
+                            className="cursor-pointer">
                             Residential
                           </SelectItem>
                           <SelectItem
                             value="Commercial"
-                            className="cursor-pointer"
-                          >
+                            className="cursor-pointer">
                             Commercial
                           </SelectItem>
                           <SelectItem
                             value="Hospitality"
-                            className="cursor-pointer"
-                          >
+                            className="cursor-pointer">
                             Hospitality
                           </SelectItem>
                           <SelectItem
                             value="Multifamily"
-                            className="cursor-pointer"
-                          >
+                            className="cursor-pointer">
                             Multifamily
                           </SelectItem>
                           <SelectItem value="Retail" className="cursor-pointer">
@@ -460,8 +446,7 @@ function ContactModal({
                 {errors.projectType && (
                   <p
                     id="project-type-error"
-                    className="mt-1 text-sm text-destructive"
-                  >
+                    className="mt-1 text-sm text-destructive">
                     {errors.projectType.message}
                   </p>
                 )}
@@ -496,8 +481,7 @@ function ContactModal({
                 {errors.message && (
                   <p
                     id="message-error"
-                    className="mt-1 text-sm text-destructive"
-                  >
+                    className="mt-1 text-sm text-destructive">
                     {errors.message.message}
                   </p>
                 )}
@@ -512,8 +496,7 @@ function ContactModal({
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="mt-8 w-full md:w-80 disabled:opacity-60 mx-auto"
-              >
+                className="mt-8 w-full md:w-80 disabled:opacity-60 mx-auto">
                 {isSubmitting ? "Sending…" : "Submit"}
               </Button>
             </form>
@@ -532,8 +515,7 @@ function ContactModal({
                 trackEvent("phone_click", { link_location: "project_modal" })
               }
               className="underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand rounded-sm font-mono text-[16px] text-accent"
-              aria-label={`Call Sarvian Design Group at ${SITE.phoneDisplay}`}
-            >
+              aria-label={`Call Sarvian Design Group at ${SITE.phoneDisplay}`}>
               {SITE.phoneDisplay}
             </a>
           </p>
