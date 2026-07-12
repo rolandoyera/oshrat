@@ -1,10 +1,11 @@
 import Container from "@/components/ui/Container";
 import FadingHeroBackdrop from "../_components/FadingHeroBackdrop";
+import HeroScrollColor from "../_components/HeroScrollColor";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import Display from "@/components/ui/Display";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import ServicesSequence from "@/components/ServicesSequence";
+import ServicesSequence from "../_components/ServicesSequence";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import CtaSection from "@/components/CtaSection";
 
@@ -21,58 +22,54 @@ export const revalidate = 60;
 export default function Page() {
   return (
     <main>
-      <section className="relative flex min-h-dvh w-full items-center">
+      <section className="relative flex min-h-dvh w-full items-end">
         <FadingHeroBackdrop
-          src="/projects/pearl-bathroom-tub-front.jpg"
+          src="/about/sarvian-design-group-oshrat-rothschild-16x9.jpg"
           alt="Sarvian Design Group interior in Fort Lauderdale, Florida"
           blurDataURL={HERO_BLUR["/assets/aventura-interior-design-5.jpg"]}
         />
 
         <Container size="lg" className="relative z-10 w-full">
-          <div className="grid grid-cols-12 items-center gap-10 py-24">
-            <ScrollReveal className="col-span-12 space-y-6 lg:space-y-10 text-white">
-              <TextEffect
-                as="h1"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                className="text-sm uppercase tracking-[0.2em] text-cream-200 mb-12">
-                Interior Designers in Fort Lauderdale, Florida
-              </TextEffect>
+          <HeroScrollColor>
+            <div className="grid grid-cols-12 items-end gap-10 pb-12">
+              <ScrollReveal className="col-span-12 lg:col-span-8 text-white">
+                <TextEffect
+                  as="h1"
+                  preset="fade-in-blur"
+                  speedReveal={5}
+                  speedSegment={0.3}
+                  className="text-sm uppercase tracking-[0.2em] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-200))] mb-6">
+                  Interior Designers in Fort Lauderdale, Florida
+                </TextEffect>
 
-              <Display as="h2" className="text-white text-[7.5rem]">
-                <span className="block">
-                  Interior design{" "}
-                  <span
-                    aria-hidden
-                    className="inline-block h-[2px] w-[2.25em] bg-current align-middle"
-                  />
-                </span>
-                <span className="block w-fit ml-auto">
-                  <span
-                    aria-hidden
-                    className="inline-block h-[2px] w-[1.5em] bg-current align-middle"
-                  />{" "}
-                  fully considered.
-                </span>
-              </Display>
-            </ScrollReveal>
-          </div>
-          <div className="grid grid-cols-12 items-center gap-10 pt-16">
-            <ScrollReveal className="col-span-12 space-y-6 lg:space-y-10 text-white ml-auto">
-              <TextEffect
-                as="p"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                delay={0.2}
-                className="max-w-xl text-cream-100">
-                A full-service studio for commercial and residential interiors,
-                renovations, and new construction across Fort Lauderdale,
-                Florida in Broward County.
-              </TextEffect>
-            </ScrollReveal>
-          </div>
+                <Display
+                  as="h2"
+                  className="text-[7.5rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-6">
+                  <span className="block">
+                    A home equal{" "}
+                    <span
+                      aria-hidden
+                      className="inline-block h-[2px] w-[2em] bg-current align-middle"
+                    />
+                  </span>
+                  <span className="block w-fit">to it's address.</span>
+                </Display>
+              </ScrollReveal>
+              <ScrollReveal className="col-span-12 lg:col-span-4 text-white">
+                <TextEffect
+                  as="p"
+                  preset="fade-in-blur"
+                  speedReveal={5}
+                  speedSegment={0.3}
+                  delay={0.2}
+                  className="max-w-xl text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">
+                  A full-service studio for commercial and residential
+                  interiors, renovations, and new construction across Fort
+                  Lauderdale, Florida in Broward County.
+                </TextEffect>
+              </ScrollReveal>
+            </div>
+          </HeroScrollColor>
         </Container>
       </section>
 

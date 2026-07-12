@@ -16,7 +16,7 @@ export default function H1({
     <Tag
       {...props}
       className={cn(
-        "text-[clamp(2.25rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-normal",
+        "text-[clamp(2.25rem,1.23rem+5.11vw,4.5rem)] font-normal tracking-tight leading-h1 md:leading-[1.08] lg:leading-[1.06]",
         className,
       )}>
       {children}

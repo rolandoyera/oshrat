@@ -18,6 +18,7 @@ import ProjectDescription from "./project-description";
 import ProjectGallery, { type GalleryImage } from "./project-gallery";
 import { JsonLd, projectPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
+import H2 from "@/components/ui/H2";
 
 /* -------------------- Types -------------------- */
 
@@ -245,7 +246,7 @@ export default async function ProjectPage({
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}
         {hero && (
-          <section className="relative h-dvh overflow-hidden">
+          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden">
             <Image
               src={heroImageUrl(hero)}
               alt={hero.alt || data.title}
@@ -262,7 +263,7 @@ export default async function ProjectPage({
             />
           </section>
         )}
-        <nav aria-label="Breadcrumb" className="px-4 xl:px-6 mt-2">
+        <nav aria-label="Breadcrumb" className="px-4 xl:px-6 my-2">
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -273,7 +274,10 @@ export default async function ProjectPage({
             <li
               aria-current="page"
               className="before:content-['>'] before:mr-2">
-              {data.location ? `${data.title} | ${data.location}` : data.title}
+              {data.title}
+              {data.location && (
+                <span className="hidden sm:inline">{` | ${data.location}`}</span>
+              )}
             </li>
           </ol>
         </nav>
@@ -284,14 +288,14 @@ export default async function ProjectPage({
           <aside className="xl:col-span-4">
             <div className="xl:sticky xl:top-22">
               <div className="bg-card p-2 sm:p-4 md:p-8 lg:p-12 rounded-xs shadow">
-                <h1 className="text-[38px]/[1.1] tracking-[-0.012em]">
+                <H2 as="h1">
                   {data.title}
                   {data.location && (
                     <span className="block text-[16px] lg:text-[22px] font-light tracking-normal text-balance leading-[1.55] -mb-4">
                       {data.location}
                     </span>
                   )}
-                </h1>
+                </H2>
                 <div className="my-10 lg:my-16 space-y-2">
                   <div className="flex justify-between pb-2 relative">
                     <div className="absolute left-0 right-0 bottom-0 h-px bg-border/30" />

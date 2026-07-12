@@ -44,13 +44,13 @@ export default function FadingHeroBackdrop({
         alt={alt}
         fill
         priority
-        quality={50}
+        quality={100}
         sizes="100vw"
         {...(blurDataURL ? { placeholder: "blur" as const, blurDataURL } : {})}
         className="object-cover"
       />
-      {/* Scrim for text legibility */}
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-[3px]" />
+      {/* Scrim for text legibility — darkest at the bottom where the copy sits */}
+      <div className="absolute inset-0 bg-linear-to-t from-black/95 to-transparent to-50%" />
     </div>
   );
 }

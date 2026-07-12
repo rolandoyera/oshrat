@@ -2,17 +2,24 @@ import { cn } from "@/lib/utils";
 
 interface H2Props extends React.HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode;
+  /** Semantic tag to render. Styling stays the same regardless. */
+  as?: "h1" | "h2";
 }
 
-export default function H2({ children, className, ...props }: H2Props) {
+export default function H2({
+  children,
+  className,
+  as: Tag = "h2",
+  ...props
+}: H2Props) {
   return (
-    <h2
+    <Tag
       {...props}
       className={cn(
         "text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground",
         className,
       )}>
       {children}
-    </h2>
+    </Tag>
   );
 }

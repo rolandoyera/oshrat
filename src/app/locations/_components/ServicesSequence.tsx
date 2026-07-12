@@ -8,8 +8,8 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import Container from "./ui/Container";
-import P from "./ui/P";
+import Container from "../../../components/ui/Container";
+import P from "../../../components/ui/P";
 
 /**
  * Scroll-driven services story (inspo: oevra.com). One tall section pins a
@@ -47,7 +47,7 @@ const SERVICES: SequenceService[] = [
       "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time — not staged. Every choice is made in relation to the next, so a home reads as one continuous idea rather than a series of decorated rooms.",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
-      "A modern, luxury home corridor showcasing bespoke art and styling. Features large, vibrant contemporary portraits above a floating wood console, a sleek open staircase, integrated linear ceiling lighting, and a long, minimalist hallway leading to a bright living space.",
+      "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
   },
   {
     title: "Full Home Renovations",
@@ -56,7 +56,7 @@ const SERVICES: SequenceService[] = [
       "Down-to-the-studs remodels handled from layout to last detail. We reshape the plan, design the millwork, and coordinate closely with your contractor and trades to protect the design intent on site. It's a demanding process — our job is to keep it moving, keep it coordinated, and keep the outcome true to the original vision.",
     image: "/services/full-home-renovations-16x9.jpg",
     imageAlt:
-      "Exterior view of a luxury modern multi-story estate renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls. The structural layout includes private balconies with glass railings, integrated wood slat accents, tropical landscaping, and a view of a silver sports car parked in an integrated glass garage.",
+      "Exterior view of a luxury modern estate full home renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls.",
   },
   {
     title: "New Construction",
@@ -65,7 +65,7 @@ const SERVICES: SequenceService[] = [
       "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed — and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later — the architecture and the interior are never fighting each other.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
-      "Interior view of a luxury double-height living room featuring an open-concept layout with floor-to-ceiling glass walls looking out onto a landscaped garden. The modern space showcases a massive textured accent wall with a mounted television, a large neutral sectional sofa accented with deep teal pillows, lush indoor plants, and three large, sculptural spherical pendant lights suspended from the high ceiling.",
+      "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",
   },
   {
     title: "Kitchen Design",
@@ -74,7 +74,7 @@ const SERVICES: SequenceService[] = [
       "Cabinetry, stone, and appliance planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow — is made with that in mind.",
     image: "/services/kitchen-design.jpg",
     imageAlt:
-      "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets. The space showcases floor-to-ceiling flat-panel wood cabinetry, integrated double wall ovens, a matching marble backsplash, and a sophisticated black track lighting layout paired with minimalist linear pendants.",
+      "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
   },
   {
     title: "Bathroom Design",
@@ -83,7 +83,7 @@ const SERVICES: SequenceService[] = [
       "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience — the goal is a room that feels as good to be in as it looks.",
     image: "/services/bathroom-design.jpg",
     imageAlt:
-      "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration. Features a double vanity with a heavily veined Calacatta marble countertop, dual white rectangular vessel sinks with brushed gold fixtures, a floating walnut cabinet, and an oval freestanding soaking tub in the background.",
+      "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
   },
   {
     title: "Custom Furnishings",
@@ -92,7 +92,7 @@ const SERVICES: SequenceService[] = [
       "Bespoke case goods and built-ins fabricated to fit the room and the way you live in it. Designed in-house, made by trusted artisans, and detailed to the millimeter. Every piece is drawn, refined, and specified before fabrication begins, so what arrives on site matches the vision exactly — no substitutions, no compromises.",
     image: "/services/custom-furnishings-16x9.jpg",
     imageAlt:
-      "A conceptual product design graphic for a luxury custom cabinet, split down the center. The left side displays a detailed technical wireframe drawing with architectural measurements and millimeter dimensions, while the right side shows the completed 3D rendering of the bespoke dark wood veneer armoire with a partially open door.",
+      "A design graphic for a luxury custom cabinet for a primary suite.",
   },
   {
     title: "Single-Room Transformations",
@@ -101,7 +101,7 @@ const SERVICES: SequenceService[] = [
       "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement. A focused scope means faster decisions and a shorter path from concept to finished room, without cutting a single corner.",
     image: "/services/single-room-transformations.jpg",
     imageAlt:
-      "High-end modern primary suite transformation featuring a low-profile upholstered bed with monochromatic grey and white linens. The fully realized bedroom includes floor-to-ceiling wood wall paneling, fluted drum nightstands with dark stone tops, minimalist pendant lights, an open display shelving unit accented with a heavily veined marble ledge, chevron wood flooring, and a plush area rug.",
+      "High-end modern primary suite transformation featuring a low-profile upholstered bed with custom millwork throughout.",
   },
 ];
 
@@ -295,7 +295,7 @@ function SmallCard({
             src={service.image}
             alt=""
             fill
-            quality={70}
+            quality={75}
             sizes="20vw"
             className="object-cover"
           />

@@ -497,7 +497,7 @@ export default function PanoramaViewer({
 
       {/* Badge Indicator */}
       {!loading && !error && (
-        <div className="absolute top-4 left-4 pointer-events-none flex items-center gap-2 bg-black/50 text-white backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-mono tracking-wider shadow border border-white/10 select-none">
+        <div className="absolute top-2 left-2 md:top-4 md:left-4 pointer-events-none flex items-center gap-2 bg-black/50 text-white backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-mono tracking-wider shadow border border-white/10 select-none">
           <span className="relative flex h-2.5 w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
@@ -508,7 +508,7 @@ export default function PanoramaViewer({
 
       {/* Overlay Helper Guide */}
       {!loading && !error && !hasInteracted && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 bg-black/10 pointer-events-none transition-opacity duration-700 select-none z-5">
+        <div className="absolute inset-0 hidden md:flex flex-col items-center justify-center text-white/80 bg-black/10 pointer-events-none transition-opacity duration-700 select-none z-5">
           <div className="bg-black/40 backdrop-blur-xs px-6 py-4 rounded-xs flex flex-col items-center gap-2 max-w-xs text-center border border-white/5 shadow-2xl scale-95 group-hover/pano:scale-100 transition-transform duration-300">
             <Move className="w-8 h-8 opacity-75 animate-bounce" />
             <p className="text-sm font-semibold">Drag to Explore Room</p>
@@ -518,7 +518,7 @@ export default function PanoramaViewer({
 
       {/* Glassmorphic Controls Bar */}
       {!loading && !error && (
-        <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-black/45 backdrop-blur-md p-1.5 rounded-xs border border-white/10 shadow-xl transition-opacity duration-300 opacity-60 group-hover/pano:opacity-100 z-10">
+        <div className="absolute bottom-2 right-2 md:bottom-4 md:right-4 flex items-center md:gap-1.5 bg-black/45 backdrop-blur-md md:p-1.5 rounded-xs border border-white/10 shadow-xl transition-opacity duration-300 opacity-60 group-hover/pano:opacity-100 z-10">
           <button
             onClick={(e) => {
               e.stopPropagation();

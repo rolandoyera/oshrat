@@ -17,7 +17,7 @@ export default function Display({
     <Tag
       {...props}
       className={cn(
-        "text-[clamp(2.25rem,1.23rem+5.11vw,5.5rem)] leading-[1.05] tracking-wide font-normal",
+        "text-[clamp(2.25rem,1.23rem+5.11vw,5.5rem)] leading-[1.05] font-normal",
         className,
       )}>
       {children}
