@@ -99,7 +99,7 @@ const SERVICES: SequenceService[] = [
     category: "Single space",
     description:
       "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement. A focused scope means faster decisions and a shorter path from concept to finished room, without cutting a single corner.",
-    image: "/services/single-room-transformations.jpg",
+    image: "/services/single-room-transformations-16x9.jpg",
     imageAlt:
       "High-end modern primary suite transformation featuring a low-profile upholstered bed with custom millwork throughout.",
   },

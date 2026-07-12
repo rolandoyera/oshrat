@@ -9,6 +9,8 @@ export default function CtaSection({
   location = "services_cta",
   formSource = "services_email_studio",
   ctaLabel = "Contact the studio",
+  background = "bg-cream-200",
+  foreground = "text-foreground",
 }: {
   /** Overrides the headline, rendered as `${plain} ${accent}.` with the accent in serif gold. */
   heading?: { plain: string; accent: string };
@@ -16,9 +18,13 @@ export default function CtaSection({
   formSource?: string;
   /** Label of the primary (project form) button. */
   ctaLabel?: string;
+  /** Tailwind background class for the section. */
+  background?: string;
+  /** Tailwind text-color class for the body copy. */
+  foreground?: string;
 }) {
   return (
-    <section className="bg-cream-200 py-24 lg:py-50">
+    <section className={`${background} py-24 lg:py-50`}>
       <Container className="flex flex-col items-center text-center">
         <TextEffect
           as="p"
@@ -62,7 +68,7 @@ export default function CtaSection({
                 speedReveal={5}
                 speedSegment={0.3}
                 inView
-                className="block">
+                className={`block ${foreground}`}>
                 Let&apos;s design
               </TextEffect>
               <span className="block">
@@ -73,7 +79,7 @@ export default function CtaSection({
                   speedSegment={0.3}
                   inView
                   delay={0.2}
-                  className="inline">
+                  className={`inline ${foreground}`}>
                   something
                 </TextEffect>{" "}
                 <TextEffect
@@ -98,7 +104,7 @@ export default function CtaSection({
           speedSegment={0.3}
           inView
           delay={0.2}
-          className="mt-6 max-w-xl text-foreground">
+          className={`mt-6 max-w-xl ${foreground}`}>
           Tell us about your home and how you want to live in it. We&apos;ll
           walk you through scope, timeline, and the right way to begin.
         </TextEffect>
@@ -112,7 +118,8 @@ export default function CtaSection({
           </ArrowButton>
         </div>
 
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-foreground">
+        <div
+          className={`mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm ${foreground}`}>
           <a href={`mailto:${SITE.email}`} className="hover:text-accent">
             {SITE.email}
           </a>

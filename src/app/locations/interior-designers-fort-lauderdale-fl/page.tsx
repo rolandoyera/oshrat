@@ -6,7 +6,7 @@ import Display from "@/components/ui/Display";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ServicesSequence from "../_components/ServicesSequence";
-import FeaturedProjects from "@/components/FeaturedProjects";
+import FeaturedProjects from "../_components/FeaturedProjects";
 import CtaSection from "@/components/CtaSection";
 
 // Hand-picked projects for this page — order here is display order.
@@ -26,7 +26,9 @@ export default function Page() {
         <FadingHeroBackdrop
           src="/about/sarvian-design-group-oshrat-rothschild-16x9.jpg"
           alt="Sarvian Design Group interior in Fort Lauderdale, Florida"
-          blurDataURL={HERO_BLUR["/assets/aventura-interior-design-5.jpg"]}
+          blurDataURL={
+            HERO_BLUR["/about/sarvian-design-group-oshrat-rothschild-16x9.jpg"]
+          }
         />
 
         <Container size="lg" className="relative z-10 w-full">
@@ -78,12 +80,15 @@ export default function Page() {
       <FeaturedProjects
         slugs={FEATURED_SLUGS}
         heading="Projects in Fort Lauderdale"
+        description="Explore a selection of our Fort Lauderdale interiors, where thoughtful space planning, refined materials, and custom details come together to create homes that feel distinctive, cohesive, and personal."
       />
 
       <CtaSection
         location="fort_lauderdale_cta"
         formSource="fort-lauderdale"
         ctaLabel="Request Consultation"
+        background="bg-taupe-800"
+        foreground="text-cream-300"
       />
     </main>
   );

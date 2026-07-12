@@ -52,7 +52,7 @@ export function ProjectCard({
       href={`/projects/${project.slug}`}
       preloadSrcSet={heroPreloadSrcSet(heroSource)}
       aria-label={`${project.title}${project.location ? ` — ${project.location}` : ""}`}
-      className={`group relative block overflow-hidden rounded bg-taupe-800 ${aspect}`}>
+      className={`group relative block overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}>
       <Image
         src={heroImageUrl(heroSource)}
         alt={project.imageAlt || project.title}
