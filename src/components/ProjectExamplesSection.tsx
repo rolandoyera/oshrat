@@ -10,7 +10,7 @@ import Container from "./ui/Container";
 import TransitionLink from "./ui/TransitionLink";
 import { TextEffect } from "./motion-primitives/text-effect";
 
-interface Project {
+export interface Project {
   _id: string;
   title: string;
   location?: string;
@@ -34,7 +34,7 @@ const LATEST_PROJECTS = groq`*[_type == "project" && defined(slug.current) && de
   "imageAlt": coalesce(heroImage.alt, mainImage.alt)
 }`;
 
-function ProjectCard({
+export function ProjectCard({
   project,
   aspect,
   sizes,

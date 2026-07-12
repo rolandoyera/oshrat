@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { JsonLd, servicesPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
-import ServicesHero from "@/components/ServicesHero";
-import ServicesSection, { SERVICES } from "@/components/ServicesSection";
+import ServicesHero from "./_components/ServicesHero";
+import ServicesSection, { SERVICES } from "./_components/ServicesSection";
 import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import ProjectExamplesSection from "@/components/ProjectExamplesSection";
 import CtaSection from "@/components/CtaSection";

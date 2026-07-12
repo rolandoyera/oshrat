@@ -37,7 +37,7 @@ const QUERY = groq`
 `;
 
 import CtaSection from "@/components/CtaSection";
-import ProjectsHero from "@/components/ProjectsHero";
+import ProjectsHero from "./_components/ProjectsHero";
 import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import TransitionLink from "@/components/ui/TransitionLink";
 import P from "@/components/ui/P";
@@ -79,8 +79,7 @@ export default async function ProjectsPage() {
                 style={
                   { animationDelay: `${index * 0.12}s` } as React.CSSProperties
                 }
-                aria-label={`${p.title} — ${p.location}`}
-              >
+                aria-label={`${p.title} — ${p.location}`}>
                 <div className="relative w-full aspect-4/3">
                   <Image
                     src={p.imageUrl}

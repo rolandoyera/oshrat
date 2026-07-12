@@ -1,9 +1,9 @@
 "use client";
 
 import type { ReactNode } from "react";
-import Container from "./ui/Container";
-import Display from "./ui/Display";
-import { TextEffect } from "./motion-primitives/text-effect";
+import Container from "@/components/ui/Container";
+import Display from "@/components/ui/Display";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 export default function ProjectsHero() {
   const meta: { label: string; value: ReactNode }[] = [

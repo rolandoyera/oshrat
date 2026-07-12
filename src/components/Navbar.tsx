@@ -36,6 +36,7 @@ const ROUTE_HERO: Record<string, { src: string; quality?: number }> = {
 // fades in its dark gradient backdrop.
 const LIGHT_ROUTES = new Set([
   "/projects",
+  "/locations",
   "/contact",
   "/privacy",
   "/terms",
@@ -53,6 +54,28 @@ export default function Navbar() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const preloadedRoutes = useRef(new Set<string>());
+  const progressRef = useRef<HTMLDivElement>(null);
+
+  // Page scroll progress bar — style is mutated directly (no state, no
+  // re-renders), same pattern as the isScrolled listener below.
+  useEffect(() => {
+    const el = progressRef.current;
+    if (!el) return;
+
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      el.style.transform = `scaleX(${progress})`;
+    };
+
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   // Warm the destination hero the moment the user hovers/focuses the link —
   // once per route. Uses a detached <img> rather than <link rel="preload">:
@@ -161,6 +184,13 @@ export default function Navbar() {
           )}
         />
 
+        {/* Page scroll progress — grows just below navbar's bottom edge. */}
+        <div
+          ref={progressRef}
+          style={{ transform: "scaleX(0)" }}
+          className="absolute inset-x-0 top-full z-10 h-[5px] origin-left bg-accent"
+        />
+
         <div className="relative z-20 flex-1 flex items-center justify-between px-4 md:px-6 max-w-[1800px] mx-auto">
           {/* Left: Logo (fixed width to balance layout) */}
           <div className="w-[180px] lg:w-[200px] shrink-0">
@@ -189,8 +219,7 @@ export default function Navbar() {
           <ul className="hidden lg:flex items-center gap-10">
             {LINKS.map((link) => {
               const isActive =
-                pathname === link.href ||
-                pathname?.startsWith(`${link.href}/`);
+                pathname === link.href || pathname?.startsWith(`${link.href}/`);
               return (
                 <li key={link.href}>
                   <Link

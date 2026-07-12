@@ -1,7 +1,7 @@
 import Image from "next/image";
-import H1 from "./ui/H1";
-import ArrowButton from "./ui/ArrowButton";
-import ScrollReveal from "./ui/ScrollReveal";
+import H1 from "@/components/ui/H1";
+import ArrowButton from "@/components/ui/ArrowButton";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function TopSection() {
   return (

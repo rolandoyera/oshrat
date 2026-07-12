@@ -9,7 +9,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { MoveRight } from "lucide-react";
 
-
 type ButtonBaseProps = {
   children: ReactNode;
   className?: string;
@@ -40,7 +39,7 @@ export default function Button({
   ...props
 }: ButtonProps) {
   const baseClasses = cn(
-    "group flex gap-2 items-center justify-center border-0 cursor-pointer py-3 px-4 rounded-sm bg-brand text-white font-medium duration-200 active:translate-y-px text-[18px] focus-visible:ring-2 focus-visible:ring-[#c9b49a] focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all hover:shadow hover:shadow-black/50",
+    "group flex gap-2 items-center justify-center border-0 cursor-pointer py-3 px-4 rounded-xs bg-brand text-white font-medium duration-200 active:translate-y-px text-[18px] focus-visible:ring-2 focus-visible:ring-[#c9b49a] focus-visible:ring-offset-2 focus-visible:ring-offset-white transition-all hover:shadow hover:shadow-black/50",
     className,
   );
 

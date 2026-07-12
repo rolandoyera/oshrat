@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/drawer";
 import WatermarkLogo from "./WatermarkLogo";
 import DoubleBorder from "./ui/DoubleBorder";
-import ContactSection from "./ContactSection";
+import ContactSection from "../app/contact/_components/ContactSection";
 
 export default function ContactDrawerContent() {
   return (

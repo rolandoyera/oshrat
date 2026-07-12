@@ -1,12 +1,12 @@
 import { Fragment } from "react";
-import Container from "./ui/Container";
-import ScrollReveal from "./ui/ScrollReveal";
+import Container from "../../../components/ui/Container";
+import ScrollReveal from "../../../components/ui/ScrollReveal";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "./ui/accordion";
+} from "../../../components/ui/accordion";
 
 // Also feeds the FAQPage JSON-LD on /contact — keep schema and page in sync.
 export const FAQS: { question: string; answer: string }[] = [

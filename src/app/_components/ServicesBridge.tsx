@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import Link from "next/link";
-import Container from "./ui/Container";
-import ScrollReveal from "./ui/ScrollReveal";
-import ArrowButton from "./ui/ArrowButton";
-import { SERVICES } from "./ServicesSection";
+import Container from "@/components/ui/Container";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import ArrowButton from "@/components/ui/ArrowButton";
+import { SERVICES } from "../services/_components/ServicesSection";
 
 export default function ServicesBridge() {
   return (

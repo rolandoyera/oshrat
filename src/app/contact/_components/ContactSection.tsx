@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import DoubleBorder from "./ui/DoubleBorder";
-import Input from "./ui/Input";
+import DoubleBorder from "@/components/ui/DoubleBorder";
+import Input from "@/components/ui/Input";
 import { Check } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -283,7 +283,6 @@ export default function ContactSection({
           </form>
         </div>
       </div>
-
     </div>
   );
 }

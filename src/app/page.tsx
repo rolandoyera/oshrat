@@ -1,13 +1,13 @@
 import Carousel from "@/components/Carousel";
 
-import TopSection from "@/components/TopSection";
+import TopSection from "./_components/TopSection";
 import type { Metadata } from "next";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
-import OurApproachSection from "@/components/Approach";
-import ServicesBridge from "@/components/ServicesBridge";
+import OurApproachSection from "./_components/Approach";
+import ServicesBridge from "@/app/_components/ServicesBridge";
 import Image from "next/image";
 import ProjectButton from "@/components/ui/ProjectButton";
 import ArrowButton from "@/components/ui/ArrowButton";

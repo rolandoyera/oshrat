@@ -8,11 +8,14 @@ export default function CtaSection({
   heading,
   location = "services_cta",
   formSource = "services_email_studio",
+  ctaLabel = "Contact the studio",
 }: {
   /** Overrides the headline, rendered as `${plain} ${accent}.` with the accent in serif gold. */
   heading?: { plain: string; accent: string };
   location?: string;
   formSource?: string;
+  /** Label of the primary (project form) button. */
+  ctaLabel?: string;
 }) {
   return (
     <section className="bg-cream-200 py-24 lg:py-50">
@@ -102,7 +105,7 @@ export default function CtaSection({
 
         <div className="mt-16 flex flex-wrap justify-center gap-4">
           <ProjectButton location={location} formSource={formSource}>
-            Contact the studio
+            {ctaLabel}
           </ProjectButton>
           <ArrowButton href={SITE.whatsappUrl} variant="secondary">
             Message on WhatsApp

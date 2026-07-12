@@ -462,7 +462,7 @@ export default function PanoramaViewer({
     <div
       ref={containerRef}
       className={`relative w-full bg-[#0b0a09] overflow-hidden select-none group/pano ${
-        embedded ? "h-full" : "aspect-video rounded-md shadow"
+        embedded ? "h-full" : "aspect-video rounded-xs shadow"
       } ${className}`}
       onMouseDown={handlePointerDown}
       onMouseMove={handlePointerMove}
@@ -509,7 +509,7 @@ export default function PanoramaViewer({
       {/* Overlay Helper Guide */}
       {!loading && !error && !hasInteracted && (
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white/80 bg-black/10 pointer-events-none transition-opacity duration-700 select-none z-5">
-          <div className="bg-black/40 backdrop-blur-xs px-6 py-4 rounded-xl flex flex-col items-center gap-2 max-w-xs text-center border border-white/5 shadow-2xl scale-95 group-hover/pano:scale-100 transition-transform duration-300">
+          <div className="bg-black/40 backdrop-blur-xs px-6 py-4 rounded-xs flex flex-col items-center gap-2 max-w-xs text-center border border-white/5 shadow-2xl scale-95 group-hover/pano:scale-100 transition-transform duration-300">
             <Move className="w-8 h-8 opacity-75 animate-bounce" />
             <p className="text-sm font-semibold">Drag to Explore Room</p>
           </div>
@@ -518,13 +518,13 @@ export default function PanoramaViewer({
 
       {/* Glassmorphic Controls Bar */}
       {!loading && !error && (
-        <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-black/45 backdrop-blur-md p-1.5 rounded border border-white/10 shadow-xl transition-opacity duration-300 opacity-60 group-hover/pano:opacity-100 z-10">
+        <div className="absolute bottom-4 right-4 flex items-center gap-1.5 bg-black/45 backdrop-blur-md p-1.5 rounded-xs border border-white/10 shadow-xl transition-opacity duration-300 opacity-60 group-hover/pano:opacity-100 z-10">
           <button
             onClick={(e) => {
               e.stopPropagation();
               adjustZoom(0.15);
             }}
-            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-md transition cursor-pointer"
+            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-xs transition cursor-pointer"
             title="Zoom In">
             <ZoomIn size={18} />
           </button>
@@ -534,7 +534,7 @@ export default function PanoramaViewer({
               e.stopPropagation();
               adjustZoom(-0.15);
             }}
-            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-md transition cursor-pointer"
+            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-xs transition cursor-pointer"
             title="Zoom Out">
             <ZoomOut size={18} />
           </button>
@@ -544,7 +544,7 @@ export default function PanoramaViewer({
               e.stopPropagation();
               resetView();
             }}
-            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-md transition cursor-pointer"
+            className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-xs transition cursor-pointer"
             title="Reset Angle">
             <RotateCcw size={17} />
           </button>
@@ -558,7 +558,7 @@ export default function PanoramaViewer({
                   e.stopPropagation();
                   toggleFullscreen();
                 }}
-                className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-md transition cursor-pointer"
+                className="p-2 text-white/85 hover:text-white hover:bg-white/10 rounded-xs transition cursor-pointer"
                 title={isFullscreen ? "Exit Fullscreen" : "Fullscreen"}>
                 {isFullscreen ? <Minimize size={18} /> : <Maximize size={18} />}
               </button>

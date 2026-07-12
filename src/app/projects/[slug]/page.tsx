@@ -272,8 +272,7 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2"
-            >
+              className="before:content-['>'] before:mr-2">
               {data.location ? `${data.title} | ${data.location}` : data.title}
             </li>
           </ol>
@@ -284,7 +283,7 @@ export default async function ProjectPage({
           {/* LEFT: Project info */}
           <aside className="xl:col-span-4">
             <div className="xl:sticky xl:top-22">
-              <div className="bg-card p-2 sm:p-4 md:p-8 lg:p-12 rounded shadow">
+              <div className="bg-card p-2 sm:p-4 md:p-8 lg:p-12 rounded-xs shadow">
                 <h1 className="text-[38px]/[1.1] tracking-[-0.012em]">
                   {data.title}
                   {data.location && (

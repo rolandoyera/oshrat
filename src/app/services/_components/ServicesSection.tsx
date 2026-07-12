@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import Image from "next/image";
-import Container from "./ui/Container";
-import H2 from "./ui/H2";
-import ScrollReveal from "./ui/ScrollReveal";
-import { TextEffect } from "./motion-primitives/text-effect";
+import Container from "@/components/ui/Container";
+import H2 from "@/components/ui/H2";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 interface Service {
   index: string;

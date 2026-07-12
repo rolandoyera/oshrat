@@ -56,8 +56,7 @@ export default function ProjectGallery({
             type="button"
             onClick={() => setOpenIndex(i)}
             aria-label={`View ${img.alt} full screen`}
-            className="relative block w-full cursor-pointer"
-          >
+            className="relative block w-full cursor-pointer">
             <Image
               src={img.src}
               alt={img.alt}
@@ -67,7 +66,7 @@ export default function ProjectGallery({
               loading="lazy"
               decoding="async"
               sizes="(min-width:1280px) 66vw, 100vw"
-              className="w-full h-auto rounded shadow"
+              className="w-full h-auto rounded-xs shadow"
             />
             <span className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-md text-white pointer-events-none">
               <Plus size={20} />
@@ -166,8 +165,7 @@ function Lightbox({
       role="dialog"
       aria-modal="true"
       aria-label={activeAlt}
-      className="fixed inset-0 z-100 bg-black"
-    >
+      className="fixed inset-0 z-100 bg-black">
       {isPano ? (
         <div className="absolute inset-0">
           <PanoramaViewer
@@ -195,24 +193,21 @@ function Lightbox({
           type="button"
           onClick={() => setShowThumbs((s) => !s)}
           className="p-2 text-white/85 hover:text-white transition cursor-pointer"
-          title={showThumbs ? "Hide thumbnails" : "Show thumbnails"}
-        >
+          title={showThumbs ? "Hide thumbnails" : "Show thumbnails"}>
           <LayoutGrid size={20} />
         </button>
         <button
           type="button"
           onClick={toggleFullscreen}
           className="p-2 text-white/85 hover:text-white transition cursor-pointer"
-          title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}
-        >
+          title={isFullscreen ? "Exit fullscreen" : "Fullscreen"}>
           {isFullscreen ? <Minimize size={20} /> : <Maximize size={20} />}
         </button>
         <button
           type="button"
           onClick={onClose}
           className="p-2 text-white/85 hover:text-white transition cursor-pointer"
-          title="Close"
-        >
+          title="Close">
           <X size={20} />
         </button>
       </div>
@@ -224,16 +219,14 @@ function Lightbox({
             type="button"
             onClick={prev}
             aria-label="Previous image"
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-3 text-white/85 hover:text-white transition cursor-pointer"
-          >
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-3 text-white/85 hover:text-white transition cursor-pointer">
             <ChevronLeft size={36} />
           </button>
           <button
             type="button"
             onClick={next}
             aria-label="Next image"
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-3 text-white/85 hover:text-white transition cursor-pointer"
-          >
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-3 text-white/85 hover:text-white transition cursor-pointer">
             <ChevronRight size={36} />
           </button>
         </>
@@ -248,8 +241,7 @@ function Lightbox({
             showThumbs
               ? "translate-y-0 opacity-100"
               : "pointer-events-none translate-y-4 opacity-0"
-          }`}
-        >
+          }`}>
           {images.map((img, i) => (
             <button
               key={i}
@@ -261,8 +253,7 @@ function Lightbox({
                 i === index
                   ? "ring-2 ring-white"
                   : "opacity-70 hover:opacity-100 transition-opacity"
-              }`}
-            >
+              }`}>
               <Image
                 src={img.thumbSrc}
                 alt=""
@@ -282,8 +273,7 @@ function Lightbox({
                 isPano
                   ? "ring-2 ring-white"
                   : "opacity-70 hover:opacity-100 transition-opacity"
-              }`}
-            >
+              }`}>
               <Image
                 src={panorama.thumbSrc}
                 alt=""

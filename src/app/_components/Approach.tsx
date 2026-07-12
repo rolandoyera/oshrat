@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 import { PlusIcon, ChevronRight } from "lucide-react";
 import Image from "next/image";
-import Container from "./ui/Container";
-import ScrollReveal from "./ui/ScrollReveal";
+import Container from "@/components/ui/Container";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 interface AccordionPanel {
   title: string;

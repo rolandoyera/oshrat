@@ -1,11 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Container from "./ui/Container";
-import ArrowButton from "./ui/ArrowButton";
-import ProjectButton from "./ui/ProjectButton";
-import { TextEffect } from "./motion-primitives/text-effect";
-import Display from "./ui/Display";
+import Container from "@/components/ui/Container";
+import ArrowButton from "@/components/ui/ArrowButton";
+import ProjectButton from "@/components/ui/ProjectButton";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
+import Display from "@/components/ui/Display";
 import { HERO_BLUR } from "@/lib/hero-blur";
 
 const META = [

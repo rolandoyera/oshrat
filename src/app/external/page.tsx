@@ -2,7 +2,7 @@ import Link from "next/link";
 import Main from "@/components/ui/Main";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
-import InternalTrafficCookie from "@/components/InternalTrafficCookie";
+import InternalTrafficCookie from "@/app/internal/_components/InternalTrafficCookie";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
