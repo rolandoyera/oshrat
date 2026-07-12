@@ -71,7 +71,7 @@ const SERVICES: SequenceService[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Cabinetry, stone, and appliance planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow — is made with that in mind.",
+      "Cabinetry, stone, and appliance kitchen planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow — is made with that in mind during the kitchen design process.",
     image: "/services/kitchen-design.jpg",
     imageAlt:
       "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
@@ -89,7 +89,7 @@ const SERVICES: SequenceService[] = [
     title: "Custom Furnishings",
     category: "Made to order",
     description:
-      "Bespoke case goods and built-ins fabricated to fit the room and the way you live in it. Designed in-house, made by trusted artisans, and detailed to the millimeter. Every piece is drawn, refined, and specified before fabrication begins, so what arrives on site matches the vision exactly — no substitutions, no compromises.",
+      "Bespoke case goods and built-ins fabricated to fit the room and the way you live in it. Designed in-house, made by trusted artisans, and detailed to the millimeter. Every piece is drawn, refined, and specified before fabrication begins, so what arrives on site matches the vision exactly.",
     image: "/services/custom-furnishings-16x9.jpg",
     imageAlt:
       "A design graphic for a luxury custom cabinet for a primary suite.",
