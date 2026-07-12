@@ -98,16 +98,18 @@ export default async function Home() {
       <JsonLd data={siteGraph()} />
       <Carousel items={sliderItems} autoPlayInterval={5000} showArrows={true} />
 
-      <section className="min-h-dvh p-6 xl:p-0">
+      <section className="min-h-dvh py-20 xl:p-0">
         <TopSection />
       </section>
-      <section className="bg-cream-100">
+      <section className="bg-cream-300 py-20 xl:py-60">
         <OurApproachSection />
       </section>
-      <ServicesBridge />
+      <section className="bg-cream-200 py-20 lg:py-32">
+        <ServicesBridge />
+      </section>
 
       {/* <Connect /> */}
-      <section className="relative overflow-hidden py-24 lg:py-50">
+      <section className="relative overflow-hidden py-20 lg:py-50">
         <Image
           src="/projects/sdg-bedroom-remodel-armoire-7.jpg"
           alt="Completed image"
@@ -128,7 +130,7 @@ export default async function Home() {
             className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">
             Ready to start?
           </TextEffect>
-          <h2 className="mt-6 text-xl font-normal tracking-tight text-balance text-white lg:text-7xl">
+          <h2 className="mt-6 text-4xl font-normal tracking-tight text-balance text-white lg:text-7xl">
             <TextEffect
               as="span"
               preset="fade-in-blur"
@@ -175,7 +177,7 @@ export default async function Home() {
           </TextEffect>
 
           <div className="mt-16 flex flex-wrap justify-center gap-4">
-            <ProjectButton location="ready_to_start">
+            <ProjectButton location="ready_to_start" className="px-8">
               Contact the studio
             </ProjectButton>
             <ArrowButton href={SITE.whatsappUrl} variant="secondary">

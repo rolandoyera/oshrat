@@ -15,7 +15,7 @@ export default function Container({
   return (
     <div
       className={cn(
-        "mx-auto px-6",
+        "mx-auto px-6 xl:px-0",
         size === "lg" ? "max-w-[1800px]" : "max-w-[1400px]",
         className,
       )}>

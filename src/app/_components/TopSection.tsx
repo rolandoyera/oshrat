@@ -2,16 +2,19 @@ import Image from "next/image";
 import H1 from "@/components/ui/H1";
 import ArrowButton from "@/components/ui/ArrowButton";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import Container from "@/components/ui/Container";
 
 export default function TopSection() {
   return (
-    <div className="min-h-dvh flex items-center justify-center max-w-[1800px] mx-auto overflow-hidden">
-      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 items-center mx-auto w-full">
+    <Container
+      size="lg"
+      className="min-h-dvh flex items-center justify-center overflow-hidden">
+      <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
         <ScrollReveal
           direction="left"
           threshold={0.3}
           className="lg:col-span-2">
-          <div className="space-y-6 pl-4">
+          <div className="space-y-6">
             <H1 className="text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight leading-tight text-left">
               Interior Designers in Fort Lauderdale
             </H1>
@@ -33,11 +36,14 @@ export default function TopSection() {
               region brings its own architectural language and light, whether
               that means Intracoastal grandeur or contemporary restraint.
             </p>
-            <div className="flex flex-wrap gap-4 pl-4 mt-12">
+            <div className="flex flex-wrap gap-4 mt-12 items-center justify-center md:justify-start">
               <ArrowButton href="/projects" variant="secondary">
                 View Our Projects
               </ArrowButton>
-              <ArrowButton href="/services" variant="secondary">
+              <ArrowButton
+                href="/services"
+                variant="secondary"
+                className="px-5.5">
                 View Our Services
               </ArrowButton>
             </div>
@@ -48,18 +54,16 @@ export default function TopSection() {
           threshold={0.3}
           delay={300}
           className="relative lg:col-span-3">
-          <div className="p-[20px]">
-            <Image
-              src="/assets/about-us-top.jpg"
-              alt="Home image"
-              width={900}
-              height={400}
-              quality={90}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+          <Image
+            src="/assets/about-us-top.jpg"
+            alt="Home image"
+            width={900}
+            height={400}
+            quality={90}
+            className="w-full h-auto object-cover"
+          />
         </ScrollReveal>
       </div>
-    </div>
+    </Container>
   );
 }

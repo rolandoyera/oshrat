@@ -70,7 +70,7 @@ const Carousel: React.FC<CarouselProps> = ({
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
       {/* Main carousel container */}
-      <div className="relative h-svh overflow-hidden">
+      <div className="relative h-[60vh] xl:h-svh overflow-hidden">
         <div
           className="flex transition-transform duration-500 ease-in-out h-full"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
