@@ -112,7 +112,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
             return (
               <div
                 key={index}
-                className={`transition-all duration-[${PANEL_MS}ms] ease-in-out overflow-hidden flex mr-1 rounded border border-black/10 bg-white/60 ${
+                className={`transition-all duration-[${PANEL_MS}ms] ease-in-out overflow-hidden flex mr-1 rounded-xs border border-black/10 bg-white/60 ${
                   isActive ? "flex-1" : "w-16"
                 }`}>
                 {/* Vertical tab */}
@@ -194,7 +194,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
           return (
             <div
               key={index}
-              className="rounded border border-black/10 overflow-hidden bg-white/60">
+              className="rounded-xs border border-black/10 overflow-hidden bg-white/60">
               <button
                 onClick={() => openPanel(index)}
                 disabled={locked}
@@ -234,7 +234,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
                         fill
                         quality={90}
                         sizes="50vw"
-                        className="object-cover rounded"
+                        className="object-cover rounded-xs"
                       />
                     </div>
                     <p className="text-base leading-relaxed text-foreground">

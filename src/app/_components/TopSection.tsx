@@ -60,7 +60,7 @@ export default function TopSection() {
             width={900}
             height={400}
             quality={90}
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover rounded-xs"
           />
         </ScrollReveal>
       </div>

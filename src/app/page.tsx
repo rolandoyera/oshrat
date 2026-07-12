@@ -177,7 +177,7 @@ export default async function Home() {
           </TextEffect>
 
           <div className="mt-16 flex flex-wrap justify-center gap-4">
-            <ProjectButton location="ready_to_start" className="px-8">
+            <ProjectButton location="ready_to_start" className="px-7.5">
               Contact the studio
             </ProjectButton>
             <ArrowButton href={SITE.whatsappUrl} variant="secondary">
