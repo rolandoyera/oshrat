@@ -1,0 +1,223 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import Container from "../../../components/ui/Container";
+import { TextEffect } from "../../../components/motion-primitives/text-effect";
+
+// Testimonial slider: quote left, linked project card right, progress bar +
+// counter below. One testimonial visible at a time, advanced manually.
+
+// TODO: replace mock quotes/names with real client testimonials.
+type Testimonial = {
+  quote: string;
+  name: string;
+  /** Neighborhood · project type line under the name. */
+  context: string;
+  project: {
+    title: string;
+    meta: string;
+    slug: string;
+    image: string;
+    imageAlt: string;
+  };
+};
+
+const TESTIMONIALS: Testimonial[] = [
+  {
+    quote:
+      "We interviewed four studios. Sarvian was the only one who asked how we actually live before showing us a single image. Eight months later, the house feels like it was always meant to look this way.",
+    name: "The Kaufman Family",
+    context: "Rio Vista · New Construction",
+    project: {
+      title: "Aventura Modern Living",
+      meta: "Whole Home · 2025",
+      slug: "aventura-modern-living-aventura-fl",
+      image: "/assets/aventura-interior-design-5.jpg",
+      imageAlt: "Aventura modern living room interior by Sarvian Design Group",
+    },
+  },
+  {
+    quote:
+      "Every decision came back to us drawn, priced, and explained. The renovation stayed on schedule, and the kitchen is the room everyone refuses to leave.",
+    name: "Daniel & Maya R.",
+    context: "Harbor Beach · Full Renovation",
+    project: {
+      title: "Modern Marble Haven",
+      meta: "Kitchen & Living · 2024",
+      slug: "modern-marble-haven-fort-lauderdale-fl",
+      image: "/assets/kitchen-counter.jpg",
+      imageAlt: "Marble kitchen counter detail by Sarvian Design Group",
+    },
+  },
+  {
+    quote:
+      "They treated one bedroom with the same seriousness other firms reserve for whole houses. It went from the room we ignored to the reason we come home early.",
+    name: "Elena S.",
+    context: "Victoria Park · Primary Suite",
+    project: {
+      title: "Elevated Primary Suite",
+      meta: "Primary Suite · 2024",
+      slug: "elevated-primary-suite-fort-lauderdale-fl",
+      image: "/projects/sdg-bedroom-remodel-armoire-7.jpg",
+      imageAlt: "Custom armoire in a remodeled primary suite",
+    },
+  },
+];
+
+const pad = (n: number) => String(n).padStart(2, "0");
+
+export default function Testimonials() {
+  const [index, setIndex] = useState(0);
+  const t = TESTIMONIALS[index];
+  const count = TESTIMONIALS.length;
+
+  return (
+    <section className="bg-taupe-800 py-24 lg:py-32">
+      <Container size="lg">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
+          <div className="lg:col-span-8">
+            <TextEffect
+              as="p"
+              per="char"
+              preset="fade-in-blur"
+              speedReveal={5}
+              speedSegment={0.3}
+              inView
+              className="text-xs uppercase tracking-[0.2em] text-accent font-medium">
+              In their words
+            </TextEffect>
+            <h2 className="mt-5 text-3xl lg:text-5xl font-normal tracking-tight text-foreground">
+              <TextEffect
+                as="span"
+                preset="fade-in-blur"
+                speedReveal={5}
+                speedSegment={0.3}
+                inView
+                delay={0.15}
+                className="block text-cream-200">
+                The work speaks.
+              </TextEffect>
+              <TextEffect
+                as="span"
+                preset="fade-in-blur"
+                speedReveal={5}
+                speedSegment={0.3}
+                inView
+                delay={0.35}
+                className="block italic text-accent text-[1.2em] mt-2 font-reader font-light">
+                So do the clients.
+              </TextEffect>
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-6">
+            <AnimatePresence mode="wait">
+              <motion.figure
+                key={index}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -16 }}
+                transition={{ duration: 0.35 }}>
+                <blockquote className="text-2xl leading-[1.18] text-cream-100 lg:text-5xl font-reader font-[250]">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-10 flex flex-wrap items-end justify-between gap-6 border-t border-foreground/15 pt-6">
+                  <div>
+                    <p className="font-medium text-cream-100">{t.name}</p>
+                    <p className="mt-1 text-sm text-cream-100/60">
+                      {t.context}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/projects/${t.project.slug}`}
+                    className="group text-xs uppercase tracking-[0.2em] font-bold text-cream-200 hover:text-accent">
+                    See this project{" "}
+                    <span
+                      aria-hidden
+                      className="inline-block transition-all duration-200 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </Link>
+                </figcaption>
+              </motion.figure>
+            </AnimatePresence>
+          </div>
+
+          <div className="lg:col-span-5 lg:col-start-8">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.35 }}>
+                <Link
+                  href={`/projects/${t.project.slug}`}
+                  className="group block">
+                  <div className="relative aspect-4/5 overflow-hidden">
+                    <Image
+                      src={t.project.image}
+                      alt={t.project.imageAlt}
+                      fill
+                      quality={75}
+                      sizes="(min-width: 1024px) 40vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent" />
+                    <div className="absolute bottom-0 left-0 p-6 text-white">
+                      <p className="text-lg">{t.project.title}</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.2em] text-white/70">
+                        {t.project.meta}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+
+        <div className="mt-16 flex items-center gap-6">
+          <div className="relative h-1 flex-1 bg-cream-300/10">
+            <div
+              className="absolute left-0 top-0 h-1 bg-accent transition-all duration-500"
+              style={{ width: `${((index + 1) / count) * 100}%` }}
+            />
+          </div>
+          <p className="text-xs tracking-[0.2em] text-cream-200">
+            {pad(index + 1)} / {pad(count)}
+          </p>
+          <div className="flex gap-4">
+            <button
+              type="button"
+              aria-label="Previous testimonial"
+              onClick={() => setIndex((index - 1 + count) % count)}
+              className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10">
+              <span
+                aria-hidden
+                className="inline-block transition-transform duration-200 group-hover:-translate-x-1">
+                ←
+              </span>
+            </button>
+            <button
+              type="button"
+              aria-label="Next testimonial"
+              onClick={() => setIndex((index + 1) % count)}
+              className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10">
+              <span
+                aria-hidden
+                className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                →
+              </span>
+            </button>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}

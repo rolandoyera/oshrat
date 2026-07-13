@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useRef } from "react";
 import {
   motion,
@@ -8,8 +9,7 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import Container from "../../../components/ui/Container";
-import P from "../../../components/ui/P";
+import P from "@/components/ui/P";
 
 /**
  * Scroll-driven services story (inspo: oevra.com). One tall section pins a
@@ -44,7 +44,7 @@ const SERVICES: SequenceService[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time — not staged. Every choice is made in relation to the next, so a home reads as one continuous idea rather than a series of decorated rooms.",
+      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time — not staged.",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
@@ -93,15 +93,6 @@ const SERVICES: SequenceService[] = [
     image: "/services/custom-furnishings-16x9.jpg",
     imageAlt:
       "A design graphic for a luxury custom cabinet for a primary suite.",
-  },
-  {
-    title: "Single-Room Transformations",
-    category: "Single space",
-    description:
-      "One room, fully realized — ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement. A focused scope means faster decisions and a shorter path from concept to finished room, without cutting a single corner.",
-    image: "/services/single-room-transformations-16x9.jpg",
-    imageAlt:
-      "High-end modern primary suite transformation featuring a low-profile upholstered bed with custom millwork throughout.",
   },
 ];
 
@@ -223,8 +214,6 @@ function HeroCard({ progress }: { progress: MotionValue<number> }) {
     (v) => `clamp(${240 * (1 - v)}px, ${48 + 52 * v}vh, ${440 + 5000 * v}px)`,
   );
   const labelOpacity = useTransform(progress, [0.2, 0.23], [1, 0]);
-  // Legibility scrim eases in as the image reaches full-bleed.
-  const scrimOpacity = useTransform(progress, [0.28, 0.34], [0, 1]);
 
   return (
     <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -237,10 +226,6 @@ function HeroCard({ progress }: { progress: MotionValue<number> }) {
             quality={75}
             sizes="100vw"
             className="object-cover"
-          />
-          <motion.div
-            style={{ opacity: scrimOpacity }}
-            className="absolute inset-0 bg-black/40"
           />
         </div>
         <motion.span style={{ opacity: labelOpacity }} className="block">
@@ -332,7 +317,6 @@ function Slide({
         sizes="100vw"
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-black/40" />
     </motion.div>
   );
 }
@@ -347,52 +331,78 @@ function SlideText({
   progress: MotionValue<number>;
 }) {
   const service = SERVICES[index];
-  const prev = SERVICES[index - 1];
-  const next = SERVICES[index + 1];
   const { in: tIn, out } = textWindow(index);
   const range = out ? [tIn[0], tIn[1], out[0], out[1]] : tIn;
-  const opacity = useTransform(progress, range, out ? [0, 1, 1, 0] : [0, 1]);
+  const fade = useTransform(progress, range, out ? [0, 1, 1, 0] : [0, 1]);
   const y = useTransform(progress, range, out ? [48, 0, 0, -24] : [48, 0]);
+  // Animating opacity on an ancestor of a backdrop-filter flattens the subtree
+  // into an isolated group mid-fade — the blur loses the page behind it and
+  // pops back at opacity 1 (the "blink"). So the panel never fades: its blur
+  // radius, tint, border, and shadow are driven directly, and only the text
+  // content inside animates opacity.
+  const blur = useTransform(fade, (v) => `blur(${12 * v}px)`);
+  const backgroundColor = useTransform(
+    fade,
+    (v) => `rgba(0, 0, 0, ${0.35 * v})`,
+  );
+  const borderColor = useTransform(
+    fade,
+    (v) => `rgba(255, 255, 255, ${0.1 * v})`,
+  );
+  const boxShadow = useTransform(
+    fade,
+    (v) => `0 25px 50px -12px rgba(0, 0, 0, ${0.25 * v})`,
+  );
 
   return (
     <motion.div
-      style={{ opacity, y }}
-      className="pointer-events-none absolute inset-0 z-40 flex items-center">
-      <Container size="lg" className="w-full">
-        <div className="max-w-3xl text-white">
-          <p className="text-xs uppercase tracking-[0.2em] text-cream-100 font-bold">
-            ({pad(index + 1)}) — {service.category}
-          </p>
-          <h3 className="mt-8 text-[clamp(2.25rem,1.5rem+3vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-balance">
-            {service.title}
-          </h3>
-          <P className="mt-10 max-w-md text-cream-100/90 lg:ml-32">
-            {service.description}
-          </P>
-        </div>
-      </Container>
-
-      <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 space-y-12 text-[11px] uppercase tracking-[0.2em] text-cream-100 lg:block xl:right-10">
-        {prev && (
-          <p>
-            <span aria-hidden className="block">
-              ←
-            </span>
-            <span className="mt-2 block text-cream-100">({pad(index)})</span>
-            <span className="mt-1 block max-w-[14ch]">{prev.title}</span>
-          </p>
-        )}
-        {next && (
-          <p>
-            <span aria-hidden className="block">
-              →
-            </span>
-            <span className="mt-2 block text-cream-100">
-              ({pad(index + 2)})
-            </span>
-            <span className="mt-1 block max-w-[14ch]">{next.title}</span>
-          </p>
-        )}
+      style={{ y }}
+      className="pointer-events-none absolute inset-0 z-40 flex items-end pb-8 lg:pb-12">
+      <div className="w-full px-4 lg:px-12">
+        <motion.div
+          style={{
+            backdropFilter: blur,
+            WebkitBackdropFilter: blur,
+            backgroundColor,
+            borderColor,
+            boxShadow,
+          }}
+          className="ml-auto max-w-3xl rounded-xs border p-8 text-white lg:p-12">
+          <motion.div style={{ opacity: fade }}>
+            <p className="text-xs uppercase tracking-[0.2em] text-cream-100 font-bold">
+              ({pad(index + 1)}) — {service.category}
+            </p>
+            <h3 className="mt-8 text-[clamp(2.25rem,1.5rem+3vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-balance">
+              {service.title}
+            </h3>
+            <P className="mt-10 text-cream-100">{service.description}</P>
+            {index === 0 && (
+              <div className="mt-10">
+                <P className="text-cream-100">
+                  This home was featured in Florida Design magazine — Art Basel
+                  Edition.
+                </P>
+                <Image
+                  src="/assets/Florida-design-magazine-cover-top.jpg"
+                  alt="Florida Design magazine logo"
+                  width={794}
+                  height={147}
+                  className="mt-4 h-auto w-56"
+                />
+                <Link
+                  href="/press"
+                  className="group pointer-events-auto mt-6 inline-block text-xs uppercase tracking-[0.2em] font-bold text-cream-100 hover:text-accent">
+                  View press release{" "}
+                  <span
+                    aria-hidden
+                    className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              </div>
+            )}
+          </motion.div>
+        </motion.div>
       </div>
     </motion.div>
   );

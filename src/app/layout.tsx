@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { Manrope, Parisienne } from "next/font/google";
+import { Manrope, Newsreader, Parisienne } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/Navbar";
 import { cookies } from "next/headers";
@@ -18,6 +18,13 @@ const parisienne = Parisienne({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-serif",
+});
+
+// Variable font — full weight axis, both styles, no per-weight files.
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-newsreader",
 });
 
 const ROOT_TITLE =
@@ -44,7 +51,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${parisienne.variable} font-sans antialiased bg-background text-foreground`}
+        className={`${manrope.variable} ${parisienne.variable} ${newsreader.variable} font-sans antialiased bg-background text-foreground`}
       >
         <Providers>
           {process.env.VERCEL_ENV === "production" && (

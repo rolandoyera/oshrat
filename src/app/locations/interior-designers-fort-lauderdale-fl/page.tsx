@@ -7,6 +7,7 @@ import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ServicesSequence from "../_components/ServicesSequence";
 import FeaturedProjects from "../_components/FeaturedProjects";
+import Testimonials from "../_components/Testimonials";
 import CtaSection from "@/components/CtaSection";
 
 // Hand-picked projects for this page — order here is display order.
@@ -54,7 +55,7 @@ export default function Page() {
                       className="inline-block h-[2px] w-[2em] bg-current align-middle"
                     />
                   </span>
-                  <span className="block w-fit">to it's address.</span>
+                  <span className="block w-fit">to its address.</span>
                 </Display>
               </ScrollReveal>
               <ScrollReveal className="col-span-12 lg:col-span-4 text-white">
@@ -83,12 +84,12 @@ export default function Page() {
         description="Explore a selection of our Fort Lauderdale interiors, where thoughtful space planning, refined materials, and custom details come together to create homes that feel distinctive, cohesive, and personal."
       />
 
+      <Testimonials />
+
       <CtaSection
         location="fort_lauderdale_cta"
         formSource="fort-lauderdale"
         ctaLabel="Request Consultation"
-        background="bg-taupe-800"
-        foreground="text-cream-300"
       />
     </main>
   );
