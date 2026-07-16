@@ -9,6 +9,7 @@ import ServicesSequence from "../_components/ServicesSequence";
 import FeaturedProjects from "../_components/FeaturedProjects";
 import Testimonials from "../_components/Testimonials";
 import CtaSection from "@/components/CtaSection";
+import { FortLauderdaleEditorial } from "../_components/FortLauderdaleEditorial";
 
 // Hand-picked projects for this page — order here is display order.
 const FEATURED_SLUGS = [
@@ -85,12 +86,12 @@ export default function Page() {
       />
 
       <Testimonials />
-
       <CtaSection
         location="fort_lauderdale_cta"
         formSource="fort-lauderdale"
         ctaLabel="Request Consultation"
       />
+      <FortLauderdaleEditorial />
     </main>
   );
 }
