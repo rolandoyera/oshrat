@@ -9,6 +9,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { trackAdsConversion, trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 const ContactSchema = z.object({
   firstName: z.string().trim().min(1, "Please enter your first name"),
@@ -50,6 +51,7 @@ export default function ContactSection({
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSent, setIsSent] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const hasStartedFormRef = useRef(false);
 
   // Fires once per mount (the drawer remounts this on each open) so GA4 can
@@ -93,6 +95,10 @@ export default function ContactSection({
   }, [reset]);
 
   const handleFormSubmit = async (data: ContactValues) => {
+    if (!turnstileToken) {
+      setSubmitError("Please wait for the verification to finish.");
+      return;
+    }
     setIsSubmitting(true);
     setSubmitError(null);
 
@@ -103,6 +109,7 @@ export default function ContactSection({
         body: JSON.stringify({
           ...data,
           source: "contact",
+          turnstileToken,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -269,6 +276,14 @@ export default function ContactSection({
                 </p>
               )}
             </div>
+
+            <Turnstile
+              siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+              onSuccess={setTurnstileToken}
+              onExpire={() => setTurnstileToken(null)}
+              onError={() => setTurnstileToken(null)}
+              options={{ size: "flexible" }}
+            />
 
             {submitError && (
               <p className="text-sm text-red-600 font-medium">{submitError}</p>

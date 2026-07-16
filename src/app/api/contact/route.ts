@@ -13,7 +13,40 @@ const Schema = z.object({
   projectType: z.string().optional(),
   source: z.string().optional(),
   ts: z.number().optional(),
+  turnstileToken: z.string().optional(),
 });
+
+// Verifies the Cloudflare Turnstile token. Enforced only when the secret is
+// configured, so local dev without the env var keeps working.
+async function verifyTurnstile(
+  token: string | undefined,
+  remoteIp: string | undefined,
+): Promise<{ ok: boolean; reason?: string }> {
+  const secret = process.env.TURNSTILE_SECRET_KEY;
+  if (!secret) return { ok: true, reason: "secret not configured" };
+  if (!token) return { ok: false, reason: "token missing" };
+
+  const res = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        secret,
+        response: token,
+        ...(remoteIp ? { remoteip: remoteIp } : {}),
+      }),
+    },
+  );
+  if (!res.ok) return { ok: false, reason: `siteverify http ${res.status}` };
+  const outcome = (await res.json()) as {
+    success: boolean;
+    "error-codes"?: string[];
+  };
+  return outcome.success
+    ? { ok: true }
+    : { ok: false, reason: outcome["error-codes"]?.join(",") ?? "failed" };
+}
 
 function escapeHtml(value: string) {
   return value.replace(
@@ -154,7 +187,23 @@ export async function POST(req: Request) {
       projectType,
       source,
       ts,
+      turnstileToken,
     } = parsed.data;
+
+    const remoteIp = req.headers
+      .get("x-forwarded-for")
+      ?.split(",")[0]
+      ?.trim();
+    const turnstile = await verifyTurnstile(turnstileToken, remoteIp);
+    if (!turnstile.ok) {
+      log("turnstile verification failed", { reason: turnstile.reason });
+      return NextResponse.json({ ok: false }, { status: 403 });
+    }
+    if (turnstile.reason) {
+      console.warn(`[contact:${requestId}] turnstile skipped`, {
+        reason: turnstile.reason,
+      });
+    }
 
     const now = Date.now();
     log("validation ok", {

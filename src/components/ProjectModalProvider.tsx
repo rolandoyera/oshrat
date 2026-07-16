@@ -25,6 +25,7 @@ import {
 } from "./ui/select";
 import { trackAdsConversion, trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
+import { Turnstile } from "@marsidev/react-turnstile";
 
 type Ctx = {
   /** `source` labels the lead in GA4 and the CRM (defaults to "project"). */
@@ -169,6 +170,7 @@ function ContactModal({
   });
 
   const [submitError, setSubmitError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const [sent, setSent] = useState(false);
   const [isSelectFocused, setIsSelectFocused] = useState(false);
   const [isMsgFocused, setIsMsgFocused] = useState(false);
@@ -192,6 +194,10 @@ function ContactModal({
 
   const onSubmit = async (data: ContactValues) => {
     setSubmitError(null);
+    if (!turnstileToken) {
+      setSubmitError("Please wait for the verification to finish.");
+      return;
+    }
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -199,6 +205,7 @@ function ContactModal({
         body: JSON.stringify({
           ...data,
           source,
+          turnstileToken,
         }),
       });
       if (!res.ok) throw new Error("Request failed");
@@ -486,6 +493,14 @@ function ContactModal({
                   </p>
                 )}
               </div>
+
+              <Turnstile
+                siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                onSuccess={setTurnstileToken}
+                onExpire={() => setTurnstileToken(null)}
+                onError={() => setTurnstileToken(null)}
+                options={{ size: "flexible" }}
+              />
 
               {submitError && (
                 <p className="text-sm text-brand" aria-live="polite">
