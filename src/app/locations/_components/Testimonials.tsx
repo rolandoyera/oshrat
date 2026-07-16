@@ -60,8 +60,7 @@ export default function Testimonials() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className="text-xs uppercase tracking-[0.2em] text-accent font-medium"
-            >
+              className="text-xs uppercase tracking-[0.2em] text-accent font-medium">
               In their words
             </TextEffect>
             <h2 className="mt-5 text-3xl lg:text-5xl font-normal tracking-tight text-foreground">
@@ -72,8 +71,7 @@ export default function Testimonials() {
                 speedSegment={0.3}
                 inView
                 delay={0.15}
-                className="block text-cream-200"
-              >
+                className="block text-cream-200">
                 The work speaks.
               </TextEffect>
               <TextEffect
@@ -83,8 +81,7 @@ export default function Testimonials() {
                 speedSegment={0.3}
                 inView
                 delay={0.35}
-                className="block italic text-accent text-[1.2em] mt-2 font-reader font-light"
-              >
+                className="block italic text-accent text-[1.2em] mt-2 font-reader font-light">
                 So do the clients.
               </TextEffect>
             </h2>
@@ -99,8 +96,7 @@ export default function Testimonials() {
                 initial={{ opacity: 0, y: 24 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.35 }}
-              >
+                transition={{ duration: 0.35 }}>
                 <blockquote className="text-2xl leading-[1.18] text-cream-100 lg:text-5xl font-reader font-[250]">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
@@ -113,13 +109,11 @@ export default function Testimonials() {
                   </div>
                   <Link
                     href={`/projects/${t.project.slug}`}
-                    className="group text-xs uppercase tracking-[0.2em] font-bold text-cream-200 hover:text-accent"
-                  >
+                    className="group text-xs uppercase tracking-[0.2em] font-bold text-cream-200 hover:text-accent">
                     See this project{" "}
                     <span
                       aria-hidden
-                      className="inline-block transition-all duration-200 group-hover:translate-x-1"
-                    >
+                      className="inline-block transition-all duration-200 group-hover:translate-x-1">
                       →
                     </span>
                   </Link>
@@ -135,12 +129,10 @@ export default function Testimonials() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.35 }}
-              >
+                transition={{ duration: 0.35 }}>
                 <Link
                   href={`/projects/${t.project.slug}`}
-                  className="group block"
-                >
+                  className="group block">
                   <div className="relative aspect-4/5 overflow-hidden">
                     <Image
                       src={t.project.image}
@@ -180,12 +172,10 @@ export default function Testimonials() {
                 type="button"
                 aria-label="Previous testimonial"
                 onClick={() => setIndex((index - 1 + count) % count)}
-                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10"
-              >
+                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10">
                 <span
                   aria-hidden
-                  className="inline-block transition-transform duration-200 group-hover:-translate-x-1"
-                >
+                  className="inline-block transition-transform duration-200 group-hover:-translate-x-1">
                   ←
                 </span>
               </button>
@@ -193,12 +183,10 @@ export default function Testimonials() {
                 type="button"
                 aria-label="Next testimonial"
                 onClick={() => setIndex((index + 1) % count)}
-                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10"
-              >
+                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10">
                 <span
                   aria-hidden
-                  className="inline-block transition-transform duration-200 group-hover:translate-x-1"
-                >
+                  className="inline-block transition-transform duration-200 group-hover:translate-x-1">
                   →
                 </span>
               </button>
