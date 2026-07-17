@@ -178,7 +178,7 @@ export default async function Home() {
 
           <div className="mt-16 flex flex-wrap justify-center gap-4">
             <ProjectButton location="ready_to_start" className="px-7.5">
-              Contact the studio
+              Request Consultation
             </ProjectButton>
             <ArrowButton href={SITE.whatsappUrl} variant="secondary">
               Message on WhatsApp

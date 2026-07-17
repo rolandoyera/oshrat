@@ -8,7 +8,7 @@ export default function CtaSection({
   heading,
   location = "services_cta",
   formSource = "services_email_studio",
-  ctaLabel = "Contact the studio",
+  ctaLabel = "Request Consultation",
   background = "bg-cream-200",
   foreground = "text-foreground",
 }: {
