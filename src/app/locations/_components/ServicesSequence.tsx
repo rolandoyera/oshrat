@@ -367,12 +367,12 @@ function SlideText({
             borderColor,
             boxShadow,
           }}
-          className="ml-auto max-w-3xl rounded-xs border p-8 text-white lg:p-12">
+          className="ml-auto max-w-3xl rounded-xs border p-8 text-white">
           <motion.div style={{ opacity: fade }}>
-            <p className="text-xs uppercase tracking-[0.2em] text-cream-100 font-bold">
+            <P variant="eyebrow" className="text-white">
               ({pad(index + 1)}) — {service.category}
-            </p>
-            <h3 className="mt-8 text-[clamp(2.25rem,1.5rem+3vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-balance">
+            </P>
+            <h3 className="mt-2 text-[clamp(2.25rem,1.5rem+3vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-balance">
               {service.title}
             </h3>
             <P className="mt-10 text-cream-100">{service.description}</P>
