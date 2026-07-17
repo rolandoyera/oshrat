@@ -58,8 +58,9 @@ export function FortLauderdaleEditorial() {
               the interiors that succeed answer that architecture with
               restraint: layered texture, honest materials, a palette drawn from
               the landscape rather than a theme. That&rsquo;s the standard we
-              hold every project to, whether it&rsquo;s a full renovation on the
-              Isles or the furnishing of a new build in Harbor Beach.
+              hold every high-end interior design project to, whether
+              it&rsquo;s a full renovation on the Isles or the furnishing of a
+              new build in Harbor Beach.
             </P>
           </div>
         </div>

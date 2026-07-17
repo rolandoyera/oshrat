@@ -40,6 +40,11 @@ const FAQS: { question: string; answer: string }[] = [
       "Both. Our interior design consulting engagements suit clients who want expert direction on layout, palette, and sourcing while managing execution themselves. Full-service work — the majority of our studio — carries a project from space planning through procurement, custom furnishings, and installation with a single point of accountability.",
   },
   {
+    question: "Do I need an interior decorator or an interior designer?",
+    answer:
+      "An interior decorator works with what a room already is — furnishings, palettes, styling. An interior designer works with what it could be: space planning, renovations, and coordination with your architect and contractor. Sarvian is a full-service interior design studio, so both live under one roof — turnkey projects carried from structural space planning to the final styled shelf.",
+  },
+  {
     question:
       "Do you work with my architect and contractor, or bring your own team?",
     answer:
@@ -123,7 +128,7 @@ export default function Page() {
                   speedSegment={0.3}
                   delay={0.2}
                   className="max-w-xl text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">
-                  A full-service studio for commercial and residential
+                  A full-service studio for luxury residential and commercial
                   interiors, renovations, and new construction across Fort
                   Lauderdale, Florida in Broward County.
                 </TextEffect>
