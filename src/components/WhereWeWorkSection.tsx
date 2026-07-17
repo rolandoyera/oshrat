@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Container from "./ui/Container";
 import DoubleBorder from "./ui/DoubleBorder";
+import HoverUnderline from "./ui/HoverUnderline";
 import { TextEffect } from "./motion-primitives/text-effect";
 
 const REGIONS: { region: string; places: string[] }[] = [
@@ -146,8 +147,9 @@ export default function WhereWeWorkSection() {
                       {href ? (
                         <Link
                           href={href}
-                          className="hover:[&_span]:text-accent underline-offset-4 hover:underline decoration-accent">
+                          className="group relative inline-block hover:[&_span]:text-accent">
                           {effect}
+                          <HoverUnderline className="text-accent" />
                         </Link>
                       ) : (
                         effect

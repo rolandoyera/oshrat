@@ -9,7 +9,7 @@ const GA_ID = "G-K0ZYTV5JSM";
 const ADS_ID = "AW-18311450958";
 const DISABLE_KEYS = [`ga-disable-${GA_ID}`, `ga-disable-${ADS_ID}`];
 
-export function Analytics({ isInternal }: { isInternal: boolean }) {
+export function Analytics() {
   const pathname = usePathname();
 
   const isExcluded = EXCLUDED_PATHS.some(
@@ -39,9 +39,11 @@ export function Analytics({ isInternal }: { isInternal: boolean }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${GA_ID}'${
-            isInternal ? ", { 'traffic_type': 'internal' }" : ""
-          });
+          // internal_user is read client-side so the server can render this
+          // page statically — a server-side cookie read would force the whole
+          // route dynamic (Cache-Control: no-store, no ISR, no bfcache).
+          gtag('config', '${GA_ID}', document.cookie.split('; ').includes('internal_user=true')
+            ? { 'traffic_type': 'internal' } : {});
           gtag('config', '${ADS_ID}');
         `}
       </Script>

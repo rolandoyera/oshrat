@@ -3,7 +3,8 @@
 import { useEffect } from "react";
 
 // Toggles the `internal_user` cookie used to mark sessions as internal traffic
-// in GA4. Read server-side in app/layout.tsx. ~2 year persistence.
+// in GA4. Read client-side by the gtag snippet in app/Analytics.tsx (never on
+// the server — that would force every route dynamic). ~2 year persistence.
 export default function InternalTrafficCookie({ enabled }: { enabled: boolean }) {
   useEffect(() => {
     document.cookie = enabled

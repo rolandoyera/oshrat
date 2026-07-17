@@ -424,7 +424,7 @@ function MobileServices() {
                 alt={service.imageAlt}
                 fill
                 quality={75}
-                sizes="100vw"
+                sizes="calc(100vw - 3rem)"
                 className="object-cover"
               />
             </div>

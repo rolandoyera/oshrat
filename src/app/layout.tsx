@@ -4,7 +4,6 @@ import "./globals.css";
 import { Manrope, Newsreader, Parisienne } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/Navbar";
-import { cookies } from "next/headers";
 import { socialMeta } from "@/lib/seo";
 import { Analytics } from "./Analytics";
 
@@ -41,22 +40,18 @@ export const metadata: Metadata = {
   ...socialMeta({ title: ROOT_TITLE, description: ROOT_DESCRIPTION }),
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const isInternal = (await cookies()).get("internal_user")?.value === "true";
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${manrope.variable} ${parisienne.variable} ${newsreader.variable} font-sans antialiased bg-background text-foreground`}
       >
         <Providers>
-          {process.env.VERCEL_ENV === "production" && (
-            <Analytics isInternal={isInternal} />
-          )}
+          {process.env.VERCEL_ENV === "production" && <Analytics />}
           <Navbar />
           {children}
           <Footer />

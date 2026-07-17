@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
+import HoverUnderline from "./ui/HoverUnderline";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -229,12 +230,7 @@ export default function Navbar() {
                     onFocus={() => preloadHero(link.href)}
                     className="relative text-lg uppercase group py-1 tracking-wide">
                     {link.name}
-                    <span
-                      className={cn(
-                        "absolute bottom-0 left-1/2 h-[1.5px] bg-current transition-all duration-300 -translate-x-1/2",
-                        isActive ? "w-full" : "w-0 group-hover:w-full",
-                      )}
-                    />
+                    <HoverUnderline active={isActive} />
                   </Link>
                 </li>
               );
