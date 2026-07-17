@@ -96,8 +96,8 @@ export default function Page() {
 
         <Container size="lg" className="relative z-10 w-full">
           <HeroScrollColor>
-            <div className="grid grid-cols-12 items-end gap-10 pb-12">
-              <ScrollReveal className="col-span-12 lg:col-span-8 text-white">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-12">
+              <ScrollReveal className="lg:col-span-8 text-white">
                 <TextEffect
                   as="h1"
                   preset="fade-in-blur"
@@ -109,7 +109,7 @@ export default function Page() {
 
                 <Display
                   as="h2"
-                  className="text-[7.5rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-6">
+                  className="lg:text-[7.5rem] text-[2.25rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-2 lg:space-y-6">
                   <span className="block">
                     A home equal{" "}
                     <span
@@ -120,7 +120,7 @@ export default function Page() {
                   <span className="block w-fit">to its address.</span>
                 </Display>
               </ScrollReveal>
-              <ScrollReveal className="col-span-12 lg:col-span-4 text-white">
+              <ScrollReveal className="lg:col-span-4 text-white">
                 <TextEffect
                   as="p"
                   preset="fade-in-blur"

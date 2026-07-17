@@ -358,7 +358,7 @@ function SlideText({
     <motion.div
       style={{ y }}
       className="pointer-events-none absolute inset-0 z-40 flex items-end pb-8 lg:pb-12">
-      <div className="w-full px-4 lg:px-12">
+      <div className="w-full px-6 lg:px-12">
         <motion.div
           style={{
             backdropFilter: blur,
@@ -391,7 +391,7 @@ function SlideText({
                 />
                 <Link
                   href="/press"
-                  className="group pointer-events-auto mt-6 inline-block text-xs uppercase tracking-[0.2em] font-bold text-cream-100 hover:text-accent">
+                  className="group pointer-events-auto mt-10 inline-block text-xs uppercase tracking-[0.2em] font-bold text-cream-100 hover:text-accent">
                   View press release{" "}
                   <span
                     aria-hidden
@@ -408,7 +408,76 @@ function SlideText({
   );
 }
 
+// Mobile: the pinned scroll story is unreadable on a phone — full-bleed images
+// are cropped to a sliver and the text-over-image glass panel is cramped. So
+// mobile gets a plain stacked layout instead: each service's image sits at
+// container width (16:9) with its copy below in foreground color, no card.
+function MobileServices() {
+  return (
+    <section className="bg-cream-200 py-20 lg:hidden">
+      <div className="space-y-16 px-6">
+        {SERVICES.map((service, index) => (
+          <article key={service.title}>
+            <div className="relative aspect-video w-full overflow-hidden">
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                fill
+                quality={75}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+            <P variant="eyebrow" className="mt-6">
+              ({pad(index + 1)}) — {service.category}
+            </P>
+            <h3 className="mt-2 text-3xl font-normal leading-h1 tracking-tight text-balance text-foreground">
+              {service.title}
+            </h3>
+            <P className="mt-4 text-foreground/80">{service.description}</P>
+            {index === 0 && (
+              <div className="mt-8">
+                <P className="text-foreground/80">
+                  This home was featured in Florida Design magazine — Art Basel
+                  Edition.
+                </P>
+                <Image
+                  src="/assets/Florida-design-magazine-cover-top.jpg"
+                  alt="Florida Design magazine logo"
+                  width={794}
+                  height={147}
+                  className="mt-6 h-auto w-56"
+                />
+                <Link
+                  href="/press"
+                  className="group mt-2 inline-block text-xs uppercase tracking-[0.2em] font-bold text-foreground hover:text-accent">
+                  View press release{" "}
+                  <span
+                    aria-hidden
+                    className="inline-block transition-transform duration-300 group-hover:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              </div>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export default function ServicesSequence() {
+  return (
+    <>
+      <h2 className="sr-only">What we do</h2>
+      <MobileServices />
+      <DesktopSequence />
+    </>
+  );
+}
+
+function DesktopSequence() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -430,8 +499,7 @@ export default function ServicesSequence() {
   });
 
   return (
-    <section ref={ref} className="relative h-[900vh] -mt-80">
-      <h2 className="sr-only">What we do</h2>
+    <section ref={ref} className="relative hidden h-[900vh] -mt-80 lg:block">
       <div className="sticky top-0 h-dvh overflow-hidden">
         {SERVICES.slice(1).map((service, i) => (
           <SmallCard

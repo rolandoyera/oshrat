@@ -37,7 +37,7 @@ export function FortLauderdaleEditorial() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              delay={0.25}>
+              delay={0}>
               Fort Lauderdale interior designers work in a particular kind of
               light &mdash; low, warm, and reflected off water most of the year.
               At Sarvian Design Group, we design for it. Our studio serves the
@@ -58,7 +58,7 @@ export function FortLauderdaleEditorial() {
               speedReveal={5}
               speedSegment={0.3}
               inView
-              delay={0.25}>
+              delay={0}>
               Our interior design consulting in Fort Lauderdale begins before a
               single finish is selected. We start with how a home is actually
               used &mdash; where mornings happen, where guests gather, which
