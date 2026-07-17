@@ -26,7 +26,7 @@ const FAQS: { question: string; answer: string }[] = [
     question:
       "What does it cost to hire an interior designer in Fort Lauderdale?",
     answer:
-      "It depends on scope, but we believe in being direct about it. Single-space projects like a kitchen or primary suite typically begin in the mid five figures including furnishings; full home renovations and new construction interiors are quoted per project after an initial consultation. We provide a detailed fee proposal before any work begins, so there are no surprises at install.",
+      "It depends on scope, and we believe in being direct about it. A single-space project like a kitchen or primary suite is a different investment than a full home renovation or new construction interior, so every engagement is quoted per project after an initial consultation. We provide a detailed fee proposal before any work begins, so there are no surprises at install.",
   },
   {
     question: "Which Fort Lauderdale neighborhoods do you work in?",
