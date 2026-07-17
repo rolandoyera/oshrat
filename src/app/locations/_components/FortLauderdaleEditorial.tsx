@@ -1,5 +1,7 @@
+import { TextEffect } from "@/components/motion-primitives/text-effect";
 import H2 from "@/components/ui/H2";
 import P from "@/components/ui/P";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 /**
  * Fort Lauderdale editorial / SEO section
@@ -10,7 +12,10 @@ import P from "@/components/ui/P";
  */
 export function FortLauderdaleEditorial() {
   return (
-    <section className="bg-cream-200 py-24 lg:py-32">
+    <ScrollReveal
+      direction="up"
+      threshold={0.6}
+      className="bg-cream-200 py-24 lg:py-32">
       <div className="mx-auto px-6 xl:px-0 max-w-[1800px]">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           {/* Left — eyebrow + heading */}
@@ -25,7 +30,14 @@ export function FortLauderdaleEditorial() {
 
           {/* Right — editorial copy */}
           <div className="lg:col-span-7 space-y-8 flex flex-col gap-10">
-            <P>
+            <TextEffect
+              className="text-base lg:text-[22px] font-light text-balance -mb-4 last:mb-0 leading-[1.55]"
+              as="p"
+              preset="fade-in-blur"
+              speedReveal={5}
+              speedSegment={0.3}
+              inView
+              delay={0.25}>
               Fort Lauderdale interior designers work in a particular kind of
               light &mdash; low, warm, and reflected off water most of the year.
               At Sarvian Design Group, we design for it. Our studio serves the
@@ -38,8 +50,15 @@ export function FortLauderdaleEditorial() {
               it&rsquo;s why the interior designers Fort Lauderdale, FL
               homeowners ultimately choose tend to be found through the homes
               they&rsquo;ve already completed.
-            </P>
-            <P>
+            </TextEffect>
+            <TextEffect
+              className="text-base lg:text-[22px] font-light text-balance -mb-4 last:mb-0 leading-[1.55]"
+              as="p"
+              preset="fade-in-blur"
+              speedReveal={5}
+              speedSegment={0.3}
+              inView
+              delay={0.25}>
               Our interior design consulting in Fort Lauderdale begins before a
               single finish is selected. We start with how a home is actually
               used &mdash; where mornings happen, where guests gather, which
@@ -48,8 +67,15 @@ export function FortLauderdaleEditorial() {
               furnishings, and installation. One studio, one point of
               accountability, from the first walkthrough to the day the art is
               hung.
-            </P>
-            <P>
+            </TextEffect>
+            <TextEffect
+              className="text-base lg:text-[22px] font-light text-balance -mb-4 last:mb-0 leading-[1.55]"
+              as="p"
+              preset="fade-in-blur"
+              speedReveal={5}
+              speedSegment={0.3}
+              inView
+              delay={0.25}>
               Interior design in Fort Lauderdale is too often reduced to a
               formula: white walls, blue accents, something nautical on a shelf.
               The city deserves better. Homes here are defined by their
@@ -58,13 +84,13 @@ export function FortLauderdaleEditorial() {
               the interiors that succeed answer that architecture with
               restraint: layered texture, honest materials, a palette drawn from
               the landscape rather than a theme. That&rsquo;s the standard we
-              hold every high-end interior design project to, whether
-              it&rsquo;s a full renovation on the Isles or the furnishing of a
-              new build in Harbor Beach.
-            </P>
+              hold every high-end interior design project to, whether it&rsquo;s
+              a full renovation on the Isles or the furnishing of a new build in
+              Harbor Beach.
+            </TextEffect>
           </div>
         </div>
       </div>
-    </section>
+    </ScrollReveal>
   );
 }
