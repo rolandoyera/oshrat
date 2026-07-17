@@ -37,10 +37,15 @@ export const FAQS: { question: string; answer: string }[] = [
   },
 ];
 
-/** Contact-page FAQ. Rows styled after ServicesBridge, but they expand in place. */
-export default function FaqSection() {
+/** FAQ accordion. Rows styled after ServicesBridge, but they expand in place. */
+export default function FaqSection({
+  faqs = FAQS,
+}: {
+  /** Q&A list; pass the same array to `faqPageGraph` so schema matches the page. */
+  faqs?: { question: string; answer: string }[];
+}) {
   return (
-    <section className="bg-cream-200 py-24 lg:py-32 mt-20 xl:mt-32">
+    <section className="bg-cream-200 py-24 lg:py-32">
       <Container size="lg">
         <ScrollReveal direction="up" threshold={0.3} className="text-center">
           <p className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
@@ -55,7 +60,7 @@ export default function FaqSection() {
           <div className="mx-auto mt-12 max-w-[1200px] lg:mt-16">
             <hr className="etched-line" />
             <Accordion type="single" collapsible>
-              {FAQS.map((faq, i) => (
+              {faqs.map((faq, i) => (
                 <Fragment key={faq.question}>
                   <AccordionItem value={`faq-${i}`} className="border-b-0">
                     <AccordionTrigger className="items-center rounded-none px-3 py-5 hover:no-underline cursor-pointer md:px-4 md:py-7 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-foreground/60">
