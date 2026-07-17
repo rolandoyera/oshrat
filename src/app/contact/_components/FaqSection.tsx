@@ -13,12 +13,12 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you offer interior design services outside Fort Lauderdale?",
     answer:
-      "Yes. Sarvian Design Group works with clients throughout South Florida — Broward County, Palm Beach, Boca Raton, Miami, and surrounding areas — with our studio based in Fort Lauderdale.",
+      "Yes. Sarvian Design Group works with clients throughout South Florida — Broward County, Palm Beach, Boca Raton, Miami, and surrounding areas with our studio based in Ft. Lauderdale.",
   },
   {
     question: "What types of projects do you take on?",
     answer:
-      "Sarvian Design Group works on a range of interior design projects — from full-home renovations and new construction to single-room transformations, custom furnishings, built-ins, lighting, material selections, procurement, and styling, depending on project scope.",
+      "Sarvian Design Group works on a range of interior design projects from full-home renovations and new construction to single-room transformations, custom furnishings, built-ins, lighting, material selections, procurement, and styling, depending on project scope.",
   },
   {
     question: "How do I start a project?",

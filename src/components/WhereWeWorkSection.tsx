@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Container from "./ui/Container";
 import DoubleBorder from "./ui/DoubleBorder";
 import { TextEffect } from "./motion-primitives/text-effect";
@@ -40,6 +41,11 @@ const REGIONS: { region: string; places: string[] }[] = [
     places: ["Naples", "The Keys", "By referral", "Select projects"],
   },
 ];
+
+// Places with a dedicated location page link to it from the list.
+const PLACE_LINKS: Record<string, string> = {
+  "Fort Lauderdale": "/locations/interior-designers-fort-lauderdale-fl",
+};
 
 export default function WhereWeWorkSection() {
   return (
@@ -121,19 +127,34 @@ export default function WhereWeWorkSection() {
                 {region}
               </TextEffect>
               <ul className="mt-6 space-y-4">
-                {places.map((place, row) => (
-                  <TextEffect
-                    key={place}
-                    as="li"
-                    preset="fade-in-blur"
-                    speedReveal={5}
-                    speedSegment={0.3}
-                    delay={col * 0.1 + (row + 1) * 0.08}
-                    inView
-                    className="text-lg text-cream-100">
-                    {place}
-                  </TextEffect>
-                ))}
+                {places.map((place, row) => {
+                  const href = PLACE_LINKS[place];
+                  const effect = (
+                    <TextEffect
+                      as="span"
+                      preset="fade-in-blur"
+                      speedReveal={5}
+                      speedSegment={0.3}
+                      delay={col * 0.1 + (row + 1) * 0.08}
+                      inView
+                      className="text-lg text-cream-100">
+                      {place}
+                    </TextEffect>
+                  );
+                  return (
+                    <li key={place}>
+                      {href ? (
+                        <Link
+                          href={href}
+                          className="hover:[&_span]:text-accent underline-offset-4 hover:underline decoration-accent">
+                          {effect}
+                        </Link>
+                      ) : (
+                        effect
+                      )}
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           ))}
