@@ -55,7 +55,7 @@ export default function WhereWeWorkSection() {
         <div className="max-w-2xl">
           <TextEffect
             as="p"
-            per="char"
+            per="word"
             preset="fade-in-blur"
             speedReveal={5}
             speedSegment={0.3}
@@ -66,6 +66,7 @@ export default function WhereWeWorkSection() {
           <h2 className="mt-6 text-3xl font-normal tracking-tight text-balance text-cream-100 lg:text-5xl">
             <TextEffect
               as="span"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -75,6 +76,7 @@ export default function WhereWeWorkSection() {
             </TextEffect>{" "}
             <TextEffect
               as="span"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -85,6 +87,7 @@ export default function WhereWeWorkSection() {
             </TextEffect>{" "}
             <TextEffect
               as="span"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -96,6 +99,7 @@ export default function WhereWeWorkSection() {
           </h2>
           <TextEffect
             as="p"
+            per="word"
             preset="fade-in-blur"
             speedReveal={5}
             speedSegment={0.3}
@@ -118,7 +122,7 @@ export default function WhereWeWorkSection() {
             <div key={region}>
               <TextEffect
                 as="p"
-                per="char"
+                per="word"
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
@@ -133,6 +137,7 @@ export default function WhereWeWorkSection() {
                   const effect = (
                     <TextEffect
                       as="span"
+                      per="word"
                       preset="fade-in-blur"
                       speedReveal={5}
                       speedSegment={0.3}

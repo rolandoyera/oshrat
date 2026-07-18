@@ -36,6 +36,7 @@ export default function ServicesHero() {
           <div className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
             <TextEffect
               as="h1"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -46,6 +47,7 @@ export default function ServicesHero() {
             <Display as="h2" className="uppercase text-white">
               <TextEffect
                 as="span"
+                per="word"
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
@@ -55,6 +57,7 @@ export default function ServicesHero() {
               <span className="relative inline-flex flex-wrap items-baseline gap-x-12">
                 <TextEffect
                   as="span"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
@@ -63,6 +66,7 @@ export default function ServicesHero() {
                 </TextEffect>
                 <TextEffect
                   as="span"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
@@ -72,6 +76,7 @@ export default function ServicesHero() {
                 </TextEffect>
                 <TextEffect
                   as="span"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
@@ -83,6 +88,7 @@ export default function ServicesHero() {
 
             <TextEffect
               as="p"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -108,6 +114,7 @@ export default function ServicesHero() {
               <div key={label}>
                 <TextEffect
                   as="dt"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
@@ -117,6 +124,7 @@ export default function ServicesHero() {
                 </TextEffect>
                 <TextEffect
                   as="dd"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
