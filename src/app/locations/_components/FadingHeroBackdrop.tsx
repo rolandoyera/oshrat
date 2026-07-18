@@ -65,7 +65,7 @@ export default function FadingHeroBackdrop({
         />
       </picture>
       {/* Scrim for text legibility — darkest at the bottom where the copy sits */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/95 to-transparent to-50% " />
+      <div className="absolute inset-0 bg-linear-to-t from-black to-transparent to-60% " />
     </div>
   );
 }

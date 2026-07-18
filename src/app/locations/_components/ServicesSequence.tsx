@@ -81,7 +81,7 @@ const SERVICES: SequenceService[] = [
     category: "Single space",
     description:
       "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience — the goal is a room that feels as good to be in as it looks.",
-    image: "/services/bathroom-design.jpg",
+    image: "/services/master-bath-interior-design.jpg",
     imageAlt:
       "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
   },

@@ -88,20 +88,20 @@ export default function LocationLanding({
 
         <Container size="lg" className="relative z-10 w-full">
           <HeroScrollColor>
-            <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-6 lg:pb-12">
               <ScrollReveal className="lg:col-span-8 text-white">
                 <TextEffect
                   as="h1"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
-                  className="text-sm uppercase tracking-[0.2em] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-200))] mb-6">
+                  className="text-sm uppercase font-medium tracking-[0.2em] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-200))] mb-2 lg:mb-6">
                   {hero.eyebrow}
                 </TextEffect>
 
                 <Display
                   as="h2"
-                  className="lg:text-[7.5rem] text-[2.25rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-2 lg:space-y-6">
+                  className="lg:text-[7.5rem] text-[2.25rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-2 lg:space-y-4">
                   <span className="block">
                     {headlineTop}{" "}
                     <span
