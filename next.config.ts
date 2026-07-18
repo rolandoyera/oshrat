@@ -63,6 +63,31 @@ const nextConfig: NextConfig = {
         destination: "/projects/golden-dreams-golden-beach-fl",
         permanent: true,
       },
+      {
+        source: "/by-old-river",
+        destination: "/projects/old-river",
+        permanent: true,
+      },
+      {
+        source: "/category/projects",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/north-miami",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/oak-park",
+        destination: "/projects",
+        permanent: true,
+      },
+      {
+        source: "/brickell",
+        destination: "/projects",
+        permanent: true,
+      },
     ];
   },
 };

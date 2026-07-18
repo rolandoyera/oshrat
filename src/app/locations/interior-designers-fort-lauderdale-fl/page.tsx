@@ -24,7 +24,9 @@ const CONTENT: LocationContent = {
     paragraph:
       "A full-service studio for luxury residential and commercial interiors, renovations, and new construction across Fort Lauderdale, Florida in Broward County.",
     image: {
-      src: "/about/sarvian-design-group-oshrat-rothschild-16x9.jpg",
+      mobile: "/about/sarvian-design-group-oshrat-rothschild-600.webp",
+      tablet: "/about/sarvian-design-group-oshrat-rothschild-960.webp",
+      desktop: "/about/sarvian-design-group-oshrat-rothschild-2000.webp",
       alt: "Sarvian Design Group interior in Fort Lauderdale, Florida",
     },
   },

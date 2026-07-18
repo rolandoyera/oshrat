@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef } from "react";
 
 /**
@@ -8,14 +7,23 @@ import { useEffect, useRef } from "react";
  * scrolls over it, fading out linearly until fully gone at half a viewport of
  * scroll. Sits at -z-10: above the body background, below any section that
  * paints its own background and below all content.
+ *
+ * Art direction: a <picture> with media sources guarantees the browser
+ * downloads exactly one crop — phone portrait, tablet portrait, or desktop
+ * landscape. (CSS-hidden <img> swaps would fetch every variant; <source
+ * media> is resolved by the preload scanner before any request goes out.)
+ * The files are pre-sized, pre-encoded webp, so this deliberately bypasses
+ * next/image — its optimizer would only re-encode them.
  */
 export default function FadingHeroBackdrop({
-  src,
+  sources,
   alt,
   blurDataURL,
 }: {
-  src: string;
+  /** One crop per breakpoint: <768px, 768–1023px, ≥1024px. */
+  sources: { mobile: string; tablet: string; desktop: string };
   alt: string;
+  /** Shown as a cover background behind the image while it loads. */
   blurDataURL?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -38,19 +46,26 @@ export default function FadingHeroBackdrop({
   }, []);
 
   return (
-    <div ref={ref} className="fixed inset-0 -z-10">
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        priority
-        quality={100}
-        sizes="100vw"
-        {...(blurDataURL ? { placeholder: "blur" as const, blurDataURL } : {})}
-        className="object-cover"
-      />
+    <div
+      ref={ref}
+      className="fixed inset-0 -z-10 bg-cover bg-center"
+      style={
+        blurDataURL ? { backgroundImage: `url(${blurDataURL})` } : undefined
+      }>
+      <picture>
+        <source media="(max-width: 767px)" srcSet={sources.mobile} />
+        <source media="(max-width: 1023px)" srcSet={sources.tablet} />
+        {/* eslint-disable-next-line @next/next/no-img-element -- art-directed pre-optimized webp; see component comment */}
+        <img
+          src={sources.desktop}
+          alt={alt}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      </picture>
       {/* Scrim for text legibility — darkest at the bottom where the copy sits */}
-      <div className="absolute inset-0 bg-linear-to-t from-black/95 to-transparent to-50%" />
+      <div className="absolute inset-0 bg-linear-to-t from-black/95 to-transparent to-50% " />
     </div>
   );
 }

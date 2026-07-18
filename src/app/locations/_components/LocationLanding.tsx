@@ -28,8 +28,16 @@ export interface LocationContent {
     /** Display headline lines (the em-dash divider follows line one). */
     headline?: [string, string];
     paragraph: string;
-    /** Override for A/B testing a different hero per page; must have a HERO_BLUR entry. */
-    image?: { src: string; alt: string };
+    /**
+     * Override for A/B testing a different hero per page — one crop per
+     * breakpoint. The desktop path doubles as the HERO_BLUR key.
+     */
+    image?: {
+      mobile: string;
+      tablet: string;
+      desktop: string;
+      alt: string;
+    };
   };
   featuredProjects: {
     slugs: string[];
@@ -53,7 +61,9 @@ export interface LocationContent {
 const DEFAULT_HEADLINE: [string, string] = ["A home equal", "to its address."];
 
 const DEFAULT_HERO_IMAGE = {
-  src: "/about/sarvian-design-group-oshrat-rothschild-16x9.jpg",
+  mobile: "/about/sarvian-design-group-oshrat-rothschild-600.webp",
+  tablet: "/about/sarvian-design-group-oshrat-rothschild-960.webp",
+  desktop: "/about/sarvian-design-group-oshrat-rothschild-2000.webp",
   alt: "Sarvian Design Group luxury interior in South Florida",
 };
 
@@ -71,9 +81,9 @@ export default function LocationLanding({
       <JsonLd data={faqPageGraph(path, faqs)} />
       <section className="relative flex min-h-dvh w-full items-end">
         <FadingHeroBackdrop
-          src={image.src}
+          sources={image}
           alt={image.alt}
-          blurDataURL={HERO_BLUR[image.src]}
+          blurDataURL={HERO_BLUR[image.desktop]}
         />
 
         <Container size="lg" className="relative z-10 w-full">

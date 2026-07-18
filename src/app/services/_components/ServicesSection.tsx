@@ -145,7 +145,7 @@ export default function ServicesSection() {
           <div className="lg:col-span-12">
             <TextEffect
               as="p"
-              per="char"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -158,6 +158,7 @@ export default function ServicesSection() {
             <H2 className="flex flex-col gap-2 lg:text-6xl">
               <TextEffect
                 as="span"
+                per="word"
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
@@ -166,6 +167,7 @@ export default function ServicesSection() {
               </TextEffect>
               <TextEffect
                 as="span"
+                per="word"
                 preset="fade-in-blur"
                 speedReveal={5}
                 speedSegment={0.3}
@@ -177,6 +179,7 @@ export default function ServicesSection() {
               <span className="lg:relative lg:ml-16">
                 <TextEffect
                   as="span"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
@@ -187,6 +190,7 @@ export default function ServicesSection() {
                 </TextEffect>
                 <TextEffect
                   as="span"
+                  per="word"
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}
@@ -202,6 +206,7 @@ export default function ServicesSection() {
           <div className="space-y-6 lg:col-span-6">
             <TextEffect
               as="p"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -213,6 +218,7 @@ export default function ServicesSection() {
             </TextEffect>
             <TextEffect
               as="p"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -232,7 +238,7 @@ export default function ServicesSection() {
           <div>
             <TextEffect
               as="p"
-              per="char"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -242,6 +248,7 @@ export default function ServicesSection() {
             </TextEffect>
             <TextEffect
               as="h2"
+              per="word"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
@@ -253,6 +260,7 @@ export default function ServicesSection() {
           </div>
           <TextEffect
             as="p"
+            per="word"
             preset="fade-in-blur"
             speedReveal={5}
             speedSegment={0.3}
