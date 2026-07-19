@@ -41,12 +41,11 @@ export default async function FeaturedProjects({
   projects.sort((a, b) => slugs.indexOf(a.slug) - slugs.indexOf(b.slug));
 
   return (
-    <section className="bg-cream-200 py-24 lg:py-32">
+    <section className="bg-cream-200 pb-24 lg:py-32">
       <Container size="lg">
         <div className="mb-12">
           <TextEffect
             as="p"
-            per="char"
             preset="fade-in-blur"
             speedReveal={5}
             speedSegment={0.3}
@@ -61,7 +60,7 @@ export default async function FeaturedProjects({
             speedSegment={0.3}
             inView
             delay={0.15}
-            className="mt-5 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
+            className="mt-3 lg:mt-5 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
             {heading}
           </TextEffect>
           {description && (
@@ -92,7 +91,7 @@ export default async function FeaturedProjects({
           <ArrowButton
             href="/projects"
             variant="secondary"
-            className="mt-5 md:mt-20">
+            className="mt-10 md:mt-20">
             View More Projects
           </ArrowButton>
         </div>

@@ -28,7 +28,6 @@ export default function CtaSection({
       <Container className="flex flex-col items-center text-center">
         <TextEffect
           as="p"
-          per="char"
           preset="fade-in-blur"
           speedReveal={5}
           speedSegment={0.3}
@@ -36,7 +35,7 @@ export default function CtaSection({
           className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">
           Ready to start?
         </TextEffect>
-        <h2 className="mt-6 text-xl font-normal tracking-tight text-balance lg:text-7xl">
+        <h2 className="mt-6 text-4xl font-normal tracking-tight text-balance lg:text-7xl">
           {heading ? (
             <span className="block">
               <TextEffect

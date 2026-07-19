@@ -14,8 +14,6 @@ import { TextEffect } from "../../../components/motion-primitives/text-effect";
 type Testimonial = {
   quote: string;
   name: string;
-  /** Neighborhood · project type line under the name. */
-  context: string;
   project: {
     title: string;
     meta: string;
@@ -30,7 +28,6 @@ const TESTIMONIALS: Testimonial[] = [
     quote:
       "After using Sarvian Design group on my Florida home, my husband and I hired them again to design our dream home in New Jersey. (Oshrat) is extremely talented and my 2 houses came out stunning..",
     name: "The Djamal Family",
-    context: "Fort Lauderdale, FL",
     project: {
       title: "Aventura Modern Living",
       meta: "Whole Home · 2025",
@@ -63,7 +60,7 @@ export default function Testimonials() {
               className="text-xs uppercase tracking-[0.2em] text-accent font-medium">
               In their words
             </TextEffect>
-            <h2 className="mt-5 text-3xl lg:text-5xl font-normal tracking-tight text-foreground">
+            <h2 className="mt-3 lg:mt-5 text-3xl lg:text-5xl font-normal tracking-tight text-foreground">
               <TextEffect
                 as="span"
                 preset="fade-in-blur"
@@ -81,7 +78,7 @@ export default function Testimonials() {
                 speedSegment={0.3}
                 inView
                 delay={0.35}
-                className="block italic text-accent text-[1.2em] mt-2 font-reader font-light">
+                className="block italic text-accent text-[1.2em] mt-0 lg:mt-2 mb-6 lg:mb-0 font-reader font-light">
                 So do the clients.
               </TextEffect>
             </h2>
@@ -100,16 +97,13 @@ export default function Testimonials() {
                 <blockquote className="text-2xl leading-[1.18] text-cream-100 lg:text-5xl font-reader font-[250]">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-10 flex flex-wrap items-end justify-between gap-6 border-t border-foreground/15 pt-6">
+                <figcaption className="mt-10 flex flex-wrap items-center justify-between gap-6 border-t border-foreground/15 pt-6">
                   <div>
-                    <p className="font-medium text-cream-100">{t.name}</p>
-                    <p className="mt-1 text-sm text-cream-100/60">
-                      {t.context}
-                    </p>
+                    <p className="italic text-cream-100">- {t.name}</p>
                   </div>
                   <Link
                     href={`/projects/${t.project.slug}`}
-                    className="group text-xs uppercase tracking-[0.2em] font-bold text-cream-200 hover:text-accent">
+                    className="group text-xs uppercase tracking-[0.2em] font-medium text-cream-200 hover:text-accent">
                     See this project{" "}
                     <span
                       aria-hidden

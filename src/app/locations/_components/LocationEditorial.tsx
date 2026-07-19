@@ -19,14 +19,14 @@ export function LocationEditorial({
   return (
     <ScrollReveal
       direction="up"
-      threshold={0.6}
-      className="bg-cream-200 py-24 lg:py-32">
+      threshold={0.25}
+      className="bg-cream-200 pb-24 lg:py-32">
       <div className="mx-auto px-6 xl:px-0 max-w-[1800px]">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           {/* Left — eyebrow + heading */}
           <div className="lg:col-span-5">
             <P variant="eyebrow">Our Approach</P>
-            <H2 className="mt-5">
+            <H2 className="mt-3 lg:mt-5">
               {heading.map((line, i) => (
                 <span key={line}>
                   {i > 0 && <br />}
