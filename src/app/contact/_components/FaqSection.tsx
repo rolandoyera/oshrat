@@ -45,15 +45,11 @@ export default function FaqSection({
   faqs?: { question: string; answer: string }[];
 }) {
   return (
-    <section className="bg-cream-200 py-24 lg:py-32">
+    <section className="bg-cream-200 pb-24 lg:py-32">
       <Container size="lg">
         <ScrollReveal direction="up" threshold={0.3} className="text-center">
-          <p className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-            FAQ
-          </p>
-          <h2 className="mt-4 text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal tracking-tight leading-tight">
-            Frequently Asked Questions
-          </h2>
+          <p className="eyebrow text-accent">FAQ</p>
+          <h2 className="h2">Frequently Asked Questions</h2>
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={200} threshold={0.1}>
@@ -68,7 +64,7 @@ export default function FaqSection({
                         <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
                           {String(i + 1).padStart(2, "0")}
                         </span>
-                        <span className="text-2xl font-normal leading-tight tracking-tight text-foreground lg:text-3xl lg:leading-9">
+                        <span className="text-xl font-normal leading-tight tracking-tight text-foreground lg:text-3xl lg:leading-9">
                           {faq.question}
                         </span>
                       </span>

@@ -52,15 +52,14 @@ export default function Testimonials() {
           <div className="lg:col-span-8">
             <TextEffect
               as="p"
-              per="char"
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
               inView
-              className="text-xs uppercase tracking-[0.2em] text-accent font-medium">
+              className="eyebrow">
               In their words
             </TextEffect>
-            <h2 className="mt-3 lg:mt-5 text-3xl lg:text-5xl font-normal tracking-tight text-foreground">
+            <h2 className="h2">
               <TextEffect
                 as="span"
                 preset="fade-in-blur"
@@ -78,7 +77,7 @@ export default function Testimonials() {
                 speedSegment={0.3}
                 inView
                 delay={0.35}
-                className="block italic text-accent text-[1.2em] mt-0 lg:mt-2 mb-6 lg:mb-0 font-reader font-light">
+                className="block italic text-accent h2 mt-0 lg:mt-2 mb-6 lg:mb-0 font-reader font-normal">
                 So do the clients.
               </TextEffect>
             </h2>

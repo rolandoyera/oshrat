@@ -1,6 +1,4 @@
 import { TextEffect } from "@/components/motion-primitives/text-effect";
-import H2 from "@/components/ui/H2";
-import P from "@/components/ui/P";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 /**
@@ -25,15 +23,15 @@ export function LocationEditorial({
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
           {/* Left — eyebrow + heading */}
           <div className="lg:col-span-5">
-            <P variant="eyebrow">Our Approach</P>
-            <H2 className="mt-3 lg:mt-5">
+            <p className="eyebrow">Our Approach</p>
+            <h2 className="h2">
               {heading.map((line, i) => (
                 <span key={line}>
                   {i > 0 && <br />}
                   {line}
                 </span>
               ))}
-            </H2>
+            </h2>
           </div>
 
           {/* Right — editorial copy */}

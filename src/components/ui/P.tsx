@@ -16,7 +16,7 @@ export default function P({
       {...props}
       className={cn(
         variant === "eyebrow"
-          ? "text-xs uppercase tracking-[0.2em] text-accent font-bold"
+          ? "text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3 lg:mb-5"
           : "text-base lg:text-[22px] font-light text-balance -mb-4 last:mb-0 leading-[1.55]",
         className,
       )}>

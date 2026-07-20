@@ -9,7 +9,6 @@ import {
   useTransform,
   type MotionValue,
 } from "motion/react";
-import P from "@/components/ui/P";
 
 /**
  * Scroll-driven services story (inspo: oevra.com). One tall section pins a
@@ -369,19 +368,19 @@ function SlideText({
           }}
           className="ml-auto max-w-3xl rounded-xs border p-8 text-white">
           <motion.div style={{ opacity: fade }}>
-            <P variant="eyebrow" className="text-white">
+            <p className="eyebrow text-white">
               ({pad(index + 1)}) — {service.category}
-            </P>
+            </p>
             <h3 className="mt-2 text-[clamp(2.25rem,1.5rem+3vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-balance">
               {service.title}
             </h3>
-            <P className="mt-10 text-cream-100">{service.description}</P>
+            <p className="p mt-10 text-cream-100">{service.description}</p>
             {index === 0 && (
-              <div className="mt-10">
-                <P className="text-cream-100">
+              <div className="mt-6">
+                <p className="p text-cream-100">
                   This home was featured in Florida Design magazine — Art Basel
                   Edition.
-                </P>
+                </p>
                 <Image
                   src="/assets/Florida-design-magazine-cover-top.jpg"
                   alt="Florida Design magazine logo"
@@ -428,19 +427,19 @@ function MobileServices() {
                 className="object-cover"
               />
             </div>
-            <P variant="eyebrow" className="mt-6">
+            <p className="eyebrow mt-6">
               ({pad(index + 1)}) — {service.category}
-            </P>
+            </p>
             <h3 className="mt-2 text-3xl font-normal leading-h1 tracking-tight text-balance text-foreground">
               {service.title}
             </h3>
-            <P className="mt-4 text-foreground/80">{service.description}</P>
+            <p className="p mt-4">{service.description}</p>
             {index === 0 && (
-              <div className="mt-8">
-                <P className="text-foreground/80">
+              <div className="mt-4">
+                <p className="p">
                   This home was featured in Florida Design magazine — Art Basel
                   Edition.
-                </P>
+                </p>
                 <Image
                   src="/assets/Florida-design-magazine-cover-top.jpg"
                   alt="Florida Design magazine logo"

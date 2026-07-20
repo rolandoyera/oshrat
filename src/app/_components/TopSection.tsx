@@ -36,14 +36,17 @@ export default function TopSection() {
               region brings its own architectural language and light, whether
               that means Intracoastal grandeur or contemporary restraint.
             </p>
-            <div className="flex flex-wrap gap-4 mt-12 items-center justify-center md:justify-start">
-              <ArrowButton href="/projects" variant="secondary">
+            <div className="flex flex-col sm:flex-row gap-4 mt-12 items-center justify-center md:justify-start">
+              <ArrowButton
+                href="/projects"
+                variant="secondary"
+                className="w-full sm:w-auto justify-center">
                 View Our Projects
               </ArrowButton>
               <ArrowButton
                 href="/services"
                 variant="secondary"
-                className="px-5.5">
+                className="w-full sm:w-auto justify-center">
                 View Our Services
               </ArrowButton>
             </div>

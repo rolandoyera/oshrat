@@ -147,7 +147,7 @@ input:-webkit-autofill:active {
 
 @layer base {
   p {
-    @apply text-[17px] lg:text-[20px];
+    @apply text-base lg:text-[22px] font-light text-balance leading-[1.55];
   }
 
   * {
@@ -157,6 +157,14 @@ input:-webkit-autofill:active {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+@utility eyebrow {
+  @apply text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3 lg:mb-5;
+}
+
+@utility h2 {
+  @apply text-3xl lg:text-5xl font-medium text-balance tracking-tight text-foreground;
 }
 
 @keyframes clipReveal {

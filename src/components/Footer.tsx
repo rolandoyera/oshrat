@@ -41,7 +41,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram (opens in a new tab)"
-              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
+              className="text-cream-300 hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
               <InstagramIcon size={30} color="currentColor" />
             </a>
             <a
@@ -52,7 +52,7 @@ export default function Footer() {
               onClick={() =>
                 trackEvent("email_click", { link_location: "footer" })
               }
-              className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]">
+              className="text-cream-300 hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
               <MailIcon size={32} color="currentColor" />
             </a>
             <a
@@ -63,7 +63,7 @@ export default function Footer() {
               onClick={() =>
                 trackEvent("whatsapp_click", { link_location: "footer" })
               }
-              className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]">
+              className="text-cream-300 hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
               <WhatsAppIcon size={26} color="currentColor" />
             </a>
           </div>

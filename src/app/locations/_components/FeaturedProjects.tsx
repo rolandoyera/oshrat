@@ -50,7 +50,7 @@ export default async function FeaturedProjects({
             speedReveal={5}
             speedSegment={0.3}
             inView
-            className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
+            className="eyebrow">
             {eyebrow}
           </TextEffect>
           <TextEffect
@@ -60,7 +60,7 @@ export default async function FeaturedProjects({
             speedSegment={0.3}
             inView
             delay={0.15}
-            className="mt-3 lg:mt-5 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
+            className="h2">
             {heading}
           </TextEffect>
           {description && (
@@ -71,7 +71,7 @@ export default async function FeaturedProjects({
               speedSegment={0.3}
               inView
               delay={0.25}
-              className="mt-6 max-w-xl text-foreground">
+              className="mt-6 p">
               {description}
             </TextEffect>
           )}

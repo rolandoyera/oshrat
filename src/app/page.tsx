@@ -176,11 +176,16 @@ export default async function Home() {
             walk you through scope, timeline, and the right way to begin.
           </TextEffect>
 
-          <div className="mt-16 flex flex-wrap justify-center gap-4">
-            <ProjectButton location="ready_to_start" className="px-7.5">
+          <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
+            <ProjectButton
+              location="ready_to_start"
+              className="w-full sm:w-auto justify-center">
               Request Consultation
             </ProjectButton>
-            <ArrowButton href={SITE.whatsappUrl} variant="secondary">
+            <ArrowButton
+              href={SITE.whatsappUrl}
+              variant="secondary"
+              className="w-full sm:w-auto justify-center">
               Message on WhatsApp
             </ArrowButton>
           </div>

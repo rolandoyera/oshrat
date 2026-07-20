@@ -99,11 +99,16 @@ export default function ServicesHero() {
               counties.
             </TextEffect>
 
-            <div className="flex flex-wrap gap-4 pt-4">
-              <ProjectButton location="services_hero">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <ProjectButton
+                location="services_hero"
+                className="w-full sm:w-auto justify-center">
                 Start a Project
               </ProjectButton>
-              <ArrowButton href="/projects" variant="secondary">
+              <ArrowButton
+                href="/projects"
+                variant="secondary"
+                className="w-full sm:w-auto justify-center">
                 Explore Projects
               </ArrowButton>
             </div>

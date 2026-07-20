@@ -16,7 +16,7 @@ export default function H2({
     <Tag
       {...props}
       className={cn(
-        "text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground",
+        "h2",
         className,
       )}>
       {children}

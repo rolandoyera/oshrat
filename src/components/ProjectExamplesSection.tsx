@@ -98,7 +98,7 @@ export default async function ProjectExamplesSection() {
             speedReveal={5}
             speedSegment={0.3}
             inView
-            className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
+            className="eyebrow">
             Selected work
           </TextEffect>
           <TextEffect
@@ -108,7 +108,7 @@ export default async function ProjectExamplesSection() {
             speedSegment={0.3}
             inView
             delay={0.15}
-            className="mt-5 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
+            className="h2">
             Latest Projects
           </TextEffect>
         </div>

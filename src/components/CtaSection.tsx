@@ -3,6 +3,9 @@ import Container from "./ui/Container";
 import ArrowButton from "./ui/ArrowButton";
 import ProjectButton from "./ui/ProjectButton";
 import { TextEffect } from "./motion-primitives/text-effect";
+import InstagramIcon from "./icons/InstagramIcon";
+import MailIcon from "./icons/MailIcon";
+import WhatsAppIcon from "./icons/WhatsAppIcon";
 
 export default function CtaSection({
   heading,
@@ -32,10 +35,10 @@ export default function CtaSection({
           speedReveal={5}
           speedSegment={0.3}
           inView
-          className="text-xs uppercase tracking-[0.2em] text-accent font-bold mb-4">
+          className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
           Ready to start?
         </TextEffect>
-        <h2 className="mt-6 text-4xl font-normal tracking-tight text-balance lg:text-7xl">
+        <h2 className="mt-3 lg:mt-5 text-4xl font-normal tracking-tight text-balance lg:text-7xl">
           {heading ? (
             <span className="block">
               <TextEffect
@@ -103,34 +106,47 @@ export default function CtaSection({
           speedSegment={0.3}
           inView
           delay={0.2}
-          className={`mt-6 max-w-xl ${foreground}`}>
+          className={`mt-6 max-w-2xl ${foreground}`}>
           Tell us about your home and how you want to live in it. We&apos;ll
           walk you through scope, timeline, and the right way to begin.
         </TextEffect>
 
-        <div className="mt-16 flex flex-wrap justify-center gap-4">
-          <ProjectButton location={location} formSource={formSource}>
+        <div className="mt-16 flex flex-col sm:flex-row justify-center gap-4">
+          <ProjectButton
+            location={location}
+            formSource={formSource}
+            className="w-full sm:w-auto justify-center">
             {ctaLabel}
           </ProjectButton>
-          <ArrowButton href={SITE.whatsappUrl} variant="secondary">
-            Message on WhatsApp
+          <ArrowButton
+            href={`tel:${SITE.phone}`}
+            variant="secondary"
+            className="w-full sm:w-auto justify-center">
+            {SITE.phoneDisplay}
           </ArrowButton>
         </div>
 
         <div
           className={`mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm ${foreground}`}>
-          <a href={`mailto:${SITE.email}`} className="hover:text-accent">
-            {SITE.email}
-          </a>
-          <a href={`tel:${SITE.phone}`} className="hover:text-accent">
-            {SITE.phoneDisplay}
-          </a>
           <a
             href={SITE.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-accent">
-            {SITE.instagramHandle}
+            aria-label="Instagram (opens in a new tab)"
+            className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
+            <InstagramIcon size={30} color="currentColor" />
+          </a>
+          <a
+            href={`mailto:${SITE.email}`}
+            aria-label="Send email to Sarvian Design Group (opens in a new tab)"
+            className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
+            <MailIcon size={34} color="currentColor" />
+          </a>
+          <a
+            href={SITE.whatsappUrl}
+            aria-label="Call Sarvian Design Group"
+            className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
+            <WhatsAppIcon size={28} color="currentColor" />
           </a>
         </div>
       </Container>
