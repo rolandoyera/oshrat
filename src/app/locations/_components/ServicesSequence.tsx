@@ -52,7 +52,7 @@ const SERVICES: SequenceService[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Down-to-the-studs remodels handled from layout to last detail. We reshape the plan, design the millwork, and coordinate closely with your contractor and trades to protect the design intent on site. It's a demanding process — our job is to keep it moving, keep it coordinated, and keep the outcome true to the original vision.",
+      "Down-to-the-studs remodels handled from layout to last detail. We reshape the plan, design the millwork, and coordinate closely with your contractor and trades to protect the design intent on site. Our job is to keep it moving, and keep the outcome true to the original vision.",
     image: "/services/full-home-renovations-16x9.jpg",
     imageAlt:
       "Exterior view of a luxury modern estate full home renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls.",
@@ -79,7 +79,7 @@ const SERVICES: SequenceService[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience — the goal is a room that feels as good to be in as it looks.",
+      "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience.",
     image: "/services/master-bath-interior-design.jpg",
     imageAlt:
       "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
@@ -356,8 +356,8 @@ function SlideText({
   return (
     <motion.div
       style={{ y }}
-      className="pointer-events-none absolute inset-0 z-40 flex items-end pb-8 lg:pb-12">
-      <div className="w-full px-6 lg:px-12">
+      className="pointer-events-none absolute inset-0 z-40 flex items-end pb-8 lg:pb-8">
+      <div className="w-full px-6 lg:px-8">
         <motion.div
           style={{
             backdropFilter: blur,
@@ -366,18 +366,18 @@ function SlideText({
             borderColor,
             boxShadow,
           }}
-          className="ml-auto max-w-3xl rounded-xs border p-8 text-white">
+          className="ml-auto max-w-3xl rounded-xs border p-4 text-white">
           <motion.div style={{ opacity: fade }}>
             <p className="eyebrow text-white">
               ({pad(index + 1)}) — {service.category}
             </p>
-            <h3 className="mt-2 text-[clamp(2.25rem,1.5rem+3vw,4.5rem)] font-normal leading-[1.05] tracking-tight text-balance">
-              {service.title}
-            </h3>
-            <p className="p mt-10 text-cream-100">{service.description}</p>
+            <h3 className="h2 text-white">{service.title}</h3>
+            <p className="p mt-6 text-pretty text-cream-100">
+              {service.description}
+            </p>
             {index === 0 && (
               <div className="mt-6">
-                <p className="p text-cream-100">
+                <p className="p text-base text-cream-100">
                   This home was featured in Florida Design magazine — Art Basel
                   Edition.
                 </p>
@@ -390,7 +390,7 @@ function SlideText({
                 />
                 <Link
                   href="/press"
-                  className="group pointer-events-auto mt-10 inline-block text-xs uppercase tracking-[0.2em] font-bold text-cream-100 hover:text-accent">
+                  className="group pointer-events-auto mt-10 inline-block text-xs uppercase tracking-wide font-bold text-cream-100 hover:text-accent">
                   View press release{" "}
                   <span
                     aria-hidden

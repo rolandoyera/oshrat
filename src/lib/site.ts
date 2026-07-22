@@ -2,6 +2,8 @@
 // Update here and every surface follows: Footer, ContactDrawerContent,
 // ProjectModalProvider, CtaSection, theme demo, JSON-LD, contact emails.
 export const SITE = {
+  name: "SARVIAN DESIGN GROUP",
+  slogan: "design & architecture",
   email: "osh@sarviandg.com",
   /** E.164, for tel: links and JSON-LD. */
   phone: "+19544444803",

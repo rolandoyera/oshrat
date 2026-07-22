@@ -234,7 +234,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services index header */}
-        <div className="flex items-end justify-between pb-6 mt-60">
+        <div className="flex items-end justify-between pb-6 mt-20 lg:mt-60">
           <div>
             <TextEffect
               as="p"
@@ -254,7 +254,7 @@ export default function ServicesSection() {
               speedSegment={0.3}
               inView
               delay={0.15}
-              className="mt-4 text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
+              className="text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
               Services
             </TextEffect>
           </div>
@@ -279,18 +279,16 @@ export default function ServicesSection() {
               <ScrollReveal
                 direction={index % 2 === 0 ? "left" : "right"}
                 threshold={0.6}>
-                <article className="grid grid-cols-1 gap-6 py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
+                <article className="grid grid-cols-1 py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
                   <div className="lg:col-span-1">
-                    <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-                      {service.index}
-                    </span>
+                    <span className="eyebrow">{service.index}</span>
                   </div>
 
                   <div className="lg:col-span-3">
                     <h3 className="max-w-[14ch] text-2xl font-normal leading-tight tracking-tight lg:text-3xl">
                       {service.title}
                     </h3>
-                    <p className="mt-4 text-xs uppercase tracking-[0.2em] text-foreground">
+                    <p className="mt-4 mb-6 lg:mb-0 text-xs uppercase tracking-[0.2em] text-foreground">
                       <span className="mr-1.5 text-accent font-bold">•</span>
                       {service.category}
                     </p>
@@ -298,7 +296,7 @@ export default function ServicesSection() {
 
                   <div className="lg:col-span-3">
                     <p className="text-foreground/85">{service.description}</p>
-                    <ul className="mt-6 flex flex-wrap gap-2">
+                    <ul className="mt-6 mb-6 lg:mb-0 flex flex-wrap gap-2">
                       {service.tags.map((tag) => (
                         <li
                           key={tag}

@@ -119,7 +119,7 @@ export default function LocationLanding({
                   speedReveal={5}
                   speedSegment={0.3}
                   delay={0.2}
-                  className="max-w-xl text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">
+                  className="text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">
                   {hero.paragraph}
                 </TextEffect>
               </ScrollReveal>

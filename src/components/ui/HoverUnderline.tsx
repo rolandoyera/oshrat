@@ -16,7 +16,7 @@ export default function HoverUnderline({
     <span
       aria-hidden
       className={cn(
-        "absolute bottom-0 left-1/2 h-[1.5px] bg-current transition-all duration-300 -translate-x-1/2",
+        "absolute bottom-0 left-1/2 h-[1.5px] bg-current transition-all duration-200 -translate-x-1/2",
         active ? "w-full" : "w-0 group-hover:w-full",
         className,
       )}
