@@ -35,10 +35,10 @@ export default function CtaSection({
           speedReveal={5}
           speedSegment={0.3}
           inView
-          className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
+          className="eyebrow">
           Ready to start?
         </TextEffect>
-        <h2 className="mt-3 lg:mt-5 text-4xl font-normal tracking-tight text-balance lg:text-7xl">
+        <h2 className="text-4xl font-normal tracking-tight text-balance lg:text-7xl">
           {heading ? (
             <span className="block">
               <TextEffect
@@ -49,7 +49,7 @@ export default function CtaSection({
                 inView
                 className="inline">
                 {heading.plain}
-              </TextEffect>{" "}
+              </TextEffect>
               <TextEffect
                 as="span"
                 preset="fade-in-blur"
@@ -70,7 +70,7 @@ export default function CtaSection({
                 speedReveal={5}
                 speedSegment={0.3}
                 inView
-                className={`block ${foreground}`}>
+                className="block">
                 Let&apos;s design
               </TextEffect>
               <span className="block">
@@ -81,7 +81,7 @@ export default function CtaSection({
                   speedSegment={0.3}
                   inView
                   delay={0.2}
-                  className={`inline ${foreground}`}>
+                  className="inline">
                   something
                 </TextEffect>{" "}
                 <TextEffect

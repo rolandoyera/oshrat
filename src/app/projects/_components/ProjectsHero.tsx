@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 import Container from "@/components/ui/Container";
 import Display from "@/components/ui/Display";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function ProjectsHero() {
   const meta: { label: string; value: ReactNode }[] = [
@@ -16,7 +17,7 @@ export default function ProjectsHero() {
   ];
 
   return (
-    <section className="flex min-h-dvh lg:min-h-[75dvh] w-full items-center bg-cream-200">
+    <section className="flex min-h-[50dvh] w-full items-center bg-cream-200">
       <Container className="w-full">
         <div className="grid grid-cols-1 items-center gap-10 pt-32 pb-16 xl:py-24 xl:grid-cols-12 xl:gap-12">
           <div className="space-y-6 xl:space-y-10 xl:col-span-8">
@@ -25,12 +26,12 @@ export default function ProjectsHero() {
               preset="fade-in-blur"
               speedReveal={5}
               speedSegment={0.3}
-              className="text-sm uppercase tracking-[0.2em] text-accent font-bold">
+              className="eyebrow">
               Our Featured Interior Design Projects — South Florida
             </TextEffect>
 
             <Display as="h2">
-              <span className="relative inline-flex flex-wrap items-baseline gap-x-6 tracking-tight">
+              <span className="relative inline-flex flex-wrap items-baseline gap-x-4 tracking-tight">
                 <TextEffect
                   as="span"
                   preset="fade-in-blur"
@@ -44,24 +45,20 @@ export default function ProjectsHero() {
                   speedReveal={5}
                   speedSegment={0.3}
                   delay={0.25}
-                  className="font-serif text-accent font-medium normal-case text-[1.1em] leading-none">
+                  className="font-serif text-accent font-medium normal-case text-[1.5em] leading-none">
                   lived in.
                 </TextEffect>
               </span>
             </Display>
 
-            <TextEffect
-              as="p"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              delay={0.2}
-              className="max-w-2xl text-base lg:text-[22px] font-light leading-[1.55]">
-              A portfolio of residences across Broward, Palm Beach, and
-              Miami-Dade — waterfront estates, ground-up builds, and single-room
-              transformations. Every project here began the same way: a
-              conversation about how someone actually wants to live.
-            </TextEffect>
+            <ScrollReveal direction="up" delay={0.2} className="md:max-w-2xl">
+              <p>
+                A portfolio of residences across Broward, Palm Beach, and
+                Miami-Dade — waterfront estates, ground-up builds, and
+                single-room transformations. Every project here began the same
+                way: a conversation about how someone actually wants to live.
+              </p>
+            </ScrollReveal>
           </div>
 
           {/* Meta: hidden on mobile, horizontal row under a rule md–xl, vertical side rail at xl+ */}
@@ -74,7 +71,7 @@ export default function ProjectsHero() {
                   speedReveal={5}
                   speedSegment={0.3}
                   delay={0.4 + index * 0.15}
-                  className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
+                  className="eyebrow mb-0">
                   {label}
                 </TextEffect>
                 {typeof value === "string" ? (

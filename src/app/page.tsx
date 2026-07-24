@@ -55,7 +55,7 @@ export default function Home() {
           src="/projects/sdg-bedroom-remodel-armoire-7.jpg"
           alt="Interior design background image"
           fill
-          quality={90}
+          quality={50}
           sizes="100vw"
           className="object-cover"
         />
@@ -113,8 +113,8 @@ export default function Home() {
             inView
             delay={0.2}
             className="mt-6 max-w-2xl text-white">
-            Tell us about your home and how you want to live in it. We&apos;ll
-            walk you through scope, timeline, and the right way to begin.
+            Tell us about your home and how you want to live in it. We'll walk
+            you through scope, timeline, and the right way to begin.
           </TextEffect>
 
           <div className="mt-12 flex flex-col sm:flex-row justify-center gap-4">
