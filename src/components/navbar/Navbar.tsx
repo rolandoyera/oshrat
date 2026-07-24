@@ -1,7 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
-import DesktopNav from "./navbar/DesktopNav";
-import MobileNav from "./navbar/MobileNav";
+import DesktopNav from "./DesktopNav";
+import MobileNav from "./MobileNav";
 
 // Breakpoint split: DesktopNav renders at lg+, MobileNav below lg — each is
 // fully self-contained (own markup, state, and scroll listeners) so they can

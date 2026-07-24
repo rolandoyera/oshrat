@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
-      <div className="relative h-[60vh] xl:h-svh overflow-hidden">
+      <div className="relative h-[50vh] xl:h-svh overflow-hidden mt-24">
         {/* Parallax container for background image */}
         <div
           className="absolute w-full h-[130%] top-[-15%] left-0"
@@ -82,7 +82,7 @@ const Hero: React.FC<HeroProps> = ({
                   speedSegment={0.3}
                   as="h1"
                   inView
-                  className="text-white text-[clamp(2.25rem,1.23rem+5.11vw,4.5rem)] font-normal text-balance tracking-tight mb-2">
+                  className="mb-0 lg:mb-2 text-white h1">
                   {title}
                 </TextEffect>
               )}
@@ -91,7 +91,7 @@ const Hero: React.FC<HeroProps> = ({
                   {description}
                 </p>
               )}
-              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-50 md:max-w-full mx-auto">
                 {buttonText && buttonLink && (
                   <TransitionLink
                     href={buttonLink}

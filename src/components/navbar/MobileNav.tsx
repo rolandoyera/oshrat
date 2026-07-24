@@ -89,7 +89,7 @@ export default function MobileNav() {
           "relative z-20 w-full overflow-hidden bg-taupe-900 text-cream-200 transition-all duration-300 ease-in-out",
           isHidden && !isMenuOpen ? "h-0" : "h-9",
         )}>
-        <div className="mx-auto flex h-9 items-center justify-end px-4 md:px-6 font-light text-[10px]">
+        <div className="mx-auto flex h-9 items-center justify-end px-4 md:px-6 font-light text-[12px]">
           <a
             href={`tel:${SITE.phone}`}
             className="uppercase tracking-wide transition-colors hover:text-accent">
@@ -121,8 +121,10 @@ export default function MobileNav() {
               <SdgMonogram className="h-auto w-full" />
             </div>
             <div className="flex flex-col ml-2 justify-center items-center">
-              <span className="text-[11px]">{SITE.name}</span>
-              <span className="text-[8px] font-light">{SITE.slogan}</span>
+              <span className="text-[12px] tracking-wider">{SITE.name}</span>
+              <span className="text-[8px] font-light tracking-wider">
+                {SITE.slogan}
+              </span>
             </div>
           </Link>
 

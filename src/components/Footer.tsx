@@ -20,7 +20,7 @@ export default function Footer() {
 
   return (
     <footer className="w-full relative bg-linear-to-b from-taupe-800 to-taupe-900 h-100 overflow-hidden">
-      <Container className="relative flex flex-col h-full items-center justify-center max-w-[1200px] z-10">
+      <Container className="relative flex flex-col h-full items-center justify-center max-w-300 z-10">
         <div className="flex-1 flex flex-col items-center justify-center">
           <Image
             className="mx-auto brightness-0 invert"
@@ -33,7 +33,7 @@ export default function Footer() {
             style={{ width: "200px", height: "auto" }}
           />
           <p className="mt-3 text-sm text-cream-300 text-center">
-            Architecture and interior design firm.
+            Interior & Architecture design firm.
           </p>
           <div className="flex justify-center items-center gap-10 mt-4">
             <a
@@ -74,10 +74,10 @@ export default function Footer() {
           <div className="absolute left-0 right-0 top-px h-px bg-white/15" />
         </div>
         <div className="py-4 text-[0.9rem] mx-auto w-full flex flex-col items-center gap-2 md:grid md:grid-cols-3">
-          <p className="text-cream-300 text-sm md:justify-self-start">
+          <p className="text-cream-300 text-sm md:justify-self-start mb-0">
             © {new Date().getFullYear()} Sarvian Design Group.
           </p>
-          <p className="text-cream-300 text-sm md:justify-self-center">
+          <p className="text-cream-300 text-sm md:justify-self-center mb-0">
             <Link href="/privacy" className="hover:text-accent hover:underline">
               Privacy Policy
             </Link>{" "}
@@ -88,7 +88,7 @@ export default function Footer() {
               Terms of Use
             </Link>
           </p>
-          <p className="text-cream-300 text-sm md:justify-self-end">
+          <p className="text-cream-300 text-sm md:justify-self-end mb-0">
             Made with ❤️ by{" "}
             <a
               className="text-cream-300 hover:text-accent hover:underline"
@@ -103,7 +103,7 @@ export default function Footer() {
       </Container>
       <WatermarkLogo
         className="top-1/2 -translate-y-1/2 left-[12%] hidden lg:block"
-        rotation={-20}
+        rotation={0}
         size={500}
       />
     </footer>

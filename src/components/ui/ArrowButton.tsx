@@ -28,7 +28,7 @@ export default function ArrowButton({
       ? "bg-accent hover:bg-taupe-800"
       : "bg-taupe-800 hover:bg-accent",
     direction === "right" ? "pl-[22px] pr-[18px]" : "pl-[18px] pr-[22px]",
-    "text-lg font-medium uppercase",
+    "md:text-lg font-medium uppercase",
     "focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent hover:cursor-pointer hover:shadow hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-275 ease-[cubic-bezier(.6,.2,.1,1)]",
     className,
   );

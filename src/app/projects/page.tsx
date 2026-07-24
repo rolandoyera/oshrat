@@ -97,10 +97,10 @@ export default async function ProjectsPage() {
                   />
                   {/* Hover overlay */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[hsl(35,15,10)]/55 text-white backdrop-blur-xs">
-                    <H2 className="text-white transition-all duration-300 ease-out translate-y-[-16px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                    <H2 className="text-white transition-all duration-300 ease-out -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
                       {p.title}
                     </H2>
-                    <P className="text-lg mt-1 transition-all duration-300 ease-out translate-y-[16px] opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-75">
+                    <P className="text-lg mt-1 transition-all duration-300 ease-out -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-75">
                       {p.location}
                     </P>
                   </div>

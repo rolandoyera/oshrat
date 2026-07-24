@@ -144,7 +144,7 @@ export default function CtaSection({
           </a>
           <a
             href={SITE.whatsappUrl}
-            aria-label="Call Sarvian Design Group"
+            aria-label="Call or text Sarvian Design Group"
             className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
             <WhatsAppIcon size={28} color="currentColor" />
           </a>

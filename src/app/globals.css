@@ -146,10 +146,6 @@ input:-webkit-autofill:active {
 }
 
 @layer base {
-  p {
-    @apply text-base lg:text-[22px] font-light text-balance leading-[1.55];
-  }
-
   * {
     @apply border-border outline-ring/50;
   }
@@ -157,10 +153,24 @@ input:-webkit-autofill:active {
   body {
     @apply bg-background text-foreground;
   }
+  p {
+    @apply p;
+  }
+  h1 {
+    @apply h1;
+  }
 }
 
 @utility eyebrow {
   @apply text-xs uppercase tracking-[0.2em] text-accent font-bold mb-3 lg:mb-5;
+}
+
+@utility p {
+  @apply text-base sm:text-[20px] lg:text-[22px] font-light text-balance leading-[1.55] not-last:mb-4;
+}
+
+@utility h1 {
+  @apply text-[38px] lg:text-5xl font-normal tracking-tight leading-h1 md:leading-[1.08] lg:leading-[1.06] mb-6 lg:mb-8;
 }
 
 @utility h2 {

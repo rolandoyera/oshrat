@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import { Manrope, Newsreader, Parisienne } from "next/font/google";
 import Providers from "./Providers";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/navbar/Navbar";
 import { socialMeta } from "@/lib/seo";
 import { Analytics } from "./Analytics";
 
@@ -48,8 +48,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${manrope.variable} ${parisienne.variable} ${newsreader.variable} font-sans antialiased bg-background text-foreground`}
-      >
+        className={`${manrope.variable} ${parisienne.variable} ${newsreader.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
           {process.env.VERCEL_ENV === "production" && <Analytics />}
           <Navbar />

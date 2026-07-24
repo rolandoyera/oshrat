@@ -246,7 +246,7 @@ export default async function ProjectPage({
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}
         {hero && (
-          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden">
+          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden mt-24">
             <Image
               src={heroImageUrl(hero)}
               alt={hero.alt || data.title}
@@ -263,7 +263,7 @@ export default async function ProjectPage({
             />
           </section>
         )}
-        <nav aria-label="Breadcrumb" className="px-4 xl:px-6 my-2">
+        <nav aria-label="Breadcrumb" className="px-4 xl:px-6 my-2 text-sm">
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -287,13 +287,11 @@ export default async function ProjectPage({
           {/* LEFT: Project info */}
           <aside className="xl:col-span-4">
             <div className="xl:sticky xl:top-22">
-              <div className="bg-card p-2 sm:p-4 md:p-8 lg:p-12 rounded-xs shadow">
+              <div className="bg-card p-2 sm:p-4 md:p-8 rounded-xs shadow">
                 <H2 as="h1">
                   {data.title}
                   {data.location && (
-                    <span className="block text-[16px] lg:text-[22px] font-light tracking-normal text-balance leading-[1.55] -mb-4">
-                      {data.location}
-                    </span>
+                    <span className="block -mb-4 p">{data.location}</span>
                   )}
                 </H2>
                 <div className="my-10 lg:my-16 space-y-2">

@@ -9,24 +9,20 @@ export default function ServicesBridge() {
   return (
     <Container size="lg" className="grid grid-cols-1 gap-16 xl:grid-cols-2">
       <ScrollReveal direction="up" threshold={0.3}>
-        <p className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-          What We Do
-        </p>
-        <h2 className="mt-4 text-[clamp(2rem,1.23rem+5.11vw,4.5rem)] font-normal tracking-tight leading-tight">
-          Our Services
-        </h2>
-        <p className="mt-6 text-balance text-foreground/85 leading-relaxed">
+        <p className="eyebrow">What We Do</p>
+        <h2 className="h1">Our Services</h2>
+        <p>
           Sarvian Design Group stands out for its wide range of services
           tailored to meet the diverse needs of clients. Our approach is rooted
           in customization, ensuring each project reflects the client’s vision.
         </p>
-        <p className="mt-4 text-balance text-foreground/85 leading-relaxed">
+        <p>
           A standout offering is our space planning expertise. This involves
           optimizing layouts to improve functionality and flow within homes and
           businesses. Clients benefit from our meticulous attention to detail in
           each aspect of design.
         </p>
-        <p className="mt-4 text-balance text-foreground/85 leading-relaxed">
+        <p>
           We also provide color consultations, which are pivotal in setting the
           mood and style of a space. Whether aiming for a calming ambiance or
           vibrant energy, our expert advice ensures the perfect palette.
@@ -34,7 +30,7 @@ export default function ServicesBridge() {
       </ScrollReveal>
 
       <ScrollReveal direction="up" delay={200} threshold={0.1}>
-        <div className="mx-auto mt-12 max-w-[1200px] lg:mt-16">
+        <div className="mx-auto max-w-300">
           <hr className="etched-line" />
           {SERVICES.map((service) => (
             <Fragment key={service.index}>

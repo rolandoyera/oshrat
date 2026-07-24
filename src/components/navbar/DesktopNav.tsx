@@ -72,8 +72,10 @@ export default function DesktopNav() {
               <SdgMonogram className="h-auto w-full" />
             </div>
             <div className="flex flex-col ml-2 justify-center items-center">
-              <span className="text-[14px]">{SITE.name}</span>
-              <span className="text-xs -mt-1 font-light">{SITE.slogan}</span>
+              <span className="text-[14px] tracking-wider">{SITE.name}</span>
+              <span className="text-xs -mt-1 font-light tracking-wider">
+                {SITE.slogan}
+              </span>
             </div>
           </Link>
 

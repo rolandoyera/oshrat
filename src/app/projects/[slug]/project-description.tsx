@@ -16,14 +16,14 @@ export default function ProjectDescription({ value }: ProjectDescriptionProps) {
       <div
         className={[
           "prose prose-invert prose-sm max-w-none richtext overflow-hidden text-justify transition-[max-height] duration-700 ease-in-out md:max-h-none",
-          expanded ? "max-h-[1200px]" : "max-h-28",
+          expanded ? "max-h-300" : "max-h-25",
         ].join(" ")}>
         <PortableText value={value} />
       </div>
       <button
         type="button"
         onClick={() => setExpanded((current) => !current)}
-        className="mt-3 text-sm font-medium text-foreground underline underline-offset-4 md:hidden">
+        className="mt-3 p underline font-medium text-accent underline-offset-4 md:hidden">
         {expanded ? "Show less" : "Read more"}
       </button>
     </div>
