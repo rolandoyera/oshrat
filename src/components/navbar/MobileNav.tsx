@@ -73,7 +73,7 @@ export default function MobileNav() {
       <div
         ref={progressRef}
         style={{ transform: "scaleX(0)" }}
-        className="absolute inset-x-0 top-full z-10 h-[5px] origin-left bg-accent"
+        className="absolute inset-x-0 top-full z-10 h-1.25 origin-left bg-accent"
       />
 
       {/* 1px bottom rule. Absolute so it doesn't add to the nav height that
@@ -117,7 +117,7 @@ export default function MobileNav() {
       <div className="relative z-20 flex h-15 w-full items-center justify-center bg-cream-200">
         <div className="relative z-20 flex-1 flex items-center justify-between pl-4 ">
           <Link href="/" className="flex items-center">
-            <div className="w-[40px] shrink-0">
+            <div className="w-10 shrink-0">
               <SdgMonogram className="h-auto w-full" />
             </div>
             <div className="flex flex-col ml-2 justify-center items-center">
@@ -135,13 +135,13 @@ export default function MobileNav() {
             <span
               className={cn(
                 "h-[1.5px] w-6 bg-current transition-transform duration-300 ease-in-out ",
-                isMenuOpen ? "translate-y-0 rotate-45" : "translate-y-[-5px]",
+                isMenuOpen ? "translate-y-0 rotate-45" : "-translate-y-1.25",
               )}
             />
             <span
               className={cn(
                 "h-[1.5px] w-6 bg-current transition-transform duration-300 ease-in-out",
-                isMenuOpen ? "translate-y-0 -rotate-45" : "translate-y-[5px]",
+                isMenuOpen ? "translate-y-0 -rotate-45" : "translate-y-1.25",
               )}
             />
           </button>

@@ -31,7 +31,7 @@ export default function DesktopNav() {
       <div
         ref={progressRef}
         style={{ transform: "scaleX(0)" }}
-        className="absolute inset-x-0 top-full z-10 h-[5px] origin-left bg-accent"
+        className="absolute inset-x-0 top-full z-10 h-1.25 origin-left bg-accent"
       />
       {/* Contact bar — collapses while scrolling down, returns on scroll up. */}
       <div
@@ -68,7 +68,7 @@ export default function DesktopNav() {
           size="lg"
           className="relative z-20 flex-1 flex items-center justify-between">
           <Link href="/" className="flex items-center">
-            <div className="w-[50px] shrink-0">
+            <div className="w-12.5 shrink-0">
               <SdgMonogram className="h-auto w-full" />
             </div>
             <div className="flex flex-col ml-2 justify-center items-center">

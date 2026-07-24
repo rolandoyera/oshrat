@@ -1,9 +1,7 @@
-import Carousel from "@/components/Carousel";
+import Hero from "@/components/Hero";
 
 import TopSection from "./_components/TopSection";
 import type { Metadata } from "next";
-import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 import OurApproachSection from "./_components/Approach";
@@ -26,79 +24,19 @@ export const metadata: Metadata = {
   ...socialMeta({ title: TITLE, description: DESCRIPTION, url: "/" }),
 };
 
-interface CarouselItem {
-  id: string | number;
-  image: string;
-  title?: string;
-  description?: string;
-  buttonText?: string;
-  buttonLink?: string;
-  onButtonClick?: () => void;
-}
-
-const FALLBACK_SLIDER_ITEMS: CarouselItem[] = [
-  {
-    id: 1,
-    image: "/slider/South-Beach-Living-Interior-Design.jpg",
-    title: "South Beach Living",
-    description: "Stunning sunset over the ocean waves",
-    buttonText: "Explore Now",
-    buttonLink: "/projects/south-beach",
-  },
-  {
-    id: 2,
-    image: "/projects/golden-beach-architecture-proposal-front-view.jpg",
-    title: "Golden Dreams",
-    description: "Sunlit luxury meets serene modern design",
-    buttonText: "Explore Now",
-    buttonLink: "/projects/golden-beach",
-  },
-  {
-    id: 3,
-    image: "/slider/aventura-interior-design.jpg",
-    title: "Aventura",
-    description: "Sunlit luxury meets serene modern design",
-    buttonText: "Explore Now",
-    buttonLink: "/projects/aventura-modern-living",
-  },
-];
-
-const QUERY = groq`
-  *[_type == "slide"] | order(coalesce(order, 0) asc, _createdAt desc){
-    "id": _id,
-    "image": image.asset->url,
-    title,
-    description,
-    buttonText,
-    "buttonLink": select(
-      defined(project) => "/projects/" + project->slug.current,
-      "/"
-    )
-  }
-`;
-
-export const revalidate = 60; // Revalidate every 60 seconds
-
-export default async function Home() {
-  let sliderItems: CarouselItem[] = [];
-
-  try {
-    sliderItems = await client.fetch(QUERY);
-  } catch (error) {
-    console.error("Failed to fetch homepage slides:", error);
-  }
-
-  // Fallback to local slides if Sanity doesn't return any slides yet
-  if (!sliderItems || sliderItems.length === 0) {
-    sliderItems = FALLBACK_SLIDER_ITEMS;
-  }
-
+export default function Home() {
   return (
     <>
       <JsonLd data={siteGraph()} />
-      <Carousel items={sliderItems} autoPlayInterval={5000} showArrows={true} />
+      <Hero
+        image="/slider/golden-beach-architecture-proposal-front-view.jpg"
+        title="Golden Dreams"
+        description="Sunlit luxury meets serene modern design"
+        buttonText="Explore Now"
+        buttonLink="/projects/golden-beach"
+      />
 
-      <section className="min-h-dvh py-20 xl:p-0">
+      <section className="min-h-dvh pb-20 pt-10 lg:py-20 xl:p-0">
         <TopSection />
       </section>
       <section className="bg-cream-300 py-20 xl:py-60">
