@@ -6,7 +6,6 @@ import { client } from "@/sanity/lib/client";
 import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
-import H2 from "@/components/ui/H2";
 
 export const revalidate = 60; // Revalidate the page every 60 seconds
 
@@ -40,7 +39,6 @@ import CtaSection from "@/components/CtaSection";
 import ProjectsHero from "./_components/ProjectsHero";
 import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import TransitionLink from "@/components/ui/TransitionLink";
-import P from "@/components/ui/P";
 
 export default async function ProjectsPage() {
   let projects: {
@@ -64,8 +62,8 @@ export default async function ProjectsPage() {
     <div>
       <JsonLd data={siteGraph()} />
       <ProjectsHero />
-      <main className="px-4 lg:px-8 my-20 lg:my-30">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+      <main className="px-4 lg:px-8 my-4 lg:my-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
           {projects.map((p, index) => {
             const heroSource = p.heroImage ?? p.mainImage;
             return (
@@ -75,7 +73,7 @@ export default async function ProjectsPage() {
                 preloadSrcSet={
                   heroSource ? heroPreloadSrcSet(heroSource) : undefined
                 }
-                className="group relative overflow-hidden block project-card-animate rounded shadow"
+                className="group relative overflow-hidden block project-card-animate rounded-xs shadow"
                 style={
                   { animationDelay: `${index * 0.12}s` } as React.CSSProperties
                 }
@@ -96,13 +94,16 @@ export default async function ProjectsPage() {
                     }
                   />
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[hsl(35,15,10)]/55 text-white backdrop-blur-xs">
-                    <H2 className="text-white transition-all duration-300 ease-out -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent to-30%" />
+                  <div className="absolute inset-x-0 bottom-0 p-4">
+                    {p.location && (
+                      <p className="eyebrow mb-0 text-cream-100/80">
+                        {p.location}
+                      </p>
+                    )}
+                    <h3 className="text-2xl font-normal tracking-tight text-cream-100 lg:text-3xl">
                       {p.title}
-                    </H2>
-                    <P className="text-lg mt-1 transition-all duration-300 ease-out -translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 delay-75">
-                      {p.location}
-                    </P>
+                    </h3>
                   </div>
                 </div>
               </TransitionLink>

@@ -39,7 +39,7 @@ const Hero: React.FC<HeroProps> = ({
 
   return (
     <div className={`relative w-full overflow-hidden ${className}`}>
-      <div className="relative h-[50vh] xl:h-svh overflow-hidden mt-24">
+      <div className="relative h-[50vh] xl:h-svh overflow-hidden mt-24 lg:mt-0">
         {/* Parallax container for background image */}
         <div
           className="absolute w-full h-[130%] top-[-15%] left-0"

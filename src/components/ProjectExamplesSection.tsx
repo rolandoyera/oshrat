@@ -64,14 +64,12 @@ export function ProjectCard({
           { viewTransitionName: `hero-${project.slug}` } as React.CSSProperties
         }
       />
-      <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent" />
-      <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8">
+      <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent to-30%" />
+      <div className="absolute inset-x-0 bottom-0 p-4">
         {project.location && (
-          <p className="text-xs uppercase tracking-[0.2em] text-cream-100/70">
-            {project.location}
-          </p>
+          <p className="eyebrow mb-0 text-cream-100/80">{project.location}</p>
         )}
-        <h3 className="mt-2 text-2xl font-normal tracking-tight text-cream-100 lg:text-3xl">
+        <h3 className="text-2xl font-normal tracking-tight text-cream-100 lg:text-3xl">
           {project.title}
         </h3>
       </div>

@@ -18,8 +18,8 @@ export default function ProjectsHero() {
 
   return (
     <section className="flex min-h-[50dvh] w-full items-center bg-cream-200">
-      <Container className="w-full">
-        <div className="grid grid-cols-1 items-center gap-10 pt-32 pb-16 xl:py-24 xl:grid-cols-12 xl:gap-12">
+      <Container size="lg" className="w-full">
+        <div className="grid grid-cols-1 items-center mt-24 gap-10 xl:py-24 xl:grid-cols-12 xl:gap-12">
           <div className="space-y-6 xl:space-y-10 xl:col-span-8">
             <TextEffect
               as="h1"
