@@ -69,9 +69,7 @@ export function ProjectCard({
         {project.location && (
           <p className="eyebrow mb-0 text-cream-100/80">{project.location}</p>
         )}
-        <h3 className="text-2xl font-normal tracking-tight text-cream-100 lg:text-3xl">
-          {project.title}
-        </h3>
+        <h3 className="text-cream-100 mb-0">{project.title}</h3>
       </div>
     </TransitionLink>
   );

@@ -106,7 +106,7 @@ export default function LocationLanding({
                     {headlineTop}{" "}
                     <span
                       aria-hidden
-                      className="inline-block h-[2px] w-[2em] bg-current align-middle"
+                      className="inline-block h-0.5 w-[2em] bg-current align-middle"
                     />
                   </span>
                   <span className="block w-fit">{headlineBottom}</span>

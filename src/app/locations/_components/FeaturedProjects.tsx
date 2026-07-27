@@ -71,7 +71,7 @@ export default async function FeaturedProjects({
               speedSegment={0.3}
               inView
               delay={0.25}
-              className="mt-6 p">
+              className="p">
               {description}
             </TextEffect>
           )}
