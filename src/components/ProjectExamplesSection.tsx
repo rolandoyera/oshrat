@@ -84,30 +84,28 @@ export default async function ProjectExamplesSection() {
   const secondary = projects.slice(2, 5);
 
   return (
-    <section className="bg-cream-100 py-24 lg:py-32">
+    <section className="bg-cream-200 py-24 lg:py-32">
       <Container size="lg">
-        <div className="mb-12">
-          <TextEffect
-            as="p"
-            per="char"
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            inView
-            className="eyebrow">
-            Selected work
-          </TextEffect>
-          <TextEffect
-            as="h2"
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            inView
-            delay={0.15}
-            className="h2">
-            Latest Projects
-          </TextEffect>
-        </div>
+        <TextEffect
+          as="p"
+          per="char"
+          preset="fade-in-blur"
+          speedReveal={5}
+          speedSegment={0.3}
+          inView
+          className="eyebrow">
+          Selected work
+        </TextEffect>
+        <TextEffect
+          as="h2"
+          preset="fade-in-blur"
+          speedReveal={5}
+          speedSegment={0.3}
+          inView
+          delay={0.15}
+          className="h2 mb-12">
+          Latest Projects
+        </TextEffect>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {featured.map((project) => (

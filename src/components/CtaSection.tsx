@@ -133,19 +133,19 @@ export default function CtaSection({
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram (opens in a new tab)"
-            className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
+            className="icon">
             <InstagramIcon size={30} color="currentColor" />
           </a>
           <a
             href={`mailto:${SITE.email}`}
             aria-label="Send email to Sarvian Design Group (opens in a new tab)"
-            className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
+            className="icon">
             <MailIcon size={34} color="currentColor" />
           </a>
           <a
             href={SITE.whatsappUrl}
             aria-label="Call or text Sarvian Design Group"
-            className="text-foreground hover:text-accent hover:scale-110 transition-all duration-200 ease-in-out flex items-center justify-center">
+            className="icon">
             <WhatsAppIcon size={28} color="currentColor" />
           </a>
         </div>

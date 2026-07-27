@@ -96,12 +96,12 @@ const OurApproachSection: React.FC<AccordionProps> = ({
         direction="left"
         threshold={0.3}
         className="w-full flex items-center justify-center">
-        <h2 className="text-center h1">Our Methodology</h2>
+        <h2 className="text-center h1 mb-12">Our Methodology</h2>
       </ScrollReveal>
 
       {/* DESKTOP/TABLET: sideways accordion */}
       <ScrollReveal direction="right" threshold={0.3} delay={300}>
-        <div className="hidden lg:flex h-175 overflow-hidden w-full mt-12">
+        <div className="hidden lg:flex h-175 overflow-hidden w-full">
           {panels.map((panel, index) => {
             const isActive = activePanel === index;
             const isClosingThis = isActive && phase === "closing";

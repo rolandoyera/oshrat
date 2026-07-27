@@ -7,7 +7,7 @@ export default function TopSection() {
   return (
     <Container
       size="lg"
-      className="min-h-dvh flex items-center justify-center overflow-hidden">
+      className="flex items-center justify-center overflow-hidden">
       <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
         <ScrollReveal
           direction="left"
