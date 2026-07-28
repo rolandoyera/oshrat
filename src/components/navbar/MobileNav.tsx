@@ -121,7 +121,7 @@ export default function MobileNav() {
               <SdgMonogram className="h-auto w-full" />
             </div>
             <div className="flex flex-col ml-2 justify-center items-center">
-              <span className="text-[12px] tracking-wider">{SITE.name}</span>
+              <span className="text-[12px]">{SITE.name}</span>
               <span className="text-[8px] font-light tracking-wider">
                 {SITE.slogan}
               </span>

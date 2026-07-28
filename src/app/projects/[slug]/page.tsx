@@ -19,6 +19,7 @@ import ProjectGallery, { type GalleryImage } from "./project-gallery";
 import { JsonLd, projectPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 import H2 from "@/components/ui/H2";
+import Cta from "@/components/Cta";
 
 /* -------------------- Types -------------------- */
 
@@ -400,6 +401,7 @@ export default async function ProjectPage({
         </section>
       </div>
       <NextProject prevProject={prevProject} nextProject={nextProject} />
+      <Cta />
     </main>
   );
 }

@@ -67,6 +67,7 @@ export default function Cta() {
         </h2>
         <TextEffect
           as="p"
+          per="line"
           preset="fade-in-blur"
           speedReveal={5}
           speedSegment={0.3}

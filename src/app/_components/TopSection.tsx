@@ -12,8 +12,9 @@ export default function TopSection() {
         <ScrollReveal
           direction="left"
           threshold={0.3}
+          delay={300}
           className="lg:col-span-2">
-          <h1 className="text-left">Interior Designers in Fort Lauderdale</h1>
+          <h1>Interior Designers in Fort Lauderdale</h1>
           <p>
             Based in Fort Lauderdale, Florida, Sarvian Design Group is a premier
             full-service interior design studio serving South Florida's most
@@ -24,18 +25,10 @@ export default function TopSection() {
             our work focuses on functionality, materials, and spaces that
             enhance daily life.
           </p>
-          <p>
-            While our studio calls Fort Lauderdale home, our work extends across
-            South Florida's most sought-after communities — Las Olas, Rio Vista,
-            and Coral Ridge locally, with projects reaching Boca Raton, Delray
-            Beach, Palm Beach, Golden Beach, and Miami. Each region brings its
-            own architectural language and light, whether that means
-            Intracoastal grandeur or contemporary restraint.
-          </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-12 items-center justify-center md:justify-start">
             <ArrowButton
               href="/projects"
-              variant="secondary"
+              variant="primary"
               className="w-full sm:w-auto justify-center">
               View Our Projects
             </ArrowButton>

@@ -5,7 +5,7 @@ import ServicesHero from "./_components/ServicesHero";
 import ServicesSection, { SERVICES } from "./_components/ServicesSection";
 import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import ProjectExamplesSection from "@/components/ProjectExamplesSection";
-import CtaSection from "@/components/CtaSection";
+import Cta from "@/components/Cta";
 
 const TITLE = "Interior Design Services in Fort Lauderdale & South Florida";
 const DESCRIPTION =
@@ -33,7 +33,7 @@ export default function Services() {
       <ServicesSection />
       <WhereWeWorkSection />
       <ProjectExamplesSection />
-      <CtaSection />
+      <Cta />
     </>
   );
 }

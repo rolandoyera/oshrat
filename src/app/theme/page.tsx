@@ -42,7 +42,7 @@ export default function ThemePage() {
       <div className="h-24"></div>
 
       {/* Typography */}
-      <Container className="pt-30 flex flex-col gap-6 max-w-[1800px]">
+      <Container className="pt-30 flex flex-col gap-6 max-w-450">
         <H3 className="mb-16">Typography</H3>
         <div className="flex gap-8 mb-16">
           <div className="w-40 shrink-0">
@@ -51,7 +51,7 @@ export default function ThemePage() {
 
           <div className="flex flex-col gap-4">
             <p className="font-mono text-sm mb-1!">
-              Font:Manrope • Color:Taupe 700
+              Font:Montserrat • Color:Taupe 700
             </p>
             <P className="uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</P>
             <P>abcdefghijklmnopqrstuvwxyz</P>
@@ -116,10 +116,10 @@ export default function ThemePage() {
         </div>
       </Container>
 
-      <div className="h-px bg-border/60 w-full my-40 max-w-[1800px] mx-auto"></div>
+      <div className="h-px bg-border/60 w-full my-40 max-w-450 mx-auto"></div>
 
       {/* Colors */}
-      <Container className="flex flex-col gap-6 max-w-[1800px]">
+      <Container className="flex flex-col gap-6 max-w-450">
         <H3 className="mb-16">Colors</H3>
         {COLOR_GROUPS.map((group) => (
           <div key={group.name} className="flex gap-8 mb-16">
@@ -127,10 +127,9 @@ export default function ThemePage() {
               <H4>{group.name}</H4>
             </div>
             {group.swatches.map((swatch) => (
-              <div key={swatch.label} className="w-[200px] h-[200px]">
+              <div key={swatch.label} className="w-50 h-50">
                 <div
-                  className={`${swatch.bgClass} w-full h-full rounded shadow`}
-                ></div>
+                  className={`${swatch.bgClass} w-full h-full rounded shadow`}></div>
                 <p className="text-sm font-mono">{swatch.label}</p>
               </div>
             ))}
@@ -138,10 +137,10 @@ export default function ThemePage() {
         ))}
       </Container>
 
-      <div className="h-px bg-border/60 w-full my-40 max-w-[1800px] mx-auto"></div>
+      <div className="h-px bg-border/60 w-full my-40 max-w-450 mx-auto"></div>
 
       {/* Color Usage  */}
-      <Container className="flex flex-col gap-6 max-w-[1800px]">
+      <Container className="flex flex-col gap-6 max-w-450">
         <H3 className="mb-16">Color Usage</H3>
 
         {/*Surfaces*/}
@@ -149,7 +148,7 @@ export default function ThemePage() {
           <div className="w-40 shrink-0">
             <H4>Surfaces</H4>
           </div>
-          <div className="w-1/2 h-[400px]">
+          <div className="w-1/2 h-100">
             <div className="bg-cream-100 w-full h-full rounded p-2 shadow">
               <P className="text-center mb-12">Site Background</P>
               <div className="flex flex-col gap-2 px-6">
@@ -167,7 +166,7 @@ export default function ThemePage() {
             </div>
             <p className="text-sm font-mono">Cream 100</p>
           </div>
-          <div className="w-1/2 h-[400px]">
+          <div className="w-1/2 h-100">
             <div className="bg-cream-200 w-full h-full rounded p-2 shadow">
               <P className="text-center mb-12">Cards</P>
               <div className="flex flex-col gap-2 px-6">
@@ -205,7 +204,7 @@ export default function ThemePage() {
             <H4>Backgrounds</H4>
           </div>
 
-          <div className="w-1/2 h-[200px]">
+          <div className="w-1/2 h-50">
             <div className="bg-linear-to-b from-taupe-900 to-taupe-800 w-full h-full rounded p-2 shadow">
               <P className="text-center mb-12 text-cream-300">Navbar</P>
               <div className="flex flex-col gap-2 px-6">
@@ -227,7 +226,7 @@ export default function ThemePage() {
             </div>
             <p className="text-sm font-mono">Gradient Taupe 900 to 800</p>
           </div>
-          <div className="w-1/2 h-[400px]">
+          <div className="w-1/2 h-100">
             <div className="bg-linear-to-b from-taupe-800/95 to-taupe-900 w-full h-full rounded p-2 shadow">
               <P className="text-center mb-12 text-cream-300">Footer</P>
               <div className="flex flex-col gap-2 px-6">
@@ -251,8 +250,7 @@ export default function ThemePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram (opens in a new tab)"
-                    className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
-                  >
+                    className="text-cream-300 flex items-center justify-center w-7.5 h-7.5">
                     <InstagramIcon size={30} color="currentColor" />
                   </a>
                   <a
@@ -260,8 +258,7 @@ export default function ThemePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Send email to ${SITE.email} (opens in a new tab)`}
-                    className="text-cream-300 flex items-center justify-center w-[32px] h-[32px]"
-                  >
+                    className="text-cream-300 flex items-center justify-center w-8 h-8">
                     <MailIcon size={32} color="currentColor" />
                   </a>
                   <a
@@ -269,8 +266,7 @@ export default function ThemePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Chat on WhatsApp with ${SITE.whatsappDisplay} (opens in a new tab)`}
-                    className="text-cream-300 flex items-center justify-center w-[30px] h-[30px]"
-                  >
+                    className="text-cream-300 flex items-center justify-center w-7.5 h-7.5">
                     <WhatsAppIcon size={26} color="currentColor" />
                   </a>
                 </div>
@@ -296,15 +292,14 @@ export default function ThemePage() {
             <ArrowButton
               direction="right"
               variant="secondary"
-              className="px-12"
-            >
+              className="px-12">
               Next
             </ArrowButton>
             <p className="text-sm font-mono">Secondary Button • Taupe 800</p>
           </div>
         </div>
 
-        <div className="h-px bg-border/60 w-full my-40 max-w-[1800px] mx-auto"></div>
+        <div className="h-px bg-border/60 w-full my-40 max-w-450 mx-auto"></div>
 
         <div className="flex flex-col items-center justify-center gap-4 pb-20">
           <H3 className="text-center">Design System Documentation</H3>
@@ -315,8 +310,7 @@ export default function ThemePage() {
           <ArrowButton
             href="/theme/guidelines"
             variant="primary"
-            className="px-12 mt-4"
-          >
+            className="px-12 mt-4">
             View Interactive Guidelines
           </ArrowButton>
         </div>

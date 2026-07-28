@@ -113,7 +113,7 @@ export default function GuidelinesPage() {
     <Main className="bg-white pb-40">
       <div className="h-24"></div>
 
-      <Container className="max-w-[1400px] mt-16 px-4 md:px-8">
+      <Container className="max-w-350 mt-16 px-4 md:px-8">
         {/* Back Link */}
         <div className="mb-6 flex justify-between items-center">
           <Link
@@ -208,7 +208,7 @@ export default function GuidelinesPage() {
               <P className="mb-8 text-taupe-600">
                 Our design focuses on lightweight typography and loose leading
                 to convey a minimalist, open-concept feel. We strictly use{" "}
-                <span className="font-semibold text-taupe-800">Manrope</span>{" "}
+                <span className="font-semibold text-taupe-800">Montserrat</span>{" "}
                 for standard copy and headings, and monospaced configurations
                 for structured details.
               </P>

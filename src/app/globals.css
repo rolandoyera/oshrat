@@ -71,7 +71,7 @@
   --color-gray-100: light-dark(#f3f4f6, #1f2937);
   --color-gray-900: light-dark(#111827, #f9fafb);
 
-  --font-sans: var(--font-manrope), system-ui, sans-serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
   --font-serif: var(--font-serif), serif;
   --font-reader: var(--font-newsreader), Georgia, serif;
@@ -99,7 +99,7 @@
 body {
   padding: 0;
   margin: 0;
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 300;
   transition:
     background-color 0.3s ease,
@@ -108,7 +108,7 @@ body {
 
 input {
   color: var(--foreground);
-  font-family: var(--font-manrope), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
   font-weight: 500;
 }
 
@@ -176,15 +176,15 @@ input:-webkit-autofill:active {
 }
 
 @utility p {
-  @apply text-base sm:text-[20px] lg:text-[22px] font-light leading-[1.55] not-last:mb-4;
+  @apply text-base sm:text-[20px] lg:text-[22px] font-light leading-[1.55] not-last:mb-4 tracking-tight;
 }
 
 @utility h1 {
-  @apply text-[38px] lg:text-5xl font-normal tracking-tight leading-h1 md:leading-[1.08] lg:leading-[1.06] mb-4 lg:mb-6;
+  @apply text-[38px] lg:text-5xl font-normal tracking-tighter mb-4 lg:mb-6;
 }
 
 @utility h2 {
-  @apply text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground mb-4 lg:mb-6;
+  @apply text-3xl lg:text-5xl font-normal text-balance tracking-tighter text-foreground mb-4 lg:mb-6;
 }
 @utility h3 {
   @apply text-2xl lg:text-4xl font-normal text-balance tracking-tight text-foreground mb-4 lg:mb-6;

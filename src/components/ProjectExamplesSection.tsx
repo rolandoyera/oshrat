@@ -75,7 +75,11 @@ export function ProjectCard({
   );
 }
 
-export default async function ProjectExamplesSection() {
+export default async function ProjectExamplesSection({
+  content,
+}: {
+  content?: string;
+}) {
   const projects = await client.fetch<Project[]>(LATEST_PROJECTS);
 
   if (!projects?.length) return null;
@@ -88,7 +92,6 @@ export default async function ProjectExamplesSection() {
       <Container size="lg">
         <TextEffect
           as="p"
-          per="char"
           preset="fade-in-blur"
           speedReveal={5}
           speedSegment={0.3}
@@ -103,8 +106,19 @@ export default async function ProjectExamplesSection() {
           speedSegment={0.3}
           inView
           delay={0.15}
-          className="h2 mb-12">
+          className="h2">
           Latest Projects
+        </TextEffect>
+        <TextEffect
+          as="p"
+          per="line"
+          preset="fade-in-blur"
+          speedReveal={5}
+          speedSegment={0.3}
+          inView
+          delay={0.15}
+          className="p mb-12! max-w-3xl">
+          {content ?? ""}
         </TextEffect>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">

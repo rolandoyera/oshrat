@@ -4,7 +4,6 @@ import Link from "next/link";
 import Container from "./ui/Container";
 import DoubleBorder from "./ui/DoubleBorder";
 import HoverUnderline from "./ui/HoverUnderline";
-import { TextEffect } from "./motion-primitives/text-effect";
 import InstagramIcon from "./icons/InstagramIcon";
 import MailIcon from "./icons/MailIcon";
 import WhatsAppIcon from "./icons/WhatsAppIcon";
@@ -125,33 +124,22 @@ export default function Footer2() {
             borderColor="bg-black/40"
             highlightColor="bg-white/15"
           />
-          {REGIONS.map(({ region, places }, col) => (
+          {REGIONS.map(({ region, places }) => (
             <div key={region}>
               <p className="eyebrow">{region}</p>
               <ul className="space-y-2">
-                {places.map((place, row) => {
+                {places.map((place) => {
                   const href = PLACE_LINKS[place];
-                  const effect = (
-                    <TextEffect
-                      as="span"
-                      per="word"
-                      preset="fade-in-blur"
-                      speedReveal={5}
-                      speedSegment={0.3}
-                      delay={col * 0.1 + (row + 1) * 0.08}
-                      inView
-                      className="p text-cream-100">
-                      {place}
-                    </TextEffect>
-                  );
+                  const effect = <p className="p text-cream-100">{place}</p>;
                   return (
                     <li key={place}>
                       {href ? (
                         <Link
                           href={href}
                           className="group relative inline-block hover:[&_span]:text-accent">
-                          {effect}
+                          {/* Before the text so the p stays :last-child (not-last:mb-4) */}
                           <HoverUnderline className="text-accent" />
+                          {effect}
                         </Link>
                       ) : (
                         effect

@@ -36,7 +36,11 @@ export default function Home() {
         <TopSection />
       </section>
       <section>
-        <ProjectExamplesSection />
+        <ProjectExamplesSection
+          content={
+            "While our studio calls Fort Lauderdale home, our work extends across South Florida's most sought-after communities — Las Olas, Rio Vista, and Coral Ridge locally, with projects reaching Boca Raton, Delray Beach, Palm Beach, Golden Beach, and Miami."
+          }
+        />
       </section>
       <section className="bg-cream-200 py-20 lg:py-48">
         <OurApproachSection />

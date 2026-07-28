@@ -124,8 +124,6 @@ const ContactSchema = z.object({
       "Residential",
       "Commercial",
       "Hospitality",
-      "Multifamily",
-      "Retail",
       "Office",
       "Other",
     ],
@@ -240,7 +238,7 @@ function ContactModal({
 
       {/* Panel */}
       <div
-        className="relative mx-4 w-full md:max-w-[700px] rounded bg-transparent shadow-2xl transition-all duration-200 animate-in fade-in zoom-in-95 flex flex-col overflow-hidden p-0"
+        className="relative mx-4 w-full md:max-w-175 rounded bg-transparent shadow-2xl transition-all duration-200 animate-in fade-in zoom-in-95 flex flex-col overflow-hidden p-0"
         onClick={(e) => e.stopPropagation()}>
         {/* Close Button */}
         <button
@@ -254,10 +252,10 @@ function ContactModal({
         <div className="border-b border-border/20 px-8 pt-8 pb-5 bg-card rounded-t">
           <h3
             id="contact-title"
-            className="text-[28px] font-semibold tracking-[-0.012em] text-foreground">
+            className="text-[28px] font-medium tracking-[-0.012em] text-foreground mb-0">
             {sent ? "Message Sent" : "Let’s talk about your project"}
           </h3>
-          <p className="text-[18px] text-foreground/75 mt-1 font-light">
+          <p className="text-[18px] text-foreground/75 font-light">
             {sent
               ? "Thank you for reaching out."
               : "Share a few details and we’ll reach out shortly."}
@@ -285,13 +283,13 @@ function ContactModal({
               onSubmit={handleSubmit(onSubmit)}
               onFocusCapture={handleFormStart}
               noValidate
-              className="space-y-8 max-w-[500px] mx-auto">
+              className="space-y-8 max-w-125 mx-auto">
               <input
                 type="text"
                 tabIndex={-1}
                 autoComplete="new-password"
                 aria-hidden="true"
-                className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+                className="absolute -left-2499.75 top-auto h-px w-px overflow-hidden"
                 {...register("nickname_confirm")}
               />
 
@@ -424,14 +422,6 @@ function ContactModal({
                             className="cursor-pointer">
                             Hospitality
                           </SelectItem>
-                          <SelectItem
-                            value="Multifamily"
-                            className="cursor-pointer">
-                            Multifamily
-                          </SelectItem>
-                          <SelectItem value="Retail" className="cursor-pointer">
-                            Retail
-                          </SelectItem>
                           <SelectItem value="Office" className="cursor-pointer">
                             Office
                           </SelectItem>
@@ -520,7 +510,7 @@ function ContactModal({
 
         {/* FOOTER SECTION */}
         <div className="border-t border-border/20 bg-taupe-900 py-4 px-8 text-center rounded-b">
-          <p className="text-[16px] font-semibold tracking-wider text-muted">
+          <p className="text-[16px] font-semibold tracking-wider text-muted mb-0">
             Sarvian Design Group
           </p>
           <p>
