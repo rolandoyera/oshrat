@@ -35,9 +35,8 @@ const QUERY = groq`
   } | order(coalesce(year, 0) desc, _createdAt desc)
 `;
 
-import CtaSection from "@/components/CtaSection";
+import Cta from "@/components/Cta";
 import ProjectsHero from "./_components/ProjectsHero";
-import WhereWeWorkSection from "@/components/WhereWeWorkSection";
 import TransitionLink from "@/components/ui/TransitionLink";
 
 export default async function ProjectsPage() {
@@ -111,12 +110,7 @@ export default async function ProjectsPage() {
           })}
         </div>
       </main>
-      <WhereWeWorkSection />
-      <CtaSection
-        heading={{ plain: "Yours could be", accent: "next" }}
-        location="ready_to_start"
-        formSource="project"
-      />
+      <Cta />
     </div>
   );
 }
