@@ -71,7 +71,7 @@ export default async function FeaturedProjects({
               speedSegment={0.3}
               inView
               delay={0.25}
-              className="p">
+              className="p max-w-3xl">
               {description}
             </TextEffect>
           )}
