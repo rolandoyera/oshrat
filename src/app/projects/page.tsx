@@ -96,13 +96,11 @@ export default async function ProjectsPage() {
                   <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent to-30%" />
                   <div className="absolute inset-x-0 bottom-0 p-4">
                     {p.location && (
-                      <p className="eyebrow mb-0 text-cream-100/80">
+                      <p className="eyebrow font-normal mb-0 text-cream-100/80">
                         {p.location}
                       </p>
                     )}
-                    <h3 className="text-2xl font-normal tracking-tight text-cream-100 lg:text-3xl">
-                      {p.title}
-                    </h3>
+                    <h3 className="text-cream-100 mb-0">{p.title}</h3>
                   </div>
                 </div>
               </TransitionLink>
