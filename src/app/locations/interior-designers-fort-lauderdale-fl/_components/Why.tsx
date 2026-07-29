@@ -44,7 +44,7 @@ export default function Why() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold">One Studio, Start to Finish.</h3>
+            <h3 className="font-semibold">One Interior Design Firm.</h3>
             <p>
               Most high-end interior design in Fort Lauderdale comes apart in
               the handoffs. We hold it together: furniture selection and
