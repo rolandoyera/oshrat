@@ -23,7 +23,7 @@ const CONTENT: LocationContent = {
   hero: {
     eyebrow: "Interior Designers in Fort Lauderdale, Florida",
     paragraph:
-      "A full-service studio for luxury residential and commercial interiors, renovations, and new construction across Fort Lauderdale, Florida in Broward County.",
+      "Led by Oshrat Rothschild, we're a full-service studio for luxury residential and commercial interiors, renovations, and new construction across Fort Lauderdale, Florida in Broward County.",
     image: {
       mobile: "/about/sarvian-design-group-oshrat-rothschild-600.webp",
       tablet: "/about/sarvian-design-group-oshrat-rothschild-960.webp",
