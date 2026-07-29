@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import Container from "../../../components/ui/Container";
-import { TextEffect } from "../../../components/motion-primitives/text-effect";
+import Container from "@/components/ui/Container";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // Testimonial slider: quote left, linked project card right, progress bar +
 // counter below. One testimonial visible at a time, advanced manually.
@@ -49,39 +49,15 @@ export default function Testimonials() {
     <section className="bg-taupe-800 py-24 lg:py-32">
       <Container size="lg">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-8">
-            <TextEffect
-              as="p"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              className="eyebrow">
-              In their words
-            </TextEffect>
+          <ScrollReveal className="lg:col-span-8">
+            <p className="eyebrow">In their words</p>
             <h2 className="h2">
-              <TextEffect
-                as="span"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                inView
-                delay={0.15}
-                className="block text-cream-200">
-                The work speaks.
-              </TextEffect>
-              <TextEffect
-                as="span"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                inView
-                delay={0.35}
-                className="block italic text-accent h2 mt-0 lg:mt-2 mb-6 lg:mb-0 font-reader font-normal">
+              <span className="block text-cream-200">The work speaks.</span>
+              <span className="block italic text-accent h2 mt-0 lg:mt-2 mb-6 lg:mb-0 font-reader font-normal">
                 So do the clients.
-              </TextEffect>
+              </span>
             </h2>
-          </div>
+          </ScrollReveal>
         </div>
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
