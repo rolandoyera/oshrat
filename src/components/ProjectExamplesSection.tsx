@@ -8,7 +8,7 @@ import {
 } from "@/sanity/lib/image";
 import Container from "./ui/Container";
 import TransitionLink from "./ui/TransitionLink";
-import { TextEffect } from "./motion-primitives/text-effect";
+import ScrollReveal from "./ui/ScrollReveal";
 
 export interface Project {
   _id: string;
@@ -92,60 +92,35 @@ export default async function ProjectExamplesSection({
   return (
     <section className="bg-cream-200 py-24 lg:py-32">
       <Container size="lg">
-        <TextEffect
-          as="p"
-          preset="fade-in-blur"
-          speedReveal={5}
-          speedSegment={0.3}
-          inView
-          className="eyebrow">
-          Selected work
-        </TextEffect>
-        <TextEffect
-          as="h2"
-          preset="fade-in-blur"
-          speedReveal={5}
-          speedSegment={0.3}
-          inView
-          delay={0.15}
-          className="h2">
-          Latest Projects
-        </TextEffect>
-        <TextEffect
-          as="p"
-          per="line"
-          preset="fade-in-blur"
-          speedReveal={5}
-          speedSegment={0.3}
-          inView
-          delay={0.15}
-          className="p mb-12! max-w-3xl">
-          {content ?? ""}
-        </TextEffect>
+        <ScrollReveal>
+          <p className="eyebrow">Selected work</p>
+          <h2>Latest Projects</h2>
+          <p className="p mb-12! max-w-3xl">{content ?? ""}</p>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {featured.map((project) => (
-            <ProjectCard
-              key={project._id}
-              project={project}
-              aspect="aspect-16/10"
-              sizes="(min-width: 768px) 50vw, 100vw"
-            />
-          ))}
-        </div>
-
-        {secondary.length > 0 && (
-          <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
-            {secondary.map((project) => (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {featured.map((project) => (
               <ProjectCard
                 key={project._id}
                 project={project}
-                aspect="aspect-5/4"
-                sizes="(min-width: 768px) 33vw, 100vw"
+                aspect="aspect-16/10"
+                sizes="(min-width: 768px) 50vw, 100vw"
               />
             ))}
           </div>
-        )}
+
+          {secondary.length > 0 && (
+            <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-3">
+              {secondary.map((project) => (
+                <ProjectCard
+                  key={project._id}
+                  project={project}
+                  aspect="aspect-5/4"
+                  sizes="(min-width: 768px) 33vw, 100vw"
+                />
+              ))}
+            </div>
+          )}
+        </ScrollReveal>
       </Container>
     </section>
   );

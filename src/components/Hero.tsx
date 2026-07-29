@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import TransitionLink from "@/components/ui/TransitionLink";
 import Image from "next/image";
 import ArrowButton from "./ui/ArrowButton";
-import { TextEffect } from "./motion-primitives/text-effect";
+import ScrollReveal from "./ui/ScrollReveal";
 
 interface HeroProps {
   image: string;
@@ -67,7 +67,7 @@ const Hero: React.FC<HeroProps> = ({
         </div>
 
         {(title || description) && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/30 p-6">
+          <ScrollReveal className="absolute inset-0 flex items-center justify-center bg-black/30 p-6">
             {/* Floating parallax text element */}
             <div
               className="text-center"
@@ -75,21 +75,9 @@ const Hero: React.FC<HeroProps> = ({
                 transform: `translateY(${scrollY * 0.15}px)`,
                 willChange: "transform",
               }}>
-              {title && (
-                <TextEffect
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  as="h1"
-                  inView
-                  className="mb-0 lg:mb-2 text-white h1">
-                  {title}
-                </TextEffect>
-              )}
+              {title && <h1 className="mb-0 text-white h1">{title}</h1>}
               {description && (
-                <p className="text-white/90 text-base lg:text-xl mb-8">
-                  {description}
-                </p>
+                <p className="text-white/90 mb-8">{description}</p>
               )}
               <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-50 md:max-w-full mx-auto">
                 {buttonText && buttonLink && (
@@ -109,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({
                 </ArrowButton>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         )}
       </div>
     </div>
