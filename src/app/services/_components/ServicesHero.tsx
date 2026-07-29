@@ -2,15 +2,8 @@
 
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-
-const META = [
-  { label: "Founded", value: "Fort Lauderdale, FL" },
-  { label: "Scope", value: "Architecture & Interiors" },
-  { label: "Engagements", value: "Seven core services" },
-];
 
 export default function ServicesHero() {
   return (
