@@ -154,6 +154,7 @@ export default function MobileNav() {
       <button
         type="button"
         aria-label="Close menu"
+        inert={!isMenuOpen}
         onClick={() => setIsMenuOpen(false)}
         className={cn(
           "fixed inset-0 z-10 bg-taupe-900/25 transition-opacity duration-300 [backdrop-filter:blur(18px)] [-webkit-backdrop-filter:blur(18px)]",
@@ -165,7 +166,11 @@ export default function MobileNav() {
 
       {/* Drawer — slides down from underneath the nav. The clipping wrapper
           stays put; the dark panel translates in from behind the bar. */}
+      {/* inert while closed: the links are visually hidden but would otherwise
+          stay focusable and, with their TextEffect text unmounted, have no
+          accessible name (Lighthouse link-name). */}
       <div
+        inert={!isMenuOpen}
         className={cn(
           "absolute inset-x-0 top-full z-10 h-[calc(100dvh-var(--mobile-nav-height))] overflow-hidden",
           !isMenuOpen && "pointer-events-none",
@@ -181,6 +186,7 @@ export default function MobileNav() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    aria-label={link.name}
                     onClick={() => setIsMenuOpen(false)}
                     onPointerEnter={() => preloadHero(link.href)}
                     onFocus={() => preloadHero(link.href)}

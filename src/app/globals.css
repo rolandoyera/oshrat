@@ -172,7 +172,7 @@ input:-webkit-autofill:active {
 }
 
 @utility eyebrow {
-  @apply text-xs uppercase tracking-[0.2em] text-accent font-bold mb-2 lg:mb-5;
+  @apply text-xs uppercase tracking-widest lg:tracking-[0.2em] text-accent font-medium mb-2 lg:mb-5;
 }
 
 @utility p {

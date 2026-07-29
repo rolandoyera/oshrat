@@ -23,7 +23,7 @@ export default function Cta() {
       <Container className="relative z-20 flex flex-col items-center text-center">
         <TextEffect
           as="p"
-          per="char"
+          per="line"
           preset="fade-in-blur"
           speedReveal={5}
           speedSegment={0.3}

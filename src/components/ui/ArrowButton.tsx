@@ -23,12 +23,12 @@ export default function ArrowButton({
   ...props
 }: ArrowButtonProps) {
   const classes = cn(
-    "group inline-flex h-12 items-center gap-2.5 rounded-xs text-white",
+    "group inline-flex h-12 items-center gap-2.5 rounded-xs text-white text",
     variant === "primary"
       ? "bg-accent hover:bg-taupe-800"
       : "bg-taupe-800 hover:bg-accent",
     direction === "right" ? "pl-[22px] pr-[18px]" : "pl-[18px] pr-[22px]",
-    "md:text-lg font-medium uppercase",
+    "text-base md:text-lg font-medium uppercase",
     "focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-accent hover:cursor-pointer hover:shadow hover:shadow-black/20 hover:-translate-y-0.5 transition-all duration-275 ease-[cubic-bezier(.6,.2,.1,1)]",
     className,
   );
