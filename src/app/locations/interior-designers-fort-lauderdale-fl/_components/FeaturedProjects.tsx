@@ -1,9 +1,9 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import Container from "@/components/ui/Container";
-import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { ProjectCard, type Project } from "@/components/ProjectExamplesSection";
 import ArrowButton from "@/components/ui/ArrowButton";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // Three-up project section where the featured projects are hand-picked in
 // code (by slug) instead of in Sanity — content still comes from Sanity, so
@@ -40,39 +40,11 @@ export default async function FeaturedProjects({
   return (
     <section className="bg-cream-200 pb-24 lg:py-32">
       <Container size="lg">
-        <div className="mb-12">
-          <TextEffect
-            as="p"
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            inView
-            className="eyebrow">
-            {eyebrow}
-          </TextEffect>
-          <TextEffect
-            as="h2"
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            inView
-            delay={0.15}
-            className="h2">
-            {heading}
-          </TextEffect>
-          {description && (
-            <TextEffect
-              as="p"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              delay={0.25}
-              className="p max-w-3xl">
-              {description}
-            </TextEffect>
-          )}
-        </div>
+        <ScrollReveal className="mb-12">
+          <p className="eyebrow">{eyebrow}</p>
+          <h2>{heading}</h2>
+          {description && <p className="max-w-3xl">{description}</p>}
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {projects.map((project) => (
