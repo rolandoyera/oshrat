@@ -1,6 +1,6 @@
 // Single source of truth for the studio's public contact details.
 // Update here and every surface follows: Footer, ContactDrawerContent,
-// ProjectModalProvider, CtaSection, theme demo, JSON-LD, contact emails.
+// ProjectModalProvider, theme demo, JSON-LD, contact emails.
 export const SITE = {
   name: "SARVIAN DESIGN GROUP",
   slogan: "design & architecture",
