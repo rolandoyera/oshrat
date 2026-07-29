@@ -43,7 +43,7 @@ const SERVICES: SequenceService[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time — not staged.",
+      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time, not staged.",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
@@ -61,7 +61,7 @@ const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed — and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later — the architecture and the interior are never fighting each other.",
+      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed, and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later, because the architecture and the interior are never fighting each other.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",
@@ -70,7 +70,7 @@ const SERVICES: SequenceService[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Cabinetry, stone, and appliance kitchen planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow — is made with that in mind during the kitchen design process.",
+      "Cabinetry, stone, and appliance kitchen planning built around how you actually cook and gather, detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision about storage, sightlines, and workflow is made with that in mind during the kitchen design process.",
     image: "/services/kitchen-design.jpg",
     imageAlt:
       "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
@@ -378,7 +378,7 @@ function SlideText({
             {index === 0 && (
               <div className="mt-6">
                 <p className="p text-base text-cream-100">
-                  This home was featured in Florida Design magazine — Art Basel
+                  This home was featured in Florida Design magazine, Art Basel
                   Edition.
                 </p>
                 <Image
@@ -437,7 +437,7 @@ function MobileServices() {
             {index === 0 && (
               <div className="mt-4">
                 <p className="p">
-                  This home was featured in Florida Design magazine — Art Basel
+                  This home was featured in Florida Design magazine, Art Basel
                   Edition.
                 </p>
                 <Image

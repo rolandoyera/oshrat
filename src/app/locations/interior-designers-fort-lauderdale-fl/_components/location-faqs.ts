@@ -28,27 +28,27 @@ export function buildLocationFaqs({
       question:
         "Do you offer interior design consulting, or only full-service projects?",
       answer:
-        "Both. Our interior design consulting engagements suit clients who want expert direction on layout, palette, and sourcing while managing execution themselves. Full-service work — the majority of our studio — carries a project from space planning through procurement, custom furnishings, and installation with a single point of accountability.",
+        "Both. Our interior design consulting engagements suit clients who want expert direction on layout, palette, and sourcing while managing execution themselves. Full-service work, the majority of our studio, carries a project from space planning through procurement, custom furnishings, and installation with a single point of accountability.",
     },
     {
       question: "Do I need an interior decorator or an interior designer?",
       answer:
-        "An interior decorator works with what a room already is — furnishings, palettes, styling. An interior designer works with what it could be: space planning, renovations, and coordination with your architect and contractor. Sarvian is a full-service interior design studio, so both live under one roof — turnkey projects carried from structural space planning to the final styled shelf.",
+        "An interior decorator works with what a room already is: furnishings, palettes, styling. An interior designer works with what it could be: space planning, renovations, and coordination with your architect and contractor. Sarvian is a full-service interior design studio, so both live under one roof, with turnkey projects carried from structural space planning to the final styled shelf.",
     },
     {
       question:
         "Do you work with my architect and contractor, or bring your own team?",
-      answer: `Either. On new construction we prefer to join alongside your architect early, so the interior and the architecture are resolved together rather than negotiated later. For renovations we coordinate closely with your contractor — or introduce trusted builders and trades we've worked with across ${city} when you need them.`,
+      answer: `Either. On new construction we prefer to join alongside your architect early, so the interior and the architecture are resolved together rather than negotiated later. For renovations we coordinate closely with your contractor, or introduce trusted builders and trades we've worked with across ${city} when you need them.`,
     },
     {
       question: "How long does a full home project take?",
       answer:
-        "A furnishings-focused project typically runs four to eight months from concept to install; full renovations and new builds run with the construction schedule, usually twelve to twenty-four months. Lead times on custom pieces are the honest constraint — we sequence orders early so the home installs in one coherent reveal, not in pieces.",
+        "A furnishings-focused project typically runs four to eight months from concept to install; full renovations and new builds run with the construction schedule, usually twelve to twenty-four months. Lead times on custom pieces are the honest constraint, so we sequence orders early and the home installs in one coherent reveal, not in pieces.",
     },
     {
       question: `What makes Sarvian different from other interior design firms in ${city}?`,
       answer:
-        "Restraint, mostly. We don't design to a house style or a coastal formula — each project is drawn from the architecture, the light, and the way you actually live. Every piece is specified before fabrication begins, and the principal who starts your project is the one who finishes it.",
+        "Restraint, mostly. We don't design to a house style or a coastal formula. Each project is drawn from the architecture, the light, and the way you actually live. Every piece is specified before fabrication begins, and the principal who starts your project is the one who finishes it.",
     },
     {
       question: "Do you offer consultations?",
