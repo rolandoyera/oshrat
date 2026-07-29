@@ -51,6 +51,7 @@ const REGIONS: { region: string; places: string[] }[] = [
 // Places with a dedicated location page link to it from the list.
 const PLACE_LINKS: Record<string, string> = {
   "Fort Lauderdale": "/locations/interior-designers-fort-lauderdale-fl",
+  "Las Olas": "/locations/interior-designers-fort-lauderdale-fl",
 };
 
 export default function Footer() {
