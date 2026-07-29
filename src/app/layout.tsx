@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Footer2 from "@/components/Footer2";
+import Footer from "@/components/Footer";
 import "./globals.css";
 import { Montserrat, Newsreader, Parisienne } from "next/font/google";
 import Providers from "./Providers";
@@ -53,7 +53,7 @@ export default function RootLayout({
           {process.env.VERCEL_ENV === "production" && <Analytics />}
           <Navbar />
           {children}
-          <Footer2 />
+          <Footer />
         </Providers>
       </body>
     </html>

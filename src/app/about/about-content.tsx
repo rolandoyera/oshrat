@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import CtaSection from "@/components/CtaSection";
 import Container from "@/components/ui/Container";
 import H2 from "@/components/ui/H2";
 import Main from "@/components/ui/Main";
@@ -11,6 +10,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import SignatureDraw from "./SignatureDraw";
 import { HERO_BLUR } from "@/lib/hero-blur";
+import Cta from "@/components/Cta";
 
 export default function AboutContent() {
   const [scrollY, setScrollY] = useState(0);
@@ -46,8 +46,8 @@ export default function AboutContent() {
 
         {/* Text and Title Overlay - aligned to bottom-left */}
         <div className="absolute inset-0 flex items-end z-20 pb-16 md:pb-24 lg:pb-32 px-6">
-          <div className="mx-auto max-w-[1400px] w-full">
-            <div className="max-w-[900px] space-y-6">
+          <div className="mx-auto max-w-350 w-full">
+            <div className="max-w-225 space-y-6">
               <TextEffect
                 preset="fade-in-blur"
                 className="text-4xl lg:text-7xl font-normal text-balance text-white"
@@ -71,7 +71,7 @@ export default function AboutContent() {
       </section>
 
       {/* Rest of the content wrapped in standard container */}
-      <Container className="space-y-24 py-16 md:py-24 lg:py-32 max-w-[1500px]">
+      <Container className="space-y-24 py-16 md:py-24 lg:py-32 max-w-375">
         {/* Section 2: Narrative & Vision Grid */}
         <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 pt-20">
           <div className="lg:col-span-5">
@@ -175,19 +175,13 @@ export default function AboutContent() {
               </ScrollReveal>
               <SignatureDraw
                 speed={1.2}
-                className="w-[260px] h-auto mx-auto mt-8 text-accent"
+                className="w-65 h-auto mx-auto mt-8 text-accent"
               />
             </div>
           </div>
         </section>
       </Container>
-
-      {/* Section 4: CTA */}
-      <CtaSection
-        heading={{ plain: "Your space is", accent: "waiting" }}
-        location="ready_to_start"
-        formSource="project"
-      />
+      <Cta />
     </Main>
   );
 }

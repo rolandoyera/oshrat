@@ -4,8 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import Container from "../../../../components/ui/Container";
-import { TextEffect } from "../../../../components/motion-primitives/text-effect";
+import Container from "../../../components/ui/Container";
+import { TextEffect } from "../../../components/motion-primitives/text-effect";
 
 // Testimonial slider: quote left, linked project card right, progress bar +
 // counter below. One testimonial visible at a time, advanced manually.

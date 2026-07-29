@@ -4,7 +4,8 @@ import H1 from "@/components/ui/H1";
 import Main from "@/components/ui/Main";
 import P from "@/components/ui/P";
 import ContactSection from "./_components/ContactSection";
-import FaqSection, { FAQS } from "./_components/FaqSection";
+import FaqSection from "@/components/FaqSection";
+import { FAQS } from "./_components/Faqs";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 
@@ -32,7 +33,7 @@ export default function ContactPage() {
         </div>
         <ContactSection formType="contact_page" linkLocation="contact_page" />
       </Container>
-      <FaqSection />
+      <FaqSection faqs={FAQS} />
     </Main>
   );
 }

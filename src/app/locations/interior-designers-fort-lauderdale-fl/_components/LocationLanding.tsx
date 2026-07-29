@@ -5,9 +5,9 @@ import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ServicesSequence from "./ServicesSequence";
 import FeaturedProjects from "./FeaturedProjects";
-import Testimonials from "./Testimonials";
+import Testimonials from "../../_components/Testimonials";
 import { LocationEditorial } from "./LocationEditorial";
-import FaqSection from "../../../contact/_components/FaqSection";
+import FaqSection from "@/components/FaqSection";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import Cta from "@/components/Cta";
 
@@ -20,10 +20,6 @@ export interface LocationContent {
     /** Display headline lines (the em-dash divider follows line one). */
     headline?: [string, string];
     paragraph: string;
-    /**
-     * Override for A/B testing a different hero per page — one crop per
-     * breakpoint. The desktop path doubles as the HERO_BLUR key.
-     */
     image?: {
       mobile: string;
       tablet: string;
