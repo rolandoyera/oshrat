@@ -13,24 +13,26 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-// Below the fold on every page (Cta, Footer, WhereWeWorkSection) — not preloaded
-// so it doesn't compete with the LCP text, which is Montserrat.
+// Below the fold on every page (Cta, Footer, WhereWeWorkSection). Keep the
+// preload: `preload: false` was tried and reverted — without it the font is
+// discovered by the CSS parser instead of the HTML preload scanner, so it
+// starts ~125ms later and drifts run to run, which cost more in LCP/TBT than
+// the earlier start cost the LCP text (Montserrat). See layout.tsx history.
 const parisienne = Parisienne({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-serif",
-  preload: false,
 });
 
 // Variable font — full weight axis, both styles, no per-weight files.
-// Only used below the fold (Testimonials), so not preloaded. Italic is a real
-// second file (~65KB); kept because the pull-quote is display-size serif, where
-// browser-synthesized oblique looks visibly wrong.
+// Only used below the fold (Testimonials). Italic is a real second file
+// (~65KB); kept because the pull-quote is display-size serif, where
+// browser-synthesized oblique looks visibly wrong. Preloaded for the same
+// reason as Parisienne above.
 const newsreader = Newsreader({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-newsreader",
-  preload: false,
 });
 
 const ROOT_TITLE =
