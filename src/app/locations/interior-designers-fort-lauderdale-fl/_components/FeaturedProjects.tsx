@@ -1,11 +1,8 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
-import Container from "../../../components/ui/Container";
-import { TextEffect } from "../../../components/motion-primitives/text-effect";
-import {
-  ProjectCard,
-  type Project,
-} from "../../../components/ProjectExamplesSection";
+import Container from "@/components/ui/Container";
+import { TextEffect } from "@/components/motion-primitives/text-effect";
+import { ProjectCard, type Project } from "@/components/ProjectExamplesSection";
 import ArrowButton from "@/components/ui/ArrowButton";
 
 // Three-up project section where the featured projects are hand-picked in

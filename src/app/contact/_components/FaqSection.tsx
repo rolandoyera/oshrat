@@ -53,7 +53,7 @@ export default function FaqSection({
         </ScrollReveal>
 
         <ScrollReveal direction="up" delay={200} threshold={0.1}>
-          <div className="mx-auto mt-12 max-w-[1200px] lg:mt-16">
+          <div className="mx-auto mt-12 max-w-300 lg:mt-16">
             <hr className="etched-line" />
             <Accordion type="single" collapsible>
               {faqs.map((faq, i) => (

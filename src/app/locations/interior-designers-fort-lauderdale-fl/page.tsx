@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import LocationLanding, {
   type LocationContent,
-} from "../_components/LocationLanding";
-import { buildLocationFaqs } from "../_components/location-faqs";
+} from "./_components/LocationLanding";
+import { buildLocationFaqs } from "./_components/location-faqs";
 import { socialMeta } from "@/lib/seo";
 
 const PATH = "/locations/interior-designers-fort-lauderdale-fl";
