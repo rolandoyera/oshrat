@@ -25,8 +25,8 @@ export default function Why() {
               always relates to something already decided. Space planning, mood
               boards, finish palettes, lighting plans, millwork drawings, and 3D
               renderings all trace back to that one idea, so nothing on your
-              Fort Lauderdale project gets specified twice or decided by
-              default.
+              Fort Lauderdale interior design project gets specified twice or
+              decided by default.
             </p>
           </div>
           <div className="flex flex-col gap-4">
