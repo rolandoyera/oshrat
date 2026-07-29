@@ -77,7 +77,10 @@ export default function LocationLanding({
         <Container size="lg" className="relative z-10 w-full">
           <HeroScrollColor>
             <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-6 lg:pb-12">
-              <ScrollReveal direction="up" className="lg:col-span-8 text-white">
+              <ScrollReveal
+                mobileStatic
+                direction="up"
+                className="lg:col-span-8 text-white">
                 <h1 className="text-sm uppercase font-medium tracking-[0.2em] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-200))] mb-2">
                   {hero.eyebrow}
                 </h1>
@@ -93,7 +96,10 @@ export default function LocationLanding({
                   <span className="block w-fit">{headlineBottom}</span>
                 </h2>
               </ScrollReveal>
-              <ScrollReveal direction="up" className="lg:col-span-4 text-white">
+              <ScrollReveal
+                mobileStatic
+                direction="up"
+                className="lg:col-span-4 text-white">
                 <p className="text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">
                   {hero.paragraph}
                 </p>

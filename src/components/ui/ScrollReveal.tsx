@@ -15,6 +15,15 @@ const hiddenByDirection: Record<Direction, string> = {
   right: "translate-x-5 blur-md",
 };
 
+// md:-prefixed twin of the above, used by mobileStatic — below md nothing is
+// hidden, so content renders in place with no animation.
+const hiddenByDirectionMdUp: Record<Direction, string> = {
+  up: "md:translate-y-5 md:blur-md",
+  down: "md:-translate-y-5 md:blur-md",
+  left: "md:-translate-x-5 md:blur-md",
+  right: "md:translate-x-5 md:blur-md",
+};
+
 // Wraps a block with a buttery-smooth entrance transition triggered when it
 // scrolls into view.
 export default function ScrollReveal({
@@ -23,12 +32,15 @@ export default function ScrollReveal({
   direction = "up",
   delay = 0,
   threshold = 0.15,
+  mobileStatic = false,
 }: {
   children: React.ReactNode;
   className?: string;
   direction?: Direction;
   delay?: number;
   threshold?: number;
+  /** Skip the reveal below md (768px) — content renders in place on mobile. */
+  mobileStatic?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -56,7 +68,9 @@ export default function ScrollReveal({
           "transition-all duration-1000",
           visible
             ? "translate-x-0 translate-y-0 blur-none opacity-100"
-            : `${hiddenByDirection[direction]} opacity-0`,
+            : mobileStatic
+              ? `${hiddenByDirectionMdUp[direction]} md:opacity-0`
+              : `${hiddenByDirection[direction]} opacity-0`,
         )}>
         {children}
       </div>
