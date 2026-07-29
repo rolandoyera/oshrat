@@ -37,16 +37,7 @@ export default function ProjectsHero() {
                   preset="fade-in-blur"
                   speedReveal={5}
                   speedSegment={0.3}>
-                  Projects,
-                </TextEffect>
-                <TextEffect
-                  as="span"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  delay={0.25}
-                  className="font-serif text-accent font-medium normal-case text-[1.5em] leading-none">
-                  lived in.
+                  Recent Projects
                 </TextEffect>
               </span>
             </Display>

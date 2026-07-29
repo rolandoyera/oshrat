@@ -13,17 +13,24 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
+// Below the fold on every page (Cta, Footer, WhereWeWorkSection) — not preloaded
+// so it doesn't compete with the LCP text, which is Montserrat.
 const parisienne = Parisienne({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-serif",
+  preload: false,
 });
 
 // Variable font — full weight axis, both styles, no per-weight files.
+// Only used below the fold (Testimonials), so not preloaded. Italic is a real
+// second file (~65KB); kept because the pull-quote is display-size serif, where
+// browser-synthesized oblique looks visibly wrong.
 const newsreader = Newsreader({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-newsreader",
+  preload: false,
 });
 
 const ROOT_TITLE =

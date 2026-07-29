@@ -178,9 +178,15 @@ input:-webkit-autofill:active {
 @utility p {
   @apply text-base sm:text-[20px] lg:text-[22px] font-light leading-[1.55] not-last:mb-4 tracking-tight;
 }
+@utility display {
+  @apply text-[clamp(2.25rem,1.23rem+5.11vw,5.5rem)] leading-[1.05] font-normal tracking-tighter mb-4 lg:mb-6;
+}
+@utility display-sm {
+  @apply text-[clamp(2.25rem,1.23rem+2.11vw,4.5rem)] leading-[1.05] font-normal tracking-tighter mb-4 lg:mb-6;
+}
 
 @utility h1 {
-  @apply text-[38px] lg:text-5xl font-normal tracking-tighter mb-4 lg:mb-6;
+  @apply text-[38px] lg:text-[58px] font-normal tracking-tighter mb-4 lg:mb-6;
 }
 
 @utility h2 {

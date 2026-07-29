@@ -2,11 +2,9 @@
 
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import ArrowButton from "@/components/ui/ArrowButton";
-import ProjectButton from "@/components/ui/ProjectButton";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
-import Display from "@/components/ui/Display";
 import { HERO_BLUR } from "@/lib/hero-blur";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 const META = [
   { label: "Founded", value: "Fort Lauderdale, FL" },
@@ -33,113 +31,39 @@ export default function ServicesHero() {
 
       <Container size="lg" className="relative z-10 w-full">
         <div className="grid grid-cols-1 items-center gap-10 py-24 lg:grid-cols-12 lg:gap-12">
-          <div className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
-            <TextEffect
-              as="h1"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              className="text-sm uppercase tracking-[0.2em] text-cream-200">
+          <ScrollReveal
+            mobileStatic
+            direction="left"
+            className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
+            <h1 className="eyebrow text-cream-200">
               Interior Design Services in Fort Lauderdale & South Florida
-            </TextEffect>
+            </h1>
 
-            <Display as="h2" className="uppercase text-white">
-              <TextEffect
-                as="span"
-                per="word"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                className="block">
-                Interior
-              </TextEffect>
-              <span className="relative inline-flex flex-wrap items-baseline gap-x-12">
-                <TextEffect
-                  as="span"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  delay={0.25}>
-                  design,
-                </TextEffect>
-                <TextEffect
-                  as="span"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  delay={0.4}
-                  className="font-serif text-accent font-medium normal-case text-[1.6em] leading-none">
-                  fully
-                </TextEffect>
-                <TextEffect
-                  as="span"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  delay={0.55}>
-                  considered.
-                </TextEffect>
+            <h2 className="display uppercase text-white">
+              <span className="block">Interior</span>
+              <span className="relative inline-flex flex-wrap items-baseline">
+                <span className="mr-4">design,</span>
+                <span className="italic text-accent mr-4">fully</span>
+                <span>considered.</span>
               </span>
-            </Display>
+            </h2>
 
-            <TextEffect
-              as="p"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              delay={0.2}
-              className="max-w-xl text-cream-100">
+            <p className="max-w-xl text-cream-100">
               A full-service studio for residential interiors, renovations, and
               new construction across Broward, Palm Beach, and Miami-Dade
               counties.
-            </TextEffect>
-
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <ProjectButton
-                location="services_hero"
-                className="w-full sm:w-auto justify-center">
-                Start a Project
-              </ProjectButton>
-              <ArrowButton
-                href="/projects"
-                variant="secondary"
-                className="w-full sm:w-auto justify-center">
-                Explore Projects
-              </ArrowButton>
-            </div>
-          </div>
-
-          <dl className="space-y-6 text-white lg:col-span-4 lg:border-l lg:border-white/20 lg:pl-12">
-            {META.map(({ label, value }, index) => (
-              <div key={label}>
-                <TextEffect
-                  as="dt"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  delay={0.4 + index * 0.15}
-                  className="text-xs uppercase tracking-[0.2em] text-cream-200">
-                  {label}
-                </TextEffect>
-                <TextEffect
-                  as="dd"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  delay={0.5 + index * 0.15}
-                  className="mt-1.5 text-xl">
-                  {value}
-                </TextEffect>
-              </div>
-            ))}
-          </dl>
+            </p>
+          </ScrollReveal>
+          <ScrollReveal direction="right" className="lg:col-span-4">
+            <dl className="text-white lg:border-l lg:border-white/20 lg:pl-12 hidden lg:block">
+              <dt className="eyebrow mb-2 text-cream-200">Founded</dt>
+              <dd className="text-xl">Fort Lauderdale, FL</dd>
+              <dt className="eyebrow mt-12 mb-2 text-cream-200">Scope</dt>
+              <dd className="text-xl">Full-service interior design</dd>
+              <dt className="eyebrow mt-12 mb-2 text-cream-200">Engagements</dt>
+              <dd className="text-xl">Seven core services</dd>
+            </dl>
+          </ScrollReveal>
         </div>
       </Container>
     </section>

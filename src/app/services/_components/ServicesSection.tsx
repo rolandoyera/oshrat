@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
-import H2 from "@/components/ui/H2";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 
@@ -142,95 +141,33 @@ export default function ServicesSection() {
       <Container size="lg">
         {/* Intro */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:mt-38">
-          <div className="lg:col-span-12">
-            <TextEffect
-              as="p"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              className={eyebrow}>
-              The studio
-            </TextEffect>
-          </div>
-          <div className="lg:col-span-6">
-            <H2 className="flex flex-col gap-2 lg:text-6xl">
-              <TextEffect
-                as="span"
-                per="word"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                inView>
-                One team,
-              </TextEffect>
-              <TextEffect
-                as="span"
-                per="word"
-                preset="fade-in-blur"
-                speedReveal={5}
-                speedSegment={0.3}
-                inView
-                delay={0.15}
-                className="lg:relative lg:top-2 lg:ml-8">
-                first sketch
-              </TextEffect>
-              <span className="lg:relative lg:ml-16">
-                <TextEffect
-                  as="span"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  inView
-                  delay={0.3}
-                  className="inline relative md:top-3 xl:top-0">
-                  to final
-                </TextEffect>
-                <TextEffect
-                  as="span"
-                  per="word"
-                  preset="fade-in-blur"
-                  speedReveal={5}
-                  speedSegment={0.3}
-                  inView
-                  delay={0.45}
-                  className="font-serif text-accent text-[1.6em] leading-none ml-4 inline-block">
-                  styling
-                </TextEffect>
-                .
+          <ScrollReveal direction="left" delay={0.15} className="lg:col-span-6">
+            <p className={eyebrow}>The studio</p>
+            <h2 className="flex flex-col gap-0 lg:gap-2 display-sm">
+              <span>One team,</span>
+              <span className="lg:ml-6">first sketch</span>
+              <span className="lg:ml-12">
+                to final <span className="italic text-accent">styling.</span>
               </span>
-            </H2>
-          </div>
-          <div className="space-y-6 lg:col-span-6">
-            <TextEffect
-              as="p"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              delay={0.2}>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal
+            direction="right"
+            delay={0.15}
+            className="space-y-6 lg:col-span-6">
+            <p>
               We design homes that move effortlessly between indoors and out —
               pairing striking architectural forms with interiors that feel
               collected rather than decorated.
-            </TextEffect>
-            <TextEffect
-              as="p"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              delay={0.35}>
+            </p>
+            <p>
               Whether you&apos;re building from the ground up, taking a
               residence down to the studs, or transforming a single room, the
               work is handled end to end: layout, finishes, lighting,
               furnishings, procurement, and installation. Below are the ways we
               typically engage.
-            </TextEffect>
-          </div>
+            </p>
+          </ScrollReveal>
         </div>
 
         {/* Services index header */}
