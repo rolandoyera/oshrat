@@ -17,7 +17,7 @@ export default function Why() {
         </p>
         <div className="grid md:grid-cols-3 gap-10 mt-20">
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold">Clarity of Vision.</h3>
+            <h2 className="font-semibold h3">Clarity of Vision.</h2>
             <p>
               For a client, interior design should make the process of creating
               a home feel simpler, not more complicated. That starts with a
@@ -30,7 +30,7 @@ export default function Why() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold">Designed for the Coast.</h3>
+            <h2 className="font-semibold h3">Designed for the Coast.</h2>
             <p>
               A Fort Lauderdale interior design firm has to specify for salt
               air, humidity, and the low reflected light that comes off the
@@ -44,7 +44,7 @@ export default function Why() {
             </p>
           </div>
           <div className="flex flex-col gap-4">
-            <h3 className="font-semibold">One Interior Design Firm.</h3>
+            <h2 className="font-semibold h3">One Interior Design Firm.</h2>
             <p>
               Most high-end interior design in Fort Lauderdale comes apart in
               the handoffs. We hold it together: furniture selection and
