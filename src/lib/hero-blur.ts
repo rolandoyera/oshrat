@@ -10,6 +10,8 @@
 export const HERO_BLUR: Record<string, string> = {
   "/about/Sarvian-Design-Group.jpg":
     "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoUAA0APu1iqU2ppaOiMAgBMB2JYwCdAB0+F8Dv8Mz0Lm6gAPz+hEuYW3rLbDwgzEF6dsxWLlBoWEc2mQuSShrtx17bEg9vG2Bkt5bIsi8M2TvS89xJAtqXvpZ/vPJR5fw5L3Gb0Ii1JKYQlErw4AAA",
+  "/press/bedroom-remodel-armoire-scene-lg.webp":
+    "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoUAAsAPu1iqU2ppaOiMAgBMB2JZwCdABBR+EDUKWAAAP0hnKy3NJYf3oP9zSZG146AsBRxzKogUCHT81pS1yfyCfxuujAA",
   "/projects/sdg-bedroom-remodel-armoire-7.jpg":
     "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAABQAwCdASoUAAsAPu1iqU2ppaOiMAgBMB2JZwAAHIO9YROogAD9IZystzSWH96D/c0mRxfvDjzw2RwSTMMtKw4TOjzEnrg3EnI1eP+AAAA=",
   "/about/sarvian-design-group-oshrat-rothschild-16x9.jpg":

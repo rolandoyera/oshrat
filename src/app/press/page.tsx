@@ -19,21 +19,30 @@ export default function PressPage() {
   return (
     <>
       {/* Section 1: Full-Screen Hero Editorial Cover */}
-      <section className="relative h-dvh w-full overflow-hidden bg-black">
-        <Image
-          src="/projects/sdg-bedroom-remodel-armoire-7.jpg"
-          alt="Sarvian Design Group architecture and interior showcase"
-          fill
-          priority
-          sizes="100vw"
-          quality={90}
-          placeholder="blur"
-          blurDataURL={HERO_BLUR["/projects/sdg-bedroom-remodel-armoire-7.jpg"]}
-          style={{
-            transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(1.1)`,
-          }}
-          className="object-cover"
-        />
+      <section
+        className="relative h-dvh w-full overflow-hidden bg-black bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${HERO_BLUR["/press/bedroom-remodel-armoire-scene-lg.webp"]})`,
+        }}>
+        {/* Art-directed like FadingHeroBackdrop: <source media> makes the
+            browser fetch exactly one pre-encoded crop, bypassing next/image. */}
+        <picture>
+          <source
+            media="(max-width: 1023px)"
+            srcSet="/press/bedroom-remodel-armoire-scene-sm.webp"
+          />
+          {/* eslint-disable-next-line @next/next/no-img-element -- art-directed pre-optimized webp */}
+          <img
+            src="/press/bedroom-remodel-armoire-scene-lg.webp"
+            alt="Sarvian Design Group architecture and interior showcase"
+            fetchPriority="high"
+            decoding="async"
+            style={{
+              transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(1.1)`,
+            }}
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        </picture>
         {/* Soft vertical gradient overlay (transparent at top, solid black at bottom where text sits) */}
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent pointer-events-none z-10" />
 
