@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "@/components/ui/Container";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -48,18 +49,17 @@ export default function PressPage() {
         <Container
           size="lg"
           className="flex flex-col justify-end z-20 pb-16 relative h-full">
-          {/* CSS-only entrances (tw-animate-css), not ScrollReveal: this text
-              is the page's LCP element, and a JS-gated reveal (hydrate →
-              observer → transition) pushes LCP out by seconds on mobile. */}
-          <div className="animate-in fade-in slide-in-from-top-4 fill-mode-both duration-1000 delay-100">
+          {/* topReveal: this text is the page's LCP element — the entrance
+              must be CSS-only, never gated on hydration + observer. */}
+          <ScrollReveal topReveal direction="down" delay={0}>
             <div className="max-w-250 space-y-6">
               <h2 className="eyebrow text-cream-200">
                 A Fort Lauderdale Interior Design Firm
               </h2>
               <h1 className="display text-white">Press & Media</h1>
             </div>
-          </div>
-          <div className="animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-1000 delay-200">
+          </ScrollReveal>
+          <ScrollReveal topReveal direction="up" delay={100}>
             <p className="text-taupe-100 max-w-200">
               Every project tells a story—one shaped by thoughtful architecture,
               refined interiors, and the art of creating spaces that feel both
@@ -67,7 +67,7 @@ export default function PressPage() {
               moments, publications, and press features that highlight our work
               in South Florida.
             </p>
-          </div>
+          </ScrollReveal>
         </Container>
       </section>
       <main className="px-4 lg:px-8 mb-20">
