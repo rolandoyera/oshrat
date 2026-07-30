@@ -6,6 +6,7 @@ import ServicesSection, { SERVICES } from "./_components/ServicesSection";
 import ProjectExamplesSection from "@/components/ProjectExamplesSection";
 import Cta from "@/components/Cta";
 import Why from "@/components/Why";
+import Testimonials from "@/components/Testimonials";
 
 const TITLE = "Interior Design Services in Fort Lauderdale & South Florida";
 const DESCRIPTION =
@@ -51,6 +52,7 @@ export default function Services() {
       <ServicesSection />
       <ProjectExamplesSection />
       <Cta />
+      <Testimonials />
       <Why
         subtitle="Why Sarvian Design Group"
         title="One Interior Design Firm in Fort Lauderdale for Every Scope"
