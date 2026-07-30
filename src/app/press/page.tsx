@@ -85,26 +85,26 @@ export default function PressPage() {
             <Image
               src="/press/sarvian-design-florida-design-magazine_Page_1.webp"
               alt=""
-              width={6000}
-              height={3000}
+              width={3000}
+              height={1800}
             />
             <Image
               src="/press/sarvian-design-florida-design-magazine_Page_2.webp"
               alt=""
-              width={6000}
-              height={3000}
+              width={3000}
+              height={1800}
             />
             <Image
               src="/press/sarvian-design-florida-design-magazine_Page_3.webp"
               alt=""
-              width={6000}
-              height={3000}
+              width={3000}
+              height={1800}
             />
             <Image
               src="/press/sarvian-design-florida-design-magazine_Page_4.webp"
               alt=""
-              width={6000}
-              height={3000}
+              width={3000}
+              height={1800}
             />
           </div>
         </Container>
