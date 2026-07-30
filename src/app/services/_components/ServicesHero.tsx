@@ -29,7 +29,7 @@ export default function ServicesHero() {
             direction="left"
             className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
             <h1 className="eyebrow text-cream-200">
-              Interior Design Services in Fort Lauderdale & South Florida
+              Interior Design Firm Services in Fort Lauderdale
             </h1>
 
             <h2 className="display text-white flex flex-col">
