@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Main from "@/components/ui/Main";
 import Button from "@/components/ui/Button";
 import Image from "next/image";
 import InternalTrafficCookie from "@/app/internal/_components/InternalTrafficCookie";
@@ -14,7 +13,7 @@ export default function ExternalPage() {
     <>
       <InternalTrafficCookie enabled={false} />
       <div className="h-24"></div>
-      <Main className="flex flex-col items-center justify-center min-h-screen gap-4 relative">
+      <main className="flex flex-col items-center justify-center min-h-screen gap-4 relative">
         <span className="text-2xl lg:text-5xl font-normal text-balance uppercase">
           Nobody here but us chickens
         </span>
@@ -28,7 +27,7 @@ export default function ExternalPage() {
           width={500}
           height={500}
         />
-      </Main>
+      </main>
     </>
   );
 }

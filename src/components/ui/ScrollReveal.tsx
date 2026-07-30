@@ -37,6 +37,7 @@ export default function ScrollReveal({
   children: React.ReactNode;
   className?: string;
   direction?: Direction;
+  /** Milliseconds (unlike TextEffect's delay, which is in seconds). */
   delay?: number;
   threshold?: number;
   /** Skip the reveal below md (768px) — content renders in place on mobile. */

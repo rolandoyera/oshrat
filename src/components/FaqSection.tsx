@@ -17,12 +17,12 @@ export default function FaqSection({
   return (
     <section className="bg-cream-200 pb-24 lg:py-32">
       <Container size="lg">
-        <ScrollReveal direction="up" threshold={0.3} className="text-center">
+        <ScrollReveal direction="up" delay={150} className="text-center">
           <p className="eyebrow text-accent">FAQ</p>
           <h2 className="h2">Frequently Asked Questions</h2>
         </ScrollReveal>
 
-        <ScrollReveal direction="up" delay={200} threshold={0.1}>
+        <ScrollReveal direction="up" delay={300}>
           <div className="mx-auto mt-12 max-w-300 lg:mt-16">
             <hr className="etched-line" />
             <Accordion type="single" collapsible>

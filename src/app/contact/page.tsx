@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import Container from "@/components/ui/Container";
-import H1 from "@/components/ui/H1";
-import Main from "@/components/ui/Main";
-import P from "@/components/ui/P";
 import ContactSection from "./_components/ContactSection";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
@@ -23,17 +20,17 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Main>
+    <main>
       <JsonLd data={faqPageGraph("/contact", FAQS)} />
       <div className="h-24" />
       <Container size="lg" className="mt-16">
         <div className="border-b border-border/40 pb-12 mb-4 px-8 lg:px-0">
-          <H1>Contact Us</H1>
-          <P className="mt-1">Let's make something amazing together.</P>
+          <h1 className="display">Contact Us</h1>
+          <p className="mt-1">Let's make something amazing together.</p>
         </div>
         <ContactSection formType="contact_page" linkLocation="contact_page" />
       </Container>
       <FaqSection faqs={FAQS} />
-    </Main>
+    </main>
   );
 }

@@ -10,7 +10,7 @@ import { LocationEditorial } from "./LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import Cta from "@/components/Cta";
-import Why from "./Why";
+import Why, { type WhyItem } from "@/components/Why";
 
 export interface LocationContent {
   /** Route path, e.g. "/locations/interior-designers-fort-lauderdale-fl". Feeds the FAQ JSON-LD. */
@@ -40,6 +40,12 @@ export interface LocationContent {
   };
   /** Feeds both the FAQ section and FAQPage schema — build with buildLocationFaqs. */
   faqs: { question: string; answer: string }[];
+  why: {
+    subtitle: string;
+    title: string;
+    description?: string;
+    items: WhyItem[];
+  };
   /** Lead attribution — how forms from this page are tagged in GA4 and the CRM. */
   cta: {
     location: string;
@@ -61,7 +67,7 @@ export default function LocationLanding({
 }: {
   content: LocationContent;
 }) {
-  const { hero, featuredProjects, editorial, faqs, path } = content;
+  const { hero, featuredProjects, editorial, faqs, why, path } = content;
   const image = hero.image ?? DEFAULT_HERO_IMAGE;
   const [headlineTop, headlineBottom] = hero.headline ?? DEFAULT_HEADLINE;
 
@@ -125,7 +131,7 @@ export default function LocationLanding({
         paragraphs={editorial.paragraphs}
       />
       <FaqSection faqs={faqs} />
-      <Why />
+      <Why {...why} />
     </main>
   );
 }

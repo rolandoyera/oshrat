@@ -150,7 +150,7 @@ export default function ContactSection({
         {/* Left Section: Branding & Info */}
         <div className="space-y-8">
           <div className="space-y-4">
-            <p className="text-base text-taupe-600 leading-relaxed">
+            <p>
               From grand architectural concepts to the finest custom interior
               details, we craft spaces with precision and purpose. Let's start a
               conversation about your vision.
@@ -159,7 +159,7 @@ export default function ContactSection({
 
           <div className="space-y-6 pt-6 border-t border-border/30">
             <div>
-              <p className="text-xs uppercase tracking-wider text-taupe-500 font-semibold mb-1">
+              <p className="uppercase tracking-wider text-taupe-500 font-semibold mb-1">
                 General Inquiries
               </p>
               <a
@@ -172,7 +172,7 @@ export default function ContactSection({
               </a>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wider text-taupe-500 font-semibold mb-1">
+              <p className="uppercase tracking-wider text-taupe-500 font-semibold mb-1">
                 Call Us
               </p>
               <a
@@ -198,7 +198,7 @@ export default function ContactSection({
               tabIndex={-1}
               autoComplete="new-password"
               aria-hidden="true"
-              className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+              className="absolute -left-2499.75 top-auto h-px w-px overflow-hidden"
               {...register("nickname_confirm")}
             />
 

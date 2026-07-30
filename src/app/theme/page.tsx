@@ -3,12 +3,6 @@ import MailIcon from "@/components/icons/MailIcon";
 import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 import ArrowButton from "@/components/ui/ArrowButton";
 import Container from "@/components/ui/Container";
-import H1 from "@/components/ui/H1";
-import H2 from "@/components/ui/H2";
-import H3 from "@/components/ui/H3";
-import H4 from "@/components/ui/H4";
-import Main from "@/components/ui/Main";
-import P from "@/components/ui/P";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
 
@@ -38,55 +32,55 @@ const COLOR_GROUPS = [
 
 export default function ThemePage() {
   return (
-    <Main className="bg-white pb-60">
+    <main className="bg-white pb-60">
       <div className="h-24"></div>
 
       {/* Typography */}
       <Container className="pt-30 flex flex-col gap-6 max-w-450">
-        <H3 className="mb-16">Typography</H3>
+        <h3 className="mb-16">Typography</h3>
         <div className="flex gap-8 mb-16">
           <div className="w-40 shrink-0">
-            <H4>Typeface</H4>
+            <h4>Typeface</h4>
           </div>
 
           <div className="flex flex-col gap-4">
             <p className="font-mono text-sm mb-1!">
               Font:Montserrat • Color:Taupe 700
             </p>
-            <P className="uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</P>
-            <P>abcdefghijklmnopqrstuvwxyz</P>
-            <P>1234567890</P>
+            <p className="uppercase">ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+            <p>abcdefghijklmnopqrstuvwxyz</p>
+            <p>1234567890</p>
           </div>
         </div>
 
         <div className="flex gap-8 mb-16">
           <div className="w-40 shrink-0">
-            <H4>Paragraphs</H4>
+            <h4>Paragraphs</h4>
           </div>
 
           <div className="flex flex-col gap-4">
             <p className="font-mono text-sm mb-1!">
               Size:22px • Weight:300 (light) • Line Height: 1.55
             </p>
-            <P className="w-[60%]">
+            <p className="w-[60%]">
               Sarvian designs houses, hotels, and the occasional restaurant. Six
               projects a year. Materials first.
-            </P>
+            </p>
           </div>
         </div>
 
         <div className="flex gap-8 mb-10">
           <div className="w-40 shrink-0">
-            <H4>Headings</H4>
+            <h4>Headings</h4>
           </div>
 
           <div className="flex flex-col gap-4 mt-1">
             <p className="font-mono text-sm mb-1!">
               Heading 1 • Size:72px • Weight:400 (regular)
             </p>
-            <H1 className="w-[70%]">
+            <h1 className="w-[70%]">
               We design houses for people that live in them.
-            </H1>
+            </h1>
           </div>
         </div>
 
@@ -97,9 +91,9 @@ export default function ThemePage() {
             <p className="font-mono text-sm mb-1!">
               Heading 2 • Size:48px • Weight:400 (regular)
             </p>
-            <H2 className="w-[70%]">
+            <h2 className="w-[70%]">
               We design houses for people that live in them.
-            </H2>
+            </h2>
           </div>
         </div>
 
@@ -109,9 +103,9 @@ export default function ThemePage() {
             <p className="font-mono text-sm mb-1!">
               Heading 3 • Size:36px • Weight:400 (regular)
             </p>
-            <H3 className="w-[70%]">
+            <h3 className="w-[70%]">
               We design houses for people that live in them.
-            </H3>
+            </h3>
           </div>
         </div>
       </Container>
@@ -120,11 +114,11 @@ export default function ThemePage() {
 
       {/* Colors */}
       <Container className="flex flex-col gap-6 max-w-450">
-        <H3 className="mb-16">Colors</H3>
+        <h3 className="mb-16">Colors</h3>
         {COLOR_GROUPS.map((group) => (
           <div key={group.name} className="flex gap-8 mb-16">
             <div className="w-40 shrink-0">
-              <H4>{group.name}</H4>
+              <h4>{group.name}</h4>
             </div>
             {group.swatches.map((swatch) => (
               <div key={swatch.label} className="w-50 h-50">
@@ -141,38 +135,38 @@ export default function ThemePage() {
 
       {/* Color Usage  */}
       <Container className="flex flex-col gap-6 max-w-450">
-        <H3 className="mb-16">Color Usage</H3>
+        <h3 className="mb-16">Color Usage</h3>
 
         {/*Surfaces*/}
         <div className="flex gap-8 mb-26">
           <div className="w-40 shrink-0">
-            <H4>Surfaces</H4>
+            <h4>Surfaces</h4>
           </div>
           <div className="w-1/2 h-100">
             <div className="bg-cream-100 w-full h-full rounded p-2 shadow">
-              <P className="text-center mb-12">Site Background</P>
+              <p className="text-center mb-12">Site Background</p>
               <div className="flex flex-col gap-2 px-6">
-                <H3 className="mb-4">
+                <h3 className="mb-4">
                   Architectural & <br />
                   Interior Design Firm
-                </H3>
+                </h3>
 
-                <P>
+                <p>
                   We shape spaces where life unfolds. Blending architecture,
                   interiors, and landscape, we craft environments that reflect
                   purpose, enhance well-being, and inspire connection.
-                </P>
+                </p>
               </div>
             </div>
             <p className="text-sm font-mono">Cream 100</p>
           </div>
           <div className="w-1/2 h-100">
             <div className="bg-cream-200 w-full h-full rounded p-2 shadow">
-              <P className="text-center mb-12">Cards</P>
+              <p className="text-center mb-12">Cards</p>
               <div className="flex flex-col gap-2 px-6">
-                <H3 className="-mb-2">The Shul- Bal Harbour</H3>
+                <h3 className="-mb-2">The Shul- Bal Harbour</h3>
 
-                <P className="mb-12">Bal Harbour, FL</P>
+                <p className="mb-12">Bal Harbour, FL</p>
                 <div className="flex justify-between pb-2 relative">
                   <div className="absolute left-0 right-0 bottom-0 h-px bg-border/40" />
                   <div className="absolute left-0 right-0 -bottom-px h-px bg-white" />
@@ -201,12 +195,12 @@ export default function ThemePage() {
         {/*Backgrounds*/}
         <div className="flex gap-8 mb-26">
           <div className="w-40 shrink-0">
-            <H4>Backgrounds</H4>
+            <h4>Backgrounds</h4>
           </div>
 
           <div className="w-1/2 h-50">
             <div className="bg-linear-to-b from-taupe-900 to-taupe-800 w-full h-full rounded p-2 shadow">
-              <P className="text-center mb-12 text-cream-300">Navbar</P>
+              <p className="text-center mb-12 text-cream-300">Navbar</p>
               <div className="flex flex-col gap-2 px-6">
                 <Image
                   src="/assets/logo_sdg-horizontal.svg"
@@ -228,7 +222,7 @@ export default function ThemePage() {
           </div>
           <div className="w-1/2 h-100">
             <div className="bg-linear-to-b from-taupe-800/95 to-taupe-900 w-full h-full rounded p-2 shadow">
-              <P className="text-center mb-12 text-cream-300">Footer</P>
+              <p className="text-center mb-12 text-cream-300">Footer</p>
               <div className="flex flex-col gap-2 px-6">
                 <Image
                   className="mx-auto brightness-0 invert"
@@ -279,7 +273,7 @@ export default function ThemePage() {
         {/*Buttons*/}
         <div className="flex gap-8 mb-26">
           <div className="w-40 shrink-0">
-            <H4>Buttons</H4>
+            <h4>Buttons</h4>
           </div>
           <div className="w-80 h-20 flex flex-col items-center justify-center">
             <ArrowButton direction="right" className="px-12">
@@ -302,11 +296,11 @@ export default function ThemePage() {
         <div className="h-px bg-border/60 w-full my-40 max-w-450 mx-auto"></div>
 
         <div className="flex flex-col items-center justify-center gap-4 pb-20">
-          <H3 className="text-center">Design System Documentation</H3>
-          <P className="text-center text-taupe-600 max-w-2xl">
+          <h3 className="text-center">Design System Documentation</h3>
+          <p className="text-center text-taupe-600 max-w-2xl">
             View the complete design reference manual, code tokens,
             copy-to-clipboard swatches, and development checklist guidelines.
-          </P>
+          </p>
           <ArrowButton
             href="/theme/guidelines"
             variant="primary"
@@ -315,6 +309,6 @@ export default function ThemePage() {
           </ArrowButton>
         </div>
       </Container>
-    </Main>
+    </main>
   );
 }

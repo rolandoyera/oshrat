@@ -18,7 +18,6 @@ import ProjectDescription from "./project-description";
 import ProjectGallery, { type GalleryImage } from "./project-gallery";
 import { JsonLd, projectPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
-import H2 from "@/components/ui/H2";
 import Cta from "@/components/Cta";
 
 /* -------------------- Types -------------------- */
@@ -289,12 +288,12 @@ export default async function ProjectPage({
           <aside className="xl:col-span-4">
             <div className="xl:sticky xl:top-22">
               <div className="bg-card p-2 sm:p-4 md:p-8 rounded-xs shadow">
-                <H2 as="h1">
+                <h1 className="h2">
                   {data.title}
                   {data.location && (
                     <span className="block -mb-4 p">{data.location}</span>
                   )}
-                </H2>
+                </h1>
                 <div className="my-10 lg:my-16 space-y-2">
                   <div className="flex justify-between pb-2 relative">
                     <div className="absolute left-0 right-0 bottom-0 h-px bg-border/30" />

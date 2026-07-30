@@ -2,7 +2,6 @@ import { Fragment } from "react";
 import Image from "next/image";
 import Container from "@/components/ui/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { TextEffect } from "@/components/motion-primitives/text-effect";
 
 interface Service {
   index: string;
@@ -141,7 +140,7 @@ export default function ServicesSection() {
       <Container size="lg">
         {/* Intro */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:mt-38">
-          <ScrollReveal direction="left" delay={0.15} className="lg:col-span-6">
+          <ScrollReveal direction="left" delay={150} className="lg:col-span-6">
             <p className={eyebrow}>The studio</p>
             <h2 className="flex flex-col gap-0 lg:gap-2 display-sm">
               <span>One team,</span>
@@ -153,7 +152,7 @@ export default function ServicesSection() {
           </ScrollReveal>
           <ScrollReveal
             direction="right"
-            delay={0.15}
+            delay={150}
             className="space-y-6 lg:col-span-6">
             <p>
               We design homes that move effortlessly between indoors and out —
@@ -172,40 +171,17 @@ export default function ServicesSection() {
 
         {/* Services index header */}
         <div className="flex items-end justify-between pb-6 mt-20 lg:mt-60">
-          <div>
-            <TextEffect
-              as="p"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              className={eyebrow}>
-              What we do
-            </TextEffect>
-            <TextEffect
-              as="h2"
-              per="word"
-              preset="fade-in-blur"
-              speedReveal={5}
-              speedSegment={0.3}
-              inView
-              delay={0.15}
-              className="text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
+          <ScrollReveal direction="left" delay={150}>
+            <p className={eyebrow}>What we do</p>
+            <h2 className="text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
               Services
-            </TextEffect>
-          </div>
-          <TextEffect
-            as="p"
-            per="word"
-            preset="fade-in-blur"
-            speedReveal={5}
-            speedSegment={0.3}
-            inView
-            delay={0.2}
-            className="text-xs uppercase tracking-[0.2em] text-foreground">
-            Schedule — 07 Engagements
-          </TextEffect>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal direction="right" delay={150}>
+            <p className="text-xs uppercase tracking-[0.2em] text-foreground">
+              Schedule — 07 Engagements
+            </p>
+          </ScrollReveal>
         </div>
         <hr className="etched-line" />
 
@@ -215,7 +191,7 @@ export default function ServicesSection() {
             <Fragment key={service.index}>
               <ScrollReveal
                 direction={index % 2 === 0 ? "left" : "right"}
-                threshold={0.6}>
+                threshold={0.5}>
                 <article className="grid grid-cols-1 py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
                   <div className="lg:col-span-1">
                     <span className="eyebrow">{service.index}</span>
@@ -245,7 +221,7 @@ export default function ServicesSection() {
                   </div>
 
                   <div className="lg:col-span-5">
-                    <div className="relative aspect-5/4 w-full overflow-hidden rounded">
+                    <div className="relative aspect-5/4 w-full overflow-hidden rounded-xs">
                       <Image
                         src={service.image}
                         alt={service.imageAlt}

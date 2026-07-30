@@ -8,7 +8,7 @@ import { SERVICES } from "../services/_components/ServicesSection";
 export default function ServicesBridge() {
   return (
     <Container size="lg" className="grid grid-cols-1 gap-16 xl:grid-cols-2">
-      <ScrollReveal direction="up" threshold={0.3}>
+      <ScrollReveal direction="left">
         <p className="eyebrow">What We Do</p>
         <h2 className="h1">Our Services</h2>
         <p>
@@ -29,7 +29,7 @@ export default function ServicesBridge() {
         </p>
       </ScrollReveal>
 
-      <ScrollReveal direction="up" delay={200} threshold={0.1}>
+      <ScrollReveal direction="right" delay={200}>
         <div className="mx-auto max-w-300">
           <hr className="etched-line" />
           {SERVICES.map((service) => (
@@ -41,9 +41,6 @@ export default function ServicesBridge() {
                   {service.index}
                 </span>
                 <span>
-                  {/* lg:leading-9 keeps the row height an integer (text-3xl ×
-                      leading-tight = 37.5px) so the 1px row borders land on
-                      whole pixels and render uniformly. */}
                   <span className="block text-2xl font-normal leading-tight tracking-tight text-foreground lg:text-3xl lg:leading-9">
                     {service.title}
                   </span>

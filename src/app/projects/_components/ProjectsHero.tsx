@@ -3,12 +3,12 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function ProjectsHero() {
   return (
-    <section className="flex min-h-[50dvh] w-full items-center bg-cream-200 pt-24">
+    <section className="flex min-h-[40dvh] w-full items-center bg-cream-200 mt-24">
       <Container size="lg" className="w-full ">
-        <div className="grid grid-cols-1 items-center gap-10 py-24 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-10 pt-12 lg:py-24 lg:grid-cols-12 lg:gap-12">
           <ScrollReveal
             direction="left"
-            className="space-y-6 xl:space-y-10 xl:col-span-8">
+            className="space-y-6 lg:space-y-10 lg:col-span-8">
             <h1 className="eyebrow">
               Our Featured Interior Design Projects — South Florida
             </h1>

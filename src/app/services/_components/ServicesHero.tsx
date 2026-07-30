@@ -32,19 +32,18 @@ export default function ServicesHero() {
               Interior Design Services in Fort Lauderdale & South Florida
             </h1>
 
-            <h2 className="display uppercase text-white">
+            <h2 className="display text-white flex flex-col">
               <span className="block">Interior</span>
-              <span className="relative inline-flex flex-wrap items-baseline">
-                <span className="mr-4">design,</span>
-                <span className="italic text-accent mr-4">fully</span>
-                <span>considered.</span>
+              <span className="mr-4">
+                design, <span className="italic text-accent mr-4">fully</span>
               </span>
+              <span>considered.</span>
             </h2>
 
             <p className="max-w-xl text-cream-100">
-              A full-service studio for residential interiors, renovations, and
-              new construction across Broward, Palm Beach, and Miami-Dade
-              counties.
+              A full-service interior design firm for residential and commercial
+              interiors, renovations, and new construction across Broward, Palm
+              Beach, and Miami-Dade counties.
             </p>
           </ScrollReveal>
           <ScrollReveal direction="right" className="lg:col-span-4">

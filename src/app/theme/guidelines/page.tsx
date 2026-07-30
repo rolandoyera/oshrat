@@ -2,12 +2,6 @@
 
 import { useState } from "react";
 import Container from "@/components/ui/Container";
-import H1 from "@/components/ui/H1";
-import H2 from "@/components/ui/H2";
-import H3 from "@/components/ui/H3";
-import H4 from "@/components/ui/H4";
-import Main from "@/components/ui/Main";
-import P from "@/components/ui/P";
 import ArrowButton from "@/components/ui/ArrowButton";
 import Link from "next/link";
 import {
@@ -110,7 +104,7 @@ export default function GuidelinesPage() {
   };
 
   return (
-    <Main className="bg-white pb-40">
+    <main className="bg-white pb-40">
       <div className="h-24"></div>
 
       <Container className="max-w-350 mt-16 px-4 md:px-8">
@@ -128,14 +122,14 @@ export default function GuidelinesPage() {
 
         {/* Hero Title */}
         <div className="border-b border-border/40 pb-12 mb-16">
-          <H1 className="mb-4">Design System</H1>
-          <P className="text-taupe-600 max-w-4xl">
+          <h1 className="mb-4">Design System</h1>
+          <p className="text-taupe-600 max-w-4xl">
             Official typography tokens, harmonic color guidelines, component
             standards, and architectural design principles powering the{" "}
             <span className="text-accent font-bold">Sarvian Design Group</span>{" "}
             identity. Use this documentation to create unified and premium
             digital spaces.
-          </P>
+          </p>
         </div>
 
         {/* Core Layout Grid: Left Sticky Nav, Right Content */}
@@ -173,7 +167,7 @@ export default function GuidelinesPage() {
               </a>
 
               <div className="mt-8 p-6 bg-cream-200 rounded border border-border/40">
-                <H4 className="mb-2 text-base">Developer Tools</H4>
+                <h4 className="mb-2 text-base">Developer Tools</h4>
                 <p className="text-xs text-taupe-600 leading-relaxed mb-4">
                   Theme constants are centrally managed in Tailwind classes and
                   globals.
@@ -200,18 +194,18 @@ export default function GuidelinesPage() {
             <section id="typography" className="scroll-mt-28">
               <div className="flex items-center gap-3 mb-6 border-b border-border/30 pb-3">
                 <Type className="text-accent" size={24} />
-                <H2 className="text-2xl lg:text-3xl font-semibold m-0">
+                <h2 className="text-2xl lg:text-3xl font-semibold m-0">
                   1. Typography Guidelines
-                </H2>
+                </h2>
               </div>
 
-              <P className="mb-8 text-taupe-600">
+              <p className="mb-8 text-taupe-600">
                 Our design focuses on lightweight typography and loose leading
                 to convey a minimalist, open-concept feel. We strictly use{" "}
                 <span className="font-semibold text-taupe-800">Montserrat</span>{" "}
                 for standard copy and headings, and monospaced configurations
                 for structured details.
-              </P>
+              </p>
 
               {/* Typography Preview Grid */}
               <div className="bg-cream-200 border border-border/40 rounded p-8 flex flex-col gap-8 shadow-sm">
@@ -224,7 +218,7 @@ export default function GuidelinesPage() {
                       weight: 400 • line-height: 1.1
                     </span>
                   </div>
-                  <H1>We design houses for people that live in them.</H1>
+                  <h1>We design houses for people that live in them.</h1>
                 </div>
 
                 <div className="pb-6 border-b border-border/40">
@@ -236,7 +230,7 @@ export default function GuidelinesPage() {
                       weight: 400 • line-height: 1.15
                     </span>
                   </div>
-                  <H2>We design houses for people that live in them.</H2>
+                  <h2>We design houses for people that live in them.</h2>
                 </div>
 
                 <div className="pb-6 border-b border-border/40">
@@ -248,7 +242,7 @@ export default function GuidelinesPage() {
                       weight: 400 • line-height: 1.2
                     </span>
                   </div>
-                  <H3>We design houses for people that live in them.</H3>
+                  <h3>We design houses for people that live in them.</h3>
                 </div>
 
                 <div className="pb-6 border-b border-border/40">
@@ -260,10 +254,10 @@ export default function GuidelinesPage() {
                       weight: 300 • line-height: 1.55
                     </span>
                   </div>
-                  <P>
+                  <p>
                     Sarvian designs houses, hotels, and the occasional
                     restaurant. Six projects a year. Materials first.
-                  </P>
+                  </p>
                 </div>
 
                 <div>
@@ -286,23 +280,23 @@ export default function GuidelinesPage() {
             <section id="colors" className="scroll-mt-28">
               <div className="flex items-center gap-3 mb-6 border-b border-border/30 pb-3">
                 <Palette className="text-accent" size={24} />
-                <H2 className="text-2xl lg:text-3xl font-semibold m-0">
+                <h2 className="text-2xl lg:text-3xl font-semibold m-0">
                   2. Organic Color System
-                </H2>
+                </h2>
               </div>
 
-              <P className="mb-8 text-taupe-600">
+              <p className="mb-8 text-taupe-600">
                 Inspired by natural stone, wood, sand, and architectural
                 materials. Tap any swatch value or Tailwind utility to copy it
                 instantly.
-              </P>
+              </p>
 
               <div className="flex flex-col gap-12">
                 {COLOR_GROUPS.map((group) => (
                   <div
                     key={group.name}
                     className="bg-cream-200 border border-border/40 rounded p-8 shadow-sm">
-                    <H3 className="mb-2 text-xl font-medium">{group.name}</H3>
+                    <h3 className="mb-2 text-xl font-medium">{group.name}</h3>
                     <p className="text-sm text-taupe-600 mb-6">
                       {group.description}
                     </p>
@@ -390,15 +384,15 @@ export default function GuidelinesPage() {
             <section id="usage" className="scroll-mt-28">
               <div className="flex items-center gap-3 mb-6 border-b border-border/30 pb-3">
                 <Layout className="text-accent" size={24} />
-                <H2 className="text-2xl lg:text-3xl font-semibold m-0">
+                <h2 className="text-2xl lg:text-3xl font-semibold m-0">
                   3. Surfaces & Layout Gradients
-                </H2>
+                </h2>
               </div>
 
-              <P className="mb-8 text-taupe-600">
+              <p className="mb-8 text-taupe-600">
                 To create contrast and premium depth, layout surfaces must
                 adhere strictly to these gradient and background structures:
-              </P>
+              </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Navbar Card */}
@@ -407,7 +401,7 @@ export default function GuidelinesPage() {
                     <span className="text-[11px] font-mono bg-cream-300 text-taupe-800 px-2 py-0.5 rounded uppercase font-medium">
                       Header / Navigation Bar
                     </span>
-                    <H4 className="mt-4 mb-2">Gradient: Taupe 900 to 800</H4>
+                    <h4 className="mt-4 mb-2">Gradient: Taupe 900 to 800</h4>
                     <p className="text-sm text-taupe-600 leading-relaxed mb-6">
                       Frames the page top with robust dark contrast. Translates
                       to clean visibility of logos and links.
@@ -426,7 +420,7 @@ export default function GuidelinesPage() {
                     <span className="text-[11px] font-mono bg-cream-300 text-taupe-800 px-2 py-0.5 rounded uppercase font-medium">
                       Footer Surface
                     </span>
-                    <H4 className="mt-4 mb-2">Gradient: Taupe 800 to 900</H4>
+                    <h4 className="mt-4 mb-2">Gradient: Taupe 800 to 900</h4>
                     <p className="text-sm text-taupe-600 leading-relaxed mb-6">
                       Provides a heavy visual baseline at the bottom of pages,
                       blending seamlessly into dark page endpoints.
@@ -445,7 +439,7 @@ export default function GuidelinesPage() {
                     <span className="text-[11px] font-mono bg-cream-300 text-taupe-800 px-2 py-0.5 rounded uppercase font-medium">
                       Site Canvas
                     </span>
-                    <H4 className="mt-4 mb-2">Background: Cream 100</H4>
+                    <h4 className="mt-4 mb-2">Background: Cream 100</h4>
                     <p className="text-sm text-taupe-600 leading-relaxed mb-6">
                       Standard background for high visibility of large
                       architectural portfolio photography.
@@ -464,7 +458,7 @@ export default function GuidelinesPage() {
                     <span className="text-[11px] font-mono bg-cream-300 text-taupe-800 px-2 py-0.5 rounded uppercase font-medium">
                       Elevated Content Surfaces
                     </span>
-                    <H4 className="mt-4 mb-2">Background: Cream 200</H4>
+                    <h4 className="mt-4 mb-2">Background: Cream 200</h4>
                     <p className="text-sm text-taupe-600 leading-relaxed mb-6">
                       Creates structural elevation for secondary information
                       blocks, text overlays, and specification grids.
@@ -483,19 +477,19 @@ export default function GuidelinesPage() {
             <section id="ui-elements" className="scroll-mt-28">
               <div className="flex items-center gap-3 mb-6 border-b border-border/30 pb-3">
                 <Terminal className="text-accent" size={24} />
-                <H2 className="text-2xl lg:text-3xl font-semibold m-0">
+                <h2 className="text-2xl lg:text-3xl font-semibold m-0">
                   4. UI Component Library Standards
-                </H2>
+                </h2>
               </div>
 
-              <P className="mb-8 text-taupe-600">
+              <p className="mb-8 text-taupe-600">
                 Core interactive controls must use standardized theme
                 structures. The primary control element is the animated{" "}
                 <code className="bg-cream-300 text-taupe-800 px-1 rounded">
                   ArrowButton
                 </code>{" "}
                 component.
-              </P>
+              </p>
 
               <div className="bg-cream-200 border border-border/40 rounded p-8 flex flex-col gap-10 shadow-sm">
                 {/* Variant 1: Primary */}
@@ -504,7 +498,7 @@ export default function GuidelinesPage() {
                     <span className="text-xs font-mono text-accent uppercase tracking-wider">
                       Button Variant: Primary
                     </span>
-                    <H4 className="text-lg">Gold to Taupe 800</H4>
+                    <h4 className="text-lg">Gold to Taupe 800</h4>
                     <p className="text-xs text-taupe-600 leading-relaxed">
                       Reserved strictly for major actions like submitting forms,
                       contacts, and starts.
@@ -526,7 +520,7 @@ export default function GuidelinesPage() {
                     <span className="text-xs font-mono text-accent uppercase tracking-wider">
                       Button Variant: Secondary
                     </span>
-                    <H4 className="text-lg">Taupe 800 to Gold</H4>
+                    <h4 className="text-lg">Taupe 800 to Gold</h4>
                     <p className="text-xs text-taupe-600 leading-relaxed">
                       Used for secondary triggers, paging, back buttons, and
                       carousel slides.
@@ -548,17 +542,17 @@ export default function GuidelinesPage() {
             <section id="best-practices" className="scroll-mt-28">
               <div className="flex items-center gap-3 mb-6 border-b border-border/30 pb-3">
                 <ShieldAlert className="text-accent" size={24} />
-                <H2 className="text-2xl lg:text-3xl font-semibold m-0">
+                <h2 className="text-2xl lg:text-3xl font-semibold m-0">
                   5. Best Practices Checklist
-                </H2>
+                </h2>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Standard Rules */}
                 <div className="bg-cream-200 border border-border/40 rounded p-8 shadow-sm flex flex-col gap-4">
-                  <H4 className="text-base text-accent font-semibold flex items-center gap-2">
+                  <h4 className="text-base text-accent font-semibold flex items-center gap-2">
                     <Check size={16} className="text-green-600" /> Coding Do's
-                  </H4>
+                  </h4>
                   <ul className="text-sm text-taupe-700 flex flex-col gap-3 list-none pl-0">
                     <li className="flex gap-2">
                       <span className="text-accent">•</span>
@@ -588,10 +582,10 @@ export default function GuidelinesPage() {
 
                 {/* Anti-Patterns */}
                 <div className="bg-cream-200 border border-border/40 rounded p-8 shadow-sm flex flex-col gap-4">
-                  <H4 className="text-base text-red-700 font-semibold flex items-center gap-2">
+                  <h4 className="text-base text-red-700 font-semibold flex items-center gap-2">
                     <ShieldAlert size={16} className="text-red-700" /> Coding
                     Don'ts
-                  </H4>
+                  </h4>
                   <ul className="text-sm text-taupe-700 flex flex-col gap-3 list-none pl-0">
                     <li className="flex gap-2 text-red-900/90">
                       <span className="text-red-700">•</span>
@@ -625,6 +619,6 @@ export default function GuidelinesPage() {
           </div>
         </div>
       </Container>
-    </Main>
+    </main>
   );
 }

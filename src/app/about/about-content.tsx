@@ -39,24 +39,29 @@ export default function AboutContent() {
           className="object-cover"
         />
         {/* Soft vertical gradient overlay (transparent at top, solid black at bottom where text sits) */}
-        <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent via-40% pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent via-40% pointer-events-none z-1" />
 
         {/* Text and Title Overlay - aligned to bottom-left */}
-        <div className="absolute inset-0 flex items-end z-20 pb-16 px-6">
-          <ScrollReveal className="mx-auto max-w-350 w-full">
-            <div className="max-w-200 space-y-6">
-              <p className="eyebrow text-cream-200">About {SITE.name}</p>
-              <h1 className="display text-white">
-                A Fort Lauderdale Interior Design Firm
+
+        <Container
+          size="lg"
+          className="flex flex-col justify-end z-20 pb-16 relative h-full">
+          <ScrollReveal direction="down" delay={100}>
+            <div className="max-w-250 space-y-6">
+              <h1 className="eyebrow text-cream-200">
+                Fort Lauderdale Interior Design Firm{" "}
               </h1>
-              <p className="text-taupe-100">
-                Blending striking architectural forms with thoughtfully curated
-                interiors, Sarvian Design Group creates South Florida homes that
-                unite nature and design into one harmonious experience.
-              </p>
+              <p className="display text-white">{SITE.name}</p>
             </div>
           </ScrollReveal>
-        </div>
+          <ScrollReveal direction="up" delay={250}>
+            <p className="text-taupe-100 max-w-200">
+              Blending striking architectural forms with thoughtfully curated
+              interiors, Sarvian Design Group creates South Florida homes that
+              unite nature and design into one harmonious experience.
+            </p>
+          </ScrollReveal>
+        </Container>
       </section>
 
       {/* Rest of the content wrapped in standard container */}
