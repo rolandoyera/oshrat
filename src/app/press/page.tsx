@@ -81,25 +81,25 @@ export default function PressPage() {
               height={1069}
             />
             <Image
-              src="/assets/sarvian-design-florida-design-magazine_Page_1.jpg"
+              src="/press/sarvian-design-florida-design-magazine_Page_1.webp"
               alt=""
               width={6000}
               height={3000}
             />
             <Image
-              src="/assets/sarvian-design-florida-design-magazine_Page_2.jpg"
+              src="/press/sarvian-design-florida-design-magazine_Page_2.webp"
               alt=""
               width={6000}
               height={3000}
             />
             <Image
-              src="/assets/sarvian-design-florida-design-magazine_Page_3.jpg"
+              src="/press/sarvian-design-florida-design-magazine_Page_3.webp"
               alt=""
               width={6000}
               height={3000}
             />
             <Image
-              src="/assets/sarvian-design-florida-design-magazine_Page_4.jpg"
+              src="/press/sarvian-design-florida-design-magazine_Page_4.webp"
               alt=""
               width={6000}
               height={3000}
