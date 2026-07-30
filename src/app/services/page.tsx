@@ -26,7 +26,7 @@ const WHY_ITEMS = [
   {
     title: "Every Scope, Same Process.",
     description:
-      "Interior design projects rarely arrive the same size. Residential interior design for a waterfront estate, a full home renovation taken down to the studs, new construction drawn alongside your architect, or a single room that needs to come together quickly — each engagement runs the same process, scaled to fit. You are not carrying a whole-home scope to get a kitchen design resolved, and you are not getting a thinner version of our interior design services because the room count is lower. Every one of the seven ways we work across Fort Lauderdale and South Florida starts with how the home is actually used, then moves outward from there.",
+      "Interior design projects rarely arrive the same size. Residential interior design for a waterfront estate, a full home renovation taken down to the studs, new construction drawn alongside your architect, or a single room that needs to come together quickly — each engagement runs the same process, scaled to fit. You are not carrying a whole-home scope to get a kitchen design resolved, and you are not getting a thinner version of our interior design firm services because the room count is lower. Every one of the seven ways we work across Fort Lauderdale and South Florida starts with how the home is actually used, then moves outward from there.",
   },
   {
     title: "Detailed, Not Decorated.",
@@ -56,7 +56,7 @@ export default function Services() {
       <Why
         subtitle="Why Sarvian Design Group"
         title="One Interior Design Firm in Fort Lauderdale for Every Scope"
-        description="We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a single room, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
+        description="We don’t try to be the right interior designers for every project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a luxurious kitchen design, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
         items={WHY_ITEMS}
       />
     </>
