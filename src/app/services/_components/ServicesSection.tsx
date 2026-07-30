@@ -77,6 +77,7 @@ export const SERVICES: Service[] = [
       "Stone & surfaces",
       "Appliance planning",
       "Task lighting",
+      "Luxury Kitchen Design",
     ],
     fig: "Fig. 04 — Kitchen",
     image: "/services/kitchen-design.jpg",
@@ -89,7 +90,13 @@ export const SERVICES: Service[] = [
     category: "Single space",
     description:
       "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience — the goal is a room that feels as good to be in as it looks.",
-    tags: ["Stone & tile", "Fixtures", "Vanities", "Layered lighting"],
+    tags: [
+      "Stone & tile",
+      "Fixtures",
+      "Vanities",
+      "Layered lighting",
+      "Luxury Bathroom Design",
+    ],
     fig: "Fig. 05 — Bath",
     image: "/services/bathroom-design.jpg",
     imageAlt:
