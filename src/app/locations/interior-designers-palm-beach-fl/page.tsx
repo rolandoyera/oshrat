@@ -5,8 +5,19 @@ import Container from "@/components/ui/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import Cta from "@/components/Cta";
+import { useEffect, useState } from "react";
 
 export default function Page() {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <main>
       <section className="relative aspect-16/7.5 mt-26 w-full overflow-hidden bg-black">
