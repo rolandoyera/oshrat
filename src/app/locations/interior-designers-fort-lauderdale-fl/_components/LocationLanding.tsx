@@ -1,4 +1,4 @@
-import Container from "@/components/ui/Container";
+﻿import Container from "@/components/ui/Container";
 import FadingHeroBackdrop from "./FadingHeroBackdrop";
 import HeroScrollColor from "./HeroScrollColor";
 import { HERO_BLUR } from "@/lib/hero-blur";
@@ -85,7 +85,7 @@ export default function LocationLanding({
           <HeroScrollColor>
             <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-6 lg:pb-12">
               <ScrollReveal
-                mobileStatic
+                mobileReveal
                 direction="up"
                 className="lg:col-span-8 text-white">
                 <h1 className="text-sm uppercase font-medium tracking-[0.2em] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-200))] mb-2">
@@ -104,7 +104,7 @@ export default function LocationLanding({
                 </h2>
               </ScrollReveal>
               <ScrollReveal
-                mobileStatic
+                mobileReveal
                 direction="up"
                 className="lg:col-span-4 text-white">
                 <p className="text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">

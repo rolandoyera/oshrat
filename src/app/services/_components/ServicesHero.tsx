@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Container from "@/components/ui/Container";
@@ -25,7 +25,7 @@ export default function ServicesHero() {
       <Container size="lg" className="relative z-10 w-full">
         <div className="grid grid-cols-1 items-center gap-10 py-24 lg:grid-cols-12 lg:gap-12">
           <ScrollReveal
-            mobileStatic
+            mobileReveal
             direction="left"
             className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
             <h1 className="eyebrow text-cream-200">
