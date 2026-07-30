@@ -7,6 +7,7 @@ export default function ProjectsHero() {
       <Container size="lg" className="w-full ">
         <div className="grid grid-cols-1 items-center gap-10 pt-12 lg:py-24 lg:grid-cols-12 lg:gap-12">
           <ScrollReveal
+            topReveal
             direction="left"
             className="space-y-6 lg:space-y-10 lg:col-span-8">
             <h1 className="eyebrow">
@@ -23,7 +24,7 @@ export default function ProjectsHero() {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal direction="right" className="lg:col-span-4">
+          <ScrollReveal topReveal direction="right" className="lg:col-span-4">
             <dl className="lg:pl-12 hidden lg:block">
               <dt className="eyebrow mb-2">Locations</dt>
               <dd className="text-xl">Miami to Palm Beach & Beyond</dd>

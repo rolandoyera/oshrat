@@ -23,19 +23,19 @@ export const revalidate = 60;
 
 const WHY_ITEMS = [
   {
-    title: "Clarity of Vision.",
+    title: "Every Scope, Same Process.",
     description:
-      "For a client, interior design should make the process of creating a home feel simpler, not more complicated. That starts with a clear point of view, and it stays clear because the next step always relates to something already decided. Space planning, mood boards, finish palettes, lighting plans, millwork drawings, and 3D renderings all trace back to that one idea, so nothing on your Fort Lauderdale interior design project gets specified twice or decided by default.",
+      "Interior design projects rarely arrive the same size. Residential interior design for a waterfront estate, a full home renovation taken down to the studs, new construction drawn alongside your architect, or a single room that needs to come together quickly — each engagement runs the same process, scaled to fit. You are not carrying a whole-home scope to get a kitchen design resolved, and you are not getting a thinner version of our interior design services because the room count is lower. Every one of the seven ways we work across Fort Lauderdale and South Florida starts with how the home is actually used, then moves outward from there.",
   },
   {
-    title: "Designed for the Coast.",
+    title: "Detailed, Not Decorated.",
     description:
-      "A Fort Lauderdale interior design firm has to specify for salt air, humidity, and the low reflected light that comes off the water most of the year. We choose natural stone, hardwoods, textiles, and hardware that hold up to it, and we plan around impact glass, deep terraces, and hurricane-season delivery windows. It is the difference between luxury interior design that photographs well in March and a waterfront home in Las Olas Isles, Rio Vista, or Harbor Beach that still reads right in its fifth year.",
+      "The difference between good and great interior designs lives in the parts nobody photographs: cabinetry that lands on the right sightline, stone chosen slab by slab, task lighting planned before the ceiling closes, custom furnishings drawn to the millimeter and built by artisans we have worked with for years. Our kitchen design, bathroom design, and millwork drawings are specified at that level because luxury interior design that only resolves in a rendering is not finished work. It is also what lets a room read as gathered over time rather than staged for a photograph.",
   },
   {
     title: "One Interior Design Firm.",
     description:
-      "Most high-end interior design in Fort Lauderdale comes apart in the handoffs. We hold it together: furniture selection and procurement, custom millwork and built-ins, art and home decor, styling and staging through final installation, with living room, primary suite, kitchen, bath, and home office resolved as one home rather than six separate rooms. We coordinate directly with your architect and contractor across Broward County, and you keep a single point of accountability the whole way through.",
+      "Most high-end interior design comes apart in the handoffs. We hold it together: space planning, finish palettes, lighting plans, and 3D renderings through procurement, custom built-ins, art and styling, and final installation — with living room, primary suite, kitchen, bath, and home office resolved as one home rather than six separate rooms. We coordinate directly with your architect, contractor, and trades to protect the design intent on site across Broward, Palm Beach, and Miami-Dade. One studio of interior designers, one point of accountability, from the first walkthrough to the day the art is hung.",
   },
 ];
 
@@ -53,8 +53,8 @@ export default function Services() {
       <Cta />
       <Why
         subtitle="Why Sarvian Design Group"
-        title="Amongst the Best Interior Designers in Fort Lauderdale"
-        description="We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for we’re known for delivering something that feels deeply intentional. We keep the big picture of the interior design project in view while managing the details that make the difference."
+        title="Interior Designers in Fort Lauderdale for Every Scope"
+        description="We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a single room, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
         items={WHY_ITEMS}
       />
     </>

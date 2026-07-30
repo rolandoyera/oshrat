@@ -54,7 +54,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
     {
       title: "Discovery and Vision",
       content:
-        "We start by understanding your goals, lifestyle, and budget, then walk the site to assess its opportunities. Together we shape the aesthetic direction, indoor–outdoor flow, and functional needs for every space. You'll leave with a concise project brief — scope, priorities, mood references, timeline, and phasing options.",
+        "We start by understanding your goals, lifestyle, and budget, then walk the site to assess its opportunities for the interior design. Together we shape the aesthetic direction, indoor–outdoor flow, and functional needs for every space. You'll leave with a concise project brief — scope, priorities, mood references, timeline, and phasing options.",
       image: "/assets/swatch.jpg",
       alt: "Samples of marble, wood and fabrics for a home design project.",
     },
@@ -75,7 +75,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
     {
       title: "Procurement and Oversight",
       content:
-        "We manage specifications, quoting, and purchase orders; track lead times, fabrication, and quality control; and coordinate warehousing, delivery, and installations. On site, we liaise with contractors and trades, and monitor progress against schedule to protect design intent. You'll receive clear updates and proactive issue-resolution throughout.",
+        "We manage specifications, quoting, and purchase orders; track lead times, fabrication, and quality control; and coordinate warehousing, delivery, and installations. On site, we liaise with contractors and trades, and monitor progress against schedule to protect the interior design intent. You'll receive clear updates and proactive issue-resolution throughout.",
       image: "/assets/furniture-delivery.jpg",
       alt: "Image of a couch in a large warehouse getting ready for delivery.",
     },
