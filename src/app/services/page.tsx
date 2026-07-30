@@ -35,7 +35,7 @@ const WHY_ITEMS = [
   {
     title: "One Interior Design Firm.",
     description:
-      "Most high-end interior design comes apart in the handoffs. We hold it together: space planning, finish palettes, lighting plans, and 3D renderings through procurement, custom built-ins, art and styling, and final installation — with living room, primary suite, kitchen, bath, and home office resolved as one home rather than six separate rooms. We coordinate directly with your architect, contractor, and trades to protect the design intent on site across Broward, Palm Beach, and Miami-Dade. One studio of interior designers, one point of accountability, from the first walkthrough to the day the art is hung.",
+      "Most high-end interior design comes apart in the handoffs. We hold it together: space planning, finish palettes, lighting plans, and 3D renderings through procurement, custom built-ins, art and styling, and final installation — with living room, primary suite, kitchen, bath, and home office resolved as one home rather than six separate rooms. As your interior design firm in Fort Lauderdale, we coordinate with your architect, contractor, and trades to protect the design intent on site. One studio of interior designers, one point of accountability, from the first walkthrough to the day the art is hung.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Services() {
       <Cta />
       <Why
         subtitle="Why Sarvian Design Group"
-        title="Interior Designers in Fort Lauderdale for Every Scope"
+        title="One Interior Design Firm in Fort Lauderdale for Every Scope"
         description="We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a single room, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
         items={WHY_ITEMS}
       />
