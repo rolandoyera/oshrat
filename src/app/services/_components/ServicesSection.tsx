@@ -54,7 +54,7 @@ export const SERVICES: Service[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed — and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later — the architecture and the interior are never fighting each other.",
+      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed — and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later. The architecture and the interior design are never fighting each other.",
     tags: [
       "Architect collaboration",
       "Early finishes",
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Cabinetry, stone, and appliance planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow — is made with that in mind.",
+      "Cabinetry, stone, and appliance planning built around how you actually cook and gather — detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision — storage, sightlines, workflow is made with that in mind for a cohesive luxury kitchen design.",
     tags: [
       "Cabinetry",
       "Stone & surfaces",
