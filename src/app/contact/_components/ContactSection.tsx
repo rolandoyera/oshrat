@@ -10,6 +10,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { trackAdsConversion, trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
 import { Turnstile } from "@marsidev/react-turnstile";
+import InstagramIcon from "@/components/icons/InstagramIcon";
+import MailIcon from "@/components/icons/MailIcon";
+import WhatsAppIcon from "@/components/icons/WhatsAppIcon";
 
 const ContactSchema = z.object({
   firstName: z.string().trim().min(1, "Please enter your first name"),
@@ -159,7 +162,7 @@ export default function ContactSection({
 
           <div className="space-y-6 pt-6 border-t border-border/30">
             <div>
-              <p className="uppercase tracking-wider text-taupe-500 font-semibold mb-1">
+              <p className="uppercase tracking-wider font-semibold mb-1">
                 General Inquiries
               </p>
               <a
@@ -172,7 +175,7 @@ export default function ContactSection({
               </a>
             </div>
             <div>
-              <p className="uppercase tracking-wider text-taupe-500 font-semibold mb-1">
+              <p className="uppercase tracking-wider font-semibold mb-1">
                 Call Us
               </p>
               <a
@@ -183,6 +186,45 @@ export default function ContactSection({
                 className="text-sm font-sans font-medium text-accent hover:underline">
                 {SITE.phoneDisplay}
               </a>
+            </div>
+            <div>
+              <div>
+                <p className="uppercase tracking-wider font-semibold mb-2">
+                  Follow Us
+                </p>
+              </div>
+              <div className="flex items-center gap-6">
+                <a
+                  href={SITE.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram (opens in a new tab)"
+                  className="text-foreground icon">
+                  <InstagramIcon size={30} color="currentColor" />
+                </a>
+                <a
+                  href={`mailto:${SITE.email}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Send email to ${SITE.email} (opens in a new tab)`}
+                  onClick={() =>
+                    trackEvent("email_click", { link_location: "footer" })
+                  }
+                  className="text-foreground icon">
+                  <MailIcon size={32} color="currentColor" />
+                </a>
+                <a
+                  href={SITE.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Chat on WhatsApp with ${SITE.whatsappDisplay} (opens in a new tab)`}
+                  onClick={() =>
+                    trackEvent("whatsapp_click", { link_location: "footer" })
+                  }
+                  className="text-foreground icon">
+                  <WhatsAppIcon size={26} color="currentColor" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
