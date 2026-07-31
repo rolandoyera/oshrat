@@ -143,16 +143,16 @@ const eyebrow = "text-xs uppercase tracking-[0.2em] text-accent font-bold";
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="bg-cream-200 py-24 lg:py-32">
+    <section id="services" className="bg-cream-200 py-24 xl:py-32">
       <Container size="lg">
         {/* Intro */}
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:gap-12 lg:mt-38">
+        <div className="grid grid-cols-1 gap-10 xl:grid-cols-12 xl:gap-12">
           <ScrollReveal direction="left" delay={150} className="lg:col-span-6">
             <p className={eyebrow}>The studio</p>
-            <h2 className="flex flex-col gap-0 lg:gap-2 display-sm">
+            <h2 className="flex flex-col gap-2 display-sm">
               <span>One team,</span>
-              <span className="lg:ml-6">first sketch</span>
-              <span className="lg:ml-12">
+              <span className="ml-10">first sketch</span>
+              <span className="ml-20">
                 to final <span className="italic text-accent">styling.</span>
               </span>
             </h2>
@@ -160,7 +160,7 @@ export default function ServicesSection() {
           <ScrollReveal
             direction="right"
             delay={150}
-            className="space-y-6 lg:col-span-6">
+            className="space-y-6 lg:col-span-6 items-center flex">
             <p>
               We design homes that move effortlessly between indoors and out —
               pairing striking architectural forms with interiors that feel
@@ -177,17 +177,13 @@ export default function ServicesSection() {
         </div>
 
         {/* Services index header */}
-        <div className="flex items-end justify-between pb-6 mt-20 lg:mt-60">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between pb-6 mt-20 lg:mt-60">
           <ScrollReveal direction="left" delay={150}>
             <p className={eyebrow}>What we do</p>
-            <h2 className="text-3xl lg:text-5xl font-normal text-balance tracking-tight text-foreground">
-              Services
-            </h2>
+            <h2 className="mb-0">Services</h2>
           </ScrollReveal>
           <ScrollReveal direction="right" delay={150}>
-            <p className="text-xs uppercase tracking-[0.2em] text-foreground">
-              Schedule — 07 Engagements
-            </p>
+            <p className="uppercase">Schedule — 07 Engagements</p>
           </ScrollReveal>
         </div>
         <hr className="etched-line" />
@@ -199,16 +195,14 @@ export default function ServicesSection() {
               <ScrollReveal
                 direction={index % 2 === 0 ? "left" : "right"}
                 threshold={0.5}>
-                <article className="grid grid-cols-1 py-12 lg:grid-cols-12 lg:gap-8 lg:py-14">
-                  <div className="lg:col-span-1">
+                <article className="grid grid-cols-1 py-12 xl:grid-cols-12 gap-0 lg:gap-6 xl:gap-8 xl:py-14">
+                  <div className="lg:col-span-4">
                     <span className="eyebrow">{service.index}</span>
-                  </div>
 
-                  <div className="lg:col-span-3">
-                    <h3 className="max-w-[14ch] text-2xl font-normal leading-tight tracking-tight lg:text-3xl">
+                    <h3 className="max-w-[14ch] leading-tight">
                       {service.title}
                     </h3>
-                    <p className="mt-4 mb-6 lg:mb-0 text-xs uppercase tracking-[0.2em] text-foreground">
+                    <p className="mb-6 lg:mb-0 text-xs uppercase tracking-[0.2em] text-foreground">
                       <span className="mr-1.5 text-accent font-bold">•</span>
                       {service.category}
                     </p>

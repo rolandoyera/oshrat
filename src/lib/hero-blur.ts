@@ -18,6 +18,8 @@ export const HERO_BLUR: Record<string, string> = {
     "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADwAwCdASoUAAsAPu1kqU2ppaOiMAgBMB2JZQC7ABIQvqUFIrvfsM8AAOjpRcMjJVJy36szzofchR4aJy/Q1156IavWyiO/ZP0cy+GCxDMyp8QSrNIwzCf8/zM+UIYSWR7sx0AA",
   "/about/sarvian-design-group-oshrat-rothschild-2000.webp":
     "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAACQAwCdASoUAAsAPu1kqU2ppaQiMAgBMB2JZQC7AAwhEGWAr6uuAOjpjPzvhMWlhaMigPDDIs7ci2aWxWWq346Dq+CgYrq2K6nK9i4gKW5IjXLpMYc8aAjUsG67fOlL1Ci8ke7MdAAAAA==",
+  "/assets/kitchen-counter.jpg":
+    "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAwCdASoUAAsAPu1iqU2ppaOiMAgBMB2JYwC7ABYHU8SHhEmG7KAA/mLv0MgC1usC7QuTGji7pmMbumJfPvNMlXwK8PHuiw8s2M4ZKWKd5jQv4RqN177VTW6AAA==",
   "/assets/aventura-interior-design-5.jpg":
     "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JZQCdMoADFOXUrLvfUT6vZYAA/ZyxEdFGPNexLawoHuueJL2tnIeavS/ZVwDntfPcAHB1EnihpUD+WEscvhVcv2HjKX5kqayAp+4IntaPBeEMTVRRrn/Rnhywjowc1pxD8vUcAR6qRfJ7sPVMAA==",
 };

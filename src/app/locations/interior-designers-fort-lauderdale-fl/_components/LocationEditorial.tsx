@@ -13,7 +13,7 @@ export function LocationEditorial({
     <ScrollReveal
       direction="up"
       threshold={0.25}
-      className="bg-cream-200 pb-24 lg:py-32">
+      className="bg-cream-200 py-24 lg:py-32">
       <Container size="lg" className="grid lg:grid-cols-12 lg:gap-20">
         {/* Left — eyebrow + heading */}
         <ScrollReveal

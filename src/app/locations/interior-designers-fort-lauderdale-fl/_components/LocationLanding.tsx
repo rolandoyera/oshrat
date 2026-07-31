@@ -5,7 +5,7 @@ import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import ServicesSequence from "./ServicesSequence";
 import FeaturedProjects from "./FeaturedProjects";
-import Testimonials from "../../_components/Testimonials";
+import Testimonials from "@/components/Testimonials";
 import { LocationEditorial } from "./LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
@@ -81,7 +81,7 @@ export default function LocationLanding({
           blurDataURL={HERO_BLUR[image.desktop]}
         />
 
-        <Container size="lg" className="relative z-10 w-full">
+        <Container size="lg" className="relative z-10 w-full ">
           <HeroScrollColor>
             <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-6 lg:pb-12">
               <ScrollReveal

@@ -246,7 +246,7 @@ export default async function ProjectPage({
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}
         {hero && (
-          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden mt-24">
+          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden">
             <Image
               src={heroImageUrl(hero)}
               alt={hero.alt || data.title}

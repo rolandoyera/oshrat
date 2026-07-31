@@ -71,6 +71,12 @@
   --color-gray-100: light-dark(#f3f4f6, #1f2937);
   --color-gray-900: light-dark(#111827, #f9fafb);
 
+  /* Extra breakpoint above the default scale (sm 640 → 2xl 1536) for
+     1920-class viewports and up. Media queries measure CSS px, so a
+     4K monitor at 200% Windows scaling reports ~1903–1920, not 3840 —
+     hence 1880 rather than a literal 1920. */
+  --breakpoint-3xl: 1880px;
+
   --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --font-mono: "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
   --font-serif: var(--font-serif), serif;
@@ -165,6 +171,9 @@ input:-webkit-autofill:active {
   h3 {
     @apply h3;
   }
+  h4 {
+    @apply h4;
+  }
 }
 
 @utility icon {
@@ -182,7 +191,7 @@ input:-webkit-autofill:active {
   @apply text-[32px] sm:text-[48px] lg:text-[62px] xl:text-[80px] leading-[1.05] font-normal tracking-tight uppercase mb-4 lg:mb-6;
 }
 @utility display-sm {
-  @apply text-[clamp(2.25rem,1.23rem+2.11vw,4.5rem)] leading-[1.05] font-normal tracking-tighter mb-4 lg:mb-6;
+  @apply text-[32px] sm:text-[48px] lg:text-[60px] xl:text-[70px] leading-[1.05] font-normal tracking-tighter mb-4 lg:mb-6;
 }
 
 @utility h1 {
@@ -190,10 +199,13 @@ input:-webkit-autofill:active {
 }
 
 @utility h2 {
-  @apply text-3xl lg:text-5xl font-normal text-balance tracking-tighter text-foreground mb-4 lg:mb-6;
+  @apply text-3xl lg:text-[50px] font-normal tracking-tighter mb-4 lg:mb-6;
 }
 @utility h3 {
-  @apply text-2xl lg:text-4xl font-normal text-balance tracking-tight text-foreground mb-4 lg:mb-6;
+  @apply text-2xl lg:text-[38px] font-normal tracking-tight mb-4 lg:mb-6;
+}
+@utility h4 {
+  @apply text-2xl lg:text-[30px] font-normal tracking-tighter mb-4 lg:mb-6;
 }
 
 @keyframes clipReveal {

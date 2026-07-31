@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import DesktopNav from "./DesktopNav";
+import DesktopNav2 from "./DesktopNav2";
 import MobileNav from "./MobileNav";
 
 // Breakpoint split: DesktopNav renders at lg+, MobileNav below lg — each is
@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <>
-      <DesktopNav />
+      <DesktopNav2 />
       <MobileNav />
     </>
   );

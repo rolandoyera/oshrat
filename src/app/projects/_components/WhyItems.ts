@@ -1,28 +1,4 @@
-import type { Metadata } from "next";
-import { JsonLd, servicesPageGraph } from "@/lib/structured-data";
-import { socialMeta } from "@/lib/seo";
-import ServicesHero from "./_components/ServicesHero";
-import ServicesSection, { SERVICES } from "./_components/ServicesSection";
-import ProjectsSection from "@/components/ProjectsSection";
-import Cta from "@/components/Cta";
-import Why from "@/components/Why";
-import Testimonials from "@/components/Testimonials";
-
-const TITLE = "Interior Design Services in Fort Lauderdale & South Florida";
-const DESCRIPTION =
-  "Full-service interior design firm serving Fort Lauderdale, Miami, Palm Beach, Broward, and South Florida — renovations, new construction, custom furnishings, kitchens, and bathrooms.";
-
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: "/services" },
-  ...socialMeta({ title: TITLE, description: DESCRIPTION, url: "/services" }),
-};
-
-// Keep the "Project Examples" list fresh as projects change in Sanity.
-export const revalidate = 60;
-
-const WHY_ITEMS = [
+export const WHY_ITEMS = [
   {
     title: "Every Scope, Same Process.",
     description:
@@ -39,26 +15,3 @@ const WHY_ITEMS = [
       "Most high-end interior design comes apart in the handoffs. We hold it together: space planning, finish palettes, lighting plans, and 3D renderings through procurement, custom built-ins, art and styling, and final installation — with living room, primary suite, kitchen, bath, and home office resolved as one home rather than six separate rooms. As your interior design firm in Fort Lauderdale, we coordinate with your architect, contractor, and trades to protect the design intent on site. One studio of interior designers, one point of accountability, from the first walkthrough to the day the art is hung.",
   },
 ];
-
-export default function Services() {
-  return (
-    <>
-      <JsonLd
-        data={servicesPageGraph(
-          SERVICES.map((s) => ({ name: s.title, description: s.description })),
-        )}
-      />
-      <ServicesHero />
-      <ServicesSection />
-      <ProjectsSection className="pt-0" />
-      <Cta />
-      <Testimonials />
-      <Why
-        subtitle="Why Sarvian Design Group"
-        title="One Interior Design Firm in Fort Lauderdale for Every Scope"
-        description="We don’t try to be the right interior designers for every project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a luxurious kitchen design, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
-        items={WHY_ITEMS}
-      />
-    </>
-  );
-}

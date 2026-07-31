@@ -6,6 +6,7 @@ import { client } from "@/sanity/lib/client";
 import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
+import { WHY_ITEMS } from "./_components/WhyItems";
 
 export const revalidate = 60; // Revalidate the page every 60 seconds
 
@@ -38,6 +39,8 @@ const QUERY = groq`
 import Cta from "@/components/Cta";
 import ProjectsHero from "./_components/ProjectsHero";
 import TransitionLink from "@/components/ui/TransitionLink";
+import Testimonials from "@/components/Testimonials";
+import Why from "@/components/Why";
 
 export default async function ProjectsPage() {
   let projects: {
@@ -61,8 +64,8 @@ export default async function ProjectsPage() {
     <div>
       <JsonLd data={siteGraph()} />
       <ProjectsHero />
-      <main className="px-4 lg:px-8 my-4 lg:my-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8">
+      <main>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-8 px-4 lg:px-8 my-4 lg:my-12">
           {projects.map((p, index) => {
             const heroSource = p.heroImage ?? p.mainImage;
             return (
@@ -74,7 +77,9 @@ export default async function ProjectsPage() {
                 }
                 className="group relative overflow-hidden block project-card-animate rounded-xs shadow"
                 style={
-                  { animationDelay: `${index * 0.12}s` } as React.CSSProperties
+                  {
+                    animationDelay: `${index * 0.12}s`,
+                  } as React.CSSProperties
                 }
                 aria-label={`${p.title} — ${p.location}`}>
                 <div className="relative w-full aspect-4/3">
@@ -100,15 +105,22 @@ export default async function ProjectsPage() {
                         {p.location}
                       </p>
                     )}
-                    <h3 className="text-cream-100 mb-0">{p.title}</h3>
+                    <h3 className="text-cream-100 mb-0 h4">{p.title}</h3>
                   </div>
                 </div>
               </TransitionLink>
             );
           })}
         </div>
+        <Cta />
+        <Testimonials />
+        <Why
+          subtitle="Why Sarvian Design Group"
+          title="One Interior Design Firm in Fort Lauderdale for Every Scope"
+          description="We don’t try to be the right interior designers for every project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a luxurious kitchen design, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
+          items={WHY_ITEMS}
+        />
       </main>
-      <Cta />
     </div>
   );
 }
