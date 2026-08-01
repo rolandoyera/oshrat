@@ -16,8 +16,6 @@ type Testimonial = {
     title: string;
     meta: string;
     slug: string;
-    image: string;
-    imageAlt: string;
   };
 };
 
@@ -30,8 +28,6 @@ const TESTIMONIALS: Testimonial[] = [
       title: "Aventura Modern Living",
       meta: "Whole Home · 2025",
       slug: "aventura-modern-living-aventura-fl",
-      image: "/assets/aventura-interior-design-5.jpg",
-      imageAlt: "Aventura modern living room interior by Sarvian Design Group",
     },
   },
   {
@@ -42,8 +38,6 @@ const TESTIMONIALS: Testimonial[] = [
       title: "Aventura Modern Living",
       meta: "Whole Home · 2025",
       slug: "aventura-modern-living-aventura-fl",
-      image: "/assets/aventura-interior-design-5.jpg",
-      imageAlt: "Aventura modern living room interior by Sarvian Design Group",
     },
   },
 ];

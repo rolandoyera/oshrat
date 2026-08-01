@@ -55,7 +55,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/projects/the-shul-bal-harbour",
-        destination: "/projects/the-shul-bal-harbour-bal-harbour-fl",
+        destination: "/projects/the-shul-bal-harbour-surfside-fl",
+        permanent: true,
+      },
+      {
+        source: "/projects/the-shul-bal-harbour-bal-harbour-fl",
+        destination: "/projects/the-shul-bal-harbour-surfside-fl",
         permanent: true,
       },
       {

@@ -54,6 +54,7 @@ const PLACE_LINKS: Record<string, string> = {
   "Fort Lauderdale": "/locations/interior-designers-fort-lauderdale-fl",
   "Las Olas": "/locations/interior-designers-fort-lauderdale-fl",
   "Golden Beach": "/locations/interior-designers-golden-beach-fl",
+  "Bal Harbour": "/locations/interior-designers-bal-harbour-fl",
 };
 
 export default function Footer() {
