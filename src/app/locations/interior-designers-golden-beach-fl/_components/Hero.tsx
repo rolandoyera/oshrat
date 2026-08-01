@@ -26,7 +26,7 @@ export default function Hero() {
         sizes="100vw"
         quality={90}
         placeholder="blur"
-        blurDataURL={HERO_BLUR["/about/Sarvian-Design-Group.jpg"]}
+        blurDataURL={HERO_BLUR["/assets/onyx-master-bath-remodel-1920.webp"]}
         style={{
           transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(1.1)`,
         }}
