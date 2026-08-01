@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import TransitionLink from "./TransitionLink";
 
 interface ArrowButtonProps {
   children: ReactNode;
@@ -10,6 +11,11 @@ interface ArrowButtonProps {
   type?: "button" | "submit" | "reset";
   direction?: "left" | "right";
   variant?: "primary" | "secondary";
+  /** Navigate via TransitionLink so the page's hero image morphs into the
+   * destination hero (works even when the image isn't inside this button). */
+  transition?: boolean;
+  /** Destination hero srcset, warmed on hover — see TransitionLink. */
+  preloadSrcSet?: string;
 }
 
 export default function ArrowButton({
@@ -20,6 +26,8 @@ export default function ArrowButton({
   type = "button",
   direction = "right",
   variant = "primary",
+  transition,
+  preloadSrcSet,
   ...props
 }: ArrowButtonProps) {
   const classes = cn(
@@ -65,6 +73,17 @@ export default function ArrowButton({
   );
 
   if (href) {
+    if (transition) {
+      return (
+        <TransitionLink
+          href={href}
+          className={classes}
+          preloadSrcSet={preloadSrcSet}
+          {...(props as any)}>
+          {inner}
+        </TransitionLink>
+      );
+    }
     return (
       <Link href={href} className={classes} {...(props as any)}>
         {inner}

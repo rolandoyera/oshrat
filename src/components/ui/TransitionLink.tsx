@@ -61,9 +61,27 @@ export default function TransitionLink({
     // has actually decoded so the morph lands on a painted image, not a blank.
     const slug = hrefStr.match(/\/projects\/([^/?#]+)/)?.[1];
     const heroName = slug ? `hero-${slug}` : null;
-    // The origin card shares the same view-transition-name; wait for it to
-    // leave the DOM so we don't match it instead of the destination hero.
-    const originImg = e.currentTarget.querySelector("img");
+    // The origin of the morph — usually the image inside the clicked link, but
+    // a link that doesn't wrap the image (e.g. a "View Project" button beside
+    // it) falls back to the page's named image. Wait for it to leave the DOM
+    // so we don't match it instead of the destination hero.
+    const originImg =
+      e.currentTarget.querySelector("img") ??
+      (heroName
+        ? document.querySelector<HTMLImageElement>(`img[style*="${heroName}"]`)
+        : null);
+
+    // view-transition-name must be unique among rendered elements — the same
+    // project shown twice on one page (featured section + latest-projects
+    // card) aborts the whole transition with an InvalidStateError. The clicked
+    // image claims the name; the old page is discarded on navigation anyway.
+    if (heroName) {
+      document
+        .querySelectorAll<HTMLImageElement>(`img[style*="${heroName}"]`)
+        .forEach((img) => {
+          if (img !== originImg) img.style.viewTransitionName = "none";
+        });
+    }
 
     document.startViewTransition(() => {
       return new Promise<void>((resolve) => {

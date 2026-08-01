@@ -25,6 +25,16 @@ import { BiLogoFacebook, BiLogoLinkedin, BiLogoWhatsapp } from "react-icons/bi";
 import { BsTwitterX } from "react-icons/bs";
 import ShareLinks from "./share-links";
 import Container from "@/components/ui/Container";
+import Testimonials from "@/components/Testimonials";
+import Why from "@/components/Why";
+import { WHY as BAL_HARBOUR_WHY } from "@/app/locations/interior-designers-bal-harbour-fl/_components/WhyItems";
+
+// Projects that get a Why section above the footer, keyed by slug — copy is
+// shared with the matching location page. Extend as copy is arranged for
+// other projects.
+const PROJECT_WHY: Record<string, React.ComponentProps<typeof Why>> = {
+  "the-shul-bal-harbour-surfside-fl": BAL_HARBOUR_WHY,
+};
 
 type Project = {
   _id: string;
@@ -308,7 +318,8 @@ export default async function ProjectPage({
         )}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm">
+          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm"
+        >
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -318,7 +329,8 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2">
+              className="before:content-['>'] before:mr-2"
+            >
               {data.title}
               {data.location && (
                 <span className="hidden sm:inline">{` | ${data.location}`}</span>
@@ -333,11 +345,12 @@ export default async function ProjectPage({
             lines and the gallery images balloon). */}
         <Container
           size="lg"
-          className="grid grid-cols-1 xl:grid-cols-12 gap-8 py-4">
+          className="grid grid-cols-1 xl:grid-cols-12 gap-8 py-4"
+        >
           {/* LEFT: Project info */}
           <aside className="xl:col-span-5">
             <div className="xl:sticky xl:top-22">
-              <div className="bg-card p-2 sm:p-4 md:p-8 rounded-xs shadow">
+              <div className="bg-card p-2 sm:p-4 sm:pt-3 rounded-xs shadow">
                 <h1 className="h3">
                   {data.title}
                   {data.location && (
@@ -444,6 +457,8 @@ export default async function ProjectPage({
       </div>
       <NextProject prevProject={prevProject} nextProject={nextProject} />
       <Cta />
+      <Testimonials />
+      {PROJECT_WHY[slug] && <Why {...PROJECT_WHY[slug]} />}
     </main>
   );
 }

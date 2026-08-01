@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Cta from "@/components/Cta";
 import ProjectsSection from "@/components/ProjectsSection";
 import Hero from "./_components/Hero";
-import ServicesSequence from "../interior-designers-fort-lauderdale-fl/_components/ServicesSequence";
+import ServicesSequence from "../_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
 import { socialMeta } from "@/lib/seo";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
@@ -10,11 +10,14 @@ import TopSection from "./_components/TopSection";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
+import { SERVICES } from "./_components/ServicesSequence";
+import Why from "@/components/Why";
+import { WHY } from "./_components/WhyItems";
 
 const PATH = "/locations/interior-designers-bal-harbour-fl";
 const TITLE = "Interior Designers in Bal Harbour, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Full-service luxury interior design firm in Bal Harbour, FL. Interior and exterior design, renovations & new construction. Request a consultation.";
+  "Full-service luxury interior design firm in Bal Harbour, FL. Residential and commercial interiors, renovations & new construction. Request a consultation.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -29,19 +32,20 @@ export default function Page() {
       <JsonLd data={faqPageGraph(PATH, FAQS)} />
       <Hero />
       <TopSection />
-      <ProjectsSection content="A look at our most recent work across South Florida, from oceanfront new construction to full-home renovations. It is the same approach we bring to every Golden Beach residence: understand how the family lives, then shape the architecture, interiors, and finishes around it." />
+      <ProjectsSection content="A look at our most recent work across South Florida, from oceanfront residences and full-home renovations to custom millwork, community and commercial spaces. It is the same approach we bring to every Bal Harbour project: understand how the space is actually used, then shape the design details around it." />
       <Cta />
-      <ServicesSequence />
+      <ServicesSequence services={SERVICES} />
       <Testimonials />
       <FaqSection faqs={FAQS} />
       <LocationEditorial
-        heading={["Luxury takes root."]}
+        heading={["Designed for how", "Bal Harbour lives."]}
         paragraphs={[
-          "As a full-service luxury interior design firm, Sarvian Design Group has had the honor of creating spaces that balance the intimate scale of home with the dramatic scope of coastal living. Working with Golden Beach’s unique waterfront settings, we shape environments that feel both curated and deeply connected to their surroundings. Whether designing a complete home or thoughtfully transforming individual spaces, our approach is centered on clarity, intention, and a deep understanding of how light, material, and form shape daily life.",
-          "The island-like atmosphere of Golden Beach creates a rare kind of privacy—one that invites a more intentional relationship between indoor and outdoor living. We approach each home with an understanding of its unique orientation to the water and sunlight. Our work balances the clean, modern forms that suit a coastal environment with a material palette that adds warmth and depth. Through considered layouts, custom built-ins, and a seamless connection between spaces, we create homes that feel both curated and deeply connected to their surroundings.",
-          "For us, luxury interior design is not about ornamentation—it’s about creating an environment that feels intentional and true to the people who live there. It’s in the way a space invites you to pause, the way natural light moves through a room, and the feeling of being surrounded by materials that are both beautiful and honest. As a full-service interior design firm, we work closely with our clients from the earliest concept stages through final installation, ensuring that every detail supports the overall vision for the home.",
+          "As a full-service luxury interior design firm, Sarvian Design Group has had the honor of creating spaces that balance the intimate scale of home with the dramatic scope of coastal living. Much of Bal Harbour lives vertically, in residences where a wall of glass and the Atlantic beyond it are the first materials in the room. We design with that light rather than against it, using natural stone, warm neutrals, and furnishings selected piece by piece so an interior holds its composure from morning through late afternoon.",
+          "Behind the towers, the bay side of Bal Harbour Village offers a quieter kind of privacy and a more direct relationship between indoor and outdoor living. We approach each residence with an understanding of its orientation to the water and the sun, balancing the clean, modern forms that suit a coastal environment with a material palette that adds warmth and depth. Through considered layouts, custom built-ins, and a seamless connection between spaces, we create homes that feel both curated and deeply connected to their surroundings.",
+          "For us, luxury interior design is not about ornamentation—it’s about creating an environment that feels intentional and true to the people who use it. That standard holds whether the project is a private residence or the sanctuary we designed for The Shul of Bal Harbour, where custom bronze, stone, and millwork were drawn and specified down to the detail. As a full-service interior design firm, we work closely with our clients from the earliest concept stages through final installation, ensuring that every detail supports the overall vision.",
         ]}
       />
+      <Why {...WHY} />
     </main>
   );
 }
