@@ -22,7 +22,7 @@ export default function NextProject({
       <div className="flex flex-row items-stretch justify-center gap-6 py-22 text-center">
         {prevProject && (
           <div className="flex-1 md:flex flex-col items-center justify-between hidden">
-            <h2 className="text-center flex-1 flex flex-col items-center justify-center">
+            <h2 className="text-center flex-1 flex flex-col items-center justify-center h3">
               {prevProject.title}
               {prevProject.location && (
                 <span className="block text-sm lg:text-base font-light tracking-wider">
@@ -44,7 +44,7 @@ export default function NextProject({
         </div>
         {nextProject && (
           <div className="flex-1 flex flex-col items-center justify-between">
-            <h2 className="text-center flex-1 flex flex-col items-center justify-center">
+            <h2 className="text-center flex-1 flex flex-col items-center justify-center h3">
               {nextProject.title}
               {nextProject.location && (
                 <span className="block text-sm lg:text-base font-light mt-1 tracking-wider">

@@ -10,6 +10,7 @@ import WhatsAppIcon from "./icons/WhatsAppIcon";
 import { trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
 import SdgMonogram from "./navbar/SdgMonogram";
+import { IoHeart } from "react-icons/io5";
 
 const REGIONS: { region: string; places: string[] }[] = [
   {
@@ -52,6 +53,7 @@ const REGIONS: { region: string; places: string[] }[] = [
 const PLACE_LINKS: Record<string, string> = {
   "Fort Lauderdale": "/locations/interior-designers-fort-lauderdale-fl",
   "Las Olas": "/locations/interior-designers-fort-lauderdale-fl",
+  "Golden Beach": "/locations/interior-designers-golden-beach-fl",
 };
 
 export default function Footer() {
@@ -131,13 +133,17 @@ export default function Footer() {
               <ul className="space-y-2">
                 {places.map((place) => {
                   const href = PLACE_LINKS[place];
-                  const effect = <p className="p text-cream-100">{place}</p>;
+                  const effect = (
+                    <p className="p text-cream-100 transition-colors group-hover:text-accent">
+                      {place}
+                    </p>
+                  );
                   return (
                     <li key={place}>
                       {href ? (
                         <Link
                           href={href}
-                          className="group relative inline-block hover:[&_span]:text-accent">
+                          className="group relative inline-block hover:text-accent">
                           {/* Before the text so the p stays :last-child (not-last:mb-4) */}
                           <HoverUnderline className="text-accent" />
                           {effect}
@@ -165,25 +171,32 @@ export default function Footer() {
             © {new Date().getFullYear()} Sarvian Design Group.
           </p>
           <p className="text-cream-300 text-sm md:justify-self-center mb-0">
-            <Link href="/privacy" className="hover:text-accent hover:underline">
+            <Link
+              href="/privacy"
+              className="group relative inline-block hover:text-accent">
               Privacy Policy
+              <HoverUnderline className="text-accent" />
             </Link>{" "}
             <span aria-hidden="true" className="mx-1">
               ·
             </span>
-            <Link href="/terms" className="hover:text-accent hover:underline">
+            <Link
+              href="/terms"
+              className="group relative inline-block hover:text-accent">
               Terms of Use
+              <HoverUnderline className="text-accent" />
             </Link>
           </p>
-          <p className="text-cream-300 text-sm md:justify-self-end mb-0">
-            Made with ❤️ by{" "}
+          <p className="text-cream-300 text-sm flex items-center gap-1 md:justify-self-end mb-0">
+            Made with <IoHeart />
             <a
-              className="text-cream-300 hover:text-accent hover:underline"
+              className="group relative text-cream-300 hover:text-accent"
               href="https://www.lenisvisuals.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LENIS VISUALS website (opens in a new tab)">
               LENIS VISUALS
+              <HoverUnderline />
             </a>
           </p>
         </div>

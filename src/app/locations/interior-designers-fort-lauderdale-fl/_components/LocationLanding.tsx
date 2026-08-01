@@ -1,4 +1,4 @@
-﻿import Container from "@/components/ui/Container";
+import Container from "@/components/ui/Container";
 import FadingHeroBackdrop from "./FadingHeroBackdrop";
 import HeroScrollColor from "./HeroScrollColor";
 import { HERO_BLUR } from "@/lib/hero-blur";
@@ -6,7 +6,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 import ServicesSequence from "./ServicesSequence";
 import FeaturedProjects from "./FeaturedProjects";
 import Testimonials from "@/components/Testimonials";
-import { LocationEditorial } from "./LocationEditorial";
+import { LocationEditorial } from "../../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import Cta from "@/components/Cta";

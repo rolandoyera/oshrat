@@ -16,11 +16,15 @@ import NextProject from "@/components/NextProject";
 import PanoramaViewer from "@/components/ui/PanoramaViewer";
 import ProjectDescription from "./project-description";
 import ProjectGallery, { type GalleryImage } from "./project-gallery";
-import { JsonLd, projectPageGraph } from "@/lib/structured-data";
+import { JsonLd, projectPageGraph, SITE_URL } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 import Cta from "@/components/Cta";
-
-/* -------------------- Types -------------------- */
+import { TiSocialPinterest } from "react-icons/ti";
+import { HiOutlineMail } from "react-icons/hi";
+import { BiLogoFacebook, BiLogoLinkedin, BiLogoWhatsapp } from "react-icons/bi";
+import { BsTwitterX } from "react-icons/bs";
+import ShareLinks from "./share-links";
+import Container from "@/components/ui/Container";
 
 type Project = {
   _id: string;
@@ -229,6 +233,45 @@ export default async function ProjectPage({
     ),
   ];
 
+  // Share intents — plain hrefs, no JS. mailto stays in-tab; the rest open a
+  // new tab. Pinterest wants a media image alongside the URL.
+  const pageUrl = `${SITE_URL}/projects/${slug}`;
+  const shareText = `${data.title}${data.location ? ` | ${data.location}` : ""} — Sarvian Design Group`;
+  const encodedUrl = encodeURIComponent(pageUrl);
+  const encodedText = encodeURIComponent(shareText);
+  const shareLinks = [
+    {
+      label: "Share on Facebook",
+      href: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`,
+      icon: <BiLogoFacebook className="size-6.5" />,
+    },
+    {
+      label: "Share on X",
+      href: `https://x.com/intent/post?url=${encodedUrl}&text=${encodedText}`,
+      icon: <BsTwitterX className="size-4.5" />,
+    },
+    {
+      label: "Share on Pinterest",
+      href: `https://www.pinterest.com/pin/create/button/?url=${encodedUrl}&description=${encodedText}${hero ? `&media=${encodeURIComponent(heroImageUrl(hero))}` : ""}`,
+      icon: <TiSocialPinterest className="size-7.5" />,
+    },
+    {
+      label: "Share on LinkedIn",
+      href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`,
+      icon: <BiLogoLinkedin className="size-6" />,
+    },
+    {
+      label: "Share via Email",
+      href: `mailto:?subject=${encodedText}&body=${encodedUrl}`,
+      icon: <HiOutlineMail className="size-6" />,
+    },
+    {
+      label: "Share on WhatsApp",
+      href: `https://wa.me/?text=${encodeURIComponent(`${shareText} ${pageUrl}`)}`,
+      icon: <BiLogoWhatsapp className="size-6.5" />,
+    },
+  ];
+
   return (
     <main>
       <JsonLd
@@ -263,7 +306,9 @@ export default async function ProjectPage({
             />
           </section>
         )}
-        <nav aria-label="Breadcrumb" className="px-4 xl:px-6 my-2 text-sm">
+        <nav
+          aria-label="Breadcrumb"
+          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm">
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -283,65 +328,62 @@ export default async function ProjectPage({
         </nav>
 
         {/* 2) Content row: left = info (sticky), right = gallery */}
-        <section className="grid grid-cols-1 xl:grid-cols-12 gap-8 px-4 xl:p-6">
+        {/* Capped like Container size="lg" — on viewports wider than 1800px
+            the columns stop growing (otherwise the left card shrinks to a few
+            lines and the gallery images balloon). */}
+        <Container
+          size="lg"
+          className="grid grid-cols-1 xl:grid-cols-12 gap-8 py-4">
           {/* LEFT: Project info */}
-          <aside className="xl:col-span-4">
+          <aside className="xl:col-span-5">
             <div className="xl:sticky xl:top-22">
               <div className="bg-card p-2 sm:p-4 md:p-8 rounded-xs shadow">
-                <h1 className="h2">
+                <h1 className="h3">
                   {data.title}
                   {data.location && (
                     <span className="block -mb-4 p">{data.location}</span>
                   )}
                 </h1>
-                <div className="my-10 lg:my-16 space-y-2">
-                  <div className="flex justify-between pb-2 relative">
-                    <div className="absolute left-0 right-0 bottom-0 h-px bg-border/30" />
-                    <div className="absolute left-0 right-0 -bottom-px h-px bg-white" />
-                    <span className="text-[16px] font-medium font-mono">
-                      Firm
-                    </span>
-                    <span className="text-[16px] font-mono">
-                      Sarvian Design Group
-                    </span>
-                  </div>
-
+                <div className="my-10 space-y-1 text-[16px] font-medium font-mono">
                   {data.type && (
-                    <div className="flex justify-between pb-2 relative">
-                      <div className="absolute left-0 right-0 bottom-0 h-px bg-border/30" />
-                      <div className="absolute left-0 right-0 -bottom-px h-px bg-white" />
-                      <span className="text-[16px] font-medium font-mono">
-                        Type
-                      </span>
-                      <span className="text-[16px] font-mono">
-                        {PROJECT_TYPE_LABELS[data.type] ?? data.type}
-                      </span>
+                    <div className="flex flex-col">
+                      <div className="flex justify-between">
+                        <span>Type</span>
+                        <span>
+                          {PROJECT_TYPE_LABELS[data.type] ?? data.type}
+                        </span>
+                      </div>
+                      <hr className="etched-line mt-2" />
                     </div>
                   )}
 
                   {data.size && (
-                    <div className="flex justify-between pb-2 relative">
-                      <div className="absolute left-0 right-0 bottom-0 h-px bg-border/30" />
-                      <div className="absolute left-0 right-0 -bottom-px h-px bg-white" />
-                      <span className="text-[16px] font-medium font-mono">
-                        Size
-                      </span>
-                      <span className="text-[16px] font-mono">
-                        {typeof data.size === "number"
-                          ? `${data.size.toLocaleString()} Sq Ft`
-                          : data.size}
-                      </span>
+                    <div className="flex flex-col">
+                      <div className="flex justify-between">
+                        <span>Size</span>
+                        <span>
+                          {typeof data.size === "number"
+                            ? `${data.size.toLocaleString()} Sq Ft`
+                            : data.size}
+                        </span>
+                      </div>
+                      <hr className="etched-line mt-2" />
                     </div>
                   )}
 
                   {typeof data.year === "number" && (
-                    <div className="flex justify-between">
-                      <span className="text-[16px] font-medium font-mono">
-                        Year
-                      </span>
-                      <span className="text-[16px] font-mono">{data.year}</span>
+                    <div className="flex flex-col">
+                      <div className="flex justify-between">
+                        <span>Year</span>
+                        <span>{data.year}</span>
+                      </div>
+                      <hr className="etched-line mt-2" />
                     </div>
                   )}
+                  <div className="flex justify-between">
+                    <span>Location</span>
+                    <span>{data.location}</span>
+                  </div>
                 </div>
 
                 {data.intro && (
@@ -353,8 +395,9 @@ export default async function ProjectPage({
                 {Array.isArray(rich) && rich.length > 0 && (
                   <ProjectDescription value={rich} />
                 )}
+                <ShareLinks links={shareLinks} />
 
-                <div className="w-fit mt-16 mx-auto">
+                <div className="w-fit mt-10 mx-auto">
                   <ProjectButton location="project_detail">
                     Start a Similar Project
                   </ProjectButton>
@@ -364,7 +407,7 @@ export default async function ProjectPage({
           </aside>
 
           {/* RIGHT: Image stack (single column, natural aspect, NO rounding) */}
-          <div className="xl:col-span-8">
+          <div className="xl:col-span-7">
             {(sortedGallery.length > 0 || panorama) && (
               <div className="flex flex-col gap-8">
                 {galleryImages.length > 0 && (
@@ -397,7 +440,7 @@ export default async function ProjectPage({
               </div>
             )}
           </div>
-        </section>
+        </Container>
       </div>
       <NextProject prevProject={prevProject} nextProject={nextProject} />
       <Cta />

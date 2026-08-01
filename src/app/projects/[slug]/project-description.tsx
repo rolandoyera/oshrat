@@ -12,7 +12,7 @@ export default function ProjectDescription({ value }: ProjectDescriptionProps) {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="mt-10">
+    <div className="my-10">
       <div
         className={[
           "prose prose-invert prose-sm max-w-none richtext overflow-hidden text-justify transition-[max-height] duration-700 ease-in-out md:max-h-none",

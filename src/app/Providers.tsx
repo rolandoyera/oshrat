@@ -1,5 +1,6 @@
 "use client";
 import ContactModalProvider from "@/components/ProjectModalProvider";
+import { TooltipProvider } from "@/components/ui/ToolTip";
 import { ReactLenis } from "lenis/react";
 import { usePathname } from "next/navigation";
 
@@ -7,7 +8,11 @@ export default function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isStudio = pathname?.startsWith("/studio");
 
-  const content = <ContactModalProvider>{children}</ContactModalProvider>;
+  const content = (
+    <TooltipProvider>
+      <ContactModalProvider>{children}</ContactModalProvider>
+    </TooltipProvider>
+  );
 
   if (isStudio) {
     return content;
