@@ -17,7 +17,7 @@ import { WHY } from "./_components/WhyItems";
 const PATH = "/locations/interior-designers-surfside-fl";
 const TITLE = "Interior Designers in Surfside, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Luxury interior design firm serving Surfside, FL. Oceanfront condos, family homes, renovations, new construction & community spaces. Request a consultation.";
+  "Luxury interior designers in Surfside, FL. Oceanfront condos, homes, renovations, new construction, community and commercial spaces.";
 
 export const metadata: Metadata = {
   title: TITLE,
