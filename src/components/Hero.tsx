@@ -75,7 +75,7 @@ const Hero: React.FC<HeroProps> = ({
                 transform: `translateY(${scrollY * 0.15}px)`,
                 willChange: "transform",
               }}>
-              {title && <h1 className="mb-0 text-white h1">{title}</h1>}
+              {title && <h2 className="mb-0 text-white h1">{title}</h2>}
               {description && (
                 <p className="text-white/90 mb-8">{description}</p>
               )}
