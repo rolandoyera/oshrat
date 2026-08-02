@@ -222,7 +222,7 @@ function SmallCard({
         <div className="relative h-full w-full overflow-hidden">
           <Image
             src={service.image}
-            alt=""
+            alt={service.imageAlt}
             fill
             quality={75}
             sizes="20vw"
