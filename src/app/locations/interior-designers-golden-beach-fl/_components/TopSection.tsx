@@ -42,7 +42,7 @@ export default function TopSection() {
             className="relative lg:col-span-3">
             <Image
               src="/projects/golden-beach-architecture-proposal-driveway.jpg"
-              alt="Home image"
+              alt="Golden Beach residence"
               width={900}
               height={400}
               quality={90}
