@@ -423,6 +423,16 @@ export default async function ProjectPage({
           <div className="xl:col-span-7">
             {(sortedGallery.length > 0 || panorama) && (
               <div className="flex flex-col gap-8">
+                {/* The 360° room view leads the column when a project has one. */}
+                {panorama && (
+                  <div className="w-full pb-4 border-b border-border/30">
+                    <PanoramaViewer
+                      imageUrl={panorama.asset.url}
+                      alt={panorama.alt || "360 degree room view"}
+                    />
+                  </div>
+                )}
+
                 {galleryImages.length > 0 && (
                   <ProjectGallery
                     images={galleryImages}
@@ -440,15 +450,6 @@ export default async function ProjectPage({
                         : undefined
                     }
                   />
-                )}
-
-                {panorama && (
-                  <div className="w-full pt-4 border-t border-border/30">
-                    <PanoramaViewer
-                      imageUrl={panorama.asset.url}
-                      alt={panorama.alt || "360 degree room view"}
-                    />
-                  </div>
                 )}
               </div>
             )}

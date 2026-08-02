@@ -34,8 +34,13 @@ export default function PanoramaViewer({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
   const [isInViewport, setIsInViewport] = useState(false);
+
+  // State drives the helper-overlay JSX; the ref is what the render loop
+  // reads, so interacting doesn't re-run the WebGL effect (a state dep there
+  // tears down and rebuilds the whole context — visible as a black flash).
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const hasInteractedRef = useRef(false);
 
   // Viewer parameters using refs to avoid re-triggering React renders during the animation loop
   const yaw = useRef(0); // actual horizontal angle in radians
@@ -339,7 +344,7 @@ export default function PanoramaViewer({
       // Apply drag inertia / slow rotation when not dragging
       if (!isDragging.current) {
         // Slow auto-panning if the user hasn't interacted yet to show it is dynamic
-        if (!hasInteracted) {
+        if (!hasInteractedRef.current) {
           targetYaw.current += 0.0005;
         }
 
@@ -403,11 +408,12 @@ export default function PanoramaViewer({
       if (texture) gl.deleteTexture(texture);
       if (buffer) gl.deleteBuffer(buffer);
     };
-  }, [imageUrl, hasInteracted, isInViewport]);
+  }, [imageUrl, isInViewport]);
 
   // Pointer/Mouse handlers
   const handlePointerDown = (e: React.MouseEvent | React.TouchEvent) => {
     isDragging.current = true;
+    hasInteractedRef.current = true;
     setHasInteracted(true);
 
     const clientX = "touches" in e ? e.touches[0].clientX : e.clientX;
@@ -509,8 +515,8 @@ export default function PanoramaViewer({
       {/* Overlay Helper Guide */}
       {!loading && !error && !hasInteracted && (
         <div className="absolute inset-0 hidden md:flex flex-col items-center justify-center text-white/80 bg-black/10 pointer-events-none transition-opacity duration-700 select-none z-5">
-          <div className="bg-black/40 backdrop-blur-xs px-6 py-4 rounded-xs flex flex-col items-center gap-2 max-w-xs text-center border border-white/5 shadow-2xl scale-95 group-hover/pano:scale-100 transition-transform duration-300">
-            <Move className="w-8 h-8 opacity-75 animate-bounce" />
+          <div className="bg-black/40 backdrop-blur-xs p-4 rounded-xs flex flex-col items-center gap-2 max-w-xs text-center border border-white/5 shadow-2xl scale-95 group-hover/pano:scale-100 transition-transform duration-300">
+            <Move className="w-6 h-6 opacity-75" />
             <p className="text-sm font-semibold">Drag to Explore Room</p>
           </div>
         </div>

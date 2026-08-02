@@ -5,6 +5,7 @@ import Container from "@/components/ui/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import { useEffect, useState } from "react";
+import ArrowButton2 from "@/components/ui/ArrowButton2";
 
 export default function Hero() {
   const [scrollY, setScrollY] = useState(0);
@@ -19,7 +20,7 @@ export default function Hero() {
   return (
     <section className="relative h-[calc(100vh-2.25rem)] mt-9 w-full overflow-hidden bg-black">
       <Image
-        src="/assets/onyx-master-bath-remodel-1920.webp"
+        src="/services/residential-interior-design-16x9.jpg"
         alt="Sarvian Design Group interior showcase"
         fill
         priority
@@ -33,15 +34,15 @@ export default function Hero() {
         className="object-cover object-top"
       />
       {/* Soft vertical gradient overlay (transparent at top, solid black at bottom where text sits) */}
-      <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent via-20% pointer-events-none z-10" />
+      <div className="absolute inset-0 bg-black/40 pointer-events-none z-10" />
 
       {/* Text and Title Overlay - aligned to bottom-left */}
       <Container
         size="lg"
-        className="absolute inset-0 flex items-end z-20 pb-16">
-        <ScrollReveal className="w-full">
-          <div className="space-y-6">
-            <h1 className="eyebrow text-cream-200">
+        className="absolute inset-0 flex items-center justify-center z-20 pb-16">
+        <ScrollReveal>
+          <div className="space-y-6 backdrop-blur-xs p-4">
+            <h1 className="eyebrow text-cream-200 text-center">
               Palm Beach Interior Design Firm
             </h1>
 
@@ -56,10 +57,16 @@ export default function Hero() {
               <span className="block w-fit">to its address.</span>
             </h2>
             <p className="text-taupe-100 max-w-200">
-              Blending striking architectural forms with thoughtfully curated
-              interiors, Sarvian Design Group creates South Florida homes that
-              unite nature and design into one harmonious experience.
+              Blending striking architectural forms with curated interior
+              designs, Sarvian Design Group creates Palm Beach homes that unite
+              nature and design into one harmonious experience.
             </p>
+            <ArrowButton2
+              href="/projects"
+              variant="primary"
+              className="w-full sm:w-auto justify-center">
+              View Projects
+            </ArrowButton2>
           </div>
         </ScrollReveal>
       </Container>
