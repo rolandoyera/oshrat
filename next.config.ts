@@ -70,7 +70,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/by-old-river",
-        destination: "/projects/old-river",
+        destination: "/projects/miami-river-miami-fl",
+        permanent: true,
+      },
+      {
+        source: "/projects/old-river",
+        destination: "/projects/miami-river-miami-fl",
         permanent: true,
       },
       {

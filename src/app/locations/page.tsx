@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fragment } from "react";
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
@@ -9,7 +10,7 @@ import Cta from "@/components/Cta";
 
 const TITLE = "Interior Design Locations | Fort Lauderdale, Miami & Palm Beach";
 const DESCRIPTION =
-  "Interior design across seven South Florida communities — Fort Lauderdale, Weston, Parkland, Miami, Coral Gables, Boca Raton, and Palm Beach. Choose a place to see the houses near you.";
+  "Interior design across South Florida — Fort Lauderdale, Miami, Golden Beach, Bal Harbour, Surfside, Boca Raton, Palm Beach, and more. Choose a place to see the houses near you.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -46,7 +47,7 @@ export default function LocationsPage() {
               <hr className="etched-line mt-14 lg:mt-20" />
               <div className="mt-10 flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
                 <p className="max-w-lg text-foreground/85 leading-relaxed">
-                  We build across seven communities from Palm Beach to Miami —
+                  We build across communities from Palm Beach to Miami —
                   waterfront moderns, courtyard houses, and quiet renovations.
                   Choose a place to see the houses near you.
                 </p>
@@ -58,45 +59,39 @@ export default function LocationsPage() {
         {/* Communities by county */}
         <section className="pb-24 lg:pb-32">
           <Container size="lg">
-            {COUNTIES.map(({ county, locations }) => (
-              <ScrollReveal
-                key={county}
-                direction="up"
-                threshold={0.1}
-                className="mt-16 first:mt-0 lg:mt-20">
-                <div className="flex items-baseline justify-between px-3 pb-4 md:px-4">
-                  <h2 className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-                    {county}
-                  </h2>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-foreground/60">
-                    {pad(locations.length)} counties
-                  </p>
-                </div>
-                <hr className="etched-line" />
-                {locations.map((location) => {
-                  rowIndex += 1;
-                  return (
-                    <Fragment key={location.slug}>
-                      <div className="grid grid-cols-[2.5rem_1fr_1.25rem] items-center gap-4 px-3 py-6 md:grid-cols-[3.5rem_1fr_auto_auto_1.5rem] md:gap-8 md:px-4 md:py-8">
-                        <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-                          № {pad(rowIndex)}
+            {/* One column per county; stacked below lg. items-start keeps a
+                short county column from stretching to the tallest one. */}
+            <div className="grid gap-16 lg:grid-cols-3 lg:gap-8 lg:items-start">
+              {COUNTIES.map(({ county, locations }) => (
+                <ScrollReveal key={county} direction="up" threshold={0.1}>
+                  <div className="flex flex-col px-3 pb-4 md:px-4">
+                    <h2 className="eyebrow font-bold mb-2">{county}</h2>
+                    <p className="text-[12px] uppercase tracking-[0.2em]">
+                      {pad(locations.length)} communities
+                    </p>
+                  </div>
+                  <hr className="etched-line" />
+                  {locations.map((location) => {
+                    rowIndex += 1;
+                    const row = (
+                      <>
+                        <span className="eyebrow font-bold">
+                          <span className="block">№</span>
+                          {pad(rowIndex)}
                         </span>
                         <span>
-                          <span className="block text-2xl font-normal leading-tight tracking-tight text-foreground lg:text-3xl lg:leading-9">
+                          <h2
+                            className={`block mb-0 leading-4 text-2xl transition-colors group-hover:text-accent ${
+                              location.href ? "" : "opacity-50"
+                            }`}
+                          >
                             {location.name}
+                          </h2>
+                          <span className="mt-2 block max-w-sm text-sm">
+                            {location.href
+                              ? location.blurb
+                              : "Page Coming Soon"}
                           </span>
-                          <span className="mt-2 block max-w-sm text-sm text-foreground/70">
-                            {location.blurb}
-                          </span>
-                          <span className="mt-3 block text-[11px] uppercase tracking-[0.2em] text-accent md:hidden">
-                            {location.materials.join(" · ")}
-                          </span>
-                        </span>
-                        <span className="hidden whitespace-nowrap text-[11px] uppercase tracking-[0.2em] text-accent md:block">
-                          {location.materials.join(" · ")}
-                        </span>
-                        <span className="hidden whitespace-nowrap text-sm text-foreground/70 md:block">
-                          {location.houses} houses
                         </span>
                         <svg
                           viewBox="0 0 24 24"
@@ -105,21 +100,36 @@ export default function LocationsPage() {
                           strokeWidth="1.75"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="h-5 w-5 justify-self-end text-foreground/60"
-                          aria-hidden="true">
+                          className="h-5 w-5 justify-self-end text-foreground/60 transition-all duration-250 ease-[cubic-bezier(.6,.2,.1,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
+                          aria-hidden="true"
+                        >
                           <path d="M5 19L19 5M19 5H8M19 5V16" />
                         </svg>
-                      </div>
-                      <hr className="etched-line" />
-                    </Fragment>
-                  );
-                })}
-              </ScrollReveal>
-            ))}
+                      </>
+                    );
+                    const rowClasses =
+                      "grid grid-cols-[2.5rem_1fr_1.25rem] items-center gap-4 px-3 py-6 md:px-4 md:py-4";
+                    return (
+                      <Fragment key={location.name}>
+                        {location.href ? (
+                          <Link
+                            href={location.href}
+                            className={`group transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 ${rowClasses}`}
+                          >
+                            {row}
+                          </Link>
+                        ) : (
+                          <div className={rowClasses}>{row}</div>
+                        )}
+                        <hr className="etched-line" />
+                      </Fragment>
+                    );
+                  })}
+                </ScrollReveal>
+              ))}
+            </div>
           </Container>
         </section>
-
-        {/* A place not listed */}
         <Cta />
       </main>
     </>

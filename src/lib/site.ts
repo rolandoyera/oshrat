@@ -12,4 +12,5 @@ export const SITE = {
   whatsappDisplay: "+1 (646) 639-4147",
   instagramUrl: "https://www.instagram.com/sarviandesigngroup/",
   instagramHandle: "@sarviandesigngroup",
+  houzzUrl: "https://www.houzz.com/pro/webuser-765271052/sarvian-design-group",
 } as const;

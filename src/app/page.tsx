@@ -6,12 +6,12 @@ import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 import OurApproachSection from "./_components/Approach";
 import ServicesBridge from "@/app/_components/ServicesBridge";
-import ProjectExamplesSection from "@/components/ProjectExamplesSection";
 import Cta from "@/components/Cta";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
+import ProjectsSectionHome from "./_components/ProjectsSectionHome";
 
 const TITLE = "Interior Designers in Fort Lauderdale | Sarvian Design Group";
 const DESCRIPTION =
@@ -40,11 +40,7 @@ export default function Home() {
         <TopSection />
       </section>
       <section>
-        <ProjectExamplesSection
-          content={
-            "While our studio calls Fort Lauderdale home, our work extends across South Florida's most sought-after communities — Las Olas, Rio Vista, and Coral Ridge locally, with projects reaching Boca Raton, Delray Beach, Palm Beach, Golden Beach, and Miami."
-          }
-        />
+        <ProjectsSectionHome />
       </section>
       <section className="bg-cream-200 py-20 lg:py-48">
         <OurApproachSection />

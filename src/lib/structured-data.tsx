@@ -18,7 +18,7 @@ const businessNode = {
   logo: `${SITE_URL}/assets/logo_sdg-horizontal.svg`,
   sameAs: [
     SITE.instagramUrl,
-    "https://www.houzz.com/hznb/professionals/interior-designers-and-decorators/sarvian-design-group-pfvwus-pf~1582672692",
+    SITE.houzzUrl,
     "https://www.linkedin.com/company/sarviandg/",
     // Google Business Profile
     "https://g.page/r/CakN1wWIrjEXEBM",

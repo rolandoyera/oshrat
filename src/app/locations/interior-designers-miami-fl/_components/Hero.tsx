@@ -45,7 +45,7 @@ export default function Hero() {
         <ScrollReveal>
           <div className="space-y-6 backdrop-blur-xs p-4">
             <h1 className="eyebrow text-cream-200 text-center">
-              Palm Beach Interior Design Firm
+              Miami Interior Design Firm
             </h1>
 
             <h2 className="lg:text-[6rem] text-[2.25rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-2 mb-6">
@@ -60,8 +60,9 @@ export default function Hero() {
             </h2>
             <p className="text-taupe-100 max-w-200">
               Blending striking architectural forms with curated interior
-              designs, Sarvian Design Group creates Palm Beach homes that unite
-              nature and design into one harmonious experience.
+              designs, Sarvian Design Group creates homes that unite nature and
+              design into one harmonious experience. See why we're one of the
+              best interior designers in Miami, FL.
             </p>
             <ArrowButton2
               href="/projects"

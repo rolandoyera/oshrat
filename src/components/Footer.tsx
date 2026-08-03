@@ -11,6 +11,7 @@ import { trackEvent } from "@/lib/gtag";
 import { SITE } from "@/lib/site";
 import SdgMonogram from "./navbar/SdgMonogram";
 import { IoHeart } from "react-icons/io5";
+import { FaHouzz } from "react-icons/fa";
 
 const REGIONS: { region: string; places: string[] }[] = [
   {
@@ -53,11 +54,12 @@ const REGIONS: { region: string; places: string[] }[] = [
 // Places with a dedicated location page link to it from the list.
 const PLACE_LINKS: Record<string, string> = {
   "Fort Lauderdale": "/locations/interior-designers-fort-lauderdale-fl",
-  "Las Olas": "/locations/interior-designers-fort-lauderdale-fl",
+  "Las Olas": "/locations/interior-designers-las-olas-fl",
   "Golden Beach": "/locations/interior-designers-golden-beach-fl",
   "Bal Harbour": "/locations/interior-designers-bal-harbour-fl",
   Surfside: "/locations/interior-designers-surfside-fl",
   "Palm Beach": "/locations/interior-designers-palm-beach-fl",
+  Miami: "/locations/interior-designers-miami-fl",
 };
 
 export default function Footer() {
@@ -82,6 +84,14 @@ export default function Footer() {
                   aria-label="Instagram (opens in a new tab)"
                   className="text-cream-300 icon">
                   <InstagramIcon size={30} color="currentColor" />
+                </a>
+                <a
+                  href={SITE.houzzUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Houzz Profile (opens in a new tab)"
+                  className="text-cream-300 icon">
+                  <FaHouzz size={30} color="currentColor" />
                 </a>
                 <a
                   href={`mailto:${SITE.email}`}

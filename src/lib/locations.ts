@@ -1,13 +1,14 @@
 // Communities the studio works in, grouped by county, for /locations.
-// `slug` is the future area page under /locations/<slug> — rows link there
-// once those pages exist.
+// Rows with an `href` link to that community's built location page; rows
+// without one render as plain text until their page exists.
 
 export type StudioLocation = {
-  slug: string;
   name: string;
-  blurb: string;
-  materials: string[];
-  houses: number;
+  /** Shown only when the community has a built page; unlinked rows display
+   * "Page Coming Soon" instead (see /locations). */
+  blurb?: string;
+  /** Path of the community's location page, once built. */
+  href?: string;
 };
 
 export type CountyGroup = {
@@ -20,25 +21,25 @@ export const COUNTIES: CountyGroup[] = [
     county: "Broward County",
     locations: [
       {
-        slug: "interior-design-fort-lauderdale",
         name: "Fort Lauderdale",
         blurb: "Waterfront moderns along the canals and the beach.",
-        materials: ["Shell stone", "Teak", "Board-formed concrete"],
-        houses: 6,
+        href: "/locations/interior-designers-fort-lauderdale-fl",
       },
       {
-        slug: "interior-design-weston",
+        name: "Las Olas",
+        blurb: "The isles off the boulevard, house by house.",
+        href: "/locations/interior-designers-las-olas-fl",
+      },
+      {
         name: "Weston & Southwest Ranches",
         blurb: "Low, shaded houses on wide inland lots.",
-        materials: ["Stucco", "White oak", "Clay tile"],
-        houses: 4,
       },
       {
-        slug: "interior-design-parkland",
         name: "Parkland",
         blurb: "Family houses set back under the pines.",
-        materials: ["Lime plaster", "Cedar", "Limestone"],
-        houses: 3,
+      },
+      {
+        name: "Coral Ridge",
       },
     ],
   },
@@ -46,18 +47,31 @@ export const COUNTIES: CountyGroup[] = [
     county: "Miami-Dade County",
     locations: [
       {
-        slug: "interior-design-miami",
         name: "Miami",
         blurb: "Tropical modernism, woven into the city.",
-        materials: ["Terrazzo", "Coral rock", "Brass"],
-        houses: 8,
+        href: "/locations/interior-designers-miami-fl",
       },
       {
-        slug: "interior-design-coral-gables",
+        name: "Miami Beach",
+      },
+      {
         name: "Coral Gables",
         blurb: "Mediterranean bones, quietly reworked.",
-        materials: ["Keystone", "Iron", "Plaster"],
-        houses: 5,
+      },
+      {
+        name: "Golden Beach",
+        blurb: "A private beachfront town, estate by estate.",
+        href: "/locations/interior-designers-golden-beach-fl",
+      },
+      {
+        name: "Bal Harbour",
+        blurb: "Oceanfront towers and quiet bayside streets.",
+        href: "/locations/interior-designers-bal-harbour-fl",
+      },
+      {
+        name: "Surfside",
+        blurb: "A low-key beach town between the ocean and the bay.",
+        href: "/locations/interior-designers-surfside-fl",
       },
     ],
   },
@@ -65,22 +79,28 @@ export const COUNTIES: CountyGroup[] = [
     county: "Palm Beach County",
     locations: [
       {
-        slug: "interior-design-boca-raton",
-        name: "Boca Raton",
-        blurb: "Coastal calm at a considered scale.",
-        materials: ["Travertine", "Walnut", "Glass"],
-        houses: 4,
+        name: "Palm Beach",
+        blurb: "Island light and inland ease.",
+        href: "/locations/interior-designers-palm-beach-fl",
       },
       {
-        slug: "interior-design-palm-beach",
-        name: "Palm Beach & West Palm Beach",
-        blurb: "Island light and inland ease.",
-        materials: ["Cypress", "Tabby", "Limewash"],
-        houses: 5,
+        name: "Palm Beach Gardens",
+      },
+      {
+        name: "Boca Raton",
+        blurb: "Coastal calm at a considered scale.",
+      },
+      {
+        name: "Delray Beach",
+      },
+      {
+        name: "West Palm Beach",
+      },
+      {
+        name: "Highland Beach",
       },
     ],
   },
 ];
 
 export const ALL_LOCATIONS = COUNTIES.flatMap((c) => c.locations);
-export const TOTAL_HOUSES = ALL_LOCATIONS.reduce((n, l) => n + l.houses, 0);

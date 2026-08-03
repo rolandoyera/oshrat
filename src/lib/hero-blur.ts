@@ -22,6 +22,8 @@ export const HERO_BLUR: Record<string, string> = {
     "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoUAAsAPu1iqU2ppaQiMAgBMB2JZQC7ABsvJV0ziTldGAAAzhmEOT/WlX+g13+Ubb9vJQH7AGj4fHEyj46EKlRO4WDrAQT0K2if5W0pNo6RvBmKo4K6yvCkAAA=",
   "/assets/kitchen-counter.jpg":
     "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAwCdASoUAAsAPu1iqU2ppaOiMAgBMB2JYwC7ABYHU8SHhEmG7KAA/mLv0MgC1usC7QuTGji7pmMbumJfPvNMlXwK8PHuiw8s2M4ZKWKd5jQv4RqN177VTW6AAA==",
+  "/services/residential-interior-design-16x9.jpg":
+    "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBACdASoUAAsAPu1iqU2ppaOiMAgBMB2JYwCdEf/gNA+YNPuHprcnuYAAzjRdlktMQa/v3l9e7Pa2Kkuxg7k+HXDtbwui7UkJ/38WboAs/8iJMV2BNmq2F9jrl2NYsorjEF4XYEXwiEx0h0AAAA==",
   "/assets/aventura-interior-design-5.jpg":
     "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JZQCdMoADFOXUrLvfUT6vZYAA/ZyxEdFGPNexLawoHuueJL2tnIeavS/ZVwDntfPcAHB1EnihpUD+WEscvhVcv2HjKX5kqayAp+4IntaPBeEMTVRRrn/Rnhywjowc1pxD8vUcAR6qRfJ7sPVMAA==",
 };

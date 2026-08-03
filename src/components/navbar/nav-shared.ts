@@ -7,6 +7,7 @@ export const LINKS = [
   { name: "Services", href: "/services" },
   { name: "About", href: "/about" },
   { name: "Press", href: "/press" },
+  { name: "Locations", href: "/locations" },
   { name: "Contact", href: "/contact" },
 ];
 
