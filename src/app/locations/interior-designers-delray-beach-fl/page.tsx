@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
-import ProjectsSection from "./_components/ProjectsSection";
-import Hero from "./_components/Hero";
+import LocationProjects from "../_components/LocationProjects";
+import LocationHero from "../_components/LocationHero";
+import Link from "next/link";
+import HoverUnderline from "@/components/ui/HoverUnderline";
 import ServicesSequence from "../_components/ServicesSequence";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
@@ -30,9 +32,42 @@ export default function Page() {
   return (
     <main>
       <JsonLd data={faqPageGraph(PATH, FAQS)} />
-      <Hero />
+      <LocationHero
+        image={{
+          src: "/services/residential-interior-design-16x9.jpg",
+          alt: "Sarvian Design Group interior showcase",
+          position: "top",
+        }}
+        eyebrow="Delray Beach Interior Design Firm"
+        heading={["Every square foot", "earns it."]}
+        paragraph="A full-service interior design firm working in Delray Beach on houses near the water and on the commercial spaces off Atlantic Avenue, where the rooms are rarely oversized and every decision has to carry its weight."
+      />
       <TopSection />
-      <ProjectsSection />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Latest Projects"
+        slugs={[
+          "golden-dreams-golden-beach-fl",
+          "aventura-modern-living-aventura-fl",
+          "norwood-residence-oakhurst-new-jersey",
+          "miami-river-miami-fl",
+        ]}
+      >
+        <p>
+          A selection of our residential and commercial interior design work,
+          from full-home renovations and new construction interiors to single
+          rooms drawn to the same level of detail. It is the standard we bring
+          to every Delray Beach project. Our studio works out of{" "}
+          <Link
+            href="/locations/interior-designers-fort-lauderdale-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            Fort Lauderdale
+            <HoverUnderline className="text-accent" />
+          </Link>{" "}
+          and has been designing across South Florida for years.
+        </p>
+      </LocationProjects>
       <Cta />
       <ServicesSequence services={SERVICES} />
       <Testimonials />

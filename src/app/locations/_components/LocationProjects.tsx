@@ -10,8 +10,6 @@ import Container from "@/components/ui/Container";
 import TransitionLink from "@/components/ui/TransitionLink";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import HoverUnderline from "@/components/ui/HoverUnderline";
 import ArrowButton from "@/components/ui/ArrowButton";
 
 export interface Project {
@@ -23,15 +21,6 @@ export interface Project {
   mainImage: SanityImageWithAlt;
   imageAlt?: string;
 }
-
-// Hand-picked projects for this page, shown in exactly this order.
-// Edit this list to change what the Boca Raton page features.
-const FEATURED_SLUGS = [
-  "golden-dreams-golden-beach-fl",
-  "aventura-modern-living-aventura-fl",
-  "norwood-residence-oakhurst-new-jersey",
-  "miami-river-miami-fl",
-];
 
 const FEATURED_PROJECTS = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage)]{
   _id,
@@ -88,20 +77,27 @@ export function ProjectCard({
   );
 }
 
-export default async function ProjectsSection({
+export default async function LocationProjects({
+  children,
   className,
+  eyebrow,
+  heading,
+  slugs,
 }: {
+  children: React.ReactNode;
   className?: string;
+  eyebrow: string;
+  heading: string;
+  /** Hand-picked project slugs, shown in exactly this order. */
+  slugs: string[];
 }) {
-  const fetched = await client.fetch<Project[]>(FEATURED_PROJECTS, {
-    slugs: FEATURED_SLUGS,
-  });
+  const fetched = await client.fetch<Project[]>(FEATURED_PROJECTS, { slugs });
 
   // GROQ returns matches in document order — restore the hand-picked order.
   // A renamed/unpublished slug simply drops out instead of breaking the page.
-  const featured = FEATURED_SLUGS.map((slug) =>
-    fetched.find((p) => p.slug === slug),
-  ).filter((p): p is Project => Boolean(p));
+  const featured = slugs
+    .map((slug) => fetched.find((p) => p.slug === slug))
+    .filter((p): p is Project => Boolean(p));
 
   if (!featured.length) return null;
 
@@ -109,23 +105,11 @@ export default async function ProjectsSection({
     <section className={cn("bg-cream-200 pt-24 pb-24 lg:py-32", className)}>
       <Container size="lg">
         <ScrollReveal>
-          <p className="eyebrow">Selected work</p>
-          <h2>Latest Projects</h2>
+          <p className="eyebrow">{eyebrow}</p>
+          <h2>{heading}</h2>
           <div className="max-w-3xl">
             {/* This line is only for SEO */}
-            <p>
-              A selection of our residential and commercial interior design
-              work, from full-home renovations and new construction interiors to
-              single rooms drawn to the same level of detail. It is the standard
-              we bring to every Boca Raton project. Our studio works out of{" "}
-              <Link
-                href="/locations/interior-designers-fort-lauderdale-fl"
-                className="group relative hover:text-accent transition-colors duration-300">
-                Fort Lauderdale
-                <HoverUnderline className="text-accent" />
-              </Link>{" "}
-              and has been designing across South Florida for years.
-            </p>
+            {children}
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-10 lg:mt-20">

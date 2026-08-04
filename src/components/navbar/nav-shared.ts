@@ -17,7 +17,7 @@ export const LINKS = [
 // URL won't match what's requested (wasted preload + browser warning). Routes
 // without a single full-screen hero (Projects list, Contact drawer) are absent.
 const ROUTE_HERO: Record<string, { src: string; quality?: number }> = {
-  "/services": { src: "/assets/aventura-interior-design-5.jpg", quality: 50 },
+  "/services": { src: "/assets/aventura-interior-design-5.webp", quality: 50 },
   "/about": { src: "/about/Sarvian-Design-Group.jpg" },
   "/press": { src: "/projects/sdg-bedroom-remodel-armoire-7.jpg" },
 };

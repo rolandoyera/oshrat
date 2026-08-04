@@ -45,6 +45,7 @@ const REGIONS: { region: string; places: string[] }[] = [
       "Golden Beach",
       "Bal Harbour",
       "Surfside",
+      "Aventura",
     ],
   },
   {

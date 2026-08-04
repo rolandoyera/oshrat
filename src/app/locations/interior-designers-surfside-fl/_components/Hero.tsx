@@ -19,7 +19,7 @@ export default function Hero() {
   return (
     <section className="relative h-[calc(100vh-2.25rem)] mt-9 w-full overflow-hidden bg-black">
       <Image
-        src="/assets/aventura-interior-design-5.jpg"
+        src="/assets/aventura-interior-design-5.webp"
         alt="Sarvian Design Group Surfside showcase"
         fill
         priority
@@ -38,8 +38,7 @@ export default function Hero() {
       {/* Text and Title Overlay - aligned to bottom-left */}
       <Container
         size="lg"
-        className="absolute inset-0 flex items-end z-20 pb-16"
-      >
+        className="absolute inset-0 flex items-end z-20 pb-16">
         <ScrollReveal className="w-full">
           <div className="space-y-6">
             <h1 className="eyebrow text-cream-200">

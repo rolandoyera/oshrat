@@ -9,7 +9,7 @@ export default function ServicesHero() {
   return (
     <section className="relative flex min-h-dvh w-full items-center overflow-hidden">
       <Image
-        src="/assets/aventura-interior-design-5.jpg"
+        src="/assets/aventura-interior-design-5.webp"
         alt="Sarvian Design Group interior in Aventura, Florida"
         fill
         priority

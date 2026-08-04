@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
-import ProjectsSection from "@/components/ProjectsSection";
-import Hero from "./_components/Hero";
+import LocationHero from "../_components/LocationHero";
 import ServicesSequence from "../_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
 import { socialMeta } from "@/lib/seo";
@@ -12,6 +11,9 @@ import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
 import WhyBalHarbour from "../_components/seo/WhyBalHarbour";
+import LocationProjects from "../_components/LocationProjects";
+import Link from "next/link";
+import HoverUnderline from "@/components/ui/HoverUnderline";
 
 const PATH = "/locations/interior-designers-bal-harbour-fl";
 const TITLE = "Interior Designers in Bal Harbour, FL | Sarvian Design Group";
@@ -29,9 +31,42 @@ export default function Page() {
   return (
     <main>
       <JsonLd data={faqPageGraph(PATH, FAQS)} />
-      <Hero />
+      <LocationHero
+        image={{
+          src: "/assets/aventura-interior-design-5.webp",
+          alt: "Sarvian Design Group Bal Harbour and Surfside showcase",
+          blurKey: "/assets/aventura-interior-design-5.jpg",
+        }}
+        eyebrow="Bal Harbour Interior Design Firm"
+        heading={["Finished", "not decorated."]}
+        paragraph="From private residences to commercial and community spaces in Bal Harbour and across South Florida, Sarvian Design Group carries a project from space planning through custom millwork, materials, and final installation."
+      />
       <TopSection />
-      <ProjectsSection content="A look at our most recent work across South Florida, from oceanfront residences and full-home renovations to custom millwork, community and commercial spaces. It is the same approach we bring to every Bal Harbour project: understand how the space is actually used, then shape the design details around it." />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Latest Projects"
+        slugs={[
+          "golden-dreams-golden-beach-fl",
+          "aventura-modern-living-aventura-fl",
+          "the-shul-bal-harbour-surfside-fl",
+          "miami-river-miami-fl",
+        ]}
+      >
+        <p>
+          A look at our most recent work across{" "}
+          <Link
+            href="/locations/interior-designers-miami-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            Miami
+            <HoverUnderline className="text-accent" />
+          </Link>
+          , from oceanfront residences and full-home renovations to custom
+          millwork, community and commercial spaces. It is the same approach we
+          bring to every Bal Harbour project: understand how the space is
+          actually used, then shape the design details around it.
+        </p>
+      </LocationProjects>
       <Cta />
       <ServicesSequence services={SERVICES} />
       <Testimonials />

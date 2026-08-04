@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
-import ProjectsSection from "./_components/ProjectsSection";
-import Hero from "./_components/Hero";
+import LocationProjects from "../_components/LocationProjects";
+import LocationHero from "../_components/LocationHero";
+import Link from "next/link";
+import HoverUnderline from "@/components/ui/HoverUnderline";
 import ServicesSequence from "../_components/ServicesSequence";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
@@ -31,9 +33,42 @@ export default function Page() {
   return (
     <main>
       <JsonLd data={faqPageGraph(PATH, FAQS)} />
-      <Hero />
+      <LocationHero
+        image={{
+          src: "/services/residential-interior-design-16x9.jpg",
+          alt: "Sarvian Design Group interior showcase",
+          position: "top",
+        }}
+        eyebrow="West Palm Beach Interior Design Firm"
+        heading={["Built to outlast", "the trend."]}
+        paragraph="A luxury interior design firm working on both sides of West Palm Beach, from the historic houses of El Cid and Flamingo Park to the offices, showrooms, and tower residences downtown."
+      />
       <TopSection />
-      <ProjectsSection />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Latest Projects"
+        slugs={[
+          "golden-dreams-golden-beach-fl",
+          "aventura-modern-living-aventura-fl",
+          "norwood-residence-oakhurst-new-jersey",
+          "miami-river-miami-fl",
+        ]}
+      >
+        <p>
+          A selection of our residential and commercial interior design work,
+          from full-home renovations and new construction interiors to single
+          rooms drawn to the same level of detail. It is the standard we bring
+          to every West Palm Beach project. Our studio works out of{" "}
+          <Link
+            href="/locations/interior-designers-fort-lauderdale-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            Fort Lauderdale
+            <HoverUnderline className="text-accent" />
+          </Link>{" "}
+          and has been designing across South Florida for years.
+        </p>
+      </LocationProjects>
       <Cta />
       <ServicesSequence services={SERVICES} />
       <Testimonials />
