@@ -11,8 +11,7 @@ import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
-import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
+import WhyBalHarbour from "../_components/seo/WhyBalHarbour";
 
 const PATH = "/locations/interior-designers-bal-harbour-fl";
 const TITLE = "Interior Designers in Bal Harbour, FL | Sarvian Design Group";
@@ -45,7 +44,7 @@ export default function Page() {
           "For us, luxury interior design is not about ornamentation—it’s about creating an environment that feels intentional and true to the people who use it. That standard holds whether the project is a private residence or the sanctuary we designed for The Shul of Bal Harbour, where custom bronze, stone, and millwork were drawn and specified down to the detail. As a full-service interior design firm, we work closely with our clients from the earliest concept stages through final installation, ensuring that every detail supports the overall vision.",
         ]}
       />
-      <Why {...WHY} />
+      <WhyBalHarbour />
     </main>
   );
 }

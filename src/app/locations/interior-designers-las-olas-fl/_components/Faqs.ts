@@ -1,48 +1,53 @@
 /**
- * Surfside FAQ copy. Feeds both <FaqSection /> and the FAQPage JSON-LD on
+ * Las Olas FAQ copy. Feeds both <FaqSection /> and the FAQPage JSON-LD on
  * the page, so keep questions/answers plain text.
  */
 export const FAQS: { question: string; answer: string }[] = [
   {
-    question: "Your studio is in Fort Lauderdale — do you work in Surfside?",
+    question: "Are you local to Las Olas?",
     answer:
-      "Regularly. Surfside sits an easy drive down the coast from our Fort Lauderdale studio, which means we walk the site ourselves through design, construction, and installation instead of running the project remotely. This stretch of coastline — Surfside, Bal Harbour, Bay Harbor Islands, Sunny Isles, Golden Beach — accounts for a meaningful share of the studio's work, including the sanctuary we designed at The Shul on Collins Avenue.",
+      "Yes. Our studio is in Fort Lauderdale, minutes from the boulevard, so Las Olas is not a market we travel to. We walk the site ourselves through design, construction, and installation, and we can be there the same morning when a question comes up on the job. A meaningful share of the studio's work sits in and around this neighborhood.",
   },
   {
-    question: "Which parts of Surfside do you work in?",
+    question: "Which parts of Las Olas do you work in?",
     answer:
-      "All of it. The oceanfront condominiums along Collins Avenue, the single-family streets that run between the beach and the bay, and the neighboring communities of Bal Harbour and Bay Harbor Islands. A high-floor oceanfront apartment and a family home a few blocks inland make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
+      "The waterfront homes on the isles, the residences along the boulevard and the streets behind it, and the downtown towers at the west end. A deepwater home on the isles and a high-floor apartment downtown make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
+  },
+  {
+    question: "Do you design waterfront homes on the isles differently?",
+    answer:
+      "Yes, because the water sets the terms. Light coming off a canal moves through a room differently than light from the street, and on the isles the rear of the house is usually the front door in practice, with the dock, pool, and terrace doing the work of a formal entry. We plan the layout around that, and specify materials that hold up to sun, humidity, and constant indoor-outdoor traffic.",
   },
   {
     question:
-      "We're in a condominium. Can you work within our building's renovation rules?",
+      "We're in a downtown building. Can you work within our renovation rules?",
     answer:
-      "Yes — it's a normal part of coastal work for us. Condominium buildings in Surfside typically ask for drawings and specifications before approving a renovation, and impose work hours, elevator reservations, and sound-attenuation standards on the job itself. We build the association submission into the design schedule from day one and coordinate with your contractor so approval happens once, not in rounds of revisions.",
+      "Yes, it is routine work for us. Buildings along and off the boulevard typically want drawings and specifications approved before a renovation starts, and set work hours, elevator reservations, and sound attenuation standards for the job itself. We build the association submission into the design schedule from the beginning and coordinate with your contractor so approval happens once rather than across rounds of revisions.",
   },
   {
-    question: "Do you design an oceanfront residence differently?",
+    question: "Do you work on older homes and full teardowns?",
     answer:
-      "We do, and the reasons are practical: Atlantic light and salt air. Full-height glass on the ocean side changes how every color and finish reads across the day, and coastal exposure is hard on materials that were never meant for it. So the plan is organized around the view instead of against it, and the stones, textiles, and metals are specified for strong daylight and salt-laden air from the start.",
+      "Both. Some of the best houses in this neighborhood are worth keeping and reworking, and some lots are worth starting over on. We are candid about which situation you are in after walking the property. On a renovation we design around what deserves to stay, and on new construction we join your architect early so the interior and the architecture are resolved together instead of reconciled after framing.",
   },
   {
-    question: "Do you take on projects other than homes?",
+    question: "Do you take on commercial projects?",
     answer:
-      "Yes. The clearest example is in Surfside itself — our studio designed the sanctuary and interiors at The Shul of Bal Harbour on Collins Avenue, a project carried out in custom bronze, stone, and millwork. We accept select commercial, hospitality, and community commissions when the scope genuinely benefits from a full-service design approach.",
+      "Yes, selectively. Las Olas is as much a commercial street as a residential one, and we take on shops, restaurants, offices, and community spaces where the scope genuinely benefits from a full-service approach. The clearest example of that range is the sanctuary and interiors our studio designed at The Shul, carried out in custom bronze, stone, and millwork.",
   },
   {
     question: "What types of projects do you take on?",
     answer:
-      "The studio's range runs from ground-up new construction and full-home renovations to single-room projects, custom furnishings, built-ins, lighting design, material selection, procurement, and final styling — scaled to what each project actually needs.",
+      "The studio's range runs from ground-up new construction and full-home renovations to single-room projects, custom furnishings, built-ins, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
   },
   {
-    question: "What does it cost to hire an interior designer in Surfside?",
+    question: "What does it cost to hire an interior designer in Las Olas?",
     answer:
-      "Honestly: it depends on scope, and we'd rather be specific than vague. A kitchen or primary suite is a different investment than a whole-residence renovation or new construction interiors, so we quote each engagement individually after a consultation. You receive a detailed fee proposal before design work starts — no surprises when installation day arrives.",
+      "It depends on scope, and we would rather be specific than vague. A kitchen or primary suite is a different investment than a whole-home renovation or new construction interiors, so we quote each engagement individually after a consultation. You receive a detailed fee proposal before design work starts, so there are no surprises at installation.",
   },
   {
-    question: "How long does a Surfside project take?",
+    question: "How long does a Las Olas project take?",
     answer:
-      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar — usually twelve to twenty-four months — and condominium projects can add time for building approval. Custom pieces carry the longest lead times, so we place those orders early and install the home in one finished reveal rather than piecemeal.",
+      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually twelve to twenty-four months, and work in a downtown building can add time for approval. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
   },
   {
     question: "How do I start a project?",
@@ -50,13 +55,8 @@ export const FAQS: { question: string; answer: string }[] = [
       "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
   },
   {
-    question: "Do you offer consultations?",
-    answer:
-      "Yes. We offer consultations for most projects, though availability can vary by scope, location, and schedule. Reach out through the contact form and we'll let you know what's possible.",
-  },
-  {
     question: "Can you help with custom furniture or built-ins?",
     answer:
-      "Yes. Custom built-ins, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we've worked with for years — with drawings and specifications detailed enough that what arrives matches what was approved.",
+      "Yes. Custom built-ins, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we have worked with for years, with drawings and specifications detailed enough that what arrives matches what was approved.",
   },
 ];

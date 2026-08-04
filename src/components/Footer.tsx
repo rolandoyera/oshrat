@@ -28,6 +28,8 @@ const REGIONS: { region: string; places: string[] }[] = [
     region: "Palm Beach",
     places: [
       "Palm Beach",
+      "West Palm Beach",
+      "Palm Beach Gardens",
       "Boca Raton",
       "Delray Beach",
       "Jupiter",
@@ -59,6 +61,10 @@ const PLACE_LINKS: Record<string, string> = {
   "Bal Harbour": "/locations/interior-designers-bal-harbour-fl",
   Surfside: "/locations/interior-designers-surfside-fl",
   "Palm Beach": "/locations/interior-designers-palm-beach-fl",
+  "West Palm Beach": "/locations/interior-designers-west-palm-beach-fl",
+  "Palm Beach Gardens": "/locations/interior-designers-palm-beach-gardens-fl",
+  "Boca Raton": "/locations/interior-designers-boca-raton-fl",
+  "Delray Beach": "/locations/interior-designers-delray-beach-fl",
   Miami: "/locations/interior-designers-miami-fl",
 };
 

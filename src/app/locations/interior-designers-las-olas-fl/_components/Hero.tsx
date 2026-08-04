@@ -26,7 +26,9 @@ export default function Hero() {
         sizes="100vw"
         quality={90}
         placeholder="blur"
-        blurDataURL={HERO_BLUR["/assets/aventura-interior-design-5.jpg"]}
+        blurDataURL={
+          HERO_BLUR["/assets/master-bath-interior-design-front.webp"]
+        }
         style={{
           transform: `translate3d(0, ${scrollY * 0.35}px, 0) scale(1.1)`,
         }}
@@ -38,11 +40,12 @@ export default function Hero() {
       {/* Text and Title Overlay - aligned to bottom-left */}
       <Container
         size="lg"
-        className="absolute inset-0 flex items-end z-20 pb-16">
+        className="absolute inset-0 flex items-end z-20 pb-16"
+      >
         <ScrollReveal className="w-full">
           <div className="space-y-6">
             <h1 className="eyebrow text-cream-200">
-              Las Olas Interior Design Firm
+              Interior Designers in Las Olas, FL
             </h1>
 
             <h2 className="lg:text-[6rem] text-[2.25rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-2 mb-6">
@@ -56,10 +59,10 @@ export default function Hero() {
               <span className="block w-fit">on purpose.</span>
             </h2>
             <p className="text-taupe-100 max-w-200">
-              We are interior designers in Las Olas, Florida specialized in
-              residential and commercial interiors. We work with our clients to
-              create spaces that are beautiful, functional, and tailored to
-              their needs and preferences.
+              We are interior designers in Las Olas, Florida, working across
+              residential and commercial interiors — the waterfront homes along
+              the isles and the shops and restaurants that give the boulevard
+              its character. Every layout, material, and detail with purpose.
             </p>
           </div>
         </ScrollReveal>

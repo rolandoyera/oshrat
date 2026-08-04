@@ -26,14 +26,13 @@ import { BsTwitterX } from "react-icons/bs";
 import ShareLinks from "./share-links";
 import Container from "@/components/ui/Container";
 import Testimonials from "@/components/Testimonials";
-import Why from "@/components/Why";
-import { WHY as BAL_HARBOUR_WHY } from "@/app/locations/interior-designers-bal-harbour-fl/_components/WhyItems";
+import WhyBalHarbour from "@/app/locations/_components/seo/WhyBalHarbour";
 
-// Projects that get a Why section above the footer, keyed by slug — copy is
-// shared with the matching location page. Extend as copy is arranged for
-// other projects.
-const PROJECT_WHY: Record<string, React.ComponentProps<typeof Why>> = {
-  "the-shul-bal-harbour-surfside-fl": BAL_HARBOUR_WHY,
+// Projects that get a Why section above the footer, keyed by slug — the
+// component is shared with the matching location page. Extend as copy is
+// arranged for other projects.
+const PROJECT_WHY: Record<string, React.ComponentType> = {
+  "the-shul-bal-harbour-surfside-fl": WhyBalHarbour,
 };
 
 type Project = {
@@ -200,6 +199,7 @@ export default async function ProjectPage({
       ? allProjects[(currentIndex + 1) % allProjects.length]
       : null;
 
+  const ProjectWhy = PROJECT_WHY[slug];
   const hero = data.heroImage || data.mainImage;
   const rich = data.description ?? data.body;
   const gallery = Array.isArray(data.gallery) ? data.gallery : [];
@@ -459,7 +459,7 @@ export default async function ProjectPage({
       <NextProject prevProject={prevProject} nextProject={nextProject} />
       <Cta />
       <Testimonials />
-      {PROJECT_WHY[slug] && <Why {...PROJECT_WHY[slug]} />}
+      {ProjectWhy && <ProjectWhy />}
     </main>
   );
 }

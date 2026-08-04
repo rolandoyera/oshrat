@@ -24,8 +24,16 @@ export interface Project {
   imageAlt?: string;
 }
 
-const LATEST_PROJECTS = groq`*[_type == "project" && defined(slug.current) && defined(mainImage)]
-  | order(coalesce(year, 0) desc, _createdAt desc)[0...4]{
+// Hand-picked projects for this page, shown in exactly this order.
+// Edit this list to change what the Miami page features.
+const FEATURED_SLUGS = [
+  "south-beach",
+  "aventura-modern-living-aventura-fl",
+  "miami-river-miami-fl",
+  "the-shul-bal-harbour-surfside-fl",
+];
+
+const FEATURED_PROJECTS = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage)]{
   _id,
   title,
   location,
@@ -85,11 +93,17 @@ export default async function ProjectsSection({
 }: {
   className?: string;
 }) {
-  const projects = await client.fetch<Project[]>(LATEST_PROJECTS);
+  const fetched = await client.fetch<Project[]>(FEATURED_PROJECTS, {
+    slugs: FEATURED_SLUGS,
+  });
 
-  if (!projects?.length) return null;
+  // GROQ returns matches in document order — restore the hand-picked order.
+  // A renamed/unpublished slug simply drops out instead of breaking the page.
+  const featured = FEATURED_SLUGS.map((slug) =>
+    fetched.find((p) => p.slug === slug),
+  ).filter((p): p is Project => Boolean(p));
 
-  const featured = projects.slice(0, 4);
+  if (!featured.length) return null;
 
   return (
     <section className={cn("bg-cream-200 pt-24 pb-24 lg:py-32", className)}>
@@ -100,23 +114,17 @@ export default async function ProjectsSection({
           <div className="max-w-3xl">
             {/* This line is only for SEO */}
             <p>
-              While our studio calls Fort Lauderdale home, our work extends
-              across South Florida's most sought-after communities —{" "}
+              A selection of our residential and commercial interior design
+              projects in Miami, from full-home renovations and new construction
+              interiors to single rooms drawn to the same level of detail. Our
+              studio works out of{" "}
               <Link
-                href="/locations/interior-designers-las-olas-fl"
+                href="/locations/interior-designers-fort-lauderdale-fl"
                 className="group relative hover:text-accent transition-colors duration-300">
-                Las Olas
+                Fort Lauderdale
                 <HoverUnderline className="text-accent" />
-              </Link>
-              , Rio Vista, and Coral Ridge locally, with projects reaching Boca
-              Raton, Palm Beach,{" "}
-              <Link
-                href="/locations/interior-designers-golden-beach-fl"
-                className="group relative hover:text-accent transition-colors duration-300">
-                Golden Beach
-                <HoverUnderline className="text-accent" />
-              </Link>
-              , Miami and beyond.
+              </Link>{" "}
+              and has been designing across South Florida for years.
             </p>
           </div>
 

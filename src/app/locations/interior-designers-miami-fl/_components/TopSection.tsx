@@ -15,19 +15,20 @@ export default function TopSection() {
             threshold={0.3}
             delay={300}
             className="lg:col-span-2">
-            <span className="eyebrow">Featured Projects</span>
+            <span className="eyebrow">Featured Project</span>
             <h2>Interior Design in Miami, FL</h2>
             <p>
-              Set on a quiet street in Miami, this ground-up residence was
-              designed as a single idea of architecture and landscape resolved
-              together. Layered travertine volumes, bronze slat screens, and
-              floor-to-ceiling glass open the home to the light and tropical
-              canopy, while inside the same restrained palette continues in warm
-              stone, natural wood, and softly diffused lighting.
+              A tropical modern residence in the heart of Miami, built around
+              the idea that indoor and outdoor living are one continuous space.
+              Warm wood softens the geometry, expansive glass pulls daylight
+              deep into the plan, and architectural lighting takes over at dusk
+              to hold the clean silhouettes. Outside, the pool deck does the
+              work of a second living room, with shaded overhangs and open-air
+              pavilions that keep the house comfortable year round.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mt-12 items-center justify-center md:justify-start">
               <ArrowButton
-                href="/projects/old-river"
+                href="/projects/miami-river-miami-fl"
                 variant="primary"
                 className="w-full sm:w-auto justify-center">
                 View Project
@@ -41,7 +42,7 @@ export default function TopSection() {
             className="relative lg:col-span-3">
             <Image
               src="/assets/old-river-miami-front-view.webp"
-              alt="Old River, Miami residence front view"
+              alt="Miami River residence, a tropical modern home with expansive glass, warm wood, and lush landscaping"
               width={900}
               height={400}
               quality={90}

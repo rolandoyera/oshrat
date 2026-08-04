@@ -85,16 +85,23 @@ export const COUNTIES: CountyGroup[] = [
       },
       {
         name: "Palm Beach Gardens",
+        blurb: "Club communities, past the builder's plan.",
+        href: "/locations/interior-designers-palm-beach-gardens-fl",
       },
       {
         name: "Boca Raton",
         blurb: "Coastal calm at a considered scale.",
+        href: "/locations/interior-designers-boca-raton-fl",
       },
       {
         name: "Delray Beach",
+        blurb: "Smaller footprints, solved properly.",
+        href: "/locations/interior-designers-delray-beach-fl",
       },
       {
         name: "West Palm Beach",
+        blurb: "Historic streets and a new downtown.",
+        href: "/locations/interior-designers-west-palm-beach-fl",
       },
       {
         name: "Highland Beach",

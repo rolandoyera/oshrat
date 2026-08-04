@@ -45,7 +45,7 @@ export default function Hero() {
         <ScrollReveal>
           <div className="space-y-6 backdrop-blur-xs p-4">
             <h1 className="eyebrow text-cream-200 text-center">
-              Miami Interior Design Firm
+              Interior Designers in Miami, FL
             </h1>
 
             <h2 className="lg:text-[6rem] text-[2.25rem] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),white)] leading-none space-y-2 mb-6">

@@ -49,7 +49,7 @@ export default function LocationsPage() {
                 <p className="max-w-lg text-foreground/85 leading-relaxed">
                   We build across communities from Palm Beach to Miami —
                   waterfront moderns, courtyard houses, and quiet renovations.
-                  Choose a place to see the houses near you.
+                  Choose a place to see our work near you.
                 </p>
               </div>
             </ScrollReveal>
@@ -83,8 +83,7 @@ export default function LocationsPage() {
                           <h2
                             className={`block mb-0 leading-4 text-2xl transition-colors group-hover:text-accent ${
                               location.href ? "" : "opacity-50"
-                            }`}
-                          >
+                            }`}>
                             {location.name}
                           </h2>
                           <span className="mt-2 block max-w-sm text-sm">
@@ -101,8 +100,7 @@ export default function LocationsPage() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           className="h-5 w-5 justify-self-end text-foreground/60 transition-all duration-250 ease-[cubic-bezier(.6,.2,.1,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
-                          aria-hidden="true"
-                        >
+                          aria-hidden="true">
                           <path d="M5 19L19 5M19 5H8M19 5V16" />
                         </svg>
                       </>
@@ -114,8 +112,7 @@ export default function LocationsPage() {
                         {location.href ? (
                           <Link
                             href={location.href}
-                            className={`group transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 ${rowClasses}`}
-                          >
+                            className={`group transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 ${rowClasses}`}>
                             {row}
                           </Link>
                         ) : (

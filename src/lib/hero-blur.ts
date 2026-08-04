@@ -26,4 +26,6 @@ export const HERO_BLUR: Record<string, string> = {
     "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBACdASoUAAsAPu1iqU2ppaOiMAgBMB2JYwCdEf/gNA+YNPuHprcnuYAAzjRdlktMQa/v3l9e7Pa2Kkuxg7k+HXDtbwui7UkJ/38WboAs/8iJMV2BNmq2F9jrl2NYsorjEF4XYEXwiEx0h0AAAA==",
   "/assets/aventura-interior-design-5.jpg":
     "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoUAA0APu1iqU2ppaOiMAgBMB2JZQCdMoADFOXUrLvfUT6vZYAA/ZyxEdFGPNexLawoHuueJL2tnIeavS/ZVwDntfPcAHB1EnihpUD+WEscvhVcv2HjKX5kqayAp+4IntaPBeEMTVRRrn/Rnhywjowc1pxD8vUcAR6qRfJ7sPVMAA==",
+  "/assets/master-bath-interior-design-front.webp":
+    "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoUAAsAPu1iqk4ppaQiMAgBMB2JYwCdAB8mzTn1e3h6S91gAPRxAaRIc6vG8dkqQTAi2kCYaZ3aVRts3Wq9UFo+ciuF2eZ/dapcHCGn5QJCssaREAAAAA==",
 };

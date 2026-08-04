@@ -1,38 +1,53 @@
 /**
- * Golden Beach FAQ copy. Feeds both <FaqSection /> and the FAQPage JSON-LD on
+ * Miami FAQ copy. Feeds both <FaqSection /> and the FAQPage JSON-LD on
  * the page, so keep questions/answers plain text.
  */
 export const FAQS: { question: string; answer: string }[] = [
   {
-    question:
-      "Your studio is in Fort Lauderdale — do you take on projects in Golden Beach?",
+    question: "Your studio is in Fort Lauderdale. Do you take on projects in Miami?",
     answer:
-      "Yes, and often. Golden Beach is about thirty minutes south of our Fort Lauderdale studio, close enough that we're on site through design, construction, and installation rather than managing a project from a distance. A significant share of our work sits along this stretch of coast, from Golden Beach and Sunny Isles to Bal Harbour, Aventura, and Hallandale.",
+      "Yes, and regularly. Miami is a short drive south of our Fort Lauderdale studio, close enough that we walk the site ourselves through design, construction, and installation rather than running a project remotely. Two of the residences in our portfolio are Miami projects, and a meaningful share of the studio's work sits between here and Palm Beach.",
   },
   {
-    question: "Which parts of Golden Beach do you work in?",
+    question: "Which parts of Miami do you work in?",
     answer:
-      "Throughout the town — the oceanfront residences along Ocean Boulevard, the Intracoastal and canal-side homes behind them, and the interior streets in between. Each orientation asks for something different from an interior, particularly in how it handles morning and afternoon light, so we plan around the specific lot rather than applying one coastal formula town-wide.",
+      "Across the city and its waterfront. That includes apartments in the towers along Biscayne Bay, houses on the river and the canals, and the garden neighborhoods a few streets inland. A high-floor residence and a walled house on a corner lot make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
+  },
+  {
+    question: "How do you handle indoor-outdoor living?",
+    answer:
+      "As one plan rather than two. In Miami the terrace, pool deck, and breezeway are rooms that happen to have no walls, and they get designed with the same attention as anything inside. That means the floor material carrying across the threshold where it should, shade planned before furniture is placed, and outdoor pieces specified to survive sun and rain without looking like patio furniture.",
+  },
+  {
+    question:
+      "We're in a tower. Can you work within our building's renovation rules?",
+    answer:
+      "Yes, it's routine work for us. Buildings across Miami typically require drawings and specifications approved before a renovation begins, and set work hours, service elevator reservations, and sound attenuation standards for the job itself. We build the association submission into the design schedule from the start and coordinate with your contractor so approval happens once rather than across rounds of revisions.",
   },
   {
     question: "Do you work with my architect and builder on new construction?",
     answer:
-      "Yes. On new construction in Golden Beach we prefer to join alongside your architect early, so the interior and the architecture are resolved together rather than negotiated after framing. Your architect and contractor carry permitting and the town's review process; we coordinate closely with them on layouts, ceiling and lighting plans, millwork, and finish selections so nothing has to be undone later.",
+      "Yes, and we prefer to join early, while the plans are still moving. Interiors resolved alongside the architecture avoid the compromises that surface when the two are reconciled after framing. Your architect and contractor carry permitting and inspections; we coordinate closely with them on layouts, ceiling and lighting plans, millwork, and finish selections so nothing has to be undone later.",
+  },
+  {
+    question: "Do you take on commercial projects?",
+    answer:
+      "Yes, selectively. Alongside our residential work we take on commercial, hospitality, and community projects where the scope genuinely benefits from a full-service interior design approach. The clearest example of that range is the sanctuary and interiors our studio designed at The Shul, carried out in custom bronze, stone, and millwork.",
   },
   {
     question: "What types of projects do you take on?",
     answer:
-      "Sarvian Design Group works on a range of interior design projects, from ground-up new construction and full-home renovations to single-room transformations, custom furnishings, built-ins, lighting, material selections, procurement, and styling, depending on project scope.",
+      "The studio's range runs from ground-up new construction and full-home renovations to single-room projects, custom furnishings, built-ins, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
   },
   {
-    question: "What does it cost to hire an interior designer in Golden Beach?",
+    question: "What does it cost to hire an interior designer in Miami?",
     answer:
-      "It depends on scope, and we believe in being direct about it. A single-space project like a kitchen or primary suite is a different investment than a full home renovation or a new construction interior, so every engagement is quoted per project after an initial consultation. We provide a detailed fee proposal before any work begins, so there are no surprises at install.",
+      "It depends on scope, and we would rather be specific than vague. A kitchen or primary suite is a different investment than a whole-home renovation or new construction interiors, so we quote each engagement individually after a consultation. You receive a detailed fee proposal before design work starts, so there are no surprises at installation.",
   },
   {
-    question: "How long does a Golden Beach home take?",
+    question: "How long does a Miami project take?",
     answer:
-      "A furnishings-focused project typically runs four to eight months from concept to install. Full renovations and new builds run with the construction schedule, usually twelve to twenty-four months. Lead times on custom pieces are the honest constraint, so we sequence orders early and the home installs as one coherent reveal rather than in pieces.",
+      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually twelve to twenty-four months, and work inside a building can add time for association approval. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
   },
   {
     question: "How do I start a project?",
@@ -40,13 +55,8 @@ export const FAQS: { question: string; answer: string }[] = [
       "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
   },
   {
-    question: "Do you offer consultations?",
-    answer:
-      "Yes. We offer consultations for most projects, though availability can vary by scope, location, and schedule. Reach out through the contact form and we'll let you know what's possible.",
-  },
-  {
     question: "Can you help with custom furniture or built-ins?",
     answer:
-      "Yes. Sarvian Design Group can assist with custom design elements such as built-ins, lighting, furniture pieces, and other details that may require drawings, specifications, or coordination with fabricators. Design and engineering are done in-house, while fabrication is handled by trusted partners in South Florida.",
+      "Yes. Custom built-ins, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we have worked with for years, with drawings and specifications detailed enough that what arrives matches what was approved.",
   },
 ];

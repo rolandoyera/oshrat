@@ -11,8 +11,7 @@ import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
-import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
+import WhySurfside from "../_components/seo/WhySurfside";
 
 const PATH = "/locations/interior-designers-surfside-fl";
 const TITLE = "Interior Designers in Surfside, FL | Sarvian Design Group";
@@ -45,7 +44,7 @@ export default function Page() {
           "What holds it all together is intent. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it. That standard applies to a private residence, and it applied equally to the sanctuary we designed at The Shul on Collins Avenue, where custom bronze, stone, and millwork were drawn and specified down to the last detail. From the earliest concept conversations through final installation, we stay close to our clients so that every decision — large or invisible — serves the same vision.",
         ]}
       />
-      <Why {...WHY} />
+      <WhySurfside />
     </main>
   );
 }

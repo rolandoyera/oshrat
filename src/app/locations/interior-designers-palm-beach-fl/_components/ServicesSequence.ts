@@ -7,7 +7,7 @@ export const SERVICES: SequenceService[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Complete interiors for oceanfront apartments, family homes, and seasonal residences. Furniture plans, finishes, lighting, and art are built up in layers, so the finished rooms read as a home collected over time — not a package delivered on one truck.",
+      "Complete residential interiors for oceanfront apartments, estate-section houses, and the seasonal residences that fill much of the island. Furniture plans, finishes, lighting, and art are built up in layers, so the finished rooms read as a home collected over time, not a package delivered on one truck.",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
@@ -16,7 +16,7 @@ export const SERVICES: SequenceService[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Renovations taken down to the studs and carried through the final punch list. We rework the plan, draw the millwork, and stay close to your contractor so the design survives contact with the job site. For Surfside condominiums that require association review, the submission and its timeline are planned into the project from the first meeting.",
+      "Renovations taken down to the studs and carried through the final punch list. We rework the plan, draw the millwork, and stay close to your contractor so the design survives contact with the job site. For oceanfront buildings that require association review, the submission and its timeline are planned into the project from the first meeting.",
     image: "/services/full-home-renovations-16x9.jpg",
     imageAlt:
       "Exterior view of a luxury modern estate full home renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls.",
@@ -43,7 +43,7 @@ export const SERVICES: SequenceService[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "Calm, spa-like bathrooms where the stone, fixtures, and lighting are resolved as one composition instead of three separate purchases. Surfaces are specified for real daily use, simple upkeep, and the salt air that living a block from the Atlantic brings with it.",
+      "Calm, spa-like bathrooms where the stone, fixtures, and lighting are resolved as one composition instead of three separate purchases. Surfaces are specified for real daily use, simple upkeep, and the salt air and strong light that come with an island address.",
     image: "/services/master-bath-interior-design.jpg",
     imageAlt:
       "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
