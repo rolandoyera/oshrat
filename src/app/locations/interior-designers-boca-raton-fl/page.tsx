@@ -4,10 +4,10 @@ import LocationProjects from "../_components/LocationProjects";
 import LocationHero from "../_components/LocationHero";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
-import ServicesSequence from "../_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
@@ -42,7 +42,17 @@ export default function Page() {
         heading={["Finished", "not decorated."]}
         paragraph="The interior designers at Sarvian Design Group take on residential and commercial work across Boca Raton, drawing interiors that suit the coast without leaning on the shorthand everyone else is using for it."
       />
-      <TopSection />
+      <LocationTopSection
+        eyebrow="Our Approach in Boca Raton"
+        heading="Residential Interior Design in Boca Raton, FL"
+        paragraph="A great deal of Boca is being rebuilt right now. Houses from the seventies and eighties are coming down, and what replaces them tends to arrive with the same white oak, the same shiplap, and the same soft blue-grey palette that every other new build on the street received. Our work here is to get past that default. We start with the site, the light, and how the family actually moves through the house, then draw the millwork, the ceilings, and the material palette specifically for it. The result still belongs to the coast. It just does not look like it came from the same catalog as the neighbors."
+        image={{
+          src: "/assets/palm-beach-architecture-proposal-street-view.jpg",
+          alt: "Street view of a luxury South Florida residence designed by Sarvian Design Group",
+          width: 1280,
+          height: 800,
+        }}
+      />
       <LocationProjects
         eyebrow="Selected work"
         heading="Latest Projects"
@@ -51,7 +61,8 @@ export default function Page() {
           "aventura-modern-living-aventura-fl",
           "norwood-residence-oakhurst-new-jersey",
           "miami-river-miami-fl",
-        ]}>
+        ]}
+      >
         <p>
           A selection of our residential and commercial interior design work,
           from full-home renovations and new construction interiors to single
@@ -59,7 +70,8 @@ export default function Page() {
           to every Boca Raton project. Our studio works out of{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
-            className="group relative hover:text-accent transition-colors duration-300">
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
             Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}

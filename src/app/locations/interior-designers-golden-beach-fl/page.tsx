@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
-import ProjectsSection from "@/components/ProjectsSection";
-import Hero from "./_components/Hero";
 import ServicesSequence from "../interior-designers-fort-lauderdale-fl/_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
 import { socialMeta } from "@/lib/seo";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
+import LocationProjects from "../_components/LocationProjects";
+import LocationHero from "../_components/LocationHero";
+import Link from "next/link";
+import HoverUnderline from "@/components/ui/HoverUnderline";
 
 const PATH = "/locations/interior-designers-golden-beach-fl";
 const TITLE = "Interior Designers in Golden Beach, FL | Sarvian Design Group";
@@ -27,9 +29,56 @@ export default function Page() {
   return (
     <main>
       <JsonLd data={faqPageGraph(PATH, FAQS)} />
-      <Hero />
-      <TopSection />
-      <ProjectsSection content="A look at our most recent work across South Florida, from oceanfront new construction to full-home renovations. It is the same approach we bring to every Golden Beach residence: understand how the family lives, then shape the architecture, interiors, and finishes around it." />
+      <LocationHero
+        image={{
+          src: "/assets/onyx-master-bath-remodel-1920.webp",
+          alt: "Sarvian Design Group Golden Beach showcase",
+          position: "top",
+        }}
+        eyebrow="Golden Beach Interior Design Firm"
+        heading={["A home equal", "to its address."]}
+        paragraph="Blending striking architectural forms with thoughtfully curated
+              interiors, Sarvian Design Group creates South Florida homes that
+              unite nature and design into one harmonious experience."
+      />
+
+      <LocationTopSection
+        eyebrow="Featured Projects"
+        heading="Residential Interior Design in Golden Beach, FL"
+        paragraph="Set on a quiet street in Golden Beach, this ground-up residence was designed as a single idea of architecture and landscape resolved together. Layered travertine volumes, bronze slat screens, and floor-to-ceiling glass open the home to the light and tropical canopy, while inside the same restrained palette continues in warm stone, natural wood, and softly diffused lighting."
+        projectSlug="golden-dreams-golden-beach-fl"
+        image={{
+          src: "/projects/golden-beach-architecture-proposal-driveway.jpg",
+          alt: "Golden Beach residence",
+          width: 900,
+          height: 400,
+        }}
+      />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Latest Projects near Golden Beach"
+        slugs={[
+          "aventura-modern-living-aventura-fl",
+          "the-shul-bal-harbour-surfside-fl",
+          "golden-dreams-golden-beach-fl",
+          "miami-river-miami-fl",
+        ]}
+      >
+        <p>
+          A look at our most recent work across{" "}
+          <Link
+            href="/locations/interior-designers-miami-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            Miami
+            <HoverUnderline className="text-accent" />
+          </Link>
+          , from oceanfront new construction to full-home renovations. It is the
+          same approach we bring to every Golden Beach residence: understand how
+          the family lives, then shape the architecture, interiors, and finishes
+          around it.
+        </p>
+      </LocationProjects>
       <Cta />
       <ServicesSequence />
       <Testimonials />

@@ -1,4 +1,4 @@
-import type { SequenceService } from "../../_components/ServicesSequence";
+import type { SequenceService } from "../../_components/LocationServices";
 
 // West Palm Beach's services list, passed to the shared ServicesSequence.
 // Max 7 entries (the converge animation defines 7 flight paths).

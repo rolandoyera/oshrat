@@ -4,10 +4,10 @@ import LocationProjects from "../_components/LocationProjects";
 import LocationHero from "../_components/LocationHero";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
-import ServicesSequence from "../_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
@@ -43,7 +43,17 @@ export default function Page() {
         heading={["Built to outlast", "the trend."]}
         paragraph="A luxury interior design firm working on both sides of West Palm Beach, from the historic houses of El Cid and Flamingo Park to the offices, showrooms, and tower residences downtown."
       />
-      <TopSection />
+      <LocationTopSection
+        eyebrow="Our Approach in West Palm Beach"
+        heading="Residential and Commercial Interior Design in West Palm Beach, FL"
+        paragraph="West Palm Beach is two cities at once, and the interiors have to answer both. A 1920s house in El Cid or Flamingo Park comes with plaster, casement windows, and rooms sized for a different era, and the work is to open it up without erasing what makes it worth owning. A tower residence or an office off Okeechobee starts from the opposite problem: a clean slate with no character at all. In both cases we design from the building outward, which is why the finished space never reads as a look that could have landed anywhere."
+        image={{
+          src: "/assets/palm-beach-architecture-proposal-street-view.jpg",
+          alt: "Street view of a luxury South Florida residence designed by Sarvian Design Group",
+          width: 1280,
+          height: 800,
+        }}
+      />
       <LocationProjects
         eyebrow="Selected work"
         heading="Latest Projects"

@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
-import ProjectsSection from "./_components/ProjectsSection";
-import Hero from "./_components/Hero";
-import ServicesSequence from "../_components/ServicesSequence";
+import LocationProjects from "../_components/LocationProjects";
+import Link from "next/link";
+import HoverUnderline from "@/components/ui/HoverUnderline";
+import LocationHero from "../_components/LocationHero";
+import ServicesSequence from "../_components/LocationServices";
 import Testimonials from "@/components/Testimonials";
 import { socialMeta } from "@/lib/seo";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
@@ -30,9 +32,49 @@ export default function Page() {
   return (
     <main>
       <JsonLd data={faqPageGraph(PATH, FAQS)} />
-      <Hero />
-      <TopSection />
-      <ProjectsSection />
+      <LocationHero
+        image={{
+          src: "/assets/master-bath-interior-design-front.webp",
+          alt: "Sarvian Design Group Las Olas showcase",
+          position: "top",
+        }}
+        eyebrow="Interior Designers in Las Olas, FL"
+        heading={["Every detail", "on purpose."]}
+        paragraph="We are interior designers in Las Olas, Florida, working across
+                residential and commercial interiors — the waterfront homes along
+                the isles and the shops and restaurants that give the boulevard
+                its character. Every layout, material, and detail with purpose."
+      />
+      <LocationTopSection
+        eyebrow="Featured Project"
+        heading="Interior Designers Las Olas"
+        paragraph="A primary bath in Fort Lauderdale, minutes from Las Olas, designed as a quiet retreat rather than a showpiece. Fluted Calacatta marble wraps the walls, and the veining carries across the floor, the shower, and the vanity surfaces so the room reads as a single piece of stone. Warm walnut cabinetry and brushed gold fixtures keep it from turning cold, while a freestanding tub sits framed by sheer drapery and soft light. Every decision here, down to where the storage went, was made for how the room gets used each morning."
+        projectSlug="modern-marble-haven-fort-lauderdale-fl"
+      />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Latest Projects"
+        slugs={[
+          "elevated-primary-suite-fort-lauderdale-fl",
+          "modern-marble-haven-fort-lauderdale-fl",
+          "aventura-modern-living-aventura-fl",
+          "the-shul-bal-harbour-surfside-fl",
+        ]}
+      >
+        <p>
+          A selection of our interior design projects in{" "}
+          <Link
+            href="/locations/interior-designers-fort-lauderdale-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            Fort Lauderdale
+            <HoverUnderline className="text-accent" />
+          </Link>
+          , from full-home renovations and new construction interiors to single
+          rooms drawn to the same level of detail. Las Olas is one of the
+          neighborhoods we return to most.
+        </p>
+      </LocationProjects>
       <Cta />
       <ServicesSequence services={SERVICES} />
       <Testimonials />

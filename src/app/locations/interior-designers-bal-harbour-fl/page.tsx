@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
 import LocationHero from "../_components/LocationHero";
-import ServicesSequence from "../_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
 import Testimonials from "@/components/Testimonials";
 import { socialMeta } from "@/lib/seo";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
@@ -41,7 +41,12 @@ export default function Page() {
         heading={["Finished", "not decorated."]}
         paragraph="From private residences to commercial and community spaces in Bal Harbour and across South Florida, Sarvian Design Group carries a project from space planning through custom millwork, materials, and final installation."
       />
-      <TopSection />
+      <LocationTopSection
+        eyebrow="Featured Project"
+        heading="Interior Design in Bal Harbour, FL"
+        paragraph="In Bal Harbour, Sarvian Design Group is leading the renovation of The Shul, reimagining a space of daily gathering and reflection with a calmer design language. Curved walls in a textured, Jerusalem-stone-inspired finish wrap the main hall, framed by oak millwork and bronze that carries through every custom element — sculptural glass fixtures overhead, engraved bronze doors set in a bookmatched marble surround, and stained glass made for the room. Renovating a space already woven into a community's life asks for restraint. The result is reverent and genuinely new."
+        projectSlug="the-shul-bal-harbour-surfside-fl"
+      />
       <LocationProjects
         eyebrow="Selected work"
         heading="Latest Projects"

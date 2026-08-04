@@ -4,10 +4,10 @@ import LocationProjects from "../_components/LocationProjects";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
 import LocationHero from "../_components/LocationHero";
-import ServicesSequence from "../_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
@@ -42,7 +42,17 @@ export default function Page() {
         heading={["A home equal", "to its address."]}
         paragraph="Blending striking architectural forms with curated interior designs, Sarvian Design Group creates Palm Beach homes that unite nature and design into one harmonious experience."
       />
-      <TopSection />
+      <LocationTopSection
+        eyebrow="Our Approach in Palm Beach"
+        heading="Residential Interior Design in Palm Beach, FL"
+        paragraph="Palm Beach rewards restraint and punishes anything that looks like it arrived in a hurry. Our work here starts with the architecture already standing, whether that is a Mizner-era house with plaster and pecky cypress or a new residence on the water, and the interior is drawn to belong to it rather than to a trend. Because so many houses on the island are lived in seasonally, we plan procurement and installation around the calendar, so a home is finished before the season rather than during it."
+        image={{
+          src: "/assets/palm-beach-architecture-proposal-street-view.jpg",
+          alt: "Palm Beach Residence Architecture",
+          width: 1280,
+          height: 800,
+        }}
+      />
       <LocationProjects
         eyebrow="Selected work"
         heading="Latest Projects"

@@ -4,10 +4,10 @@ import LocationProjects from "../_components/LocationProjects";
 import LocationHero from "../_components/LocationHero";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
-import ServicesSequence from "../_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
@@ -42,7 +42,17 @@ export default function Page() {
         heading={["Every square foot", "earns it."]}
         paragraph="A full-service interior design firm working in Delray Beach on houses near the water and on the commercial spaces off Atlantic Avenue, where the rooms are rarely oversized and every decision has to carry its weight."
       />
-      <TopSection />
+      <LocationTopSection
+        eyebrow="Our Approach in Delray Beach"
+        heading="Residential and Commercial Interior Design in Delray Beach, FL"
+        paragraph="Delray rewards restraint at a smaller scale than most of the coast. The houses around Lake Ida, Seagate, and the historic districts were built with modest footprints and real character, and the temptation is always to solve them by adding square footage. We would rather solve them with the plan. Storage gets designed rather than found, circulation is tightened so rooms stop borrowing space from each other, and the millwork is drawn to the inch because at this scale there is nowhere to hide a rough detail. The same discipline applies to the shops and restaurants off Atlantic Avenue."
+        image={{
+          src: "/assets/palm-beach-architecture-proposal-street-view.jpg",
+          alt: "Street view of a luxury South Florida residence designed by Sarvian Design Group",
+          width: 1280,
+          height: 800,
+        }}
+      />
       <LocationProjects
         eyebrow="Selected work"
         heading="Latest Projects"
@@ -51,8 +61,7 @@ export default function Page() {
           "aventura-modern-living-aventura-fl",
           "norwood-residence-oakhurst-new-jersey",
           "miami-river-miami-fl",
-        ]}
-      >
+        ]}>
         <p>
           A selection of our residential and commercial interior design work,
           from full-home renovations and new construction interiors to single
@@ -60,12 +69,11 @@ export default function Page() {
           to every Delray Beach project. Our studio works out of{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
-            className="group relative hover:text-accent transition-colors duration-300"
-          >
+            className="group relative hover:text-accent transition-colors duration-300">
             Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}
-          and has been designing across South Florida for years.
+          and has been designing across South Florida for 12 years.
         </p>
       </LocationProjects>
       <Cta />

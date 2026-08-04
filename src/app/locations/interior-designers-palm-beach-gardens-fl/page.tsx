@@ -4,10 +4,10 @@ import LocationProjects from "../_components/LocationProjects";
 import LocationHero from "../_components/LocationHero";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
-import ServicesSequence from "../_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
-import TopSection from "./_components/TopSection";
+import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
@@ -43,7 +43,17 @@ export default function Page() {
         heading={["A home equal", "to its address."]}
         paragraph="Sarvian Design Group is a full-service interior design firm working across Palm Beach Gardens on residential and commercial projects, from a single reworked room to a house drawn alongside its architect."
       />
-      <TopSection />
+      <LocationTopSection
+        eyebrow="Our Approach in Palm Beach Gardens"
+        heading="Residential Interior Design in Palm Beach Gardens, FL"
+        paragraph="Most houses in Palm Beach Gardens started from a builder's plan, which means the shell is generous and the interior is anonymous. Our work here usually begins by correcting that: reworking the layout, replacing stock cabinetry and thin trim with drawn millwork, and bringing tall volumes and long sightlines under control so the rooms feel considered rather than merely large. In club communities like PGA National, BallenIsles, and Old Palm, we plan around architectural review from the first meeting so approvals land on schedule instead of stalling the job."
+        image={{
+          src: "/assets/palm-beach-architecture-proposal-street-view.jpg",
+          alt: "Street view of a luxury South Florida residence designed by Sarvian Design Group",
+          width: 1280,
+          height: 800,
+        }}
+      />
       <LocationProjects
         eyebrow="Selected work"
         heading="Latest Projects"
