@@ -39,9 +39,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/40 pointer-events-none z-10" />
 
       {/* Text and Title Overlay - aligned to bottom-left */}
-      <Container
-        size="lg"
-        className="absolute inset-0 flex items-center justify-center z-20 pb-16">
+      <Container className="absolute inset-0 flex items-center justify-center z-20 pb-16">
         <ScrollReveal>
           <div className="space-y-6 backdrop-blur-xs p-4">
             <h1 className="eyebrow text-cream-200 text-center">
@@ -67,7 +65,8 @@ export default function Hero() {
             <ArrowButton2
               href="/projects"
               variant="primary"
-              className="w-full sm:w-auto justify-center">
+              className="w-full sm:w-auto justify-center"
+            >
               View Projects
             </ArrowButton2>
           </div>

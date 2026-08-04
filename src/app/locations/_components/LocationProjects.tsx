@@ -51,7 +51,8 @@ export function ProjectCard({
         href={`/projects/${project.slug}`}
         preloadSrcSet={heroPreloadSrcSet(heroSource)}
         aria-label={`${project.title}${project.location ? ` — ${project.location}` : ""}`}
-        className={`group relative block overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}>
+        className={`group relative block overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}
+      >
         <Image
           src={heroImageUrl(heroSource)}
           alt={project.imageAlt || project.title}
@@ -103,7 +104,7 @@ export default async function LocationProjects({
 
   return (
     <section className={cn("bg-cream-200 pt-24 pb-24 lg:py-32", className)}>
-      <Container size="lg">
+      <Container>
         <ScrollReveal>
           <p className="eyebrow">{eyebrow}</p>
           <h2>{heading}</h2>
@@ -126,7 +127,8 @@ export default async function LocationProjects({
             <ArrowButton
               href="/projects"
               variant="secondary"
-              className="w-full sm:w-auto justify-center">
+              className="w-full sm:w-auto justify-center"
+            >
               View More Projects
             </ArrowButton>
           </div>

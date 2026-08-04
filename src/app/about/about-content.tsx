@@ -43,9 +43,7 @@ export default function AboutContent() {
 
         {/* Text and Title Overlay - aligned to bottom-left */}
 
-        <Container
-          size="lg"
-          className="flex flex-col justify-end z-20 pb-16 relative h-full">
+        <Container className="flex flex-col justify-end z-20 pb-16 relative h-full">
           <ScrollReveal direction="down" delay={100}>
             <div className="max-w-250 space-y-6">
               <h1 className="eyebrow text-cream-200">
@@ -65,18 +63,18 @@ export default function AboutContent() {
       </section>
 
       {/* Rest of the content wrapped in standard container */}
-      <Container className="space-y-24 py-16 md:py-24 lg:py-32 max-w-375">
+      <Container className="space-y-24 py-16 md:py-24 lg:py-32">
         {/* Section 2: Narrative & Vision Grid */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 pt-20">
-          <div className="lg:col-span-5">
+        <section className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-16">
+          <div className="xl:col-span-5">
             <ScrollReveal direction="left">
-              <h2>
+              <h2 className="display-sm">
                 A Legacy <br />
                 of Interior <span className="text-accent">Design</span>
               </h2>
             </ScrollReveal>
           </div>
-          <div className="lg:col-span-7 space-y-8">
+          <div className="xl:col-span-7 space-y-8">
             <ScrollReveal direction="right" delay={150}>
               <p>
                 As a Fort Lauderdale interior design studio, we believe high-end
@@ -106,9 +104,9 @@ export default function AboutContent() {
         </section>
 
         {/* Section 3: Meet the Principal */}
-        <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center pt-32 lg:py-50 border-t border-border/20">
+        <section className="grid grid-cols-1 xl:grid-cols-12 gap-12 xl:gap-20 items-center py-24 md:py-32 border-t border-border/20">
           {/* Left Column: Portrait */}
-          <div className="lg:col-span-5">
+          <div className="xl:col-span-5">
             <ScrollReveal className="rounded shadow-2xl group border border-border/10">
               <div className="relative w-full aspect-3/4 overflow-hidden">
                 <Image
@@ -125,7 +123,7 @@ export default function AboutContent() {
           </div>
 
           {/* Right Column: Bio */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="xl:col-span-7 space-y-6">
             <ScrollReveal>
               <span className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">
                 Creative Leadership

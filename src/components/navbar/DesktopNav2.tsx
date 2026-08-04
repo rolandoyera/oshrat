@@ -29,7 +29,8 @@ export default function DesktopNav2() {
       className={cn(
         "hidden xl:flex fixed top-0 left-0 w-full z-50 font-medium flex-col",
         isScrolled && "shadow",
-      )}>
+      )}
+    >
       <div
         ref={progressRef}
         style={{ transform: "scaleX(0)" }}
@@ -40,11 +41,13 @@ export default function DesktopNav2() {
         className={cn(
           "relative z-20 w-full overflow-hidden bg-taupe-900 text-cream-100 transition-all duration-300 ease-in-out",
           isHidden ? "h-0" : "h-9",
-        )}>
-        <Container size="lg" className="flex h-9 items-center justify-end">
+        )}
+      >
+        <Container className="flex h-9 items-center justify-end">
           <a
             href={`tel:${SITE.phone}`}
-            className="text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent">
+            className="text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent"
+          >
             {SITE.phoneDisplay}
           </a>
           <span aria-hidden className="mx-4 h-4 w-px bg-cream-100/30" />
@@ -57,7 +60,8 @@ export default function DesktopNav2() {
                 button_text: "Consultation",
               });
             }}
-            className="group relative text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent hover:cursor-pointer">
+            className="group relative text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent hover:cursor-pointer"
+          >
             Request Consultation
             <HoverUnderline />
           </button>
@@ -72,10 +76,9 @@ export default function DesktopNav2() {
           isScrolled
             ? "border-transparent bg-cream-200 text-foreground"
             : "border-white/50 bg-black/10 text-white h-22",
-        )}>
-        <Container
-          size="lg"
-          className="relative z-20 flex-1 flex items-center justify-between">
+        )}
+      >
+        <Container className="relative z-20 flex-1 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <div className="w-12.5 shrink-0">
               <SdgMonogram className="h-auto w-full" />
@@ -99,7 +102,8 @@ export default function DesktopNav2() {
                     aria-current={isActive ? "page" : undefined}
                     onPointerEnter={() => preloadHero(link.href)}
                     onFocus={() => preloadHero(link.href)}
-                    className="relative uppercase group py-1 tracking-wide">
+                    className="relative uppercase group py-1 tracking-wide"
+                  >
                     {link.name}
                     {/* Width-only transition: the underline is bg-current, and
                         transitioning background-color would chase the bar's

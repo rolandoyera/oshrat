@@ -340,13 +340,10 @@ export default async function ProjectPage({
         </nav>
 
         {/* 2) Content row: left = info (sticky), right = gallery */}
-        {/* Capped like Container size="lg" — on viewports wider than 1800px
+        {/* Capped like Container — on viewports wider than 1800px
             the columns stop growing (otherwise the left card shrinks to a few
             lines and the gallery images balloon). */}
-        <Container
-          size="lg"
-          className="grid grid-cols-1 xl:grid-cols-12 gap-8 py-4"
-        >
+        <Container className="grid grid-cols-1 xl:grid-cols-12 gap-8 py-4">
           {/* LEFT: Project info */}
           <aside className="xl:col-span-5">
             <div className="xl:sticky xl:top-22">

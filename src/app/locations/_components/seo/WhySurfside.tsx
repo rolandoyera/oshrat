@@ -4,7 +4,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 export default function WhySurfside() {
   return (
     <section className="bg-cream-200 py-24 lg:py-32">
-      <Container size="lg" className="w-full">
+      <Container className="w-full">
         <ScrollReveal delay={250} direction="down">
           <p className="eyebrow mb-4 text-center">Why Sarvian Design Group</p>
           <h2 className="max-w-2xl text-center mx-auto mb-0">

@@ -7,7 +7,7 @@ import { SERVICES } from "../services/_components/ServicesSection";
 
 export default function ServicesBridge() {
   return (
-    <Container size="lg" className="grid grid-cols-1 gap-16 xl:grid-cols-2">
+    <Container className="grid grid-cols-1 gap-16 xl:grid-cols-2">
       <ScrollReveal direction="left">
         <p className="eyebrow">What We Do</p>
         <h2 className="h1">Our Services</h2>
@@ -36,7 +36,8 @@ export default function ServicesBridge() {
             <Fragment key={service.index}>
               <Link
                 href="/services"
-                className="group grid grid-cols-[2.5rem_1fr_1.25rem] items-center gap-4 px-3 py-5 transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 md:grid-cols-[3.5rem_1fr_auto_1.5rem] md:gap-8 md:px-4 md:py-7">
+                className="group grid grid-cols-[2.5rem_1fr_1.25rem] items-center gap-4 px-3 py-5 transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 md:grid-cols-[3.5rem_1fr_auto_1.5rem] md:gap-8 md:px-4 md:py-7"
+              >
                 <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
                   {service.index}
                 </span>
@@ -61,7 +62,8 @@ export default function ServicesBridge() {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   className="h-5 w-5 justify-self-end text-foreground/60 transition-all duration-250 ease-[cubic-bezier(.6,.2,.1,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
-                  aria-hidden="true">
+                  aria-hidden="true"
+                >
                   <path d="M5 19L19 5M19 5H8M19 5V16" />
                 </svg>
               </Link>

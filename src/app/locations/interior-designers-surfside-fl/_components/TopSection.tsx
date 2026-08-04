@@ -32,15 +32,14 @@ export default async function TopSection() {
 
   return (
     <section className="bg-cream-200 py-20 lg:py-48">
-      <Container
-        size="lg"
-        className="flex items-center justify-center overflow-hidden">
+      <Container className="flex items-center justify-center overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
           <ScrollReveal
             direction="left"
             threshold={0.3}
             delay={300}
-            className="lg:col-span-2">
+            className="lg:col-span-2"
+          >
             <span className="eyebrow">Featured Project</span>
             <h2>Interior Designers in Surfside, FL</h2>
             <p>
@@ -62,7 +61,8 @@ export default async function TopSection() {
                 preloadSrcSet={
                   heroSource ? heroPreloadSrcSet(heroSource) : undefined
                 }
-                className="w-full sm:w-auto justify-center">
+                className="w-full sm:w-auto justify-center"
+              >
                 View Project
               </ArrowButton>
             </div>
@@ -72,12 +72,14 @@ export default async function TopSection() {
               direction="right"
               threshold={0.3}
               delay={300}
-              className="relative lg:col-span-3">
+              className="relative lg:col-span-3"
+            >
               <TransitionLink
                 href={`/projects/${SHUL_SLUG}`}
                 preloadSrcSet={heroPreloadSrcSet(heroSource)}
                 aria-label="View project: The Shul of Bal Harbour in Surfside"
-                className="group relative block aspect-5/4 overflow-hidden rounded-xs bg-taupe-800">
+                className="group relative block aspect-5/4 overflow-hidden rounded-xs bg-taupe-800"
+              >
                 <Image
                   src={heroImageUrl(heroSource)}
                   alt={

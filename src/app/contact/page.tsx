@@ -24,7 +24,7 @@ export default function ContactPage() {
     <main>
       <JsonLd data={faqPageGraph("/contact", FAQS)} />
       <ContactHero />
-      <Container size="lg" className="my-16">
+      <Container className="my-16">
         <ContactSection formType="contact_page" linkLocation="contact_page" />
       </Container>
       <FaqSection faqs={FAQS} />

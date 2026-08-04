@@ -16,7 +16,7 @@ export default function FaqSection({
 }) {
   return (
     <section className="bg-cream-200 pb-24 lg:py-32">
-      <Container size="lg">
+      <Container>
         <ScrollReveal direction="up" delay={150} className="text-center">
           <p className="eyebrow text-accent">FAQ</p>
           <h2 className="h2">Frequently Asked Questions</h2>

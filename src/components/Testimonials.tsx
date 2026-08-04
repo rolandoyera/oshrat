@@ -51,7 +51,7 @@ export default function Testimonials() {
 
   return (
     <section className="bg-radial from-taupe-800 to-taupe-900 py-24 lg:py-32">
-      <Container size="lg" className="flex flex-col gap-4 lg:gap-16">
+      <Container className="flex flex-col gap-4 lg:gap-16">
         <ScrollReveal className="flex flex-col items-center">
           <p className="eyebrow text-center">In their words</p>
           <h2 className="h2 text-center">
@@ -68,7 +68,8 @@ export default function Testimonials() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -16 }}
-              transition={{ duration: 0.35 }}>
+              transition={{ duration: 0.35 }}
+            >
               <blockquote className="text-[20px] md:text-2xl leading-[1.18] text-cream-100 lg:text-4xl font-reader font-[250]">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
@@ -95,10 +96,12 @@ export default function Testimonials() {
                 type="button"
                 aria-label="Previous testimonial"
                 onClick={() => setIndex((index - 1 + count) % count)}
-                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10">
+                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10"
+              >
                 <span
                   aria-hidden
-                  className="inline-block transition-transform duration-200 group-hover:-translate-x-1">
+                  className="inline-block transition-transform duration-200 group-hover:-translate-x-1"
+                >
                   ←
                 </span>
               </button>
@@ -106,10 +109,12 @@ export default function Testimonials() {
                 type="button"
                 aria-label="Next testimonial"
                 onClick={() => setIndex((index + 1) % count)}
-                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10">
+                className="group text-accent transition cursor-pointer rounded-full border-[1.5px] border-accent size-10"
+              >
                 <span
                   aria-hidden
-                  className="inline-block transition-transform duration-200 group-hover:translate-x-1">
+                  className="inline-block transition-transform duration-200 group-hover:translate-x-1"
+                >
                   →
                 </span>
               </button>

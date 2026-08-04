@@ -6,15 +6,14 @@ import Container from "@/components/ui/Container";
 export default function TopSection() {
   return (
     <section className="bg-cream-200 py-20 lg:py-48">
-      <Container
-        size="lg"
-        className="flex items-center justify-center overflow-hidden">
+      <Container className="flex items-center justify-center overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
           <ScrollReveal
             direction="left"
             threshold={0.3}
             delay={300}
-            className="lg:col-span-2">
+            className="lg:col-span-2"
+          >
             <span className="eyebrow">Featured Projects</span>
             <h2>Residential Interior Design in Golden Beach, FL</h2>
             <p>
@@ -30,7 +29,8 @@ export default function TopSection() {
               <ArrowButton
                 href="/projects/golden-dreams-golden-beach-fl"
                 variant="primary"
-                className="w-full sm:w-auto justify-center">
+                className="w-full sm:w-auto justify-center"
+              >
                 View Project
               </ArrowButton>
             </div>
@@ -39,7 +39,8 @@ export default function TopSection() {
             direction="right"
             threshold={0.3}
             delay={300}
-            className="relative lg:col-span-3">
+            className="relative lg:col-span-3"
+          >
             <Image
               src="/projects/golden-beach-architecture-proposal-driveway.jpg"
               alt="Golden Beach residence"

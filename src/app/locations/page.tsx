@@ -32,7 +32,7 @@ export default function LocationsPage() {
       <main className="bg-cream-200">
         {/* Intro */}
         <section className="pt-36 pb-16 lg:pt-48 lg:pb-24">
-          <Container size="lg">
+          <Container>
             <ScrollReveal direction="up" threshold={0.3}>
               <p className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
                 Where we work — South Florida
@@ -58,7 +58,7 @@ export default function LocationsPage() {
 
         {/* Communities by county */}
         <section className="pb-24 lg:pb-32">
-          <Container size="lg">
+          <Container>
             {/* One column per county; stacked below lg. items-start keeps a
                 short county column from stretching to the tallest one. */}
             <div className="grid gap-16 xl:grid-cols-3 xl:gap-8 xl:items-start">
@@ -83,7 +83,8 @@ export default function LocationsPage() {
                           <h2
                             className={`block mb-0 leading-6 text-2xl transition-colors group-hover:text-accent ${
                               location.href ? "" : "opacity-50"
-                            }`}>
+                            }`}
+                          >
                             {location.name}
                           </h2>
                           <span className="mt-2 block max-w-sm text-sm">
@@ -100,7 +101,8 @@ export default function LocationsPage() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                           className="h-5 w-5 justify-self-end text-foreground/60 transition-all duration-250 ease-[cubic-bezier(.6,.2,.1,1)] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent"
-                          aria-hidden="true">
+                          aria-hidden="true"
+                        >
                           <path d="M5 19L19 5M19 5H8M19 5V16" />
                         </svg>
                       </>
@@ -112,7 +114,8 @@ export default function LocationsPage() {
                         {location.href ? (
                           <Link
                             href={location.href}
-                            className={`group transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 ${rowClasses}`}>
+                            className={`group transition duration-250 ease-[cubic-bezier(.6,.2,.1,1)] hover:translate-x-3 ${rowClasses}`}
+                          >
                             {row}
                           </Link>
                         ) : (

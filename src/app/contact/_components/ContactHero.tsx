@@ -19,12 +19,13 @@ export default function ContactHero() {
       />
       <div className="absolute inset-0 bg-black/50" />
 
-      <Container size="lg" className="relative z-10 w-full">
+      <Container className="relative z-10 w-full">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12 md:pb-8 lg:pb-16 2xl:pb-20">
           <ScrollReveal
             topReveal
             direction="left"
-            className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
+            className="space-y-6 lg:space-y-10 text-white lg:col-span-8"
+          >
             <h1 className="display text-cream-100">Contact Us</h1>
 
             <p className="md:max-w-2xl text-cream-200">

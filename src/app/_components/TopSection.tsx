@@ -5,15 +5,14 @@ import Container from "@/components/ui/Container";
 
 export default function TopSection() {
   return (
-    <Container
-      size="lg"
-      className="flex items-center justify-center overflow-hidden">
+    <Container className="flex items-center justify-center overflow-hidden">
       <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
         <ScrollReveal
           direction="left"
           threshold={0.3}
           delay={300}
-          className="lg:col-span-2">
+          className="lg:col-span-2"
+        >
           <h1>Interior Designers in Fort Lauderdale</h1>
           <p>
             Based in Fort Lauderdale, Florida, Sarvian Design Group is a premier
@@ -29,13 +28,15 @@ export default function TopSection() {
             <ArrowButton
               href="/projects"
               variant="primary"
-              className="w-full sm:w-auto justify-center">
+              className="w-full sm:w-auto justify-center"
+            >
               View Our Projects
             </ArrowButton>
             <ArrowButton
               href="/services"
               variant="secondary"
-              className="w-full sm:w-auto justify-center">
+              className="w-full sm:w-auto justify-center"
+            >
               View Our Services
             </ArrowButton>
           </div>
@@ -44,7 +45,8 @@ export default function TopSection() {
           direction="right"
           threshold={0.3}
           delay={300}
-          className="relative lg:col-span-3">
+          className="relative lg:col-span-3"
+        >
           <Image
             src="/assets/about-us-top.jpg"
             alt="Home image"

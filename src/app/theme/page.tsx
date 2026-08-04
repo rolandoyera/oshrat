@@ -36,7 +36,7 @@ export default function ThemePage() {
       <div className="h-24"></div>
 
       {/* Typography */}
-      <Container className="pt-30 flex flex-col gap-6 max-w-450">
+      <Container className="pt-30 flex flex-col gap-6">
         <h3 className="mb-16">Typography</h3>
         <div className="flex gap-8 mb-16">
           <div className="w-40 shrink-0">
@@ -123,7 +123,8 @@ export default function ThemePage() {
             {group.swatches.map((swatch) => (
               <div key={swatch.label} className="w-50 h-50">
                 <div
-                  className={`${swatch.bgClass} w-full h-full rounded shadow`}></div>
+                  className={`${swatch.bgClass} w-full h-full rounded shadow`}
+                ></div>
                 <p className="text-sm font-mono">{swatch.label}</p>
               </div>
             ))}
@@ -244,7 +245,8 @@ export default function ThemePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram (opens in a new tab)"
-                    className="text-cream-300 flex items-center justify-center w-7.5 h-7.5">
+                    className="text-cream-300 flex items-center justify-center w-7.5 h-7.5"
+                  >
                     <InstagramIcon size={30} color="currentColor" />
                   </a>
                   <a
@@ -252,7 +254,8 @@ export default function ThemePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Send email to ${SITE.email} (opens in a new tab)`}
-                    className="text-cream-300 flex items-center justify-center w-8 h-8">
+                    className="text-cream-300 flex items-center justify-center w-8 h-8"
+                  >
                     <MailIcon size={32} color="currentColor" />
                   </a>
                   <a
@@ -260,7 +263,8 @@ export default function ThemePage() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Chat on WhatsApp with ${SITE.whatsappDisplay} (opens in a new tab)`}
-                    className="text-cream-300 flex items-center justify-center w-7.5 h-7.5">
+                    className="text-cream-300 flex items-center justify-center w-7.5 h-7.5"
+                  >
                     <WhatsAppIcon size={26} color="currentColor" />
                   </a>
                 </div>
@@ -286,7 +290,8 @@ export default function ThemePage() {
             <ArrowButton
               direction="right"
               variant="secondary"
-              className="px-12">
+              className="px-12"
+            >
               Next
             </ArrowButton>
             <p className="text-sm font-mono">Secondary Button • Taupe 800</p>
@@ -304,7 +309,8 @@ export default function ThemePage() {
           <ArrowButton
             href="/theme/guidelines"
             variant="primary"
-            className="px-12 mt-4">
+            className="px-12 mt-4"
+          >
             View Interactive Guidelines
           </ArrowButton>
         </div>

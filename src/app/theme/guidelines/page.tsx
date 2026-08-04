@@ -107,12 +107,13 @@ export default function GuidelinesPage() {
     <main className="bg-white pb-40">
       <div className="h-24"></div>
 
-      <Container className="max-w-350 mt-16 px-4 md:px-8">
+      <Container className="mt-16 px-4 md:px-8">
         {/* Back Link */}
         <div className="mb-6 flex justify-between items-center">
           <Link
             href="/theme"
-            className="text-sm font-mono text-taupe-600 hover:text-accent flex items-center gap-1.5 transition-colors">
+            className="text-sm font-mono text-taupe-600 hover:text-accent flex items-center gap-1.5 transition-colors"
+          >
             ← Visual Theme Playground
           </Link>
           <span className="text-[12px] font-mono bg-cream-300 text-taupe-800 px-3 py-1 rounded-full uppercase tracking-wider">
@@ -142,27 +143,32 @@ export default function GuidelinesPage() {
               </p>
               <a
                 href="#typography"
-                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium">
+                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium"
+              >
                 <Type size={18} /> Typography Scale
               </a>
               <a
                 href="#colors"
-                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium">
+                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium"
+              >
                 <Palette size={18} /> Color System
               </a>
               <a
                 href="#usage"
-                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium">
+                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium"
+              >
                 <Layout size={18} /> Surfaces & Layout
               </a>
               <a
                 href="#ui-elements"
-                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium">
+                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium"
+              >
                 <Terminal size={18} /> UI Components
               </a>
               <a
                 href="#best-practices"
-                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium">
+                className="flex items-center gap-3 px-3 py-2.5 rounded text-taupe-700 hover:bg-cream-200 hover:text-accent transition-all duration-200 font-medium"
+              >
                 <ShieldAlert size={18} /> Best Practices
               </a>
 
@@ -175,7 +181,8 @@ export default function GuidelinesPage() {
                 <div className="flex flex-col gap-2">
                   <button
                     onClick={() => copyToClipboard("@import 'tailwindcss';")}
-                    className="text-xs font-mono bg-cream-300 text-taupe-800 p-2 rounded hover:bg-cream-100 flex items-center justify-between transition-colors">
+                    className="text-xs font-mono bg-cream-300 text-taupe-800 p-2 rounded hover:bg-cream-100 flex items-center justify-between transition-colors"
+                  >
                     <span>tailwind-v4</span>
                     {copiedText === "@import 'tailwindcss';" ? (
                       <Check size={12} />
@@ -295,7 +302,8 @@ export default function GuidelinesPage() {
                 {COLOR_GROUPS.map((group) => (
                   <div
                     key={group.name}
-                    className="bg-cream-200 border border-border/40 rounded p-8 shadow-sm">
+                    className="bg-cream-200 border border-border/40 rounded p-8 shadow-sm"
+                  >
                     <h3 className="mb-2 text-xl font-medium">{group.name}</h3>
                     <p className="text-sm text-taupe-600 mb-6">
                       {group.description}
@@ -305,10 +313,12 @@ export default function GuidelinesPage() {
                       {group.swatches.map((swatch) => (
                         <div
                           key={swatch.label}
-                          className="bg-cream-100 rounded p-4 border border-border/30 flex flex-col gap-3">
+                          className="bg-cream-100 rounded p-4 border border-border/30 flex flex-col gap-3"
+                        >
                           {/* Color preview */}
                           <div
-                            className={`${swatch.bgClass} h-32 w-full rounded shadow-inner border border-black/5`}></div>
+                            className={`${swatch.bgClass} h-32 w-full rounded shadow-inner border border-black/5`}
+                          ></div>
 
                           {/* Info & Copy triggers */}
                           <div>
@@ -322,7 +332,8 @@ export default function GuidelinesPage() {
                             <div className="flex flex-col gap-1.5 mt-2">
                               <button
                                 onClick={() => copyToClipboard(swatch.bgClass)}
-                                className="flex items-center justify-between text-xs font-mono bg-cream-200 hover:bg-cream-300 text-taupe-700 py-1.5 px-2 rounded transition-colors text-left">
+                                className="flex items-center justify-between text-xs font-mono bg-cream-200 hover:bg-cream-300 text-taupe-700 py-1.5 px-2 rounded transition-colors text-left"
+                              >
                                 <span className="opacity-75">Tailwind:</span>
                                 <span className="font-semibold flex items-center gap-1">
                                   {swatch.bgClass}
@@ -339,7 +350,8 @@ export default function GuidelinesPage() {
 
                               <button
                                 onClick={() => copyToClipboard(swatch.value)}
-                                className="flex items-center justify-between text-xs font-mono bg-cream-200 hover:bg-cream-300 text-taupe-700 py-1.5 px-2 rounded transition-colors text-left">
+                                className="flex items-center justify-between text-xs font-mono bg-cream-200 hover:bg-cream-300 text-taupe-700 py-1.5 px-2 rounded transition-colors text-left"
+                              >
                                 <span className="opacity-75">Raw (HSL):</span>
                                 <span className="font-semibold flex items-center gap-1">
                                   {swatch.value}
@@ -356,7 +368,8 @@ export default function GuidelinesPage() {
 
                               <button
                                 onClick={() => copyToClipboard(swatch.hex)}
-                                className="flex items-center justify-between text-xs font-mono bg-cream-200 hover:bg-cream-300 text-taupe-700 py-1.5 px-2 rounded transition-colors text-left">
+                                className="flex items-center justify-between text-xs font-mono bg-cream-200 hover:bg-cream-300 text-taupe-700 py-1.5 px-2 rounded transition-colors text-left"
+                              >
                                 <span className="opacity-75">Raw (HEX):</span>
                                 <span className="font-semibold flex items-center gap-1 text-accent">
                                   {swatch.hex}

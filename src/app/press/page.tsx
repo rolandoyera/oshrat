@@ -23,7 +23,8 @@ export default function PressPage() {
         className="relative h-dvh w-full overflow-hidden bg-black bg-cover bg-center"
         style={{
           backgroundImage: `url(${HERO_BLUR["/press/bedroom-remodel-armoire-scene-lg.webp"]})`,
-        }}>
+        }}
+      >
         {/* Art-directed like FadingHeroBackdrop: <source media> makes the
             browser fetch exactly one pre-encoded crop, bypassing next/image. */}
         <picture>
@@ -46,9 +47,7 @@ export default function PressPage() {
         {/* Soft vertical gradient overlay (transparent at top, solid black at bottom where text sits) */}
         <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent pointer-events-none z-10" />
 
-        <Container
-          size="lg"
-          className="flex flex-col justify-end z-20 pb-16 relative h-full">
+        <Container className="flex flex-col justify-end z-20 pb-16 relative h-full">
           {/* topReveal: this text is the page's LCP element — the entrance
               must be CSS-only, never gated on hydration + observer. */}
           <ScrollReveal topReveal direction="down" delay={0}>

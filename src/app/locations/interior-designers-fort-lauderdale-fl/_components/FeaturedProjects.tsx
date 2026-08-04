@@ -39,7 +39,7 @@ export default async function FeaturedProjects({
 
   return (
     <section className="bg-cream-200 pb-24 lg:py-32">
-      <Container size="lg">
+      <Container>
         <ScrollReveal className="mb-12">
           <p className="eyebrow">{eyebrow}</p>
           <h2>{heading}</h2>
@@ -60,7 +60,8 @@ export default async function FeaturedProjects({
           <ArrowButton
             href="/projects"
             variant="secondary"
-            className="mt-10 md:mt-20">
+            className="mt-10 md:mt-20"
+          >
             View More Projects
           </ArrowButton>
         </div>

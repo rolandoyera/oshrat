@@ -54,7 +54,8 @@ export function ProjectCard({
         href={`/projects/${project.slug}`}
         preloadSrcSet={heroPreloadSrcSet(heroSource)}
         aria-label={`${project.title}${project.location ? ` — ${project.location}` : ""}`}
-        className={`group relative block overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}>
+        className={`group relative block overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}
+      >
         <Image
           src={heroImageUrl(heroSource)}
           alt={project.imageAlt || project.title}
@@ -93,7 +94,7 @@ export default async function ProjectsSectionHome({
 
   return (
     <section className={cn("bg-cream-200 pt-24 pb-24 lg:py-32", className)}>
-      <Container size="lg">
+      <Container>
         <ScrollReveal>
           <p className="eyebrow">Selected work</p>
           <h2>Latest Projects</h2>
@@ -104,7 +105,8 @@ export default async function ProjectsSectionHome({
               across South Florida's most sought-after communities —{" "}
               <Link
                 href="/locations/interior-designers-las-olas-fl"
-                className="group relative hover:text-accent transition-colors duration-300">
+                className="group relative hover:text-accent transition-colors duration-300"
+              >
                 Las Olas
                 <HoverUnderline className="text-accent" />
               </Link>
@@ -112,7 +114,8 @@ export default async function ProjectsSectionHome({
               Raton, Palm Beach,{" "}
               <Link
                 href="/locations/interior-designers-golden-beach-fl"
-                className="group relative hover:text-accent transition-colors duration-300">
+                className="group relative hover:text-accent transition-colors duration-300"
+              >
                 Golden Beach
                 <HoverUnderline className="text-accent" />
               </Link>
@@ -134,7 +137,8 @@ export default async function ProjectsSectionHome({
             <ArrowButton
               href="/projects"
               variant="secondary"
-              className="w-full sm:w-auto justify-center">
+              className="w-full sm:w-auto justify-center"
+            >
               View More Projects
             </ArrowButton>
           </div>

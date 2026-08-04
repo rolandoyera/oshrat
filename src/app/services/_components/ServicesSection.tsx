@@ -144,7 +144,7 @@ const eyebrow = "text-xs uppercase tracking-[0.2em] text-accent font-bold";
 export default function ServicesSection() {
   return (
     <section id="services" className="bg-cream-200 py-24 xl:py-32">
-      <Container size="lg">
+      <Container>
         {/* Intro */}
         <div className="grid grid-cols-1 gap-10 xl:grid-cols-12 xl:gap-12">
           <ScrollReveal direction="left" delay={150} className="lg:col-span-6">
@@ -160,7 +160,8 @@ export default function ServicesSection() {
           <ScrollReveal
             direction="right"
             delay={150}
-            className="space-y-6 lg:col-span-6 items-center flex">
+            className="space-y-6 lg:col-span-6 items-center flex"
+          >
             <p>
               We design homes that move effortlessly between indoors and out —
               pairing striking architectural forms with interiors that feel
@@ -194,7 +195,8 @@ export default function ServicesSection() {
             <Fragment key={service.index}>
               <ScrollReveal
                 direction={index % 2 === 0 ? "left" : "right"}
-                threshold={0.5}>
+                threshold={0.5}
+              >
                 <article className="grid grid-cols-1 py-12 xl:grid-cols-12 gap-0 lg:gap-6 xl:gap-8 xl:py-14">
                   <div className="lg:col-span-4">
                     <span className="eyebrow">{service.index}</span>
@@ -214,7 +216,8 @@ export default function ServicesSection() {
                       {service.tags.map((tag) => (
                         <li
                           key={tag}
-                          className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70">
+                          className="rounded-full border border-border px-3 py-1 text-xs text-foreground/70"
+                        >
                           {tag}
                         </li>
                       ))}

@@ -13,14 +13,16 @@ export function LocationEditorial({
     <ScrollReveal
       direction="up"
       threshold={0.25}
-      className="bg-cream-200 py-24 lg:py-32">
-      <Container size="lg" className="grid lg:grid-cols-12 lg:gap-20">
+      className="bg-cream-200 py-24 lg:py-32"
+    >
+      <Container className="grid lg:grid-cols-12 lg:gap-20">
         {/* Left — eyebrow + heading */}
         <ScrollReveal
           direction="left"
           threshold={0.3}
           delay={300}
-          className="lg:col-span-5">
+          className="lg:col-span-5"
+        >
           <p className="eyebrow">Our Approach</p>
           <h2>
             {heading.map((line, i) => (
@@ -37,7 +39,8 @@ export function LocationEditorial({
           direction="right"
           threshold={0.3}
           delay={300}
-          className="lg:col-span-7 space-y-8 flex flex-col gap-10">
+          className="lg:col-span-7 space-y-8 flex flex-col gap-10"
+        >
           {paragraphs.map((paragraph) => (
             <p key={paragraph.slice(0, 32)}>{paragraph}</p>
           ))}

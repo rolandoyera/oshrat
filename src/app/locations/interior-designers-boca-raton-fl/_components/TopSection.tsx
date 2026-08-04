@@ -10,15 +10,14 @@ import Container from "@/components/ui/Container";
 export default function TopSection() {
   return (
     <section className="bg-cream-200 py-20 lg:py-48">
-      <Container
-        size="lg"
-        className="flex items-center justify-center overflow-hidden">
+      <Container className="flex items-center justify-center overflow-hidden">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 xl:gap-12 items-center w-full">
           <ScrollReveal
             direction="left"
             threshold={0.3}
             delay={300}
-            className="lg:col-span-5">
+            className="lg:col-span-5"
+          >
             <span className="eyebrow">Our Approach in Boca Raton</span>
             <h2>Residential Interior Design in Boca Raton, FL</h2>
             <p>
@@ -37,7 +36,8 @@ export default function TopSection() {
               <ArrowButton
                 href="/projects"
                 variant="primary"
-                className="w-full sm:w-auto justify-center">
+                className="w-full sm:w-auto justify-center"
+              >
                 View Our Work
               </ArrowButton>
             </div>
@@ -47,7 +47,8 @@ export default function TopSection() {
             direction="right"
             threshold={0.3}
             delay={300}
-            className="relative lg:col-span-7">
+            className="relative lg:col-span-7"
+          >
             <Image
               src="/assets/palm-beach-architecture-proposal-street-view.jpg"
               alt="Street view of a luxury South Florida residence designed by Sarvian Design Group"

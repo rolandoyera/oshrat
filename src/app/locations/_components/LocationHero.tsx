@@ -66,10 +66,7 @@ export default function LocationHero({
       <div className="absolute inset-0 bg-black/40 pointer-events-none z-10" />
 
       {/* Text and Title Overlay - centered */}
-      <Container
-        size="lg"
-        className="absolute inset-0 flex items-center justify-center z-20 pb-16"
-      >
+      <Container className="absolute inset-0 flex items-center justify-center z-20 pb-16">
         <div className="relative">
           {/* The glass panel lives outside ScrollReveal: while an animating
               ancestor's opacity is below 1 a backdrop-filter can't sample the

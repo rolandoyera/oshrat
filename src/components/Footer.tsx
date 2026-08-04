@@ -72,7 +72,7 @@ const PLACE_LINKS: Record<string, string> = {
 export default function Footer() {
   return (
     <footer className="bg-radial from-taupe-800 to-taupe-900 pt-24 text-cream-100 lg:pt-24">
-      <Container size="lg">
+      <Container>
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 lg:gap-12">
           <div>
             <div className="flex-1 flex flex-col items-center justify-center">
@@ -89,7 +89,8 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram (opens in a new tab)"
-                  className="text-cream-300 icon">
+                  className="text-cream-300 icon"
+                >
                   <InstagramIcon size={30} color="currentColor" />
                 </a>
                 <a
@@ -97,7 +98,8 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Houzz Profile (opens in a new tab)"
-                  className="text-cream-300 icon">
+                  className="text-cream-300 icon"
+                >
                   <FaHouzz size={30} color="currentColor" />
                 </a>
                 <a
@@ -108,7 +110,8 @@ export default function Footer() {
                   onClick={() =>
                     trackEvent("email_click", { link_location: "footer" })
                   }
-                  className="text-cream-300 icon">
+                  className="text-cream-300 icon"
+                >
                   <MailIcon size={32} color="currentColor" />
                 </a>
                 <a
@@ -119,7 +122,8 @@ export default function Footer() {
                   onClick={() =>
                     trackEvent("whatsapp_click", { link_location: "footer" })
                   }
-                  className="text-cream-300 icon">
+                  className="text-cream-300 icon"
+                >
                   <WhatsAppIcon size={26} color="currentColor" />
                 </a>
               </div>
@@ -164,7 +168,8 @@ export default function Footer() {
                       {href ? (
                         <Link
                           href={href}
-                          className="group relative inline-block hover:text-accent">
+                          className="group relative inline-block hover:text-accent"
+                        >
                           {/* Before the text so the p stays :last-child (not-last:mb-4) */}
                           <HoverUnderline className="text-accent" />
                           {effect}
@@ -194,7 +199,8 @@ export default function Footer() {
           <p className="text-cream-300 text-sm md:justify-self-center mb-0">
             <Link
               href="/privacy"
-              className="group relative inline-block hover:text-accent">
+              className="group relative inline-block hover:text-accent"
+            >
               Privacy Policy
               <HoverUnderline className="text-accent" />
             </Link>{" "}
@@ -203,7 +209,8 @@ export default function Footer() {
             </span>
             <Link
               href="/terms"
-              className="group relative inline-block hover:text-accent">
+              className="group relative inline-block hover:text-accent"
+            >
               Terms of Use
               <HoverUnderline className="text-accent" />
             </Link>
@@ -215,7 +222,8 @@ export default function Footer() {
               href="https://www.lenisvisuals.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LENIS VISUALS website (opens in a new tab)">
+              aria-label="LENIS VISUALS website (opens in a new tab)"
+            >
               LENIS VISUALS
               <HoverUnderline />
             </a>

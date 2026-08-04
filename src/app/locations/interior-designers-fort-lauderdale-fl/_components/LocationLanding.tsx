@@ -81,13 +81,14 @@ export default function LocationLanding({
           blurDataURL={HERO_BLUR[image.desktop]}
         />
 
-        <Container size="lg" className="relative z-10 w-full ">
+        <Container className="relative z-10 w-full ">
           <HeroScrollColor>
             <div className="grid grid-cols-1 lg:grid-cols-12 items-end gap-10 pb-6 lg:pb-12">
               <ScrollReveal
                 topReveal
                 direction="up"
-                className="lg:col-span-8 text-white">
+                className="lg:col-span-8 text-white"
+              >
                 <h1 className="text-sm uppercase font-medium tracking-[0.2em] text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-200))] mb-2">
                   {hero.eyebrow}
                 </h1>
@@ -106,7 +107,8 @@ export default function LocationLanding({
               <ScrollReveal
                 topReveal
                 direction="up"
-                className="lg:col-span-4 text-white">
+                className="lg:col-span-4 text-white"
+              >
                 <p className="text-[color-mix(in_oklab,var(--color-taupe-800)_var(--hero-mix,0%),var(--color-cream-100))]">
                   {hero.paragraph}
                 </p>

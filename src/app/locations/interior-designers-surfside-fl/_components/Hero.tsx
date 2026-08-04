@@ -36,9 +36,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent via-20% pointer-events-none z-10" />
 
       {/* Text and Title Overlay - aligned to bottom-left */}
-      <Container
-        size="lg"
-        className="absolute inset-0 flex items-end z-20 pb-16">
+      <Container className="absolute inset-0 flex items-end z-20 pb-16">
         <ScrollReveal className="w-full">
           <div className="space-y-6">
             <h1 className="eyebrow text-cream-200">
