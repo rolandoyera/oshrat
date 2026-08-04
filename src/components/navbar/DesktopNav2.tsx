@@ -27,7 +27,7 @@ export default function DesktopNav2() {
       aria-label="Primary"
       data-fixed=""
       className={cn(
-        "hidden lg:flex fixed top-0 left-0 w-full z-50 font-medium flex-col",
+        "hidden xl:flex fixed top-0 left-0 w-full z-50 font-medium flex-col",
         isScrolled && "shadow",
       )}>
       <div

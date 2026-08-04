@@ -61,7 +61,7 @@ export default function LocationsPage() {
           <Container size="lg">
             {/* One column per county; stacked below lg. items-start keeps a
                 short county column from stretching to the tallest one. */}
-            <div className="grid gap-16 lg:grid-cols-3 lg:gap-8 lg:items-start">
+            <div className="grid gap-16 xl:grid-cols-3 xl:gap-8 xl:items-start">
               {COUNTIES.map(({ county, locations }) => (
                 <ScrollReveal key={county} direction="up" threshold={0.1}>
                   <div className="flex flex-col px-3 pb-4 md:px-4">
@@ -81,7 +81,7 @@ export default function LocationsPage() {
                         </span>
                         <span>
                           <h2
-                            className={`block mb-0 leading-4 text-2xl transition-colors group-hover:text-accent ${
+                            className={`block mb-0 leading-6 text-2xl transition-colors group-hover:text-accent ${
                               location.href ? "" : "opacity-50"
                             }`}>
                             {location.name}

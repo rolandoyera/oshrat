@@ -56,7 +56,7 @@ export default function MobileNav() {
     <nav
       aria-label="Primary"
       data-fixed=""
-      className="lg:hidden fixed top-0 left-0 w-full z-50 font-medium flex flex-col text-foreground shadow"
+      className="xl:hidden fixed top-0 left-0 w-full z-50 font-medium flex flex-col text-foreground shadow"
       style={
         {
           viewTransitionName: "main-navbar",
