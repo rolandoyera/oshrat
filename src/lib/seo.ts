@@ -25,7 +25,7 @@ export function socialMeta({
   /** Route path (e.g. "/services"); omit only for the root-layout fallback. */
   url?: string;
   type?: "website" | "article";
-  /** Absolute image URLs; falls back to the sitewide OG image. */
+  /** Absolute image URLs, pre-cropped to 1200×630; falls back to the sitewide OG image. */
   images?: string[];
 }): Pick<Metadata, "openGraph" | "twitter"> {
   return {
@@ -36,7 +36,11 @@ export function socialMeta({
       title,
       description,
       ...(url ? { url } : {}),
-      images: images ?? [OG_IMAGE],
+      // width/height emit og:image:width/height so crawlers (Facebook,
+      // WhatsApp) can lay out the card before downloading the image.
+      images: images?.map((u) => ({ url: u, width: 1200, height: 630 })) ?? [
+        OG_IMAGE,
+      ],
     },
     twitter: {
       card: "summary_large_image",

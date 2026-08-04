@@ -31,7 +31,11 @@ export const COUNTIES: CountyGroup[] = [
         href: "/locations/interior-designers-las-olas-fl",
       },
       {
-        name: "Weston & Southwest Ranches",
+        name: "Weston",
+        blurb: "Low, shaded houses on wide inland lots.",
+      },
+      {
+        name: "Southwest Ranches",
         blurb: "Low, shaded houses on wide inland lots.",
       },
       {
@@ -57,6 +61,11 @@ export const COUNTIES: CountyGroup[] = [
       {
         name: "Coral Gables",
         blurb: "Mediterranean bones, quietly reworked.",
+      },
+      {
+        name: "Aventura",
+        blurb: "Tower residences and island homes on the Intracoastal.",
+        href: "/locations/interior-designers-aventura-fl",
       },
       {
         name: "Golden Beach",

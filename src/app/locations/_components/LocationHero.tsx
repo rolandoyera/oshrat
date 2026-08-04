@@ -85,7 +85,7 @@ export default function LocationHero({
                   {heading[0]}
                   <span
                     aria-hidden
-                    className="inline-block h-0.5 w-[1.5em] bg-current align-middle"
+                    className="inline-block h-0.5 w-[1.25em] bg-current align-middle ml-2"
                   />
                 </span>
                 <span className="block w-fit">{heading[1]}</span>
@@ -94,8 +94,7 @@ export default function LocationHero({
               <ArrowButton2
                 href="/projects"
                 variant="primary"
-                className="w-full sm:w-auto justify-center"
-              >
+                className="w-full sm:w-auto justify-center">
                 View Projects
               </ArrowButton2>
             </div>
