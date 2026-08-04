@@ -25,7 +25,7 @@ export const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed alongside your architect while the house is still on paper, so ceiling heights, sightlines, finishes, and lighting are settled before framing starts. Joining early is what keeps the architecture and the interior speaking the same language, and it is why the finished house reads as one idea rather than two.",
+      "Ceiling heights, sightlines, finishes, and lighting are settled with your architect while the house is still being drawn. Getting in that early is the difference between a home designed as a whole and one where the interior has to be fitted around decisions somebody else already made.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",

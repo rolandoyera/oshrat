@@ -25,7 +25,7 @@ export const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed with your architect from the earliest drawings, so circulation, finishes, and lighting are settled long before anything is framed. Joining at that stage is what keeps the architecture and the interior from working against each other, and it is why the finished home reads as one idea rather than two.",
+      "Interiors developed with your architect from the earliest drawings, so circulation, finishes, and lighting are settled long before anything is framed. Joining at that stage keeps the architecture and the interior from working against each other, and it spares you the small permanent compromises that appear when the two are settled separately.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",

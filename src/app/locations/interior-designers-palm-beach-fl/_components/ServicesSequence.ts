@@ -25,7 +25,7 @@ export const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors shaped alongside your architect while the project is still on paper, so circulation, finishes, and lighting are decided before framing begins. Starting that early is what keeps the architecture and the interior speaking the same language — and why the completed home feels like a single idea instead of two.",
+      "A new house on the island still has to sit comfortably among neighbors built decades earlier. Proportion, ceiling heights, and the weight of the materials are settled with your architect while the drawings are open, so the interior belongs to an exterior that had to satisfy the town's review before it was ever built.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",

@@ -7,7 +7,7 @@ export const SERVICES: SequenceService[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Complete residential interiors for tower residences above the Intracoastal, houses in the gated island communities, and everything between. Furniture plans, finishes, lighting, and art are built up in layers, so the finished rooms read as a home collected over time, not a package delivered on one truck.",
+      "Complete residential interiors for tower apartments above the Intracoastal and houses in Aventura's gated island communities. A high-rise hands you glass and a view and very little else, so the warmth has to be added: wood, stone, textile, and light, layered until the rooms feel settled rather than staged.",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
@@ -16,7 +16,7 @@ export const SERVICES: SequenceService[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Renovations taken down to the studs and carried through the final punch list, including combined-unit projects that turn two apartments into one residence. We rework the plan, draw the millwork, and stay close to your contractor — and because most Aventura buildings require association review, the submission and its timeline are planned into the project from the first meeting.",
+      "Renovations stripped back to the shell and carried through to the last detail. In a concrete building the structure, the risers, and the slab decide what is genuinely possible, so those limits get established before anything is drawn. In Aventura's towers, association review is built into the schedule from the start.",
     image: "/services/full-home-renovations-16x9.jpg",
     imageAlt:
       "Exterior view of a luxury modern estate full home renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls.",
@@ -25,7 +25,7 @@ export const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors shaped alongside your architect while the project is still on paper, so circulation, finishes, and lighting are decided before framing begins. Starting that early is what keeps the architecture and the interior speaking the same language — and why the completed home feels like a single idea instead of two.",
+      "Interiors developed while the residence is still a set of drawings, which in Aventura usually means a pre-construction unit with a developer deadline attached. Millwork, finishes, and lighting are resolved before the standard package is locked in, so what you take delivery of is already yours rather than something to undo later.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",
@@ -34,7 +34,7 @@ export const SERVICES: SequenceService[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Kitchens planned around how your household actually cooks, gathers, and starts its mornings. Because it is the hardest-working room in the house, storage, sightlines, and workflow get solved first — then the cabinetry, stone, and appliances follow from those decisions rather than driving them.",
+      "The kitchen is the first thing most owners replace and, in a tower, the most constrained. Venting, plumbing risers, and the slab set the boundaries, so the plan gets solved against them before a single cabinet is drawn. The stone, cabinetry, and appliances follow from that rather than leading it.",
     image: "/services/aventura-kitchen-interior-design-6.jpg",
     imageAlt:
       "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
@@ -43,7 +43,7 @@ export const SERVICES: SequenceService[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "Calm, spa-like bathrooms where the stone, fixtures, and lighting are resolved as one composition instead of three separate purchases. Surfaces are specified for real daily use, simple upkeep, and the humidity and salt air that come with living this close to the water.",
+      "A tower bath often has no window at all, so the light has to be built rather than borrowed, and the stone, fittings, and fixtures are drawn together instead of bought separately. Waterproofing detail carries more weight here too, because there is always a neighbor directly below.",
     image: "/services/master-bath-interior-design.jpg",
     imageAlt:
       "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
@@ -52,7 +52,7 @@ export const SERVICES: SequenceService[] = [
     title: "Custom Furnishings",
     category: "Made to order",
     description:
-      "Case goods and built-ins designed for the room they'll live in, not adapted to it after the fact. Drawn and engineered in-house, built by South Florida fabricators we've trusted for years, and specified to the millimeter before anything is cut — so the piece that arrives is the piece that was drawn.",
+      "Case goods and built-ins drawn for the room rather than adapted to it afterward. A high-rise adds a constraint most people never think about, because everything has to reach the apartment through a freight elevator and a service corridor. Pieces are engineered in-house to arrive in sections and assemble on site.",
     image: "/services/custom-furnishings-16x9.jpg",
     imageAlt:
       "A design graphic for a luxury custom cabinet for a primary suite.",

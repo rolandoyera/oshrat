@@ -25,7 +25,7 @@ export const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed alongside your architect while the house is still on paper, which matters more here than almost anywhere given how much of Boca is being rebuilt from the lot up. Circulation, ceilings, finishes, and lighting are settled before framing, so the architecture and the interior end up as one idea instead of two reconciled after the fact.",
+      "Interiors developed alongside your architect while the lot is still empty, which matters more here than almost anywhere given how much of Boca is being rebuilt from the ground up. Circulation, ceilings, finishes, and lighting cost nothing to change on a drawing and a great deal to change once the shell is standing.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",

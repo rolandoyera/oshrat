@@ -25,7 +25,7 @@ export const SERVICES: SequenceService[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors shaped alongside your architect while the project is still on paper, so circulation, finishes, and lighting are decided before framing begins. Starting that early is what keeps the architecture and the interior speaking the same language, and why the completed building feels like a single idea instead of two.",
+      "Downtown, a new residence is often handed over as a raw floor with no interior plan at all, which means every wall, every ceiling line, and every run of services is a decision rather than an inheritance. We make those decisions with your architect early, while they are still drawings instead of concrete.",
     image: "/services/new-construction-16x9.jpg",
     imageAlt:
       "Interior view of a new construction luxury double-height living room featuring an open-concept layout.",
