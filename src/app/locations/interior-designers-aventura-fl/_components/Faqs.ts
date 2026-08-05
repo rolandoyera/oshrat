@@ -11,10 +11,10 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Which parts of Aventura do you work in?",
     answer:
-      "The towers along Country Club Drive and the Intracoastal, the gated island communities like Williams Island and Island Estates, Porto Vita, and the single family enclaves tucked behind the waterways. A high floor apartment and an island house make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
+      "The towers along Country Club Drive and the Intracoastal, the gated island communities like Williams Island and Island Estates, Porto Vita, and the single family enclaves tucked behind the waterways. A high floor condominium and an island house make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
   },
   {
-    question: "Can you renovate inside a condo tower? Our building has rules.",
+    question: "Can you renovate inside a condominium? Our building has rules.",
     answer:
       "Yes, it is routine work for us. Aventura buildings typically want drawings and specifications approved before a renovation starts, and set work hours, service elevator reservations, insurance requirements, and sound attenuation standards for the job itself. We build the association submission into the design schedule from the first meeting and coordinate with your contractor so approval happens once rather than across rounds of revisions.",
   },
