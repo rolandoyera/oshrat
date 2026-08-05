@@ -71,8 +71,8 @@ export default function Page() {
             Fort Lauderdale interior designers work in a particular kind of
             light, low and warm, reflected off water most of the year. At
             Sarvian Design Group, we design for it. Our studio serves the
-            residences that define the city&apos;s waterfront in Harbor Beach,
-            Rio Vista, Coral Ridge, and the isles our{" "}
+            residences that define the city's waterfront in Harbor Beach, Rio
+            Vista, Coral Ridge, and the isles our{" "}
             <Link
               href="/locations/interior-designers-las-olas-fl"
               className="group relative hover:text-accent transition-colors duration-300">
@@ -81,14 +81,13 @@ export default function Page() {
             </Link>{" "}
             know best, with interiors built to hold their composure against that
             light: natural stone, warm neutrals, and furnishings selected piece
-            by piece rather than pulled from a catalog. It&apos;s the difference
+            by piece rather than pulled from a catalog. It's the difference
             between a home that photographs well and one that lives well, and
-            it&apos;s why the interior designers Fort Lauderdale, FL homeowners
-            ultimately choose tend to be found through the homes they&apos;ve
-            already completed.
+            it's why we're amongst the best interior designers in Fort
+            Lauderdale, Florida.
           </>,
           "Our interior design consulting in Fort Lauderdale begins before a single finish is selected. We start with how a home is actually used: where mornings happen, where guests gather, which rooms the breeze should reach. From there we carry the project from space planning and material palettes through procurement, custom furnishings, and installation. One studio, one point of accountability, from the first walkthrough to the day the art is hung.",
-          "Interior design in Fort Lauderdale is too often reduced to a formula: white walls, blue accents, something nautical on a shelf. The city deserves better. Homes here are defined by their relationship to water and weather, by deep terraces, Intracoastal views, and rooms that open rather than close. The interiors that succeed answer that architecture with restraint: layered texture, honest materials, a palette drawn from the landscape rather than a theme. That's the standard we hold every high-end interior design project to, whether it's a full renovation on the Isles or the furnishing of a new build in Harbor Beach.",
+          "Interior design is too often reduced to a formula: white walls, blue accents, something nautical on a shelf. The city deserves better. Homes here are defined by their relationship to water and weather, by deep terraces, Intracoastal views, and rooms that open rather than close. The interiors that succeed answer that architecture with restraint: layered texture, honest materials, a palette drawn from the landscape rather than a theme. That's the standard we hold every high-end interior design project to, whether it's a full renovation on the Isles or the furnishing of a new build in Harbor Beach.",
         ]}
       />
       <FaqSection faqs={FAQS} />
