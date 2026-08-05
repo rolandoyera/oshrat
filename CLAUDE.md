@@ -18,8 +18,16 @@ Instead: build landing pages for cities and neighborhoods with low search volume
 firms ignore, because their domain authority already wins the head terms without them. Rank those,
 then pass equity inward to the three money pages — **Fort Lauderdale, Miami, Palm Beach**.
 
-Confirmed as of 2026-08-04: **Golden Beach ranks #1** and is cited in Google AI Overviews.
-**Bal Harbour and Surfside are on page one.**
+Confirmed as of 2026-08-05: **Golden Beach ranks #1** and is cited in Google AI Overviews.
+**Bal Harbour and Surfside are on page one.** Surfside is now also named in the AI Overview for
+"luxury interior designers in surfside" (localized to Aventura 33180), paraphrasing the page's own
+"turnkey… oceanfront apartment layouts… final styling" language — evidence the generative layer
+reads and reuses this copy.
+
+Caveat on that Surfside citation: every competing firm in the same Overview carries a named,
+multi-source chip (`DKOR Interiors +1`). Ours is a bare unnamed link — one source, the site itself.
+The placement is real but unsupported off-site, which is the reviews and NAP gap in the open items
+below showing up where it's visible.
 
 Benchmark: `sdhstudio.com/fort-lauderdale-interior-designers/` holds #1 for Fort Lauderdale with
 only 1,479 visible words (ours: 2,052) and **zero** mentions of kitchen, bathroom, renovation, new
@@ -68,9 +76,10 @@ Anatomy:
 | `LocationEditorial` | three long keyword-bearing paragraphs |
 | `_components/WhyItems.ts` | `WHY` object; the grid is `md:grid-cols-3`, so exactly 3 items |
 
-Fort Lauderdale is the odd one out: it uses a `LocationContent` object fed to `LocationLanding`, and
-`_components/location-faqs.ts` (`buildLocationFaqs()`). **Only Fort Lauderdale uses that helper** —
-every other city has its own `Faqs.ts`.
+Fort Lauderdale now composes the same shared pieces as every other city. The **only** things it does
+differently: its own `_components/Hero.tsx` (bottom-left copy over an art-directed backdrop, rather
+than the shared centered `LocationHero`), its own `_components/FeaturedProjects.tsx` (3-up, versus
+the shared 2-up `LocationProjects`), and projects placed **above** the services sequence.
 
 ### Adding a page
 
@@ -128,12 +137,18 @@ Every location page's projects blurb carries two links, and **the anchor text is
   first slide settles. It is still a real `<h2>` in the DOM and Google reads it normally, which
   makes it a free keyword-bearing heading. Keep it to one natural phrase per page — an invisible
   heading stuffed with terms is the pattern that draws manual actions.
-- **`LocationServices` is shared; the Fort Lauderdale folder has its own copy.**
-  `interior-designers-fort-lauderdale-fl/_components/ServicesSequence.tsx` is a separate component
-  with its services hardcoded, used only by that page. Golden Beach used to import it, so both pages
-  rendered the same ~600 words *and* a Fort Lauderdale heading leaked onto Golden Beach. Golden
-  Beach now has its own data file on the shared component. Don't re-point another page at the
-  Fort Lauderdale component.
+- **Every page now uses the shared `LocationServices`; only the data differs.** Fort Lauderdale used
+  to ship its own `ServicesSequence.tsx` component with the copy hardcoded inside it, and Golden
+  Beach imported it — so both pages rendered the same ~600 words, and a Fort Lauderdale `<h2>`
+  leaked onto Golden Beach, our #1 page. Both now pass their own `_components/ServicesSequence.ts`
+  data file to the shared component. Keep it that way: copy belongs in the data file, never in a
+  component another page might import.
+- **Fort Lauderdale's hero does not fade.** It briefly paired a `fixed` backdrop that faded to
+  opacity 0 with a scroll-driven `--hero-mix` that darkened the copy from white to `taupe-800`. Those
+  were one mechanism: the text had to darken because the image dissolved out from under it. The hero
+  is now a normal `absolute` backdrop that parallaxes at 0.35 like `LocationHero`, with plain white
+  copy. `LocationHero.tsx` still references `var(--hero-mix,0%)`, which has no producer anywhere and
+  always computes to white — dead, harmless, safe to simplify.
 
 ---
 
@@ -164,8 +179,9 @@ full RSC payload in script tags, so a naive grep will find copy that no crawler 
 
 ## Open items
 
-- **Fort Lauderdale has no outbound links to the neighborhoods.** Making it a real hub closes the
-  loop on the whole strategy.
+- **Fort Lauderdale is only half a hub.** It links out to Las Olas ("interior designers in Las
+  Olas") and nothing else. Deliberate for now — more outbound links dilute the phrase focus on the
+  hardest target we have. Revisit once it holds a position worth spending equity from.
 - **NAP conflict.** Houzz lists the business at North Miami Beach with a bio saying "based in Palm
   Beach"; the site and schema say Fort Lauderdale. Three cities across our own properties, which
   suppresses local pack placement. *Blocked:* Oshrat holds the Houzz password and is in Israel.

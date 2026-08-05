@@ -25,7 +25,7 @@ export default function PressPage() {
           backgroundImage: `url(${HERO_BLUR["/press/bedroom-remodel-armoire-scene-lg.webp"]})`,
         }}
       >
-        {/* Art-directed like FadingHeroBackdrop: <source media> makes the
+        {/* Art-directed like HeroBackdrop: <source media> makes the
             browser fetch exactly one pre-encoded crop, bypassing next/image. */}
         <picture>
           <source

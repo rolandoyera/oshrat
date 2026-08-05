@@ -5,7 +5,7 @@ import { ProjectCard, type Project } from "@/components/ProjectExamplesSection";
 import ArrowButton from "@/components/ui/ArrowButton";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
-// Three-up project section where the featured projects are hand-picked in
+// Two-up project section where the featured projects are hand-picked in
 // code (by slug) instead of in Sanity — content still comes from Sanity, so
 // titles/images stay in sync with edits there.
 const PROJECTS_BY_SLUG = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage)]{
@@ -38,7 +38,7 @@ export default async function FeaturedProjects({
   projects.sort((a, b) => slugs.indexOf(a.slug) - slugs.indexOf(b.slug));
 
   return (
-    <section className="bg-cream-200 pb-24 lg:py-32">
+    <section className="bg-cream-200 pb-24 lg:py-46">
       <Container>
         <ScrollReveal className="mb-12">
           <p className="eyebrow">{eyebrow}</p>
@@ -46,13 +46,13 @@ export default async function FeaturedProjects({
           {description && <p className="max-w-3xl">{description}</p>}
         </ScrollReveal>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard
               key={project._id}
               project={project}
               aspect="aspect-5/4"
-              sizes="(min-width: 768px) 33vw, 100vw"
+              sizes="(min-width: 768px) 50vw, 100vw"
             />
           ))}
         </div>
@@ -60,8 +60,7 @@ export default async function FeaturedProjects({
           <ArrowButton
             href="/projects"
             variant="secondary"
-            className="mt-10 md:mt-20"
-          >
+            className="mt-10 md:mt-20">
             View More Projects
           </ArrowButton>
         </div>
