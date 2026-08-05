@@ -33,7 +33,7 @@ export const FAQS: { question: string; answer: string }[] = [
     question:
       "Do your Fort Lauderdale interior designers work with my architect and contractor?",
     answer:
-      "Either. On new construction we prefer to join alongside your architect early, so the interior and the architecture are resolved together rather than negotiated later. For renovations we coordinate closely with your contractor, or introduce trusted builders and trades we've worked with across Fort Lauderdale when you need them.",
+      "Either. On new construction we prefer to join alongside your architect early, so the interior and the architecture are resolved together rather than negotiated later. For renovations we coordinate closely with your contractor, or introduce trusted builders and trades we've worked with when you need them.",
   },
   {
     question:
@@ -50,7 +50,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you offer consultations for Fort Lauderdale projects?",
     answer:
-      "Yes, for most Fort Lauderdale projects, though availability moves with scope and the calendar. Send the contact form with a few details about the property and we will tell you what we can take on and when.",
+      "Yes, for most projects, though availability moves with scope and the calendar. Send the contact form with a few details about the property and we will tell you what we can take on and when.",
   },
   {
     question:

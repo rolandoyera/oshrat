@@ -7,7 +7,8 @@ export function LocationEditorial({
 }: {
   /** Heading lines, rendered with a break between each. */
   heading: string[];
-  paragraphs: string[];
+  /** Accepts JSX so a page can put internal links in its editorial copy. */
+  paragraphs: React.ReactNode[];
 }) {
   return (
     <ScrollReveal
@@ -41,8 +42,9 @@ export function LocationEditorial({
           delay={300}
           className="lg:col-span-7 space-y-8 flex flex-col gap-10"
         >
-          {paragraphs.map((paragraph) => (
-            <p key={paragraph.slice(0, 32)}>{paragraph}</p>
+          {/* Index keys: the list is static per page and never reorders. */}
+          {paragraphs.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
           ))}
         </ScrollReveal>
       </Container>
