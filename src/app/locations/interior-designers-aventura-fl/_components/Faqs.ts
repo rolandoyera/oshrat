@@ -56,6 +56,6 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Can you help with custom furniture or built-ins?",
     answer:
-      "Yes. Custom millwork, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we have worked with for years, with drawings and specifications detailed enough that what arrives matches what was approved.",
+      "Yes. Custom millwork, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted partners we have worked with for years, with drawings and specifications detailed enough that what arrives matches what was approved.",
   },
 ];
