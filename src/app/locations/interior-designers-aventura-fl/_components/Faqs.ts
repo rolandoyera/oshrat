@@ -11,7 +11,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Which parts of Aventura do you work in?",
     answer:
-      "The towers along Country Club Drive and the Intracoastal, the gated island communities like Williams Island and Island Estates, Porto Vita, and the single family enclaves tucked behind the waterways. A high floor condominium and an island house make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
+      "The towers along Country Club Drive and the Intracoastal, the gated island communities like Williams Island and Island Estates, Porto Vita, and the single family enclaves tucked behind the waterways. Schedule a consultation to discuss your specific needs.",
   },
   {
     question: "Can you renovate inside a condominium? Our building has rules.",
@@ -19,14 +19,9 @@ export const FAQS: { question: string; answer: string }[] = [
       "Yes, it is routine work for us. Aventura buildings typically want drawings and specifications approved before a renovation starts, and set work hours, service elevator reservations, insurance requirements, and sound attenuation standards for the job itself. We build the association submission into the design schedule from the first meeting and coordinate with your contractor so approval happens once rather than across rounds of revisions.",
   },
   {
-    question: "How do you handle all the glass and light in a high rise?",
+    question: "How do you handle all the glass and light in a condominium?",
     answer:
-      "Deliberately, because in a tower the view is the largest material in the room. Floor-to-ceiling glass brings strong east and west light that washes out weak palettes and punishes cheap finishes, so we specify stone, wood, and fabric that hold their depth through the day, plan drapery and shading into the architecture rather than tacking them on, and lay out rooms so furniture lives comfortably with the glare instead of fighting it.",
-  },
-  {
-    question: "What types of projects do you take on?",
-    answer:
-      "The studio's range runs from ground up new construction and full-home renovations to single room projects such as a kitchen, a bedroom, or a bathroom, plus custom furnishings, millwork, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
+      "Deliberately, because in a condominium the view is the largest material in the room. Floor-to-ceiling glass brings strong east and west light that washes out weak palettes and punishes cheap finishes, so we specify stone, wood, and fabric that hold their depth through the day, plan drapery and shading into the architecture rather than tacking them on, and lay out rooms so furniture lives comfortably with the glare instead of fighting it.",
   },
   {
     question: "Do you take on a single kitchen, bedroom, or bathroom?",
@@ -41,12 +36,12 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "How long does an Aventura project take?",
     answer:
-      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually 12 to 24 months, and work inside a tower can add time for association approval and elevator scheduling. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
+      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually 12 to 24 months, and work inside a condominium can add time for association approval and elevator scheduling. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
   },
   {
     question: "How do I start a project?",
     answer:
-      "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
+      "Start by submitting the contact form with basic details. The team will review your inquiry and follow up to discuss scope, timing, and next steps. Or, you can call or text us at (954) 444-4803",
   },
   {
     question: "Can you help with custom furniture or built-ins?",
