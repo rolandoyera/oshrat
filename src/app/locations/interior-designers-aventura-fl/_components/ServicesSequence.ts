@@ -10,7 +10,7 @@ export const SERVICES: SequenceService[] = [
       "Complete residential interiors for tower condominiums above the Intracoastal and houses in Aventura's gated island communities. ",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
-      "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
+      "A modern, luxury home interior design with a large entry way and staircase featuring bespoke art and styling.",
   },
   {
     title: "Full Renovations",

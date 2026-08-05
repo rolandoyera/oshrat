@@ -6,7 +6,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Are you local to Aventura?",
     answer:
-      "Yes. Our studio is in Fort Lauderdale, about twenty minutes up Biscayne Boulevard, and Aventura sits squarely inside the stretch of coast we work every week. One of the studio's signature residences, Aventura Modern Living, is here. We walk the site ourselves through design, construction, and installation, so when a question comes up on the job we are in the building the same day, not on a call.",
+      "Yes. Our studio is in Fort Lauderdale, about twenty minutes up Biscayne Boulevard, and Aventura sits squarely inside the stretch of coast we work every week.",
   },
   {
     question: "Which parts of Aventura do you work in?",
@@ -17,11 +17,6 @@ export const FAQS: { question: string; answer: string }[] = [
     question: "Can you renovate inside a condominium? Our building has rules.",
     answer:
       "Yes, it is routine work for us. Aventura buildings typically want drawings and specifications approved before a renovation starts, and set work hours, service elevator reservations, insurance requirements, and sound attenuation standards for the job itself. We build the association submission into the design schedule from the first meeting and coordinate with your contractor so approval happens once rather than across rounds of revisions.",
-  },
-  {
-    question: "Can you combine two units into one residence?",
-    answer:
-      "Yes. Combining units is one of the most common ways to get a house scale home in an Aventura tower, and it is as much an engineering and approval exercise as a design one. We coordinate the structural review, the association and permitting submissions, and the mechanical rework alongside the design itself, so the finished residence reads as one home that was always meant to be, not two apartments with a doorway between them.",
   },
   {
     question: "How do you handle all the glass and light in a high rise?",
