@@ -31,7 +31,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you work in the gated island communities?",
     answer:
-      "Yes. Williams Island, Island Estates, and the neighborhoods around the Turnberry course carry house scale projects: full renovations, new construction interiors, and outdoor rooms, each with its own architectural review to plan around. It is the same discipline as our estate work in neighboring Golden Beach, where the studio designed a ground up residence from the driveway to the door hardware.",
+      "Yes. Williams Island, Island Estates, and the neighborhoods around the Turnberry course carry house scale projects: full renovations, new construction interiors, and outdoor rooms, each with its own architectural review to plan around. It is the same discipline as our estate work throughout Miami.",
   },
   {
     question: "What types of projects do you take on?",

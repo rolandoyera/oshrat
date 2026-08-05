@@ -19,7 +19,7 @@ import { WHY } from "./_components/WhyItems";
 const PATH = "/locations/interior-designers-aventura-fl";
 const TITLE = "Interior Designers in Aventura, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Luxury interior designers in Aventura, FL. Tower residences, combined-unit renovations, gated island homes, and new construction interiors.";
+  "Luxury interior designers in Aventura, FL. Condominiums, full home renovations, gated island homes, and new construction interiors. Request a consultation.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,7 +40,7 @@ export default function Page() {
         }}
         eyebrow="Residential Interior Designers in Aventura, FL"
         heading={["Finished", "not decorated."]}
-        paragraph="A full-service interior design firm working across Aventura's towers and gated island communities, where the view arrives built in and the warmth has to be designed."
+        paragraph="A full-service interior design firm working across Aventura's condominium towers and gated island communities, where the view arrives built in and the warmth has to be designed."
       />
       <LocationTopSection
         eyebrow="Featured Project"
