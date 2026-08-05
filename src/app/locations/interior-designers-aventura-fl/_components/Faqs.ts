@@ -31,7 +31,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you take on a single kitchen, bedroom, or bathroom?",
     answer:
-      "Yes, and it is a common way clients start with us. A kitchen in a tower is its own puzzle, because the venting and the risers cannot move and the plan has to be solved around them. A bedroom is usually a question of storage and light rather than square footage. A bathroom lives or dies on the stone, the fittings, and the lighting being chosen together instead of separately. Each one runs through the same process as a whole home project, scaled to the room.",
+      "Yes, and it is a common way clients start with us. Contact us for a no obligation consultation.",
   },
   {
     question: "What does it cost to hire an interior designer in Aventura?",
