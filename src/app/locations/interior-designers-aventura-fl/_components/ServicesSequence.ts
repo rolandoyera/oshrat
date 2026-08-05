@@ -16,7 +16,7 @@ export const SERVICES: SequenceService[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Renovations stripped back to the shell and carried through to the last detail. In a concrete building the structure, the risers, and the slab decide what is genuinely possible, so those limits get established before anything is designed. In Aventura's towers, association review is built into the schedule from the start.",
+      "Renovations stripped back to the shell and carried through to the last detail. In a concrete building the structure, the risers, and the slab decide what is genuinely possible, so those limits get established before anything is designed. In Aventura's towers, association review is designed into the schedule from the start.",
     image: "/services/full-home-renovations-16x9.jpg",
     imageAlt:
       "Exterior view of a luxury modern estate full home renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls.",
@@ -43,16 +43,16 @@ export const SERVICES: SequenceService[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "A tower bathroom often has no window at all, so the light has to be built rather than borrowed, and the stone, fittings, and fixtures are designed together instead of bought separately.",
+      "A tower bathroom often has no window at all, so the light has to be designed rather than borrowed, and the stone, fittings, and fixtures are designed together instead of bought separately.",
     image: "/services/master-bath-interior-design.jpg",
     imageAlt:
-      "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
+      "Angle view of a luxury primary bathroom design emphasizing marble slabs and wood integration.",
   },
   {
     title: "Custom Furnishings",
     category: "Made to order",
     description:
-      "Case goods and built-ins designed for the room rather than adapted to it afterward. A high-rise adds a constraint most people never think about, because everything has to reach the apartment through a freight elevator and a service corridor. Pieces are engineered in-house to arrive in sections and assemble on site.",
+      "Case goods and built-ins designed for the room rather than adapted to it afterward. A condominium adds a constraint most people never think about, because everything has to reach the apartment through a freight elevator and a service corridor. Pieces are engineered in-house to arrive in sections and assemble on site.",
     image: "/services/custom-furnishings-16x9.jpg",
     imageAlt:
       "A design graphic for a luxury custom cabinet for a primary suite.",

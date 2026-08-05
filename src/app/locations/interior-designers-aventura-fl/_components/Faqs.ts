@@ -36,7 +36,7 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "What types of projects do you take on?",
     answer:
-      "The studio's range runs from ground up new construction and full-home renovations to single room projects such as a kitchen, a bedroom, or a bathroom, plus custom furnishings, built-ins, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
+      "The studio's range runs from ground up new construction and full-home renovations to single room projects such as a kitchen, a bedroom, or a bathroom, plus custom furnishings, millwork, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
   },
   {
     question: "Do you take on a single kitchen, bedroom, or bathroom?",

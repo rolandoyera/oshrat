@@ -8,7 +8,7 @@ export const WHY = {
     {
       title: "From One Room Up.",
       description:
-        "Projects here arrive at every size: a high-floor residence with the Intracoastal on three sides, two apartments combined into one home, a house on Williams Island, or a single kitchen with a deadline attached. Residential or commercial, all of them get the same drawings, the same specification, and the same people. What changes is the scope, never the standard, and the smallest job on the board is worked exactly like the largest.",
+        "Projects here arrive at every size: a condominium residence with the Intracoastal on three sides, two apartments combined into one home, a house on Williams Island, or a single kitchen with a deadline attached. Residential or commercial, all of them get the same drawings, the same specification, and the same people. What changes is the scope, never the standard, and the smallest job on the board is worked exactly like the largest.",
     },
     {
       title: "Drawn to the Mullion.",
@@ -18,7 +18,7 @@ export const WHY = {
     {
       title: "One Firm, No Handoffs.",
       description:
-        "Most high-end projects lose their shape in the gaps between specialists, where the designer, the buyer, the millworker, and the installer each own a piece and nobody owns the result. As your interior design firm in Aventura, we hold all of it: space planning, finish palettes, lighting plans, and renderings, then procurement, custom built-ins, art, styling, and installation. The living room, primary bedroom, kitchen, and bathroom resolve as one residence because one team carried them the whole way, and we coordinate with your architect, contractor, and building association so nothing is lost between the drawing and the room.",
+        "Most condominium projects lose their shape in the gaps between specialists, where the designer, the buyer, the millworker, and the installer each own a piece and nobody owns the result. As your interior design firm in Aventura, we hold all of it: space planning, finish palettes, lighting plans, and renderings, then procurement, custom built-ins, art, styling, and installation. The living room, primary bedroom, kitchen, and bathroom resolve as one residence because one team carried them the whole way, and we coordinate with your architect, contractor, and building association so nothing is lost between the drawing and the room.",
     },
   ],
 };
