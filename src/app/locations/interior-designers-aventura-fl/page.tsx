@@ -58,16 +58,22 @@ export default function Page() {
           "miami-river-miami-fl",
         ]}>
         <p>
-          A selection of our work in and around Aventura, from a signature
-          residence in the heart of the city to oceanfront new construction one
-          town over in Golden Beach. Our studio works out of{" "}
+          A selection of our work in and around Aventura. Our studio works out
+          of{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300">
             Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}
-          and has been designing along this stretch of coast for years.
+          and has been designing along this stretch of coast in{" "}
+          <Link
+            href="/locations/interior-designers-miami-fl"
+            className="group relative hover:text-accent transition-colors duration-300">
+            Miami-Dade County
+            <HoverUnderline className="text-accent" />
+          </Link>{" "}
+          for 12 years.
         </p>
       </LocationProjects>
       <Cta />
