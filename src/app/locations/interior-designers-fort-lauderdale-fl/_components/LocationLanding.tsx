@@ -3,7 +3,8 @@ import FadingHeroBackdrop from "./FadingHeroBackdrop";
 import HeroScrollColor from "./HeroScrollColor";
 import { HERO_BLUR } from "@/lib/hero-blur";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import ServicesSequence from "./ServicesSequence";
+import ServicesSequence from "../../_components/LocationServices";
+import { SERVICES } from "./ServicesSequence";
 import FeaturedProjects from "./FeaturedProjects";
 import Testimonials from "@/components/Testimonials";
 import { LocationEditorial } from "../../_components/LocationEditorial";
@@ -118,7 +119,10 @@ export default function LocationLanding({
         </Container>
       </section>
 
-      <ServicesSequence />
+      <ServicesSequence
+        services={SERVICES}
+        heading="What Our Fort Lauderdale Interior Designers Do"
+      />
 
       <FeaturedProjects
         slugs={featuredProjects.slugs}

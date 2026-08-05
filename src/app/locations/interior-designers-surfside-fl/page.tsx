@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Cta from "@/components/Cta";
-import ProjectsSection from "@/components/ProjectsSection";
+import HoverUnderline from "@/components/ui/HoverUnderline";
+import LocationProjects from "../_components/LocationProjects";
 import LocationHero from "../_components/LocationHero";
 import ServicesSequence from "../_components/LocationServices";
 import Testimonials from "@/components/Testimonials";
@@ -45,7 +47,37 @@ export default function Page() {
         paragraph="Our most visible Surfside work stands on Collins Avenue: the renovation of The Shul, a sanctuary used by the community every day of the week. The room is shaped by curved walls in a textured finish that recalls Jerusalem stone, with oak millwork and bronze running through every custom piece — engraved bronze doors within a bookmatched marble surround, sculptural glass lighting, and stained glass designed for this room and no other. A building this woven into daily life calls for a careful hand, and the finished sanctuary feels both familiar and entirely new."
         projectSlug="the-shul-bal-harbour-surfside-fl"
       />
-      <ProjectsSection content="Recent work from across South Florida — oceanfront apartments, whole-home renovations, custom millwork, and community spaces like the sanctuary we designed in Surfside. Every one of them started the same way we'd start yours: by understanding how the space is really used before a single finish is chosen." />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Latest Projects"
+        slugs={[
+          "the-shul-bal-harbour-surfside-fl",
+          "golden-dreams-golden-beach-fl",
+          "aventura-modern-living-aventura-fl",
+          "miami-river-miami-fl",
+        ]}>
+        <p>
+          Recent work from across South Florida: oceanfront apartments,
+          whole-home renovations, custom millwork, and community spaces like the
+          sanctuary we designed in Surfside. It is the same standard our{" "}
+          <Link
+            href="/locations/interior-designers-miami-fl"
+            className="group relative hover:text-accent transition-colors duration-300">
+            interior designers in Miami
+            <HoverUnderline className="text-accent" />
+          </Link>{" "}
+          bring to every project, run out of{" "}
+          <Link
+            href="/locations/interior-designers-fort-lauderdale-fl"
+            className="group relative hover:text-accent transition-colors duration-300">
+            our interior design firm in Fort Lauderdale
+            <HoverUnderline className="text-accent" />
+          </Link>
+          . Every one of them started the same way we would start yours: by
+          understanding how the space is really used before a single finish is
+          chosen.
+        </p>
+      </LocationProjects>
       <Cta />
       <ServicesSequence services={SERVICES} />
       <Testimonials />

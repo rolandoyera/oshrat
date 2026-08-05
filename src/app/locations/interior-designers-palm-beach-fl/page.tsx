@@ -67,15 +67,15 @@ export default function Page() {
           A selection of our residential and commercial interior design work,
           from full-home renovations and new construction interiors to single
           rooms drawn to the same level of detail. It is the standard we bring
-          to every Palm Beach project. Our studio works out of{" "}
+          to every Palm Beach project. The studio is run by{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Fort Lauderdale
+            luxury interior designers in Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}
-          and has been designing across South Florida for years.
+          and has been designing across South Florida for 12 years.
         </p>
       </LocationProjects>
       <Cta />

@@ -418,12 +418,21 @@ function MobileServices({ services }: { services: SequenceService[] }) {
 
 export default function ServicesSequence({
   services,
+  heading = "What we do",
 }: {
   services: SequenceService[];
+  /**
+   * The section's <h2>. It stays sr-only because the converge animation flies
+   * cards through this space, so nothing can be drawn here until the first
+   * slide settles — but it is a real heading in the DOM and Google reads it,
+   * so location pages pass a city-specific phrase. One natural phrase per
+   * page; an invisible heading stuffed with keywords invites a manual action.
+   */
+  heading?: string;
 }) {
   return (
     <>
-      <h2 className="sr-only">What we do</h2>
+      <h2 className="sr-only">{heading}</h2>
       <MobileServices services={services} />
       <DesktopSequence services={services} />
     </>

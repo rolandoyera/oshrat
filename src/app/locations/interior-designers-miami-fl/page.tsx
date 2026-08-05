@@ -67,16 +67,16 @@ export default function Page() {
         <p>
           A selection of our residential and commercial interior design projects
           in Miami, from full-home renovations and new construction interiors to
-          single rooms drawn to the same level of detail. Our studio works out
-          of{" "}
+          single rooms drawn to the same level of detail. The studio works out
+          of Broward County as{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Fort Lauderdale
+            an interior design firm in Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}
-          and has been designing across South Florida for years.
+          and has been designing across South Florida for 12 years.
         </p>
       </LocationProjects>
       <Cta />

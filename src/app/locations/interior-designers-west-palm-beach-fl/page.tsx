@@ -68,15 +68,23 @@ export default function Page() {
           A selection of our residential and commercial interior design work,
           from full-home renovations and new construction interiors to single
           rooms drawn to the same level of detail. It is the standard we bring
-          to every West Palm Beach project. Our studio works out of{" "}
+          to every West Palm Beach project and to the work of{" "}
+          <Link
+            href="/locations/interior-designers-palm-beach-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            our interior design studio in Palm Beach
+            <HoverUnderline className="text-accent" />
+          </Link>{" "}
+          across the bridge. The work is run out of{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Fort Lauderdale
+            our Fort Lauderdale interior designers
             <HoverUnderline className="text-accent" />
-          </Link>{" "}
-          and has been designing across South Florida for years.
+          </Link>
+          , designing across South Florida for 12 years.
         </p>
       </LocationProjects>
       <Cta />

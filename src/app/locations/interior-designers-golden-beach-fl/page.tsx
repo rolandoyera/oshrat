@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
-import ServicesSequence from "../interior-designers-fort-lauderdale-fl/_components/ServicesSequence";
+import ServicesSequence from "../_components/LocationServices";
+import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
 import { socialMeta } from "@/lib/seo";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
@@ -70,7 +71,7 @@ export default function Page() {
             href="/locations/interior-designers-miami-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Miami
+            interior design in Miami
             <HoverUnderline className="text-accent" />
           </Link>
           , from oceanfront new construction to full-home renovations. It is the
@@ -80,7 +81,7 @@ export default function Page() {
         </p>
       </LocationProjects>
       <Cta />
-      <ServicesSequence />
+      <ServicesSequence services={SERVICES} />
       <Testimonials />
       <FaqSection faqs={FAQS} />
       <LocationEditorial

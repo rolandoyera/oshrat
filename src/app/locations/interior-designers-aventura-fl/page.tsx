@@ -58,22 +58,21 @@ export default function Page() {
           "miami-river-miami-fl",
         ]}>
         <p>
-          A selection of our work in and around Aventura. Our studio works out
-          of{" "}
-          <Link
-            href="/locations/interior-designers-fort-lauderdale-fl"
-            className="group relative hover:text-accent transition-colors duration-300">
-            Fort Lauderdale
-            <HoverUnderline className="text-accent" />
-          </Link>{" "}
-          and has been designing along this stretch of coast in{" "}
+          A selection of our work in and around Aventura. As{" "}
           <Link
             href="/locations/interior-designers-miami-fl"
             className="group relative hover:text-accent transition-colors duration-300">
-            Miami-Dade County
+            interior designers in Miami
             <HoverUnderline className="text-accent" />
           </Link>{" "}
-          for 12 years.
+          working out of{" "}
+          <Link
+            href="/locations/interior-designers-fort-lauderdale-fl"
+            className="group relative hover:text-accent transition-colors duration-300">
+            our Fort Lauderdale interior design studio
+            <HoverUnderline className="text-accent" />
+          </Link>
+          , we have been designing along this stretch of coast for 12 years.
         </p>
       </LocationProjects>
       <Cta />

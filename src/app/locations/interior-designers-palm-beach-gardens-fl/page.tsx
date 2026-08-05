@@ -68,15 +68,23 @@ export default function Page() {
           A selection of our residential and commercial interior design work,
           from full-home renovations and new construction interiors to single
           rooms drawn to the same level of detail. It is the standard we bring
-          to every Palm Beach Gardens project. Our studio works out of{" "}
+          to every Palm Beach Gardens project and to our{" "}
+          <Link
+            href="/locations/interior-designers-palm-beach-fl"
+            className="group relative hover:text-accent transition-colors duration-300"
+          >
+            interior design in Palm Beach
+            <HoverUnderline className="text-accent" />
+          </Link>{" "}
+          on the island itself. As{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Fort Lauderdale
+            Fort Lauderdale interior designers
             <HoverUnderline className="text-accent" />
-          </Link>{" "}
-          and has been designing across South Florida for years.
+          </Link>
+          , we have been working across South Florida for 12 years.
         </p>
       </LocationProjects>
       <Cta />

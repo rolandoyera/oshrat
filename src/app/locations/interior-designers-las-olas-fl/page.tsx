@@ -62,12 +62,12 @@ export default function Page() {
         ]}
       >
         <p>
-          A selection of our interior design projects in{" "}
+          A selection of the work behind our{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Fort Lauderdale
+            interior design firm in Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>
           , from full-home renovations and new construction interiors to single

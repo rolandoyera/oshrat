@@ -52,11 +52,18 @@ function AccordionContent({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Content>) {
   return (
+    // forceMount keeps the panel text in the server-rendered HTML instead of
+    // mounting it on click, so crawlers read it (FAQ answers were invisible to
+    // Google before). Collapsing therefore has to happen in CSS: the 0fr/1fr
+    // grid row animates to a real height without needing a measured value.
     <AccordionPrimitive.Content
+      forceMount
       data-slot="accordion-content"
-      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-base lg:text-[22px]"
+      className="grid overflow-hidden text-base transition-[grid-template-rows] duration-200 ease-out data-[state=closed]:grid-rows-[0fr] data-[state=open]:grid-rows-[1fr] lg:text-[22px]"
       {...props}>
-      <div className={cn("pt-0 pb-4", className)}>{children}</div>
+      <div className="min-h-0 overflow-hidden">
+        <div className={cn("pt-0 pb-4", className)}>{children}</div>
+      </div>
     </AccordionPrimitive.Content>
   );
 }

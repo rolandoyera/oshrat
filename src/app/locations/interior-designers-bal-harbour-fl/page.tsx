@@ -58,15 +58,15 @@ export default function Page() {
         ]}
       >
         <p>
-          A look at our most recent work across{" "}
+          A look at our most recent work from{" "}
           <Link
             href="/locations/interior-designers-miami-fl"
             className="group relative hover:text-accent transition-colors duration-300"
           >
-            Miami
+            our interior designers in Miami
             <HoverUnderline className="text-accent" />
           </Link>
-          , from oceanfront residences and full-home renovations to custom
+          , spanning oceanfront residences and full-home renovations to custom
           millwork, community and commercial spaces. It is the same approach we
           bring to every Bal Harbour project: understand how the space is
           actually used, then shape the design details around it.
