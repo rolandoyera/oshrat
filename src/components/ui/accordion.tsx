@@ -59,10 +59,16 @@ function AccordionContent({
     <AccordionPrimitive.Content
       forceMount
       data-slot="accordion-content"
-      className="grid overflow-hidden text-base transition-[grid-template-rows] duration-200 ease-out data-[state=closed]:grid-rows-[0fr] data-[state=open]:grid-rows-[1fr] lg:text-[22px]"
+      className="group/panel overflow-hidden text-base lg:text-[22px]"
       {...props}>
-      <div className="min-h-0 overflow-hidden">
-        <div className={cn("pt-0 pb-4", className)}>{children}</div>
+      {/* The transition lives on this child, not on Content. Radix zeroes
+          Content's inline transitionDuration in a layout effect so it can
+          measure the panel, which kills any transition set on that element
+          (it snaps open). A child it never touches animates normally. */}
+      <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-300 ease-out group-data-[state=open]/panel:grid-rows-[1fr]">
+        <div className="min-h-0 overflow-hidden">
+          <div className={cn("pt-0 pb-4", className)}>{children}</div>
+        </div>
       </div>
     </AccordionPrimitive.Content>
   );

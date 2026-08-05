@@ -104,6 +104,14 @@ Every location page's projects blurb carries two links, and **the anchor text is
   `forceMount` + a CSS `grid-rows-[0fr]/[1fr]` collapse. Radix unmounts closed panels by default,
   which kept every FAQ *answer* out of the server-rendered HTML — present only inside the JSON-LD
   script. The stock shadcn version silently costs ~400–600 crawlable words per page.
+- **The accordion transition must stay on the inner div, not on `AccordionPrimitive.Content`.**
+  Radix sets `node.style.transitionDuration = "0s"` on the Content element in a layout effect so it
+  can measure the panel, then restores it. That runs *after* `data-state` flips, so a transition on
+  that element never plays — the panel snaps. Keyframes survive it (restoring `animationName`
+  restarts an animation), which is why stock shadcn pairs `data-state` with
+  `animate-accordion-up/down` — but keyframes need the measured height, which only exists under the
+  unmount-on-close model we removed. Hence: `group/panel` on Content, and the
+  `group-data-[state=open]/panel:grid-rows-[1fr]` transition on a child Radix never touches.
 - **One JSON-LD graph per page.** `siteGraph()`'s docstring says so, and `faqPageGraph()` wraps it —
   so `faqPageGraph` *replaces* `siteGraph`, never accompanies it. Pass the same FAQ array to both
   `<FaqSection />` and `faqPageGraph()` so schema matches visible copy.

@@ -35,7 +35,7 @@ export const SERVICES: SequenceService[] = [
     category: "Single space",
     description:
       "Kitchens planned around how the house actually entertains, which here almost always means the room opens toward the terrace and the water. Storage, sightlines, and the path people take between the island and the outside get solved first. The cabinetry, stone, and appliances follow from those decisions rather than setting them.",
-    image: "/services/kitchen-design.jpg",
+    image: "/services/aventura-kitchen-interior-design-6.jpg",
     imageAlt:
       "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
   },

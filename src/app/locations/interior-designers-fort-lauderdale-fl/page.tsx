@@ -1,9 +1,17 @@
 import type { Metadata } from "next";
-import LocationLanding, {
-  type LocationContent,
-} from "./_components/LocationLanding";
-import { buildLocationFaqs } from "./_components/location-faqs";
+import Cta from "@/components/Cta";
+import FeaturedProjects from "./_components/FeaturedProjects";
+import Hero from "./_components/Hero";
+import ServicesSequence from "../_components/LocationServices";
+import { SERVICES } from "./_components/ServicesSequence";
+import Testimonials from "@/components/Testimonials";
+import Why from "@/components/Why";
+import { WHY } from "./_components/WhyItems";
+import { LocationEditorial } from "../_components/LocationEditorial";
+import FaqSection from "@/components/FaqSection";
+import { FAQS } from "./_components/Faqs";
 import { socialMeta } from "@/lib/seo";
+import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 
 const PATH = "/locations/interior-designers-fort-lauderdale-fl";
 const TITLE =
@@ -18,75 +26,50 @@ export const metadata: Metadata = {
   ...socialMeta({ title: TITLE, description: DESCRIPTION, url: PATH }),
 };
 
-const CONTENT: LocationContent = {
-  path: PATH,
-  hero: {
-    eyebrow: "Interior Designers in Fort Lauderdale, Florida",
-    paragraph:
-      "Led by Oshrat Rothschild, we're a full-service interior design firm for luxury residential and commercial interiors, renovations, and new construction across Fort Lauderdale, Florida in Broward County.",
-    image: {
-      mobile: "/about/sarvian-design-group-oshrat-rothschild-600.webp",
-      tablet: "/about/sarvian-design-group-oshrat-rothschild-960.webp",
-      desktop: "/about/sarvian-design-group-oshrat-rothschild-2000.webp",
-      alt: "Sarvian Design Group interior design firm in Fort Lauderdale, Florida",
-    },
-  },
-  featuredProjects: {
-    // Hand-picked projects for this page — order here is display order.
-    slugs: [
-      "elevated-primary-suite-fort-lauderdale-fl",
-      "modern-marble-haven-fort-lauderdale-fl",
-      "aventura-modern-living-aventura-fl",
-    ],
-    heading: "Our Interior Design Projects in Fort Lauderdale",
-    description:
-      "Explore a selection of our Fort Lauderdale interiors, where thoughtful space planning, refined materials, and custom details come together to create homes that feel distinctive, cohesive, and personal.",
-  },
-  editorial: {
-    heading: ["Designed for how", "Fort Lauderdale lives."],
-    paragraphs: [
-      "Fort Lauderdale interior designers work in a particular kind of light, low and warm, reflected off water most of the year. At Sarvian Design Group, we design for it. Our studio serves the residences that define the city's waterfront in Las Olas Isles, Harbor Beach, Rio Vista, and Coral Ridge, with interiors built to hold their composure against that light: natural stone, warm neutrals, and furnishings selected piece by piece rather than pulled from a catalog. It's the difference between a home that photographs well and one that lives well, and it's why the interior designers Fort Lauderdale, FL homeowners ultimately choose tend to be found through the homes they've already completed.",
-      "Our interior design consulting in Fort Lauderdale begins before a single finish is selected. We start with how a home is actually used: where mornings happen, where guests gather, which rooms the breeze should reach. From there we carry the project from space planning and material palettes through procurement, custom furnishings, and installation. One studio, one point of accountability, from the first walkthrough to the day the art is hung.",
-      "Interior design in Fort Lauderdale is too often reduced to a formula: white walls, blue accents, something nautical on a shelf. The city deserves better. Homes here are defined by their relationship to water and weather, by deep terraces, Intracoastal views, and rooms that open rather than close. The interiors that succeed answer that architecture with restraint: layered texture, honest materials, a palette drawn from the landscape rather than a theme. That's the standard we hold every high-end interior design project to, whether it's a full renovation on the Isles or the furnishing of a new build in Harbor Beach.",
-    ],
-  },
-  faqs: buildLocationFaqs({
-    city: "Fort Lauderdale",
-    neighborhoodsAnswer:
-      "Most of our Fort Lauderdale interior design work is on and around the water, in Las Olas Isles, Harbor Beach, Rio Vista, Coral Ridge, and the Intracoastal corridor, along with projects across Broward County and South Florida, from Aventura to Bal Harbour.",
-  }),
-  cta: {
-    location: "fort_lauderdale_cta",
-    formSource: "fort-lauderdale",
-  },
-  why: {
-    subtitle: "Why Sarvian Design Group",
-    title: "Amongst the Best Interior Designers in Fort Lauderdale",
-    description:
-      "We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for we’re known for delivering something that feels deeply intentional. We keep the big picture of the interior design project in view while managing the details that make the difference.",
-    items: [
-      {
-        title: "Clarity of Vision.",
-        description:
-          "For a client, interior design should make the process of creating a home feel simpler, not more complicated. That starts with a clear point of view, and it stays clear because the next step always relates to something already decided. Space planning, mood boards, finish palettes, lighting plans, millwork drawings, and 3D renderings all trace back to that one idea, so nothing on your Fort Lauderdale interior design project gets specified twice or decided by default.",
-      },
-      {
-        title: "Designed for the Fort Lauderdale Coast.",
-        description:
-          "A Fort Lauderdale interior design firm has to specify for salt air, humidity, and the low reflected light that comes off the water most of the year. We choose natural stone, hardwoods, textiles, and hardware that hold up to it, and we plan around impact glass, deep terraces, and hurricane-season delivery windows. It is the difference between luxury interior design that photographs well in March and a waterfront home in Las Olas Isles, Rio Vista, or Harbor Beach that still reads right in its fifth year.",
-      },
-      {
-        title: "One Fort Lauderdale Interior Design Firm.",
-        description:
-          "Most high-end interior design in Fort Lauderdale comes apart in the handoffs. We hold it together: furniture selection and procurement, custom millwork and built-ins, art and home decor, styling and staging through final installation, with living room, primary suite, kitchen, bath, and home office resolved as one home rather than six separate rooms. We coordinate directly with your architect and contractor across Broward County, and you keep a single point of accountability the whole way through.",
-      },
-    ],
-  },
-};
-
 // Featured project cards render Sanity content — keep them fresh.
 export const revalidate = 60;
 
 export default function Page() {
-  return <LocationLanding content={CONTENT} />;
+  return (
+    <main>
+      <JsonLd data={faqPageGraph(PATH, FAQS)} />
+      <Hero
+        image={{
+          mobile: "/about/sarvian-design-group-oshrat-rothschild-600.webp",
+          tablet: "/about/sarvian-design-group-oshrat-rothschild-960.webp",
+          desktop: "/about/sarvian-design-group-oshrat-rothschild-2000.webp",
+          alt: "Sarvian Design Group interior design firm in Fort Lauderdale, Florida",
+        }}
+        eyebrow="Interior Designers in Fort Lauderdale, Florida"
+        heading={["A home equal", "to its address."]}
+        paragraph="Led by Oshrat Rothschild, we're a full-service interior design firm for luxury residential and commercial interiors, renovations, and new construction across Fort Lauderdale, Florida in Broward County."
+      />
+      <ServicesSequence
+        services={SERVICES}
+        heading="What Our Fort Lauderdale Interior Designers Do"
+      />
+      <FeaturedProjects
+        // Hand-picked projects for this page — order here is display order.
+        slugs={[
+          "elevated-primary-suite-fort-lauderdale-fl",
+          "modern-marble-haven-fort-lauderdale-fl",
+          "aventura-modern-living-aventura-fl",
+        ]}
+        heading="Our Interior Design Projects in Fort Lauderdale"
+        description="Explore a selection of our Fort Lauderdale interiors, where thoughtful space planning, refined materials, and custom details come together to create homes that feel distinctive, cohesive, and personal."
+      />
+      <Testimonials />
+      <Cta />
+      <LocationEditorial
+        heading={["Designed for how", "Fort Lauderdale lives."]}
+        paragraphs={[
+          "Fort Lauderdale interior designers work in a particular kind of light, low and warm, reflected off water most of the year. At Sarvian Design Group, we design for it. Our studio serves the residences that define the city's waterfront in Las Olas Isles, Harbor Beach, Rio Vista, and Coral Ridge, with interiors built to hold their composure against that light: natural stone, warm neutrals, and furnishings selected piece by piece rather than pulled from a catalog. It's the difference between a home that photographs well and one that lives well, and it's why the interior designers Fort Lauderdale, FL homeowners ultimately choose tend to be found through the homes they've already completed.",
+          "Our interior design consulting in Fort Lauderdale begins before a single finish is selected. We start with how a home is actually used: where mornings happen, where guests gather, which rooms the breeze should reach. From there we carry the project from space planning and material palettes through procurement, custom furnishings, and installation. One studio, one point of accountability, from the first walkthrough to the day the art is hung.",
+          "Interior design in Fort Lauderdale is too often reduced to a formula: white walls, blue accents, something nautical on a shelf. The city deserves better. Homes here are defined by their relationship to water and weather, by deep terraces, Intracoastal views, and rooms that open rather than close. The interiors that succeed answer that architecture with restraint: layered texture, honest materials, a palette drawn from the landscape rather than a theme. That's the standard we hold every high-end interior design project to, whether it's a full renovation on the Isles or the furnishing of a new build in Harbor Beach.",
+        ]}
+      />
+      <FaqSection faqs={FAQS} />
+      <Why {...WHY} />
+    </main>
+  );
 }
