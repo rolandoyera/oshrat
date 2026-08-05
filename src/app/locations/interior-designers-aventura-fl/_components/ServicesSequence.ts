@@ -13,7 +13,7 @@ export const SERVICES: SequenceService[] = [
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
   },
   {
-    title: "Full Home Renovations",
+    title: "Full Renovations",
     category: "Renovation",
     description:
       "Renovations stripped back to the shell and carried through to the last detail. In a concrete building the structure, the risers, and the slab decide what is genuinely possible, so those limits get established before anything is designed. In Aventura's towers, association review is designed into the schedule from the start.",

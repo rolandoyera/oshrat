@@ -8,7 +8,7 @@ export const WHY = {
     {
       title: "From One Room Up.",
       description:
-        "Projects here arrive at every size: a condominium residence with the Intracoastal on three sides, two apartments combined into one home, a house on Williams Island, or a single kitchen with a deadline attached. Residential or commercial, all of them get the same drawings, the same specification, and the same people. What changes is the scope, never the standard, and the smallest job on the board is worked exactly like the largest.",
+        "Projects here arrive at every size: a condominium residence with the Intracoastal on three sides, two apartments combined into one, a house on Williams Island, or a single kitchen with a deadline attached. Residential or commercial, all of them get the same drawings, the same specification, and the same people. What changes is the scope, never the standard, and the smallest job on the board is worked exactly like the largest.",
     },
     {
       title: "Drawn to the Mullion.",

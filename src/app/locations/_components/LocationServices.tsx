@@ -329,8 +329,7 @@ function SlideText({
             {index === 0 && (
               <div className="mt-6">
                 <p className="p text-base text-cream-100">
-                  This home was featured in Florida Design magazine, Art Basel
-                  Edition.
+                  Featured in Florida Design magazine, Art Basel Edition.
                 </p>
                 <Image
                   src="/assets/Florida-design-magazine-cover-top.jpg"
