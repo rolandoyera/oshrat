@@ -3,7 +3,7 @@ export const WHY = {
   subtitle: "Why Sarvian Design Group",
   title: "Top Luxury Interior Designers in Aventura, FL",
   description:
-    "Aventura is a vertical city, and a tower is an unforgiving place to design. The building sets the rules, the glass sets the light, and there is no architecture to hide behind. Choosing the best interior designers here has less to do with taste than with whether a residential and commercial interior design firm can actually deliver inside those constraints.",
+    "Aventura is a vertical city, and a condominium is an unforgiving place to design. The building sets the rules, the glass sets the light, and there is no architecture to hide behind. Choosing the best interior designers here has less to do with taste than with whether a residential and commercial interior design firm can actually deliver inside those constraints.",
   items: [
     {
       title: "From One Room Up.",
@@ -13,7 +13,7 @@ export const WHY = {
     {
       title: "Drawn to the Mullion.",
       description:
-        "In a tower the one thing nobody can move is the window grid, so everything else is drawn to it. Kitchen cabinetry that stops clean at a mullion. A ceiling detail that hides the drapery track instead of announcing it. Sound attenuation settled before the neighbor above becomes a problem, and task lighting located before the ceiling closes. None of it photographs. All of it is what separates the best interior designers in Aventura from a decorator with a mood board.",
+        "In a condominium the one thing nobody can move is the window grid, so everything else is drawn to it. Kitchen cabinetry that stops clean at a mullion. A ceiling detail that hides the drapery track instead of announcing it. Sound attenuation settled before the neighbor above becomes a problem, and task lighting located before the ceiling closes. None of it photographs. All of it is what separates the best interior designers in Aventura from a decorator with a mood board.",
     },
     {
       title: "One Firm, No Handoffs.",
