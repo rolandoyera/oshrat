@@ -7,7 +7,7 @@ export const SERVICES: SequenceService[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Complete residential interiors for tower apartments above the Intracoastal and houses in Aventura's gated island communities. ",
+      "Complete residential interiors for tower condominiums above the Intracoastal and houses in Aventura's gated island communities. ",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
@@ -37,7 +37,7 @@ export const SERVICES: SequenceService[] = [
       "The kitchen is the first thing most owners replace and, in a tower, the most constrained. Venting, plumbing risers, and the slab set the boundaries, so the plan gets solved against them before a single cabinet is designed. The stone, cabinetry, and appliances follow from that rather than leading it.",
     image: "/services/aventura-kitchen-interior-design-6.jpg",
     imageAlt:
-      "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
+      "Luxury modern kitchen design featuring a large waterfall counters wrapped in heavily veined marble with integrated dual sinks.",
   },
   {
     title: "Bathroom Design",

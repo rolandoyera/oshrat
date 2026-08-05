@@ -29,11 +29,6 @@ export const FAQS: { question: string; answer: string }[] = [
       "Deliberately, because in a tower the view is the largest material in the room. Floor-to-ceiling glass brings strong east and west light that washes out weak palettes and punishes cheap finishes, so we specify stone, wood, and fabric that hold their depth through the day, plan drapery and shading into the architecture rather than tacking them on, and lay out rooms so furniture lives comfortably with the glare instead of fighting it.",
   },
   {
-    question: "Do you work in the gated island communities?",
-    answer:
-      "Yes. Williams Island, Island Estates, and the neighborhoods around the Turnberry course carry house scale projects: full renovations, new construction interiors, and outdoor rooms, each with its own architectural review to plan around. It is the same discipline as our estate work throughout Miami.",
-  },
-  {
     question: "What types of projects do you take on?",
     answer:
       "The studio's range runs from ground up new construction and full-home renovations to single room projects such as a kitchen, a bedroom, or a bathroom, plus custom furnishings, millwork, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",

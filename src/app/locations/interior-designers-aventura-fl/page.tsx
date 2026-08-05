@@ -45,7 +45,7 @@ export default function Page() {
       <LocationTopSection
         eyebrow="Featured Project"
         heading="Our Featured Project in Aventura"
-        paragraph="In the heart of Aventura, this 4,500-square-foot residence pairs refined modern architecture with a collector's approach to art, and Florida Design Magazine featured it for Art Basel. Walnut paneling and fluted wood columns ground a soft palette of stone and taupe, while floor-to-ceiling glass keeps the rooms in constant conversation with the light. A floating walnut stair threads the levels together, and the main floor unfolds around a marble waterfall-edge island and a glass-enclosed wine display. The art, bold portraiture and jewel-toned glass, was placed with the same intention as the millwork."
+        paragraph="In the heart of Aventura, this 4,500-square-foot residence pairs refined modern architecture with a collector's approach to art, and Florida Design Magazine featured it for Art Basel. Walnut paneling and fluted wood columns ground a soft palette of stone and taupe, while floor-to-ceiling glass keeps the rooms in constant conversation with the light. A floating walnut stair threads the levels together, and the main floor unfolds around a marble waterfall-edge counter and a glass-enclosed wine display. The art, bold portraiture and jewel-toned glass, was placed with the same intention as the millwork."
         projectSlug="aventura-modern-living-aventura-fl"
       />
       <LocationProjects
