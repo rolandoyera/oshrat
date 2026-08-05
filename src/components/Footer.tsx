@@ -138,7 +138,7 @@ export default function Footer() {
             </h3>
             <p>
               Based in Fort Lauderdale, the studio works across the three
-              counties of South Florida — and on select projects beyond. If your
+              counties of Miami-Dade, Broward, Palm Beach, and beyond. If your
               home is nearby, we&apos;d like to see it.
             </p>
           </div>
