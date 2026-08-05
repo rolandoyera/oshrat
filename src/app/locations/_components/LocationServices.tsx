@@ -379,7 +379,7 @@ function MobileServices({ services }: { services: SequenceService[] }) {
               />
             </div>
             <p className="eyebrow mt-6">
-              ({pad(index + 1)}) — {service.category}
+              ({pad(index + 1)}) {service.category}
             </p>
             <h3 className="mt-2 text-3xl font-normal leading-h1 tracking-tight text-balance text-foreground">
               {service.title}
