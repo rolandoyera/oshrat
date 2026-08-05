@@ -32,7 +32,7 @@ export const SERVICES: SequenceService[] = [
   },
   {
     title: "Kitchen Design",
-    category: "Single Kitchen",
+    category: "Kitchen",
     description:
       "The kitchen is the first thing most owners replace and, in a tower, the most constrained. Venting, plumbing risers, and the slab set the boundaries, so the plan gets solved against them before anything is designed. The stone, cabinetry, and appliances follow from that rather than leading it.",
     image: "/services/aventura-kitchen-interior-design-6.jpg",
@@ -41,7 +41,7 @@ export const SERVICES: SequenceService[] = [
   },
   {
     title: "Bathroom Design",
-    category: "Single Bathroom",
+    category: "Bathroom",
     description:
       "A tower bathroom often has no window at all, so the light has to be designed rather than borrowed, and the stone, fittings, and fixtures are designed together instead of bought separately.",
     image: "/services/master-bath-interior-design.jpg",
