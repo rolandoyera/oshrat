@@ -1,24 +1,24 @@
-// The complete Why-section copy for Aventura — rendered on the location page.
+// The complete Why-section copy for Aventura, rendered on the location page.
 export const WHY = {
   subtitle: "Why Sarvian Design Group",
-  title: "Luxury Interior Designers in Aventura",
+  title: "Top Luxury Interior Designers in Aventura, FL",
   description:
-    "What separates the best interior designers in Aventura from the rest is mostly invisible by the time a project is finished. It shows up in what did not go wrong: millwork that fits, a building approval that held the schedule, finishes that still look right two years in.",
+    "Aventura is a vertical city, and a tower is an unforgiving place to design. The building sets the rules, the glass sets the light, and there is no architecture to hide behind. Choosing the best interior designers here has less to do with taste than with whether a residential and commercial interior design firm can actually deliver inside those constraints.",
   items: [
     {
-      title: "Every Scope, Same Process.",
+      title: "From One Room Up.",
       description:
-        "No two projects arrive the same size, and Aventura proves it: a high floor residence with the Intracoastal on three sides, two units being combined into one home, a house on Williams Island, or a single room on a deadline. Each one runs through the same process, scaled to fit its scope. A kitchen project doesn't drag a whole home engagement behind it, and a smaller room count never buys a thinner version of the studio's attention. Every engagement begins with how the space is actually used, and the design works outward from there.",
+        "Projects here arrive at every size: a high-floor residence with the Intracoastal on three sides, two apartments combined into one home, a house on Williams Island, or a single kitchen with a deadline attached. Residential or commercial, all of them get the same drawings, the same specification, and the same people. What changes is the scope, never the standard, and the smallest job on the board is worked exactly like the largest.",
     },
     {
-      title: "What Nobody Photographs.",
+      title: "Drawn to the Mullion.",
       description:
-        "The best interior design is decided in the parts that never make the photo: cabinetry aligned to the sightline it was drawn for, stone selected slab by slab, task lighting located before the ceiling closes, custom pieces detailed to the millimeter and built by fabricators we've trusted for years. Our kitchen, bath, and millwork drawings are specified at that depth because a design that only resolves in a rendering isn't finished work. It's also why our rooms hold up on an ordinary Tuesday morning, not just on photography day.",
+        "In a tower the one thing nobody can move is the window grid, so everything else is drawn to it. Kitchen cabinetry that stops clean at a mullion. A ceiling detail that hides the drapery track instead of announcing it. Sound attenuation settled before the neighbor above becomes a problem, and task lighting located before the ceiling closes. None of it photographs. All of it is what separates the best interior designers in Aventura from a decorator with a mood board.",
     },
     {
-      title: "One Interior Design Firm.",
+      title: "One Firm, No Handoffs.",
       description:
-        "Where high end projects usually fail is in the handoffs between specialists. We keep the whole chain in one studio: space planning, finish palettes, lighting plans, and 3D renderings, then procurement, custom built-ins, art, styling, and installation, so the living room, primary bedroom, kitchen, and bathroom resolve as one residence instead of four disconnected rooms. As your interior design firm in Aventura, we coordinate with your architect, contractor, building association, and trades to protect the design intent on site. One team, one point of accountability, from first walkthrough to the day the art goes up.",
+        "Most high-end projects lose their shape in the gaps between specialists, where the designer, the buyer, the millworker, and the installer each own a piece and nobody owns the result. As your interior design firm in Aventura, we hold all of it: space planning, finish palettes, lighting plans, and renderings, then procurement, custom built-ins, art, styling, and installation. The living room, primary bedroom, kitchen, and bathroom resolve as one residence because one team carried them the whole way, and we coordinate with your architect, contractor, and building association so nothing is lost between the drawing and the room.",
     },
   ],
 };
