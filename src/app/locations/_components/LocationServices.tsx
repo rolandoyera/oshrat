@@ -320,7 +320,7 @@ function SlideText({
           className="ml-auto max-w-3xl rounded-xs border p-4 text-white">
           <motion.div style={{ opacity: fade }}>
             <p className="eyebrow text-white">
-              ({pad(index + 1)}) — {service.category}
+              ({pad(index + 1)}) {service.category}
             </p>
             <h3 className="h2 text-white">{service.title}</h3>
             <p className="p mt-6 text-pretty text-cream-100">

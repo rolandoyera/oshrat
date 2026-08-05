@@ -40,7 +40,7 @@ export default function Page() {
         }}
         eyebrow="Residential Interior Designers in Aventura, FL"
         heading={["Finished", "not decorated."]}
-        paragraph="A full-service interior design firm working across Aventura's condominium towers and gated island communities, where the view arrives built in and the warmth has to be designed."
+        paragraph="A full-service interior design firm working across Aventura's condominium towers and gated island communities."
       />
       <LocationTopSection
         eyebrow="Featured Project"
@@ -83,7 +83,7 @@ export default function Page() {
       <LocationEditorial
         heading={["Interior Design", "in Aventura"]}
         paragraphs={[
-          "Aventura lives vertically as condominiums. Most of the city's best addresses are towers along Country Club Drive and the Intracoastal, where every residence arrives with the same developer finishes and a view doing all the work. As a full service luxury interior design firm, that is usually where we start: stripping out the builder's anonymous palette and designing a residence that belongs to the people in it. Millwork designed for the actual walls, marble chosen slab by slab, lighting planned for evenings on the fortieth floor rather than a sales center rendering.",
+          "Aventura lives vertically as condominiums. Most of the city's best addresses are towers along Country Club Drive and the Intracoastal, where every residence arrives with the same developer finishes and a view doing all the work. As a full service luxury interior design firm, that is usually where we start: stripping out the builder's anonymous palette and designing a residence that belongs to the people in it. Millwork made for the actual walls, marble chosen slab by slab, lighting planned for evenings on the fortieth floor rather than a sales center rendering.",
           "Tower living also changes how a project runs. Association approvals, service elevator reservations, work hour limits, and sound attenuation standards all sit between the interior design and the finished room, so we plan the submission and its calendar into the project from the first meeting. The glass raises the standard on specification too: strong east and west light pours through these residences all day, and fabrics and finishes have to hold their depth through years of it. Considered layouts, custom built-ins, and easy transitions between rooms are what separate the best interior designers from the rest.",
           "The island communities ask for something different, house scale work on Williams Island and Island Estates, with gardens, terraces, and architectural review of their own. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it. From the earliest concept conversations through final installation, we stay close to our clients so that every decision serves the same vision, and so the studio that starts your project is the one standing in the room when it is finished.",
         ]}
