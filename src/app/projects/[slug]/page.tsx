@@ -27,6 +27,7 @@ import ShareLinks from "./share-links";
 import Container from "@/components/ui/Container";
 import Testimonials from "@/components/Testimonials";
 import WhyBalHarbour from "@/app/locations/_components/seo/WhyBalHarbour";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // Projects that get a Why section above the footer, keyed by slug — the
 // component is shared with the matching location page. Extend as copy is
@@ -314,12 +315,33 @@ export default async function ProjectPage({
                 { viewTransitionName: `hero-${slug}` } as React.CSSProperties
               }
             />
+            <Container className="absolute inset-0 flex items-center justify-center z-20 pb-16">
+              <div className="relative">
+                {/* The glass panel lives outside ScrollReveal: while an animating
+                          ancestor's opacity is below 1 a backdrop-filter can't sample the
+                          page behind it, so the blur snapped in when the reveal finished.
+                          As a sibling it fades in on its own. */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 backdrop-blur-xs animate-in fade-in fill-mode-both duration-1000 [animation-delay:400ms]"
+                />
+                <ScrollReveal delay={400}>
+                  <div className="space-y-6 p-4">
+                    <h1 className="text-white text-center">
+                      {data.title}{" "}
+                      {data.location && (
+                        <span className="block -mb-4 p">{data.location}</span>
+                      )}
+                    </h1>
+                  </div>
+                </ScrollReveal>
+              </div>
+            </Container>
           </section>
         )}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm"
-        >
+          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm">
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -329,8 +351,7 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2"
-            >
+              className="before:content-['>'] before:mr-2">
               {data.title}
               {data.location && (
                 <span className="hidden sm:inline">{` | ${data.location}`}</span>
@@ -347,14 +368,8 @@ export default async function ProjectPage({
           {/* LEFT: Project info */}
           <aside className="xl:col-span-5">
             <div className="xl:sticky xl:top-22">
-              <div className="bg-card p-2 sm:p-4 sm:pt-3 rounded-xs shadow">
-                <h1 className="h3">
-                  {data.title}
-                  {data.location && (
-                    <span className="block -mb-4 p">{data.location}</span>
-                  )}
-                </h1>
-                <div className="my-10 space-y-1 text-[16px] font-medium font-mono">
+              <div className="bg-card p-2 sm:p-4 rounded-xs shadow">
+                <div className="mt:4 mb-6 space-y-1 text-[16px] font-medium font-mono">
                   {data.type && (
                     <div className="flex flex-col">
                       <div className="flex justify-between">

@@ -68,7 +68,7 @@ export default function ProjectGallery({
               sizes="(min-width:1280px) 66vw, 100vw"
               className="w-full h-auto rounded-xs shadow"
             />
-            <span className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-md text-white pointer-events-none">
+            <span className="absolute top-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-black/40 backdrop-blur-md text-white pointer-events-none">
               <Plus size={20} />
             </span>
           </button>

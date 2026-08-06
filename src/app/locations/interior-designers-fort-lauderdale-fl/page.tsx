@@ -44,7 +44,7 @@ export default function Page() {
         }}
         eyebrow="Interior Designers in Fort Lauderdale, Florida"
         heading={["A home equal", "to its address."]}
-        paragraph="Led by Oshrat Rothschild, we're a full-service interior design firm for luxury residential and commercial interiors, renovations, and new construction across Fort Lauderdale, Florida in Broward County."
+        paragraph="Led by Oshrat Rothschild, we're full-service interior designers in Fort Lauderdale, Florida, for luxury residential and commercial interiors, renovations, and new construction."
       />
       <FeaturedProjects
         // Hand-picked projects for this page — order here is display order.
@@ -55,7 +55,6 @@ export default function Page() {
           "modern-marble-haven-fort-lauderdale-fl",
         ]}
         heading="Our Interior Design in Fort Lauderdale"
-        description="Explore a selection of our Fort Lauderdale interiors, where thoughtful space planning, refined materials, and custom details come together to create homes that feel distinctive, cohesive, and personal."
       />
       <ServicesSequence
         services={SERVICES}
