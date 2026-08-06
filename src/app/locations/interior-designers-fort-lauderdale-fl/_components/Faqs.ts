@@ -43,7 +43,7 @@ export const FAQS: { question: string; answer: string }[] = [
   },
   {
     question:
-      "What makes Sarvian different from other interior design firms in Fort Lauderdale?",
+      "Why do you say you're amongst the best interior designers in Fort Lauderdale?",
     answer:
       "Restraint, mostly. We don't design to a house style or a coastal formula. Each project is drawn from the architecture, the light, and the way you actually live. Every piece is specified before fabrication begins, and the principal who starts your project is the one who finishes it.",
   },

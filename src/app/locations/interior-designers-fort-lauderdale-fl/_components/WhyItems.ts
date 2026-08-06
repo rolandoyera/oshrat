@@ -6,9 +6,9 @@ export const WHY = {
     "We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for we’re known for delivering something that feels deeply intentional. We keep the big picture of the interior design project in view while managing the details that make the difference.",
   items: [
     {
-      title: "Clarity of Vision.",
+      title: "Tropical Modern, Built Bespoke.",
       description:
-        "For a client, interior design should make the process of creating a home feel simpler, not more complicated. That starts with a clear point of view, and it stays clear because the next step always relates to something already decided. Space planning, mood boards, finish palettes, lighting plans, millwork drawings, and 3D renderings all trace back to that one idea, so nothing on your Fort Lauderdale interior design project gets specified twice or decided by default.",
+        "Our point of view is Tropical Modern: warm wood against natural stone, rooms that open to water and light, interiors that stay calm in the strong South Florida sun. What keeps that vision clear is that we build it ourselves. Bespoke millwork and furnishings and bespoke lighting are drawn and detailed by our in-house engineers, so every piece in your Fort Lauderdale interior design project exists for your home and nowhere else.",
     },
     {
       title: "Designed for the Coast.",
