@@ -345,3 +345,66 @@ nav[data-fixed] {
   transition-duration: var(--drawer-transition-duration, 500ms) !important;
   animation-duration: var(--drawer-transition-duration, 500ms) !important;
 }
+
+/* Browser scrollbar: taupe-900 track, accent thumb + arrow buttons.
+   Firefox only supports thumb/track colors (no arrow buttons), handled
+   via scrollbar-color; setting that in Chromium would disable the
+   ::-webkit-scrollbar styles below, hence the -moz-appearance gate. */
+@supports (-moz-appearance: none) {
+  html {
+    scrollbar-color: var(--color-accent) var(--taupe-900);
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background: var(--taupe-900);
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--taupe-900);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 8px;
+  /* Border in the track color insets the thumb so it reads as a grab bar */
+  border: 4px solid var(--taupe-900);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: var(--color-link);
+}
+
+html::-webkit-scrollbar-corner {
+  background: var(--taupe-900);
+}
+
+/* Arrow buttons. SVG data URIs cannot reference CSS variables, so the
+   fill is --color-accent (hsl(34 34% 40%)) as a literal: #896B43. */
+html::-webkit-scrollbar-button:single-button {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--taupe-900);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 10px;
+}
+
+html::-webkit-scrollbar-button:single-button:vertical:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 4l5 6H3z' fill='%23896B43'/%3E%3C/svg%3E");
+}
+
+html::-webkit-scrollbar-button:single-button:vertical:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 12L3 6h10z' fill='%23896B43'/%3E%3C/svg%3E");
+}
+
+html::-webkit-scrollbar-button:single-button:horizontal:decrement {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8l6-5v10z' fill='%23896B43'/%3E%3C/svg%3E");
+}
+
+html::-webkit-scrollbar-button:single-button:horizontal:increment {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M12 8L6 3v10z' fill='%23896B43'/%3E%3C/svg%3E");
+}
