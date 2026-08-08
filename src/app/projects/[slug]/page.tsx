@@ -27,6 +27,7 @@ import ShareLinks from "./share-links";
 import Container from "@/components/ui/Container";
 import Testimonials from "@/components/Testimonials";
 import WhyBalHarbour from "@/app/locations/_components/seo/WhyBalHarbour";
+import WhyAventura from "@/app/locations/_components/seo/WhyAventura";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // Projects that get a Why section above the footer, keyed by slug — the
@@ -34,6 +35,7 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 // arranged for other projects.
 const PROJECT_WHY: Record<string, React.ComponentType> = {
   "the-shul-bal-harbour-surfside-fl": WhyBalHarbour,
+  "aventura-modern-living-aventura-fl": WhyAventura,
 };
 
 type Project = {
