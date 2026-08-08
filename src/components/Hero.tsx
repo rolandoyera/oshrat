@@ -67,10 +67,10 @@ const Hero: React.FC<HeroProps> = ({
         </div>
 
         {(title || description) && (
-          <ScrollReveal className="absolute inset-0 flex items-center justify-center bg-black/30 p-6">
+          <ScrollReveal className="absolute inset-0 flex items-center justify-center bg-black/30 p-6 w-full">
             {/* Floating parallax text element */}
             <div
-              className="text-center"
+              className="text-center w-full"
               style={{
                 transform: `translateY(${scrollY * 0.15}px)`,
                 willChange: "transform",
@@ -79,7 +79,7 @@ const Hero: React.FC<HeroProps> = ({
               {description && (
                 <p className="text-white/90 mb-8">{description}</p>
               )}
-              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-50 md:max-w-full mx-auto">
+              <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-60 md:max-w-full mx-auto">
                 {buttonText && buttonLink && (
                   <TransitionLink
                     href={buttonLink}

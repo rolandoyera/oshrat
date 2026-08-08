@@ -15,7 +15,7 @@ export default function FaqSection({
   faqs: { question: string; answer: string }[];
 }) {
   return (
-    <section className="bg-cream-200 pb-24 lg:py-32">
+    <section className="bg-cream-200 py-24 lg:py-32">
       <Container>
         <ScrollReveal direction="up" delay={150} className="text-center">
           <p className="eyebrow text-accent">FAQ</p>

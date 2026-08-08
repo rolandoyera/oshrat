@@ -16,7 +16,7 @@ export default function ProjectDescription({ value }: ProjectDescriptionProps) {
       <div
         className={[
           "prose prose-invert prose-sm max-w-none richtext overflow-hidden text-justify transition-[max-height] duration-700 ease-in-out md:max-h-none",
-          expanded ? "max-h-300" : "max-h-25",
+          expanded ? "max-h-300" : "max-h-20",
         ].join(" ")}>
         <PortableText value={value} />
       </div>

@@ -302,7 +302,7 @@ export default async function ProjectPage({
       <div className="mx-auto">
         {/* 1) Full-bleed banner */}
         {hero && (
-          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden">
+          <section className="relative h-[40svh] md:h-[55svh] xl:h-dvh overflow-hidden mt-24">
             <Image
               src={heroImageUrl(hero)}
               alt={hero.alt || data.title}
@@ -317,19 +317,15 @@ export default async function ProjectPage({
                 { viewTransitionName: `hero-${slug}` } as React.CSSProperties
               }
             />
-            <Container className="absolute inset-0 flex items-center justify-center z-20 pb-16">
+            <Container className="absolute inset-0 flex items-start md:items-center justify-center z-20 pt-2">
               <div className="relative">
-                {/* The glass panel lives outside ScrollReveal: while an animating
-                          ancestor's opacity is below 1 a backdrop-filter can't sample the
-                          page behind it, so the blur snapped in when the reveal finished.
-                          As a sibling it fades in on its own. */}
                 <div
                   aria-hidden
                   className="absolute inset-0 backdrop-blur-xs animate-in fade-in fill-mode-both duration-1000 [animation-delay:400ms]"
                 />
                 <ScrollReveal delay={400}>
                   <div className="space-y-6 p-4">
-                    <h1 className="text-white text-center">
+                    <h1 className="text-white text-center leading-10">
                       {data.title}{" "}
                       {data.location && (
                         <span className="block -mb-4 p">{data.location}</span>

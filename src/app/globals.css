@@ -201,7 +201,7 @@ input:-webkit-autofill:active {
 }
 
 @utility h1 {
-  @apply text-[38px] lg:text-[58px] font-normal tracking-tighter mb-4 lg:mb-6;
+  @apply text-[36px] md:text-[38px] lg:text-[58px] font-normal tracking-tighter mb-4 lg:mb-6;
 }
 
 @utility h2 {
