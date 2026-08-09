@@ -7,7 +7,7 @@ export const SERVICES: SequenceService[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Complete residential interiors for waterfront houses, tower apartments above the bay, and the garden homes a few streets inland. Furniture plans, finishes, lighting, and art are built up in layers, so the finished rooms read as a home collected over time, not a package delivered on one truck.",
+      "Whole-home interiors for Miami's waterfront houses, bay-view towers, and garden neighborhoods. We develop the furniture plan, finishes, lighting, and art together rather than in sequence, so the finished residence has the layered, collected quality that no single shopping trip can produce.",
     image: "/services/residential-interior-design-16x9.jpg",
     imageAlt:
       "A modern, luxury home interior design project with a large entry way and staircase featuring bespoke art and styling.",
@@ -16,7 +16,7 @@ export const SERVICES: SequenceService[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Renovations taken down to the studs and carried through the final punch list. We rework the plan, draw the millwork, and stay close to your contractor so the design survives contact with the job site. For Miami buildings that require association review, the submission and its timeline are planned into the project from the first meeting.",
+      "Gut renovations planned from the drawing set forward. We rework the floor plan, detail the millwork, and walk the site alongside your contractor until the punch list closes. Where a Miami building requires association sign-off, that review is scheduled into the project before demolition rather than discovered during it.",
     image: "/services/full-home-renovations-16x9.jpg",
     imageAlt:
       "Exterior view of a luxury modern estate full home renovation featuring a stone travertine facade, bold black steel rooflines, and expansive glass walls.",
@@ -34,7 +34,7 @@ export const SERVICES: SequenceService[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Kitchens planned around how your household actually cooks, gathers, and starts its mornings. Because it is the hardest-working room in the house, storage, sightlines, and workflow get solved first — then the cabinetry, stone, and appliances follow from those decisions rather than driving them.",
+      "The kitchen carries more of daily life than any other room, so we design it from the workflow inward. Prep, storage, seating, and the sightline to the terrace or the water are settled first, and only then are the cabinetry, stone, and appliances selected to serve that plan instead of driving it.",
     image: "/services/aventura-kitchen-interior-design-6.jpg",
     imageAlt:
       "Luxury modern kitchen design featuring a large waterfall island wrapped in heavily veined grey marble with integrated dual sinks and gold faucets.",
@@ -43,7 +43,7 @@ export const SERVICES: SequenceService[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "Calm, spa-like bathrooms where the stone, fixtures, and lighting are resolved as one composition instead of three separate purchases. Surfaces are specified for real daily use, simple upkeep, and the humidity and salt air that come with living on the water.",
+      "Primary baths and powder rooms treated as complete compositions, with stone, fixtures, and lighting chosen to read as one surface story rather than a set of purchases. Every material is vetted for humid air, salt exposure, and daily use, so the room keeps its calm long after the reveal.",
     image: "/services/master-bath-interior-design.jpg",
     imageAlt:
       "High-angle view of a luxury primary bathroom design emphasizing premium stone and tile integration.",
@@ -52,7 +52,7 @@ export const SERVICES: SequenceService[] = [
     title: "Custom Furnishings",
     category: "Made to order",
     description:
-      "Case goods and built-ins designed for the room they'll live in, not adapted to it after the fact. Drawn and engineered in-house, built by South Florida fabricators we've trusted for years, and specified to the millimeter before anything is cut — so the piece that arrives is the piece that was drawn.",
+      "When the right piece does not exist, we draw it. Dining tables, beds, wall units, and built-ins are designed and engineered in the studio, then produced by South Florida fabricators we have returned to across many projects. Approval happens on precise shop drawings, so what is delivered is exactly what was designed.",
     image: "/services/custom-furnishings-16x9.jpg",
     imageAlt:
       "A design graphic for a luxury custom cabinet for a primary suite.",

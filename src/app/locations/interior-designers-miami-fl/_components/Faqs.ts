@@ -6,57 +6,58 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Your studio is in Fort Lauderdale. Do you take on projects in Miami?",
     answer:
-      "Yes, and regularly. Miami is a short drive south of our Fort Lauderdale studio, close enough that we walk the site ourselves through design, construction, and installation rather than running a project remotely. Two of the residences in our portfolio are Miami projects, and a meaningful share of the studio's work sits between here and Palm Beach.",
+      "Yes, and a meaningful share of our portfolio is Miami work, including the Miami River and South Beach residences. The drive from our Fort Lauderdale studio is short enough that site visits, construction reviews, and installation all happen in person, on the project's schedule rather than a travel calendar.",
   },
   {
     question: "Which parts of Miami do you work in?",
     answer:
-      "Across the city and its waterfront. That includes apartments in the towers along Biscayne Bay, houses on the river and the canals, and the garden neighborhoods a few streets inland. A high-floor residence and a walled house on a corner lot make very different demands on an interior, so every project starts from the specific property rather than a house style we repeat.",
+      "Across the city and its waterfront: tower apartments over Biscayne Bay, houses along the Miami River and the canal streets, and the garden neighborhoods a few blocks inland. A high-floor residence and a walled corner-lot house call for different plans, different materials, and different lighting, so the property itself sets the brief.",
   },
   {
-    question: "How do you handle indoor-outdoor living?",
+    question: "How do you handle indoor-outdoor living in a Miami home?",
     answer:
       "As one plan rather than two. In Miami the terrace, pool deck, and breezeway are rooms that happen to have no walls, and they get designed with the same attention as anything inside. That means the floor material carrying across the threshold where it should, shade planned before furniture is placed, and outdoor pieces specified to survive sun and rain without looking like patio furniture.",
   },
   {
     question:
-      "We're in a tower. Can you work within our building's renovation rules?",
+      "We're in a Miami tower. Can you work within our building's renovation rules?",
     answer:
-      "Yes, it's routine work for us. Buildings across Miami typically require drawings and specifications approved before a renovation begins, and set work hours, service elevator reservations, and sound attenuation standards for the job itself. We build the association submission into the design schedule from the start and coordinate with your contractor so approval happens once rather than across rounds of revisions.",
+      "Yes, and we treat the building as part of the project team. Most Miami associations want a complete drawing and specification package approved before work starts, then govern the job itself with set hours, freight elevator bookings, and noise limits. We fold that submission into the design phase and sequence construction around the building's rules, so approval lands once and the renovation never sits parked waiting on paperwork.",
   },
   {
-    question: "Do you work with my architect and builder on new construction?",
+    question:
+      "Do you work with architects and builders on new construction in Miami?",
     answer:
-      "Yes, and we prefer to join early, while the plans are still moving. Interiors resolved alongside the architecture avoid the compromises that surface when the two are reconciled after framing. Your architect and contractor carry permitting and inspections; we coordinate closely with them on layouts, ceiling and lighting plans, millwork, and finish selections so nothing has to be undone later.",
+      "Yes, and we push to join while the drawings are still moving. The interior decisions that matter most on a new build, ceiling planes, lighting positions, where the glass meets the terrace, get settled on paper, and reconciling them after framing always costs something. Your architect and contractor own permitting and inspections; we resolve the interiors alongside their drawings and stay coordinated through construction so the finished rooms match what was agreed at the start.",
   },
   {
-    question: "Do you take on commercial projects?",
+    question: "Do you take on commercial interior design in Miami?",
     answer:
-      "Yes, selectively. Alongside our residential work we take on commercial, hospitality, and community projects where the scope genuinely benefits from a full-service interior design approach. The clearest example of that range is the sanctuary and interiors our studio designed at The Shul, carried out in custom bronze, stone, and millwork.",
+      "Selectively, yes. We accept commercial and hospitality commissions where the client wants the same full-service depth we bring to a residence: a shop, a restaurant, or a community space rather than a volume rollout. The studio's largest commercial commission to date is The Shul in nearby Surfside, whose sanctuary and interiors we designed in custom bronze, stone, and millwork.",
   },
   {
-    question: "What types of projects do you take on?",
+    question: "What types of interior design projects do you take on in Miami?",
     answer:
-      "The studio's range runs from ground-up new construction and full-home renovations to single-room projects, custom furnishings, built-ins, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
+      "Everything from ground-up new construction interiors and whole-home renovations to a single kitchen, bath, or living room, along with custom furniture and built-ins, lighting design, material selection, procurement, and final styling. Scope is shaped around what each project needs rather than a fixed package.",
   },
   {
     question: "What does it cost to hire an interior designer in Miami?",
     answer:
-      "It depends on scope, and we would rather be specific than vague. A kitchen or primary suite is a different investment than a whole-home renovation or new construction interiors, so we quote each engagement individually after a consultation. You receive a detailed fee proposal before design work starts, so there are no surprises at installation.",
+      "Fees follow scope, and Miami scopes vary enormously: a primary suite is not a whole-home renovation, and neither is a tower apartment finished from a shell. After a consultation we prepare a written fee proposal that spells out what is included and how purchasing is handled, so the numbers are clear before design begins and nothing gets renegotiated mid-project.",
   },
   {
-    question: "How long does a Miami project take?",
+    question: "How long does a Miami interior design project take?",
     answer:
-      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually twelve to twenty-four months, and work inside a building can add time for association approval. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
+      "Plan on four to eight months from concept to installed rooms when the work is furnishings-led. Renovations and new construction interiors track the building schedule, typically one to two years, and tower projects carry the association approval window at the front. Custom pieces have the longest lead times, so we order them early and reveal finished rooms all at once rather than piecemeal.",
   },
   {
-    question: "How do I start a project?",
+    question: "How do I start an interior design project in Miami?",
     answer:
-      "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
+      "Send the basics through our contact form: where the property is, what you are hoping to do, and your rough timing. We review every inquiry personally and follow up to schedule a consultation, where we walk through scope, budget range, and how the studio would approach the work.",
   },
   {
-    question: "Can you help with custom furniture or built-ins?",
+    question: "Can you design custom furniture and built-ins for a Miami home?",
     answer:
-      "Yes. Custom built-ins, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we have worked with for years, with drawings and specifications detailed enough that what arrives matches what was approved.",
+      "Yes, it is one of the studio's core strengths. When a storage wall, a dining table, or a bed needs to fit a room exactly, we design and engineer the piece in-house and have it produced by local fabricators whose work we have relied on for years. Fabrication starts only after you approve detailed shop drawings, so the finished piece matches the approved drawing rather than approximating it.",
   },
 ];

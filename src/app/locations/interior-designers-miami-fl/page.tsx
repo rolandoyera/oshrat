@@ -65,10 +65,10 @@ export default function Page() {
         ]}
       >
         <p>
-          A selection of our residential and commercial interior design projects
-          in Miami, from full-home renovations and new construction interiors to
-          single rooms drawn to the same level of detail. The studio works out
-          of Broward County as{" "}
+          Residential and commercial interior design projects from across Miami
+          and the surrounding coast, spanning new construction interiors, full
+          renovations, and single rooms finished to the same standard. The
+          studio operates out of Broward County as{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
@@ -76,7 +76,7 @@ export default function Page() {
             an interior design firm in Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}
-          and has been designing across South Florida for 12 years.
+          and has designed across South Florida for 12 years.
         </p>
       </LocationProjects>
       <Cta />
@@ -87,8 +87,8 @@ export default function Page() {
         heading={["Designed for how", "Miami lives."]}
         paragraphs={[
           "Miami asks more of an interior than almost anywhere else in South Florida. The light is stronger, the season is longer, and the line between inside and outside barely exists. As a full-service luxury interior design firm, we design for exactly that: overhangs and breezeways treated as rooms rather than leftovers, natural stone and warm wood set against long runs of glass, and furnishings selected piece by piece so a residential interior keeps its composure from hard noon light through the hour the architectural lighting takes over.",
-          "The city is not one place, and its interiors should not pretend otherwise. An apartment above Biscayne Bay, a house along the river, and a walled garden residence a few streets inland each ask for a different plan. We start from the property itself, its orientation, and how the household actually moves through a day, then balance clean modern forms with a material palette that brings warmth and depth. Considered layouts, custom built-ins, and easy transitions between rooms are what separate the best interior designers from the rest.",
-          "The same standard carries into commercial work. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it, whether that is one family or a room full of guests. From the earliest concept conversations through final installation, we stay close to our clients so that every decision serves the same vision, and so the studio that starts your project is the one standing in the room when it is finished.",
+          "The city is not one place, and its interiors should not pretend otherwise. An apartment above Biscayne Bay, a house along the river, and a walled garden residence a few streets inland each ask for a different plan. We start from the property itself, its orientation, and how the household actually moves through a day, then balance clean modern forms with a material palette that brings warmth and depth. Starting from the property rather than a signature look is, to us, what earns a firm a place among the best interior designers in Miami.",
+          "Commercial interiors get the same property-first treatment. A shop, a restaurant, or a community space has to be true to the people who use it every day, and that, more than ornament, is what luxury interior design means in our practice. The studio stays deliberately small so the designers who sketch the first concept are the same people checking millwork at installation, which is why the vision that wins a client at the start is still intact on installation day.",
         ]}
       />
       <Why {...WHY} />
