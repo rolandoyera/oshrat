@@ -193,6 +193,11 @@ function ContactModal({
   const onSubmit = async (data: ContactValues) => {
     setSubmitError(null);
     if (!turnstileToken) {
+      trackEvent("contact_form_error", {
+        form_type: "modal",
+        source,
+        reason: "turnstile_pending",
+      });
       setSubmitError("Please wait for the verification to finish.");
       return;
     }
@@ -206,7 +211,16 @@ function ContactModal({
           turnstileToken,
         }),
       });
-      if (!res.ok) throw new Error("Request failed");
+      if (!res.ok) {
+        trackEvent("contact_form_error", {
+          form_type: "modal",
+          source,
+          reason: "server",
+          status: res.status,
+        });
+        setSubmitError("Something went wrong. Please try again.");
+        return;
+      }
       reset();
       setSent(true);
 
@@ -219,6 +233,11 @@ function ContactModal({
         onClose();
       }, 4800);
     } catch {
+      trackEvent("contact_form_error", {
+        form_type: "modal",
+        source,
+        reason: "network",
+      });
       setSubmitError("Something went wrong. Please try again.");
     }
   };
@@ -488,7 +507,12 @@ function ContactModal({
                 siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
                 onSuccess={setTurnstileToken}
                 onExpire={() => setTurnstileToken(null)}
-                onError={() => setTurnstileToken(null)}
+                // A blocked/broken widget never reaches the API, so this GA4
+                // event is the only visibility into that failure mode.
+                onError={() => {
+                  trackEvent("turnstile_error", { form_type: "modal", source });
+                  setTurnstileToken(null);
+                }}
                 options={{ size: "flexible" }}
               />
 

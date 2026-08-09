@@ -99,6 +99,10 @@ export default function ContactSection({
 
   const handleFormSubmit = async (data: ContactValues) => {
     if (!turnstileToken) {
+      trackEvent("contact_form_error", {
+        form_type: formType,
+        reason: "turnstile_pending",
+      });
       setSubmitError("Please wait for the verification to finish.");
       return;
     }
@@ -115,7 +119,15 @@ export default function ContactSection({
           turnstileToken,
         }),
       });
-      if (!res.ok) throw new Error("Request failed");
+      if (!res.ok) {
+        trackEvent("contact_form_error", {
+          form_type: formType,
+          reason: "server",
+          status: res.status,
+        });
+        setSubmitError("Something went wrong. Please try again.");
+        return;
+      }
       setIsSent(true);
 
       trackEvent("contact_form_submit", { form_type: formType });
@@ -126,6 +138,10 @@ export default function ContactSection({
       }, 5000);
       reset();
     } catch (error) {
+      trackEvent("contact_form_error", {
+        form_type: formType,
+        reason: "network",
+      });
       setSubmitError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -323,7 +339,12 @@ export default function ContactSection({
               siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
               onSuccess={setTurnstileToken}
               onExpire={() => setTurnstileToken(null)}
-              onError={() => setTurnstileToken(null)}
+              // A blocked/broken widget never reaches the API, so this GA4
+              // event is the only visibility into that failure mode.
+              onError={() => {
+                trackEvent("turnstile_error", { form_type: formType });
+                setTurnstileToken(null);
+              }}
               options={{ size: "flexible" }}
             />
 
