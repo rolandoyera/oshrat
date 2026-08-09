@@ -11,10 +11,9 @@ import LocationTopSection from "../_components/LocationTopSection";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
-import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
 import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
+import LocationWhy from "../_components/LocationWhy";
 
 const PATH = "/locations/interior-designers-miami-fl";
 const TITLE = "Interior Designers in Miami, FL | Sarvian Design Group";
@@ -62,8 +61,7 @@ export default function Page() {
           "aventura-modern-living-aventura-fl",
           "miami-river-miami-fl",
           "the-shul-bal-harbour-surfside-fl",
-        ]}
-      >
+        ]}>
         <p>
           Residential and commercial interior design projects from across Miami
           and the surrounding coast, spanning new construction interiors, full
@@ -71,8 +69,7 @@ export default function Page() {
           studio operates out of Broward County as{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
-            className="group relative hover:text-accent transition-colors duration-300"
-          >
+            className="group relative hover:text-accent transition-colors duration-300">
             an interior design firm in Fort Lauderdale
             <HoverUnderline className="text-accent" />
           </Link>{" "}
@@ -91,7 +88,54 @@ export default function Page() {
           "Commercial interiors get the same property-first treatment. A shop, a restaurant, or a community space has to be true to the people who use it every day, and that, more than ornament, is what luxury interior design means in our practice. The studio stays deliberately small so the designers who sketch the first concept are the same people checking millwork at installation, which is why the vision that wins a client at the start is still intact on installation day.",
         ]}
       />
-      <Why {...WHY} />
+      <LocationWhy
+        title="Top Interior Designers in Miami, FL"
+        description="Miami has no shortage of rooms that photograph beautifully and work badly. We build for the opposite result. Our firm is judged on what a space is like to use at seven in the morning and again at eight at night, across residential and commercial interiors, and every line on the drawing set is decided with that in mind.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">From Room to Residence.</h2>
+          <p>
+            A tower apartment above the bay, a house on the Miami River, a
+            garden residence taken to the studs, or a single room on a deadline:
+            each engagement gets the studio's full attention, priced to its
+            actual scope. A smaller project is never passed down to a thinner
+            team, and a larger one never loses its thread in committee. We start
+            from how you live in the space, and every drawing that follows
+            answers to that.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Specified for the Climate.</h2>
+          <p>
+            Miami is hard on interiors, and the best interior designers here
+            plan for it. Sun through full-height glass shifts how every finish
+            reads and fades anything that was not chosen for it, humidity moves
+            wood, and salt air finds unprotected metal. So materials are
+            selected for how they age rather than how they look on a sample
+            board: stone chosen slab by slab, metals and hardware specified for
+            coastal exposure, millwork detailed for the climate and built by
+            fabricators we've trusted for years. It is the difference between a
+            room that looks right at handover and one that still looks right in
+            five years.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">
+            One Interior Design Firm in Miami.
+          </h2>
+          <p>
+            Luxury projects tend to fray where responsibility changes hands,
+            between a designer, a purchasing agent, and an installer. Ours never
+            leave the studio. Space planning, finish palettes, lighting,
+            renderings, procurement, custom built-ins, art, and installation run
+            through one team with one point of accountability. As interior
+            designers working across Miami, we also carry the practical layer,
+            coordinating your architect, contractor, building association, and
+            trades, so the design you approved is the design that gets built.
+          </p>
+        </div>
+      </LocationWhy>
     </main>
   );
 }
