@@ -20,7 +20,7 @@ export const SERVICES: Service[] = [
     title: "Residential Interior Design",
     category: "Whole home",
     description:
-      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. We compose furniture plans, finishes, lighting, and art into rooms that feel gathered over time, not staged. Every choice is made in relation to the next, so a home reads as one continuous idea rather than a series of decorated rooms.",
+      "Curated interiors for primary residences, waterfront estates, and pieds-à-terre. The furniture plan, finishes, lighting, and art are developed in relation to one another rather than selected piece by piece, so rooms feel accumulated over years of good judgment and the home carries one continuous idea from the entry inward.",
     tags: [
       "Furniture plans",
       "Finishes & palette",
@@ -37,7 +37,7 @@ export const SERVICES: Service[] = [
     title: "Full Home Renovations",
     category: "Renovation",
     description:
-      "Down-to-the-studs remodels handled from layout to last detail. We reshape the plan, design the millwork, and coordinate closely with your contractor and trades to protect the design intent on site. It's a demanding process. Our job is to keep it moving, keep it coordinated, and keep the outcome true to the original vision.",
+      "Remodels taken to the studs and managed from first layout to last detail. We reshape the plan, design the millwork, and work shoulder to shoulder with your contractor and trades so the design intent holds on site. Renovation is a demanding process; our job is to keep it moving, keep it coordinated, and keep the outcome true to the original vision.",
     tags: [
       "Space planning",
       "Custom millwork",
@@ -54,7 +54,7 @@ export const SERVICES: Service[] = [
     title: "New Construction",
     category: "New build",
     description:
-      "Interiors developed alongside your architect from the ground up, so flow, finishes, and lighting are resolved before the first wall is framed and the finished home reads as a single, coherent idea. Getting involved this early means fewer compromises later. The architecture and the interior design are never fighting each other.",
+      "Interiors worked out with your architect before the first wall is framed, so flow, finishes, and lighting are settled while they are still easy to change and the finished home reads as one coherent idea. Joining this early spares the compromises that surface later, and it keeps the architecture and the interior design from ever fighting each other.",
     tags: [
       "Architect collaboration",
       "Early finishes",
@@ -71,7 +71,7 @@ export const SERVICES: Service[] = [
     title: "Kitchen Design",
     category: "Single space",
     description:
-      "Cabinetry, stone, and appliance planning built around how you actually cook and gather, detailed for the way the room is used every day, morning through dinner party. It's usually the hardest-working room in the house, so every decision about storage, sightlines, and workflow is made with that in mind for a cohesive luxury kitchen design.",
+      "Cabinetry, stone, and appliance planning shaped by how you actually cook and gather, detailed for the way the room runs from an early weekday morning through a dinner party. No room earns its keep like this one, so the plan starts with where things live, how prep moves, and what you see from the island, and every finish decision supports a cohesive luxury kitchen design.",
     tags: [
       "Cabinetry",
       "Stone & surfaces",
@@ -89,7 +89,7 @@ export const SERVICES: Service[] = [
     title: "Bathroom Design",
     category: "Single space",
     description:
-      "Spa-calm bathrooms with considered stone, fixtures, and layered lighting. Every surface is specified for daily use and easy upkeep, without losing the quiet luxury of the room. Light, water, and material are treated as a single experience. The goal is a room that feels as good to be in as it looks.",
+      "Bathrooms with the calm of a spa and the durability of a working room. Light, water, and material are treated as one experience, with stone, fixtures, and layered lighting considered together, and every surface chosen to take daily use and easy upkeep without giving up the quiet luxury of the space. The measure is a room that feels as good to be in as it looks.",
     tags: [
       "Stone & tile",
       "Fixtures",
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
     title: "Custom Furnishings",
     category: "Made to order",
     description:
-      "Bespoke case goods and built-ins fabricated to fit the room and the way you live in it. Designed in-house, made by trusted artisans, and detailed to the millimeter. Every piece is drawn, refined, and specified before fabrication begins, so what arrives on site matches the vision exactly: no substitutions, no compromises.",
+      "Bespoke case goods and built-ins made for the room and the way you live in it. Each piece is designed in-house, refined on paper, and dimensioned to the millimeter before fabrication begins with artisans we trust, so what arrives on site is exactly what was drawn: no substitutions, no compromises.",
     tags: [
       "Case goods",
       "Built-ins",
@@ -125,7 +125,7 @@ export const SERVICES: Service[] = [
     title: "Single-Room Transformations",
     category: "Single space",
     description:
-      "One room, fully realized. Ideal for a primary suite, study, or living room that needs to come together quickly and beautifully, with the same rigor as a whole-home engagement. A focused scope means faster decisions and a shorter path from concept to finished room, without cutting a single corner.",
+      "A single room carried all the way through: a primary suite, a study, or a living room that needs to come together quickly and beautifully. The tight scope buys faster decisions and a shorter run from concept to finished room, while the rigor stays at the level of a whole-home engagement and not a single corner gets cut.",
     tags: [
       "Focused scope",
       "Faster timeline",
@@ -163,16 +163,16 @@ export default function ServicesSection() {
             className="space-y-6 lg:col-span-6 items-center flex"
           >
             <p>
-              We design homes that move effortlessly between indoors and out —
-              pairing striking architectural forms with interiors that feel
-              collected rather than decorated.
+              We design homes that move easily between indoors and out, pairing
+              strong architectural forms with interiors that feel collected
+              rather than decorated.
             </p>
             <p>
-              Whether you&apos;re building from the ground up, taking a
-              residence down to the studs, or transforming a single room, the
-              work is handled end to end: layout, finishes, lighting,
-              furnishings, procurement, and installation. Below are the ways we
-              typically engage as an interior design firm in Fort Lauderdale.
+              Whether the project is a ground-up build, a residence stripped to
+              the studs, or a single room, the work runs end to end: layout,
+              finishes, lighting, furnishings, procurement, and installation.
+              These are the seven ways clients typically engage our interior
+              design firm in Fort Lauderdale.
             </p>
           </ScrollReveal>
         </div>

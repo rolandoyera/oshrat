@@ -42,9 +42,9 @@ export default function ServicesHero() {
             </h2>
 
             <p className="max-w-xl text-cream-100">
-              A full-service interior design firm for residential and commercial
-              interiors, renovations, and new construction across Broward, Palm
-              Beach, and Miami-Dade counties.
+              A full-service interior design firm handling residential and
+              commercial interiors, renovations, and ground-up new construction
+              throughout Broward, Palm Beach, and Miami-Dade counties.
             </p>
           </ScrollReveal>
           <ScrollReveal direction="right" className="lg:col-span-4">
