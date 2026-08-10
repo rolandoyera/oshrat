@@ -2,26 +2,26 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you offer interior design services outside Fort Lauderdale?",
     answer:
-      "Yes. Sarvian Design Group works with clients throughout South Florida — Broward County, Palm Beach, Boca Raton, Miami, and surrounding areas with our studio based in Ft. Lauderdale.",
+      "Yes. From our Fort Lauderdale studio we serve clients across South Florida, including Broward County, Palm Beach, Boca Raton, Miami, and the surrounding areas.",
   },
   {
-    question: "What types of projects do you take on?",
+    question: "What kinds of projects does the studio handle?",
     answer:
-      "Sarvian Design Group works on a range of interior design projects from full-home renovations and new construction to single-room transformations, custom furnishings, built-ins, lighting, material selections, procurement, and styling, depending on project scope.",
+      "Everything from full-home renovations and new construction to a single room: custom furnishings, built-ins, lighting, material selection, procurement, and styling, with the engagement shaped by the project's scope.",
   },
   {
-    question: "How do I start a project?",
+    question: "What is the first step to working together?",
     answer:
-      "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
+      "Fill out the contact form with the basics of your project. We read every submission and reply to go over scope, timing, and what comes next.",
   },
   {
-    question: "Do you offer consultations?",
+    question: "Can I book a consultation?",
     answer:
-      "Yes. We offer consultations for most projects, though availability can vary by scope, location, and schedule. Reach out through the contact form and we'll let you know what's possible.",
+      "Yes, consultations are available for most projects, with availability depending on scope, location, and schedule. Send a note through the form and we will tell you what is possible.",
   },
   {
-    question: "Can you help with custom furniture or built-ins?",
+    question: "Do you take on custom furniture and built-ins?",
     answer:
-      "Yes. Sarvian Design Group can assist with custom design elements such as built-ins, lighting, furniture pieces, and other details that may require drawings, specifications, or coordination with fabricators.",
+      "Yes. The studio designs custom elements such as built-ins, lighting, and furniture, handling the drawings, specifications, and coordination with fabricators that those pieces require.",
   },
 ];
