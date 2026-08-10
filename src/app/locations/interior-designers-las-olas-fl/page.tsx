@@ -41,9 +41,10 @@ export default function Page() {
         eyebrow="Interior Designers in Las Olas, FL"
         heading={["Every detail", "on purpose."]}
         paragraph="We are interior designers in Las Olas, Florida, working across
-                residential and commercial interiors — the waterfront homes along
-                the isles and the shops and restaurants that give the boulevard
-                its character. Every layout, material, and detail with purpose."
+                residential and commercial interiors, from the waterfront homes
+                along the isles to the shops and restaurants that give the
+                boulevard its character. Every layout, material, and detail with
+                purpose."
       />
       <LocationTopSection
         eyebrow="Featured Project"
@@ -84,7 +85,7 @@ export default function Page() {
         paragraphs={[
           "Las Olas is two neighborhoods at once: a residential one on the water and a commercial one along the boulevard. As a full-service luxury interior design firm, we work in both. On the isles, the canal is effectively the largest material in the room, so we design with that light rather than against it, choosing natural stone, warm neutral palettes, and furnishings selected piece by piece so the interior keeps its composure from morning glare to late-afternoon gold. It is the kind of attention that has made us one of the top interior design firms in Fort Lauderdale.",
           "Away from the water, Las Olas changes scale. Older homes on the streets behind the boulevard sit alongside downtown towers at the west end, and the two ask for different things from a residential interior. We pay attention to orientation, to where the sun lands and how a garden or a terrace meets the living space, and we balance clean modern forms with a material palette that brings warmth and depth. Considered layouts, custom built-ins, and easy transitions between rooms produce homes that feel curated without ever feeling staged.",
-          "The commercial side of the neighborhood runs on the same standard. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it, whether that is a family or a room full of guests. The best interior designers earn the work in the details nobody lists on a drawing set, which is why a shop, a restaurant, or a community space is specified here as carefully as a private residence. From the earliest concept conversations through final installation, we stay close to our clients so every decision serves the same vision.",
+          "The commercial side of the neighborhood runs on the same standard. Luxury interior design, the way we practice it, is not a matter of ornament; it is an environment that stays true to the people using it, whether that is a family or a room full of guests. The best interior designers earn the work in the details nobody lists on a drawing set, which is why a shop, a restaurant, or a community space is specified here as carefully as a private residence. From the first concept conversations through final installation, we stay close to our clients so that every decision serves a single vision.",
         ]}
       />
       <Why {...WHY} />

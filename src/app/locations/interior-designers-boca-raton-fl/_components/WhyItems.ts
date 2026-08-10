@@ -16,9 +16,9 @@ export const WHY = {
         "So much of Boca is being rebuilt from the lot up, and the decisions that separate a designed interior from a merely finished one are made while the plans are still moving. Ceiling heights, window placement, how rooms connect, where the millwork lives, how the lighting is laid out: all of it is free to change on paper and expensive to change later. We join early and work alongside your architect and builder, so the architecture and the interior arrive as one idea instead of two reconciled after the fact.",
     },
     {
-      title: "One Interior Design Firm.",
+      title: "Design Through Installation.",
       description:
-        "High-end projects usually come apart in the handoffs between specialists. We keep the entire chain inside one studio: space planning, finish palettes, lighting plans, and 3D renderings, then procurement, custom built-ins, art, styling, and installation, so the living room, primary suite, kitchen, and bath resolve as one residence instead of four disconnected rooms. As your interior design firm in Boca Raton, we coordinate with your architect, contractor, and trades so the design intent survives the job site. One team, one point of accountability, from the first walkthrough to the day the art goes up.",
+        "High-end projects usually come apart in the handoffs between specialists, so we removed the handoffs. Space planning, finish palettes, lighting plans, and 3D renderings happen in the same studio as procurement, custom built-ins, art, styling, and installation, which is why the living room, primary suite, kitchen, and bath land as one residence rather than four separate efforts. As your interior design firm in Boca Raton, we coordinate your architect, contractor, and trades so the design intent reaches installation intact. One team accountable from the first site walk to the day the art is hung.",
     },
   ],
 };

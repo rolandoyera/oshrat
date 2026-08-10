@@ -32,31 +32,31 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you take on commercial projects?",
     answer:
-      "Yes, selectively. Las Olas is as much a commercial street as a residential one, and we take on shops, restaurants, offices, and community spaces where the scope genuinely benefits from a full-service approach. The clearest example of that range is the sanctuary and interiors our studio designed at The Shul, carried out in custom bronze, stone, and millwork.",
+      "Yes, selectively. Las Olas is as much a commercial street as a residential one, and we take on shops, restaurants, offices, and community spaces where the scope genuinely benefits from a full-service approach. The strongest example of that range is The Shul, where our studio designed the sanctuary and interiors in custom bronze, stone, and millwork.",
   },
   {
-    question: "What types of projects do you take on?",
+    question: "What types of projects do you take on around Las Olas?",
     answer:
       "The studio's range runs from ground-up new construction and full-home renovations to single-room projects, custom furnishings, built-ins, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
   },
   {
     question: "What does it cost to hire an interior designer in Las Olas?",
     answer:
-      "It depends on scope, and we would rather be specific than vague. A kitchen or primary suite is a different investment than a whole-home renovation or new construction interiors, so we quote each engagement individually after a consultation. You receive a detailed fee proposal before design work starts, so there are no surprises at installation.",
+      "It depends on the scope, and we would rather be precise than vague. A kitchen or primary suite is a different investment than a full renovation or new construction interiors, so we quote each engagement individually after a consultation, and you have a detailed fee proposal in hand before design work starts, not after.",
   },
   {
     question: "How long does a Las Olas project take?",
     answer:
-      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually twelve to twenty-four months, and work in a downtown building can add time for approval. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
+      "Furnishings-led projects generally run four to eight months from first concept to installed rooms. Renovations and new builds follow the construction calendar, usually twelve to twenty-four months, and work in a downtown building can add time for approval. Custom pieces carry the longest lead times, so we place those orders early and install in one finished reveal rather than piecemeal.",
   },
   {
-    question: "How do I start a project?",
+    question: "How do I start a project with Sarvian Design Group?",
     answer:
-      "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
+      "Submit the contact form with a few details about the project. We review each inquiry and follow up to talk through scope, timing, and what happens next.",
   },
   {
     question: "Can you help with custom furniture or built-ins?",
     answer:
-      "Yes. Custom built-ins, furniture pieces, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we have worked with for years, with drawings and specifications detailed enough that what arrives matches what was approved.",
+      "Yes. Custom built-ins, furniture, lighting, and other made-to-order pieces are designed and engineered in-house, then built by South Florida fabricators we have long-standing relationships with, working from drawings and specifications detailed enough that what shows up matches what was approved.",
   },
 ];

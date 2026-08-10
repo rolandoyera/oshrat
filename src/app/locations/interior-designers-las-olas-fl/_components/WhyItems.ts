@@ -18,7 +18,7 @@ export const WHY = {
     {
       title: "One Interior Design Firm.",
       description:
-        "Where high-end projects usually fail is in the handoffs between specialists. We keep the whole chain in one studio: space planning, finish palettes, lighting plans, and 3D renderings, then procurement, custom built-ins, art, styling, and installation, so the living room, primary suite, kitchen, and bath resolve as one residence instead of four disconnected rooms. As your interior design firm in Las Olas, we coordinate with your architect, contractor, building association, and trades to protect the design intent on site. One team, one point of accountability, from first walkthrough to the day the art goes up.",
+        "Where high-end projects usually fail is in the handoffs between specialists. We keep the whole chain in one studio, from space planning, finish palettes, lighting plans, and 3D renderings through procurement, custom built-ins, art, styling, and installation, so the living room, primary suite, kitchen, and bath read as one residence rather than four disconnected rooms. As your interior design firm in Las Olas, we coordinate with your architect, contractor, building association, and trades to protect the design intent on site. One team and one point of accountability, from first walkthrough to the day the art goes up.",
     },
   ],
 };
