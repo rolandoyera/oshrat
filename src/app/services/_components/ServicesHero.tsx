@@ -27,10 +27,9 @@ export default function ServicesHero() {
           <ScrollReveal
             topReveal
             direction="left"
-            className="space-y-6 lg:space-y-10 text-white lg:col-span-8"
-          >
+            className="space-y-6 lg:space-y-10 text-white lg:col-span-8">
             <h1 className="eyebrow text-cream-200">
-              Interior Design Firm Services in Fort Lauderdale
+              Full-service interior design firm
             </h1>
 
             <h2 className="display text-white flex flex-col">

@@ -8,7 +8,7 @@ import Cta from "@/components/Cta";
 import Why from "@/components/Why";
 import Testimonials from "@/components/Testimonials";
 
-const TITLE = "Interior Design Services in Fort Lauderdale & South Florida";
+const TITLE = "Full-Service Interior Design Fort Lauderdale";
 const DESCRIPTION =
   "A full-service interior design firm handling residential and commercial interiors, renovations, and ground-up new construction throughout Broward, Palm Beach, and Miami-Dade counties.";
 
