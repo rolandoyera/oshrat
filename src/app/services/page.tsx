@@ -10,7 +10,7 @@ import Testimonials from "@/components/Testimonials";
 
 const TITLE = "Interior Design Services in Fort Lauderdale & South Florida";
 const DESCRIPTION =
-  "Full-service interior design firm serving Fort Lauderdale, Miami, Palm Beach, Broward, and South Florida. Renovations, new construction, custom furnishings, kitchens, and bathrooms.";
+  "A full-service interior design firm handling residential and commercial interiors, renovations, and ground-up new construction throughout Broward, Palm Beach, and Miami-Dade counties.";
 
 export const metadata: Metadata = {
   title: TITLE,

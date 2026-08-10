@@ -18,7 +18,7 @@ import Container from "../ui/Container";
 export default function DesktopNav() {
   const pathname = usePathname();
   const { open: openProjectModal } = useProjectModal();
-  const { isHidden } = useNavScroll();
+  const { isScrolled, isHidden } = useNavScroll();
   const progressRef = useScrollProgress();
   const preloadHero = usePreloadHero();
 
@@ -26,9 +26,10 @@ export default function DesktopNav() {
     <nav
       aria-label="Primary"
       data-fixed=""
-      className="hidden lg:flex fixed top-0 left-0 w-full z-50 font-medium flex-col text-foreground shadow"
-      style={{ viewTransitionName: "main-navbar" }}
-    >
+      className={cn(
+        "hidden xl:flex fixed top-0 left-0 w-full z-50 font-medium flex-col",
+        isScrolled && "shadow",
+      )}>
       <div
         ref={progressRef}
         style={{ transform: "scaleX(0)" }}
@@ -39,13 +40,11 @@ export default function DesktopNav() {
         className={cn(
           "relative z-20 w-full overflow-hidden bg-taupe-900 text-cream-100 transition-all duration-300 ease-in-out",
           isHidden ? "h-0" : "h-9",
-        )}
-      >
+        )}>
         <Container className="flex h-9 items-center justify-end">
           <a
             href={`tel:${SITE.phone}`}
-            className="text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent"
-          >
+            className="text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent">
             {SITE.phoneDisplay}
           </a>
           <span aria-hidden className="mx-4 h-4 w-px bg-cream-100/30" />
@@ -58,16 +57,22 @@ export default function DesktopNav() {
                 button_text: "Consultation",
               });
             }}
-            className="group relative text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent hover:cursor-pointer"
-          >
+            className="group relative text-sm font-light uppercase tracking-wide text-cream-200 transition-colors hover:text-accent hover:cursor-pointer">
             Request Consultation
             <HoverUnderline />
           </button>
         </Container>
       </div>
 
-      {/* Main bar — always visible. */}
-      <div className="flex h-18 w-full items-center justify-center bg-cream-200">
+      {/* Main bar — always visible. Transparent with white text/logo at the
+          top of the page; solid cream once scrolled. */}
+      <div
+        className={cn(
+          "flex h-18 w-full items-center justify-center border-b transition-all duration-300 backdrop-blur-xs",
+          isScrolled
+            ? "border-transparent bg-cream-200 text-foreground"
+            : "border-white/50 bg-black/10 text-white h-22",
+        )}>
         <Container className="relative z-20 flex-1 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <div className="w-12.5 shrink-0">
@@ -92,10 +97,15 @@ export default function DesktopNav() {
                     aria-current={isActive ? "page" : undefined}
                     onPointerEnter={() => preloadHero(link.href)}
                     onFocus={() => preloadHero(link.href)}
-                    className="relative uppercase group py-1 tracking-wide"
-                  >
+                    className="relative uppercase group py-1 tracking-wide">
                     {link.name}
-                    <HoverUnderline active={isActive} />
+                    {/* Width-only transition: the underline is bg-current, and
+                        transitioning background-color would chase the bar's
+                        animating color and lag behind the text. */}
+                    <HoverUnderline
+                      active={isActive}
+                      className="transition-[width]"
+                    />
                   </Link>
                 </li>
               );
