@@ -11,7 +11,7 @@ import { WHY_ITEMS } from "./_components/WhyItems";
 export const revalidate = 60; // Revalidate the page every 60 seconds
 
 const DESCRIPTION =
-  "Explore our latest architecture and interior design projects across South Florida — Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.";
+  "Explore the latest architecture and interior design projects from Sarvian Design Group across South Florida: Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.";
 
 const TITLE =
   "Projects | Fort Lauderdale Interior Designer | Sarvian Design Group";
@@ -116,8 +116,8 @@ export default async function ProjectsPage() {
         <Testimonials />
         <Why
           subtitle="Why Sarvian Design Group"
-          title="One Interior Design Firm in Fort Lauderdale for Every Scope"
-          description="We don’t try to be the right interior designers for every project. But when our approach matches what a client is looking for, we’re known for delivering something that feels deeply intentional. Whether it’s a whole-home interior design, a renovation, a new build, or a luxurious kitchen design, the same team of interior designers carries the work from layout and finishes through procurement, installation, and final styling."
+          title="The Fort Lauderdale Interior Design Firm Behind Every Project"
+          description="Every project in this portfolio ran through the same hands. Whole-home interior design, renovations, new builds, and luxury kitchen and bath work across South Florida are carried by one team of interior designers, from layout and finishes through procurement, installation, and final styling, which is why the finished work holds one standard regardless of scope."
           items={WHY_ITEMS}
         />
       </main>

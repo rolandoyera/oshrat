@@ -65,10 +65,10 @@ export default function Page() {
         ]}
       >
         <p>
-          A selection of our residential and commercial interior design work,
-          from full-home renovations and new construction interiors to single
-          rooms drawn to the same level of detail. It is the standard we bring
-          to every West Palm Beach project and to the work of{" "}
+          A cross-section of our residential and commercial interior design
+          work, spanning whole-home renovations, new construction interiors,
+          and single rooms held to one standard of detail. It is the standard
+          we bring to every West Palm Beach project and to the work of{" "}
           <Link
             href="/locations/interior-designers-palm-beach-fl"
             className="group relative hover:text-accent transition-colors duration-300"
@@ -95,8 +95,8 @@ export default function Page() {
         heading={["Designed for how", "West Palm Beach lives."]}
         paragraphs={[
           "West Palm Beach holds two kinds of buildings at once, and a full-service luxury interior design firm has to be fluent in both. The historic neighborhoods along the water are full of houses built before open plans and modern kitchens, where the work is to bring in light and flow without stripping out the plaster, arches, and window rhythm that made the house worth owning. A block away, a new tower residence or an office floor starts from the opposite condition: a clean slate with no character to protect and none to inherit.",
-          "That range is why we design from the building outward rather than applying a house style. The residential interior is drawn to belong to the architecture it sits in, and the commercial work gets the same treatment: materials specified for real traffic, lighting planned for long days instead of a launch photograph, and millwork drawn rather than ordered. Considered layouts, custom built-ins, and easy transitions between rooms are what separate the best interior designers from the rest.",
-          "Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it, whether that is one family or a floor full of employees. From the earliest concept conversations through final installation, we stay close to our clients so that every decision serves the same vision, and so the studio that starts your project is the one standing in the room when it is finished.",
+          "That range is why we design from the building outward rather than applying a house style. The residential interior is drawn to belong to the architecture it sits in, and the commercial work gets the same treatment: materials that can take a crowd, lighting planned for the working day, and millwork we draw ourselves. What separates the best interior designers from the rest is rarely the fabric; it is the plan, the built-ins, and the way one room gives onto the next.",
+          "Luxury interior design, as we practice it, is measured by how well an environment serves the people in it, whether that is one family or a floor full of employees, and ornament has very little to do with it. We keep the same team on your project from the first concept conversation to the final installation, so every decision answers to one vision and the studio that began the work is the one standing in the finished room.",
         ]}
       />
       <Why {...WHY} />

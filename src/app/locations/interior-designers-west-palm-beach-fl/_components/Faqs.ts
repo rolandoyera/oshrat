@@ -7,7 +7,7 @@ export const FAQS: { question: string; answer: string }[] = [
     question:
       "Your studio is in Fort Lauderdale. Do you take on projects in West Palm Beach?",
     answer:
-      "Yes. West Palm Beach is under an hour from our Fort Lauderdale studio, close enough that we walk the site ourselves through design, construction, and installation rather than running a project remotely. Our work already reaches up the coast through Boca Raton, Delray Beach, and Palm Beach, and West Palm is a natural extension of it.",
+      "Yes. West Palm Beach is under an hour from our Fort Lauderdale studio, near enough that we are on site ourselves from the first walkthrough to the final installation instead of managing the job from a distance. Our work already reaches up the coast through Boca Raton, Delray Beach, and Palm Beach, and West Palm is a natural extension of it.",
   },
   {
     question: "Which parts of West Palm Beach do you work in?",
@@ -17,12 +17,12 @@ export const FAQS: { question: string; answer: string }[] = [
   {
     question: "Do you work on historic homes in El Cid and Flamingo Park?",
     answer:
-      "Yes, and they are some of the most rewarding work in the city. Plaster walls, arched openings, original tile, and casement windows set a proportion and a material weight that a modern interior has to answer rather than ignore. The usual goal is more light and better flow without stripping out the details that made you buy the house. We match millwork profiles and finishes to what is already there so the result reads as a continuation of the house rather than a layer applied over it.",
+      "Yes, and they are some of the most rewarding work in the city. Plaster walls, arched openings, original tile, and casement windows set a proportion and a material weight that a modern interior has to answer rather than ignore. The brief is almost always more light and easier flow, and the discipline is getting there without erasing what made you buy the house. New millwork picks up the profiles and weight already present, so the finished rooms feel like the house grew into them.",
   },
   {
     question: "Do you take on commercial and office projects?",
     answer:
-      "Yes, and West Palm Beach is one of the places we see the most demand for it. Offices, showrooms, and community spaces get the same process as a private residence, with materials specified for real traffic and lighting planned for long working days rather than a photograph. The clearest example of that range is the sanctuary and interiors our studio designed at The Shul, carried out in custom bronze, stone, and millwork.",
+      "Yes, and West Palm Beach is one of the places we see the most demand for it. Offices, showrooms, and community spaces move through the same process as a private residence, built on materials that can take real traffic and lighting planned around the working day rather than a photograph. Our commercial range shows clearest at The Shul, a sanctuary and community interior the studio carried out in custom bronze, stone, and millwork.",
   },
   {
     question: "We are in a downtown tower. Does the building limit what we can do?",
@@ -30,34 +30,34 @@ export const FAQS: { question: string; answer: string }[] = [
       "Usually, and it is better to know the rules before you fall in love with a plan. Most buildings here restrict work hours, elevator use, and deliveries, require licensed and insured trades on file, and review any change to plumbing, flooring assemblies, or anything structural. We collect the building's requirements at the start and design within them, so approvals and move-in scheduling are handled as part of the plan rather than discovered halfway through.",
   },
   {
-    question: "Do you work with my architect and builder on new construction?",
+    question: "Do you collaborate with architects and builders in West Palm Beach?",
     answer:
-      "Yes, and we prefer to join early, while the plans are still moving. Interiors resolved alongside the architecture avoid the compromises that surface when the two are reconciled after framing. Your architect and contractor carry permitting and the city's review process; we coordinate closely with them on layouts, ceiling and lighting plans, millwork, and finish selections so nothing has to be undone later.",
+      "Yes, and the earlier the better, while the drawings can still move. An interior resolved alongside the architecture avoids the compromises that show up after framing. Permitting and the city's review stay with your architect and contractor; our part is the layouts, ceiling and lighting plans, millwork, and finish selections, coordinated closely enough that nothing gets undone later.",
   },
   {
-    question: "What types of projects do you take on?",
+    question: "What types of projects do you take on in West Palm Beach?",
     answer:
-      "Ground-up new construction, full-home renovations, single-room projects, commercial and office interiors, custom furnishings and built-ins, lighting design, material selection, procurement, and final styling, scaled to what each project actually needs.",
+      "New construction from the ground up, whole-home renovations, single rooms, commercial and office interiors, custom furnishings and built-ins, lighting design, material selection, procurement, and final styling. Each engagement is sized to what the project genuinely needs.",
   },
   {
     question:
       "What does it cost to hire an interior designer in West Palm Beach?",
     answer:
-      "It depends on scope, and we would rather be specific than vague. A kitchen or primary suite is a different investment than a whole-home renovation, a new build, or a commercial fit-out, so each engagement is quoted individually after a consultation. You receive a detailed fee proposal before design work starts, so there are no surprises at installation.",
+      "The scope sets the price, so we would rather quote precisely than estimate loosely. A kitchen or a primary suite is a different commitment than a whole-home renovation, a new build, or a commercial fit-out, and every engagement is priced individually after a consultation. The detailed fee proposal is in your hands before design work begins.",
   },
   {
     question: "How long does a West Palm Beach project take?",
     answer:
-      "Furnishings-driven projects generally run four to eight months from concept to installed rooms. Renovations and new builds follow the construction calendar, usually twelve to twenty-four months, and older houses can add time once the walls are open. Custom pieces carry the longest lead times, so those orders go in early.",
+      "Projects driven by furnishings usually land in four to eight months from concept to installed rooms. Renovation and new construction run on the building calendar, most often twelve to twenty-four months, and an older house can stretch that once the walls come open. Custom pieces have the longest lead times, so we commit to those orders early.",
   },
   {
     question: "Can you help with custom furniture or built-ins?",
     answer:
-      "Yes. Built-ins, case goods, lighting, and other made-to-order elements are designed and engineered in-house, then fabricated by trusted South Florida partners we have worked with for years. In older houses where nothing is plumb or square, custom is often the only way to get a clean result.",
+      "Yes. Made-to-order built-ins, case goods, and lighting are designed and engineered in the studio, then built by South Florida fabricators we have relied on for years. In older houses where nothing is plumb or square, custom is often the only way to get a clean result.",
   },
   {
-    question: "How do I start a project?",
+    question: "How do we get started?",
     answer:
-      "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
+      "Use the contact form to tell us about the project: where it is, what you are hoping to do, and when. We reply to every inquiry to talk through scope, timing, and how to begin.",
   },
 ];
