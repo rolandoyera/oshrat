@@ -40,7 +40,7 @@ export default function Page() {
         }}
         eyebrow="Palm Beach Interior Design Firm"
         heading={["A home equal", "to its address."]}
-        paragraph="Blending striking architectural forms with curated interior designs, Sarvian Design Group creates Palm Beach homes that unite nature and design into one harmonious experience."
+        paragraph="Sarvian Design Group is a luxury interior design firm working across Palm Beach, from Mediterranean revival estates to new oceanfront residences, drawing interiors measured against the island's long standard rather than this year's look."
       />
       <LocationTopSection
         eyebrow="Our Approach in Palm Beach"
@@ -64,10 +64,10 @@ export default function Page() {
         ]}
       >
         <p>
-          A selection of our residential and commercial interior design work,
-          from full-home renovations and new construction interiors to single
-          rooms drawn to the same level of detail. It is the standard we bring
-          to every Palm Beach project. The studio is run by{" "}
+          A look at our residential and commercial interior design work across
+          South Florida: new construction interiors, whole-home renovations,
+          and single rooms finished to the island&apos;s standard. It is the
+          level we bring to every Palm Beach project. The studio is run by{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
             className="group relative hover:text-accent transition-colors duration-300"
@@ -86,8 +86,8 @@ export default function Page() {
         heading={["Designed for how", "Palm Beach lives."]}
         paragraphs={[
           "Palm Beach is an island with a long memory, and its interiors are judged against decades of them. As a full-service luxury interior design firm, we treat that as a discipline rather than a constraint. The architecture already on the lot sets the terms, whether it is Mediterranean revival with plaster, arches, and pecky cypress or a restrained new build facing the ocean, and the residential interior is drawn to belong to the house instead of arriving on top of it.",
-          "Much of the island is lived in seasonally, and that changes how a project is run more than how it looks. Lead times, procurement, and installation are planned against the calendar so a house is complete before anyone arrives, not finished in pieces around them. It also raises the standard on materials: fabrics and finishes have to survive months of strong light and closed-up humidity and still look right the day the family walks back in. Considered layouts, custom built-ins, and easy transitions between rooms are what separate the best interior designers from the rest.",
-          "The same standard carries into commercial work. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it, whether that is one family or a room full of guests. From the earliest concept conversations through final installation, we stay close to our clients so that every decision serves the same vision, and so the studio that starts your project is the one standing in the room when it is finished.",
+          "Much of the island is lived in seasonally, and that changes how a project is run more than how it looks. Lead times, procurement, and installation are planned against the calendar so a house is complete before anyone arrives, not finished in pieces around them. It also raises the standard on materials: fabrics and finishes have to survive months of strong light and closed-up humidity and still look right the day the family walks back in. The best interior designers are separated from the rest by exactly these invisible logistics, and by rooms that flow into one another without a seam.",
+          "Commercial work is held to the island's standard too. Luxury interior design, in our practice, is not a question of ornament; it is the discipline of making a space truthful about the people it serves, whether that is a family of four or a room of two hundred guests. Our clients keep the same team from the opening conversation to the final walkthrough, which is how the vision that won the commission is the one delivered at the end.",
         ]}
       />
       <Why {...WHY} />

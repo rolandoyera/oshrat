@@ -3,7 +3,7 @@ export const WHY = {
   subtitle: "Why Sarvian Design Group",
   title: "Top Interior Designers in Palm Beach, FL",
   description:
-    "Palm Beach has no shortage of decorators. What is harder to find is a firm that will draw the millwork, hold the schedule, and still be standing in the room on installation day. That is the work our studio is built around, across residential and commercial interiors, and it is the reason clients tend to hand us the next project rather than start over with someone new.",
+    "Palm Beach has no shortage of decorators. What is harder to find is a firm that draws its own millwork, keeps its promises about the calendar, and answers for the finished rooms in person. That is the studio we run, across residential and commercial interiors, and it is why a first project on the island tends to become a second.",
   items: [
     {
       title: "Built Around the Season.",
@@ -16,9 +16,9 @@ export const WHY = {
         "The best interior designers here don't carry a signature look from one address to the next. A Mediterranean revival house with plaster walls, arched openings, and pecky cypress ceilings asks for something different than a restrained new residence built around glass and ocean light, and both deserve to be taken on their own terms. We work from the architecture outward, matching proportion, millwork profiles, and material weight to what is already standing, so a finished interior reads as though it were always meant to be there.",
     },
     {
-      title: "One Interior Design Firm.",
+      title: "One Chain of Custody.",
       description:
-        "High-end projects usually come apart in the handoffs between specialists. We keep the entire chain inside one studio: space planning, finish palettes, lighting plans, and 3D renderings, then procurement, custom built-ins, art, styling, and installation, so the living room, primary suite, kitchen, and bath resolve as one residence instead of four disconnected rooms. As your interior design firm in Palm Beach, we coordinate with your architect, contractor, and trades so the design intent survives the job site. One team, one point of accountability, from the first walkthrough to the day the art goes up.",
+        "A high-end interior passes through many specialist hands, and every pass is a chance for the idea to erode. We prevent that by keeping custody of the whole project: the plans, palettes, lighting, and renderings are made by the same people who then buy, build, style, and install, so the finished house holds together as one thought. As your interior design firm in Palm Beach, we manage your architect, contractor, and trades against the design intent, and the team that drew the first sketch is the team standing there when the house is handed back.",
     },
   ],
 };
