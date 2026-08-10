@@ -19,7 +19,7 @@ import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 const PATH = "/locations/interior-designers-boca-raton-fl";
 const TITLE = "Interior Designers in Boca Raton, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Luxury interior designers in Boca Raton, FL. Residential and commercial interiors, full home renovations, and new construction. Request a consultation.";
+  "Luxury interior designers in Boca Raton, FL. Residential and commercial interiors, full home renovations, and new construction. Specializing in tropical modern interiors.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,7 +40,7 @@ export default function Page() {
         }}
         eyebrow="Boca Raton Interior Design Firm"
         heading={["Finished", "not decorated."]}
-        paragraph="The interior designers at Sarvian Design Group take on residential and commercial work across Boca Raton, drawing interiors that suit the coast without leaning on the shorthand everyone else is using for it."
+        paragraph="Luxury interior designers in Boca Raton, FL. Residential and commercial interiors, full home renovations, and new construction. Specializing in tropical modern interiors."
       />
       <LocationTopSection
         eyebrow="Our Approach in Boca Raton"
@@ -61,8 +61,7 @@ export default function Page() {
           "aventura-modern-living-aventura-fl",
           "norwood-residence-oakhurst-new-jersey",
           "miami-river-miami-fl",
-        ]}
-      >
+        ]}>
         <p>
           A selection of our residential and commercial interior design work,
           from ground-up new construction interiors and whole-home renovations
@@ -70,16 +69,14 @@ export default function Page() {
           standard we bring to every Boca Raton project and to our{" "}
           <Link
             href="/locations/interior-designers-palm-beach-fl"
-            className="group relative hover:text-accent transition-colors duration-300"
-          >
+            className="group relative hover:text-accent transition-colors duration-300">
             interior design work in Palm Beach
             <HoverUnderline className="text-accent" />
           </Link>{" "}
           just up the coast. Sarvian Design Group is{" "}
           <Link
             href="/locations/interior-designers-fort-lauderdale-fl"
-            className="group relative hover:text-accent transition-colors duration-300"
-          >
+            className="group relative hover:text-accent transition-colors duration-300">
             a Fort Lauderdale interior design firm
             <HoverUnderline className="text-accent" />
           </Link>{" "}
