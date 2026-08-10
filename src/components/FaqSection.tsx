@@ -25,15 +25,19 @@ export default function FaqSection({
         <ScrollReveal direction="up" delay={300}>
           <div className="mx-auto mt-12 max-w-300 lg:mt-16">
             <hr className="etched-line" />
-            <Accordion type="single" collapsible>
+            <Accordion type="single" collapsible className="[counter-reset:faq]">
               {faqs.map((faq, i) => (
                 <Fragment key={faq.question}>
                   <AccordionItem value={`faq-${i}`} className="border-b-0">
                     <AccordionTrigger className="items-center rounded-none px-3 py-5 hover:no-underline cursor-pointer md:px-4 md:py-7 [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-foreground/60">
                       <span className="grid grid-cols-[2.5rem_1fr] items-center gap-4 md:grid-cols-[3.5rem_1fr] md:gap-8">
-                        <span className="text-xs uppercase tracking-[0.2em] text-accent font-bold">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
+                        {/* CSS-generated so the number stays out of the h3's
+                            text (headings and accessible names read only the
+                            question). */}
+                        <span
+                          aria-hidden="true"
+                          className="text-xs uppercase tracking-[0.2em] text-accent font-bold [counter-increment:faq] before:content-[counter(faq,decimal-leading-zero)]"
+                        />
                         <span className="text-xl font-normal leading-tight tracking-tight text-foreground lg:text-3xl lg:leading-9">
                           {faq.question}
                         </span>
