@@ -48,13 +48,15 @@ export function ProjectCard({
   // morphs into the destination hero, and warm that exact image on hover.
   const heroSource = project.heroImage ?? project.mainImage;
 
+  // The link wraps the text too, so location + title are the crawlable anchor
+  // text for the project page (an image-only anchor leaves that to img alt).
   return (
-    <div className="flex flex-col">
-      <TransitionLink
-        href={`/projects/${project.slug}`}
-        preloadSrcSet={heroPreloadSrcSet(heroSource)}
-        aria-label={`${project.title}${project.location ? ` — ${project.location}` : ""}`}
-        className={`group relative block overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}>
+    <TransitionLink
+      href={`/projects/${project.slug}`}
+      preloadSrcSet={heroPreloadSrcSet(heroSource)}
+      className="group flex flex-col">
+      <div
+        className={`relative overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}>
         <Image
           src={heroImageUrl(heroSource)}
           alt={project.imageAlt || project.title}
@@ -68,7 +70,7 @@ export function ProjectCard({
             } as React.CSSProperties
           }
         />
-      </TransitionLink>
+      </div>
 
       <div className="py-4">
         {project.location && (
@@ -76,7 +78,7 @@ export function ProjectCard({
         )}
         <h3 className="mb-0 h4">{project.title}</h3>
       </div>
-    </div>
+    </TransitionLink>
   );
 }
 
