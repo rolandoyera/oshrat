@@ -131,7 +131,12 @@ Every location page's projects blurb carries two links, and **the anchor text is
   `_API_VERSION`.
 - **Testimonials and Cta headings are sitewide.** "The work speaks. So do the clients." and "Let's
   design something beautiful." come from shared components — changing them rewrites every page.
-  They'd need an optional heading prop to go city-specific.
+  They'd need an optional heading prop to go city-specific. Both sections carry `data-dup-ignore`,
+  which the CRM's Keyword Analyzer site crawl reads to keep them out of its duplicate-content
+  comparison. Put it on any other block that is deliberately identical sitewide, so the report keeps
+  showing only the cloned *city copy* we actually care about. It does not affect keyword density
+  (Google indexes this text, so the density tables must keep counting it) and it is not a signal to
+  search engines — it means nothing outside our own tooling.
 - **The services `<h2>` is `sr-only` on purpose, not by oversight.** The converge animation flies
   cards in from the screen edges toward the centre, so nothing can be drawn in that space until the
   first slide settles. It is still a real `<h2>` in the DOM and Google reads it normally, which

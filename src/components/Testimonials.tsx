@@ -50,7 +50,10 @@ export default function Testimonials() {
   const count = TESTIMONIALS.length;
 
   return (
-    <section className="bg-radial from-taupe-800 to-taupe-900 py-24 lg:py-32">
+    <section
+      data-dup-ignore
+      className="bg-radial from-taupe-800 to-taupe-900 py-24 lg:py-32"
+    >
       <Container className="flex flex-col gap-4 lg:gap-16">
         <ScrollReveal className="flex flex-col items-center">
           <p className="eyebrow text-center">In their words</p>

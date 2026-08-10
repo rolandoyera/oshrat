@@ -10,7 +10,9 @@ import ScrollReveal from "./ui/ScrollReveal";
 
 export default function Cta() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-50">
+    <section
+      data-dup-ignore
+      className="relative overflow-hidden py-20 lg:py-50">
       <Image
         src="/projects/sdg-bedroom-remodel-armoire-7.jpg"
         alt="Interior design background image"
