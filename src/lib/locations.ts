@@ -57,6 +57,8 @@ export const COUNTIES: CountyGroup[] = [
       },
       {
         name: "Miami Beach",
+        blurb: "Deco and MiMo bones, reworked for now.",
+        href: "/locations/interior-designers-miami-beach-fl",
       },
       {
         name: "Coral Gables",

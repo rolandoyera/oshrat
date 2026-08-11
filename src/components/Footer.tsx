@@ -68,6 +68,7 @@ const PLACE_LINKS: Record<string, string> = {
   "Boca Raton": "/locations/interior-designers-boca-raton-fl",
   "Delray Beach": "/locations/interior-designers-delray-beach-fl",
   Miami: "/locations/interior-designers-miami-fl",
+  "Miami Beach": "/locations/interior-designers-miami-beach-fl",
   Aventura: "/locations/interior-designers-aventura-fl",
 };
 
