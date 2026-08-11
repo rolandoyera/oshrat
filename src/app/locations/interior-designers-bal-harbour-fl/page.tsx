@@ -39,7 +39,7 @@ export default function Page() {
           blurKey: "/assets/aventura-interior-design-5.jpg",
         }}
         eyebrow="Interior Designers in Bal Harbour, FL"
-        heading={["Composed at", "every height."]}
+        heading={["A home equal", "to its address."]}
         paragraph="We're interior designers in Bal Harbour, FL. From private residences to commercial and community spaces, we carry a project from space planning through custom millwork, materials, and final installation."
       />
       <LocationTopSection
