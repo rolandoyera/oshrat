@@ -19,7 +19,7 @@ import HoverUnderline from "@/components/ui/HoverUnderline";
 const PATH = "/locations/interior-designers-bal-harbour-fl";
 const TITLE = "Interior Designers in Bal Harbour, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Full-service luxury interior design firm in Bal Harbour, FL. Residential and commercial interiors, renovations & new construction. Request a consultation.";
+  "We're interior designers in Bal Harbour, FL. From private residences to commercial and community spaces, we carry a project from space planning through custom millwork, materials, and final installation.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -35,12 +35,12 @@ export default function Page() {
       <LocationHero
         image={{
           src: "/assets/aventura-interior-design-5.webp",
-          alt: "Sarvian Design Group Bal Harbour and Surfside showcase",
+          alt: "Sarvian Design Group Bal Harbour showcase",
           blurKey: "/assets/aventura-interior-design-5.jpg",
         }}
-        eyebrow="Bal Harbour Interior Design Firm"
+        eyebrow="Interior Designers in Bal Harbour, FL"
         heading={["Composed at", "every height."]}
-        paragraph="From private residences to commercial and community spaces in Bal Harbour and across South Florida, Sarvian Design Group carries a project from space planning through custom millwork, materials, and final installation."
+        paragraph="We're interior designers in Bal Harbour, FL. From private residences to commercial and community spaces, we carry a project from space planning through custom millwork, materials, and final installation."
       />
       <LocationTopSection
         eyebrow="Featured Project"
@@ -56,14 +56,12 @@ export default function Page() {
           "aventura-modern-living-aventura-fl",
           "the-shul-bal-harbour-surfside-fl",
           "miami-river-miami-fl",
-        ]}
-      >
+        ]}>
         <p>
           A look at our most recent work from{" "}
           <Link
             href="/locations/interior-designers-miami-fl"
-            className="group relative hover:text-accent transition-colors duration-300"
-          >
+            className="group relative hover:text-accent transition-colors duration-300">
             our interior designers in Miami
             <HoverUnderline className="text-accent" />
           </Link>
