@@ -30,7 +30,12 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/south-beach",
-        destination: "/projects/south-beach",
+        destination: "/projects/south-beach-tropical-modern-miami-beach-fl",
+        permanent: true,
+      },
+      {
+        source: "/projects/south-beach",
+        destination: "/projects/south-beach-tropical-modern-miami-beach-fl",
         permanent: true,
       },
       {

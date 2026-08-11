@@ -57,7 +57,7 @@ export default function Page() {
         eyebrow="Selected work"
         heading="Latest Projects"
         slugs={[
-          "south-beach",
+          "south-beach-tropical-modern-miami-beach-fl",
           "aventura-modern-living-aventura-fl",
           "miami-river-miami-fl",
           "the-shul-bal-harbour-surfside-fl",
