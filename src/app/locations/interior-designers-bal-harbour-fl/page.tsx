@@ -10,7 +10,8 @@ import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
-import WhyBalHarbour from "../_components/seo/WhyBalHarbour";
+import Why from "@/components/Why";
+import { WHY } from "./_components/WhyItems";
 import LocationProjects from "../_components/LocationProjects";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
@@ -38,13 +39,13 @@ export default function Page() {
           blurKey: "/assets/aventura-interior-design-5.jpg",
         }}
         eyebrow="Bal Harbour Interior Design Firm"
-        heading={["Finished", "not decorated."]}
+        heading={["Composed at", "every height."]}
         paragraph="From private residences to commercial and community spaces in Bal Harbour and across South Florida, Sarvian Design Group carries a project from space planning through custom millwork, materials, and final installation."
       />
       <LocationTopSection
         eyebrow="Featured Project"
         heading="Interior Design in Bal Harbour, FL"
-        paragraph="In Bal Harbour, Sarvian Design Group is leading the renovation of The Shul, reimagining a space of daily gathering and reflection with a calmer design language. Curved walls in a textured, Jerusalem-stone-inspired finish wrap the main hall, framed by oak millwork and bronze that carries through every custom element — sculptural glass fixtures overhead, engraved bronze doors set in a bookmatched marble surround, and stained glass made for the room. Renovating a space already woven into a community's life asks for restraint. The result is reverent and genuinely new."
+        paragraph="The Shul of Bal Harbour is the studio's most public work: the renovation of a sanctuary its community uses every single day. The design quiets the room rather than decorating it. Warm oak, a stone-textured curve of wall, and bronze detailed down to the engraving give the hall its calm, stained glass carries the color, and a curved library holds the community's books. Renovating a building this woven into daily life demands restraint, and the finished room earns its stillness."
         projectSlug="the-shul-bal-harbour-surfside-fl"
       />
       <LocationProjects
@@ -79,12 +80,12 @@ export default function Page() {
       <LocationEditorial
         heading={["Designed for how", "Bal Harbour lives."]}
         paragraphs={[
-          "As a full-service luxury interior design firm, Sarvian Design Group has had the honor of creating spaces that balance the intimate scale of home with the dramatic scope of coastal living. Much of Bal Harbour lives vertically, in residences where a wall of glass and the Atlantic beyond it are the first materials in the room. We design with that light rather than against it, using natural stone, warm neutrals, and furnishings selected piece by piece so an interior holds its composure from morning through late afternoon.",
-          "Behind the towers, the bay side of Bal Harbour Village offers a quieter kind of privacy and a more direct relationship between indoor and outdoor living. We approach each residence with an understanding of its orientation to the water and the sun, balancing the clean, modern forms that suit a coastal environment with a material palette that adds warmth and depth. Through considered layouts, custom built-ins, and a seamless connection between spaces, we create homes that feel both curated and deeply connected to their surroundings.",
-          "For us, luxury interior design is not about ornamentation—it’s about creating an environment that feels intentional and true to the people who use it. That standard holds whether the project is a private residence or the sanctuary we designed for The Shul of Bal Harbour, where custom bronze, stone, and millwork were drawn and specified down to the detail. As a full-service interior design firm, we work closely with our clients from the earliest concept stages through final installation, ensuring that every detail supports the overall vision.",
+          "As a full-service luxury interior design firm, we have spent years designing for the particular way Bal Harbour lives. Much of the village is vertical, and in a tower residence the Atlantic is present in every room; the interior's first job is to hold its own beside that view. We choose natural stone and warm neutral tones that read true in hard coastal light, and we furnish slowly, piece by piece, so the rooms keep their poise from breakfast to dusk.",
+          "On the bay side of the village the scale changes, and single-family houses trade the panorama for gardens, docks, and a closer line between indoors and out. There we work from the orientation of the lot, letting the sun and the water decide where the living happens, and we warm the clean forms coastal architecture wants with a deeper material palette. The result is a residential interior that feels curated without being staged, and connected to its place without leaning on coastal cliché.",
+          "Luxury interior design, in this studio's practice, is judged by whether a space is honest about the people who use it. The standard is the same for a private residence and for the sanctuary we drew for The Shul of Bal Harbour, where bronze, stone, and millwork were specified in-house down to the engraving. We stay beside our clients from the first concept meeting to the final installation, and the vision that opens the project is the one you walk into at the end.",
         ]}
       />
-      <WhyBalHarbour />
+      <Why {...WHY} />
     </main>
   );
 }

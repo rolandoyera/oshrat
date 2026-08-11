@@ -5,14 +5,14 @@
 export const FAQS: { question: string; answer: string }[] = [
   {
     question:
-      "Your studio is in Fort Lauderdale — do you take on projects in Bal Harbour?",
+      "Your studio is in Fort Lauderdale. Do you really cover Bal Harbour?",
     answer:
-      "Yes, and often. Bal Harbour is a short drive south of our Fort Lauderdale studio, close enough that we're on site through design, construction, and installation rather than managing a project from a distance. A significant share of our work sits along this stretch of coast, from Bal Harbour and Surfside to Bay Harbor Islands, Sunny Isles, and Golden Beach.",
+      "Yes, constantly. Bal Harbour sits a short drive south of our Fort Lauderdale studio, and this stretch of coast, from the village and Surfside to Bay Harbor Islands, Sunny Isles, and Golden Beach, holds a meaningful share of our built work. We attend the site ourselves through design, construction, and installation instead of running the job from a desk.",
   },
   {
     question: "Which parts of Bal Harbour do you work in?",
     answer:
-      "Throughout the village — the oceanfront residences in the towers along Collins Avenue, the single-family homes on the bay side of Bal Harbour Village, and the surrounding neighborhoods in Surfside and Bay Harbor Islands. A high-floor residence and a waterfront house ask for very different things from an interior, so we plan around the specific home rather than applying one coastal formula.",
+      "Throughout the village: the oceanfront residences in the towers along Collins Avenue, the single-family homes on the bay side of Bal Harbour Village, and the surrounding neighborhoods in Surfside and Bay Harbor Islands. A high-floor residence and a waterfront house ask for very different things from an interior, so the plan is built for the specific home instead of a formula rolled down the coast.",
   },
   {
     question:
@@ -31,33 +31,33 @@ export const FAQS: { question: string; answer: string }[] = [
       "Yes. Alongside residential work, our studio designed the sanctuary and interiors for The Shul of Bal Harbour, a project built around custom bronze, stone, and millwork detailing. We take on select commercial, hospitality, and community projects where the scope suits a full-service interior design approach.",
   },
   {
-    question: "What types of projects do you take on?",
+    question: "What is the range of projects you accept in Bal Harbour?",
     answer:
-      "Sarvian Design Group works on a range of interior design projects, from ground-up new construction and full-home renovations to single-room transformations, custom furnishings, built-ins, lighting, material selections, procurement, and styling, depending on project scope.",
+      "New construction from the drawings up, full renovations, single rooms, custom furnishings and built-ins, lighting, material selection, procurement, and final styling, with the engagement sized honestly to the project in front of us.",
   },
   {
     question: "What does it cost to hire an interior designer in Bal Harbour?",
     answer:
-      "It depends on scope, and we believe in being direct about it. A single-space project like a kitchen or primary suite is a different investment than a full residence renovation or a new construction interior, so every engagement is quoted per project after an initial consultation. We provide a detailed fee proposal before any work begins, so there are no surprises at install.",
+      "Scope decides it, and we are direct about the numbers. A kitchen or a primary suite is one kind of investment, a full residence or a new construction interior another, and condominium logistics can affect the total as well. Every engagement is priced after an initial consultation, with a written fee proposal in hand before any design work begins.",
   },
   {
     question: "How long does a Bal Harbour project take?",
     answer:
-      "A furnishings-focused project typically runs four to eight months from concept to install. Full renovations and new builds run with the construction schedule, usually twelve to twenty-four months, and condominium work can add time for association review. Lead times on custom pieces are the honest constraint, so we sequence orders early and the home installs as one coherent reveal rather than in pieces.",
+      "Four to eight months covers most furnishings-led projects, concept through install. Renovations and new builds move with the construction schedule, typically twelve to twenty-four months, plus whatever the association review adds. Custom pieces set the critical path, so we order them early and stage the installation as one reveal instead of a trickle.",
   },
   {
-    question: "How do I start a project?",
+    question: "How do I begin a project in Bal Harbour?",
     answer:
-      "Start by submitting the contact form with basic project details. The team will review your inquiry and follow up to discuss scope, timing, and next steps.",
+      "Through the contact form: a few lines about the residence, the scope, and your timing are plenty. We read each inquiry and come back to you to discuss the project and set up a consultation.",
   },
   {
-    question: "Do you offer consultations?",
+    question: "Do you offer design consultations?",
     answer:
-      "Yes. We offer consultations for most projects, though availability can vary by scope, location, and schedule. Reach out through the contact form and we'll let you know what's possible.",
+      "Yes, for most projects. Availability moves with scope, location, and the calendar, so send a note through the contact form and we will tell you what is workable.",
   },
   {
-    question: "Can you help with custom furniture or built-ins?",
+    question: "Do you handle custom furniture and millwork for Bal Harbour homes?",
     answer:
-      "Yes. Sarvian Design Group can assist with custom design elements such as built-ins, lighting, furniture pieces, and other details that may require drawings, specifications, or coordination with fabricators. Design and engineering are done in-house, while fabrication is handled by trusted partners in South Florida.",
+      "Yes. Built-ins, furniture, lighting, and other one-off pieces are designed and engineered inside the studio, complete with the drawings and specifications a fabricator needs, then made by South Florida workshops we have long trusted. In a tower residence, casework built to the room is often what makes the plan work.",
   },
 ];
