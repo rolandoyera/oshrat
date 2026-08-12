@@ -4,20 +4,10 @@
  */
 export const FAQS: { question: string; answer: string }[] = [
   {
-    question: "Your studio is in Fort Lauderdale. Do you work in Miami Beach?",
-    answer:
-      "Constantly. Our Fort Lauderdale studio sits close enough to the island that visiting a job site is routine rather than an event, so whoever drew your project is also the person standing in it through demolition, through construction, and on installation day. Interiors supervised from a distance drift. Being near enough to catch what a drawing failed to anticipate is most of the reason ours do not.",
-  },
-  {
-    question: "Which neighborhoods in Miami Beach do you design in?",
-    answer:
-      "Everywhere on the island. South Beach and the Art Deco district, Mid-Beach along Collins, North Beach with its MiMo blocks, and the single-family islands out past the causeways: the Venetian Islands, Sunset Islands, La Gorce, and the Star, Palm, and Hibiscus group. A high-floor apartment above Ocean Drive and a waterfront house on a Venetian lot have almost nothing in common as design problems, which is why we begin with the building in front of us and let the answer come out of it.",
-  },
-  {
     question:
-      "Can you design inside an Art Deco or MiMo building in Miami Beach?",
+      "Your studio is in Fort Lauderdale. Do you do interior design in Miami Beach?",
     answer:
-      "Yes, and it is some of the most satisfying work available here. These buildings arrive with their proportions already settled: window openings that will not move, ceilings lower than a new tower's, terrazzo underfoot, curved plaster worth considerably more than whatever would replace it. We treat that as the opening brief. Plan, lighting, and joinery get drawn to flatter what the architecture already does well instead of papering over it. Where the work reaches an exterior or a designated feature, city preservation review governs it, and that timeline goes into the schedule alongside your architect's.",
+      "Yes, we do. South Beach and the Art Deco district, Mid-Beach along Collins, North Beach and its MiMo blocks, and the single-family islands out past the causeways: the Venetian and Sunset Islands, La Gorce, and the Star, Palm, and Hibiscus group. Fort Lauderdale sits close enough that we walk each site ourselves through demolition, construction, and installation, rather than managing any of it from a desk.",
   },
   {
     question:
