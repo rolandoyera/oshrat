@@ -32,14 +32,9 @@ export const FAQS: { question: string; answer: string }[] = [
       "That is a common arrangement here, and the process is built for it. Selections are presented in consolidated rounds so decisions are not scattered across months of email, and site progress is documented as it happens. Custom pieces are ordered early against the construction calendar so nothing waits on a lead time we could have anticipated. Most clients return to a residence that is installed and styled rather than to a punch list.",
   },
   {
-    question: "Do you take on commercial projects in Miami Beach?",
+    question: "Do you take on commercial interior design in Miami Beach?",
     answer:
       "We take on a limited number of commercial, hospitality, and community commissions, specifically the ones where a full-service process is worth what it costs. The clearest illustration sits a short way up the coast. This studio designed the sanctuary and interiors at The Shul on Collins Avenue in Surfside, in bronze, stone, and joinery drawn here before any of it was built. A retail space, a restaurant, or a room built for a community receives the same treatment, at the same depth of drawing, as a private residence.",
-  },
-  {
-    question: "What types of projects do you take on?",
-    answer:
-      "Everything from new construction interiors and gut renovations down to a single room done properly. Alongside those: pieces made to order, joinery, lighting schemes, the sourcing of stone and textiles, purchasing, and a final styling pass once the rooms are standing. Scope follows what the property genuinely needs, so a primary suite stays a primary suite instead of quietly growing into a whole-residence engagement.",
   },
   {
     question: "What does it cost to hire an interior designer in Miami Beach?",
