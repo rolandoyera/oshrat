@@ -41,4 +41,10 @@ export const FAQS: { question: string; answer: string }[] = [
     answer:
       "Yes. Anything made to order, whether that is cabinetry, a freestanding piece, or a light fitting, is drawn and engineered inside this studio, then handed to fabrication shops around South Florida that we have worked alongside for a very long time. Miami Beach adds one practical constraint worth designing around from the start: whatever we make has to physically reach the residence, through a service elevator, up a stair turn, or down a narrow street off the causeway. Access gets solved while the piece is still on paper, so it is built in sections where it has to be and still reads as a single object once it is standing in the room.",
   },
+  {
+    question:
+      "Why do you say you're amongst the best interior designers in Miami Beach, FL?",
+    answer:
+      "Because on this island the building decides first. We read the envelope, the ocean and bay exposures, and what the association permits before any palette exists. Every piece of joinery is drawn in this studio, and the team that starts your Miami Beach project is the team that installs it.",
+  },
 ];
