@@ -44,7 +44,7 @@ export default function Page() {
       />
       <LocationTopSection
         eyebrow="Featured Project"
-        heading="Interior Designers in Miami Beach, FL"
+        heading="Interior Design in Miami Beach"
         paragraph="Our South Beach residence is 3,400 square feet of Tropical Modern living, and it is the clearest statement of how we design on this island. Bespoke contemporary pieces in muted neutrals carry the rooms, oceanic blues and textured linen give them depth, and sculptural lighting settles over the places people actually gather."
         projectSlug="south-beach-tropical-modern-miami-beach-fl"
       />
