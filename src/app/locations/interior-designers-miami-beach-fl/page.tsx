@@ -19,7 +19,7 @@ import { WHY } from "./_components/WhyItems";
 const PATH = "/locations/interior-designers-miami-beach-fl";
 const TITLE = "Interior Designers in Miami Beach, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Luxury interior designers in Miami Beach, FL. From oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, custom joinery, materials, procurement, and installation all sit with one team at Sarvian Design Group.";
+  "Luxury interior designers in Miami Beach, FL. From oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, procurement, and installation all sit with one team at Sarvian Design Group.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -40,7 +40,7 @@ export default function Page() {
         }}
         eyebrow="Interior Designers in Miami Beach, FL"
         heading={["Every detail", "on purpose."]}
-        paragraph="Luxury interior designers in Miami Beach, FL. From oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, custom joinery, materials, procurement, and installation all sit with one team at Sarvian Design Group."
+        paragraph="Luxury interior designers in Miami Beach, FL. From oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, procurement, and installation all sit with one team at Sarvian Design Group."
       />
       <LocationTopSection
         eyebrow="Featured Project"
