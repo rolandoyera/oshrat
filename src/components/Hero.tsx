@@ -52,7 +52,7 @@ const Hero: React.FC<HeroProps> = ({
             alt={title || "Interior Design Hero"}
             fill
             priority
-            quality={90}
+            quality={50}
             sizes="100vw"
             className="object-cover"
             style={
