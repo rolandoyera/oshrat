@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main>
       <JsonLd data={faqPageGraph("/", FAQS)} />
       <Hero
         image="/slider/golden-beach-architecture-proposal-front-view.jpg"
@@ -52,6 +52,6 @@ export default function Home() {
       <Cta />
       <FaqSection faqs={FAQS} />
       <Why {...WHY} />
-    </>
+    </main>
   );
 }
