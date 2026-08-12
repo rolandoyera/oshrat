@@ -34,11 +34,7 @@ export default function TopSection() {
             </ArrowButton>
           </div>
         </ScrollReveal>
-        <ScrollReveal
-          direction="right"
-          threshold={0.3}
-          delay={300}
-          className="relative lg:col-span-3">
+        <ScrollReveal direction="right" className="relative lg:col-span-3">
           <Image
             src="/assets/about-us-top.jpg"
             alt="Home image"
