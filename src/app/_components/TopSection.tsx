@@ -7,7 +7,7 @@ export default function TopSection() {
   return (
     <Container className="flex items-center justify-center overflow-hidden">
       <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
-        <ScrollReveal direction="left" delay={300} className="lg:col-span-2">
+        <ScrollReveal direction="left" className="lg:col-span-2">
           <h1>Interior Designers in Fort Lauderdale</h1>
           <p>
             Based in Fort Lauderdale, Florida, Sarvian Design Group is a premier
