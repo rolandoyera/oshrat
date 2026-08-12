@@ -50,7 +50,7 @@ export default function Page() {
       />
       <LocationProjects
         eyebrow="Selected work"
-        heading="Latest Miami Beach Projects"
+        heading="Our Latest Miami Projects"
         slugs={[
           "south-beach-tropical-modern-miami-beach-fl",
           "miami-river-miami-fl",
