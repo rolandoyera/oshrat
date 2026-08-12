@@ -19,7 +19,7 @@ import { WHY } from "./_components/WhyItems";
 const PATH = "/locations/interior-designers-miami-beach-fl";
 const TITLE = "Interior Designers in Miami Beach, FL | Sarvian Design Group";
 const DESCRIPTION =
-  "Luxury interior designers in Miami Beach, FL. Oceanfront condominiums, island residences, Deco and MiMo renovations, new construction, and select commercial interiors.";
+  "Luxury interior designers in Miami Beach, FL. From oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, custom joinery, materials, procurement, and installation all sit with one team at Sarvian Design Group.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -39,8 +39,8 @@ export default function Page() {
           blurKey: "/assets/aventura-interior-design-5.jpg",
         }}
         eyebrow="Interior Designers in Miami Beach, FL"
-        heading={["Deco bones", "modern rooms."]}
-        paragraph="Luxury interior design the length of Miami Beach, from oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, custom joinery, materials, procurement, and installation all sit with one team at Sarvian Design Group, which is why the residence you walk into at the end is the one that was drawn at the start."
+        heading={["Every detail", "on purpose."]}
+        paragraph="Luxury interior designers in Miami Beach, FL. From oceanfront condominiums on Collins to the single-family islands out past the causeways. Space planning, custom joinery, materials, procurement, and installation all sit with one team at Sarvian Design Group."
       />
       <LocationTopSection
         eyebrow="Featured Project"
