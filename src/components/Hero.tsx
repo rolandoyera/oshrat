@@ -52,6 +52,9 @@ const Hero: React.FC<HeroProps> = ({
             alt={title || "Interior Design Hero"}
             fill
             priority
+            // priority alone preloads at Chrome's default (Low) image
+            // priority; this schedules the LCP hero ahead of CSS/fonts.
+            fetchPriority="high"
             quality={50}
             sizes="100vw"
             className="object-cover"
@@ -67,7 +70,9 @@ const Hero: React.FC<HeroProps> = ({
         </div>
 
         {(title || description) && (
-          <ScrollReveal className="absolute inset-0 flex items-center justify-center bg-black/30 p-6 w-full">
+          <ScrollReveal
+            topReveal
+            className="absolute inset-0 flex items-center justify-center bg-black/30 p-6 w-full">
             {/* Floating parallax text element */}
             <div
               className="text-center w-full"
