@@ -18,8 +18,6 @@ const ANALYTICS_DISABLED = true;
 export function Analytics() {
   const pathname = usePathname();
 
-  if (ANALYTICS_DISABLED) return null;
-
   const isExcluded = EXCLUDED_PATHS.some(
     (path) => pathname === path || pathname.startsWith(`${path}/`),
   );
@@ -34,7 +32,7 @@ export function Analytics() {
     }
   }, [isExcluded]);
 
-  if (isExcluded) return null;
+  if (ANALYTICS_DISABLED || isExcluded) return null;
 
   return (
     <>
