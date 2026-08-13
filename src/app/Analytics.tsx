@@ -9,12 +9,6 @@ const GA_ID = "G-K0ZYTV5JSM";
 const ADS_ID = "AW-18311450958";
 const DISABLE_KEYS = [`ga-disable-${GA_ID}`, `ga-disable-${ADS_ID}`];
 
-// TEMP: gtag disabled for Lighthouse A/B runs (measuring TBT with and
-// without analytics). Delete the next line to re-enable — nothing else
-// changed. While this is live, GA4 pageviews and Ads conversions DO NOT
-// record.
-const ANALYTICS_DISABLED = true;
-
 export function Analytics() {
   const pathname = usePathname();
 
@@ -32,7 +26,7 @@ export function Analytics() {
     }
   }, [isExcluded]);
 
-  if (ANALYTICS_DISABLED || isExcluded) return null;
+  if (isExcluded) return null;
 
   return (
     <>
