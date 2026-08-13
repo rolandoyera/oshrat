@@ -53,9 +53,10 @@ export default function LocationHero({
         src={image.src}
         alt={image.alt}
         fill
+        fetchPriority="high"
         priority
         sizes="100vw"
-        quality={90}
+        quality={60}
         placeholder={blur ? "blur" : "empty"}
         blurDataURL={blur}
         style={{
@@ -76,7 +77,7 @@ export default function LocationHero({
             aria-hidden
             className="absolute inset-0 backdrop-blur-xs animate-in fade-in fill-mode-both duration-1000 [animation-delay:400ms]"
           />
-          <ScrollReveal>
+          <ScrollReveal topReveal>
             <div className="space-y-6 p-4">
               <h1 className="eyebrow text-cream-200 text-center">{eyebrow}</h1>
 
