@@ -10,8 +10,6 @@ import Container from "@/components/ui/Container";
 import TransitionLink from "@/components/ui/TransitionLink";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import { cn } from "@/lib/utils";
-import Link from "next/link";
-import HoverUnderline from "@/components/ui/HoverUnderline";
 import ArrowButton from "@/components/ui/ArrowButton";
 
 export interface Project {
@@ -84,8 +82,10 @@ export function ProjectCard({
 
 export default async function ProjectsSectionHome({
   className,
+  children,
 }: {
   className?: string;
+  children?: React.ReactNode;
 }) {
   const projects = await client.fetch<Project[]>(LATEST_PROJECTS);
 
@@ -101,25 +101,7 @@ export default async function ProjectsSectionHome({
           <h2 className="h1">Latest Projects</h2>
           <div className="max-w-3xl">
             {/* This line is only for SEO */}
-            <p>
-              While our studio calls Fort Lauderdale home, our work extends
-              across South Florida's most sought-after communities —{" "}
-              <Link
-                href="/locations/interior-designers-las-olas-fl"
-                className="group relative hover:text-accent transition-colors duration-300">
-                Las Olas
-                <HoverUnderline className="text-accent" />
-              </Link>
-              , Rio Vista, and Coral Ridge locally, with projects reaching Boca
-              Raton, Palm Beach,{" "}
-              <Link
-                href="/locations/interior-designers-golden-beach-fl"
-                className="group relative hover:text-accent transition-colors duration-300">
-                Golden Beach
-                <HoverUnderline className="text-accent" />
-              </Link>
-              , Miami and beyond.
-            </p>
+            {children}
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 mt-10 lg:mt-20">

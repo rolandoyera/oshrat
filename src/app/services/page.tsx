@@ -3,10 +3,10 @@ import { JsonLd, servicesPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 import ServicesHero from "./_components/ServicesHero";
 import ServicesSection, { SERVICES } from "./_components/ServicesSection";
-import ProjectsSection from "@/components/ProjectsSection";
 import Cta from "@/components/Cta";
 import Why from "@/components/Why";
 import Testimonials from "@/components/Testimonials";
+import ProjectsSectionHome from "../_components/ProjectsSectionHome";
 
 const TITLE = "Full-Service Interior Design Fort Lauderdale";
 const DESCRIPTION =
@@ -50,7 +50,7 @@ export default function Services() {
       />
       <ServicesHero />
       <ServicesSection />
-      <ProjectsSection className="pt-0" />
+      <ProjectsSectionHome />
       <Cta />
       <Testimonials />
       <Why

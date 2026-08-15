@@ -12,6 +12,8 @@ import { FAQS } from "./_components/Faqs";
 import Why from "@/components/Why";
 import { WHY } from "./_components/WhyItems";
 import ProjectsSectionHome from "./_components/ProjectsSectionHome";
+import Link from "next/link";
+import HoverUnderline from "@/components/ui/HoverUnderline";
 
 const TITLE = "Interior Designers in Fort Lauderdale | Sarvian Design Group";
 const DESCRIPTION =
@@ -40,7 +42,27 @@ export default function Home() {
         <TopSection />
       </section>
       <section>
-        <ProjectsSectionHome />
+        <ProjectsSectionHome>
+          <p className="mt-4">
+            While our studio calls Fort Lauderdale home, our work extends across
+            South Florida's most sought-after communities —{" "}
+            <Link
+              href="/locations/interior-designers-las-olas-fl"
+              className="group relative hover:text-accent transition-colors duration-300">
+              Las Olas
+              <HoverUnderline className="text-accent" />
+            </Link>
+            , Rio Vista, and Coral Ridge locally, with projects reaching Boca
+            Raton, Palm Beach,{" "}
+            <Link
+              href="/locations/interior-designers-golden-beach-fl"
+              className="group relative hover:text-accent transition-colors duration-300">
+              Golden Beach
+              <HoverUnderline className="text-accent" />
+            </Link>
+            , Miami and beyond.
+          </p>
+        </ProjectsSectionHome>
       </section>
       <section className="bg-cream-200 py-20 lg:py-48">
         <OurApproachSection />

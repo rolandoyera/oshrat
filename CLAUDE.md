@@ -70,7 +70,7 @@ Anatomy:
 |---|---|
 | `LocationHero` | eyebrow (the H1), 2-line heading, blurb |
 | `LocationTopSection` | a **real, specific** local project with its own copy. No local project yet? Change the eyebrow to "Our Approach in {City}" and point links at `/projects`. |
-| `LocationProjects` | hand-picked `slugs` + a children blurb. **This is the current component** — `@/components/ProjectsSection` is legacy and only `/services` still uses it. |
+| `LocationProjects` | hand-picked `slugs` + a children blurb. **This is the current component** for location pages; the homepage and `/services` use `ProjectsSectionHome`. |
 | `_components/ServicesSequence.ts` | max **7** entries (the converge animation defines 7 flight paths) |
 | `_components/Faqs.ts` | per-city Q&A. Put the city in **every question** — they render as `<h3>` *and* land in the JSON-LD, so each one counts twice. |
 | `LocationEditorial` | three long keyword-bearing paragraphs |
