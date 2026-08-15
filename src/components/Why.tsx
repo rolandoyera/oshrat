@@ -1,22 +1,18 @@
 import Container from "@/components/ui/Container";
 import ScrollReveal from "./ui/ScrollReveal";
 
-export interface WhyItem {
-  title: string;
-  description: string;
-}
-
 export default function Why({
   subtitle,
   title,
   description,
-  items,
+  children,
 }: {
   subtitle: string;
   title: string;
   /** Optional intro paragraph under the heading. */
   description?: string;
-  items: WhyItem[];
+  /** Grid cells — use <WhyCard> (3 per page; the grid is md:grid-cols-3). */
+  children: React.ReactNode;
 }) {
   return (
     <section className="bg-cream-200 py-24 lg:py-32">
@@ -35,15 +31,7 @@ export default function Why({
               the paragraphs still line up when one title wraps and another
               doesn't. Row gap lives on the parent for the same reason. */}
           <div className="grid gap-10 mt-20 lg:mt-40 md:grid-cols-3 md:grid-rows-[auto_1fr] md:gap-y-4">
-            {items.map((item) => (
-              <div
-                key={item.title}
-                className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid"
-              >
-                <h2 className="font-semibold h3">{item.title}</h2>
-                <p>{item.description}</p>
-              </div>
-            ))}
+            {children}
           </div>
         </ScrollReveal>
       </Container>

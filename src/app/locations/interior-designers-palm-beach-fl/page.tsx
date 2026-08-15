@@ -9,7 +9,6 @@ import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
 import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
@@ -90,7 +89,54 @@ export default function Page() {
           "Commercial work is held to the island's standard too. Luxury interior design, in our practice, is not a question of ornament; it is the discipline of making a space truthful about the people it serves, whether that is a family of four or a room of two hundred guests. Our clients keep the same team from the opening conversation to the final walkthrough, which is how the vision that won the commission is the one delivered at the end.",
         ]}
       />
-      <Why {...WHY} />
+      <Why
+        subtitle="Why Sarvian Design Group"
+        title="Top Interior Designers in Palm Beach, FL"
+        description="Palm Beach has no shortage of decorators. What is harder to find is a firm that draws its own millwork, keeps its promises about the calendar, and answers for the finished rooms in person. That is the studio we run, across residential and commercial interiors, and it is why a first project on the island tends to become a second.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Built Around the Season.</h2>
+          <p>
+            On an island where many houses are occupied part of the year, the
+            calendar is a design constraint rather than an afterthought. Custom
+            pieces carry the longest lead times, so orders are placed early and
+            sequenced against the season instead of the other way around. The
+            goal is a single finished reveal: you arrive to a completed home,
+            not to a punch list, a delivery schedule, and three rooms still
+            under wraps. Getting that right takes the same attention as the
+            design itself.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">The House Sets the Terms.</h2>
+          <p>
+            The best interior designers here don’t carry a signature look from
+            one address to the next. A Mediterranean revival house with plaster
+            walls, arched openings, and pecky cypress ceilings asks for
+            something different than a restrained new residence built around
+            glass and ocean light, and both deserve to be taken on their own
+            terms. We work from the architecture outward, matching proportion,
+            millwork profiles, and material weight to what is already standing,
+            so a finished interior reads as though it were always meant to be
+            there.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">One Chain of Custody.</h2>
+          <p>
+            A high-end interior passes through many specialist hands, and every
+            pass is a chance for the idea to erode. We prevent that by keeping
+            custody of the whole project: the plans, palettes, lighting, and
+            renderings are made by the same people who then buy, build, style,
+            and install, so the finished house holds together as one thought.
+            As your interior design firm in Palm Beach, we manage your
+            architect, contractor, and trades against the design intent, and
+            the team that drew the first sketch is the team standing there when
+            the house is handed back.
+          </p>
+        </div>
+      </Why>
     </main>
   );
 }

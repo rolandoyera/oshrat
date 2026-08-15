@@ -11,7 +11,6 @@ import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
 import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
 import LocationProjects from "../_components/LocationProjects";
 import Link from "next/link";
 import HoverUnderline from "@/components/ui/HoverUnderline";
@@ -83,7 +82,51 @@ export default function Page() {
           "Luxury interior design, in this studio's practice, is judged by whether a space is honest about the people who use it. The standard is the same for a private residence and for the sanctuary we drew for The Shul of Bal Harbour, where bronze, stone, and millwork were specified in-house down to the engraving. We stay beside our clients from the first concept meeting to the final installation, and the vision that opens the project is the one you walk into at the end.",
         ]}
       />
-      <Why {...WHY} />
+      {/* The Shul project page keeps the older shared WhyBalHarbour section;
+          this copy exists so the two pages no longer render the same copy. */}
+      <Why
+        subtitle="Why Sarvian Design Group"
+        title="Top Interior Designers in Bal Harbour, FL"
+        description="Bal Harbour is a small village with exacting standards, and its projects range from tower apartments to bay-side houses to one of the busiest community buildings on this coast. Our studio works across all of it, drawing the millwork ourselves, working within each building’s rules, and staying with the project until the last fixture is in place.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Built for Ocean Light.</h2>
+          <p>
+            A wall of glass facing the Atlantic is the strongest material in
+            the room, and everything else has to be chosen with that in mind.
+            Colors shift in front of that light through the day, and finishes
+            that were not specified for salt air and intense sun show it within
+            a few seasons. We select stone, textiles, and metals that hold
+            their color and their surface, and we set the plan to face the view
+            instead of fighting it, which is what vertical living here actually
+            asks of an interior.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Fluent in Building Rules.</h2>
+          <p>
+            Most of Bal Harbour lives under an association, and a renovation
+            that ignores that fact stalls in review. Ours are drawn to pass:
+            complete submissions the first time, schedules that respect work
+            hours and elevator reservations, and trades carrying the insurance
+            the building expects. It is unglamorous knowledge, and it is the
+            difference between a project that moves and one that waits.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">From Tower to Sanctuary.</h2>
+          <p>
+            The same studio that furnishes a high-floor apartment drew the
+            sanctuary at The Shul, and the range is the point. Space plans,
+            palettes, lighting, custom pieces, and installation remain in one
+            set of hands from concept to completion, so a residence reads as
+            one idea and a community room serves hundreds without losing its
+            calm. As your interior design firm in Bal Harbour, we answer for
+            the whole result, not a phase of it.
+          </p>
+        </div>
+      </Why>
     </main>
   );
 }

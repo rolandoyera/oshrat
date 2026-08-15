@@ -13,7 +13,7 @@ import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
-import WhySurfside from "../_components/seo/WhySurfside";
+import Why from "@/components/Why";
 
 const PATH = "/locations/interior-designers-surfside-fl";
 const TITLE = "Interior Designers in Surfside, FL | Sarvian Design Group";
@@ -90,7 +90,55 @@ export default function Page() {
           "What holds it all together is intent. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it. That standard applies to a private residence, and it applied equally to the sanctuary we designed at The Shul on Collins Avenue, where custom bronze, stone, and millwork were drawn and specified down to the last detail. From the earliest concept conversations through final installation, we stay close to our clients so that every decision — large or invisible — serves the same vision.",
         ]}
       />
-      <WhySurfside />
+      <Why
+        subtitle="Why Sarvian Design Group"
+        title="One Interior Design Firm in Surfside for Every Scope"
+        description="We’re not the right interior designers for every project, and we don’t pretend to be. But when a client’s ambitions line up with the way we work, the result is a space that feels considered down to its smallest decision. An oceanfront apartment, a family home renovation, new construction shaped with your architect, or a community landmark like The Shul on Collins Avenue — one team of interior designers carries each of them from layout and finishes through procurement, installation, and the final styling pass.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Every Scope, Same Process.</h2>
+          <p>
+            No two projects arrive the same size, and Surfside proves it: a
+            condominium overlooking the Atlantic, a house on a quiet street
+            between the beach and the bay, a single room on a deadline, or a
+            sanctuary serving hundreds of families. Each one runs through the
+            same process, scaled to fit its scope. A kitchen project doesn’t
+            drag a whole-home engagement behind it, and a smaller room count
+            never buys a thinner version of the studio’s attention. Every
+            engagement begins the same way — with how the space is actually
+            used — and the design works outward from there.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">What Nobody Photographs.</h2>
+          <p>
+            Great interiors are decided in the parts that never make the photo:
+            cabinetry aligned to the sightline it was drawn for, stone selected
+            slab by slab, task lighting located before the ceiling closes,
+            custom pieces detailed to the millimeter and built by fabricators
+            we’ve trusted for years. Our kitchen, bath, and millwork drawings
+            are specified at that depth because a design that only resolves in
+            a rendering isn’t finished work. It’s also why our rooms hold up on
+            an ordinary Tuesday morning, not just on photography day.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">One Interior Design Firm.</h2>
+          <p>
+            Where high-end projects usually fail is in the handoffs between
+            specialists. We keep the whole chain in one studio: space planning,
+            finish palettes, lighting plans, and 3D renderings, then
+            procurement, custom built-ins, art, styling, and installation — so
+            the living room, primary suite, kitchen, and bath resolve as one
+            residence instead of four disconnected rooms. As your interior
+            design firm in Surfside, we coordinate with your architect,
+            contractor, building association, and trades to protect the design
+            intent on site. One team, one point of accountability, from first
+            walkthrough to the day the art goes up.
+          </p>
+        </div>
+      </Why>
     </main>
   );
 }

@@ -13,7 +13,7 @@ import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import ServicesSequence from "../_components/LocationServices";
 import { SERVICES } from "./_components/ServicesSequence";
-import LocationWhy from "../_components/LocationWhy";
+import Why from "@/components/Why";
 
 const PATH = "/locations/interior-designers-miami-fl";
 const TITLE = "Interior Designers in Miami, FL | Sarvian Design Group";
@@ -88,7 +88,8 @@ export default function Page() {
           "Commercial interiors get the same property-first treatment. A shop, a restaurant, or a community space has to be true to the people who use it every day, and that, more than ornament, is what luxury interior design means in our practice. The studio stays deliberately small so the designers who sketch the first concept are the same people checking millwork at installation, which is why the vision that wins a client at the start is still intact on installation day.",
         ]}
       />
-      <LocationWhy
+      <Why
+        subtitle="Why Choose Us"
         title="Top Interior Designers in Miami, FL"
         description="Miami has no shortage of rooms that photograph beautifully and work badly. We build for the opposite result. Our firm is judged on what a space is like to use at seven in the morning and again at eight at night, across residential and commercial interiors, and every line on the drawing set is decided with that in mind.">
         <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
@@ -135,7 +136,7 @@ export default function Page() {
             trades, so the design you approved is the design that gets built.
           </p>
         </div>
-      </LocationWhy>
+      </Why>
     </main>
   );
 }

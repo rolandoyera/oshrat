@@ -14,7 +14,6 @@ import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
 import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
 
 const PATH = "/locations/interior-designers-aventura-fl";
 const TITLE = "Interior Designers in Aventura, FL | Sarvian Design Group";
@@ -87,7 +86,53 @@ export default function Page() {
           "The island communities ask for something different, house scale work on Williams Island and Island Estates, with gardens, terraces, and architectural review of their own. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it. From the earliest concept conversations through final installation, we stay close to our clients so that every decision serves the same vision, and so the studio that starts your project is the one standing in the room when it is finished.",
         ]}
       />
-      <Why {...WHY} />
+      <Why
+        subtitle="Why Sarvian Design Group"
+        title="Top Luxury Interior Designers in Aventura, FL"
+        description="Aventura is a vertical city, and a condominium is an unforgiving place to design. The building sets the rules, the glass sets the light, and there is no architecture to hide behind. Choosing the best interior designers here has less to do with taste than with whether a residential and commercial interior design firm can actually deliver inside those constraints.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">From One Room Up.</h2>
+          <p>
+            Projects here arrive at every size: a condominium residence with
+            the Intracoastal on three sides, two apartments combined into one,
+            a house on Williams Island, or a single kitchen with a deadline
+            attached. Residential or commercial, all of them get the same
+            drawings, the same specification, and the same people. What changes
+            is the scope, never the standard, and the smallest job on the board
+            is worked exactly like the largest.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Drawn to the Mullion.</h2>
+          <p>
+            In a condominium the one thing nobody can move is the window grid,
+            so everything else is drawn to it. Kitchen cabinetry that stops
+            clean at a mullion. A ceiling detail that hides the drapery track
+            instead of announcing it. Sound attenuation settled before the
+            neighbor above becomes a problem, and task lighting located before
+            the ceiling closes. None of it photographs. All of it is what
+            separates the best interior designers in Aventura from a decorator
+            with a mood board.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">One Firm, No Handoffs.</h2>
+          <p>
+            Most condominium projects lose their shape in the gaps between
+            specialists, where the designer, the buyer, the millworker, and the
+            installer each own a piece and nobody owns the result. As your
+            interior design firm in Aventura, we hold all of it: space
+            planning, finish palettes, lighting plans, and renderings, then
+            procurement, custom built-ins, art, styling, and installation. The
+            living room, primary bedroom, kitchen, and bathroom resolve as one
+            residence because one team carried them the whole way, and we
+            coordinate with your architect, contractor, and building
+            association so nothing is lost between the drawing and the room.
+          </p>
+        </div>
+      </Why>
     </main>
   );
 }

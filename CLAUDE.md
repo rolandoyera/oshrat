@@ -74,7 +74,7 @@ Anatomy:
 | `_components/ServicesSequence.ts` | max **7** entries (the converge animation defines 7 flight paths) |
 | `_components/Faqs.ts` | per-city Q&A. Put the city in **every question** — they render as `<h3>` *and* land in the JSON-LD, so each one counts twice. |
 | `LocationEditorial` | three long keyword-bearing paragraphs |
-| `_components/WhyItems.ts` | `WHY` object; the grid is `md:grid-cols-3`, so exactly 3 items |
+| `<Why>` (shared `@/components/Why`) | **every** page's why section, sitewide (home, services, projects, all locations); copy lives inline in `page.tsx` as children cells; the grid is `md:grid-cols-3`, so exactly 3 cells |
 
 Fort Lauderdale now composes the same shared pieces as every other city. The **only** things it does
 differently: its own `_components/Hero.tsx` (bottom-left copy over an art-directed backdrop, rather
@@ -104,6 +104,16 @@ Every location page's projects blurb carries two links, and **the anchor text is
 - **Every anchor is a unique keyword phrase.** "interior designers in Miami", "a Fort Lauderdale
   interior design firm", "our Palm Beach interior designers". Never the bare city name; never the
   same phrasing on two pages — identical exact-match anchors at this volume look manipulative.
+
+## Areas-served pages (ads only)
+
+`src/app/areas-served/*` is reserved for **paid-ads landing pages only** — it is not part of the
+organic location-page system above. Keep it that way deliberately: no entries in `locations.ts`,
+the footer, the sitemap, or the internal link graph (the route is intentionally an orphan — ad
+traffic arrives by URL). Don't clone organic `/locations` pages from these, and don't apply the
+location-page anatomy/link rules to them. Ads pages must **never** import the shared organic
+`@/components/Why` — the lander keeps its own `_components/LocationWhy.tsx` (currently unimported,
+kept deliberately) so ad copy stays fully decoupled from the organic pages.
 
 ---
 

@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Cta from "@/components/Cta";
 import Testimonials from "@/components/Testimonials";
-import Hero from "../locations/interior-designers-fort-lauderdale-fl/_components/Hero";
-import LocationTopSection from "../locations/_components/LocationTopSection";
+import Hero from "../../locations/interior-designers-fort-lauderdale-fl/_components/Hero";
+import LocationTopSection from "../../locations/_components/LocationTopSection";
+import LocationProjects from "../../locations/_components/LocationProjects";
 
 /**
  * Ads-only landing page for the "Search | Broward Core" Google Ads campaign.
@@ -46,6 +47,22 @@ export default function Page() {
         paragraph="A primary bath completed in Fort Lauderdale, likely minutes from where you are searching. Calacatta marble runs unbroken across the walls, the shower, and the vanity so the room reads as carved from a single block, while walnut cabinetry and brushed gold hardware keep all that stone feeling warm. Working with an interior designer near you means this level of detail gets managed in person: weekly site visits, materials reviewed in daylight, and decisions made in the room instead of over email."
         projectSlug="modern-marble-haven-fort-lauderdale-fl"
       />
+      <LocationProjects
+        eyebrow="Selected work"
+        heading="Our Recent Work"
+        slugs={[
+          "elevated-primary-suite-fort-lauderdale-fl",
+          "modern-marble-haven-fort-lauderdale-fl",
+          "aventura-modern-living-aventura-fl",
+          "the-shul-bal-harbour-surfside-fl",
+        ]}>
+        <p>
+          A selection of the work behind our interior design firm in Fort
+          Lauderdale, from full-home renovations and new construction interiors
+          to single rooms drawn to the same level of detail. Las Olas is one of
+          the neighborhoods we return to most.
+        </p>
+      </LocationProjects>
       <Testimonials />
       <Cta />
     </main>

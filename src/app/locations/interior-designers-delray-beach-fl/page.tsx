@@ -9,7 +9,6 @@ import { SERVICES } from "./_components/ServicesSequence";
 import Testimonials from "@/components/Testimonials";
 import LocationTopSection from "../_components/LocationTopSection";
 import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
 import { LocationEditorial } from "../_components/LocationEditorial";
 import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
@@ -95,7 +94,53 @@ export default function Page() {
           "The same discipline carries into the commercial work off Atlantic Avenue. Luxury interior design, as we practice it, has little to do with ornament and everything to do with an environment that is true to the people using it, whether that is one family or a room full of guests. From the earliest concept conversations through final installation, we stay close to our clients so that every decision serves the same vision, and so the studio that starts your project is the one standing in the room when it is finished.",
         ]}
       />
-      <Why {...WHY} />
+      <Why
+        subtitle="Why Sarvian Design Group"
+        title="Top Interior Designers in Delray Beach, FL"
+        description="Plenty of firms are comfortable when the budget is enormous and the house is 8,000 square feet. Delray asks a harder question, because the rooms are rarely oversized and there is nowhere to hide a lazy decision. Across residential and commercial interiors, our studio draws the millwork, holds the schedule, and stays on the job through installation, which is why clients tend to hand us the next project rather than start over with someone new.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">The Plan Before the Palette.</h2>
+          <p>
+            In a modest footprint, whether a house feels tight or generous is
+            decided long before anyone picks a fabric. Circulation, built-in
+            storage, the width of an opening, and where the sightlines land do
+            most of the work, and no amount of good taste later will fix a plan
+            that was never solved. We start there, which is also why we will
+            tell you when a renovation gets you further than the addition you
+            came in asking about.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Character Worth Keeping.</h2>
+          <p>
+            The cottages and older houses around the historic districts have
+            proportions, windows, and trim that a new build cannot buy. The
+            usual brief is more light and better flow, and the usual mistake is
+            getting there by erasing everything that made the house worth
+            owning. We work from the architecture outward, matching profiles
+            and material weight to what is already standing, so the finished
+            interior reads as a continuation of the house rather than a
+            renovation applied over it.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">One Interior Design Firm.</h2>
+          <p>
+            High-end projects usually come apart in the handoffs between
+            specialists. We keep the entire chain inside one studio: space
+            planning, finish palettes, lighting plans, and 3D renderings, then
+            procurement, custom built-ins, art, styling, and installation, so
+            the living room, primary suite, kitchen, and bath resolve as one
+            project instead of four disconnected rooms. As your interior design
+            firm in Delray Beach, we coordinate with your architect,
+            contractor, and trades so the design intent survives the job site.
+            One team, one point of accountability, from the first walkthrough
+            to the day the art goes up.
+          </p>
+        </div>
+      </Why>
     </main>
   );
 }

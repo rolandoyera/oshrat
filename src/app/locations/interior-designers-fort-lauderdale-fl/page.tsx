@@ -12,7 +12,7 @@ import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { socialMeta } from "@/lib/seo";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
-import LocationWhy from "../_components/LocationWhy";
+import Why from "@/components/Why";
 
 const PATH = "/locations/interior-designers-fort-lauderdale-fl";
 const TITLE =
@@ -89,7 +89,8 @@ export default function Page() {
         ]}
       />
       <FaqSection faqs={FAQS} />
-      <LocationWhy
+      <Why
+        subtitle="Why Choose Us"
         title="Amongst the Best Interior Designers in Fort Lauderdale"
         description="We don’t try to be the right fit for every interior design project. But when our approach matches what a client is looking for we’re known for delivering something that feels deeply intentional. We keep the big picture of the interior design project in view while managing the details that make the difference.">
         <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
@@ -134,7 +135,7 @@ export default function Page() {
             accountability the whole way through.
           </p>
         </div>
-      </LocationWhy>
+      </Why>
     </main>
   );
 }

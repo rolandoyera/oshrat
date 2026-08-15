@@ -14,7 +14,6 @@ import FaqSection from "@/components/FaqSection";
 import { FAQS } from "./_components/Faqs";
 import { SERVICES } from "./_components/ServicesSequence";
 import Why from "@/components/Why";
-import { WHY } from "./_components/WhyItems";
 
 const PATH = "/locations/interior-designers-las-olas-fl";
 const TITLE = "Interior Designers in Las Olas, FL | Sarvian Design Group";
@@ -88,7 +87,56 @@ export default function Page() {
           "The commercial side of the neighborhood runs on the same standard. Luxury interior design, the way we practice it, is not a matter of ornament; it is an environment that stays true to the people using it, whether that is a family or a room full of guests. The best interior designers earn the work in the details nobody lists on a drawing set, which is why a shop, a restaurant, or a community space is specified here as carefully as a private residence. From the first concept conversations through final installation, we stay close to our clients so that every decision serves a single vision.",
         ]}
       />
-      <Why {...WHY} />
+      <Why
+        subtitle="Why Sarvian Design Group"
+        title="Top Interior Designers in Las Olas"
+        description="What separates the best interior designers from the rest is mostly invisible by the time a project is finished. It shows up in what did not go wrong: millwork that fits, a schedule that held, finishes that still look right two years in. That is what our firm is built around, across residential and commercial interiors in Las Olas and throughout Fort Lauderdale.">
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">Every Scope, Same Process.</h2>
+          <p>
+            No two projects arrive the same size, and Las Olas proves it: a
+            deepwater residence on the isles, an older home behind the
+            boulevard taken down to the studs, a high-floor apartment downtown,
+            a single room on a deadline, or a commercial space opening to the
+            public. Each one runs through the same process, scaled to fit its
+            scope. A kitchen project doesn’t drag a whole-home engagement
+            behind it, and a smaller room count never buys a thinner version of
+            the studio’s attention. Every engagement begins with how the space
+            is actually used, and the design works outward from there.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">What Nobody Photographs.</h2>
+          <p>
+            The best interior design is decided in the parts that never make
+            the photo: cabinetry aligned to the sightline it was drawn for,
+            stone selected slab by slab, task lighting located before the
+            ceiling closes, custom pieces detailed to the millimeter and built
+            by fabricators we’ve trusted for years. Our kitchen, bath, and
+            millwork drawings are specified at that depth because a design that
+            only resolves in a rendering isn’t finished work. It’s also why our
+            rooms hold up on an ordinary Tuesday morning, not just on
+            photography day.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
+          <h2 className="font-semibold h3">One Interior Design Firm.</h2>
+          <p>
+            Where high-end projects usually fail is in the handoffs between
+            specialists. We keep the whole chain in one studio, from space
+            planning, finish palettes, lighting plans, and 3D renderings
+            through procurement, custom built-ins, art, styling, and
+            installation, so the living room, primary suite, kitchen, and bath
+            read as one residence rather than four disconnected rooms. As your
+            interior design firm in Las Olas, we coordinate with your
+            architect, contractor, building association, and trades to protect
+            the design intent on site. One team and one point of
+            accountability, from first walkthrough to the day the art goes up.
+          </p>
+        </div>
+      </Why>
     </main>
   );
 }
