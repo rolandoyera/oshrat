@@ -30,7 +30,7 @@ export default function AboutContent() {
           fill
           priority
           sizes="100vw"
-          quality={90}
+          quality={70}
           placeholder="blur"
           blurDataURL={HERO_BLUR["/about/Sarvian-Design-Group.jpg"]}
           style={{
@@ -44,7 +44,7 @@ export default function AboutContent() {
         {/* Text and Title Overlay - aligned to bottom-left */}
 
         <Container className="flex flex-col justify-end z-20 pb-16 relative h-full">
-          <ScrollReveal direction="down" delay={100}>
+          <ScrollReveal topReveal direction="down">
             <div className="max-w-250 space-y-6">
               <h1 className="eyebrow text-cream-200">
                 Fort Lauderdale Interior Design Firm{" "}
@@ -52,7 +52,7 @@ export default function AboutContent() {
               <p className="display text-white">{SITE.name}</p>
             </div>
           </ScrollReveal>
-          <ScrollReveal direction="up" delay={250}>
+          <ScrollReveal topReveal direction="up">
             <p className="text-taupe-100 max-w-200">
               Blending striking architectural forms with thoughtfully curated
               interiors, Sarvian Design Group creates South Florida homes that
