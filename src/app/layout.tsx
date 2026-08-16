@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { Montserrat, Newsreader, Parisienne } from "next/font/google";
+import { Montserrat, Parisienne } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/navbar/Navbar";
 import { socialMeta } from "@/lib/seo";
@@ -24,16 +24,11 @@ const parisienne = Parisienne({
   variable: "--font-serif",
 });
 
-// Variable font — full weight axis, both styles, no per-weight files.
-// Only used below the fold (Testimonials). Italic is a real second file
-// (~65KB); kept because the pull-quote is display-size serif, where
-// browser-synthesized oblique looks visibly wrong. Preloaded for the same
-// reason as Parisienne above.
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-newsreader",
-});
+// Newsreader was removed 2026-08-15. It was 123KB of the 180KB of font
+// preloads, and warm-vs-warm PSI showed the preloads cost ~6 points / ~1.1s
+// LCP by competing with the hero image for bandwidth. Testimonials now falls
+// through to Georgia (`--font-reader` in globals.css) — a system serif with a
+// real italic, so the pull-quote still avoids synthesized oblique.
 
 const ROOT_TITLE =
   "Sarvian Design Group | Interior Designer in Fort Lauderdale | South Florida";
@@ -57,7 +52,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${montserrat.variable} ${parisienne.variable} ${newsreader.variable} font-sans antialiased bg-background text-foreground`}>
+        className={`${montserrat.variable} ${parisienne.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
           {process.env.VERCEL_ENV === "production" && <Analytics />}
           <Navbar />
