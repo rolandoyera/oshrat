@@ -154,12 +154,16 @@ const OurApproachSection: React.FC<AccordionProps> = ({
                         ? "opacity-100 translate-y-0 duration-700 delay-300"
                         : "opacity-0 -translate-y-8 duration-200"
                     }`}>
+                    {/* Active panel = container minus the four collapsed
+                        w-16 tabs, its own tab, and px-4/xl:px-6. Container
+                        caps at 1800px so the width freezes at ~1380px. */}
                     <Image
                       src={panel.image}
                       alt={panel.alt}
-                      width={1000}
-                      height={280}
+                      width={1600}
+                      height={850}
                       quality={70}
+                      sizes="(min-width: 1800px) 1380px, (min-width: 1024px) 72vw, 100vw"
                     />
                   </div>
                   <div
@@ -230,8 +234,8 @@ const OurApproachSection: React.FC<AccordionProps> = ({
                         src={panel.image}
                         alt={panel.title}
                         fill
-                        quality={90}
-                        sizes="50vw"
+                        quality={70}
+                        sizes="calc(100vw - 80px)"
                         className="object-cover rounded-xs"
                       />
                     </div>
