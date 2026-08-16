@@ -35,12 +35,16 @@ export default function TopSection() {
           </div>
         </ScrollReveal>
         <ScrollReveal direction="right" className="relative lg:col-span-3">
+          {/* Full container width until xl, then 3 of 5 columns (48px gaps).
+              Container caps at max-w-450 = 1800px, so the width freezes at
+              ~1042px past that instead of tracking the viewport. */}
           <Image
             src="/assets/about-us-top.jpg"
             alt="Home image"
             width={2000}
             height={1334}
             quality={70}
+            sizes="(min-width: 1800px) 1042px, (min-width: 1280px) 58vw, calc(100vw - 48px)"
             className="w-full h-auto object-cover rounded-xs"
           />
         </ScrollReveal>

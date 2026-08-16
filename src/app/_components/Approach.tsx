@@ -159,7 +159,7 @@ const OurApproachSection: React.FC<AccordionProps> = ({
                       alt={panel.alt}
                       width={1000}
                       height={280}
-                      quality={90}
+                      quality={70}
                     />
                   </div>
                   <div
