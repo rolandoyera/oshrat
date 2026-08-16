@@ -132,7 +132,7 @@ export default function Footer() {
             <p className="eyebrow">Interior & Architecture design firm</p>
             <h3 className=" text-cream-100">
               Serving Fort Lauderdale <br />
-              <span className="inline-block font-serif text-[1.4em] leading-none align-baseline text-accent">
+              <span className="inline-block text-accent align-baseline">
                 &amp;
               </span>{" "}
               South Florida.

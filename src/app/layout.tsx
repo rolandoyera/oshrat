@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import "./globals.css";
-import { Montserrat, Parisienne } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import Providers from "./Providers";
 import Navbar from "@/components/navbar/Navbar";
 import { socialMeta } from "@/lib/seo";
@@ -13,22 +13,11 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-// Below the fold on every page (Cta, Footer, WhereWeWorkSection). Keep the
-// preload: `preload: false` was tried and reverted — without it the font is
-// discovered by the CSS parser instead of the HTML preload scanner, so it
-// starts ~125ms later and drifts run to run, which cost more in LCP/TBT than
-// the earlier start cost the LCP text (Montserrat). See layout.tsx history.
-const parisienne = Parisienne({
-  subsets: ["latin"],
-  weight: ["400"],
-  variable: "--font-serif",
-});
-
-// Newsreader was removed 2026-08-15. It was 123KB of the 180KB of font
-// preloads, and warm-vs-warm PSI showed the preloads cost ~6 points / ~1.1s
-// LCP by competing with the hero image for bandwidth. Testimonials now falls
-// through to Georgia (`--font-reader` in globals.css) — a system serif with a
-// real italic, so the pull-quote still avoids synthesized oblique.
+// Montserrat is the only webfont. Newsreader and Parisienne were removed
+// 2026-08-15: they were 145KB of 180KB of font preloads, and warm-vs-warm PSI
+// showed the preloads cost ~6 points / ~1.1s LCP by competing with the hero
+// image for bandwidth. Everything serif now uses `--font-serif` (Georgia, a
+// system font with a real italic) — see globals.css.
 
 const ROOT_TITLE =
   "Sarvian Design Group | Interior Designer in Fort Lauderdale | South Florida";
@@ -52,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${montserrat.variable} ${parisienne.variable} font-sans antialiased bg-background text-foreground`}>
+        className={`${montserrat.variable} font-sans antialiased bg-background text-foreground`}>
         <Providers>
           {process.env.VERCEL_ENV === "production" && <Analytics />}
           <Navbar />

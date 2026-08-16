@@ -29,7 +29,7 @@ export default function Cta() {
             <span className="block">Let&apos;s design</span>
             <span className="block">
               <span className="inline">something</span>{" "}
-              <span className="font-serif text-accent text-[1.6em] leading-none ml-2 inline-block">
+              <span className="font-serif italic text-accent leading-none ml-2 inline-block">
                 beautiful
               </span>
               .
