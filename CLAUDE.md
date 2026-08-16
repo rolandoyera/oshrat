@@ -45,7 +45,8 @@ These are standing instructions from the owner. They are not stylistic suggestio
   restructure the sentence — don't just swap in a comma.
 - **Keep signalling the money terms:** residential, commercial, interior designers, top, best, firm,
   luxury, and the city name. A page that reads beautifully but doesn't repeatedly signal
-  "Interior Designers in {City}" will not rank.
+  "Interior Designers in {City}" will not rank. Create a hybrid of quality content and proper
+  SEO.
 - **Never reuse a paragraph across cities.** Pages get cloned, so duplicates pile up fast. Before
   calling a page done, grep the sibling location folders for its distinctive sentences.
 - **Don't overclaim.** The Shul (Surfside) is the only commercial/community project. Write
@@ -66,14 +67,14 @@ Live in `src/app/locations/interior-designers-{city}-fl/`. Shared pieces are in
 
 Anatomy:
 
-| Piece | Notes |
-|---|---|
-| `LocationHero` | eyebrow (the H1), 2-line heading, blurb |
-| `LocationTopSection` | a **real, specific** local project with its own copy. No local project yet? Change the eyebrow to "Our Approach in {City}" and point links at `/projects`. |
-| `LocationProjects` | hand-picked `slugs` + a children blurb. **This is the current component** for location pages; the homepage and `/services` use `ProjectsSectionHome`. |
-| `_components/ServicesSequence.ts` | max **7** entries (the converge animation defines 7 flight paths) |
-| `_components/Faqs.ts` | per-city Q&A. Put the city in **every question** — they render as `<h3>` *and* land in the JSON-LD, so each one counts twice. |
-| `LocationEditorial` | three long keyword-bearing paragraphs |
+| Piece                               | Notes                                                                                                                                                                                 |
+| ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `LocationHero`                      | eyebrow (the H1), 2-line heading, blurb                                                                                                                                               |
+| `LocationTopSection`                | a **real, specific** local project with its own copy. No local project yet? Change the eyebrow to "Our Approach in {City}" and point links at `/projects`.                            |
+| `LocationProjects`                  | hand-picked `slugs` + a children blurb. **This is the current component** for location pages; the homepage and `/services` use `ProjectsSectionHome`.                                 |
+| `_components/ServicesSequence.ts`   | max **7** entries (the converge animation defines 7 flight paths)                                                                                                                     |
+| `_components/Faqs.ts`               | per-city Q&A. Put the city in **every question** — they render as `<h3>` _and_ land in the JSON-LD, so each one counts twice.                                                         |
+| `LocationEditorial`                 | three long keyword-bearing paragraphs                                                                                                                                                 |
 | `<Why>` (shared `@/components/Why`) | **every** page's why section, sitewide (home, services, projects, all locations); copy lives inline in `page.tsx` as children cells; the grid is `md:grid-cols-3`, so exactly 3 cells |
 
 Fort Lauderdale now composes the same shared pieces as every other city. The **only** things it does
@@ -121,18 +122,18 @@ kept deliberately) so ad copy stays fully decoupled from the organic pages.
 
 - **`FaqSection` accordion is patched, don't revert it.** `src/components/ui/accordion.tsx` uses
   `forceMount` + a CSS `grid-rows-[0fr]/[1fr]` collapse. Radix unmounts closed panels by default,
-  which kept every FAQ *answer* out of the server-rendered HTML — present only inside the JSON-LD
+  which kept every FAQ _answer_ out of the server-rendered HTML — present only inside the JSON-LD
   script. The stock shadcn version silently costs ~400–600 crawlable words per page.
 - **The accordion transition must stay on the inner div, not on `AccordionPrimitive.Content`.**
   Radix sets `node.style.transitionDuration = "0s"` on the Content element in a layout effect so it
-  can measure the panel, then restores it. That runs *after* `data-state` flips, so a transition on
+  can measure the panel, then restores it. That runs _after_ `data-state` flips, so a transition on
   that element never plays — the panel snaps. Keyframes survive it (restoring `animationName`
   restarts an animation), which is why stock shadcn pairs `data-state` with
   `animate-accordion-up/down` — but keyframes need the measured height, which only exists under the
   unmount-on-close model we removed. Hence: `group/panel` on Content, and the
   `group-data-[state=open]/panel:grid-rows-[1fr]` transition on a child Radix never touches.
 - **One JSON-LD graph per page.** `siteGraph()`'s docstring says so, and `faqPageGraph()` wraps it —
-  so `faqPageGraph` *replaces* `siteGraph`, never accompanies it. Pass the same FAQ array to both
+  so `faqPageGraph` _replaces_ `siteGraph`, never accompanies it. Pass the same FAQ array to both
   `<FaqSection />` and `faqPageGraph()` so schema matches visible copy.
 - **`npm run lint` is dead.** `next lint` was removed in Next 16; the script errors out. Use
   `npx tsc --noEmit`.
@@ -144,7 +145,7 @@ kept deliberately) so ad copy stays fully decoupled from the organic pages.
   They'd need an optional heading prop to go city-specific. Both sections carry `data-dup-ignore`,
   which the CRM's Keyword Analyzer site crawl reads to keep them out of its duplicate-content
   comparison. Put it on any other block that is deliberately identical sitewide, so the report keeps
-  showing only the cloned *city copy* we actually care about. It does not affect keyword density
+  showing only the cloned _city copy_ we actually care about. It does not affect keyword density
   (Google indexes this text, so the density tables must keep counting it) and it is not a signal to
   search engines — it means nothing outside our own tooling.
 - **The services `<h2>` is `sr-only` on purpose, not by oversight.** The converge animation flies
@@ -199,7 +200,7 @@ full RSC payload in script tags, so a naive grep will find copy that no crawler 
   hardest target we have. Revisit once it holds a position worth spending equity from.
 - **NAP conflict.** Houzz lists the business at North Miami Beach with a bio saying "based in Palm
   Beach"; the site and schema say Fort Lauderdale. Three cities across our own properties, which
-  suppresses local pack placement. *Blocked:* Oshrat holds the Houzz password and is in Israel.
+  suppresses local pack placement. _Blocked:_ Oshrat holds the Houzz password and is in Israel.
 - **Reviews.** Houzz shows 5.0 from 5 reviews (SDH: 5.0 from 54). The legitimate path to rating rich
   results is visible reviews on the page marked up as `Review` nodes — self-serving
   `aggregateRating` on a `LocalBusiness` node with no visible reviews has produced no stars since
