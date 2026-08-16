@@ -38,9 +38,9 @@ export default function TopSection() {
           <Image
             src="/assets/about-us-top.jpg"
             alt="Home image"
-            width={900}
-            height={400}
-            quality={90}
+            width={2000}
+            height={1334}
+            quality={70}
             className="w-full h-auto object-cover rounded-xs"
           />
         </ScrollReveal>
