@@ -2,6 +2,9 @@ import Hero from "@/components/Hero";
 
 import TopSection from "./_components/TopSection";
 import type { Metadata } from "next";
+import { groq } from "next-sanity";
+import { client } from "@/sanity/lib/client";
+import { heroImageUrl, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 import OurApproachSection from "./_components/Approach";
@@ -25,12 +28,34 @@ export const metadata: Metadata = {
   ...socialMeta({ title: TITLE, description: DESCRIPTION, url: "/" }),
 };
 
-export default function Home() {
+// The hero shares the Golden Dreams detail page's Sanity source (same
+// heroImage || mainImage pick) so the view-transition morphs between two
+// copies of the identical picture, and — because Sanity URLs are
+// content-addressed — the optimized image caches for 30 days. The old
+// /public/slider file was served max-age=0 and re-optimized on every cold
+// cache, which is what caused the post-deploy PSI dips.
+const HERO_PROJECT_SLUG = "golden-dreams-golden-beach-fl";
+const HERO_PROJECT = groq`*[_type=="project" && slug.current == $slug][0]{
+  heroImage,
+  mainImage
+}`;
+
+export default async function Home() {
+  const heroProject = await client.fetch<{
+    heroImage?: SanityImageWithAlt;
+    mainImage?: SanityImageWithAlt;
+  } | null>(HERO_PROJECT, { slug: HERO_PROJECT_SLUG });
+  const heroSource = heroProject?.heroImage || heroProject?.mainImage;
+
   return (
     <main>
       <JsonLd data={faqPageGraph("/", FAQS)} />
       <Hero
-        image="/slider/golden-beach-architecture-proposal-front-view.jpg"
+        image={
+          heroSource
+            ? heroImageUrl(heroSource)
+            : "/slider/golden-beach-architecture-proposal-front-view.jpg"
+        }
         title="Golden Dreams"
         description="Sunlit luxury meets serene modern design"
         buttonText="Explore Now"
