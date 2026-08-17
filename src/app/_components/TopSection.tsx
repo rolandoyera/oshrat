@@ -7,7 +7,7 @@ export default function TopSection() {
   return (
     <Container className="flex items-center justify-center overflow-hidden">
       <div className="grid grid-cols-1 xl:grid-cols-5 gap-8 xl:gap-12 items-center w-full">
-        <ScrollReveal direction="left" className="lg:col-span-2">
+        <ScrollReveal topReveal direction="left" className="lg:col-span-2">
           <h1>Interior Designers in Fort Lauderdale</h1>
           <p>
             Based in Fort Lauderdale, Florida, Sarvian Design Group is a premier
@@ -34,7 +34,10 @@ export default function TopSection() {
             </ArrowButton>
           </div>
         </ScrollReveal>
-        <ScrollReveal direction="right" className="relative lg:col-span-3">
+        <ScrollReveal
+          topReveal
+          direction="right"
+          className="relative lg:col-span-3">
           {/* Full container width until xl, then 3 of 5 columns (48px gaps).
               Container caps at max-w-450 = 1800px, so the width freezes at
               ~1042px past that instead of tracking the viewport. */}
