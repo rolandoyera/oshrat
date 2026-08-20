@@ -57,7 +57,7 @@ export default async function Page({
         }}
         eyebrow={eyebrow}
         heading={["Exceptional design,", "close to home."]}
-        paragraph="Led by Oshrat Rothschild, Sarvian Design Group is a full-service luxury interior design firm in Fort Lauderdale, serving Victoria Park, Coral Ridge, Las Olas, and the waterfront neighborhoods in between."
+        paragraph="Led by Oshrat Rothschild, Sarvian Design Group is a full-service luxury interior design firm near you in Fort Lauderdale, serving Victoria Park, Coral Ridge, Las Olas, and the waterfront neighborhoods in between."
       />
       <LocationTopSection
         eyebrow="Featured Project"
