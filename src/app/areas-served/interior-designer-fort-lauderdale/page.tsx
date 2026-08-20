@@ -23,6 +23,7 @@ const INTENT_H1: Record<string, string> = {
   designer: "Interior Designer Near You",
   designers: "Interior Designers Near You",
   firm: "Interior Design Firm Near You",
+  decorator: "Interior Decorator Near You",
 };
 
 const DEFAULT_H1 = "Interior Designer Near You";
