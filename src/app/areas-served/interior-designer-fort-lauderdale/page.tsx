@@ -11,33 +11,53 @@ import LocationWhy from "./_components/LocationWhy";
  * The slug stays geographic (the "professional address"); intent mirroring
  * for the near-me ad group lives in the title, H1, and hero copy, which all
  * say "near you". `?intent=` (set per keyword via keyword-level final URLs)
- * swaps the H1 to mirror the matched keyword; unknown or missing values fall
- * back to the default H1, so a bad param can never break the page.
+ * swaps the H1 and the hero paragraph's descriptor phrase to mirror the
+ * matched keyword — nothing below the hero varies. Unknown or missing values
+ * fall back to the designer variant, so a bad param can never break the page.
  *
  * Deliberately noindex/nofollow (it overlaps the ranking Fort Lauderdale
  * location page) and deliberately absent from sitemap.ts. Do NOT disallow it
  * in robots.ts: AdsBot must stay able to crawl it or Quality Score tanks.
  */
 
-const INTENT_H1: Record<string, string> = {
-  designer: "Interior Designer Near You",
-  designers: "Interior Designers Near You",
-  firm: "Interior Design Firm Near You",
-  decorator: "Interior Decorator Near You",
+const INTENT_COPY: Record<string, { h1: string; descriptor: string }> = {
+  designer: {
+    h1: "Interior Designer Near You",
+    descriptor: "a full-service luxury interior designer",
+  },
+  designers: {
+    h1: "Interior Designers Near You",
+    descriptor: "a full-service team of luxury interior designers",
+  },
+  firm: {
+    h1: "Interior Design Firm Near You",
+    descriptor: "a full-service luxury interior design firm",
+  },
+  decorator: {
+    h1: "Interior Decorator Near You",
+    descriptor: "a full-service luxury interior designer and decorator",
+  },
 };
 
-const DEFAULT_H1 = "Interior Designer Near You";
-
-const TITLE =
-  "Interior Designer Near You in Fort Lauderdale | Sarvian Design Group";
 const DESCRIPTION =
   "Sarvian Design Group is a full-service luxury interior design firm near you in Fort Lauderdale, FL. Request a design consultation.";
 
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  robots: { index: false, follow: false },
-};
+// The <title> mirrors the matched keyword like the H1 does; the description
+// stays static (no Quality Score input, and a noindex page never gets a
+// search snippet).
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ intent?: string }>;
+}): Promise<Metadata> {
+  const { intent } = await searchParams;
+  const copy = (intent && INTENT_COPY[intent]) || INTENT_COPY.designer;
+  return {
+    title: `${copy.h1} in Fort Lauderdale | Sarvian Design Group`,
+    description: DESCRIPTION,
+    robots: { index: false, follow: false },
+  };
+}
 
 export default async function Page({
   searchParams,
@@ -45,7 +65,7 @@ export default async function Page({
   searchParams: Promise<{ intent?: string }>;
 }) {
   const { intent } = await searchParams;
-  const eyebrow = (intent && INTENT_H1[intent]) || DEFAULT_H1;
+  const copy = (intent && INTENT_COPY[intent]) || INTENT_COPY.designer;
 
   return (
     <main>
@@ -56,9 +76,9 @@ export default async function Page({
           desktop: "/about/sarvian-design-group-oshrat-rothschild-2000.webp",
           alt: "Sarvian Design Group, a luxury interior designer near you in Fort Lauderdale, Florida",
         }}
-        eyebrow={eyebrow}
+        eyebrow={copy.h1}
         heading={["Exceptional design,", "close to home."]}
-        paragraph="Led by Oshrat Rothschild, Sarvian Design Group is a full-service luxury interior design firm near you in Fort Lauderdale, serving Victoria Park, Coral Ridge, Las Olas, and the waterfront neighborhoods in between."
+        paragraph={`Led by Oshrat Rothschild, Sarvian Design Group is ${copy.descriptor} near you in Fort Lauderdale, serving Victoria Park, Coral Ridge, Las Olas, and the waterfront neighborhoods in between.`}
       />
       <LocationTopSection
         eyebrow="Featured Project"
