@@ -25,7 +25,7 @@ const INTENT_H1: Record<string, string> = {
   firm: "Interior Design Firm Near You",
 };
 
-const DEFAULT_H1 = "Luxury Interior Designer Near You";
+const DEFAULT_H1 = "Interior Designer Near You";
 
 const TITLE =
   "Interior Designer Near You in Fort Lauderdale | Sarvian Design Group";
