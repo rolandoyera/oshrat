@@ -10,12 +10,22 @@ import LocationWhy from "./_components/LocationWhy";
  * Ads-only landing page for the "Search | Broward Core" Google Ads campaign.
  * The slug stays geographic (the "professional address"); intent mirroring
  * for the near-me ad group lives in the title, H1, and hero copy, which all
- * say "near you". Finer intent variants (?intent=) come later.
+ * say "near you". `?intent=` (set per keyword via keyword-level final URLs)
+ * swaps the H1 to mirror the matched keyword; unknown or missing values fall
+ * back to the default H1, so a bad param can never break the page.
  *
  * Deliberately noindex/nofollow (it overlaps the ranking Fort Lauderdale
  * location page) and deliberately absent from sitemap.ts. Do NOT disallow it
  * in robots.ts: AdsBot must stay able to crawl it or Quality Score tanks.
  */
+
+const INTENT_H1: Record<string, string> = {
+  designer: "Interior Designer Near You",
+  designers: "Interior Designers Near You",
+  firm: "Interior Design Firm Near You",
+};
+
+const DEFAULT_H1 = "Luxury Interior Designer Near You";
 
 const TITLE =
   "Interior Designer Near You in Fort Lauderdale | Sarvian Design Group";
@@ -28,7 +38,14 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-export default function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: Promise<{ intent?: string }>;
+}) {
+  const { intent } = await searchParams;
+  const eyebrow = (intent && INTENT_H1[intent]) || DEFAULT_H1;
+
   return (
     <main>
       <Hero
@@ -38,9 +55,9 @@ export default function Page() {
           desktop: "/about/sarvian-design-group-oshrat-rothschild-2000.webp",
           alt: "Sarvian Design Group, a luxury interior designer near you in Fort Lauderdale, Florida",
         }}
-        eyebrow="Luxury Interior Designer Near You"
+        eyebrow={eyebrow}
         heading={["Exceptional design,", "close to home."]}
-        paragraph="Led by Oshrat Rothschild, Sarvian Design Group is a full-service luxury interior design firm minutes from you in Fort Lauderdale, serving Victoria Park, Coral Ridge, Las Olas, and the waterfront neighborhoods in between."
+        paragraph="Led by Oshrat Rothschild, Sarvian Design Group is a full-service luxury interior design firm in Fort Lauderdale, serving Victoria Park, Coral Ridge, Las Olas, and the waterfront neighborhoods in between."
       />
       <LocationTopSection
         eyebrow="Featured Project"
