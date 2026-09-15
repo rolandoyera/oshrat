@@ -14,6 +14,7 @@ import {
 } from "sanity/presentation";
 
 import { schemaTypes } from "./src/sanity/schemaTypes"; // this now only exports schemaTypes[]
+import { structure } from "./src/sanity/structure";
 import { apiVersion, dataset, projectId } from "./src/sanity/env";
 
 export default defineConfig({
@@ -26,7 +27,7 @@ export default defineConfig({
     types: schemaTypes,
   },
   plugins: [
-    structureTool(),
+    structureTool({ structure }),
     // Live preview: embeds the site in the Studio, updates as editors type,
     // and maps clicked text back to its field. The site is on the same origin
     // as the Studio, so the default preview URL (this origin) is correct.

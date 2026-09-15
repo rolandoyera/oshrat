@@ -33,7 +33,7 @@ const QUERY = groq`
     "imageUrl": mainImage.asset->url,
     heroImage,
     mainImage
-  } | order(coalesce(year, 0) desc, _createdAt desc)
+  } | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc)
 `;
 
 import Cta from "@/components/Cta";

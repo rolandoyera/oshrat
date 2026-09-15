@@ -23,7 +23,7 @@ export interface Project {
 }
 
 const LATEST_PROJECTS = groq`*[_type == "project" && defined(slug.current) && defined(mainImage.asset)]
-  | order(coalesce(year, 0) desc, _createdAt desc)[0...4]{
+  | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc)[0...4]{
   _id,
   title,
   location,

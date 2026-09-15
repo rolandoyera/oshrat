@@ -1,15 +1,18 @@
-import type {StructureResolver} from 'sanity/structure'
+import type { StructureResolver } from "sanity/structure";
+import { orderableDocumentListDeskItem } from "@sanity/orderable-document-list";
 
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
-export const structure: StructureResolver = (S) =>
+// Projects use a drag-and-drop list; the order drives the projects page,
+// the home page sections and the prev/next links on project pages.
+export const structure: StructureResolver = (S, context) =>
   S.list()
-    .title('Blog')
+    .title("Content")
     .items([
-      S.documentTypeListItem('post').title('Posts'),
-      S.documentTypeListItem('category').title('Categories'),
-      S.documentTypeListItem('author').title('Authors'),
+      orderableDocumentListDeskItem({
+        type: "project",
+        title: "Projects",
+        S,
+        context,
+      }),
       S.divider(),
-      ...S.documentTypeListItems().filter(
-        (item) => item.getId() && !['post', 'category', 'author'].includes(item.getId()!),
-      ),
-    ])
+      S.documentTypeListItem("slide").title("Homepage Slides"),
+    ]);

@@ -25,7 +25,7 @@ export interface Project {
 // Order/slice the raw documents first, then project (so year/_createdAt are
 // still available to order()).
 const LATEST_PROJECTS = groq`*[_type == "project" && defined(slug.current) && defined(mainImage.asset)]
-  | order(coalesce(year, 0) desc, _createdAt desc)[0...5]{
+  | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc)[0...5]{
   _id,
   title,
   location,

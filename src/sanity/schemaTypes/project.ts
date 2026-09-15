@@ -1,11 +1,19 @@
 // sanity/schemaTypes/project.ts
 import { defineType, defineField } from "sanity";
+import {
+  orderRankField,
+  orderRankOrdering,
+} from "@sanity/orderable-document-list";
 
 export default defineType({
   name: "project",
   title: "Project",
   type: "document",
   fields: [
+    // Manual sort position, maintained by drag-and-drop in the Studio's
+    // Project list (hidden field). New projects are placed at the top.
+    orderRankField({ type: "project", newItemPosition: "before" }),
+
     // 1) Title
     defineField({
       name: "title",
@@ -143,7 +151,8 @@ export default defineType({
     defineField({
       name: "panorama360",
       title: "360° Image",
-      description: "An equirectangular 360-degree panorama image to display as the last item in the gallery.",
+      description:
+        "An equirectangular 360-degree panorama image to display as the last item in the gallery.",
       type: "image",
       options: { hotspot: false },
       fields: [
@@ -151,42 +160,37 @@ export default defineType({
           name: "alt",
           title: "Alt text",
           type: "string",
-          description: "Descriptive alt text for the 360 view."
-        }
+          description: "Descriptive alt text for the 360 view.",
+        },
       ],
     }),
   ],
 
   orderings: [
+    orderRankOrdering,
     {
       title: "Newest Completed First (Year)",
       name: "yearDesc",
       by: [
         { field: "year", direction: "desc" },
-        { field: "_createdAt", direction: "desc" }
-      ]
+        { field: "_createdAt", direction: "desc" },
+      ],
     },
     {
       title: "Newest Created First",
       name: "createdAtDesc",
-      by: [
-        { field: "_createdAt", direction: "desc" }
-      ]
+      by: [{ field: "_createdAt", direction: "desc" }],
     },
     {
       title: "Oldest Created First",
       name: "createdAtAsc",
-      by: [
-        { field: "_createdAt", direction: "asc" }
-      ]
+      by: [{ field: "_createdAt", direction: "asc" }],
     },
     {
       title: "Title (A-Z)",
       name: "titleAsc",
-      by: [
-        { field: "title", direction: "asc" }
-      ]
-    }
+      by: [{ field: "title", direction: "asc" }],
+    },
   ],
 
   preview: {

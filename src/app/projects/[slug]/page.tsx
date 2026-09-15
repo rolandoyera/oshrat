@@ -98,7 +98,7 @@ const ALL_PROJECTS_SORTED = groq`*[_type=="project" && defined(slug.current)]{
   title,
   "slug": slug.current,
   location
-} | order(coalesce(year, 0) desc, _createdAt desc)`;
+} | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc)`;
 
 /* -------------------- ISR -------------------- */
 
@@ -358,7 +358,8 @@ export default async function ProjectPage({
         )}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm">
+          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm"
+        >
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -368,7 +369,8 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2">
+              className="before:content-['>'] before:mr-2"
+            >
               {data.title}
               {data.location && (
                 <span className="hidden sm:inline">{` | ${data.location}`}</span>
