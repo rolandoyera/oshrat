@@ -8,7 +8,7 @@ import { defineLive } from "next-sanity/live";
 import { client } from "./client";
 import { readToken } from "../env";
 
-export const { sanityFetch, SanityLive } = defineLive({
+const { sanityFetch: liveFetch, SanityLive } = defineLive({
   client: client.withConfig({
     // Presentation tool needs this to build click-to-edit links.
     stega: { studioUrl: "/studio" },
@@ -18,3 +18,13 @@ export const { sanityFetch, SanityLive } = defineLive({
   // Sent to the browser only while draft mode is on; needs Viewer rights only.
   browserToken: readToken,
 });
+
+/**
+ * Every fetch is also tagged "sanity" so the /api/revalidate webhook can expire
+ * all Sanity-backed data at once. Sync tags from Sanity Live still provide
+ * fine-grained revalidation from connected browsers.
+ */
+export const sanityFetch: typeof liveFetch = (options) =>
+  liveFetch({ ...options, tags: [...(options.tags ?? []), "sanity"] });
+
+export { SanityLive };
