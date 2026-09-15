@@ -44,7 +44,10 @@ export default async function LocationTopSection({
           imageAlt?: string;
         } | null)
       : null;
-  const heroSource = project?.heroImage ?? project?.mainImage;
+  // Skip image fields with no upload yet (possible on Studio drafts).
+  const heroSource = [project?.heroImage, project?.mainImage].find(
+    (img) => img?.asset,
+  );
 
   return (
     <section className="bg-cream-200 py-20 lg:py-48">

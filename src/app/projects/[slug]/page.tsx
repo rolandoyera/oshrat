@@ -216,10 +216,16 @@ export default async function ProjectPage({
       : null;
 
   const ProjectWhy = PROJECT_WHY[slug];
-  const hero = data.heroImage || data.mainImage;
+  // An image field can exist on a draft with nothing uploaded yet (asset is
+  // null), so only treat an image as usable when it has an asset.
+  const hero = [data.heroImage, data.mainImage].find((img) => img?.asset);
   const rich = data.description ?? data.body;
-  const gallery = Array.isArray(data.gallery) ? data.gallery : [];
-  const panorama = data.panorama360;
+  // Drafts previewed in the Studio can hold gallery slots with no image
+  // uploaded yet (asset is null); skip those so preview never crashes.
+  const gallery = (Array.isArray(data.gallery) ? data.gallery : []).filter(
+    (img) => Boolean(img?.asset),
+  );
+  const panorama = data.panorama360?.asset ? data.panorama360 : undefined;
 
   // Sort: landscapes first, then portraits, then square/unknown (stable within groups)
   const sortedGallery: SanityImageWithAlt[] = gallery
@@ -338,7 +344,7 @@ export default async function ProjectPage({
                 />
                 <ScrollReveal delay={400}>
                   <div className="space-y-6 p-4">
-                    <h1 className="text-white text-center leading-10">
+                    <h1 className="text-white text-center leading-14">
                       {data.title}{" "}
                       {data.location && (
                         <span className="block -mb-4 p">{data.location}</span>
@@ -352,8 +358,7 @@ export default async function ProjectPage({
         )}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm"
-        >
+          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm">
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -363,8 +368,7 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2"
-            >
+              className="before:content-['>'] before:mr-2">
               {data.title}
               {data.location && (
                 <span className="hidden sm:inline">{` | ${data.location}`}</span>

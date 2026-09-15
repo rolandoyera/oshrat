@@ -22,7 +22,7 @@ export interface Project {
   imageAlt?: string;
 }
 
-const FEATURED_PROJECTS = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage)]{
+const FEATURED_PROJECTS = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage.asset)]{
   _id,
   title,
   location,
@@ -43,7 +43,10 @@ export function ProjectCard({
 }) {
   // Match the detail page's hero source + view-transition name so the card
   // morphs into the destination hero, and warm that exact image on hover.
-  const heroSource = project.heroImage ?? project.mainImage;
+  // Skip image fields with no upload yet (possible on Studio drafts).
+  const heroSource = project.heroImage?.asset
+    ? project.heroImage
+    : project.mainImage;
 
   // The link wraps the text too, so location + title are the crawlable anchor
   // text for the project page (an image-only anchor leaves that to img alt).

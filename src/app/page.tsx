@@ -50,7 +50,10 @@ export default async function Home() {
     heroImage?: SanityImageWithAlt;
     mainImage?: SanityImageWithAlt;
   } | null;
-  const heroSource = heroProject?.heroImage || heroProject?.mainImage;
+  // Skip image fields with no upload yet (possible on Studio drafts).
+  const heroSource = [heroProject?.heroImage, heroProject?.mainImage].find(
+    (img) => img?.asset,
+  );
 
   return (
     <main>

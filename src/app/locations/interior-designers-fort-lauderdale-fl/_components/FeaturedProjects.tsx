@@ -24,7 +24,7 @@ interface Project {
 // Two-up project section where the featured projects are hand-picked in
 // code (by slug) instead of in Sanity — content still comes from Sanity, so
 // titles/images stay in sync with edits there.
-const PROJECTS_BY_SLUG = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage)]{
+const PROJECTS_BY_SLUG = groq`*[_type == "project" && slug.current in $slugs && defined(mainImage.asset)]{
   _id,
   title,
   location,
@@ -45,7 +45,10 @@ function ProjectCard({
 }) {
   // Match the detail page's hero source + view-transition name so the card
   // morphs into the destination hero, and warm that exact image on hover.
-  const heroSource = project.heroImage ?? project.mainImage;
+  // Skip image fields with no upload yet (possible on Studio drafts).
+  const heroSource = project.heroImage?.asset
+    ? project.heroImage
+    : project.mainImage;
 
   return (
     <TransitionLink
