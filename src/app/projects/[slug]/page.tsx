@@ -94,11 +94,13 @@ const PROJECT_BY_SLUG = groq`*[_type=="project" && slug.current == $slug][0]{
 
 const ALL_SLUGS = groq`*[_type=="project" && defined(slug.current)]{ "slug": slug.current }`;
 
-const ALL_PROJECTS_SORTED = groq`*[_type=="project" && defined(slug.current)]{
+// order() before the projection so orderRank is still available to sort on.
+const ALL_PROJECTS_SORTED = groq`*[_type=="project" && defined(slug.current)]
+| order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc){
   title,
   "slug": slug.current,
   location
-} | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc)`;
+}`;
 
 /* -------------------- ISR -------------------- */
 

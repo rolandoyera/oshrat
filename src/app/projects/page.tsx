@@ -6,6 +6,11 @@ import { sanityFetch } from "@/sanity/lib/live";
 import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
+import Cta from "@/components/Cta";
+import ProjectsHero from "./_components/ProjectsHero";
+import TransitionLink from "@/components/ui/TransitionLink";
+import Testimonials from "@/components/Testimonials";
+import Why from "@/components/Why";
 
 // No time-based revalidate: sanityFetch tags each fetch and Sanity Live
 // revalidates this page the moment a project is published.
@@ -23,8 +28,11 @@ export const metadata: Metadata = {
   ...socialMeta({ title: TITLE, description: DESCRIPTION, url: "/projects" }),
 };
 
+// order() runs BEFORE the projection: GROQ sorts whatever the previous stage
+// produced, and orderRank is not part of the projected shape.
 const QUERY = groq`
-  *[_type == "project" && defined(mainImage)]{
+  *[_type == "project" && defined(mainImage.asset)]
+  | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc){
     _id,
     title,
     location,
@@ -33,14 +41,8 @@ const QUERY = groq`
     "imageUrl": mainImage.asset->url,
     heroImage,
     mainImage
-  } | order(coalesce(orderRank, "~") asc, coalesce(year, 0) desc, _createdAt desc)
+  }
 `;
-
-import Cta from "@/components/Cta";
-import ProjectsHero from "./_components/ProjectsHero";
-import TransitionLink from "@/components/ui/TransitionLink";
-import Testimonials from "@/components/Testimonials";
-import Why from "@/components/Why";
 
 export default async function ProjectsPage() {
   let projects: {
@@ -81,8 +83,7 @@ export default async function ProjectsPage() {
                     animationDelay: `${index * 0.12}s`,
                   } as React.CSSProperties
                 }
-                aria-label={`${p.title} — ${p.location}`}
-              >
+                aria-label={`${p.title} — ${p.location}`}>
                 <div className="relative w-full aspect-4/3">
                   <Image
                     src={p.imageUrl}
@@ -118,8 +119,7 @@ export default async function ProjectsPage() {
         <Why
           subtitle="Why Sarvian Design Group"
           title="The Fort Lauderdale Interior Design Firm Behind Every Project"
-          description="Every project in this portfolio ran through the same hands. Whole-home interior design, renovations, new builds, and luxury kitchen and bath work across South Florida are carried by one team of interior designers, from layout and finishes through procurement, installation, and final styling, which is why the finished work holds one standard regardless of scope."
-        >
+          description="Every project in this portfolio ran through the same hands. Whole-home interior design, renovations, new builds, and luxury kitchen and bath work across South Florida are carried by one team of interior designers, from layout and finishes through procurement, installation, and final styling, which is why the finished work holds one standard regardless of scope.">
           <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
             <h2 className="font-semibold h3">Built on One Process.</h2>
             <p>
