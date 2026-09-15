@@ -2,12 +2,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { heroPreloadSrcSet, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, siteGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
 
-export const revalidate = 60; // Revalidate the page every 60 seconds
+// No time-based revalidate: sanityFetch tags each fetch and Sanity Live
+// revalidates this page the moment a project is published.
 
 const DESCRIPTION =
   "Explore the latest architecture and interior design projects from Sarvian Design Group across South Florida: Miami, Fort Lauderdale, Coral Gables, Weston, Boca Raton, and Palm Beach.";
@@ -53,7 +54,7 @@ export default async function ProjectsPage() {
   }[] = [];
 
   try {
-    projects = await client.fetch(QUERY);
+    projects = (await sanityFetch({ query: QUERY })).data as typeof projects;
   } catch (error) {
     console.error("Failed to fetch projects:", error);
     // Could add a user-friendly error message here
@@ -80,7 +81,8 @@ export default async function ProjectsPage() {
                     animationDelay: `${index * 0.12}s`,
                   } as React.CSSProperties
                 }
-                aria-label={`${p.title} — ${p.location}`}>
+                aria-label={`${p.title} — ${p.location}`}
+              >
                 <div className="relative w-full aspect-4/3">
                   <Image
                     src={p.imageUrl}

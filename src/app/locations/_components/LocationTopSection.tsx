@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { heroImageUrl, type SanityImageWithAlt } from "@/sanity/lib/image";
 import ArrowButton from "@/components/ui/ArrowButton";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -33,11 +33,16 @@ export default async function LocationTopSection({
 }: LocationTopSectionProps) {
   const project =
     !image && projectSlug
-      ? await client.fetch<{
+      ? ((
+          await sanityFetch({
+            query: PROJECT_IMAGE,
+            params: { slug: projectSlug },
+          })
+        ).data as {
           heroImage?: SanityImageWithAlt;
           mainImage: SanityImageWithAlt;
           imageAlt?: string;
-        } | null>(PROJECT_IMAGE, { slug: projectSlug })
+        } | null)
       : null;
   const heroSource = project?.heroImage ?? project?.mainImage;
 

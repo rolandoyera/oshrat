@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import TopSection from "./_components/TopSection";
 import type { Metadata } from "next";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import { heroImageUrl, type SanityImageWithAlt } from "@/sanity/lib/image";
 import { JsonLd, faqPageGraph } from "@/lib/structured-data";
 import { socialMeta } from "@/lib/seo";
@@ -41,10 +41,15 @@ const HERO_PROJECT = groq`*[_type=="project" && slug.current == $slug][0]{
 }`;
 
 export default async function Home() {
-  const heroProject = await client.fetch<{
+  const heroProject = (
+    await sanityFetch({
+      query: HERO_PROJECT,
+      params: { slug: HERO_PROJECT_SLUG },
+    })
+  ).data as {
     heroImage?: SanityImageWithAlt;
     mainImage?: SanityImageWithAlt;
-  } | null>(HERO_PROJECT, { slug: HERO_PROJECT_SLUG });
+  } | null;
   const heroSource = heroProject?.heroImage || heroProject?.mainImage;
 
   return (
@@ -72,7 +77,8 @@ export default async function Home() {
             South Florida's most sought-after communities —{" "}
             <Link
               href="/locations/interior-designers-las-olas-fl"
-              className="group relative hover:text-accent transition-colors duration-300">
+              className="group relative hover:text-accent transition-colors duration-300"
+            >
               Las Olas
               <HoverUnderline className="text-accent" />
             </Link>
@@ -80,7 +86,8 @@ export default async function Home() {
             Raton, Palm Beach,{" "}
             <Link
               href="/locations/interior-designers-golden-beach-fl"
-              className="group relative hover:text-accent transition-colors duration-300">
+              className="group relative hover:text-accent transition-colors duration-300"
+            >
               Golden Beach
               <HoverUnderline className="text-accent" />
             </Link>
@@ -103,7 +110,8 @@ export default async function Home() {
       <Why
         subtitle="Why Sarvian Design Group"
         title="An Interior Design Firm Chosen for How It Works"
-        description="What we are chosen for is rarely a style. It is a way of working: restraint over ornament, decisions made early and drawn properly, and one design firm accountable from the first walkthrough to the day the art is hung.">
+        description="What we are chosen for is rarely a style. It is a way of working: restraint over ornament, decisions made early and drawn properly, and one design firm accountable from the first walkthrough to the day the art is hung."
+      >
         <div className="flex flex-col gap-4 md:grid md:row-span-2 md:grid-rows-subgrid">
           <h2 className="font-semibold h3">No House Style.</h2>
           <p>

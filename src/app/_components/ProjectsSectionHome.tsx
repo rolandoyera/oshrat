@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import {
   heroImageUrl,
   heroPreloadSrcSet,
@@ -52,9 +52,11 @@ export function ProjectCard({
     <TransitionLink
       href={`/projects/${project.slug}`}
       preloadSrcSet={heroPreloadSrcSet(heroSource)}
-      className="group flex flex-col">
+      className="group flex flex-col"
+    >
       <div
-        className={`relative overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}>
+        className={`relative overflow-hidden rounded-xs bg-taupe-800 ${aspect}`}
+      >
         <Image
           src={heroImageUrl(heroSource)}
           alt={project.imageAlt || project.title}
@@ -87,7 +89,8 @@ export default async function ProjectsSectionHome({
   className?: string;
   children?: React.ReactNode;
 }) {
-  const projects = await client.fetch<Project[]>(LATEST_PROJECTS);
+  const projects = (await sanityFetch({ query: LATEST_PROJECTS }))
+    .data as Project[];
 
   if (!projects?.length) return null;
 
@@ -118,7 +121,8 @@ export default async function ProjectsSectionHome({
             <ArrowButton
               href="/projects"
               variant="secondary"
-              className="w-full sm:w-auto justify-center">
+              className="w-full sm:w-auto justify-center"
+            >
               View More Projects
             </ArrowButton>
           </div>

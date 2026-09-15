@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import {
   heroImageUrl,
   heroPreloadSrcSet,
@@ -95,7 +95,9 @@ export default async function LocationProjects({
   /** Hand-picked project slugs, shown in exactly this order. */
   slugs: string[];
 }) {
-  const fetched = await client.fetch<Project[]>(FEATURED_PROJECTS, { slugs });
+  const fetched = (
+    await sanityFetch({ query: FEATURED_PROJECTS, params: { slugs } })
+  ).data as Project[];
 
   // GROQ returns matches in document order — restore the hand-picked order.
   // A renamed/unpublished slug simply drops out instead of breaking the page.

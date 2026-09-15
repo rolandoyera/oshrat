@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import {
   heroImageUrl,
   heroPreloadSrcSet,
@@ -91,7 +91,8 @@ export default async function ProjectsSection({
   content?: string;
   className?: string;
 }) {
-  const projects = await client.fetch<Project[]>(LATEST_PROJECTS);
+  const projects = (await sanityFetch({ query: LATEST_PROJECTS }))
+    .data as Project[];
 
   if (!projects?.length) return null;
 

@@ -6,6 +6,10 @@ import Providers from "./Providers";
 import Navbar from "@/components/navbar/Navbar";
 import { socialMeta } from "@/lib/seo";
 import { Analytics } from "./Analytics";
+import { draftMode } from "next/headers";
+import { VisualEditing } from "next-sanity/visual-editing";
+import { SanityLive } from "@/sanity/lib/live";
+import DisableDraftMode from "@/components/DisableDraftMode";
 
 // Variable font — full weight axis, no per-weight files.
 const montserrat = Montserrat({
@@ -33,21 +37,34 @@ export const metadata: Metadata = {
   ...socialMeta({ title: ROOT_TITLE, description: ROOT_DESCRIPTION }),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // Reading draftMode() does not make pages dynamic; only the presence of the
+  // draft cookie (set by /api/draft-mode/enable) bypasses the static cache.
+  const { isEnabled: isDraftMode } = await draftMode();
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${montserrat.variable} font-sans antialiased bg-background text-foreground`}>
+        className={`${montserrat.variable} font-sans antialiased bg-background text-foreground`}
+      >
         <Providers>
           {process.env.VERCEL_ENV === "production" && <Analytics />}
           <Navbar />
           {children}
           <Footer />
         </Providers>
+        {/* Live Content API connection: refreshes pages when content changes. */}
+        <SanityLive />
+        {isDraftMode && (
+          <>
+            {/* Click-to-edit overlays for the Studio's Presentation tool. */}
+            <VisualEditing />
+            <DisableDraftMode />
+          </>
+        )}
       </body>
     </html>
   );

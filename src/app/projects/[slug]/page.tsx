@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import {
   urlFor,
   heroImageUrl,
@@ -102,10 +102,18 @@ const ALL_PROJECTS_SORTED = groq`*[_type=="project" && defined(slug.current)]{
 
 /* -------------------- ISR -------------------- */
 
-export const revalidate = 60;
+// No time-based revalidate: sanityFetch tags each fetch and Sanity Live
+// revalidates the affected pages the moment a document is published.
 
 export async function generateStaticParams() {
-  const slugs: { slug: string }[] = await client.fetch(ALL_SLUGS);
+  // Build-time only: never bake drafts or stega markers into the static params.
+  const slugs = (
+    await sanityFetch({
+      query: ALL_SLUGS,
+      perspective: "published",
+      stega: false,
+    })
+  ).data as { slug: string }[];
   return slugs.map((s) => ({ slug: s.slug }));
 }
 
@@ -134,13 +142,16 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const data = await client.fetch<{
-    title?: string;
-    location?: string;
-    seoDescription?: string;
-    descriptionText?: string;
-    ogImage?: string;
-  } | null>(PROJECT_META, { slug });
+  const data =
+    // Metadata is never rendered through the Presentation overlay, so no stega.
+    (await sanityFetch({ query: PROJECT_META, params: { slug }, stega: false }))
+      .data as {
+      title?: string;
+      location?: string;
+      seoDescription?: string;
+      descriptionText?: string;
+      ogImage?: string;
+    } | null;
 
   if (!data?.title) return { title: "Project | Sarvian Design Group" };
 
@@ -182,9 +193,11 @@ export default async function ProjectPage({
   const { slug } = await params;
 
   const [data, allProjects] = await Promise.all([
-    client.fetch<Project | null>(PROJECT_BY_SLUG, { slug }),
-    client.fetch<{ title: string; slug: string; location?: string }[]>(
-      ALL_PROJECTS_SORTED,
+    sanityFetch({ query: PROJECT_BY_SLUG, params: { slug } }).then(
+      (r) => r.data as Project | null,
+    ),
+    sanityFetch({ query: ALL_PROJECTS_SORTED }).then(
+      (r) => r.data as { title: string; slug: string; location?: string }[],
     ),
   ]);
 
@@ -339,7 +352,8 @@ export default async function ProjectPage({
         )}
         <nav
           aria-label="Breadcrumb"
-          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm">
+          className="mx-auto max-w-450 px-4 xl:px-6 my-2 text-sm"
+        >
           <ol className="flex items-center gap-2">
             <li>
               <Link href="/">Home</Link>
@@ -349,7 +363,8 @@ export default async function ProjectPage({
             </li>
             <li
               aria-current="page"
-              className="before:content-['>'] before:mr-2">
+              className="before:content-['>'] before:mr-2"
+            >
               {data.title}
               {data.location && (
                 <span className="hidden sm:inline">{` | ${data.location}`}</span>

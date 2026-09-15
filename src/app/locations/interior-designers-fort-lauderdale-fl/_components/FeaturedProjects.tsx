@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { groq } from "next-sanity";
-import { client } from "@/sanity/lib/client";
+import { sanityFetch } from "@/sanity/lib/live";
 import {
   heroImageUrl,
   heroPreloadSrcSet,
@@ -87,7 +87,9 @@ export default async function FeaturedProjects({
   eyebrow?: string;
   heading: string;
 }) {
-  const projects = await client.fetch<Project[]>(PROJECTS_BY_SLUG, { slugs });
+  const projects = (
+    await sanityFetch({ query: PROJECTS_BY_SLUG, params: { slugs } })
+  ).data as Project[];
 
   if (!projects?.length) return null;
 
@@ -122,7 +124,8 @@ export default async function FeaturedProjects({
           <ArrowButton
             href="/projects"
             variant="secondary"
-            className="mt-10 md:mt-20">
+            className="mt-10 md:mt-20"
+          >
             View More Projects
           </ArrowButton>
         </div>
